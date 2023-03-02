@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "delivery-best-wishes-dream-concept-top-overhead-close-up-flatlay-first-person-view-photo-lady-s-hands-holding-little-bright-red-box-from-shopping-isol.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "delivery-best-wishes-dream-concept-top-overhead-close-up-flatlay-first-person-view-photo-lady-s-hands-holding-little-bright-red-box-from-shopping-isol@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "delivery-best-wishes-dream-concept-top-overhead-close-up-flatlay-first-person-view-photo-lady-s-hands-holding-little-bright-red-box-from-shopping-isol@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

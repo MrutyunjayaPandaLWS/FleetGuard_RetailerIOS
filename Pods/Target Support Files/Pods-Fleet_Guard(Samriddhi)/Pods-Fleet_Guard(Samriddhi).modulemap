@@ -1,0 +1,6 @@
+module Pods_Fleet_Guard_Samriddhi_ {
+  umbrella header "Pods-Fleet_Guard(Samriddhi)-umbrella.h"
+
+  export *
+  module * { export * }
+}

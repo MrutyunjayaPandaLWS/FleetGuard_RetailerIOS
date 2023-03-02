@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Fleet_Guard(Samriddhi)
+
+  Created by ADMIN on 17/01/2023.
+  
+*/
+"welcome" = "Welcome to";
+"LoginNow" = "Login now";
+"Mobilenumber" = "Mobile number";
+"AlreadyaMember" = "Already a member?";
+"SendOTP" = "Send OTP";
+"NewtoSamriddhi" = "New to Samriddhi ?";
+"Contactusnow" = "Contact us now";
+"Enteryourmobilenumber" = "Enter your mobile number";
+
