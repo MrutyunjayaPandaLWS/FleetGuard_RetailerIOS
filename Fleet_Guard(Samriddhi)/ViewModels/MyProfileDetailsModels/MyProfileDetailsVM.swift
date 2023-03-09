@@ -42,8 +42,9 @@ class MyProfileDetailsVM: popUpDelegate{
                         let createdDate = (result?.lstCustomerJson?[0].jdob ?? "-").split(separator: " ")
                         self.VC?.dobLbl.text = "\(createdDate[0])"
                         let profileDetails = result?.lstCustomerJson ?? []
-                        let customerImage = String(profileDetails[0].profilePicture ?? "").dropFirst()
-                        self.VC?.profileImage.kf.setImage(with: URL(string: "\(PROMO_IMG1)\(customerImage)"), placeholder: UIImage(named: "ic_default_img"));
+                        let customerImage = "\(profileDetails[0].profilePicture ?? "")".dropFirst()
+                        print(customerImage)
+                        self.VC?.profileImage.kf.setImage(with: URL(string: "\(Promo_ImageData)\(customerImage)"), placeholder: UIImage(named: "ic_default_img"));
                     }
                 } else {
                     print("No Response")

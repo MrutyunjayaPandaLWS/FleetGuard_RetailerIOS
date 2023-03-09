@@ -23,14 +23,14 @@ class FG_SideMenuVC: BaseViewController {
     var sideMenuTitleArray = [String]()
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
-    var userSince = UserDefaults.standard.string(forKey: "MemberSince") ?? ""
+    var userSince = UserDefaults.standard.string(forKey: "MemberSince") ?? "-"
     var VM = FG_DashboardVM()
     
 //    UserDefaults.standard.set(result?.objCustomerDashboardList?[0].redeemablePointsBalance, forKey: "redeemablePointsBalance")
 //    self.VC?.totalValue.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
 //    UserDefaults.standard.set(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
-    let redeemablePointsBalance = UserDefaults.standard.string(forKey: "redeemablePointsBalance") ?? ""
-    let totalEarnedPoints = UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? ""
+    let redeemablePointsBalance = UserDefaults.standard.string(forKey: "redeemablePointsBalance") ?? "0"
+    let totalEarnedPoints = UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "0"
     
     
     override func viewDidLoad() {
@@ -67,6 +67,9 @@ class FG_SideMenuVC: BaseViewController {
                         self.userNameLbl.text = result?.lstCustomerFeedBackJsonApi?[0].firstName ?? "-"
                         self.passbookNumber.text = result?.lstCustomerFeedBackJsonApi?[0].passBookNumber ?? "-"
                         self.totalBalance.text = "\(self.totalEarnedPoints)"
+                    
+                        let imageData = (result?.lstCustomerFeedBackJsonApi?[0].customerImage)?.dropFirst(1) ?? ""
+                        self.profileImage.kf.setImage(with: URL(string: "\(Promo_ImageData)\(imageData)"), placeholder: UIImage(named: "ic_default_img"));
                     }
                     self.stopLoading()
                 }

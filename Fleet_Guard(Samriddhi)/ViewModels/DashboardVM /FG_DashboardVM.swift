@@ -190,9 +190,10 @@ class FG_DashboardVM: popUpDelegate{
                 DispatchQueue.main.async {
                     self.VC?.stopLoading()
                     self.pointBalence = result?.objCustomerDashboardList ?? []
-                    UserDefaults.standard.set(result?.objCustomerDashboardList?[0].redeemablePointsBalance, forKey: "redeemablePointsBalance")
+                    
                     self.VC?.totalValue.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
                     UserDefaults.standard.set(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
+                    UserDefaults.standard.set(result?.objCustomerDashboardList?[0].redeemablePointsBalance, forKey: "redeemablePointsBalance")
                     
                     
                     UserDefaults.standard.set(true, forKey: "AfterLog")

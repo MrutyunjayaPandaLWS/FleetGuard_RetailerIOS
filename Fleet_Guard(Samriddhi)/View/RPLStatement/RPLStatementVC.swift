@@ -61,13 +61,17 @@ class RPLStatementVC: BaseViewController {
     }
     
     @IBAction func ptsTrendbtn(_ sender: Any) {
-        
-        
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PointsTrendGraphVC") as! FG_PointsTrendGraphVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func rangeTrendBtn(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RangeTrendGraphVC") as! FG_RangeTrendGraphVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func bonusTrendBtn(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_BonusTrendGraphVC") as! FG_BonusTrendGraphVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func rlpStatemnet(){

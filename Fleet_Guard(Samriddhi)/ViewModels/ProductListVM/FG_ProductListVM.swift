@@ -18,6 +18,8 @@ class FG_ProductListVM: popUpDelegate{
     func productListApi(parameter: JSON){
         DispatchQueue.main.async {
             self.VC?.startLoading()
+            self.productsArray.removeAll()
+            self.productListArray.removeAll()
         }
         self.requestApis.productListingApi(parameters: parameter) { (result, error) in
             if error == nil{

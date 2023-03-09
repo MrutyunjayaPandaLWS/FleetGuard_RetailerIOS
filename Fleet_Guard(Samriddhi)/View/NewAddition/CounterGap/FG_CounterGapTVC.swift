@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CounterGapDelegate {
+    func counterGapForward(_ cell:FG_CounterGapTVC)
+}
+
 class FG_CounterGapTVC: UITableViewCell {
 
     @IBOutlet weak var forwardButton: UIButton!
@@ -17,17 +21,16 @@ class FG_CounterGapTVC: UITableViewCell {
     @IBOutlet weak var partNoLbl: UILabel!
     @IBOutlet weak var productNameLbl: UILabel!
     @IBOutlet weak var productImage: UIImageView!
+    
+    var delegate: CounterGapDelegate!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
     @IBAction func forwardBtn(_ sender: Any) {
+        self.delegate.counterGapForward(self)
     }
 }

@@ -7,7 +7,20 @@
 
 import UIKit
 
-class FG_MyRedemptionVC: BaseViewController {
+class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
+    func acceptDate(_ vc: FG_DOBVC) {
+        if vc.isComeFrom == "1"{
+            self.selectedFromDate = vc.selectedDate
+            self.fromDateBtn.setTitle("\(vc.selectedDate)", for: .normal)
+        }else{
+            self.selectedToDate = vc.selectedDate
+            self.toDateBtn.setTitle("\(vc.selectedDate)", for: .normal)
+        }
+    }
+    func declineDate(_ vc: FG_DOBVC) {
+        self.dismiss(animated: true)
+    }
+    
 
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var filterTitle: UILabel!
@@ -31,8 +44,13 @@ class FG_MyRedemptionVC: BaseViewController {
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var applyBtn: UIButton!
     
+    @IBOutlet weak var filterOPBTN: UIButton!
+    
     
     var itsFrom = ""
+    var status = "-1"
+    var selectedFromDate = ""
+    var selectedToDate = ""
     
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
@@ -68,9 +86,9 @@ class FG_MyRedemptionVC: BaseViewController {
             "ActionType": "52",
             "ActorId": "\(self.userId)",
             "ObjCatalogueDetails": [
-                "JFromDate": "",
-                "JToDate": "",
-                "SelectedStatus": "-1"
+                "JFromDate": "\(selectedFromDate)",
+                "JToDate": "\(selectedToDate)",
+                "SelectedStatus": "\(self.status)"
             ]
             ]as [String: Any]
         self.VM.myRedemptionLists(parameters: parameter)
@@ -98,23 +116,69 @@ class FG_MyRedemptionVC: BaseViewController {
     }
     
     @IBAction func fromDateButton(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DOBVC") as? FG_DOBVC
+        vc!.delegate = self
+        vc!.isComeFrom = "1"
+        vc!.modalPresentationStyle = .overCurrentContext
+        vc!.modalTransitionStyle = .coverVertical
+        self.present(vc!, animated: true, completion: nil)
     }
     
     @IBAction func toDateButton(_ sender: Any) {
+        
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DOBVC") as? FG_DOBVC
+        vc!.delegate = self
+        vc!.isComeFrom = "1"
+        vc!.modalPresentationStyle = .overCurrentContext
+        vc!.modalTransitionStyle = .coverVertical
+        self.present(vc!, animated: true, completion: nil)
     }
     
     @IBAction func pendingButton(_ sender: Any) {
+        self.status = "1"
+        self.approvedBtn.backgroundColor = .white
+        self.pendingBtn.backgroundColor = .systemOrange
+        self.cancelledBtn.backgroundColor = .white
+        self.cancelledBtn.backgroundColor = .white
+//        self.reopenBtn.backgroundColor = .white
+//        self.resolveFollowUpBtn.backgroundColor = .white
     }
     
     @IBAction func approvedButton(_ sender: Any) {
+        self.status = "3"
+        self.approvedBtn.backgroundColor = .systemOrange
+        self.pendingBtn.backgroundColor = .white
+        self.cancelledBtn.backgroundColor = .white
+//        self.reopenBtn.backgroundColor = .white
+//        self.resolveFollowUpBtn.backgroundColor = .white
     }
     
     @IBAction func cancelledButton(_ sender: Any) {
+        self.status = "4"
+        self.approvedBtn.backgroundColor = .white
+        self.pendingBtn.backgroundColor = .white
+        self.cancelledBtn.backgroundColor = .systemOrange
+//        self.reopenBtn.backgroundColor = .white
+//        self.resolveFollowUpBtn.backgroundColor = .white
     }
     
     @IBAction func applyButton(_ sender: Any) {
+        print(status,"srjdh")
+        print(self.selectedFromDate,"slkdls")
+        print(selectedToDate,"lskdjsldm")
+        //self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+        
+        self.filterView.isHidden = true
     }
     @IBAction func clearbtn(_ sender: Any) {
+        
+        self.status = ""
+        self.fromDateBtn.setTitle("From Date", for: .normal)
+        self.toDateBtn.setTitle("To Date", for: .normal)
+        self.approvedBtn.backgroundColor = .white
+        self.pendingBtn.backgroundColor = .white
+        self.cancelledBtn.backgroundColor = .white
+        self.filterView.isHidden = true
     }
    
 }

@@ -101,16 +101,16 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     @IBAction func editProfileBtn(_ sender: Any) {
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_EditProfileVC") as! FG_EditProfileVC
         vc.delegate = self
-        vc.firstName = self.firstNameLbl.text ?? "-"
-        vc.lastName = self.lastNameLbl.text ?? "-"
-        vc.mobileNumber = self.mobileNumberLbl.text ?? "-"
-        vc.emailLbl = self.emailLbl.text ?? "-"
-        vc.addressLbl = self.addressLbl.text ?? "-"
-        vc.state = self.stateLbl.text ?? "-"
-        vc.city = self.cityLbl.text ?? "-"
-        vc.pincode = self.pincodeLbl.text ?? "-"
-        vc.dob = self.dobLbl.text ?? "-"
-        vc.prefLanguage = self.preferredLanguageLbl.text ?? "-"
+        vc.firstName = self.firstNameLbl.text ?? ""
+        vc.lastName = self.lastNameLbl.text ?? ""
+        vc.mobileNumber = self.mobileNumberLbl.text ?? ""
+        vc.emailLbl = self.emailLbl.text ?? ""
+        vc.addressLbl = self.addressLbl.text ?? ""
+        vc.state = self.stateLbl.text ?? ""
+        vc.city = self.cityLbl.text ?? ""
+        vc.pincode = self.pincodeLbl.text ?? ""
+        vc.dob = self.dobLbl.text ?? ""
+        vc.prefLanguage = self.preferredLanguageLbl.text ?? ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -240,8 +240,8 @@ extension FG_MyProfileVC: UIImagePickerControllerDelegate, UINavigationControlle
             let imageData = selectedImage.resized(withPercentage: 0.1)
             let imageData1: NSData = imageData!.pngData()! as NSData
             self.profileImage.image = selectedImage
-            self.VM.imageSubmissionAPI(base64: self.strdata1)
             self.strdata1 = imageData1.base64EncodedString(options: .lineLength64Characters)
+            self.VM.imageSubmissionAPI(base64: self.strdata1)
             picker.dismiss(animated: true, completion: nil)
         }
     }

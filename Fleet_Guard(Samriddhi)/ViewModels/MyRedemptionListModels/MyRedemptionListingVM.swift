@@ -30,10 +30,11 @@ class MyRedemptionListingVM {
                         if self.myRedemptionList.count != 0 {
                             self.VC?.myRedemptionTableView.isHidden = false
                             self.VC?.myRedemptionTableView.reloadData()
+                            self.VC?.filterOPBTN.isHidden = false
                             
                         }else{
                             self.VC?.myRedemptionTableView.isHidden = true
-                            
+                            self.VC?.filterOPBTN.isHidden = true
                         }
                     }
                 } else {

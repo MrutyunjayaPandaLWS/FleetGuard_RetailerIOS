@@ -79,9 +79,12 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
         let receivedImage = "\(String(describing: productImage))"
         print(receivedImage)
         self.productImag.kf.setImage(with: URL(string: "\(PROMO_IMG1)\(receivedImage)"), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"));
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         myCartListApi()
-        
     }
     
     @IBAction func backBtn(_ sender: Any) {
@@ -117,6 +120,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
             print(pointBalance,"slkjds")
             
             if Int(productPoint) ?? 0 <= Int(pointBalance) ?? 0 {
+                self.myCartListApi()
                 self.addToCartApi()
             }else{
                 DispatchQueue.main.async{

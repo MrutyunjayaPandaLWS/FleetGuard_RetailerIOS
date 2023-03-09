@@ -3,4 +3,118 @@
    uuid = "79235237-3FB1-4243-8372-7F304D560408"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "49007FAA-4049-4077-BF43-D930C73E1BD9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/Profile/FG_MyProfileVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "updateImageBtn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "147A0F07-9BB5-4D26-99BE-E69E864E0980"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/ViewModels/EditProfileModels/EditProfileVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "editProfileSubmissionAPI(paramters:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1BBF3EB-FF62-4394-965C-66ABC34429FE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/ViewModels/EditProfileModels/EditProfileVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "editProfileSubmissionAPI(paramters:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A1BBF3EB-FF62-4394-965C-66ABC34429FE - e2f8c32afbd1da23"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Fleet_Guard_Samriddhi_.EditProfileModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Fleet_Guard_Samriddhi_.EditProfileVM.editProfileSubmissionAPI(paramters: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/ViewModels/EditProfileModels/EditProfileVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "A1BBF3EB-FF62-4394-965C-66ABC34429FE - b2d022edcb64bb5f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 (Swift.Optional&lt;Fleet_Guard_Samriddhi_.EditProfileModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Fleet_Guard_Samriddhi_.EditProfileVM.editProfileSubmissionAPI(paramters: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/ViewModels/EditProfileModels/EditProfileVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "197">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85F2F19D-F5EB-4C70-A0F9-2CC644969FA1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/Profile/FG_EditProfileVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "editDataAPI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7E96C51-5D7E-45B3-945D-0AA88F9A526C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/Profile/FG_MyProfileVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "profileDetailsAPI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

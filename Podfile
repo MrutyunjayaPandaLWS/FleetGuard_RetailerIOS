@@ -12,7 +12,6 @@ pod "ImageSlideshow/Alamofire"
 pod 'DPOTPView'
 pod 'Kingfisher', '~> 7.0'
 pod 'LanguageManager-iOS'
-
-
+pod 'Charts'
 
 end

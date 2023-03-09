@@ -7,7 +7,19 @@
 
 import UIKit
 
-class FG_MyOrdersDetailsVC: BaseViewController {
+class FG_MyOrdersDetailsVC: BaseViewController, DateSelectedDelegate {
+    func acceptDate(_ vc: FG_DOBVC) {
+        if vc.isComeFrom == "1"{
+            self.selectedFromDate = vc.selectedDate
+           // self.fromDateBtn.setTitle("\(vc.selectedDate)", for: .normal)
+        }else{
+            self.selectedToDate = vc.selectedDate
+            //self.toDateBtn.setTitle("\(vc.selectedDate)", for: .normal)
+        }
+    }
+    func declineDate(_ vc: FG_DOBVC) {
+        self.dismiss(animated: true)
+    }
     
     @IBOutlet var myOrdersHeaderLbl: UILabel!
     @IBOutlet var languageChangeOutBtn: UIButton!
@@ -28,6 +40,8 @@ class FG_MyOrdersDetailsVC: BaseViewController {
     
     var ordernumber = ""
     var orderDate = ""
+    var selectedFromDate = ""
+    var selectedToDate = ""
     
     var VM = MyOrderDetailsListingVM()
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
@@ -49,8 +63,8 @@ class FG_MyOrdersDetailsVC: BaseViewController {
             "ActionType": 19,
             "ActorId": "\(userId)",
             "OrderStatus": -2,
-            "JFromDate": "",
-            "JToDate": "",
+            "JFromDate": "\(selectedFromDate)",
+            "JToDate": "\(selectedToDate)",
             "OrderNumber": "\(ordernumber)"
         ] as [String: Any]
         self.VM.myOrderDetailsListingAPI(parameters: parameters)
@@ -62,6 +76,24 @@ class FG_MyOrdersDetailsVC: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
+    
+    @IBAction func fromDateButton(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DOBVC") as? FG_DOBVC
+        vc!.delegate = self
+        vc!.isComeFrom = "1"
+        vc!.modalPresentationStyle = .overCurrentContext
+        vc!.modalTransitionStyle = .coverVertical
+        self.present(vc!, animated: true, completion: nil)
+    }
+    
+    @IBAction func toDateButton(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DOBVC") as? FG_DOBVC
+        vc!.delegate = self
+        vc!.isComeFrom = "2"
+        vc!.modalPresentationStyle = .overCurrentContext
+        vc!.modalTransitionStyle = .coverVertical
+        self.present(vc!, animated: true, completion: nil)
+    }
 }
 
 extension FG_MyOrdersDetailsVC: UITableViewDelegate,UITableViewDataSource {

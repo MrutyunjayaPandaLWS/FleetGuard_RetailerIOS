@@ -74,6 +74,7 @@ extension FG_MyPromotionsVC: UITableViewDelegate, UITableViewDataSource{
             let urlt = URL(string: "\(urltoUse)")
             print(urlt)
             cell.promotionImage.kf.setImage(with: URL(string: "\(String(describing: urlt))"), placeholder: UIImage(named: "Asset 2"));
+           // self.productImag.kf.setImage(with: URL(string: "\(PROMO_IMG1)\(receivedImage)"), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"));
         }
         return cell
     }

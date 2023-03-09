@@ -25,7 +25,7 @@ class MyBillingVM {
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
                         self.myBillingsListingArray = result?.lstTransactionApprovalDetails ?? []
-                        print(self.myBillingsListingArray.count, "myBillingsListingArray Count")
+                        print(self.myBillingsListingArray.count, "myBillingsListingArrayCount")
                         if self.myBillingsListingArray.count != 0 {
                             self.VC?.myBillingsTableView.isHidden = false
                             self.VC?.myBillingsTableView.reloadData()

@@ -17,7 +17,7 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     func stateDidTap(_ vc: FG_DropDownVC) {
         self.selectedStateId = vc.selectedStateID
         self.selectSateLbl.text = vc.selectedState
-        self.cityLbl.text = "Select"
+        self.selectCityLbl.text = "Select"
         self.selectedCityId = -1
     }
     
@@ -197,178 +197,46 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     
     
     @IBAction func saveChangesBtn(_ sender: Any) {
-        
-//        let fileteredBySpace = self.lastNameTF.text!
-//        let trimmed = fileteredBySpace.trimmingCharacters(in: .whitespacesAndNewlines)
-//        print(trimmed, "FilteredBy1")
-//        self.lastNameTF.text = "\(trimmed)"
-//
-//        let fileteredBySpace1 = self.firstNameTF.text!
-//        let trimmed1 = fileteredBySpace1.trimmingCharacters(in: .whitespacesAndNewlines)
-//        print(trimmed1, "FilteredBy2")
-//        self.firstNameTF.text = "\(trimmed1)"
-//
-//        let fileteredBySpace2 = self.mobileTF.text!
-//        let trimmed2 = fileteredBySpace2.trimmingCharacters(in: .whitespacesAndNewlines)
-//        print(trimmed2, "FilteredBy3")
-//        self.mobileTF.text = "\(trimmed2)"
-//
-//        let fileteredBySpace4 = self.pincodeTF.text!
-//        let trimmed4 = fileteredBySpace4.trimmingCharacters(in: .whitespacesAndNewlines)
-//        print(trimmed4, "FilteredBy5")
-//        self.pincodeTF.text = "\(trimmed4)"
-//
-//        let fileteredBySpace21 = self.emailTF.text!
-//        let trimmed21 = fileteredBySpace21.trimmingCharacters(in: .whitespacesAndNewlines)
-//        print(trimmed21, "FilteredBy1")
-//        self.emailTF.text = "\(trimmed21)"
-//
-//            if self.firstNameTF.text == ""{
-//            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "Enter Firstname"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-//            }
-//        }else if self.mobileTF.text == "" {
-//            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "Enter mobile number"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-//            }
-//        }else if self.mobileTF.text?.count != 10 {
-//            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "Enter valid mobile number"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-//            }
-//        }
-//        else if self.stateLbl.text == "Select"{
-//            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "Select State"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-//            }
-//
-//        }else if self.cityLbl.text == "Select"{
-//            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "Select City"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-//            }
-//
-//        }else if self.pincodeTF.text == ""{
-//            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "Enter pin code"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-//            }
-//
-//        }else if self.pincodeTF.text!.count != 6{
-//            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "Enter valid pin code"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-//                self.pincodeTF.text = ""
-//            }
-//
-//        }else if self.dobLbl.text == "Select"{
-//            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "Select Date of birth"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-//            }
-//        }else if self.genderLbl.text == "Select"{
-//            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "Select gender"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-//            }
-//
-//        }else if self.preferredLanguageLbl.text == "Select"{
-//            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "Select Language"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-//            }
-//
-//        }else{
-            let parameters = [
-                "ActionType": "4",
-                "ActorId": "\(userID)",
-                "IsMobileRequest": 1,
-                "ObjCustomerDetails": [],
-                "ObjCustomerJson": [
-                    "AccountNumber": "",
-                    "AcountHolderName": "",
-                    "Address1": "",
-                    "AddressId": 0,
-                    "BankName": "",
-                    "CustomerId": "3",
-                    "CustomerTypeID": 1,
-                    "Email": "\(self.emailTF.text ?? "-")",
-                    "FirstName": "\(self.firstNameTF.text ?? "-")",
-                    "IFSCCode": "",
-                    "IsActive": "1",
-                    "JDOB": "\(self.selectDOBLbl.text ?? "-")",
-                    "LoyaltyIdAutoGen": "1",
-                    "MerchantId": 1,
-                    "CountryId": 15,
-                    "LocationId": "",
-                    "Mobile": "\(self.mobileTF.text ?? "-")",
-                    "RegStatusid": 1,
-                    "RegistrationSource": "5",
-                    "StateId": "\(self.selectedStateId)",
-                    "WalletNumber": "",
-                    "Zip": "\(pincodeTF.text ?? "-")",
-                    "cityid": self.selectedCityId
-                ]
-            ] as [String: Any]
-            print(parameters)
-            self.VM.editProfileSubmissionAPI(paramters: parameters)
-           
+        self.editDataAPI()
     }
     
     
+    
+    func editDataAPI(){
+        let parameters = [
+            "ActionType": "4",
+            "ActorId": "\(userID)",
+            "IsMobileRequest": 1,
+            "ObjCustomerDetails": [],
+            "ObjCustomerJson": [
+                "AccountNumber": "",
+                "AcountHolderName": "",
+                "Address1": "",
+                "AddressId": 0,
+                "BankName": "",
+                "CustomerId": "3",
+                "CustomerTypeID": 1,
+                "Email": "\(self.emailTF.text ?? "-")",
+                "FirstName": "\(self.firstNameTF.text ?? "-")",
+                "IFSCCode": "",
+                "IsActive": "1",
+                "JDOB": "\(self.selectDOBLbl.text ?? "-")",
+                "LoyaltyIdAutoGen": "1",
+                "MerchantId": 1,
+                "CountryId": 15,
+                "LocationId": "",
+                "Mobile": "\(self.mobileTF.text ?? "-")",
+                "RegStatusid": 1,
+                "RegistrationSource": "5",
+                "StateId": "\(self.selectedStateId)",
+                "WalletNumber": "",
+                "Zip": "\(pincodeTF.text ?? "-")",
+                "cityid": self.selectedCityId
+            ]
+        ] as [String: Any]
+        print(parameters)
+        self.VM.editProfileSubmissionAPI(paramters: parameters)
+    }
     
     
     

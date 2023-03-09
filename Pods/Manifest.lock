@@ -2,6 +2,10 @@ PODS:
   - Alamofire (4.9.1)
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
+    - SwiftAlgorithms (~> 1.0)
   - DPOTPView (1.5.12)
   - ImageSlideshow/Alamofire (1.8.3):
     - AlamofireImage (~> 3.0)
@@ -12,10 +16,12 @@ PODS:
   - LanguageManager-iOS (1.2.5)
   - lottie-ios (4.0.1)
   - SlideMenuControllerSwift (4.0.0)
+  - SwiftAlgorithms (1.0.0)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - Charts
   - DPOTPView
   - ImageSlideshow/Alamofire
   - IQKeyboardManagerSwift
@@ -29,6 +35,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - Charts
     - DPOTPView
     - ImageSlideshow
     - IQKeyboardManagerSwift
@@ -36,11 +43,13 @@ SPEC REPOS:
     - LanguageManager-iOS
     - lottie-ios
     - SlideMenuControllerSwift
+    - SwiftAlgorithms
     - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  Charts: 354f86803d11d9c35de280587fef50d1af063978
   DPOTPView: 28d8a0a84a2ff4b1e4a7712065aba1cbb14e2704
   ImageSlideshow: 4694d7d699a1549582e7cc631fb392d8f91630f3
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
@@ -48,8 +57,9 @@ SPEC CHECKSUMS:
   LanguageManager-iOS: 049345fe4d1c5fbe22af93d438540917f4936359
   lottie-ios: 54d22edf55b839f0929cabbfe609c9aa548b1145
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 647ef70b3ce4b8d41ebefb580e393ef499c55e5b
+PODFILE CHECKSUM: fe2948faeac0cda719816b04d1e94767544a2bcc
 
 COCOAPODS: 1.11.3

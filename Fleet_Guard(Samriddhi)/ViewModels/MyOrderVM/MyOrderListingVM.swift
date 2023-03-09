@@ -25,6 +25,7 @@ class MyOrderListingVM {
                         self.VC?.stopLoading()
                         self.myOrderListingArray = result?.lstCustOrderDeliveryDetails ?? []
                         self.VC?.noofelements = self.myOrderListingArray.count
+                        
                         print(self.myOrderListingArray.count, "myOrderListingArray Count")
                         if self.myOrderListingArray.count != 0 {
                             self.VC?.myOrderTableView.isHidden = false

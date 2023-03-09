@@ -49,9 +49,8 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
         
         
         categoryTypeTableView.separatorStyle = .none
-        //categoryTypeTableView.backgroundColor = .clear
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: (self.view.bounds.width - 200 - (self.categoryListCollectionView.contentInset.left + self.categoryListCollectionView.contentInset.right)) / 2, height: 35)
+        layout.itemSize = CGSize(width: (self.view.bounds.width - 100 - (self.categoryListCollectionView.contentInset.left + self.categoryListCollectionView.contentInset.right)) / 2, height: 35)
         layout.minimumLineSpacing = 2.5
         layout.minimumInteritemSpacing = 2.5
         self.categoryListCollectionView.collectionViewLayout = layout
@@ -62,7 +61,7 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
         mainView.clipsToBounds = true
         mainView.layer.cornerRadius = 20
         mainView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        //self.filterArrayAPI()
+
         
     }
     

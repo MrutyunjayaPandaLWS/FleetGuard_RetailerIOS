@@ -22,17 +22,25 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
             let a = "-"
             let minMax = "\(miniValue)"+"\(a)"+"\(maximiumValue)"
             print(minMax,"ksjdksnd")
-            if minMax != "-"{
-                self.pointsRangeDatas = "\(minMax)"
+            self.categoryIDs = "\(vc.categoryID)"
+            
+            if maximiumValue <= miniValue{
+                self.view.makeToast("Maximum feild should be higher then Minimum field", duration: 3.0, position: .bottom)
             }else{
-                self.pointsRangeDatas = "\(vc.collectionViewData)"
+                if minMax != "-"{
+                    self.pointsRangeDatas = "\(minMax)"
+                }else{
+                    self.pointsRangeDatas = "\(vc.collectionViewData)"
+                }
+                self.redemptionCatalogueListApi(startIndex: startindex)
             }
-            self.redemptionCatalogueListApi(startIndex: startindex)
         }else{
             self.VM.redemptionCatalougeListArray.removeAll()
+            self.pointsRangeDatas = "\(vc.collectionViewData)"
             self.categoryIDs = "\(vc.categoryID)"
             self.redemptionCatalogueListApi(startIndex: startindex)
         }
+        //self.redemptionCatalogueListApi(startIndex: startindex)
     }
     
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}

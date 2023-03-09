@@ -752,4 +752,92 @@ class RestAPI_Requests {
                 }
             }
         }
+    
+    //PointsTrendGrqaph
+    func pointsTrendGraphAPI(parameters: JSON, completion: @escaping (PointsTrendModels?, Error?) -> ()) -> URLSessionDataTask? {
+            return client.load(path: getRetailerBondingDetails_URLMethode, method: .post, params: parameters) { data, error in
+                do{
+                    if data != nil{
+                        let result1 =  try JSONDecoder().decode(PointsTrendModels?.self, from: data as! Data)
+                        completion(result1, nil)
+                    }
+                }catch{
+                    completion(nil, error)
+                }
+            }
+        }
+    
+    //RangeTrendGrqaph
+    func rangeTrendGraphAPI(parameters: JSON, completion: @escaping (RangeTrendsGraphModels?, Error?) -> ()) -> URLSessionDataTask? {
+            return client.load(path: getRetailerBondingDetails_URLMethode, method: .post, params: parameters) { data, error in
+                do{
+                    if data != nil{
+                        let result1 =  try JSONDecoder().decode(RangeTrendsGraphModels?.self, from: data as! Data)
+                        completion(result1, nil)
+                    }
+                }catch{
+                    completion(nil, error)
+                }
+            }
+        }
+    
+    //BonusTrendGrqaph
+    func bonusTrendGraphAPI(parameters: JSON, completion: @escaping (BonusTrandGraphModels?, Error?) -> ()) -> URLSessionDataTask? {
+            return client.load(path: getRetailerBondingDetails_URLMethode, method: .post, params: parameters) { data, error in
+                do{
+                    if data != nil{
+                        let result1 =  try JSONDecoder().decode(BonusTrandGraphModels?.self, from: data as! Data)
+                        completion(result1, nil)
+                    }
+                }catch{
+                    completion(nil, error)
+                }
+            }
+        }
+    
+    
+    
+    //BillingDetailsImp
+    func BillingDetailsImpAPI(parameters: JSON, completion: @escaping (BillingDetialsDataModels?, Error?) -> ()) -> URLSessionDataTask? {
+            return client.load(path: billling_URLMethode, method: .post, params: parameters) { data, error in
+                do{
+                    if data != nil{
+                        let result1 =  try JSONDecoder().decode(BillingDetialsDataModels?.self, from: data as! Data)
+                        completion(result1, nil)
+                    }
+                }catch{
+                    completion(nil, error)
+                }
+            }
+        }
+    
+    
+    //CounterGap
+    func counterGapAPI(parameters: JSON, completion: @escaping (CounterGapModels?, Error?) -> ()) -> URLSessionDataTask? {
+            return client.load(path: counterGap_URLMethode, method: .post, params: parameters) { data, error in
+                do{
+                    if data != nil{
+                        let result1 =  try JSONDecoder().decode(CounterGapModels?.self, from: data as! Data)
+                        completion(result1, nil)
+                    }
+                }catch{
+                    completion(nil, error)
+                }
+            }
+        }
+    
+    
+    //MarketGap
+    func marketGapAPI(parameters: JSON, completion: @escaping (MarketGapModels?, Error?) -> ()) -> URLSessionDataTask? {
+            return client.load(path: counterGap_URLMethode, method: .post, params: parameters) { data, error in
+                do{
+                    if data != nil{
+                        let result1 =  try JSONDecoder().decode(MarketGapModels?.self, from: data as! Data)
+                        completion(result1, nil)
+                    }
+                }catch{
+                    completion(nil, error)
+                }
+            }
+        }
 }

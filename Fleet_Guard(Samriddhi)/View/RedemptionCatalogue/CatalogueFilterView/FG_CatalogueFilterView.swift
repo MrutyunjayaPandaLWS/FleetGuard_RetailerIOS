@@ -134,10 +134,16 @@ class FG_CatalogueFilterView: BaseViewController {
         self.dismiss(animated: true)
     }
     
-    @IBAction func mimDataValueTF(_ sender: Any) {
+    @IBAction func editDidBeginMinValueTF(_ sender: Any) {
+        self.tableViewData = "Points Range"
+        self.categoryTypeTableView.reloadData()
+        self.categoryListCollectionView.reloadData()
     }
     
-    @IBAction func maxDataValueTF(_ sender: Any) {
+    @IBAction func editDidBeginMaxTF(_ sender: Any) {
+        self.tableViewData = "Points Range"
+        self.categoryTypeTableView.reloadData()
+        self.categoryListCollectionView.reloadData()
     }
     
 }
@@ -216,7 +222,6 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         if tableViewData == "Points Range"{
 //            self.collectionViewData = self.filterByRangeArray[indexPath.row]
 //            print(collectionViewData,"ksjsdkj")
