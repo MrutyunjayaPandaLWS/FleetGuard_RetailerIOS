@@ -40,6 +40,9 @@ class FG_PopUpVC: BaseViewController {
         } else if itsComeFrom == "DeviceLogedIn"{
             NotificationCenter.default.post(name: .logedInByOtherMobile, object: nil)
             self.dismiss(animated: true)
+        }else if itsComeFrom == "Registration"{
+            NotificationCenter.default.post(name: .redirectingToLogin, object: nil)
+            self.dismiss(animated: true)
         }else{
             self.dismiss(animated: true)
         }

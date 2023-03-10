@@ -71,15 +71,14 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
                         self.redemptionCatalougeListArray1 = result?.objCatalogueList ?? []
-                        self.VC!.noofelements = self.redemptionCatalougeListArray.count
+                        self.VC?.noofelements = self.redemptionCatalougeListArray1.count
+                        
                         self.redemptionCatalougeListArray = self.redemptionCatalougeListArray + self.redemptionCatalougeListArray1
                         
                         if self.redemptionCatalougeListArray.count != 0 {
-                            self.VC?.catalogueListTableView.reloadData()
                             self.VC?.catalogueListTableView.isHidden = false
                             self.VC?.noDataFoundLbl.isHidden = true
-                            
-                          
+                            self.VC?.catalogueListTableView.reloadData()
                         }else{
                             self.VC?.catalogueListTableView.isHidden = true
                             self.VC?.noDataFoundLbl.isHidden = false

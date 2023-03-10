@@ -103,8 +103,13 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
         self.commetsTF.setLeftPaddingPoints(13)
         self.selectStateLbl.text = "Select State"
         self.selectCityLbl.text = "Select City"
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(redirectingToLogin), name: Notification.Name.redirectingToLogin, object: nil)
     }
     
+    @objc func redirectingToLogin(){
+        self.navigationController?.popViewController(animated: true)
+    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let maxLength = 10

@@ -58,7 +58,6 @@ class FG_CounterGapVC: BaseViewController, CounterGapDelegate {
         print(parameters)
         self.VM.counterGapDataAPI(parameters: parameters)
         }
-    
 }
 extension FG_CounterGapVC: UITableViewDelegate, UITableViewDataSource{
     

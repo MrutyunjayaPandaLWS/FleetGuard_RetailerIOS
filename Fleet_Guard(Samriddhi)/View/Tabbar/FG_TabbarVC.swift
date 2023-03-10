@@ -9,28 +9,20 @@ import UIKit
 
 class FG_TabbarVc: UITabBarController {
 
+    
+    var comingFrom = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        layer.masksToBounds = true
-//        layer.cornerRadius = 20
-//        layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
-        
+//        if self.comingFrom == "DelegateData"{
+//            _ = self.tabBarController?.selectedIndex = 1
+//        }
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        tabBar.frame.size.height = 80
-//        tabBar.layer.cornerRadius = 16
-//        tabBar.layer.shadowRadius = 1
-//        tabBar.layer.shadowOpacity = 1
-//        tabBar.clipsToBounds = true
-//        tabBar.backgroundColor = UIColor.clear
-      //  tabBar.frame.origin.y = view.frame.height - 10
-        
      
     }
-    
 
-   
-
+}
+struct Constants{
+    static var tabbarVC : FG_TabbarVc!
 }

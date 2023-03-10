@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             self.setInitialViewAsRootViewController()
         }
-        
+        UITabBar.appearance().unselectedItemTintColor = UIColor.white
     }
     func setHomeAsRootViewController(){
         let leftVC = storyboard.instantiateViewController(withIdentifier: "FG_SideMenuVC") as! FG_SideMenuVC
@@ -42,6 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         homeVC.tabBar.barStyle = .default
         homeVC.tabBar.layer.cornerRadius = 20
         homeVC.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        homeVC.selectedIndex = 1
         nav.isNavigationBarHidden = true
         window?.rootViewController = nav
         window?.makeKeyAndVisible()

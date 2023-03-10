@@ -16,7 +16,7 @@ protocol SendDataDelegate: AnyObject{
 class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpDelegate,sendProductDelegate {
     func prodiuctDetails(_ vc: FG_CatalogueFilterView) {
         if vc.tableViewData == "Points Range"{
-            self.VM.redemptionCatalougeListArray.removeAll()
+            //self.VM.redemptionCatalougeListArray.removeAll()
             self.miniValue = vc.minimumValueTF.text ?? ""
             self.maximiumValue = vc.maximumValueTF.text ?? ""
             let a = "-"
@@ -24,16 +24,20 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
             print(minMax,"ksjdksnd")
             self.categoryIDs = "\(vc.categoryID)"
             
-            if maximiumValue <= miniValue{
-                self.view.makeToast("Maximum feild should be higher then Minimum field", duration: 3.0, position: .bottom)
-            }else{
-                if minMax != "-"{
-                    self.pointsRangeDatas = "\(minMax)"
+            if self.miniValue != "" && self.maximiumValue != "" {
+                if maximiumValue <= miniValue{
+                    self.view.makeToast("Maximum feild should be higher then Minimum field", duration: 3.0, position: .bottom)
+                
                 }else{
-                    self.pointsRangeDatas = "\(vc.collectionViewData)"
+                    if minMax != "-"{
+                        self.pointsRangeDatas = "\(minMax)"
+                    }else{
+                        self.pointsRangeDatas = "\(vc.collectionViewData)"
+                    }
+                    self.redemptionCatalogueListApi(startIndex: startindex)
                 }
-                self.redemptionCatalogueListApi(startIndex: startindex)
             }
+            self.redemptionCatalogueListApi(startIndex: startindex)
         }else{
             self.VM.redemptionCatalougeListArray.removeAll()
             self.pointsRangeDatas = "\(vc.collectionViewData)"
@@ -247,6 +251,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     
 }
 extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.VM.redemptionCatalougeListArray.count
     }

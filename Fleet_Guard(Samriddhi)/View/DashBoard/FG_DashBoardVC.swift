@@ -227,10 +227,10 @@ class FG_DashBoardVC: BaseViewController {
                         self.bannerImage.isHidden = false
                         self.emptyImageView.isHidden = true
                         
-//                        let imageurl = "\(response?.lstCustomerFeedBackJsonApi?[0].customerImage ?? "")".dropFirst(1)
-//                        let totalImgURL = PROMO_IMG1 + imageurl
-//                        print(totalImgURL, "Total Image URL")
-//                    self.bannerImage.kf.setImage(with: URL(string: totalImgURL), placeholder: UIImage(named: "icons8-life-cycle-96"));
+                        self.bannerImage.setImageInputs(self.sourceArray)
+                        self.bannerImage.slideshowInterval = 3.0
+                        self.bannerImage.zoomEnabled = true
+                        self.bannerImage.contentScaleMode = .scaleToFill
                         
                     }else{
                         self.bannerImage.isHidden = true

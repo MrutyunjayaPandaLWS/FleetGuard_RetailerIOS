@@ -35,6 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             self.setInitialViewAsRootViewController()
         }
+        UITabBar.appearance().unselectedItemTintColor = UIColor.white
+//        if let tabBarController = self.window?.rootViewController as? UITabBarController {
+//            tabBarController.selectedIndex = 1
+//        }
+
         return true
     }
 
@@ -54,14 +59,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func setHomeAsRootViewController(){
         let leftVC = storyboard.instantiateViewController(withIdentifier: "FG_SideMenuVC") as! FG_SideMenuVC
+        
+//        let nav = NavigationController(rootViewController: yourController1)
+//        self.yourViewInsertedInController1.addSubview(nav.view)
         let homeVC = storyboard.instantiateViewController(withIdentifier: "FG_TabbarVc") as! FG_TabbarVc
         slider = SlideMenuController(mainViewController: homeVC, leftMenuViewController: leftVC)
+        homeVC.comingFrom  = "DelegateData"
         nav = UINavigationController(rootViewController: slider)
         homeVC.tabBar.layer.masksToBounds = true
         homeVC.tabBar.isTranslucent = true
         homeVC.tabBar.barStyle = .default
         homeVC.tabBar.layer.cornerRadius = 20
         homeVC.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        homeVC.selectedIndex = 1
+        
         nav.isNavigationBarHidden = true
         window?.rootViewController = nav
         window?.makeKeyAndVisible()

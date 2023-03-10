@@ -43,16 +43,18 @@ class RegistrationVM: popUpDelegate {
                                     
                                 }
                             }else{
-                                DispatchQueue.main.async{
-                                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                                    vc!.delegate = self
-                                    vc!.titleInfo = ""
-                                    vc!.itsComeFrom = "Registration"
-                                    vc!.descriptionInfo = "Your submission failed."
-                                    vc!.modalPresentationStyle = .overCurrentContext
-                                    vc!.modalTransitionStyle = .crossDissolve
-                                    self.VC?.present(vc!, animated: true, completion: nil)
-                                }
+                                
+                                self.VC?.view.makeToast("Your submission failed.", duration: 3.0, position: .bottom)
+//                                DispatchQueue.main.async{
+//                                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                                    vc!.delegate = self
+//                                    vc!.titleInfo = ""
+//                                    vc!.itsComeFrom = "Registration"
+//                                    vc!.descriptionInfo = "Your submission failed."
+//                                    vc!.modalPresentationStyle = .overCurrentContext
+//                                    vc!.modalTransitionStyle = .crossDissolve
+//                                    self.VC?.present(vc!, animated: true, completion: nil)
+//                                }
                             }
                         }
                         

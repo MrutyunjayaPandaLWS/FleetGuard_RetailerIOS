@@ -212,11 +212,9 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FG_CategoryCVC", for: indexPath) as! FG_CategoryCVC
         if tableViewData == "Points Range"{
             cell.titleLbl.text = self.filterByRangeArray[indexPath.row]
-            categoryTypeTableView.reloadData()
             
         }else if tableViewData == "Category"{
             cell.titleLbl.text = VM.redemptionCategoryArray[indexPath.row].catogoryName ?? ""
-            categoryTypeTableView.reloadData()
         }
         return cell
     }
@@ -239,10 +237,12 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
             }else if selectedData == "25000 & Above pts"{
                 self.collectionViewData = "25000 - 999999999"
             }
+            //categoryTypeTableView.reloadData()
             
         }else if tableViewData == "Category"{
             self.collectionViewData = ""
             self.categoryID = self.VM.redemptionCategoryArray[indexPath.row].catogoryId ?? 0
+            categoryTypeTableView.reloadData()
         }
     }
 }
