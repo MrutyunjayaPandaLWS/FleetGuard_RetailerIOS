@@ -79,6 +79,7 @@ class FG_StatementVC: BaseViewController,StatementViewDelegate{
     @IBOutlet weak var headerText: UILabel!
     var VM = RPLStatmentViewVM()
     
+    @IBOutlet var statementViewStack: UIStackView!
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     let passBookNumber = UserDefaults.standard.string(forKey: "passBookNumber") ?? ""
@@ -90,6 +91,11 @@ class FG_StatementVC: BaseViewController,StatementViewDelegate{
         self.statementTableView.delegate = self
         self.statementTableView.dataSource = self
         self.rlpStatemnet()
+        
+        
+        self.statementViewStack.clipsToBounds = true
+        statementViewStack.layer.cornerRadius = 15
+        statementViewStack.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
         
     func rlpStatemnet(){
@@ -119,20 +125,12 @@ extension FG_StatementVC: UITableViewDelegate, UITableViewDataSource{
         cell.monthLbl.text = "\(date[0])"
         cell.pointEarnedLbl.text = "\(VM.rlpStatemnetArray[indexPath.row].pointsEarned ?? 0)"
         
-//        if (indexPath.row) % 2 == 0{
-//            cell.balanceLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//            cell.monthLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//            cell.pointEarnedLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//            cell.viewOutBtn.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//        }else{
-//            cell.balanceLbl.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1100084647, alpha: 0.3161562484)
-//            cell.monthLbl.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.6862745098, blue: 0.1098039216, alpha: 0.32)
-//            cell.pointEarnedLbl.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.6862745098, blue: 0.1098039216, alpha: 0.32)
-//            cell.viewOutBtn.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.6862745098, blue: 0.1098039216, alpha: 0.32)
-//        }
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
     
 }

@@ -31,9 +31,10 @@ class CounterGapVM {
                         if self.myCounterGapArray.count != 0{
                             self.VC?.CounterGapTableView.isHidden = false
                             self.VC?.CounterGapTableView.reloadData()
-                            
+                            self.VC?.noDataFound.isHidden = true
                         }else{
                             self.VC?.CounterGapTableView.isHidden = true
+                            self.VC?.noDataFound.isHidden = false
                         }
                         
                     }

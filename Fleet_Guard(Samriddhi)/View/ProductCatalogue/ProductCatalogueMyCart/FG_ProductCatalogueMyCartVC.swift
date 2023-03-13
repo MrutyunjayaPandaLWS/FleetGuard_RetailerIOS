@@ -16,6 +16,8 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
     @IBOutlet weak var headerText: UILabel!
     @IBOutlet weak var prodCatalogueCartTableView: UITableView!
     
+    @IBOutlet var placeOrderOutBtn: UIButton!
+    @IBOutlet var orderTotalLbl: UILabel!
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     var customerCartId = ""
@@ -38,6 +40,8 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
         self.myCartApi()
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToProductsList), name: Notification.Name.navigateToProductList, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToDashBoard), name: Notification.Name.navigateToDashboard, object: nil)
+        self.orderTotalLbl.text = "Order Total"
+        self.placeOrderOutBtn.setTitle("Place Order", for: .normal)
     }
     
 

@@ -112,9 +112,10 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
       //  sendSuccessMessage()
     }
     @objc func dismissNavigator() {
-        self.dismiss(animated: true){
-            NotificationCenter.default.post(name: .goToMain, object: nil)
-        }
+//        self.dismiss(animated: true){
+//            NotificationCenter.default.post(name: .goToMain, object: nil)
+//        }
+        self.navigationController?.popToRootViewController(animated: true)
     }
     @objc func dismissVC(){
         self.dismiss(animated: true){
@@ -206,51 +207,59 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
                         
                     }else{
                         DispatchQueue.main.async{
-                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                            vc!.delegate = self
-                            vc!.titleInfo = ""
+//                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                            vc!.delegate = self
+//                            vc!.titleInfo = ""
+//
+//                            vc!.descriptionInfo = "Redemption Failed"
+//                            vc!.modalPresentationStyle = .overFullScreen
+//                            vc!.modalTransitionStyle = .crossDissolve
+//                            self.present(vc!, animated: true, completion: nil)
                             
-                            vc!.descriptionInfo = "Redemption Failed"
-                            vc!.modalPresentationStyle = .overFullScreen
-                            vc!.modalTransitionStyle = .crossDissolve
-                            self.present(vc!, animated: true, completion: nil)
+                            self.view.makeToast("Redemption Failed", duration: 3.0, position: .bottom)
                         }
                     }
                 }
             }else{
                 
                     DispatchQueue.main.async{
-                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                        vc!.delegate = self
-                        vc!.titleInfo = ""
-                        vc!.descriptionInfo = "InValid OTP"
-                        vc!.modalPresentationStyle = .overCurrentContext
-                        vc!.modalTransitionStyle = .crossDissolve
-                        self.present(vc!, animated: true, completion: nil)
+//                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                        vc!.delegate = self
+//                        vc!.titleInfo = ""
+//                        vc!.descriptionInfo = "InValid OTP"
+//                        vc!.modalPresentationStyle = .overCurrentContext
+//                        vc!.modalTransitionStyle = .crossDissolve
+//                        self.present(vc!, animated: true, completion: nil)
+                        
+                        self.view.makeToast("InValid OTP", duration: 3.0, position: .bottom)
                     }
                 
             }
         }else if enteredValue.count == 0 {
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.titleInfo = ""
-                vc!.descriptionInfo = "Enter OTP"
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.titleInfo = ""
+//                vc!.descriptionInfo = "Enter OTP"
+//
+//                vc!.modalPresentationStyle = .overCurrentContext
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
                 
-                vc!.modalPresentationStyle = .overCurrentContext
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Enter OTP", duration: 3.0, position: .bottom)
             }
         }else if enteredValue.count != 6{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.titleInfo = ""
-                vc!.descriptionInfo = "Enter valid OTP"
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.titleInfo = ""
+//                vc!.descriptionInfo = "Enter valid OTP"
+//
+//                vc!.modalPresentationStyle = .overCurrentContext
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
                 
-                vc!.modalPresentationStyle = .overCurrentContext
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Enter valid OTP", duration: 3.0, position: .bottom)
             }
         }
     }

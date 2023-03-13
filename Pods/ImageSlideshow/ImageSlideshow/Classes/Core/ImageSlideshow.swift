@@ -28,7 +28,7 @@ public protocol ImageSlideshowDelegate: class {
     @objc optional func imageSlideshowDidEndDecelerating(_ imageSlideshow: ImageSlideshow)
 }
 
-/** 
+/**
     Used to represent position of the Page Control
     - hidden: Page Control is hidden
     - insideScrollView: Page Control is inside image slideshow
@@ -61,6 +61,7 @@ open class ImageSlideshow: UIView {
     /// Page Control shown in the slideshow
     @available(*, deprecated, message: "Use pageIndicator.view instead")
     open var pageControl: UIPageControl {
+      
         if let pageIndicator = pageIndicator as? UIPageControl {
             return pageIndicator
         }
@@ -77,7 +78,9 @@ open class ImageSlideshow: UIView {
     open var pageIndicator: PageIndicatorView? = UIPageControl() {
         didSet {
             oldValue?.view.removeFromSuperview()
+            
             if let pageIndicator = pageIndicator {
+                
                 addSubview(pageIndicator.view)
             }
             setNeedsLayout()
@@ -195,7 +198,7 @@ open class ImageSlideshow: UIView {
     open var preload = ImagePreload.all
 
     /// Content mode of each image in the slideshow
-    open var contentScaleMode: UIViewContentMode = UIViewContentMode.scaleAspectFit {
+    open var contentScaleMode: UIViewContentMode = UIViewContentMode.scaleAspectFill {
         didSet {
             for view in slideshowItems {
                 view.imageView.contentMode = contentScaleMode
@@ -235,10 +238,11 @@ open class ImageSlideshow: UIView {
         clipsToBounds = true
 
         // scroll view configuration
-        scrollView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height - 50.0)
+        scrollView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height - 100.0)
         scrollView.delegate = self
         scrollView.isPagingEnabled = true
         scrollView.bounces = true
+    
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.autoresizingMask = autoresizingMask
@@ -280,14 +284,17 @@ open class ImageSlideshow: UIView {
 
     open func layoutPageControl() {
         if let pageIndicatorView = pageIndicator?.view {
+//            pageIndicator!.view.backgroundColor = UIColor.black
             pageIndicatorView.isHidden = images.count < 2
-
+           
             var edgeInsets: UIEdgeInsets = UIEdgeInsets.zero
             if #available(iOS 11.0, *) {
                 edgeInsets = safeAreaInsets
             }
 
             pageIndicatorView.sizeToFit()
+        //    pageIndicatorView.backgroundColor = UIColor.blue
+           
             pageIndicatorView.frame = pageIndicatorPosition.indicatorFrame(for: frame, indicatorSize: pageIndicatorView.frame.size, edgeInsets: edgeInsets)
         }
     }
@@ -304,6 +311,8 @@ open class ImageSlideshow: UIView {
             if !view.zoomInInitially {
                 view.zoomOut()
             }
+//            view.frame = CGRect(x: scrollView.frame.size.width * CGFloat(index), y: 0, width: scrollView.frame.size.width, height: scrollView.frame.size.height)
+            
             view.frame = CGRect(x: scrollView.frame.size.width * CGFloat(index), y: 0, width: scrollView.frame.size.width, height: scrollView.frame.size.height)
         }
 
@@ -545,6 +554,8 @@ open class ImageSlideshow: UIView {
 
         fullscreen.initialPage = currentPage
         fullscreen.inputs = images
+        fullscreen.slideshow.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
+        fullscreen.slideshow.contentMode = .scaleAspectFill
         slideshowTransitioningDelegate = ZoomAnimatedTransitioningDelegate(slideshowView: self, slideshowController: fullscreen)
         fullscreen.transitioningDelegate = slideshowTransitioningDelegate
         controller.present(fullscreen, animated: true, completion: nil)

@@ -42,15 +42,16 @@ class EditProfileVM: popUpDelegate {
                                 }
                             }else{
                                 DispatchQueue.main.async{
-                                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                                    vc!.delegate = self
-                                    vc!.titleInfo = ""
-                                    vc!.itsComeFrom = "EDIT"
-                                    //vc!.itsFrom = self.VC?.itsComeFrom ?? ""
-                                    vc!.descriptionInfo = "Failed to submit your details try after some time"
-                                    vc!.modalPresentationStyle = .overCurrentContext
-                                    vc!.modalTransitionStyle = .crossDissolve
-                                    self.VC?.present(vc!, animated: true, completion: nil)
+//                                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                                    vc!.delegate = self
+//                                    vc!.titleInfo = ""
+//                                    vc!.itsComeFrom = "EDIT"
+//                                    //vc!.itsFrom = self.VC?.itsComeFrom ?? ""
+//                                    vc!.descriptionInfo = "Failed to submit your details try after some time"
+//                                    vc!.modalPresentationStyle = .overCurrentContext
+//                                    vc!.modalTransitionStyle = .crossDissolve
+//                                    self.VC?.present(vc!, animated: true, completion: nil)
+                                    self.VC?.view.makeToast("Failed to submit your details try after some time", duration: 3.0, position: .bottom)
                                 }
                             }
                         }

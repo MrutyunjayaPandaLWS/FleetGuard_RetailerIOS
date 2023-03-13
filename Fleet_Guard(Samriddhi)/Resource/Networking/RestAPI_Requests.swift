@@ -840,4 +840,20 @@ class RestAPI_Requests {
                 }
             }
         }
+    
+    
+    // NOTIFICATION LISTING
+    
+    func notificationList(parameters: JSON, completion: @escaping (NotificationModels?, Error?) -> ()) -> URLSessionDataTask? {
+       return client.load(path: historyNotification, method: .post, params: parameters) { data, error in
+           do{
+               if data != nil{
+                   let result1 =  try JSONDecoder().decode(NotificationModels?.self, from: data as! Data)
+                   completion(result1, nil)
+               }
+           }catch{
+               completion(nil, error)
+           }
+       }
+    }
 }

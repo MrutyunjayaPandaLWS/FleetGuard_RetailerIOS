@@ -105,21 +105,25 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
     @IBAction func submitBtn(_ sender: Any) {
         if self.selectTopicLbl.text == "" || self.selectTopicLbl.text == "Select Topic"{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Select query topic"
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Select query topic"
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                
+                self.view.makeToast("Select query topic", duration: 3.0, position: .bottom)
             }
         }else if self.queryDetailsView.text!.count == 0 || self.queryDetailsView.text == "-" || self.queryDetailsView.text == "Enter query Details..."{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Enter query Details"
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Enter query Details"
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                
+                self.view.makeToast("Enter query Details", duration: 3.0, position: .bottom)
             }
             
         }else{

@@ -63,12 +63,14 @@ class FG_DashboardVM: popUpDelegate{
                             if customerFeedbakcJSON.count != 0 {
                                 if result?.lstCustomerFeedBackJsonApi?[0].customerStatus ?? 0 != 1{
                                     DispatchQueue.main.async{
-                                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                                        vc!.delegate = self
-                                        vc!.descriptionInfo = "Your account is deactivated please check with the administrator"
-                                        vc!.modalPresentationStyle = .overCurrentContext
-                                        vc!.modalTransitionStyle = .crossDissolve
-                                        self.VC?.present(vc!, animated: true, completion: nil)
+//                                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                                        vc!.delegate = self
+//                                        vc!.descriptionInfo = "Your account is deactivated please check with the administrator"
+//                                        vc!.modalPresentationStyle = .overCurrentContext
+//                                        vc!.modalTransitionStyle = .crossDissolve
+//                                        self.VC?.present(vc!, animated: true, completion: nil)
+                                        
+                                        self.VC?.view.makeToast("Your account is deactivated please check with the administrator", duration: 4.0, position: .bottom)
                                     }
                                 }else{
                                     self.VC?.welcomeTitle.text = result?.lstCustomerFeedBackJsonApi?[0].firstName ?? ""

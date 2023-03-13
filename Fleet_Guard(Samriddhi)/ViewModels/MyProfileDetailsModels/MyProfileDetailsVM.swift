@@ -39,6 +39,7 @@ class MyProfileDetailsVM: popUpDelegate{
                         self.VC?.stateLbl.text = result?.lstCustomerJson?[0].stateName ?? "-"
                         self.VC?.cityLbl.text = result?.lstCustomerJson?[0].cityName ?? "-"
                         self.VC?.pincodeLbl.text = result?.lstCustomerJson?[0].zip ?? "-"
+                        self.VC?.preferredLanguageLbl.text = result?.lstCustomerJson?[0].languageName ?? "English"
                         let createdDate = (result?.lstCustomerJson?[0].jdob ?? "-").split(separator: " ")
                         self.VC?.dobLbl.text = "\(createdDate[0])"
                         let profileDetails = result?.lstCustomerJson ?? []
@@ -162,14 +163,18 @@ class MyProfileDetailsVM: popUpDelegate{
 //                            NotificationCenter.default.post(name: .goToDashBoardAPI, object: nil)
                         }else{
                             DispatchQueue.main.async{
-                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                                vc!.delegate = self
-                                vc!.titleInfo = ""
-                                vc!.itsComeFrom = "MyProfileImage"
-                                vc!.descriptionInfo = "Profile image update Failed"
-                                vc!.modalPresentationStyle = .overFullScreen
-                                vc!.modalTransitionStyle = .crossDissolve
-                                self.VC?.present(vc!, animated: true, completion: nil)
+//                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                                vc!.delegate = self
+//                                vc!.titleInfo = ""
+//                                vc!.itsComeFrom = "MyProfileImage"
+//                                vc!.descriptionInfo = "Profile image update Failed"
+//                                vc!.modalPresentationStyle = .overFullScreen
+//                                vc!.modalTransitionStyle = .crossDissolve
+//                                self.VC?.present(vc!, animated: true, completion: nil)
+                                
+                                self.VC?.view.makeToast("Profile image update Failed", duration: 3.0, position: .bottom)
+                                
+                                
                             }
                         }
                         

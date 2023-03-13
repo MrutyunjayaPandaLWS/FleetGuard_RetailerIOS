@@ -115,22 +115,24 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
     @IBAction func stateBtn(_ sender: Any) {
         if self.selectedCountryId == 0{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Select Country"
-                vc!.modalPresentationStyle = .overCurrentContext
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Select Country"
+//                vc!.modalPresentationStyle = .overCurrentContext
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Select Country", duration: 3.0, position: .bottom)
             }
         }else{
             if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
                 DispatchQueue.main.async{
-                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                    vc!.delegate = self
-                        vc!.descriptionInfo = "No Internet"
-                    vc!.modalPresentationStyle = .overCurrentContext
-                    vc!.modalTransitionStyle = .crossDissolve
-                    self.present(vc!, animated: true, completion: nil)
+//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                    vc!.delegate = self
+//                        vc!.descriptionInfo = "No Internet"
+//                    vc!.modalPresentationStyle = .overCurrentContext
+//                    vc!.modalTransitionStyle = .crossDissolve
+//                    self.present(vc!, animated: true, completion: nil)
+                    self.view.makeToast("No Internet", duration: 4.0, position: .bottom)
                 }
             }else{
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DropDownVC") as? FG_DropDownVC
@@ -148,23 +150,26 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
         print(self.selectedStateID,"ID")
         if self.selectedStateID == 0 || self.selectedCountryId == 0{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                    vc!.descriptionInfo = "Select State"
-                vc!.modalPresentationStyle = .overCurrentContext
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                    vc!.descriptionInfo = "Select State"
+//                vc!.modalPresentationStyle = .overCurrentContext
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Select State", duration: 3.0, position: .bottom)
             }
         }else{
             if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
                 DispatchQueue.main.async{
-                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                    vc!.delegate = self
-                        vc!.descriptionInfo = "No Internet"
+//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                    vc!.delegate = self
+//                        vc!.descriptionInfo = "No Internet"
+//
+//                    vc!.modalPresentationStyle = .overCurrentContext
+//                    vc!.modalTransitionStyle = .crossDissolve
+//                    self.present(vc!, animated: true, completion: nil)
                     
-                    vc!.modalPresentationStyle = .overCurrentContext
-                    vc!.modalTransitionStyle = .crossDissolve
-                    self.present(vc!, animated: true, completion: nil)
+                    self.view.makeToast("No Internet", duration: 4.0, position: .bottom)
                 }
             }else{
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DropDownVC") as? FG_DropDownVC
@@ -182,32 +187,37 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
         
         if nameTF.text?.count == 0{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Enter Name"
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Enter Name"
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                
+                self.view.makeToast("Enter Name", duration: 3.0, position: .bottom)
             }
 
         }else if mobileTF.text?.count == 0 {
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Enter Mobile Number"
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Enter Mobile Number"
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Enter Mobile Number", duration: 3.0, position: .bottom)
             }
 
         }else if mobileTF.text?.count != 10 {
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Enter Valid Mobile Number"
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Enter Valid Mobile Number"
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                
+                self.view.makeToast("Enter Valid Mobile Number", duration: 3.0, position: .bottom)
             }
 
         }
@@ -236,56 +246,66 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //            }
        else if addressTF.text?.count == 0{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                    vc!.descriptionInfo = "Enter Address"
-                 
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                    vc!.descriptionInfo = "Enter Address"
+//
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                
+                self.view.makeToast("Enter Address", duration: 3.0, position: .bottom)
             }
 
        }else if self.stateLbl.text == "Select State" || self.stateLbl.text == "" || self.stateLbl.text == nil{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                    vc!.descriptionInfo = "Select State"
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                    vc!.descriptionInfo = "Select State"
+//
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
                 
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Select State", duration: 3.0, position: .bottom)
             }
 
        }else if self.selectCityLbl.text == "Select City" || self.selectCityLbl.text == "" || self.selectCityLbl.text == nil{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                    vc!.descriptionInfo = "Select City"
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                    vc!.descriptionInfo = "Select City"
+//
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
                 
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Select City", duration: 3.0, position: .bottom)
             }
 
         }else if pincodeTF.text?.count == 0{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                    vc!.descriptionInfo = "Enter Pin"
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                    vc!.descriptionInfo = "Enter Pin"
+//
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
                 
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Enter Pin", duration: 3.0, position: .bottom)
             }
 
         }else if pincodeTF.text?.count != 6{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Enter Valid Zip"
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Enter Valid Zip"
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                
+                self.view.makeToast("Enter Valid Zip", duration: 3.0, position: .bottom)
             }
 
         }else{

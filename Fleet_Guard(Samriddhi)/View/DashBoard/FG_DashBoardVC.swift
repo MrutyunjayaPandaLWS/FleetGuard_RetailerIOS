@@ -33,6 +33,7 @@ class FG_DashBoardVC: BaseViewController {
     @IBOutlet weak var orderNowBtn: UIButton!
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
+    @IBOutlet var promotionImageSlideShow: ImageSlideshow!
     
     var categoryItemArray = ["Filters", "Coolant & Chemicals", "Center Bearing", "Break Liner"]
     var categoryImageArray = ["OUTLINE", "OUTLINE", "OUTLINE","OUTLINE"]
@@ -55,7 +56,7 @@ class FG_DashBoardVC: BaseViewController {
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 20
         subView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        
+        self.bannerImagesAPI()
         secondLevelView.clipsToBounds = true
         secondLevelView.layer.cornerRadius = 16
         secondLevelView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -70,7 +71,7 @@ class FG_DashBoardVC: BaseViewController {
         self.categoryCollectionView.collectionViewLayout = collectionViewFLowLayout
         
         NotificationCenter.default.addObserver(self, selector: #selector(logedInByOtherMobile), name: Notification.Name.logedInByOtherMobile, object: nil)
-        self.bannerImagesAPI()
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -139,6 +140,10 @@ class FG_DashBoardVC: BaseViewController {
     @IBAction func notificationBell(_ sender: Any) {
     }
 
+    @IBAction func promotionActBTN(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyPromotionsVC") as! FG_MyPromotionsVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     @IBAction func orderNowBtn(_ sender: Any) {
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueListVC") as! FG_ProductCatalogueListVC
@@ -216,6 +221,7 @@ class FG_DashBoardVC: BaseViewController {
         self.VM.dashboardImagesAPICall(parameters: parameters){ response in
             print(response as Any, "asdfljashdfjadslkfdsalkfjjldsaljfsad")
             if response != nil {
+                print("Working Data")
                 DispatchQueue.main.async {
                     self.bannerImagesArray = response?.objImageGalleryList ?? []
                     print(self.bannerImagesArray.count, "Banner Image Count")
@@ -325,7 +331,8 @@ extension FG_DashBoardVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueListVC") as! FG_ProductCatalogueListVC
-        vc.categoryId = Int(self.VM.categoryListArray[indexPath.row].attributeValue ?? "") ?? 0
+        //vc.titleDataFromDashBoard = "\(self.VM.categoryListArray[indexPath.row].attributeNames ?? "")
+        vc.categoryId3 = Int(self.VM.categoryListArray[indexPath.row].attributeValue ?? "") ?? 0
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

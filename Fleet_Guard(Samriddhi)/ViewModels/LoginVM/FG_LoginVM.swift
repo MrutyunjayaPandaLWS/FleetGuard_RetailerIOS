@@ -54,12 +54,13 @@ class FG_LoginVM: popUpDelegate{
                 }else{
                     DispatchQueue.main.async{
                         self.VC?.stopLoading()
-                       let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                        vc!.delegate = self
-                        vc!.descriptionInfo = "The mobile number that you have entered is not present in the  system."
-                        vc!.modalPresentationStyle = .overFullScreen
-                        vc!.modalTransitionStyle = .crossDissolve
-                        self.VC?.present(vc!, animated: true, completion: nil)
+//                       let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                        vc!.delegate = self
+//                        vc!.descriptionInfo = "The mobile number that you have entered is not present in the  system."
+//                        vc!.modalPresentationStyle = .overFullScreen
+//                        vc!.modalTransitionStyle = .crossDissolve
+//                        self.VC?.present(vc!, animated: true, completion: nil)
+                        self.VC?.view.makeToast("The mobile number that you have entered is not present in the  system.", duration: 3.0, position: .bottom)
                         self.VC?.mobileTF.text = ""
                     }
                 }

@@ -9,16 +9,30 @@ import UIKit
 
 class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,sendProductFilterDelegate {
     func sendProductFilter(_ vc: FG_ProductCatalogueFilterVC) {
+        self.VM.productsArray.removeAll()
+        self.VM.productListArray.removeAll()
         if vc.catagoryId == 1{
             self.categoryId = vc.selectedArrayDataID
+            self.categoryId1 = 0
+            self.categoryId2 = 0
+            self.categoryId3 = 0
         }else if vc.catagoryId1 == 2{
+            self.categoryId = 0
+            self.categoryId2 = 0
+            self.categoryId3 = 0
             self.categoryId1 = vc.selectedArrayDataID
-        }else if vc.catagoryId2 == 2{
+        }else if vc.catagoryId2 == 3{
+            self.categoryId = 0
+            self.categoryId1 = 0
+            self.categoryId3 = 0
             self.categoryId2 = vc.selectedArrayDataID
-        }else if vc.catagoryId3 == 2{
+        }else if vc.catagoryId3 == 4{
+            self.categoryId = 0
+            self.categoryId1 = 0
+            self.categoryId2 = 0
             self.categoryId3 = vc.selectedArrayDataID
         }
-        self.productListApi(StartIndex: startindex, searchText: self.searchTF.text ?? "")
+        self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
     }
   
     @IBOutlet weak var headerText: UILabel!
@@ -55,7 +69,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.productListApi(StartIndex: startindex, searchText: self.searchTF.text ?? "")
+        self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
         self.myCartApi()
     }
     
@@ -75,13 +89,13 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func productListApi(StartIndex: Int, searchText: String){
+    func productListApi(startIndex: Int, searchText: String){
         let parameter = [
                     "ActionType": "12",
                     "ActorId": "\(self.userId)",
                     "SearchText": searchText,
                     "LoyaltyID": "\(self.loyaltyId)",
-                    "StartIndex":StartIndex,
+                    "StartIndex":startIndex,
                     "PageSize": 20,
                     "ProductDetails": [
                         "BrandId": 0,
@@ -168,7 +182,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
         }else{
             self.VM.productListArray.removeAll()
             self.productCatalgoueTableView.reloadData()
-            productListApi(StartIndex: self.startindex, searchText: self.searchTF.text ?? "")
+            productListApi(startIndex: self.startindex, searchText: self.searchTF.text ?? "")
             nodatafoundLbl.isHidden = true
         }
     }
@@ -188,7 +202,7 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
         cell.partNoLbl.text = self.VM.productListArray[indexPath.row].productCode ?? ""
         cell.dapValue.text = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"
         cell.mrpValue.text = "\(self.VM.productListArray[indexPath.row].mrp ?? "")"
-        
+        cell.productName.backgroundColor = .white
 //        vc.dap = "\(self.VM.productListArray[tappedIndexPath.row].salePrice ?? 0)"
 //        vc.mrp = "\(self.VM.productListArray[tappedIndexPath.row].mrp ?? "")"
         cell.nextButton.tag = indexPath.row
@@ -201,11 +215,27 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
         return 140
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //guard let tappedIndexPath = self.productCatalgoueTableView.indexPath(for: cell) else{return}
+        //if cell.nextButton.tag == tappedIndexPath.row{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueDetailsVC") as! FG_ProductCatalogueDetailsVC
+            vc.productImageURL = self.VM.productListArray[indexPath.row].productImg ?? ""
+            vc.productName = self.VM.productListArray[indexPath.row].productName ?? ""
+            vc.partNo = self.VM.productListArray[indexPath.row].productCode ?? ""
+            vc.shortDesc = self.VM.productListArray[indexPath.row].productShortDesc ?? ""
+            vc.dap = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"
+            vc.mrp = "\(self.VM.productListArray[indexPath.row].mrp ?? "")"
+            vc.productId = "\(self.VM.productListArray[indexPath.row].productId ?? 0)"
+            vc.productDesc = "\(self.VM.productListArray[indexPath.row].productDesc ?? "")"
+//          vc.cateogryId = "\(self.VM.productListArray[tappedIndexPath.row].category ?? 0)"
+         
+            self.navigationController?.pushViewController(vc, animated: true)
+    }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
             if indexPath.row == VM.productListArray.count - 2{
                 if noofelements == 20{
                     startindex = startindex + 1
-                    self.productListApi(StartIndex: startindex, searchText: self.searchTF.text ?? "")
+                    self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
                 }else if noofelements < 20{
                     return
                 }else{

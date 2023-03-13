@@ -16,6 +16,7 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
             self.selectedToDate = vc.selectedDate
             self.toDateBtn.setTitle("\(vc.selectedDate)", for: .normal)
         }
+        
     }
     func declineDate(_ vc: FG_DOBVC) {
         self.dismiss(animated: true)
@@ -45,17 +46,20 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     @IBOutlet weak var applyBtn: UIButton!
     
     @IBOutlet weak var filterOPBTN: UIButton!
+    @IBOutlet weak var noDataFoundLbl: UILabel!
     
-    
+    @IBOutlet var collectionView: UICollectionView!
     var itsFrom = ""
     var status = "-1"
     var selectedFromDate = ""
     var selectedToDate = ""
+    var collectionViewCatagory = ""
     
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     
     var VM = MyRedemptionListingVM()
+    var collectionData:[String] = ["Pending","Processed","Rejected","Vendor Alloted","Return Pickup Schedule","Cancelled","Vendor Rejected","Dispatched","Re-Dispatched","Delivery Confirmed","InTransit","Return Request","Picked-Up"]
     
 
     override func viewDidLoad() {
@@ -72,12 +76,27 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
         filterView.layer.cornerRadius = 20
         filterView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
+        
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        
         if self.itsFrom == "SideMenu"{
             self.backBtn.isHidden = false
         }else{
             self.backBtn.isHidden = true
         }
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.myRedemptionListing()
+        
+//        let collectionViewFLowLayout2 = UICollectionViewFlowLayout()
+//        collectionViewFLowLayout2.itemSize = CGSize(width: CGFloat(((self.view.bounds.width - 38) - (self.collectionView.contentInset.left + self.collectionView.contentInset.right)) / 2), height: 45)
+//        collectionViewFLowLayout2.minimumLineSpacing = 2.5
+//        collectionViewFLowLayout2.minimumInteritemSpacing = 2.5
+//         self.collectionView.collectionViewLayout = collectionViewFLowLayout2
     }
     
     
@@ -88,13 +107,15 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
             "ObjCatalogueDetails": [
                 "JFromDate": "\(selectedFromDate)",
                 "JToDate": "\(selectedToDate)",
-                "SelectedStatus": "\(self.status)"
+                "SelectedStatus": "\(self.collectionViewCatagory)"
             ]
             ]as [String: Any]
         self.VM.myRedemptionLists(parameters: parameter)
         }
     
     
+    
+ 
     
     @IBAction func backButton(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
@@ -110,6 +131,12 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
         }else{
             self.filterView.isHidden = false
         }
+       // let collectionViewFLowLayout2 = UICollectionViewFlowLayout()
+       // collectionViewFLowLayout2.itemSize = CGSize(width: CGFloat(((self.view.bounds.width - 38) - (self.collectionView.contentInset.left + self.collectionView.contentInset.right)) / 3), height: 30)
+        //collectionViewFLowLayout2.itemSize = CGSize(width: , height: 30)
+//        collectionViewFLowLayout2.minimumLineSpacing = 2.5
+//        collectionViewFLowLayout2.minimumInteritemSpacing = 2.5
+//         self.collectionView.collectionViewLayout = collectionViewFLowLayout2
     }
     @IBAction func closeBtn(_ sender: Any) {
         self.filterView.isHidden = true
@@ -128,7 +155,7 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
         
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DOBVC") as? FG_DOBVC
         vc!.delegate = self
-        vc!.isComeFrom = "1"
+        vc!.isComeFrom = "2"
         vc!.modalPresentationStyle = .overCurrentContext
         vc!.modalTransitionStyle = .coverVertical
         self.present(vc!, animated: true, completion: nil)
@@ -166,13 +193,14 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
         print(status,"srjdh")
         print(self.selectedFromDate,"slkdls")
         print(selectedToDate,"lskdjsldm")
-        //self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
-        
         self.filterView.isHidden = true
+        self.collectionViewCatagory
+        self.myRedemptionListing()
+        
     }
     @IBAction func clearbtn(_ sender: Any) {
-        
         self.status = ""
+        self.collectionViewCatagory = ""
         self.fromDateBtn.setTitle("From Date", for: .normal)
         self.toDateBtn.setTitle("To Date", for: .normal)
         self.approvedBtn.backgroundColor = .white
@@ -183,10 +211,9 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
    
 }
 
-extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return VM.myRedemptionList.count
-    }
+extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate,UICollectionViewDataSource{
+ 
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_MyRedemptionTVC", for: indexPath) as! FG_MyRedemptionTVC
@@ -219,4 +246,40 @@ extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
+    
+    
+   
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return VM.myRedemptionList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return collectionData.count
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FG_RedemptionCollectionCVC", for: indexPath) as! FG_RedemptionCollectionCVC
+        
+        cell.collectionDataLbl.text = "\(self.collectionData[indexPath.row])    "
+        cell.collectionDataLbl.textAlignment = .center
+        cell.collectionDataLbl.borderColor = .lightGray
+        cell.collectionDataLbl.layer.cornerRadius = 10
+        cell.collectionDataLbl.layer.shadowOffset = CGSize()
+        cell.collectionDataLbl.layer.shadowRadius = 0.3
+        cell.collectionDataLbl.borderWidth = 1
+        return cell
+    }
+    
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        self.collectionViewCatagory = self.collectionData[indexPath.row]
+//        print(self.collectionViewCatagory,"sdlkdhskdjh")
+//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.collectionViewCatagory = self.collectionData[indexPath.row]
+        print(self.collectionViewCatagory,"sdlkdhskdjh")
+    }
+    
 }

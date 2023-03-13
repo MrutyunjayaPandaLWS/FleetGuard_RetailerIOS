@@ -111,13 +111,14 @@ class RegistrationVM: popUpDelegate {
                     }else{
                         DispatchQueue.main.async{
                             self.VC?.stopLoading()
-                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                            vc!.delegate = self
-                            vc!.titleInfo = ""
-                            vc!.descriptionInfo = "Mobile number already registered !"
-                            vc!.modalPresentationStyle = .overCurrentContext
-                            vc!.modalTransitionStyle = .crossDissolve
-                            self.VC?.present(vc!, animated: true, completion: nil)
+//                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                            vc!.delegate = self
+//                            vc!.titleInfo = ""
+//                            vc!.descriptionInfo = "Mobile number already registered !"
+//                            vc!.modalPresentationStyle = .overCurrentContext
+//                            vc!.modalTransitionStyle = .crossDissolve
+//                            self.VC?.present(vc!, animated: true, completion: nil)
+                            self.VC?.view.makeToast("Mobile number already registered !", duration: 3.0, position: .bottom)
                             self.VC?.mobileTF.text = ""
                         }
                     }

@@ -65,7 +65,7 @@ class FG_SideMenuVC: BaseViewController {
                    let dashboardDetails = result?.objCustomerDashboardList ?? []
                     if dashboardDetails.count != 0 {
                         self.userNameLbl.text = result?.lstCustomerFeedBackJsonApi?[0].firstName ?? "-"
-                        self.passbookNumber.text = result?.lstCustomerFeedBackJsonApi?[0].passBookNumber ?? "-"
+                        self.passbookNumber.text = result?.lstCustomerFeedBackJsonApi?[0].loyaltyId ?? "-"
                         self.totalBalance.text = "\(self.totalEarnedPoints)"
                     
                         let imageData = (result?.lstCustomerFeedBackJsonApi?[0].customerImage)?.dropFirst(1) ?? ""
@@ -214,6 +214,8 @@ extension FG_SideMenuVC: UITableViewDelegate, UITableViewDataSource{
                     let domain = Bundle.main.bundleIdentifier!
                     UserDefaults.standard.removePersistentDomain(forName: domain)
                     UserDefaults.standard.synchronize()
+                    UserDefaults.standard.set(true, forKey: "AfterLog")
+                    UserDefaults.standard.synchronize()
                     UserDefaults.standard.setValue(pushID, forKey: "UD_DEVICE_TOKEN")
                     let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
                     sceneDelegate.setInitialViewAsRootViewController()
@@ -224,6 +226,8 @@ extension FG_SideMenuVC: UITableViewDelegate, UITableViewDataSource{
                     let pushID = UserDefaults.standard.string(forKey: "UD_DEVICE_TOKEN") ?? ""
                     let domain = Bundle.main.bundleIdentifier!
                     UserDefaults.standard.removePersistentDomain(forName: domain)
+                    UserDefaults.standard.synchronize()
+                    UserDefaults.standard.set(true, forKey: "AfterLog")
                     UserDefaults.standard.synchronize()
                     UserDefaults.standard.setValue(pushID, forKey: "UD_DEVICE_TOKEN")
                     if #available(iOS 13.0, *) {

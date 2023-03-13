@@ -9,7 +9,24 @@ import UIKit
 import AdSupport
 
 import LanguageManager_iOS
-class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate {
+class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate, CheckBoxSelectDelegate {
+    func decline(_ vc: FG_TermsandconditionsVC) {
+        self.termsAndConOutlet.setImage(UIImage(named: "UnChecked Box"), for: .normal)
+    }
+    func accept(_ vc: FG_TermsandconditionsVC) {
+        print(vc.boolResult)
+        if vc.boolResult == true{
+            self.boolResult = true
+            self.termsAndConOutlet.setImage(UIImage(named: "checked-checkbox"), for: .normal)
+            return
+        }else{
+            self.termsAndConOutlet.setImage(UIImage(named: "UnChecked Box"), for: .normal)
+            self.boolResult = false
+            return
+        }
+    }
+
+    
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
     
     @IBOutlet weak var welcomeToLbl: UILabel!
@@ -22,6 +39,10 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate {
     @IBOutlet weak var sendOtpBtn: UIButton!
     @IBOutlet weak var mobileTF: UITextField!
     
+    @IBOutlet var termsAndConLbl: UILabel!
+    @IBOutlet weak var termsAndConOutlet: UIButton!
+    
+    var boolResult:Bool = false
     var VM = FG_LoginVM()
     
     override func viewDidLoad() {
@@ -49,17 +70,28 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate {
     }
     
     
-
+    @IBAction func termsAndConditionBTN(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_TermsandconditionsVC") as! FG_TermsandconditionsVC
+        vc.comingFrom = "LoginScreen"
+        vc.delegate = self
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+    }
+    
     @IBAction func sendOTPBtn(_ sender: Any) {
         if self.mobileTF.text!.count == 0 {
             DispatchQueue.main.async{
-               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Enter mobile number"
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Enter mobile number"
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Enter mobile number", duration: 3.0, position: .bottom)
             }
+        }else if self.boolResult == false{
+            self.view.makeToast("Accept Terms and Conditions", duration: 3.0, position: .bottom)
         }
 //        else if self.mobileTF.text!.count != 10 {
 //            DispatchQueue.main.async{

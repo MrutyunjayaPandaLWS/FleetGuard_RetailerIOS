@@ -12,7 +12,8 @@ class FG_MyEarningVC: BaseViewController {
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var myEarningTableView: UITableView!
-    var itsFrom = "SideMenu"
+    
+    var itsFrom = ""
     
     var VM = MyEarningsVM()
     
@@ -22,11 +23,13 @@ class FG_MyEarningVC: BaseViewController {
         self.VM.VC = self
         self.myEarningTableView.delegate = self
         self.myEarningTableView.dataSource = self
+        
         if self.itsFrom == "SideMenu"{
             self.backBtn.isHidden = false
         }else{
             self.backBtn.isHidden = true
         }
+        
         self.myEarningsAPI()
     }
     

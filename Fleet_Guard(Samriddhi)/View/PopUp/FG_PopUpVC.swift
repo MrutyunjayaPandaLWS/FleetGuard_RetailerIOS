@@ -15,6 +15,7 @@ class FG_PopUpVC: BaseViewController {
     @IBOutlet weak var okBtn: UIButton!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var subView: UIView!
+    @IBOutlet weak var successImage: UIImageView!
     
     var descriptionInfo = ""
     weak var delegate:popUpDelegate?
@@ -29,6 +30,9 @@ class FG_PopUpVC: BaseViewController {
         self.titleLbl.text = descriptionInfo
         self.okBtn.setTitle("OK", for: .normal)
         
+        if itsComeFrom == "DeviceLogedIn"{
+            self.successImage.image = UIImage(named: "high-priority-48")
+        }
         
     }
     

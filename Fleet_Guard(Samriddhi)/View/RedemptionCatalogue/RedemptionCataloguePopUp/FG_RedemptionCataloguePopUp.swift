@@ -20,7 +20,7 @@ class FG_RedemptionCataloguePopUp: BaseViewController {
     }
     
     @IBAction func dashBoardBtn(_ sender: Any) {
-        NotificationCenter.default.post(name: .navigateToDashboard, object: nil)
+        NotificationCenter.default.post(name: .sendDashboard, object: nil)
         self.dismiss(animated: true)
     }
     

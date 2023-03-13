@@ -80,14 +80,15 @@ class RedemptionCatalogueMyCartVM: popUpDelegate{
                             }
                             self.VC?.myCartListApi()
                         }else{
-                            DispatchQueue.main.async{
-                               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                               vc!.delegate = self
-                                vc!.descriptionInfo = "Something went wrong! Try againg Later..."
-                               vc!.modalPresentationStyle = .overCurrentContext
-                               vc!.modalTransitionStyle = .crossDissolve
-                                self.VC?.present(vc!, animated: true, completion: nil)
-                            }
+//                            DispatchQueue.main.async{
+//                               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                               vc!.delegate = self
+//                                vc!.descriptionInfo = "Something went wrong! Try againg Later..."
+//                               vc!.modalPresentationStyle = .overCurrentContext
+//                               vc!.modalTransitionStyle = .crossDissolve
+//                                self.VC?.present(vc!, animated: true, completion: nil)
+//                            }
+                            self.VC?.view.makeToast("Something went wrong! Try againg Later...", duration: 3.0, position: .bottom)
                         }
                     }
                     
@@ -116,15 +117,16 @@ class RedemptionCatalogueMyCartVM: popUpDelegate{
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
                         if result?.returnMessage ?? "" != "1"{
-                            DispatchQueue.main.async{
-                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                                vc!.delegate = self
-                                vc!.descriptionInfo = "Something went wrong. Try againg later!"
-                                vc!.modalPresentationStyle = .overCurrentContext
-                                vc!.modalTransitionStyle = .crossDissolve
-                                self.VC?.present(vc!, animated: true, completion: nil)
-                                self.VC?.stopLoading()
-                            }
+//                            DispatchQueue.main.async{
+//                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                                vc!.delegate = self
+//                                vc!.descriptionInfo = "Something went wrong. Try againg later!"
+//                                vc!.modalPresentationStyle = .overCurrentContext
+//                                vc!.modalTransitionStyle = .crossDissolve
+//                                self.VC?.present(vc!, animated: true, completion: nil)
+//                                self.VC?.stopLoading()
+//                            }
+                            self.VC?.view.makeToast("Something went wrong. Try againg later!", duration: 3.0, position: .bottom)
                         }else{
                             self.VC?.myCartListApi()
                         }
@@ -156,15 +158,16 @@ class RedemptionCatalogueMyCartVM: popUpDelegate{
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
                         if result?.returnMessage ?? "" != "1"{
-                            DispatchQueue.main.async{
-                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                                vc!.delegate = self
-                                vc!.descriptionInfo = "Something went wrong. Try againg later!"
-                                vc!.modalPresentationStyle = .overCurrentContext
-                                vc!.modalTransitionStyle = .crossDissolve
-                                self.VC?.present(vc!, animated: true, completion: nil)
-                                self.VC?.stopLoading()
-                            }
+//                            DispatchQueue.main.async{
+//                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                                vc!.delegate = self
+//                                vc!.descriptionInfo = "Something went wrong. Try againg later!"
+//                                vc!.modalPresentationStyle = .overCurrentContext
+//                                vc!.modalTransitionStyle = .crossDissolve
+//                                self.VC?.present(vc!, animated: true, completion: nil)
+//                                self.VC?.stopLoading()
+//                            }
+                            self.VC?.view.makeToast("Something went wrong. Try againg later!", duration: 3.0, position: .bottom)
                         }else{
                             DispatchQueue.main.async{
                                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC

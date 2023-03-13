@@ -18,8 +18,8 @@ class FG_ProductListVM: popUpDelegate{
     func productListApi(parameter: JSON){
         DispatchQueue.main.async {
             self.VC?.startLoading()
-            self.productsArray.removeAll()
-            self.productListArray.removeAll()
+//            self.productsArray.removeAll()
+//            self.productListArray.removeAll()
         }
         self.requestApis.productListingApi(parameters: parameter) { (result, error) in
             if error == nil{
@@ -27,17 +27,18 @@ class FG_ProductListVM: popUpDelegate{
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
                         self.productsArray = result?.lsrProductDetails ?? []
+                        
                         self.VC?.noofelements = self.productsArray.count
+                        
                         self.productListArray = self.productListArray + self.productsArray
-                        print(self.productListArray.count,"skuhdsdj")
-                        print(self.productsArray.count,"kdjdj")
-                        if self.productListArray.count != 0{
+
+                        if self.productListArray.count != 0 {
                             self.VC?.productCatalgoueTableView.isHidden = false
                             self.VC?.nodatafoundLbl.isHidden = true
                             self.VC?.productCatalgoueTableView.reloadData()
                         }else{
-                            self.VC?.nodatafoundLbl.isHidden = false
                             self.VC?.productCatalgoueTableView.isHidden = true
+                            self.VC?.nodatafoundLbl.isHidden = false
                         }
                     }
                     

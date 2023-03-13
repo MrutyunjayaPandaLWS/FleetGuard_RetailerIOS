@@ -106,13 +106,15 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
           if UserDefaults.standard.string(forKey: "verificationStatus") == "1"{
               if selectedStateID == -1 || selectedCityID == -1 || selectedaddress == "" || selectedpincode == "" || selectedmobile == ""{
                   DispatchQueue.main.async{
-                      let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                      vc!.delegate = self
-                      vc!.titleInfo = ""
-                      vc!.descriptionInfo = "Shipping address requires: State,City,Address,Pin code and Mobile Number,details,Click on 'Edit' to edit and add details"
-                      vc!.modalPresentationStyle = .overCurrentContext
-                      vc!.modalTransitionStyle = .crossDissolve
-                      self.present(vc!, animated: true, completion: nil)
+//                      let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                      vc!.delegate = self
+//                      vc!.titleInfo = ""
+//                      vc!.descriptionInfo = "Shipping address requires: State,City,Address,Pin code and Mobile Number,details,Click on 'Edit' to edit and add details"
+//                      vc!.modalPresentationStyle = .overCurrentContext
+//                      vc!.modalTransitionStyle = .crossDissolve
+//                      self.present(vc!, animated: true, completion: nil)
+                      
+                      self.view.makeToast("Shipping address requires: State,City,Address,Pin code and Mobile Number,details,Click on 'Edit' to edit and add details", duration: 3.0, position: .bottom)
                   }
               }else{
                   let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionOTPVC") as? FG_RedemptionOTPVC
@@ -133,13 +135,14 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
               
           }else{
               DispatchQueue.main.async{
-                  let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                  vc!.delegate = self
-                  vc!.titleInfo = ""
-                  vc!.descriptionInfo = "Your account is unverified! Kindly contact the administrator to access the redemption Catalogue"
-                  vc!.modalPresentationStyle = .overCurrentContext
-                  vc!.modalTransitionStyle = .crossDissolve
-                  self.present(vc!, animated: true, completion: nil)
+//                  let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                  vc!.delegate = self
+//                  vc!.titleInfo = ""
+//                  vc!.descriptionInfo = "Your account is unverified! Kindly contact the administrator to access the redemption Catalogue"
+//                  vc!.modalPresentationStyle = .overCurrentContext
+//                  vc!.modalTransitionStyle = .crossDissolve
+//                  self.present(vc!, animated: true, completion: nil)
+                  self.view.makeToast("Your account is unverified! Kindly contact the administrator to access the redemption Catalogue", duration: 3.0, position: .bottom)
               }
           }
         

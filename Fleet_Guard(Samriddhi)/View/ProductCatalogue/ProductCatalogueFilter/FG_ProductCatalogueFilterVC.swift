@@ -61,7 +61,7 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
         mainView.clipsToBounds = true
         mainView.layer.cornerRadius = 20
         mainView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-
+        self.filterArrayAPI()
         
     }
     
@@ -127,7 +127,7 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
         if self.catagoryId == 1{
             if indexPath.row == 0{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+                cell.categoryTitleLbl.textColor = .systemOrange
                 cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
@@ -139,7 +139,7 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
         }else if self.catagoryId1 == 2{
             if indexPath.row == 1{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+                cell.categoryTitleLbl.textColor = .systemOrange
                 cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
@@ -151,7 +151,7 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
         }else if self.catagoryId2 == 3{
             if indexPath.row == 2{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+                cell.categoryTitleLbl.textColor = .systemOrange
                 cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
@@ -163,7 +163,7 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
         }else if self.catagoryId3 == 4{
             if indexPath.row == 3{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+                cell.categoryTitleLbl.textColor = .systemOrange
                 cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
@@ -174,7 +174,7 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
             }
         }else {
             cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-            cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+            cell.categoryTitleLbl.textColor = .systemOrange
             cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
             cell.categoryTitleLbl.borderWidth = 1
         }
@@ -190,6 +190,26 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FG_Prod_CatalogueCVC", for: indexPath) as! FG_Prod_CatalogueCVC
         cell.titleLbl.text = VM.myfilterListingArray[indexPath.row].productName ?? ""
+        
+//        if self.catagoryId == 1{
+//            if indexPath.row == 0{
+//                cell.titleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
+//                cell.titleLbl.textColor = .systemOrange
+//                cell.titleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+//                cell.titleLbl.borderWidth = 1
+//            }else{
+//                cell.titleLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//                cell.titleLbl.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+//                cell.titleLbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+//                cell.titleLbl.borderWidth = 1
+//            }
+//        }else{
+//            cell.titleLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//            cell.titleLbl.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+//            cell.titleLbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+//            cell.titleLbl.borderWidth = 1
+//        }
+        
 
         return cell
     }
@@ -204,30 +224,36 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
             self.catagoryId1 = 0
             self.catagoryId2 = 0
             self.catagoryId3 = 0
-            categoryTypeTableView.reloadData()
             self.filterArrayAPI()
+            self.categoryListCollectionView.reloadData()
+            self.categoryTypeTableView.reloadData()
             
         }else if self.catagoryName == "OEM" {
             self.catagoryId = 0
             self.catagoryId1 = 2
             self.catagoryId2 = 0
             self.catagoryId3 = 0
-            categoryTypeTableView.reloadData()
             self.filterArrayAPI()
+            self.categoryListCollectionView.reloadData()
+            self.categoryTypeTableView.reloadData()
         }else if self.catagoryName == "Model"{
             self.catagoryId = 0
             self.catagoryId1 = 0
             self.catagoryId2 = 3
             self.catagoryId3 = 0
-            categoryTypeTableView.reloadData()
+            
             self.filterArrayAPI()
+            self.categoryListCollectionView.reloadData()
+            self.categoryTypeTableView.reloadData()
+
         }else if self.catagoryName == "Product Catagory"{
             self.catagoryId = 0
             self.catagoryId1 = 0
             self.catagoryId2 = 0
             self.catagoryId3 = 4
-            categoryTypeTableView.reloadData()
+            self.categoryTypeTableView.reloadData()
             self.filterArrayAPI()
+            self.categoryListCollectionView.reloadData()
         }else{
             print(ErrorPointer.self)
         }

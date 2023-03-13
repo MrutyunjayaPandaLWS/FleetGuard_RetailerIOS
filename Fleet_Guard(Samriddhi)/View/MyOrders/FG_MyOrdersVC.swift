@@ -14,7 +14,7 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate {
         vc.ordernumber = "\(VM.myOrderListingArray[tappedIndexPath.row].orderNo ?? "")"
         let date = VM.myOrderListingArray[tappedIndexPath.row].orderDate ?? "-"
         let splitDate = date.split(separator: " ")
-        vc.orderDate = "\(splitDate[0])"
+        vc.orderDate = getRequiredDate(fromFormate: "MM/dd/yyyy", toFormate: "dd-MM-yyyy", dateString:"\(splitDate[0])")
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -58,6 +58,16 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate {
         self.VM.myOrderListingAPI(parameters: parameters)
     }
     
+    func getRequiredDate(fromFormate:String,toFormate:String,dateString:String) -> String {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = fromFormate
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = toFormate
+        guard let date = dateFormatterGet.date(from: dateString) else {
+            return  "-"  }
+        return dateFormatterPrint.string(from: date)
+    }
+    
 }
 extension FG_MyOrdersVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,11 +79,10 @@ extension FG_MyOrdersVC: UITableViewDelegate, UITableViewDataSource{
         cell.delegate = self
         cell.statusLbl.text = VM.myOrderListingArray[indexPath.row].orderStatus ?? "-"
         cell.sourceLbl.text = VM.myOrderListingArray[indexPath.row].sourceMode
+        cell.myOrderLbl.text = "\(VM.myOrderListingArray[indexPath.row].orderNo ?? "")"
         let date = VM.myOrderListingArray[indexPath.row].orderDate ?? "-"
         let splitDate = date.split(separator: " ")
-        cell.orderDateLbl.text = "\(splitDate[0])"
-        cell.myOrderLbl.text = "\(VM.myOrderListingArray[indexPath.row].orderNo ?? "")"
-        
+        cell.orderDateLbl.text = getRequiredDate(fromFormate: "MM/dd/yyyy", toFormate: "dd-MM-yyyy", dateString:"\(splitDate[0])")
         
         if (indexPath.row) % 2 == 0{
             cell.orderIndexStackView.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 1)
@@ -103,4 +112,5 @@ extension FG_MyOrdersVC: UITableViewDelegate, UITableViewDataSource{
                 }
             }
         }
+    
 }

@@ -58,8 +58,8 @@
     </scenes>
     <resources>
         <image name="AppTitle" width="386" height="142"/>
-        <image name="Group-811" width="1654" height="312"/>
-        <image name="Group-8142" width="1660" height="261"/>
+        <image name="Group-811" width="1650" height="311"/>
+        <image name="Group-8142" width="1656" height="258"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

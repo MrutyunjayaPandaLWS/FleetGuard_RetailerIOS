@@ -22,6 +22,7 @@ class FG_CounterGapVC: BaseViewController, CounterGapDelegate {
     
     @IBOutlet weak var CounterGapTableView: UITableView!
     
+    @IBOutlet var noDataFound: UILabel!
     var VM = CounterGapVM()
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""

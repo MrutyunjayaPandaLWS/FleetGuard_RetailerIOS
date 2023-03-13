@@ -17,12 +17,13 @@ open class FullScreenSlideshowViewController: UIViewController {
         slideshow.pageIndicatorPosition = PageIndicatorPosition(horizontal: .center, vertical: .bottom)
         // turns off the timer
         slideshow.slideshowInterval = 0
-        slideshow.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+  //      slideshow.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+//        slideshow.autoresizesSubviews =
 
         return slideshow
     }()
 
-    /// Close button 
+    /// Close button
     open var closeButton = UIButton()
 
     /// Close button frame
@@ -34,7 +35,7 @@ open class FullScreenSlideshowViewController: UIViewController {
     /// Index of initial image
     open var initialPage: Int = 0
 
-    /// Input sources to 
+    /// Input sources to
     open var inputs: [InputSource]?
 
     /// Background color
@@ -73,6 +74,13 @@ open class FullScreenSlideshowViewController: UIViewController {
 
         // close button configuration
         closeButton.setImage(UIImage(named: "ic_cross_white", in: Bundle(for: type(of: self)), compatibleWith: nil), for: UIControlState())
+//        closeButton.backgroundColor = UIColor(red: 170/255, green: 170/255, blue: 170/255, alpha: 0.3)
+        closeButton.backgroundColor = .red
+        closeButton.clipsToBounds = true
+        closeButton.layer.isOpaque = true
+        closeButton.layer.masksToBounds = false
+        closeButton.layer.cornerRadius = closeButton.frame.size.height / 2
+        
         closeButton.addTarget(self, action: #selector(FullScreenSlideshowViewController.close), for: UIControlEvents.touchUpInside)
         view.addSubview(closeButton)
     }
@@ -107,8 +115,10 @@ open class FullScreenSlideshowViewController: UIViewController {
             
             closeButton.frame = closeButtonFrame ?? CGRect(x: max(10, safeAreaInsets.left), y: max(10, safeAreaInsets.top), width: 40, height: 40)
         }
-
-        slideshow.frame = view.frame
+      
+        slideshow.frame = CGRect(x: 0, y: 0, width: 840, height: 1300)
+      //  self.view.addSubview(viewDemo)
+        
     }
 
     @objc func close() {

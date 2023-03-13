@@ -61,6 +61,8 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     var startindex = 1
     
     
+    var stringData:[String] = ["Pending","Processed","Rejected","Vendor Alloted","Return Pickup Schedule","Cancelled","Vendor Alloted","Return Pickup Schedule","Cancelled","Vendor Rejected","Dispatched","Re-Dispatched","Delivery Conformed","InTreansit","Return Request","Picked-Up"]
+    
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     
@@ -71,7 +73,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         lodgeQueryListTableView.dataSource = self
         
         self.subView.isHidden = true
-        self.filterView.isHidden = true
+        //self.filterView.isHidden = true
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 20
         subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -126,14 +128,14 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     @IBAction func notificationBtn(_ sender: Any) {
     }
     @IBAction func filterBtn(_ sender: Any) {
-        if self.filterView.isHidden == false{
-            self.filterView.isHidden = true
+        if self.subView.isHidden == false{
+            self.subView.isHidden = true
         }else{
-            self.filterView.isHidden = false
+            self.subView.isHidden = false
         }
 }
 @IBAction func closeBtn(_ sender: Any) {
-    self.filterView.isHidden = true
+    self.subView.isHidden = true
 }
 
 @IBAction func fromDateButton(_ sender: Any) {
@@ -223,7 +225,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     print(self.selectedFromDate,"slkdls")
     print(selectedToDate,"lskdjsldm")
     self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
-    self.filterView.isHidden = true
+    self.subView.isHidden = true
 }
 @IBAction func clearbtn(_ sender: Any) {
     
@@ -233,7 +235,9 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     self.approvedBtn.backgroundColor = .white
     self.pendingBtn.backgroundColor = .white
     self.cancelledBtn.backgroundColor = .white
-    self.filterView.isHidden = true
+    self.reopenBtn.backgroundColor = .white
+    self.resolveFollowUpBtn.backgroundColor = .white
+    self.subView.isHidden = true
 }
 }
 
@@ -255,6 +259,14 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     cell.queryInfoLbl.text = VM.queryListArray[indexPath.row].helpTopic ?? "-"
     cell.timeLbl.text = "\(querydateAndTimeArray[1])"
+    
+    if cell.statusLbl.text == "Pending"{
+        cell.statusLbl.backgroundColor = .systemOrange
+    }else if cell.statusLbl.text == "Approved"{
+        cell.statusLbl.backgroundColor = .green
+    }else{
+        cell.statusLbl.backgroundColor = .red
+    }
 
     return cell
 }

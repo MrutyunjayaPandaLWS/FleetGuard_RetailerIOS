@@ -16,25 +16,25 @@ protocol SendDataDelegate: AnyObject{
 class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpDelegate,sendProductDelegate {
     func prodiuctDetails(_ vc: FG_CatalogueFilterView) {
         if vc.tableViewData == "Points Range"{
-            //self.VM.redemptionCatalougeListArray.removeAll()
+            self.VM.redemptionCatalougeListArray.removeAll()
             self.miniValue = vc.minimumValueTF.text ?? ""
             self.maximiumValue = vc.maximumValueTF.text ?? ""
             let a = "-"
             let minMax = "\(miniValue)"+"\(a)"+"\(maximiumValue)"
             print(minMax,"ksjdksnd")
             self.categoryIDs = "\(vc.categoryID)"
+            self.pointsRangeDatas = "\(vc.collectionViewData)"
             
             if self.miniValue != "" && self.maximiumValue != "" {
                 if maximiumValue <= miniValue{
                     self.view.makeToast("Maximum feild should be higher then Minimum field", duration: 3.0, position: .bottom)
                 
                 }else{
-                    if minMax != "-"{
+                   // if minMax != "-"{
                         self.pointsRangeDatas = "\(minMax)"
-                    }else{
-                        self.pointsRangeDatas = "\(vc.collectionViewData)"
-                    }
-                    self.redemptionCatalogueListApi(startIndex: startindex)
+//                    }else{
+//                        self.pointsRangeDatas = "\(vc.collectionViewData)"
+//                    }
                 }
             }
             self.redemptionCatalogueListApi(startIndex: startindex)
@@ -74,7 +74,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     var pointsRangeDatas = ""
     
     var noofelements = 0
-    var startindex = 1
+    var startindex = 0
     
     var miniValue = ""
     var maximiumValue = ""
@@ -218,12 +218,14 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
             self.addToCartApi(catalogueId: self.VM.redemptionCatalougeListArray[tappedIndexPath.row].catalogueId ?? 0)
         }else{
             DispatchQueue.main.async{
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                vc!.delegate = self
-                vc!.descriptionInfo = "Insufficient point balance"
-                vc!.modalPresentationStyle = .overFullScreen
-                vc!.modalTransitionStyle = .crossDissolve
-                self.present(vc!, animated: true, completion: nil)
+//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                vc!.delegate = self
+//                vc!.descriptionInfo = "Insufficient point balance"
+//                vc!.modalPresentationStyle = .overFullScreen
+//                vc!.modalTransitionStyle = .crossDissolve
+//                self.present(vc!, animated: true, completion: nil)
+                self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
+                
             }
         }
         
@@ -282,9 +284,7 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 160
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    }
+
     
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

@@ -64,44 +64,51 @@ class FG_LoginOTPVM: popUpDelegate {
                         
                         if response?.userList?[0].isDelete ?? 0 == 1{
                             DispatchQueue.main.async{
-                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                                vc!.delegate = self
-                                vc!.descriptionInfo = "Your account has been deleted. Kindly contact your administrator."
-                                vc!.modalPresentationStyle = .overCurrentContext
-                                vc!.modalTransitionStyle = .crossDissolve
-                                self.VC?.present(vc!, animated: true, completion: nil)
+//                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                                vc!.delegate = self
+//                                vc!.descriptionInfo = "Your account has been deleted. Kindly contact your administrator."
+//                                vc!.modalPresentationStyle = .overCurrentContext
+//                                vc!.modalTransitionStyle = .crossDissolve
+//                                self.VC?.present(vc!, animated: true, completion: nil)
+                                
+                                self.VC?.view.makeToast("Your account has been deleted. Kindly contact your administrator.", duration: 4.0, position: .bottom)
                                 self.VC?.stopLoading()
                             }
                         }
                         else if response?.userList?[0].verifiedStatus ?? 0 != 1 && response?.userList?[0].isUserActive ?? 0 != 1 {
                             
-                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                            vc!.delegate = self
-                            
-                            vc!.descriptionInfo = "Your account has been deleted. Kindly contact your administrator."
-                            vc!.modalPresentationStyle = .overCurrentContext
-                            vc!.modalTransitionStyle = .crossDissolve
-                            self.VC?.present(vc!, animated: true, completion: nil)
+//                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                            vc!.delegate = self
+//
+//                            vc!.descriptionInfo = "Your account has been deleted. Kindly contact your administrator."
+//                            vc!.modalPresentationStyle = .overCurrentContext
+//                            vc!.modalTransitionStyle = .crossDissolve
+//                            self.VC?.present(vc!, animated: true, completion: nil)
+                            self.VC?.view.makeToast("Your account has been deactivated. Kindly contact your administrator to activate your account", duration: 4.0, position: .bottom)
                             
                         }
                         else if response?.userList?[0].verifiedStatus ?? 0 != 1 && response?.userList?[0].verifiedStatus ?? 0 != 4 && response?.userList?[0].isUserActive ?? 0 != 1 {
                             
-                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                            vc!.delegate = self
-                            vc!.descriptionInfo = "Your account is not activated! Kindly activate your account."
-                            vc!.modalPresentationStyle = .overCurrentContext
-                            vc!.modalTransitionStyle = .crossDissolve
-                            self.VC?.present(vc!, animated: true, completion: nil)
+//                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                            vc!.delegate = self
+//                            vc!.descriptionInfo = "Your account is not activated! Kindly activate your account."
+//                            vc!.modalPresentationStyle = .overCurrentContext
+//                            vc!.modalTransitionStyle = .crossDissolve
+//                            self.VC?.present(vc!, animated: true, completion: nil)
+                            
+                            self.VC?.view.makeToast("Your account is in verification pending. Kindly contact your administrator to verify your account.", duration: 4.0, position: .bottom)
                             
                         }else if response?.userList?[0].isUserActive ?? 0 != 1 {
                             
-                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                            vc!.delegate = self
-                            vc!.descriptionInfo = "Your account is not activated! Kindly activate your account."
+//                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                            vc!.delegate = self
+//                            vc!.descriptionInfo = "Your account is not activated! Kindly activate your account."
+//
+//                            vc!.modalPresentationStyle = .overCurrentContext
+//                            vc!.modalTransitionStyle = .crossDissolve
+//                            self.VC?.present(vc!, animated: true, completion: nil)
                             
-                            vc!.modalPresentationStyle = .overCurrentContext
-                            vc!.modalTransitionStyle = .crossDissolve
-                            self.VC?.present(vc!, animated: true, completion: nil)
+                            self.VC?.view.makeToast("Your account has been deactivated. Kindly contact your administrator to activate your account", duration: 4.0, position: .bottom)
                             
                         }else{
                             if response?.userList?[0].isUserActive ?? 0 == 1 && response?.userList?[0].verifiedStatus ?? 0 == 1 && response?.userList?[0].result ?? 0 == 1 || response?.userList?[0].result ?? 0 == 1{
@@ -132,12 +139,14 @@ class FG_LoginOTPVM: popUpDelegate {
                                 }
                                
                             }else{
-                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                                vc!.delegate = self
-                                vc!.descriptionInfo = "Your account is not activated! Kindly activate your account."
-                                vc!.modalPresentationStyle = .overCurrentContext
-                                vc!.modalTransitionStyle = .crossDissolve
-                                self.VC?.present(vc!, animated: true, completion: nil)
+//                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                                vc!.delegate = self
+//                                vc!.descriptionInfo = "Your account is not activated! Kindly activate your account."
+//                                vc!.modalPresentationStyle = .overCurrentContext
+//                                vc!.modalTransitionStyle = .crossDissolve
+//                                self.VC?.present(vc!, animated: true, completion: nil)
+                                
+                                self.VC?.view.makeToast("Your account has been deactivated. Kindly contact your administrator to activate your account", duration: 4.0, position: .bottom)
                             }
                             
                         }

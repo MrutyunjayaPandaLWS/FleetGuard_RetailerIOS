@@ -29,7 +29,7 @@ class FG_MyPromotionDetailsVC: BaseViewController {
         super.viewDidLoad()
         self.termsandconditionLbl.text = selectedLongDesc
         self.descriptionLbl.text = self.selectedShortDesc
-        self.categoryTitle.text  = self.selectedTitle
+        self.offerNameLbl.text  = self.selectedTitle
         
         let imageURL = self.selectedImage
         if imageURL != ""{
@@ -37,7 +37,7 @@ class FG_MyPromotionDetailsVC: BaseViewController {
             let urltoUse = String(PROMO_IMG1 + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
             let urlt = URL(string: "\(urltoUse)")
             print(urlt)
-            self.headerImage.kf.setImage(with: URL(string: "\(String(describing: urlt))"), placeholder: UIImage(named: "profileDefault"));
+            self.headerImage.kf.setImage(with: URL(string: "\(String(describing: urlt))"), placeholder: UIImage(named: "Asset 2"));
         }
         
         self.subView.clipsToBounds = false
