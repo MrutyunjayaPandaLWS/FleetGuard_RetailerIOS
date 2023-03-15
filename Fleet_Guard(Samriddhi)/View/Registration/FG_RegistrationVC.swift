@@ -96,6 +96,7 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.stopLoading()
         self.VM.VC = self
         self.mobileTF.delegate = self
         self.nameTF.setLeftPaddingPoints(13)

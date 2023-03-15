@@ -11,7 +11,8 @@ import SlideMenuControllerSwift
 import Kingfisher
 class FG_DashBoardVC: BaseViewController {
 
-//    @IBOutlet weak var offersandPromLbl: UILabel!
+    @IBOutlet weak var promotionBtn: UIButton!
+    //    @IBOutlet weak var offersandPromLbl: UILabel!
 //    @IBOutlet weak var redemptionCatalogueLbl: UILabel!
 //    @IBOutlet weak var newRangeAdditionLbl: UILabel!
     @IBOutlet weak var retailerCodeLbl: UILabel!
@@ -27,9 +28,11 @@ class FG_DashBoardVC: BaseViewController {
     @IBOutlet weak var bannerImage: ImageSlideshow!
     @IBOutlet weak var exploreForMoreLbl: UILabel!
     
+    @IBOutlet weak var viewProductButton: UIButton!
     @IBOutlet var emptyImageView: UIImageView!
     @IBOutlet weak var filtrationLbl: UILabel!
     
+    @IBOutlet weak var redemptionCatalogueBtn: UIButton!
     @IBOutlet weak var orderNowBtn: UIButton!
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
@@ -79,6 +82,10 @@ class FG_DashBoardVC: BaseViewController {
         SlideMenuOptions.contentViewScale = 1
         self.tokendata()
         self.pointsAPI()
+        self.promotionBtn.isUserInteractionEnabled = true
+        self.orderNowBtn.isUserInteractionEnabled = true
+        self.redemptionCatalogueBtn.isUserInteractionEnabled = true
+        self.viewProductButton.isUserInteractionEnabled = true
         
     }
     
@@ -131,6 +138,7 @@ class FG_DashBoardVC: BaseViewController {
     }
     
     @IBAction func viewProductBtn(_ sender: Any) {
+        self.viewProductButton.isUserInteractionEnabled = false
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_NewAdditionVC") as! FG_NewAdditionVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -141,16 +149,21 @@ class FG_DashBoardVC: BaseViewController {
     }
 
     @IBAction func promotionActBTN(_ sender: Any) {
+        self.promotionBtn.isUserInteractionEnabled = false
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyPromotionsVC") as! FG_MyPromotionsVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func orderNowBtn(_ sender: Any) {
+//        self.startLoading()
+        self.orderNowBtn.isUserInteractionEnabled = false
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueListVC") as! FG_ProductCatalogueListVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func redemptionCatalogueBtn(_ sender: Any) {
+//        self.startLoading()
+        self.redemptionCatalogueBtn.isUserInteractionEnabled = false
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionCatalogueVC") as! FG_RedemptionCatalogueVC
         self.navigationController?.pushViewController(vc, animated: true)
     }

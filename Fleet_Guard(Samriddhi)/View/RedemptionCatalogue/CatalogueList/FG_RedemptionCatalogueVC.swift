@@ -82,6 +82,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.stopLoading()
         self.VM.VC = self
         self.countLbl.isHidden = true
         self.catalogueListTableView.delegate = self

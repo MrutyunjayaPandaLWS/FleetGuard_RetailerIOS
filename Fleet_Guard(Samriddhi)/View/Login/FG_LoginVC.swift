@@ -55,6 +55,7 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate, CheckB
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.contactUsBtn.isUserInteractionEnabled = true
         self.tokendata()
     }
     
@@ -118,8 +119,12 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate, CheckB
     }
     
     @IBAction func contactUsNowBtn(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RegistrationVC") as! FG_RegistrationVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.contactUsBtn.isUserInteractionEnabled = false
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RegistrationVC") as! FG_RegistrationVC
+            self.navigationController?.pushViewController(vc, animated: true)
+//        })
+        
     }
     
     @IBAction func mobileNumberEditingDidEnd(_ sender: Any) {

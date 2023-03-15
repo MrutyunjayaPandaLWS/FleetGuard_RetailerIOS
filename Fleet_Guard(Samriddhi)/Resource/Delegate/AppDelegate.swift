@@ -23,11 +23,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
-        
+        window = UIWindow(frame: UIScreen.main.bounds)
+                window?.rootViewController = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
+                window?.makeKeyAndVisible()
+
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+                    self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                }
         RunLoop.current.run(until: Date(timeIntervalSinceNow: 4.0))
         UIApplication.shared.statusBarStyle = .lightContent
         tokendata()
         tokendata1()
+        let tokenStatus: Bool = UserDefaults.standard.bool(forKey: "AfterLog")
+        print(tokenStatus, "Status")
         let isUserLoggedIn: Bool = UserDefaults.standard.bool(forKey: "IsloggedIn?")
         print(isUserLoggedIn)
         if isUserLoggedIn {

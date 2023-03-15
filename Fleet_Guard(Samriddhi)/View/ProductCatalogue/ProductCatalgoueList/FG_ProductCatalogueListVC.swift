@@ -57,6 +57,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.stopLoading()
         self.VM.VC = self
         productCatalgoueTableView.delegate = self
         productCatalgoueTableView.dataSource = self
