@@ -34,10 +34,10 @@ class FG_MyPromotionDetailsVC: BaseViewController {
         let imageURL = self.selectedImage
         if imageURL != ""{
             let filteredURLArray = imageURL.dropFirst(2)
-            let urltoUse = String(PROMO_IMG1 + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
+            let urltoUse = String(Promo_ImageData + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
             let urlt = URL(string: "\(urltoUse)")
             print(urlt)
-            self.headerImage.kf.setImage(with: URL(string: "\(String(describing: urlt))"), placeholder: UIImage(named: "Asset 2"));
+            self.headerImage.kf.setImage(with: urlt, placeholder: UIImage(named: "Asset 2"));
         }
         
         self.subView.clipsToBounds = false

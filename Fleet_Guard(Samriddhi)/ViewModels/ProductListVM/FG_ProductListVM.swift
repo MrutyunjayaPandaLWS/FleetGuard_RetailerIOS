@@ -26,20 +26,32 @@ class FG_ProductListVM: popUpDelegate{
                 if result != nil{
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
-                        self.productsArray = result?.lsrProductDetails ?? []
                         
-                        self.VC?.noofelements = self.productsArray.count
-                        
-                        self.productListArray = self.productListArray + self.productsArray
+                        let productsListingArray = result?.lsrProductDetails ?? []
+                        if productsListingArray.isEmpty == false{
+                            self.VC?.noofelements = productsListingArray.count
+                            
+                            self.productListArray = self.productListArray + productsListingArray
 
-                        if self.productListArray.count != 0 {
-                            self.VC?.productCatalgoueTableView.isHidden = false
-                            self.VC?.nodatafoundLbl.isHidden = true
-                            self.VC?.productCatalgoueTableView.reloadData()
+                            if self.productListArray.count != 0 {
+                                self.VC?.productCatalgoueTableView.isHidden = false
+                                self.VC?.nodatafoundLbl.isHidden = true
+                                self.VC?.productCatalgoueTableView.reloadData()
+                            }else{
+                                self.VC!.startindex = 1
+                                self.VC?.productCatalgoueTableView.isHidden = true
+                                self.VC?.nodatafoundLbl.isHidden = false
+                            }
                         }else{
-                            self.VC?.productCatalgoueTableView.isHidden = true
-                            self.VC?.nodatafoundLbl.isHidden = false
+                            if self.VC!.startindex > 1{
+                                self.VC?.startindex = 1
+                                self.VC?.noofelements = 9
+                            }else{
+                                self.VC?.productCatalgoueTableView.isHidden = true
+                                self.VC?.nodatafoundLbl.isHidden = false
+                            }
                         }
+                        
                     }
                     
                 }else{

@@ -213,7 +213,6 @@ extension FG_SideMenuVC: UITableViewDelegate, UITableViewDataSource{
                     let pushID = UserDefaults.standard.string(forKey: "UD_DEVICE_TOKEN") ?? ""
                     let domain = Bundle.main.bundleIdentifier!
                     UserDefaults.standard.removePersistentDomain(forName: domain)
-                    UserDefaults.standard.synchronize()
                     UserDefaults.standard.set(true, forKey: "AfterLog")
                     UserDefaults.standard.synchronize()
                     UserDefaults.standard.setValue(pushID, forKey: "UD_DEVICE_TOKEN")
@@ -226,7 +225,6 @@ extension FG_SideMenuVC: UITableViewDelegate, UITableViewDataSource{
                     let pushID = UserDefaults.standard.string(forKey: "UD_DEVICE_TOKEN") ?? ""
                     let domain = Bundle.main.bundleIdentifier!
                     UserDefaults.standard.removePersistentDomain(forName: domain)
-                    UserDefaults.standard.synchronize()
                     UserDefaults.standard.set(true, forKey: "AfterLog")
                     UserDefaults.standard.synchronize()
                     UserDefaults.standard.setValue(pushID, forKey: "UD_DEVICE_TOKEN")

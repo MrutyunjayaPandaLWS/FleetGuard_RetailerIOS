@@ -70,6 +70,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.VM.productListArray.removeAll()
         self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
         self.myCartApi()
     }
@@ -235,6 +236,9 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
             if indexPath.row == VM.productListArray.count - 2{
                 if noofelements == 20{
+                    startindex = startindex + 1
+                    self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
+                }else if noofelements > 20{
                     startindex = startindex + 1
                     self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
                 }else if noofelements < 20{

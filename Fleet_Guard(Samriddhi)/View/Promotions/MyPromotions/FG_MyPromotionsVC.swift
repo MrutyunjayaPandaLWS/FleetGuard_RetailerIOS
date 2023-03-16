@@ -10,14 +10,17 @@ import Kingfisher
 class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
     func sendOffersDetails(_ cell: FG_MyPromotionsTVC) {
         guard let tappedIndexPath = myPromotionsTableView.indexPath(for: cell) else {return}
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyPromotionDetailsVC") as! FG_MyPromotionDetailsVC
-        vc.promotionId = VM.promomotionListingArray[tappedIndexPath.row].promotionId ?? 0
-        vc.selectedTitle = self.VM.promomotionListingArray[tappedIndexPath.row].promotionName ?? ""
-        vc.selectedOfferId = "\(self.VM.promomotionListingArray[tappedIndexPath.row].promotionId ?? 0)"
-        vc.selectedLongDesc = self.VM.promomotionListingArray[tappedIndexPath.row].proLongDesc ?? ""
-        vc.selectedShortDesc = self.VM.promomotionListingArray[tappedIndexPath.row].proShortDesc ?? ""
-        vc.selectedImage = self.VM.promomotionListingArray[tappedIndexPath.row].proImage ?? ""
-        self.navigationController?.pushViewController(vc, animated: true)
+        if cell.viewButton.tag == tappedIndexPath.row{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyPromotionDetailsVC") as! FG_MyPromotionDetailsVC
+            vc.promotionId = VM.promomotionListingArray[tappedIndexPath.row].promotionId ?? 0
+            vc.selectedTitle = self.VM.promomotionListingArray[tappedIndexPath.row].promotionName ?? ""
+            vc.selectedOfferId = "\(self.VM.promomotionListingArray[tappedIndexPath.row].promotionId ?? 0)"
+            vc.selectedLongDesc = self.VM.promomotionListingArray[tappedIndexPath.row].proLongDesc ?? ""
+            vc.selectedShortDesc = self.VM.promomotionListingArray[tappedIndexPath.row].proShortDesc ?? ""
+            vc.selectedImage = self.VM.promomotionListingArray[tappedIndexPath.row].proImage ?? ""
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+       
     }
     
 
@@ -63,17 +66,19 @@ extension FG_MyPromotionsVC: UITableViewDelegate, UITableViewDataSource{
         cell.selectionStyle = .none
         cell.delegate = self
         cell.promotionTitleLbl.text = VM.promomotionListingArray[indexPath.row].promotionName ?? ""
-        cell.priceValueLbl.text = "\(VM.promomotionListingArray[indexPath.row].pointBalance ?? 0)"
+        cell.priceValueLbl.isHidden = true
+        //cell.priceValueLbl.text = "\(VM.promomotionListingArray[indexPath.row].pointBalance ?? 0)"
         
+        cell.viewButton.tag = indexPath.row
         
         let imageURL = VM.promomotionListingArray[indexPath.row].proImage ?? ""
         print(imageURL)
         if imageURL != ""{
-            let filteredURLArray = imageURL.dropFirst(2)
-            let urltoUse = String(PROMO_IMG1 + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
+            let filteredURLArray = imageURL.dropFirst(3)
+            let urltoUse = String(Promo_ImageData + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
             let urlt = URL(string: "\(urltoUse)")
             print(urlt)
-            cell.promotionImage.kf.setImage(with: URL(string: "\(String(describing: urlt))"), placeholder: UIImage(named: "Asset 2"));
+            cell.promotionImage.kf.setImage(with: urlt, placeholder: UIImage(named: "Asset 2"));
            // self.productImag.kf.setImage(with: URL(string: "\(PROMO_IMG1)\(receivedImage)"), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"));
         }
         return cell
@@ -83,6 +88,8 @@ extension FG_MyPromotionsVC: UITableViewDelegate, UITableViewDataSource{
         return 180
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
         
     }
     

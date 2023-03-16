@@ -169,6 +169,8 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate, CheckB
                     let parseddata = try JSONDecoder().decode(TokenModels.self, from: data)
                         print(parseddata.access_token ?? "", "- Token")
                         UserDefaults.standard.setValue(parseddata.access_token ?? "", forKey: "TOKEN")
+                        UserDefaults.standard.set(true, forKey: "AfterLog")
+                        UserDefaults.standard.synchronize()
                   
                      }catch let parsingError {
                     print("Error", parsingError)

@@ -12,6 +12,7 @@ protocol SendOffersDetailsDelegate {
 
 class FG_MyPromotionsTVC: UITableViewCell {
 
+    @IBOutlet weak var viewButton: UIButton!
     @IBOutlet weak var priceValueLbl: UILabel!
     @IBOutlet weak var promotionTitleLbl: UILabel!
     @IBOutlet weak var promotionImage: UIImageView!
