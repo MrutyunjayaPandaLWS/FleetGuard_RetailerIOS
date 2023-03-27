@@ -54,6 +54,13 @@ class BaseViewController: UIViewController {
         return  dateFormatter.string(from: date!)
  
         }
+    func convertDateFormaterString(_ date: String, fromDate: String, toDate: String) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = fromDate
+            let date = dateFormatter.date(from: date)
+            dateFormatter.dateFormat = toDate
+        return  dateFormatter.string(from: date!)
+        }
     
        func startLoading(){
         DispatchQueue.main.async {

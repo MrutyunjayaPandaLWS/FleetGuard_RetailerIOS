@@ -202,8 +202,9 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
         cell.delegate = self
         cell.productName.text = self.VM.productListArray[indexPath.row].productName ?? ""
         cell.partNoLbl.text = self.VM.productListArray[indexPath.row].productCode ?? ""
-        cell.dapValue.text = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"
-        cell.mrpValue.text = "\(self.VM.productListArray[indexPath.row].mrp ?? "")"
+        cell.dapValue.text = "\(Int(self.VM.productListArray[indexPath.row].salePrice ?? 0))"
+        let splitData = "\(self.VM.productListArray[indexPath.row].mrp ?? "")".split(separator: ".")
+        cell.mrpValue.text = "\(splitData[0])"
         cell.productName.backgroundColor = .white
 //        vc.dap = "\(self.VM.productListArray[tappedIndexPath.row].salePrice ?? 0)"
 //        vc.mrp = "\(self.VM.productListArray[tappedIndexPath.row].mrp ?? "")"
@@ -225,8 +226,9 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
             vc.productName = self.VM.productListArray[indexPath.row].productName ?? ""
             vc.partNo = self.VM.productListArray[indexPath.row].productCode ?? ""
             vc.shortDesc = self.VM.productListArray[indexPath.row].productShortDesc ?? ""
-            vc.dap = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"
-            vc.mrp = "\(self.VM.productListArray[indexPath.row].mrp ?? "")"
+            vc.dap = "\(Int(self.VM.productListArray[indexPath.row].salePrice ?? 0))"
+            let splitData = "\(self.VM.productListArray[indexPath.row].mrp ?? "")".split(separator: ".")
+            vc.mrp = "\(splitData[0])"
             vc.productId = "\(self.VM.productListArray[indexPath.row].productId ?? 0)"
             vc.productDesc = "\(self.VM.productListArray[indexPath.row].productDesc ?? "")"
 //          vc.cateogryId = "\(self.VM.productListArray[tappedIndexPath.row].category ?? 0)"

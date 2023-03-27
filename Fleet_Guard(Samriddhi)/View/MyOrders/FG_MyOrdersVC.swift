@@ -17,6 +17,11 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
             self.selectedToDate = vc.selectedDate
             self.toDateBtn.setTitle("\(vc.selectedDate)", for: .normal)
         }
+        if selectedFromDate >= selectedToDate {
+            self.view.makeToast("Please enter to date less the from date", duration: 3.0, position: .bottom)
+        }else{
+            self.myOrderListingAPI(startInx: 1, orderStatusId: -1, fromDate: "\(selectedFromDate)", toDate: "\(selectedToDate)")
+        }
     }
     func declineDate(_ vc: FG_DOBVC) {
         self.dismiss(animated: true)
@@ -258,7 +263,7 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
         self.approvedBtn.backgroundColor = .white
     }
     
-    
+    //{"ActionType":18,"ActorId":72307,"JFromDate":"","PageIndex":1,"PageSize":20,"JToDate":"","OrderStatus":0,"ProductId":"1"}
     func myOrderListingAPI(startInx:Int, orderStatusId: Int, fromDate: String, toDate: String){
         let parameters = [
             "ActionType": 18,

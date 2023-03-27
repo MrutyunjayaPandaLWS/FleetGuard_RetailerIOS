@@ -193,6 +193,7 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
         collectionViewData = ""
         self.redemptionCategoryList()
         self.categoryListCollectionView.reloadData()
+        self.categoryTypeTableView.reloadData()
     }
     
     

@@ -8,6 +8,8 @@
 import UIKit
 
 class FG_MyBillingsVC: BaseViewController,myBillingsDelegate {
+    
+    
     func billingDelegate(_ cell: FG_MyBillingTVC) {
         guard let tappedIndexPath = self.myBillingsTableView.indexPath(for: cell) else{return}
         
@@ -49,10 +51,14 @@ class FG_MyBillingsVC: BaseViewController,myBillingsDelegate {
 //        self.VM.billingsListingAPI(parameters: parametets)
 //    }
     
+    //{"ActionType":22,"ActorId":72307,"ApprovalStatusID":-1,"JFromDate":"","JToDate":""}
         func billingsListingAPI() {
             let parametets = [
                 "ActionType": 22,
-                "ActorId": "\(userId)"
+                "ActorId": "\(userId)",
+                "ApprovalStatusID":-1,
+                "JFromDate":"",
+                "JToDate":""
             ] as [String: Any]
             print(parametets)
             self.VM.billingsListingAPI(parameters: parametets)

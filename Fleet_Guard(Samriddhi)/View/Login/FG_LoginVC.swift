@@ -91,9 +91,10 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate, CheckB
 //                self.present(vc!, animated: true, completion: nil)
                 self.view.makeToast("Enter mobile number", duration: 3.0, position: .bottom)
             }
-        }else if self.boolResult == false{
-            self.view.makeToast("Accept Terms and Conditions", duration: 3.0, position: .bottom)
         }
+//        else if self.boolResult == false{
+//            self.view.makeToast("Accept Terms and Conditions", duration: 3.0, position: .bottom)
+//        }
 //        else if self.mobileTF.text!.count != 10 {
 //            DispatchQueue.main.async{
 //               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC

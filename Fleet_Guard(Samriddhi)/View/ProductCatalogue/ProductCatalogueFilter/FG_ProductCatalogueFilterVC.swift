@@ -190,6 +190,8 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FG_Prod_CatalogueCVC", for: indexPath) as! FG_Prod_CatalogueCVC
         cell.titleLbl.text = VM.myfilterListingArray[indexPath.row].productName ?? ""
+        cell.titleLbl.borderColor = .black
+        cell.titleLbl.borderWidth = 1
         
 //        if self.catagoryId == 1{
 //            if indexPath.row == 0{

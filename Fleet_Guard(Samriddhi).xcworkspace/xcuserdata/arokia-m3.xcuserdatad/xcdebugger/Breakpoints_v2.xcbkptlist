@@ -135,80 +135,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "50E66A9C-BD74-4465-AF49-3E49574ABF2A"
+            uuid = "2FA1B4C9-97BA-4B4B-8F4A-B58006C7D9B4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/ProductCatalogue/ProductCatalogueFilter/FG_ProductCatalogueFilterVC.swift"
+            filePath = "Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "redemptionCatalogueListApi(startIndex:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E529A370-1107-46F0-B630-E3870E818B02"
+            uuid = "CF095BB3-0358-4731-916D-3A561DD92E9C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/ProductCatalogue/ProductCatalgoueList/FG_ProductCatalogueListVC.swift"
+            filePath = "Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "sendProductFilter(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4C79888C-9627-4E41-ABF2-6094EAE21435"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/ProductCatalogue/ProductCatalgoueList/FG_ProductCatalogueListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "sendProductFilter(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "00E7FB08-C737-410A-B83F-C21C0A6D4B3F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/ProductCatalogue/ProductCatalgoueList/FG_ProductCatalogueListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "sendProductFilter(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2725FF1F-6AD6-493E-92E4-86E2F453BB9F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/ProductCatalogue/ProductCatalgoueList/FG_ProductCatalogueListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "sendProductFilter(_:)"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "addToCartApi(catalogueId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

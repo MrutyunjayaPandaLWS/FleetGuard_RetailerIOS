@@ -41,7 +41,8 @@ class MyProfileDetailsVM: popUpDelegate{
                         self.VC?.pincodeLbl.text = result?.lstCustomerJson?[0].zip ?? "-"
                         self.VC?.preferredLanguageLbl.text = result?.lstCustomerJson?[0].languageName ?? "English"
                         let createdDate = (result?.lstCustomerJson?[0].jdob ?? "-").split(separator: " ")
-                        self.VC?.dobLbl.text = "\(createdDate[0])"
+                        let convertDateFormate = self.VC?.convertDateFormaterString("\(createdDate[0])", fromDate: "dd-MM-yyyy", toDate: "dd/MM/yyyy")
+                        self.VC?.dobLbl.text = "\(convertDateFormate ?? "")"
                         let profileDetails = result?.lstCustomerJson ?? []
                         let customerImage = "\(profileDetails[0].profilePicture ?? "")".dropFirst()
                         print(customerImage)
