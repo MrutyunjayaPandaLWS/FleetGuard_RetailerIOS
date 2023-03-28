@@ -81,7 +81,6 @@ class FG_DashBoardVC: BaseViewController {
         slideMenuController()?.changeLeftViewWidth(self.view.frame.size.width * 0.8)
         SlideMenuOptions.contentViewScale = 1
         self.tokendata()
-        self.pointsAPI()
         self.promotionBtn.isUserInteractionEnabled = true
         self.orderNowBtn.isUserInteractionEnabled = true
         self.redemptionCatalogueBtn.isUserInteractionEnabled = true
@@ -319,8 +318,7 @@ class FG_DashBoardVC: BaseViewController {
                     self.dashboardApi()
                     self.dashboardPointsApi()
                     self.productsCategoryListApi()
-                    
-                    
+                    self.pointsAPI()
                      }catch let parsingError {
                     print("Error", parsingError)
                 }

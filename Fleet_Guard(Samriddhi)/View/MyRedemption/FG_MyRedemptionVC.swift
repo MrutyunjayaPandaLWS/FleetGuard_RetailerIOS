@@ -110,6 +110,7 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
                 "SelectedStatus": "\(self.collectionViewCatagory)"
             ]
             ]as [String: Any]
+        print(parameter)
         self.VM.myRedemptionLists(parameters: parameter)
         }
     
@@ -222,9 +223,17 @@ extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource, UIColle
         //cell.refNoTitleLbl.text = "Ref.No"
         cell.refNoLbl.text = VM.myRedemptionList[indexPath.row].redemptionRefno
         cell.qtyLbl.text = "\(VM.myRedemptionList[indexPath.row].quantity ?? 0)"
+//        let date = (VM.myRedemptionList[indexPath.row].jRedemptionDate ?? "").split(separator: " ")
+//        cell.dateTitleLbl.text = "\(date[0])"
+//        cell.ptsLbl.text = "\(VM.myRedemptionList[indexPath.row].redeemedPoints ?? 0)"
+        
         let date = (VM.myRedemptionList[indexPath.row].jRedemptionDate ?? "").split(separator: " ")
-        cell.dateTitleLbl.text = "\(date[0])"
-        cell.ptsLbl.text = "\(VM.myRedemptionList[indexPath.row].redeemedPoints ?? 0)"
+        //let dateFormate = convertDateFormaterString("\(date[0])", fromDate: "MM-dd-yyyy", toDate: "dd/MM/yyyy")
+        let convertDateFormate = self.convertDateFormaterString("\(date[0])", fromDate: "MM-dd-yyyy", toDate: "dd/MM/yyyy")
+        cell.dateTitleLbl.text = "\(convertDateFormate)"
+        cell.ptsLbl.text = "\(Int(VM.myRedemptionList[indexPath.row].redeemedPoints ?? 0))"
+        
+        
         
         var statusDtata = VM.myRedemptionList[indexPath.row].status ?? 0
         //cell.statusLbl.setTitle("\(VM.myRedemptionList[indexPath.row].status ?? 0)", for: .normal)

@@ -98,7 +98,10 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
             "ActionType": "14",
             "ActorId": "\(userId)",
             "LoyaltyID": "\(loyaltyId)",
-            "ProductDetails": self.catagoryIDs
+            "ProductId":"1",
+            "StartIndex":"",
+            "PageSize":"",
+            "ProductDetails": self.catagoryIDs,
         ]as [String: Any]
         print(parameters)
         self.VM.filterProdListingAPI(parameters: parameters)
@@ -286,5 +289,17 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
         
         
     }
-    
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//            if indexPath.row == VM.redemptionCatalougeListArray.count - 2{
+//                if noofelements == 20{
+//                    self.startindex = startindex + 1
+//                    self.redemptionCatalogueListApi(startIndex: startindex)
+//                }else if noofelements < 20{
+//                    return
+//                }else{
+//                    print("n0 more elements")
+//                    return
+//                }
+//            }
+//        }
 }
