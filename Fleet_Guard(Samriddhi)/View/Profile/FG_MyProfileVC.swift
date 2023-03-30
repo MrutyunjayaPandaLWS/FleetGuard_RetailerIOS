@@ -54,6 +54,7 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     @IBOutlet weak var pincodeLbl: UILabel!
     @IBOutlet weak var preferredLanguageLbl: UILabel!
     
+    @IBOutlet var genderLbl: UILabel!
     var VM = MyProfileDetailsVM()
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""

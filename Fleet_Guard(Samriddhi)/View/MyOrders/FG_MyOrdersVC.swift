@@ -71,6 +71,7 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
     var selectedFromDate = ""
     var selectedToDate = ""
     var status = 0
+    var searchText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -165,8 +166,9 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
         self.present(vc!, animated: true, completion: nil)
     }
     
-    @IBAction func approvedButton(_ sender: Any) {
+    @IBAction func PendingBTNAct(_ sender: Any) {
         self.status = 3
+        self.searchText = "Pending"
         self.approvedBtn.setTitleColor(.white, for: .normal)
         self.pendingBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
         self.rejectedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
@@ -182,8 +184,9 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
         
     }
     
-    @IBAction func pendingButton(_ sender: Any) {
+    @IBAction func fulfilledBTN(_ sender: Any) {
         self.status = 1
+        self.searchText = "Fulfiled"
         self.pendingBtn.setTitleColor(.white, for: .normal)
         self.approvedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
         self.rejectedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
@@ -198,7 +201,8 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
         self.postedForApprovalBtn.backgroundColor = .white
     }
     
-    @IBAction func rejectedButton(_ sender: Any) {
+    @IBAction func cancelActBTN(_ sender: Any) {
+        self.searchText = "Cancelled"
         self.rejectedBtn.setTitleColor(.white, for: .normal)
         self.pendingBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
         self.approvedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
@@ -214,6 +218,7 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
     }
     
     @IBAction func escalatedButton(_ sender: Any) {
+        self.searchText = "Partially Fulfilled"
         self.escalatedBtn.setTitleColor(.white, for: .normal)
         self.pendingBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
         self.rejectedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
@@ -230,38 +235,38 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
         self.postedForApprovalBtn.backgroundColor = .white
     }
     
-    @IBAction func cancelledButton(_ sender: Any) {
-        self.cancelledBtn.setTitleColor(.white, for: .normal)
-        self.pendingBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
-        self.rejectedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
-        self.escalatedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
-        self.approvedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
-        self.postedForApprovalBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
-        
-        self.cancelledBtn.backgroundColor = #colorLiteral(red: 0.7769741416, green: 0.6255683899, blue: 0.3665126264, alpha: 1)
-        self.pendingBtn.backgroundColor = .white
-        self.rejectedBtn.backgroundColor = .white
-        self.escalatedBtn.backgroundColor = .white
-        self.approvedBtn.backgroundColor = .white
-        self.postedForApprovalBtn.backgroundColor = .white
-    }
-    
-    @IBAction func postedForApprovalButton(_ sender: Any) {
-        self.postedForApprovalBtn.setTitleColor(.white, for: .normal)
-        self.pendingBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
-        self.rejectedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
-        self.escalatedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
-        self.cancelledBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
-        self.approvedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
-        
-        
-        self.postedForApprovalBtn.backgroundColor = #colorLiteral(red: 0.7769741416, green: 0.6255683899, blue: 0.3665126264, alpha: 1)
-        self.pendingBtn.backgroundColor = .white
-        self.rejectedBtn.backgroundColor = .white
-        self.escalatedBtn.backgroundColor = .white
-        self.cancelledBtn.backgroundColor = .white
-        self.approvedBtn.backgroundColor = .white
-    }
+//    @IBAction func cancelledButton(_ sender: Any) {
+//        self.cancelledBtn.setTitleColor(.white, for: .normal)
+//        self.pendingBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
+//        self.rejectedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
+//        self.escalatedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
+//        self.approvedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
+//        self.postedForApprovalBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
+//
+//        self.cancelledBtn.backgroundColor = #colorLiteral(red: 0.7769741416, green: 0.6255683899, blue: 0.3665126264, alpha: 1)
+//        self.pendingBtn.backgroundColor = .white
+//        self.rejectedBtn.backgroundColor = .white
+//        self.escalatedBtn.backgroundColor = .white
+//        self.approvedBtn.backgroundColor = .white
+//        self.postedForApprovalBtn.backgroundColor = .white
+//    }
+//
+//    @IBAction func postedForApprovalButton(_ sender: Any) {
+//        self.postedForApprovalBtn.setTitleColor(.white, for: .normal)
+//        self.pendingBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
+//        self.rejectedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
+//        self.escalatedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
+//        self.cancelledBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
+//        self.approvedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
+//
+//
+//        self.postedForApprovalBtn.backgroundColor = #colorLiteral(red: 0.7769741416, green: 0.6255683899, blue: 0.3665126264, alpha: 1)
+//        self.pendingBtn.backgroundColor = .white
+//        self.rejectedBtn.backgroundColor = .white
+//        self.escalatedBtn.backgroundColor = .white
+//        self.cancelledBtn.backgroundColor = .white
+//        self.approvedBtn.backgroundColor = .white
+//    }
     
     //{"ActionType":18,"ActorId":72307,"JFromDate":"","PageIndex":1,"PageSize":20,"JToDate":"","OrderStatus":0,"ProductId":"1"}
     func myOrderListingAPI(startInx:Int, orderStatusId: Int, fromDate: String, toDate: String){
@@ -272,7 +277,9 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
             "JFromDate": fromDate,
             "JToDate": toDate,
             "PageIndex": "\(startInx)",
-            "PageSize": 20
+            "PageSize": 20,
+            "searchText":"\(self.searchText)"
+            
         ] as [String: Any]
         print(parameters)
         self.VM.myOrderListingAPI(parameters: parameters)
@@ -314,6 +321,7 @@ extension FG_MyOrdersVC: UITableViewDelegate, UITableViewDataSource{
         
         return  cell
     }
+    
     
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 40

@@ -135,7 +135,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
                 "HelpTopic": "\(self.selectedTopic)",
                 "HelpTopicID": "\(self.selectedTopicId)",
                 "QueryDetails": "\(self.queryDetailsView.text!)",
-                "QuerySummary": "",
+                "QuerySummary": "\(self.queryDetailsView.text!)",
                 "ImageUrl": "\(self.strBase64)",
                 "LoyaltyID": "\(self.loyaltyId)",
                 "SourceType": "1",

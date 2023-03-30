@@ -26,6 +26,9 @@ struct PointBalenceModels : Codable {
 	let objCatalogueDetailsForCustomer : String?
 	let activeStatus : Bool?
 	let objProductList : String?
+	let sessionID : String?
+	let deviceID : String?
+	let loggedDeviceName : String?
 	let returnValue : Int?
 	let returnMessage : String?
 	let totalRecords : Int?
@@ -45,6 +48,9 @@ struct PointBalenceModels : Codable {
 		case objCatalogueDetailsForCustomer = "objCatalogueDetailsForCustomer"
 		case activeStatus = "activeStatus"
 		case objProductList = "objProductList"
+		case sessionID = "sessionID"
+		case deviceID = "deviceID"
+		case loggedDeviceName = "loggedDeviceName"
 		case returnValue = "returnValue"
 		case returnMessage = "returnMessage"
 		case totalRecords = "totalRecords"
@@ -65,6 +71,9 @@ struct PointBalenceModels : Codable {
 		objCatalogueDetailsForCustomer = try values.decodeIfPresent(String.self, forKey: .objCatalogueDetailsForCustomer)
 		activeStatus = try values.decodeIfPresent(Bool.self, forKey: .activeStatus)
 		objProductList = try values.decodeIfPresent(String.self, forKey: .objProductList)
+		sessionID = try values.decodeIfPresent(String.self, forKey: .sessionID)
+		deviceID = try values.decodeIfPresent(String.self, forKey: .deviceID)
+		loggedDeviceName = try values.decodeIfPresent(String.self, forKey: .loggedDeviceName)
 		returnValue = try values.decodeIfPresent(Int.self, forKey: .returnValue)
 		returnMessage = try values.decodeIfPresent(String.self, forKey: .returnMessage)
 		totalRecords = try values.decodeIfPresent(Int.self, forKey: .totalRecords)

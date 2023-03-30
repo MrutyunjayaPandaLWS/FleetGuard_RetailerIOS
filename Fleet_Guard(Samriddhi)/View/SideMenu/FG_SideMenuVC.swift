@@ -25,6 +25,7 @@ class FG_SideMenuVC: BaseViewController {
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     var userSince = UserDefaults.standard.string(forKey: "MemberSince") ?? "-"
     var VM = FG_DashboardVM()
+    var pointBalence = [ObjCustomerDashboardList11]()
     
 //    UserDefaults.standard.set(result?.objCustomerDashboardList?[0].redeemablePointsBalance, forKey: "redeemablePointsBalance")
 //    self.VC?.totalValue.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
@@ -47,7 +48,9 @@ class FG_SideMenuVC: BaseViewController {
         print(CGFloat(sideMenuArray.count * 50))
         self.sideMenuTableHeight.constant = 700
         self.sinceLbl.text = "Since \(userSince)"
+        self.passbookNum.text = "Retailer code"
         dashboardApi()
+        pointsAPI()
     }
     
     
@@ -66,12 +69,47 @@ class FG_SideMenuVC: BaseViewController {
                     if dashboardDetails.count != 0 {
                         self.userNameLbl.text = result?.lstCustomerFeedBackJsonApi?[0].firstName ?? "-"
                         self.passbookNumber.text = result?.lstCustomerFeedBackJsonApi?[0].loyaltyId ?? "-"
-                        self.totalBalance.text = "\(self.totalEarnedPoints)"
+                        //self.totalBalance.text = "\(self.totalEarnedPoints)"
                     
                         let imageData = (result?.lstCustomerFeedBackJsonApi?[0].customerImage)?.dropFirst(1) ?? ""
                         self.profileImage.kf.setImage(with: URL(string: "\(Promo_ImageData)\(imageData)"), placeholder: UIImage(named: "ic_default_img"));
                     }
                     self.stopLoading()
+                }
+                }else{
+                    DispatchQueue.main.async {
+                    self.stopLoading()
+                    }
+                }
+            }else{
+                DispatchQueue.main.async {
+                self.stopLoading()
+                }
+            }
+        }
+        
+    }
+    func pointsAPI(){
+        UserDefaults.standard.set(false, forKey: "AfterLog")
+        UserDefaults.standard.synchronize()
+        let parameters = [
+              "ActionType": "1",
+              "LoyaltyId": "\(loyaltyId)"
+        ] as [String: Any]
+        print(parameters)
+        self.requestApis.pointBalenceAPI(parameters: parameters) { (result, error) in
+            if error == nil{
+                if result != nil{
+                DispatchQueue.main.async {
+                    self.stopLoading()
+                    self.pointBalence = result?.objCustomerDashboardList ?? []
+                    
+                    if result?.objCustomerDashboardList?.count != 0 {
+                        self.totalBalance.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
+                        UserDefaults.standard.set(true, forKey: "AfterLog")
+                        UserDefaults.standard.synchronize()
+                    }
+                   
                 }
                 }else{
                     DispatchQueue.main.async {

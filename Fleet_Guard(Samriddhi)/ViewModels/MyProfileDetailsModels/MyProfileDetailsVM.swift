@@ -43,9 +43,11 @@ class MyProfileDetailsVM: popUpDelegate{
                         let createdDate = (result?.lstCustomerJson?[0].jdob ?? "-").split(separator: " ")
                         let convertDateFormate = self.VC?.convertDateFormaterString("\(createdDate[0])", fromDate: "dd-MM-yyyy", toDate: "dd/MM/yyyy")
                         self.VC?.dobLbl.text = "\(convertDateFormate ?? "")"
+                        self.VC?.genderLbl.text = result?.lstCustomerJson?[0].gender ?? ""
                         let profileDetails = result?.lstCustomerJson ?? []
                         let customerImage = "\(profileDetails[0].profilePicture ?? "")".dropFirst()
                         print(customerImage)
+                        
                         self.VC?.profileImage.kf.setImage(with: URL(string: "\(Promo_ImageData)\(customerImage)"), placeholder: UIImage(named: "ic_default_img"));
                     }
                 } else {

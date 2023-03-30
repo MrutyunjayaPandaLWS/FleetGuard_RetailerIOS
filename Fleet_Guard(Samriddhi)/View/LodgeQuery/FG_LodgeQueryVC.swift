@@ -255,9 +255,11 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     let querydateAndTime = VM.queryListArray[indexPath.row].jCreatedDate ?? ""
     let querydateAndTimeArray = querydateAndTime.components(separatedBy: " ")
-    cell.dateLbl.text = "\(querydateAndTimeArray[0])"
+    let convertDateFormate = self.convertDateFormaterString(querydateAndTimeArray[0], fromDate: "MM/dd/yyyy", toDate: "dd/MM/yyyy")
+    cell.dateLbl.text = "\(convertDateFormate)"
     
     cell.queryInfoLbl.text = VM.queryListArray[indexPath.row].helpTopic ?? "-"
+    
     cell.timeLbl.text = "\(querydateAndTimeArray[1])"
     
     if cell.statusLbl.text == "Pending"{

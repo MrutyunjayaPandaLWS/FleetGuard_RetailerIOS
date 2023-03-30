@@ -49,17 +49,34 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     @IBOutlet weak var noDataFoundLbl: UILabel!
     
     @IBOutlet var collectionView: UICollectionView!
+    
     var itsFrom = ""
     var status = "-1"
     var selectedFromDate = ""
     var selectedToDate = ""
     var collectionViewCatagory = ""
+    var collectionViewDataNumber = ""
     
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     
     var VM = MyRedemptionListingVM()
     var collectionData:[String] = ["Pending","Processed","Rejected","Vendor Alloted","Return Pickup Schedule","Cancelled","Vendor Rejected","Dispatched","Re-Dispatched","Delivery Confirmed","InTransit","Return Request","Picked-Up"]
+    var addingData = ["0","2","5","2","21","17","15","10","8","19","24","20","22"]
+    
+    //        pending = 0
+    //        processed = 2
+    //        rejected = 5
+    //        vendorAlloted = 2
+    //        returnPickupSchedule =21
+    //        cancelled = 17
+    //        vendorRejected = 15
+    //        dispatched = 10
+    //        deliveryConfirmed = 19
+    //        inTransit =24
+    //        returnRequest = 20
+    //        pickedUp = 22
+    //        reDispatched = 8
     
 
     override func viewDidLoad() {
@@ -107,7 +124,7 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
             "ObjCatalogueDetails": [
                 "JFromDate": "\(selectedFromDate)",
                 "JToDate": "\(selectedToDate)",
-                "SelectedStatus": "\(self.collectionViewCatagory)"
+                "SelectedStatus": "\(self.collectionViewDataNumber)"
             ]
             ]as [String: Any]
         print(parameter)
@@ -196,6 +213,7 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
         print(selectedToDate,"lskdjsldm")
         self.filterView.isHidden = true
         self.collectionViewCatagory
+        self.collectionViewDataNumber
         self.myRedemptionListing()
         
     }
@@ -288,7 +306,24 @@ extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource, UIColle
 //    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.collectionViewCatagory = self.collectionData[indexPath.row]
+        self.collectionViewDataNumber = self.addingData[indexPath.row]
         print(self.collectionViewCatagory,"sdlkdhskdjh")
+        print(self.collectionViewDataNumber,"lxkjdlsm")
+
+//        pending = 0
+//        processed = 2
+//        rejected = 5
+//        vendorAlloted = 2
+//        returnPickupSchedule =21
+//        cancelled = 17
+//        vendorRejected = 15
+//        dispatched = 10
+//        deliveryConfirmed = 19
+//        inTransit =24
+//        returnRequest = 20
+//        pickedUp = 22
+//        reDispatched = 8
+        
     }
     
 }
