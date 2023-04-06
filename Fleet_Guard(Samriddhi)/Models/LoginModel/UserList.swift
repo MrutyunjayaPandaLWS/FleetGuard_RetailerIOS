@@ -56,6 +56,9 @@ struct UserList : Codable {
 	let isOnHold : Int?
 	let language : String?
 	let isDelete : Int?
+	let languageId : Int?
+	let sapCode : String?
+	let parentCustomerTypeId : Int?
 	let userId : Int?
 	let name : String?
 	let status : String?
@@ -109,6 +112,9 @@ struct UserList : Codable {
 		case isOnHold = "isOnHold"
 		case language = "language"
 		case isDelete = "isDelete"
+		case languageId = "languageId"
+		case sapCode = "sapCode"
+		case parentCustomerTypeId = "parentCustomerTypeId"
 		case userId = "userId"
 		case name = "name"
 		case status = "status"
@@ -163,6 +169,9 @@ struct UserList : Codable {
 		isOnHold = try values.decodeIfPresent(Int.self, forKey: .isOnHold)
 		language = try values.decodeIfPresent(String.self, forKey: .language)
 		isDelete = try values.decodeIfPresent(Int.self, forKey: .isDelete)
+		languageId = try values.decodeIfPresent(Int.self, forKey: .languageId)
+		sapCode = try values.decodeIfPresent(String.self, forKey: .sapCode)
+		parentCustomerTypeId = try values.decodeIfPresent(Int.self, forKey: .parentCustomerTypeId)
 		userId = try values.decodeIfPresent(Int.self, forKey: .userId)
 		name = try values.decodeIfPresent(String.self, forKey: .name)
 		status = try values.decodeIfPresent(String.self, forKey: .status)

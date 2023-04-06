@@ -30,7 +30,7 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
     var enterMobileNumber = ""
     var txtOTPView: DPOTPView!
     var enteredValue = ""
-    var receivedOTP = "123456"
+    var receivedOTP = "1234"
     var VM = FG_LoginOTPVM()
     var deviceID = ""
     
@@ -87,7 +87,7 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
 //                self.present(vc!, animated: true, completion: nil)
                 self.view.makeToast("Enter OTP", duration: 3.0, position: .bottom)
             }
-        }else if self.enteredValue.count != 6 {
+        }else if self.enteredValue.count != 4 {
             DispatchQueue.main.async{
 //               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                vc!.delegate = self
@@ -97,10 +97,11 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
 //                self.present(vc!, animated: true, completion: nil)
                 self.view.makeToast("Enter valid OTP", duration: 3.0, position: .bottom)
             }
-        }else if self.enteredValue.count == 6{
+        }else if self.enteredValue.count == 4{
             print(self.enteredValue)
             print(self.receivedOTP)
             if self.enteredValue == self.receivedOTP{
+          //  if self.enteredValue == self.VM.otpVerify{
                 DispatchQueue.main.async{
                     self.loginSubmissionApi()
                 }
@@ -157,8 +158,8 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
             "Password": "123456",
             "UserName": "\(self.enterMobileNumber)",
             "UserActionType": "GetPasswordDetails",
-            "Browser": "iOS",
-            "LoggedDeviceName": "iOS",
+            "Browser": "IOS",
+            "LoggedDeviceName": "IOS",
             "PushID": "\(pushID)",
             "UserType": "Customer",
             "LoggedDeviceID": "\(deviceID)"

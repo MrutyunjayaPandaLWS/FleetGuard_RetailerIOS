@@ -61,7 +61,7 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
         filterView.clipsToBounds = true
         filterView.layer.cornerRadius = 20
         filterView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
+        self.backBtn.isHidden = false
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

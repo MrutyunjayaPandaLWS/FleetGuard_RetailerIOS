@@ -79,11 +79,11 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
     }
     @IBAction func addToCartButton(_ sender: Any) {
         if self.addToCartView.isHidden == false{
-            self.productQuantityView.isHidden = false
-            self.addToCartView.isHidden = true
             print(Int(self.totalPoints))
             print((self.mrp))
-            if Int(self.mrp ) ?? 0 <= Int(self.totalPoints )!{
+           // if Int(self.mrp ) ?? 0 <= Int(self.totalPoints ) ?? 0{
+                self.productQuantityView.isHidden = false
+                self.addToCartView.isHidden = true
                 let parameter = [
                     "ActionType": "3",
                     "ActorId": "\(self.userId)",
@@ -99,17 +99,11 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
                 ] as [String: Any]
                 print(parameter)
                 self.VM.addToCartApi(parameter: parameter)
-            }else{
-//                DispatchQueue.main.async{
-//                   let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                    vc!.delegate = self
-//                    vc!.descriptionInfo = "Insufficient point balance"
-//                    vc!.modalPresentationStyle = .overFullScreen
-//                    vc!.modalTransitionStyle = .crossDissolve
-//                    self.present(vc!, animated: true, completion: nil)
-//                }
-                self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
-            }
+          //  }else{
+//                self.addToCartView.isHidden = false
+//                self.productQuantityView.isHidden = true
+//                self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
+//            }
         }
         
     }

@@ -17,6 +17,8 @@
 		251F0B84299F4F7B00E2881A /* PromotionsApiVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251F0B83299F4F7B00E2881A /* PromotionsApiVM.swift */; };
 		251F0B8D299F67A600E2881A /* fleetguard-retailer-t&c.html in Resources */ = {isa = PBXBuildFile; fileRef = 251F0B8C299F67A600E2881A /* fleetguard-retailer-t&c.html */; };
 		251F0B8F299F67B600E2881A /* fleetguard-retailer-faq.html in Resources */ = {isa = PBXBuildFile; fileRef = 251F0B8E299F67B600E2881A /* fleetguard-retailer-faq.html */; };
+		252AC5CF29DAA1A700E6D139 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252AC5CD29DAA1A600E6D139 /* LoginModel.swift */; };
+		252AC5D029DAA1A700E6D139 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252AC5CE29DAA1A700E6D139 /* UserList.swift */; };
 		2547607B29AA1A9A00B5186E /* RedemptionCatalogeDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2547607A29AA1A9A00B5186E /* RedemptionCatalogeDetailsVM.swift */; };
 		254D8AE6299F7E7400CBBBDE /* MileStoneRedemptionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254D8AE5299F7E7400CBBBDE /* MileStoneRedemptionVM.swift */; };
 		254D8AE9299F9A1C00CBBBDE /* MyEarningsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254D8AE8299F9A1C00CBBBDE /* MyEarningsVM.swift */; };
@@ -235,8 +237,6 @@
 		848B4B7B298E698500315D77 /* FG_DOBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B4B7A298E698500315D77 /* FG_DOBVC.swift */; };
 		849D34EB298A5EF5005A41FC /* FG_LoginOTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D34EA298A5EF5005A41FC /* FG_LoginOTPVC.swift */; };
 		849D34EF298A65B0005A41FC /* FG_LoginOTPVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D34EE298A65B0005A41FC /* FG_LoginOTPVM.swift */; };
-		849D34F7298A77BE005A41FC /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D34F5298A77BE005A41FC /* LoginModel.swift */; };
-		849D34F8298A77BE005A41FC /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D34F6298A77BE005A41FC /* UserList.swift */; };
 		849D34FB298A8105005A41FC /* FG_DashboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D34FA298A8105005A41FC /* FG_DashboardVM.swift */; };
 		849D350A298A8C93005A41FC /* ObjCustomerDashboardList1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D3508298A8C92005A41FC /* ObjCustomerDashboardList1.swift */; };
 		849D350B298A8C93005A41FC /* DashboardTotalPointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D3509298A8C93005A41FC /* DashboardTotalPointsModel.swift */; };
@@ -322,6 +322,8 @@
 		251F0B83299F4F7B00E2881A /* PromotionsApiVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsApiVM.swift; sourceTree = "<group>"; };
 		251F0B8C299F67A600E2881A /* fleetguard-retailer-t&c.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-t&c.html"; sourceTree = "<group>"; };
 		251F0B8E299F67B600E2881A /* fleetguard-retailer-faq.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-faq.html"; sourceTree = "<group>"; };
+		252AC5CD29DAA1A600E6D139 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		252AC5CE29DAA1A700E6D139 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		2547607A29AA1A9A00B5186E /* RedemptionCatalogeDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionCatalogeDetailsVM.swift; sourceTree = "<group>"; };
 		254D8AE5299F7E7400CBBBDE /* MileStoneRedemptionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileStoneRedemptionVM.swift; sourceTree = "<group>"; };
 		254D8AE8299F9A1C00CBBBDE /* MyEarningsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEarningsVM.swift; sourceTree = "<group>"; };
@@ -545,8 +547,6 @@
 		849D34EA298A5EF5005A41FC /* FG_LoginOTPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_LoginOTPVC.swift; sourceTree = "<group>"; };
 		849D34ED298A5F24005A41FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		849D34EE298A65B0005A41FC /* FG_LoginOTPVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_LoginOTPVM.swift; sourceTree = "<group>"; };
-		849D34F5298A77BE005A41FC /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		849D34F6298A77BE005A41FC /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		849D34FA298A8105005A41FC /* FG_DashboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_DashboardVM.swift; sourceTree = "<group>"; };
 		849D3508298A8C92005A41FC /* ObjCustomerDashboardList1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCustomerDashboardList1.swift; sourceTree = "<group>"; };
 		849D3509298A8C93005A41FC /* DashboardTotalPointsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTotalPointsModel.swift; sourceTree = "<group>"; };
@@ -1953,8 +1953,8 @@
 		849D34F0298A7485005A41FC /* LoginModel */ = {
 			isa = PBXGroup;
 			children = (
-				849D34F5298A77BE005A41FC /* LoginModel.swift */,
-				849D34F6298A77BE005A41FC /* UserList.swift */,
+				252AC5CD29DAA1A600E6D139 /* LoginModel.swift */,
+				252AC5CE29DAA1A700E6D139 /* UserList.swift */,
 			);
 			path = LoginModel;
 			sourceTree = "<group>";
@@ -2618,7 +2618,6 @@
 				842326CB2980080400DF7325 /* FG_ProductCatalogueDetailsVC.swift in Sources */,
 				84662007298145E800D28026 /* FG_MyBillingTVC.swift in Sources */,
 				849D350A298A8C93005A41FC /* ObjCustomerDashboardList1.swift in Sources */,
-				849D34F7298A77BE005A41FC /* LoginModel.swift in Sources */,
 				251F0B80299F4F2E00E2881A /* LstPromotionUserActionDetails.swift in Sources */,
 				25BB2A2129BCB0F400269FD2 /* ObjImageGalleryList.swift in Sources */,
 				2593083629A76D1D009A2FBA /* EditProfileVM.swift in Sources */,
@@ -2686,6 +2685,7 @@
 				84FBC3EB2979644D0061ABAE /* FG_MyMilestoneRedemptionTVC.swift in Sources */,
 				254D8AF1299FA33C00CBBBDE /* MyBillingVM.swift in Sources */,
 				2576D41129D30657000B2502 /* PointBalenceModels.swift in Sources */,
+				252AC5CF29DAA1A700E6D139 /* LoginModel.swift in Sources */,
 				84068DA02976649D00D4360F /* GrandientExtension.swift in Sources */,
 				25A760B729ACE0DE00FF5C0E /* LstCustomerCart.swift in Sources */,
 				842326D129800CB000DF7325 /* FG_ProductCatalogueListTVC.swift in Sources */,
@@ -2698,11 +2698,11 @@
 				25C865E029A7237F00C1801E /* ChatListViewController.swift in Sources */,
 				84FBC3F529796E350061ABAE /* FG_MarketGapVC.swift in Sources */,
 				845425A7297817DA002A86D1 /* FG_MyRedemptionTVC.swift in Sources */,
-				849D34F8298A77BE005A41FC /* UserList.swift in Sources */,
 				25C465E329A8EA6200CCA30C /* RPLStatementViewModels.swift in Sources */,
 				25D88FCA29A9C59E002815A7 /* PromotionListingModels.swift in Sources */,
 				25C865E529A7237F00C1801E /* otherImageTableViewCell.swift in Sources */,
 				842326BA297FFA6A00DF7325 /* FG_EditAddressVC.swift in Sources */,
+				252AC5D029DAA1A700E6D139 /* UserList.swift in Sources */,
 				8488E40E298A25BF0032A2D7 /* ApiUrls.swift in Sources */,
 				84662003298138B500D28026 /* FG_StatementTVC.swift in Sources */,
 				251F0B81299F4F2E00E2881A /* PromotionsModels.swift in Sources */,

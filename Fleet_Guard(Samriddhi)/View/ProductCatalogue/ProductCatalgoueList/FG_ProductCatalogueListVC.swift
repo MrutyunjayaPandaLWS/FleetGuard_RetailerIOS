@@ -11,27 +11,32 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     func sendProductFilter(_ vc: FG_ProductCatalogueFilterVC) {
         self.VM.productsArray.removeAll()
         self.VM.productListArray.removeAll()
-        if vc.catagoryId == 1{
-            self.categoryId = vc.selectedArrayDataID
-            self.categoryId1 = 0
-            self.categoryId2 = 0
-            self.categoryId3 = 0
-        }else if vc.catagoryId1 == 2{
-            self.categoryId = 0
-            self.categoryId2 = 0
-            self.categoryId3 = 0
-            self.categoryId1 = vc.selectedArrayDataID
-        }else if vc.catagoryId2 == 3{
-            self.categoryId = 0
-            self.categoryId1 = 0
-            self.categoryId3 = 0
-            self.categoryId2 = vc.selectedArrayDataID
-        }else if vc.catagoryId3 == 4{
-            self.categoryId = 0
-            self.categoryId1 = 0
-            self.categoryId2 = 0
-            self.categoryId3 = vc.selectedArrayDataID
-        }
+        
+        
+        self.categoryId = vc.selectedArrayDataID
+        self.categoryId1 = vc.selectedArrayDataID2
+        self.categoryId2 = vc.selectedArrayDataID3
+        self.categoryId3 = vc.selectedArrayDataID4
+        //if vc.selectedArrayDataID != 0{
+//            self.categoryId1 = 0
+//            self.categoryId2 = 0
+//            self.categoryId3 = 0
+//        }else if vc.selectedArrayDataID2 != 0{
+//            self.categoryId = 0
+//            self.categoryId2 = 0
+//            self.categoryId3 = 0
+            
+//        }else if vc.selectedArrayDataID3 != 0{
+//            self.categoryId = 0
+//            self.categoryId1 = 0
+//            self.categoryId3 = 0
+            
+//        }else if vc.selectedArrayDataID4 != 0{
+//            self.categoryId = 0
+//            self.categoryId1 = 0
+//            self.categoryId2 = 0
+           
+//        }
         self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
     }
   
@@ -59,6 +64,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
         super.viewDidLoad()
         self.stopLoading()
         self.VM.VC = self
+        //self.searchTF.delegate = self
         productCatalgoueTableView.delegate = self
         productCatalgoueTableView.dataSource = self
         self.subView.clipsToBounds = true
@@ -78,6 +84,10 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     @IBAction func filterButton(_ sender: Any) {
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueFilterVC") as! FG_ProductCatalogueFilterVC
         vc.delegate = self
+        vc.selectedArrayDataID2 = 0
+        vc.selectedArrayDataID = 0
+        vc.selectedArrayDataID3 = 0
+        vc.selectedArrayDataID4 = 0
         vc.modalTransitionStyle = .coverVertical
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true)
@@ -110,6 +120,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
                         "SkuMinPrice": 0
                     ]
         ] as [String: Any]
+        
         print(parameter)
         self.VM.productListApi(parameter: parameter)
     }
@@ -138,7 +149,8 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
             vc.partNo = self.VM.productListArray[tappedIndexPath.row].productCode ?? ""
             vc.shortDesc = self.VM.productListArray[tappedIndexPath.row].productShortDesc ?? ""
             vc.dap = "\(self.VM.productListArray[tappedIndexPath.row].salePrice ?? 0)"
-            vc.mrp = "\(self.VM.productListArray[tappedIndexPath.row].mrp ?? "")"
+            let splitData = "\(self.VM.productListArray[tappedIndexPath.row].mrp ?? "")".split(separator: ".")
+            vc.mrp = "\(splitData[0])"
             vc.productId = "\(self.VM.productListArray[tappedIndexPath.row].productId ?? 0)"
             vc.productDesc = "\(self.VM.productListArray[tappedIndexPath.row].productDesc ?? "")"
 //            vc.cateogryId = "\(self.VM.productListArray[tappedIndexPath.row].category ?? 0)"
@@ -154,7 +166,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
         
         if self.searchTF.text!.count != 0 || self.searchTF.text ?? "" != ""{
             if self.VM.productListArray.count > 0 {
-                let arr = self.VM.productListArray.filter{ ($0.productName!.localizedCaseInsensitiveContains(self.searchTF.text!))}
+                let arr = self.VM.productListArray.filter{ ($0.productName!.localizedCaseInsensitiveContains(self.searchTF.text!)) || ($0.productCode!.localizedCaseInsensitiveContains(self.searchTF.text!))}
                 print(arr.count,"skdjhkdsjh")
                 if self.searchTF.text! != ""{
                     if arr.count > 0 {
@@ -202,7 +214,7 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
         cell.delegate = self
         cell.productName.text = self.VM.productListArray[indexPath.row].productName ?? ""
         cell.partNoLbl.text = self.VM.productListArray[indexPath.row].productCode ?? ""
-        cell.dapValue.text = "\(Int(self.VM.productListArray[indexPath.row].salePrice ?? 0))"
+        cell.dapValue.text = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"
         let splitData = "\(self.VM.productListArray[indexPath.row].mrp ?? "")".split(separator: ".")
         cell.mrpValue.text = "\(splitData[0])"
         cell.productName.backgroundColor = .white
@@ -226,7 +238,7 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
             vc.productName = self.VM.productListArray[indexPath.row].productName ?? ""
             vc.partNo = self.VM.productListArray[indexPath.row].productCode ?? ""
             vc.shortDesc = self.VM.productListArray[indexPath.row].productShortDesc ?? ""
-            vc.dap = "\(Int(self.VM.productListArray[indexPath.row].salePrice ?? 0))"
+            vc.dap = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"
             let splitData = "\(self.VM.productListArray[indexPath.row].mrp ?? "")".split(separator: ".")
             vc.mrp = "\(splitData[0])"
             vc.productId = "\(self.VM.productListArray[indexPath.row].productId ?? 0)"

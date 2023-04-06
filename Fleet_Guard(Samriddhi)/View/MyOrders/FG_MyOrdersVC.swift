@@ -309,8 +309,8 @@ extension FG_MyOrdersVC: UITableViewDelegate, UITableViewDataSource{
         cell.myOrderLbl.text = "\(VM.myOrderListingArray[indexPath.row].orderNo ?? "")"
         let date = VM.myOrderListingArray[indexPath.row].orderDate ?? "-"
         let splitDate = date.split(separator: " ")
-        cell.orderDateLbl.text = getRequiredDate(fromFormate: "MM/dd/yyyy", toFormate: "dd-MM-yyyy", dateString:"\(splitDate[0])")
-        
+        //cell.orderDateLbl.text = getRequiredDate(fromFormate: "MM/dd/yyyy", toFormate: "dd-MM-yyyy", dateString:"\(splitDate[0])")
+        cell.orderDateLbl.text = "\(splitDate[0])"
         if (indexPath.row) % 2 == 0{
             cell.orderIndexStackView.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 1)
         }else{

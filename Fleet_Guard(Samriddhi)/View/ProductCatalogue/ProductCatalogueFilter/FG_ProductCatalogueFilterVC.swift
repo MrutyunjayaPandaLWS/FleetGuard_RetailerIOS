@@ -34,7 +34,13 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
     var catgoryFilter = ""
     var selectedArrayData = ""
     var selectedArrayDataID = 0
+    var passingProductId = 1
+    var selectedArrayDataID2 = 0
+    var selectedArrayDataID3 = 0
+    var selectedArrayDataID4 = 0
     
+//    var noofelements = 0
+//    var startindex = 0
     var delegate: sendProductFilterDelegate!
     
     override func viewDidLoad() {
@@ -61,10 +67,13 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
         mainView.clipsToBounds = true
         mainView.layer.cornerRadius = 20
         mainView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        self.filterArrayAPI()
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.filterArrayAPI()
+        self.categoryListCollectionView.reloadData()
+    }
     
     @IBAction func closeBtn(_ sender: Any) {
        
@@ -73,22 +82,41 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
     
     @IBAction func clearAllBtbn(_ sender: Any) {
         self.selectedArrayDataID = 0
+        self.selectedArrayDataID2 = 0
+        self.selectedArrayDataID3 = 0
+        self.selectedArrayDataID4 = 0
         self.delegate.sendProductFilter(self)
         self.dismiss(animated: true)
     }
     
     @IBAction func applyBtn(_ sender: Any) {
-        self.delegate.sendProductFilter(self)
-        self.dismiss(animated: true)
+        
+        print(self.selectedArrayDataID)
+        print(self.selectedArrayDataID2)
+        print(self.selectedArrayDataID3)
+        print(self.selectedArrayDataID4)
+        
+        if self.selectedArrayDataID == 0 {
+            self.view.makeToast("Please select Segment value", duration: 3.0, position: .bottom)
+        }else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 == 0 && self.selectedArrayDataID3 == 0 && self.selectedArrayDataID4 == 0{
+            self.view.makeToast("Please select OME value", duration: 3.0, position: .bottom)
+        }else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 != 0 && self.selectedArrayDataID3 == 0 && self.selectedArrayDataID4 == 0{
+            self.view.makeToast("Please select Model value", duration: 3.0, position: .bottom)
+        }else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 != 0 && self.selectedArrayDataID3 != 0 && self.selectedArrayDataID4 == 0{
+            self.view.makeToast("Please select Product Catagory value", duration: 3.0, position: .bottom)
+        }else{
+            self.delegate.sendProductFilter(self)
+            self.dismiss(animated: true)
+        }
     }
     
     func filterArrayAPI(){
         self.catagoryIDs = [
                 "BrandId": "\(0)",
-                "Cat1": "\(self.catagoryId)",
-                "Cat2": "\(catagoryId1)",
-                "Cat3": "\(catagoryId2)",
-                "Cat4": "\(catagoryId3)",
+                "Cat1": "\(self.selectedArrayDataID)",
+                "Cat2": "\(self.selectedArrayDataID2)",
+                "Cat3": "\(self.selectedArrayDataID3)",
+                "Cat4": "\(self.selectedArrayDataID4)",
                 "NlStatus": "NEW",
                 "SkuMaxPrice": "\(0)",
                 "SkuMinPrice": "\(0)"
@@ -98,9 +126,9 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
             "ActionType": "14",
             "ActorId": "\(userId)",
             "LoyaltyID": "\(loyaltyId)",
-            "ProductId":"1",
             "StartIndex":"",
             "PageSize":"",
+            "ProductId":"\(self.passingProductId)",
             "ProductDetails": self.catagoryIDs,
         ]as [String: Any]
         print(parameters)
@@ -130,7 +158,7 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
         if self.catagoryId == 1{
             if indexPath.row == 0{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = .systemOrange
+                cell.categoryTitleLbl.textColor = .orange
                 cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
@@ -139,10 +167,10 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
                 cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
                 cell.categoryTitleLbl.borderWidth = 1
             }
-        }else if self.catagoryId1 == 2{
+        }else if self.catagoryId1 == 2 {
             if indexPath.row == 1{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = .systemOrange
+                cell.categoryTitleLbl.textColor = .orange
                 cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
@@ -151,10 +179,10 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
                 cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
                 cell.categoryTitleLbl.borderWidth = 1
             }
-        }else if self.catagoryId2 == 3{
+        }else if self.catagoryId2 == 3 {
             if indexPath.row == 2{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = .systemOrange
+                cell.categoryTitleLbl.textColor = .orange
                 cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
@@ -163,10 +191,10 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
                 cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
                 cell.categoryTitleLbl.borderWidth = 1
             }
-        }else if self.catagoryId3 == 4{
+        }else if self.catagoryId3 == 4 {
             if indexPath.row == 3{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-                cell.categoryTitleLbl.textColor = .systemOrange
+                cell.categoryTitleLbl.textColor = .orange
                 cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
                 cell.categoryTitleLbl.borderWidth = 1
             }else{
@@ -177,7 +205,7 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
             }
         }else {
             cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-            cell.categoryTitleLbl.textColor = .systemOrange
+            cell.categoryTitleLbl.textColor = .orange
             cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
             cell.categoryTitleLbl.borderWidth = 1
         }
@@ -196,26 +224,37 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
         cell.titleLbl.borderColor = .black
         cell.titleLbl.borderWidth = 1
         
-//        if self.catagoryId == 1{
-//            if indexPath.row == 0{
-//                cell.titleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
-//                cell.titleLbl.textColor = .systemOrange
-//                cell.titleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
-//                cell.titleLbl.borderWidth = 1
-//            }else{
-//                cell.titleLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//                cell.titleLbl.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-//                cell.titleLbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-//                cell.titleLbl.borderWidth = 1
-//            }
-//        }else{
-//            cell.titleLbl.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-//            cell.titleLbl.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-//            cell.titleLbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-//            cell.titleLbl.borderWidth = 1
-//        }
-        
+        if selectedArrayDataID == VM.myfilterListingArray[indexPath.row].categoryId {
+            cell.titleLbl.textColor = .orange
+            cell.titleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+            cell.titleLbl.borderWidth = 1
+            cell.titleLbl.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
 
+        }
+        if selectedArrayDataID2 == VM.myfilterListingArray[indexPath.row].categoryId {
+            cell.titleLbl.textColor = .orange
+            cell.titleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+            cell.titleLbl.borderWidth = 1
+            cell.titleLbl.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+
+        }
+        
+        if selectedArrayDataID3 == VM.myfilterListingArray[indexPath.row].categoryId {
+            cell.titleLbl.textColor = .orange
+            cell.titleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+            cell.titleLbl.borderWidth = 1
+            cell.titleLbl.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+
+        }
+        
+        if selectedArrayDataID4 == VM.myfilterListingArray[indexPath.row].categoryId {
+            cell.titleLbl.textColor = .orange
+            cell.titleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+            cell.titleLbl.borderWidth = 1
+            cell.titleLbl.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+
+        }
+        
         return cell
     }
     
@@ -229,36 +268,52 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
             self.catagoryId1 = 0
             self.catagoryId2 = 0
             self.catagoryId3 = 0
+            self.passingProductId = 1
             self.filterArrayAPI()
-            self.categoryListCollectionView.reloadData()
+            //self.categoryListCollectionView.reloadData()
             self.categoryTypeTableView.reloadData()
             
         }else if self.catagoryName == "OEM" {
-            self.catagoryId = 0
-            self.catagoryId1 = 2
-            self.catagoryId2 = 0
-            self.catagoryId3 = 0
-            self.filterArrayAPI()
-            self.categoryListCollectionView.reloadData()
-            self.categoryTypeTableView.reloadData()
+            if selectedArrayDataID == 0{
+                //"Segment","OEM","Model","Product Catagory"
+                self.view.makeToast("Please select Segment value", duration: 3.0, position: .bottom)
+            }else{
+                self.catagoryId = 0
+                self.catagoryId1 = 2
+                self.catagoryId2 = 0
+                self.catagoryId3 = 0
+                self.passingProductId = 2
+                self.filterArrayAPI()
+                self.categoryListCollectionView.reloadData()
+                self.categoryTypeTableView.reloadData()
+                print(self.catagoryId,self.catagoryId1)
+            }
         }else if self.catagoryName == "Model"{
-            self.catagoryId = 0
-            self.catagoryId1 = 0
-            self.catagoryId2 = 3
-            self.catagoryId3 = 0
-            
-            self.filterArrayAPI()
-            self.categoryListCollectionView.reloadData()
-            self.categoryTypeTableView.reloadData()
-
+            if selectedArrayDataID2 == 0{
+                self.view.makeToast("Please select OEM value", duration: 3.0, position: .bottom)
+            }else{
+                self.catagoryId = 0
+                self.catagoryId1 = 0
+                self.catagoryId2 = 3
+                self.catagoryId3 = 0
+                self.passingProductId = 3
+                self.filterArrayAPI()
+                self.categoryListCollectionView.reloadData()
+                self.categoryTypeTableView.reloadData()
+            }
         }else if self.catagoryName == "Product Catagory"{
-            self.catagoryId = 0
-            self.catagoryId1 = 0
-            self.catagoryId2 = 0
-            self.catagoryId3 = 4
-            self.categoryTypeTableView.reloadData()
-            self.filterArrayAPI()
-            self.categoryListCollectionView.reloadData()
+            if selectedArrayDataID3 == 0{
+                self.view.makeToast("Please select Model value", duration: 3.0, position: .bottom)
+            }else{
+                self.catagoryId = 0
+                self.catagoryId1 = 0
+                self.catagoryId2 = 0
+                self.catagoryId3 = 4
+                self.passingProductId = 4
+                self.categoryTypeTableView.reloadData()
+                self.filterArrayAPI()
+                self.categoryListCollectionView.reloadData()
+            }
         }else{
             print(ErrorPointer.self)
         }
@@ -269,37 +324,31 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
         if self.catagoryId == 1{
             self.selectedArrayData = VM.myfilterListingArray[indexPath.row].productName ?? ""
             self.selectedArrayDataID = VM.myfilterListingArray[indexPath.row].categoryId ?? 0
+            self.passingProductId = 2
             print(selectedArrayData,"dskhdskh")
-        }else if self.catagoryId1 == 2{
+            self.categoryListCollectionView.reloadData()
+        }else if self.catagoryId1 == 2 {
             self.selectedArrayData = VM.myfilterListingArray[indexPath.row].productName ?? ""
-            self.selectedArrayDataID = VM.myfilterListingArray[indexPath.row].categoryId ?? 0
+            self.selectedArrayDataID2 = VM.myfilterListingArray[indexPath.row].categoryId ?? 0
             print(selectedArrayData,"dskhdskh")
+            self.passingProductId = 3
+            self.categoryListCollectionView.reloadData()
             
-        }else if self.catagoryId2 == 3{
+        }else if self.catagoryId2 == 3 {
             self.selectedArrayData = VM.myfilterListingArray[indexPath.row].productName ?? ""
-            self.selectedArrayDataID = VM.myfilterListingArray[indexPath.row].categoryId ?? 0
+            self.selectedArrayDataID3 = VM.myfilterListingArray[indexPath.row].categoryId ?? 0
             print(selectedArrayData,"dskhdskh")
+            self.passingProductId = 4
+            self.categoryListCollectionView.reloadData()
             
         }else if self.catagoryId3 == 4{
             self.selectedArrayData = VM.myfilterListingArray[indexPath.row].productName ?? ""
-            self.selectedArrayDataID = VM.myfilterListingArray[indexPath.row].categoryId ?? 0
+            self.selectedArrayDataID4 = VM.myfilterListingArray[indexPath.row].categoryId ?? 0
             print(selectedArrayData,"dskhdskh")
+            self.categoryListCollectionView.reloadData()
             
         }
         
         
     }
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//            if indexPath.row == VM.redemptionCatalougeListArray.count - 2{
-//                if noofelements == 20{
-//                    self.startindex = startindex + 1
-//                    self.redemptionCatalogueListApi(startIndex: startindex)
-//                }else if noofelements < 20{
-//                    return
-//                }else{
-//                    print("n0 more elements")
-//                    return
-//                }
-//            }
-//        }
 }

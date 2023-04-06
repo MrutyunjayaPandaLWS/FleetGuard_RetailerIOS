@@ -248,7 +248,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
                 
                 self.view.makeToast("Enter OTP", duration: 3.0, position: .bottom)
             }
-        }else if enteredValue.count != 6{
+        }else if enteredValue.count != 4{
             DispatchQueue.main.async{
 //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                vc!.delegate = self

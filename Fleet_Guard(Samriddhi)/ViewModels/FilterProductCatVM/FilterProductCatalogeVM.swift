@@ -11,6 +11,7 @@ class FilterProductCatalogeVM {
     weak var VC: FG_ProductCatalogueFilterVC?
     var requestAPIs = RestAPI_Requests()
     var myfilterListingArray = [LsrProductDetails1]()
+    var myFilterLisingArrayOfData = [LsrProductDetails1]()
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     
    

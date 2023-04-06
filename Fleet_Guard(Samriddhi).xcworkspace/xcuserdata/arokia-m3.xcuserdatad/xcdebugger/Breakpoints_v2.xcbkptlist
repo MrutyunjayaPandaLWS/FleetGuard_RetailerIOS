@@ -7,32 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6D0C8C03-6C7F-4F66-AB41-00B7322CE2CC"
-            shouldBeEnabled = "Yes"
+            uuid = "45697E94-9E09-4FDC-85A4-7DFA0EFB75AD"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/MyOrders/FG_MyOrdersVC.swift"
+            filePath = "Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
-            landmarkName = "myOrderListingAPI(startInx:orderStatusId:fromDate:toDate:)"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "redemptionCatalogueListApi(startIndex:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1BE36813-A2BD-4A54-817B-B42ED57BC6DB"
+            uuid = "796D4DEB-9F9E-442F-A9FF-353320B62B7B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/MyRedemption/FG_MyRedemptionVC.swift"
+            filePath = "Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "myRedemptionListing()"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "didTap()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5899D2E3-D6FA-4BB0-87B4-57E096484F0D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/Login OTP/FG_LoginOTPVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "submitButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E0943C5E-7266-42C4-87DC-0CE531CD2DDA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/Login OTP/FG_LoginOTPVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "OtpApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -206,22 +206,22 @@ class FG_DashBoardVC: BaseViewController {
         
     }
     @objc func didTap() {
-//        if bannerImagesArray.count > 0 {
-////            bannerView.presentFullScreenController(from: self)
-//            for image in bannerImagesArray {
-//                print(image.actionImageUrl,"imageURL")
-//                if let url = URL(string: "\(image.actionImageUrl ?? "")")
-//                    {
-//                        UIApplication.shared.openURL(url)
-//                    }
-//            }
-//        }
-        
-        if self.bannerImagesArray.count > 0 {
-            
-            bannerImage.presentFullScreenController(from: self)
+        if bannerImagesArray.count > 0 {
+//            bannerView.presentFullScreenController(from: self)
+            for image in bannerImagesArray {
+                print(image.actionImageUrl,"imageURL")
+                if let url = URL(string: "\(image.actionImageUrl ?? "")")
+                    {
+                        UIApplication.shared.openURL(url)
+                    }
+            }
         }
         
+//        if self.bannerImagesArray.count > 0 {
+//            
+//            bannerImage.presentFullScreenController(from: self)
+//        }
+//
     }
     func bannerImagesAPI() {
         let parameters = [

@@ -94,8 +94,9 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.VM.redemptionCatalougeListArray.removeAll()
-        self.totalPts.text = "\(UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "")"
+        self.totalPts.text = "\(UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "0")"
         self.passBookNumber.text = self.loyaltyId
+        self.passBookLbl.text = "Retailer code"
         self.myCartListApi()
     }
 
@@ -133,7 +134,8 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
                 "SearchText": "\(searchTF.text ?? "")",
                 "Domain": "FLEETGUARD",
                 "StartIndex": startIndex,
-                "Sort": ""
+                "Sort": "",
+                "VendorProductCode":"RLP"
         ] as [String: Any]
         print(parameter)
         self.VM.redemptionCatalogueListApi(parameter: parameter)
@@ -212,7 +214,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     func addToCartDidTap(_ cell: FG_RedemptionCatalogueTVC) {
         guard let tappedIndexPath = self.catalogueListTableView.indexPath(for: cell) else {return}
         
-        let totalPts = Int(totalPoints)!
+        let totalPts = Int(totalPoints) ?? 0
         let pointsRequired = self.VM.redemptionCatalougeListArray[tappedIndexPath.row].pointsRequired ?? 0 + self.cartTotalPts
         print(pointsRequired)
         if pointsRequired <= totalPts{

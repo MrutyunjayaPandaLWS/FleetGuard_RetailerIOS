@@ -732,7 +732,7 @@
 "eYX-HT-3a8.text" = "XXXXXXX";
 
 /* Class = "UITextField"; placeholder = "Search by product / description name"; ObjectID = "eqM-BM-fC1"; */
-"eqM-BM-fC1.placeholder" = "Search by product / description name";
+"eqM-BM-fC1.placeholder" = "Search by part no / cross reference / part description name";
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "evM-l3-ULV"; */
 "evM-l3-ULV.text" = "Name";
