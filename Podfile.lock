@@ -12,7 +12,7 @@ PODS:
     - ImageSlideshow/Core
   - ImageSlideshow/Core (1.8.3)
   - IQKeyboardManagerSwift (6.5.11)
-  - Kingfisher (7.5.0)
+  - Kingfisher (7.6.2)
   - LanguageManager-iOS (1.2.5)
   - lottie-ios (4.0.1)
   - SlideMenuControllerSwift (4.0.0)
@@ -25,7 +25,7 @@ DEPENDENCIES:
   - DPOTPView
   - ImageSlideshow/Alamofire
   - IQKeyboardManagerSwift
-  - Kingfisher (~> 7.0)
+  - Kingfisher
   - LanguageManager-iOS
   - lottie-ios
   - SlideMenuControllerSwift
@@ -53,13 +53,13 @@ SPEC CHECKSUMS:
   DPOTPView: 28d8a0a84a2ff4b1e4a7712065aba1cbb14e2704
   ImageSlideshow: 4694d7d699a1549582e7cc631fb392d8f91630f3
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
-  Kingfisher: b9c2a4a4af2990a768445c277359b27bde287d71
+  Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
   LanguageManager-iOS: 049345fe4d1c5fbe22af93d438540917f4936359
   lottie-ios: 54d22edf55b839f0929cabbfe609c9aa548b1145
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: fe2948faeac0cda719816b04d1e94767544a2bcc
+PODFILE CHECKSUM: cd4cd49d0da3976aa58f0f143a0256e3fa347d12
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0

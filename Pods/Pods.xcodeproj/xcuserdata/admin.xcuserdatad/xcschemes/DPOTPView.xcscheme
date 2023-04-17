@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4B730400C1B65202BFB836939BEA1EB7"
-               BuildableName = "libDPOTPView.a"
+               BuildableName = "DPOTPView.framework"
                BlueprintName = "DPOTPView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

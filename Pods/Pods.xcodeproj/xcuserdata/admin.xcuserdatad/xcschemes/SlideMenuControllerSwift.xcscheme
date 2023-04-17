@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7B571FD072D3CCB32EC015AE483FCCD0"
-               BuildableName = "libSlideMenuControllerSwift.a"
+               BuildableName = "SlideMenuControllerSwift.framework"
                BlueprintName = "SlideMenuControllerSwift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

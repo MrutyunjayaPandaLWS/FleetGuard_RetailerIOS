@@ -70,7 +70,7 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
     
     
     @IBAction func backButton(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func languageBtn(_ sender: Any) {
@@ -182,8 +182,8 @@ extension FG_MyMilestoneRedemptionVC: UITableViewDelegate, UITableViewDataSource
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
-    }
+//    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 180
+//    }
 }

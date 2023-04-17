@@ -1,1 +1,0 @@
-../../../Target Support Files/LanguageManager-iOS/LanguageManager-iOS-umbrella.h

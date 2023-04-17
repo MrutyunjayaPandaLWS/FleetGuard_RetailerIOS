@@ -32,7 +32,7 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
         vc.ordernumber = "\(VM.myOrderListingArray[tappedIndexPath.row].orderNo ?? "")"
         let date = VM.myOrderListingArray[tappedIndexPath.row].orderDate ?? "-"
         let splitDate = date.split(separator: " ")
-        vc.orderDate = getRequiredDate(fromFormate: "MM/dd/yyyy", toFormate: "dd-MM-yyyy", dateString:"\(splitDate[0])")
+        vc.orderDate = String(splitDate[0])//getRequiredDate(fromFormate: "MM/dd/yyyy", toFormate: "dd-MM-yyyy", dateString:"\(splitDate[0])")
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

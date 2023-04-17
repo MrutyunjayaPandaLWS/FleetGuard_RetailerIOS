@@ -92,7 +92,7 @@ class FG_MilestoneRedemptionVC : BaseViewController, mileStoneDelegateData{
     
     
     @IBAction func backButton(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func languageBtn(_ sender: Any) {

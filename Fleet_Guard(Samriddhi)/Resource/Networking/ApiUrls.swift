@@ -22,7 +22,7 @@ let profileImageURL = "http://fleetgrdser.loyltwo3ks.com/services/UploadFiles/Cu
 let productCatalogueImgURL = "http://fleetgrdser.loyltwo3ks.com/UploadFiles/CatalogueImages/"
 let checkUserExistencyURL = "http://fleetgrdser.loyltwo3ks.com/Mobile/CheckCustomerExistancyAndVerification"
 let forgotPassURL = "http://fleetgrdser.loyltwo3ks.com/services/Mobile/forgotPasswordMobileApp"
-
+let myRedemptionImageURL = "https://fglivebridge.samriddhi.in/FGimages/FG_SFTPCWR_Data/Luggage"
 
 let username = "FleetGuardUser"
 let password = "fl@ert#$%Gu@#d"

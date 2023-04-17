@@ -10,7 +10,9 @@ import UIKit
 class FG_StatementVC: BaseViewController,StatementViewDelegate{
     func viewActBTN(_ cell: FG_StatementTVC) {
             guard let tappedIndexPath = statementTableView.indexPath(for: cell) else { return }
+        
         let urlData = self.VM.rlpStatemnetArray[tappedIndexPath.row].pdF_LINK ?? ""
+        if urlData.count != 0{
             print(urlData)
             let urlString = urlData
             let url = URL(string: urlString)
@@ -68,6 +70,10 @@ class FG_StatementVC: BaseViewController,StatementViewDelegate{
                 }
             }
             task.resume()
+        }else{
+            self.view.makeToast("No file found !",duration: 2.0,position: .center)
+        }
+            
     }
     
 

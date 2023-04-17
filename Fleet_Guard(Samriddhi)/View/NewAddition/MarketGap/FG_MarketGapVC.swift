@@ -10,13 +10,22 @@ import UIKit
 class FG_MarketGapVC: BaseViewController, MarketingGapDelegate {
     func marketGapForward(_ cell: FG_MarketGapTVC) {
         guard let tappedIndexPath = self.markrtingGapView.indexPath(for: cell) else{return}
-        let vc = UIStoryboard(name:"Main" , bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueDetailsVC") as! FG_ProductCatalogueDetailsVC
-        vc.productName = VM.myMarketGapArray[tappedIndexPath.row].productName ?? "-"
-        vc.partNo = VM.myMarketGapArray[tappedIndexPath.row].partyLoyaltyId ?? "-"
-        vc.productDesc = VM.myMarketGapArray[tappedIndexPath.row].productDesc ?? "-"
-        vc.dap = "\(VM.myMarketGapArray[tappedIndexPath.row].points ?? 0)"
-        vc.mrp = VM.myMarketGapArray[tappedIndexPath.row].mrp ?? "-"
-        self.navigationController?.popViewController(animated: true)
+        if cell.forwardButton.tag == tappedIndexPath.row{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueDetailsVC") as! FG_ProductCatalogueDetailsVC
+            vc.productImageURL = self.VM.myMarketGapArray[tappedIndexPath.row].productImg ?? ""
+            vc.productName = self.VM.myMarketGapArray[tappedIndexPath.row].productName ?? ""
+            vc.partNo = self.VM.myMarketGapArray[tappedIndexPath.row].productCode ?? ""
+            vc.shortDesc = self.VM.myMarketGapArray[tappedIndexPath.row].productShortDesc ?? ""
+            vc.dap = "\(self.VM.myMarketGapArray[tappedIndexPath.row].salePrice ?? 0)"
+            let splitData = "\(self.VM.myMarketGapArray[tappedIndexPath.row].mrp ?? "")".split(separator: ".")
+            vc.mrp = "\(splitData[0])"
+            vc.productId = "\(self.VM.myMarketGapArray[tappedIndexPath.row].productId ?? 0)"
+            vc.productDesc = "\(self.VM.myMarketGapArray[tappedIndexPath.row].productDesc ?? "")"
+//            vc.cateogryId = "\(self.VM.productListArray[tappedIndexPath.row].category ?? 0)"
+         
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
     }
     
     
@@ -34,8 +43,14 @@ class FG_MarketGapVC: BaseViewController, MarketingGapDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        noDataFoundLbl.isHidden = true
         self.markrtingGapView.delegate = self
         self.markrtingGapView.dataSource = self
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        counterGap(startIndex: startindex)
     }
     
     func counterGap(startIndex: Int){
@@ -72,7 +87,7 @@ extension FG_MarketGapVC: UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_MarketGapTVC") as! FG_MarketGapTVC
         
         cell.delegate = self
-        cell.dapAmount.text = "\(VM.myMarketGapArray[indexPath.row].points ?? 0)"
+        cell.dapAmount.text = "\(VM.myMarketGapArray[indexPath.row].salePrice ?? 0)"
         cell.mrpAmountLbl.text = VM.myMarketGapArray[indexPath.row].mrp ?? "-"
         cell.productNameLbl.text = VM.myMarketGapArray[indexPath.row].productName ?? "-"
         cell.partNoLbl.text = "Part no: \(VM.myMarketGapArray[indexPath.row].partyLoyaltyId ?? "-")"
@@ -81,7 +96,14 @@ extension FG_MarketGapVC: UITableViewDelegate,UITableViewDataSource {
         //let imageImage = (self.VM.offersandPromotionsArray[indexPath.row].proImage ?? "").dropFirst(3)
         let totalImgURL = PROMO_IMG1 + imageData
         cell.productImage.kf.setImage(with: URL(string: totalImgURL), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"))
-        
+        cell.forwardButton.tag = indexPath.row
+        cell.delegate = self
+        cell.selectionStyle = .none
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
+    }
+    
 }

@@ -81,6 +81,7 @@ class FG_DashboardVM: popUpDelegate{
                                     UserDefaults.standard.setValue(result?.lstCustomerFeedBackJsonApi?[0].firstName, forKey: "FirstName")
                                     
                                     UserDefaults.standard.setValue(result?.lstCustomerFeedBackJsonApi?[0].loyaltyId, forKey: "LoyaltyId")
+                                    self.VC?.loyaltyId = result?.lstCustomerFeedBackJsonApi?[0].loyaltyId ?? ""
                                     UserDefaults.standard.set(result?.lstCustomerFeedBackJsonApi?[0].merchantEmail ?? "", forKey: "MerchantEmail")
                                     print(result?.lstCustomerFeedBackJsonApi?[0].verifiedStatus ?? "")
                                     

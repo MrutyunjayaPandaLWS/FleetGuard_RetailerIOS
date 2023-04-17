@@ -35,10 +35,13 @@ class FG_PointsTrendGraphVC: BaseViewController, ChartViewDelegate {
         super.viewDidLoad()
         self.VM.VC = self
         pointsTrendGraphView.delegate = self
-        pointsTrendGraphView.chartDescription.enabled = false
+        pointsTrendGraphView.chartDescription.enabled = true
         pointsTrendGraphView.dragEnabled = true
         pointsTrendGraphView.setScaleEnabled(true)
         pointsTrendGraphView.pinchZoomEnabled = true
+        pointsTrendGraphView.xAxis.drawAxisLineEnabled = false
+        pointsTrendGraphView.xAxis.labelHeight = 30
+        
     
     }
     
@@ -110,24 +113,26 @@ class FG_PointsTrendGraphVC: BaseViewController, ChartViewDelegate {
             }
         
     
-        let chartDataSet = LineChartDataSet(entries: yVals2)
+        let chartDataSet = LineChartDataSet(entries: yVals2,  label: "Previous financial year")
         chartDataSet.axisDependency = .left
-        chartDataSet.setColor(.green)
+        chartDataSet.setColor(.red)
         chartDataSet.lineWidth = 2
         chartDataSet.fillAlpha = 65/255
         chartDataSet.fillColor = .red
-        chartDataSet.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        chartDataSet.highlightColor = UIColor(red: 100/255, green: 110/255, blue: 220/255, alpha: 1)
         chartDataSet.circleHoleRadius = 2
         chartDataSet.drawValuesEnabled = true
+        chartDataSet.circleColors = [.systemYellow]
         
-        let chartDataSet1 = LineChartDataSet(entries: yVals3)
+        let chartDataSet1 = LineChartDataSet(entries: yVals3, label: "Current financial year")
         chartDataSet1.axisDependency = .left
-        chartDataSet1.setColor(.red)
+        chartDataSet1.setColor(.green)
         chartDataSet1.lineWidth = 2
         chartDataSet1.fillAlpha = 65/255
         chartDataSet1.fillColor = UIColor.yellow.withAlphaComponent(200/255)
-        chartDataSet1.highlightColor = UIColor(red: 100/255, green: 110/255, blue: 220/255, alpha: 1)
+        chartDataSet1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
         chartDataSet1.circleHoleRadius = 2
+        chartDataSet1.circleColors = [.blue]
         chartDataSet1.drawValuesEnabled = true
 
         let chartData = LineChartData(dataSets: [chartDataSet, chartDataSet1])
@@ -137,16 +142,18 @@ class FG_PointsTrendGraphVC: BaseViewController, ChartViewDelegate {
 
         pointsTrendGraphView.xAxis.valueFormatter = IndexAxisValueFormatter(values: self.monthsData)
         pointsTrendGraphView.xAxis.labelPosition = .bottom
+        pointsTrendGraphView.xAxis.setLabelCount(monthsData.count, force: true)
         pointsTrendGraphView.xAxis.drawGridLinesEnabled = false
         pointsTrendGraphView.xAxis.avoidFirstLastClippingEnabled = true
+        
 
-        pointsTrendGraphView.rightAxis.drawAxisLineEnabled = true
+        pointsTrendGraphView.rightAxis.drawAxisLineEnabled = false
         pointsTrendGraphView.rightAxis.drawLabelsEnabled = false
 
         pointsTrendGraphView.leftAxis.drawAxisLineEnabled = true
         pointsTrendGraphView.pinchZoomEnabled = false
         pointsTrendGraphView.doubleTapToZoomEnabled = false
-        pointsTrendGraphView.legend.enabled = false
+        pointsTrendGraphView.legend.enabled = true
     }
     
     @IBAction func notificationActBtn(_ sender: Any) {

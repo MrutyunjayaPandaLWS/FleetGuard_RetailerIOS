@@ -44,7 +44,7 @@ class FG_MyBillingDetailsVC: BaseViewController {
             self.orderNumberHeadingLbl.text = "Order No"
             self.orderDateHeadingLbl.text = "Order Date"
             self.orderDateLbl.text = orderDate
-            self.orderNumberLbl.text = ordernumber
+            self.orderNumberLbl.text = invoiceNumber
         }
 
         func myBillingDetailsAPI() {
@@ -58,7 +58,7 @@ class FG_MyBillingDetailsVC: BaseViewController {
         
         
         @IBAction func backBtn(_ sender: Any) {
-            self.navigationController?.popToRootViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
         }
 
     }

@@ -8,15 +8,24 @@
 import UIKit
 
 class FG_CounterGapVC: BaseViewController, CounterGapDelegate {
-    func counterGapForward(_ cell: FG_CounterGapTVC) {
+    func counterGapForward(_ cell: FG_CounterGapTVC) {        
         guard let tappedIndexPath = self.CounterGapTableView.indexPath(for: cell) else{return}
-        let vc = UIStoryboard(name:"Main" , bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueDetailsVC") as! FG_ProductCatalogueDetailsVC
-        vc.productName = VM.myCounterGapArray[tappedIndexPath.row].productName ?? "-"
-        vc.partNo = VM.myCounterGapArray[tappedIndexPath.row].partyLoyaltyId ?? "-"
-        vc.productDesc = VM.myCounterGapArray[tappedIndexPath.row].productDesc ?? "-"
-        vc.dap = "\(VM.myCounterGapArray[tappedIndexPath.row].points ?? 0)"
-        vc.mrp = VM.myCounterGapArray[tappedIndexPath.row].mrp ?? "-"
-        self.navigationController?.popViewController(animated: true)
+        if cell.forwardButton.tag == tappedIndexPath.row{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueDetailsVC") as! FG_ProductCatalogueDetailsVC
+            vc.productImageURL = self.VM.myCounterGapArray[tappedIndexPath.row].productImg ?? ""
+            vc.productName = self.VM.myCounterGapArray[tappedIndexPath.row].productName ?? ""
+            vc.partNo = self.VM.myCounterGapArray[tappedIndexPath.row].productCode ?? ""
+            vc.shortDesc = self.VM.myCounterGapArray[tappedIndexPath.row].productShortDesc ?? ""
+            vc.dap = "\(self.VM.myCounterGapArray[tappedIndexPath.row].salePrice ?? 0)"
+            let splitData = "\(self.VM.myCounterGapArray[tappedIndexPath.row].mrp ?? "")".split(separator: ".")
+            vc.mrp = "\(splitData[0])"
+            vc.productId = "\(self.VM.myCounterGapArray[tappedIndexPath.row].productId ?? 0)"
+            vc.productDesc = "\(self.VM.myCounterGapArray[tappedIndexPath.row].productDesc ?? "")"
+//            vc.cateogryId = "\(self.VM.myCounterGapArray[tappedIndexPath.row].category ?? 0)"
+         
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
     }
     
     
@@ -33,8 +42,14 @@ class FG_CounterGapVC: BaseViewController, CounterGapDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        
         CounterGapTableView.delegate = self
         CounterGapTableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        counterGap(startIndex: startindex)
     }
     
     func counterGap(startIndex: Int){
@@ -71,7 +86,7 @@ extension FG_CounterGapVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_CounterGapTVC", for: indexPath) as! FG_CounterGapTVC
         
         cell.delegate = self
-        cell.dapAmount.text = "\(VM.myCounterGapArray[indexPath.row].points ?? 0)"
+        cell.dapAmount.text = "\(VM.myCounterGapArray[indexPath.row].salePrice ?? 0)"
         cell.mrpAmountLbl.text = VM.myCounterGapArray[indexPath.row].mrp ?? "-"
         cell.productNameLbl.text = VM.myCounterGapArray[indexPath.row].productName ?? "-"
         cell.partNoLbl.text = "Part no: \(VM.myCounterGapArray[indexPath.row].partyLoyaltyId ?? "-")"
@@ -80,8 +95,8 @@ extension FG_CounterGapVC: UITableViewDelegate, UITableViewDataSource{
         //let imageImage = (self.VM.offersandPromotionsArray[indexPath.row].proImage ?? "").dropFirst(3)
         let totalImgURL = PROMO_IMG1 + imageData
         cell.productImage.kf.setImage(with: URL(string: totalImgURL), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"))
-        
-        
+        cell.forwardButton.tag = indexPath.row
+        cell.selectionStyle = .none
         return cell
     }
     

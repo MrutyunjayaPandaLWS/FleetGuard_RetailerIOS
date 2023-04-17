@@ -151,7 +151,7 @@
 		25E8F66729B5D1A20033F405 /* BillingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E8F66529B5D1A20033F405 /* BillingModels.swift */; };
 		25F1302529AF49CF00D2C751 /* SideMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F1302329AF49CF00D2C751 /* SideMenuModel.swift */; };
 		25F1302629AF49CF00D2C751 /* SideMenuModelClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F1302429AF49CF00D2C751 /* SideMenuModelClass.swift */; };
-		5B101C665BBC310F6DEDB8CA /* libPods-Fleet_Guard(Samriddhi).a in Frameworks */ = {isa = PBXBuildFile; fileRef = F94DE145C091886E7B80A18B /* libPods-Fleet_Guard(Samriddhi).a */; };
+		3B47542AC413767040E9DD75 /* Pods_Fleet_Guard_Samriddhi_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 760B8C2C6C9FE02D5126052A /* Pods_Fleet_Guard_Samriddhi_.framework */; };
 		84068D8E2976646100D4360F /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84068D8C2976646100D4360F /* ContainerViewController.swift */; };
 		84068D8F2976646100D4360F /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84068D8D2976646100D4360F /* EmptySegue.swift */; };
 		84068D912976646F00D4360F /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84068D902976646F00D4360F /* PersistanceService.swift */; };
@@ -197,6 +197,14 @@
 		842326CD2980082200DF7325 /* FG_ProductCatalogueMyCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842326CC2980082200DF7325 /* FG_ProductCatalogueMyCartVC.swift */; };
 		842326CF2980083B00DF7325 /* FG_ProductCataloguePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842326CE2980083B00DF7325 /* FG_ProductCataloguePopUp.swift */; };
 		842326D129800CB000DF7325 /* FG_ProductCatalogueListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842326D029800CB000DF7325 /* FG_ProductCatalogueListTVC.swift */; };
+		8427D79F29E9104900AEFBD1 /* FG_MyRedemptionDetailsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427D79D29E9104900AEFBD1 /* FG_MyRedemptionDetailsTVC.swift */; };
+		8427D7A029E9104900AEFBD1 /* FG_MyRedemptionDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427D79E29E9104900AEFBD1 /* FG_MyRedemptionDetailsVC.swift */; };
+		8427D7A429E9286100AEFBD1 /* RedemptionDetailsOrderStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427D7A229E9286100AEFBD1 /* RedemptionDetailsOrderStatusModel.swift */; };
+		8427D7A529E9286100AEFBD1 /* RedemptionDetailsOrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427D7A329E9286100AEFBD1 /* RedemptionDetailsOrderStatus.swift */; };
+		8427D7AA29E9297500AEFBD1 /* RedemptionDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427D7A729E9297400AEFBD1 /* RedemptionDetailsModels.swift */; };
+		8427D7AB29E9297500AEFBD1 /* RedemptionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427D7A829E9297400AEFBD1 /* RedemptionDetails.swift */; };
+		8427D7AC29E9297500AEFBD1 /* RedemptionCatalogueList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427D7A929E9297500AEFBD1 /* RedemptionCatalogueList.swift */; };
+		8427D7AF29E92C4B00AEFBD1 /* FG_RedemptionDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427D7AE29E92C4B00AEFBD1 /* FG_RedemptionDetailsVM.swift */; };
 		842B4CF32977EBC10039450A /* FG_LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B4CF22977EBC10039450A /* FG_LanguageVC.swift */; };
 		8439109E29812E29007D73B6 /* FG_StatementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439109D29812E29007D73B6 /* FG_StatementVC.swift */; };
 		845425A329780F0A002A86D1 /* FG_MyRedemptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845425A229780F0A002A86D1 /* FG_MyRedemptionVC.swift */; };
@@ -312,6 +320,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		176194061075BA26EA28D9C7 /* Pods-Fleet_Guard(Samriddhi).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fleet_Guard(Samriddhi).release.xcconfig"; path = "Target Support Files/Pods-Fleet_Guard(Samriddhi)/Pods-Fleet_Guard(Samriddhi).release.xcconfig"; sourceTree = "<group>"; };
 		250FFCAA29B7128B003FB8A0 /* LstTransactionApprovalDetails1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstTransactionApprovalDetails1.swift; sourceTree = "<group>"; };
 		250FFCAB29B7128B003FB8A0 /* BillingDetialsDataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingDetialsDataModels.swift; sourceTree = "<group>"; };
 		2519D7B329A87CE0002BE97F /* QueryListingModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryListingModels.swift; sourceTree = "<group>"; };
@@ -461,6 +470,7 @@
 		25E8F66529B5D1A20033F405 /* BillingModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingModels.swift; sourceTree = "<group>"; };
 		25F1302329AF49CF00D2C751 /* SideMenuModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuModel.swift; sourceTree = "<group>"; };
 		25F1302429AF49CF00D2C751 /* SideMenuModelClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuModelClass.swift; sourceTree = "<group>"; };
+		760B8C2C6C9FE02D5126052A /* Pods_Fleet_Guard_Samriddhi_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fleet_Guard_Samriddhi_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84068D8C2976646100D4360F /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		84068D8D2976646100D4360F /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
 		84068D902976646F00D4360F /* PersistanceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
@@ -506,6 +516,14 @@
 		842326CC2980082200DF7325 /* FG_ProductCatalogueMyCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_ProductCatalogueMyCartVC.swift; sourceTree = "<group>"; };
 		842326CE2980083B00DF7325 /* FG_ProductCataloguePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_ProductCataloguePopUp.swift; sourceTree = "<group>"; };
 		842326D029800CB000DF7325 /* FG_ProductCatalogueListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_ProductCatalogueListTVC.swift; sourceTree = "<group>"; };
+		8427D79D29E9104900AEFBD1 /* FG_MyRedemptionDetailsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_MyRedemptionDetailsTVC.swift; sourceTree = "<group>"; };
+		8427D79E29E9104900AEFBD1 /* FG_MyRedemptionDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_MyRedemptionDetailsVC.swift; sourceTree = "<group>"; };
+		8427D7A229E9286100AEFBD1 /* RedemptionDetailsOrderStatusModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedemptionDetailsOrderStatusModel.swift; sourceTree = "<group>"; };
+		8427D7A329E9286100AEFBD1 /* RedemptionDetailsOrderStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedemptionDetailsOrderStatus.swift; sourceTree = "<group>"; };
+		8427D7A729E9297400AEFBD1 /* RedemptionDetailsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedemptionDetailsModels.swift; sourceTree = "<group>"; };
+		8427D7A829E9297400AEFBD1 /* RedemptionDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedemptionDetails.swift; sourceTree = "<group>"; };
+		8427D7A929E9297500AEFBD1 /* RedemptionCatalogueList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedemptionCatalogueList.swift; sourceTree = "<group>"; };
+		8427D7AE29E92C4B00AEFBD1 /* FG_RedemptionDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_RedemptionDetailsVM.swift; sourceTree = "<group>"; };
 		842B4CF22977EBC10039450A /* FG_LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_LanguageVC.swift; sourceTree = "<group>"; };
 		8439109D29812E29007D73B6 /* FG_StatementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_StatementVC.swift; sourceTree = "<group>"; };
 		845425A229780F0A002A86D1 /* FG_MyRedemptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyRedemptionVC.swift; sourceTree = "<group>"; };
@@ -606,9 +624,7 @@
 		84FD0A81297EC01600E01B00 /* FG_CategoryListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_CategoryListCVC.swift; sourceTree = "<group>"; };
 		84FD0A84297ECA0800E01B00 /* FG_RedemptionCatalogueDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_RedemptionCatalogueDetailsVC.swift; sourceTree = "<group>"; };
 		84FF28DF2978224300A86B41 /* FG_SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_SideMenuVC.swift; sourceTree = "<group>"; };
-		D4A606CD4028119C587523F6 /* Pods-Fleet_Guard(Samriddhi).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fleet_Guard(Samriddhi).release.xcconfig"; path = "Target Support Files/Pods-Fleet_Guard(Samriddhi)/Pods-Fleet_Guard(Samriddhi).release.xcconfig"; sourceTree = "<group>"; };
-		F6D046D442EE971C13DF6E96 /* Pods-Fleet_Guard(Samriddhi).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fleet_Guard(Samriddhi).debug.xcconfig"; path = "Target Support Files/Pods-Fleet_Guard(Samriddhi)/Pods-Fleet_Guard(Samriddhi).debug.xcconfig"; sourceTree = "<group>"; };
-		F94DE145C091886E7B80A18B /* libPods-Fleet_Guard(Samriddhi).a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fleet_Guard(Samriddhi).a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC8B76E5C0211CD0461EB36B /* Pods-Fleet_Guard(Samriddhi).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fleet_Guard(Samriddhi).debug.xcconfig"; path = "Target Support Files/Pods-Fleet_Guard(Samriddhi)/Pods-Fleet_Guard(Samriddhi).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -616,7 +632,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B101C665BBC310F6DEDB8CA /* libPods-Fleet_Guard(Samriddhi).a in Frameworks */,
+				3B47542AC413767040E9DD75 /* Pods_Fleet_Guard_Samriddhi_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1316,6 +1332,14 @@
 			path = ProfileImageModels;
 			sourceTree = "<group>";
 		};
+		4C409D5B08435EFF04ECD537 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				760B8C2C6C9FE02D5126052A /* Pods_Fleet_Guard_Samriddhi_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84068D8229765D9800D4360F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -1366,6 +1390,8 @@
 		84068D8729765DF600D4360F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8427D7A629E9295600AEFBD1 /* RedemptionDetailsModels */,
+				8427D7A129E9284400AEFBD1 /* RedemptionDetailsOrderStatusModel */,
 				257C075729BF0CF800AED042 /* NotificationModels */,
 				2592E70C29B99CB3005689CF /* MarketGapModels */,
 				2592E70729B99C48005689CF /* CountergapModels */,
@@ -1467,6 +1493,7 @@
 		84068D8929765E0A00D4360F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				8427D7AD29E92C2100AEFBD1 /* RedemptionDetailsVM */,
 				257C075429BF0C8A00AED042 /* NotificationVM */,
 				2592E71129B99E0C005689CF /* MarketGapVM */,
 				2592E70429B99910005689CF /* CounterGrpVM */,
@@ -1707,6 +1734,42 @@
 			path = ProductCatalogueFilter;
 			sourceTree = "<group>";
 		};
+		8427D79C29E9103400AEFBD1 /* MyRedemptionDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8427D79E29E9104900AEFBD1 /* FG_MyRedemptionDetailsVC.swift */,
+				8427D79D29E9104900AEFBD1 /* FG_MyRedemptionDetailsTVC.swift */,
+			);
+			path = MyRedemptionDetails;
+			sourceTree = "<group>";
+		};
+		8427D7A129E9284400AEFBD1 /* RedemptionDetailsOrderStatusModel */ = {
+			isa = PBXGroup;
+			children = (
+				8427D7A229E9286100AEFBD1 /* RedemptionDetailsOrderStatusModel.swift */,
+				8427D7A329E9286100AEFBD1 /* RedemptionDetailsOrderStatus.swift */,
+			);
+			path = RedemptionDetailsOrderStatusModel;
+			sourceTree = "<group>";
+		};
+		8427D7A629E9295600AEFBD1 /* RedemptionDetailsModels */ = {
+			isa = PBXGroup;
+			children = (
+				8427D7A729E9297400AEFBD1 /* RedemptionDetailsModels.swift */,
+				8427D7A929E9297500AEFBD1 /* RedemptionCatalogueList.swift */,
+				8427D7A829E9297400AEFBD1 /* RedemptionDetails.swift */,
+			);
+			path = RedemptionDetailsModels;
+			sourceTree = "<group>";
+		};
+		8427D7AD29E92C2100AEFBD1 /* RedemptionDetailsVM */ = {
+			isa = PBXGroup;
+			children = (
+				8427D7AE29E92C4B00AEFBD1 /* FG_RedemptionDetailsVM.swift */,
+			);
+			path = RedemptionDetailsVM;
+			sourceTree = "<group>";
+		};
 		842B4CF12977EB840039450A /* Language */ = {
 			isa = PBXGroup;
 			children = (
@@ -1907,6 +1970,7 @@
 		848B2BCB2977CB7700A58C73 /* MyRedemption */ = {
 			isa = PBXGroup;
 			children = (
+				8427D79C29E9103400AEFBD1 /* MyRedemptionDetails */,
 				845425A229780F0A002A86D1 /* FG_MyRedemptionVC.swift */,
 				845425A6297817DA002A86D1 /* FG_MyRedemptionTVC.swift */,
 				255CED0629BF2BD100485AB4 /* FG_RedemptionCollectionCVC.swift */,
@@ -2089,7 +2153,7 @@
 				84C1E41E29758A7000D188C5 /* Fleet_Guard(Samriddhi)UITests */,
 				84C1E3F929758A6D00D188C5 /* Products */,
 				D9BEED5C6BF8B4DCD39FC454 /* Pods */,
-				8F247719F4C138C83350A323 /* Frameworks */,
+				4C409D5B08435EFF04ECD537 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2270,8 +2334,8 @@
 		84FBC3F129796E020061ABAE /* MarketGap */ = {
 			isa = PBXGroup;
 			children = (
-				84FBC3F229796E1E0061ABAE /* FG_MarketGapTVC.swift */,
 				84FBC3F429796E350061ABAE /* FG_MarketGapVC.swift */,
+				84FBC3F229796E1E0061ABAE /* FG_MarketGapTVC.swift */,
 			);
 			path = MarketGap;
 			sourceTree = "<group>";
@@ -2293,19 +2357,11 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
-		8F247719F4C138C83350A323 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F94DE145C091886E7B80A18B /* libPods-Fleet_Guard(Samriddhi).a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		D9BEED5C6BF8B4DCD39FC454 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F6D046D442EE971C13DF6E96 /* Pods-Fleet_Guard(Samriddhi).debug.xcconfig */,
-				D4A606CD4028119C587523F6 /* Pods-Fleet_Guard(Samriddhi).release.xcconfig */,
+				EC8B76E5C0211CD0461EB36B /* Pods-Fleet_Guard(Samriddhi).debug.xcconfig */,
+				176194061075BA26EA28D9C7 /* Pods-Fleet_Guard(Samriddhi).release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -2317,11 +2373,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C1E42529758A7000D188C5 /* Build configuration list for PBXNativeTarget "Fleet_Guard(Samriddhi)" */;
 			buildPhases = (
-				C762BE9B2A4792101EA87446 /* [CP] Check Pods Manifest.lock */,
+				119413F5039431368D31E545 /* [CP] Check Pods Manifest.lock */,
 				84C1E3F429758A6D00D188C5 /* Sources */,
 				84C1E3F529758A6D00D188C5 /* Frameworks */,
 				84C1E3F629758A6D00D188C5 /* Resources */,
-				B80063D3F052EA3A142E6B05 /* [CP] Copy Pods Resources */,
+				541EDA00A4D0DF8728BDA39A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2466,24 +2522,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B80063D3F052EA3A142E6B05 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fleet_Guard(Samriddhi)/Pods-Fleet_Guard(Samriddhi)-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fleet_Guard(Samriddhi)/Pods-Fleet_Guard(Samriddhi)-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fleet_Guard(Samriddhi)/Pods-Fleet_Guard(Samriddhi)-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C762BE9B2A4792101EA87446 /* [CP] Check Pods Manifest.lock */ = {
+		119413F5039431368D31E545 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2503,6 +2542,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		541EDA00A4D0DF8728BDA39A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fleet_Guard(Samriddhi)/Pods-Fleet_Guard(Samriddhi)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fleet_Guard(Samriddhi)/Pods-Fleet_Guard(Samriddhi)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fleet_Guard(Samriddhi)/Pods-Fleet_Guard(Samriddhi)-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2541,6 +2597,7 @@
 				251F0B82299F4F2E00E2881A /* LstPromotionJsonList.swift in Sources */,
 				8488E415298A36F80032A2D7 /* TokenModels.swift in Sources */,
 				2580EFF229A6414D0097A50D /* HelpTopicModels.swift in Sources */,
+				8427D7AA29E9297500AEFBD1 /* RedemptionDetailsModels.swift in Sources */,
 				25A760C429ACE95F00FF5C0E /* LstCustomerJson.swift in Sources */,
 				84068D9B2976649D00D4360F /* TextfieldExtension.swift in Sources */,
 				2580EFFB29A651F60097A50D /* DD_QueryListVM.swift in Sources */,
@@ -2549,6 +2606,7 @@
 				25D88FCD29A9E4B1002815A7 /* FilterRedemptionCatVM.swift in Sources */,
 				257C075329BF0C5800AED042 /* FG_NotificationTVC.swift in Sources */,
 				25C865F229A7256100C1801E /* ChatDetailsModels.swift in Sources */,
+				8427D7A429E9286100AEFBD1 /* RedemptionDetailsOrderStatusModel.swift in Sources */,
 				25C865E429A7237F00C1801E /* otherInfoTableViewCell.swift in Sources */,
 				2565BBC729A4CCD60015AFD4 /* FG_MyOrdersDeatilsTVC.swift in Sources */,
 				84140DDD298D22770090DD44 /* LstAttributesDetails.swift in Sources */,
@@ -2574,12 +2632,14 @@
 				25A760C529ACE95F00FF5C0E /* LstCustomerIdentityInfo1.swift in Sources */,
 				8488E40C298A25BF0032A2D7 /* WebClient.swift in Sources */,
 				84140DE2298D31B20090DD44 /* ObjCatalogueList.swift in Sources */,
+				8427D7AF29E92C4B00AEFBD1 /* FG_RedemptionDetailsVM.swift in Sources */,
 				84C1E3FC29758A6D00D188C5 /* AppDelegate.swift in Sources */,
 				25C865DF29A7237F00C1801E /* senderInfoTableViewCell.swift in Sources */,
 				255CED0729BF2BD100485AB4 /* FG_RedemptionCollectionCVC.swift in Sources */,
 				842326C8298007E100DF7325 /* FG_ProductCatalogueListVC.swift in Sources */,
 				848B4B78298E696E00315D77 /* FG_DropDownVC.swift in Sources */,
 				25C465BD29A8C51400CCA30C /* RedemptionOTPVM.swift in Sources */,
+				8427D7A529E9286100AEFBD1 /* RedemptionDetailsOrderStatus.swift in Sources */,
 				25E8F65A29B5AA0B0033F405 /* MyCartModel.swift in Sources */,
 				8488E40D298A25BF0032A2D7 /* URLRequest.swift in Sources */,
 				84D10F71298E787B00DE283E /* StateListModel.swift in Sources */,
@@ -2626,6 +2686,7 @@
 				25D58BC729ADDE1400DB135D /* MileStonesRedeemBTNModels.swift in Sources */,
 				2565C96829B0B83D0020D93A /* LstPromotionListJsonApi.swift in Sources */,
 				257C074F29BF0B5900AED042 /* FG_NotificationVC.swift in Sources */,
+				8427D7AC29E9297500AEFBD1 /* RedemptionCatalogueList.swift in Sources */,
 				84C9879B298B73FC007F00B2 /* FG_ProductDetailsVM.swift in Sources */,
 				2565C96729B0B83D0020D93A /* LstCustomerFeedBackJsonApi.swift in Sources */,
 				8488E412298A25BF0032A2D7 /* RequestMethod.swift in Sources */,
@@ -2667,9 +2728,12 @@
 				25C465BA29A8AE7300CCA30C /* MyEarningModels.swift in Sources */,
 				848B4B7B298E698500315D77 /* FG_DOBVC.swift in Sources */,
 				8488E40F298A25BF0032A2D7 /* URLExtension.swift in Sources */,
+				8427D7AB29E9297500AEFBD1 /* RedemptionDetails.swift in Sources */,
 				849D34FB298A8105005A41FC /* FG_DashboardVM.swift in Sources */,
 				25C465DB29A8D74C00CCA30C /* RLPStatementVM.swift in Sources */,
 				25F1302529AF49CF00D2C751 /* SideMenuModel.swift in Sources */,
+				8427D79F29E9104900AEFBD1 /* FG_MyRedemptionDetailsTVC.swift in Sources */,
+				8427D7A029E9104900AEFBD1 /* FG_MyRedemptionDetailsVC.swift in Sources */,
 				2565C96929B0B83D0020D93A /* LstLoyaltyProgramReport.swift in Sources */,
 				2592E70A29B99C62005689CF /* CounterGapModels.swift in Sources */,
 				84140DE6298D32540090DD44 /* FG_RedemptionCatalogueVM.swift in Sources */,
@@ -2952,15 +3016,14 @@
 		};
 		84C1E42629758A7000D188C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6D046D442EE971C13DF6E96 /* Pods-Fleet_Guard(Samriddhi).debug.xcconfig */;
+			baseConfigurationReference = EC8B76E5C0211CD0461EB36B /* Pods-Fleet_Guard(Samriddhi).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fleet_Guard(Samriddhi)/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -2977,7 +3040,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = FleetGuardSamriddhi_Dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2986,15 +3048,14 @@
 		};
 		84C1E42729758A7000D188C5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4A606CD4028119C587523F6 /* Pods-Fleet_Guard(Samriddhi).release.xcconfig */;
+			baseConfigurationReference = 176194061075BA26EA28D9C7 /* Pods-Fleet_Guard(Samriddhi).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fleet_Guard(Samriddhi)/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -3011,7 +3072,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = FleetGuardSamriddhi_Dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

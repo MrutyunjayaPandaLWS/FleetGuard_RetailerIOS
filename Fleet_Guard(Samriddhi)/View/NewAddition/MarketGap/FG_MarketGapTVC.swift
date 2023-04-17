@@ -31,4 +31,5 @@ class FG_MarketGapTVC: UITableViewCell {
     @IBAction func forwardBtn(_ sender: Any) {
         self.delegate.marketGapForward(self)
     }
+    
 }

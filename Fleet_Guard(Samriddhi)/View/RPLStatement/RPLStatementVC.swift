@@ -9,6 +9,7 @@ import UIKit
 
 class RPLStatementVC: BaseViewController {
 
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var shopNameLbl: UILabel!
     @IBOutlet weak var rlpStatementLbl: UILabel!
     
@@ -30,8 +31,14 @@ class RPLStatementVC: BaseViewController {
         self.VM.VC = self
         self.rlpNoValueLbl.text = passBookNumber
         self.rlpStatemnet()
+        
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        topView.layer.maskedCorners = [.layerMinXMaxYCorner,.layerMaxXMaxYCorner]
+        topView.layer.cornerRadius = 40
+    }
     
 
     @IBAction func languageChangeBtn(_ sender: Any) {
@@ -52,6 +59,7 @@ class RPLStatementVC: BaseViewController {
     @IBAction func milestonePtsRedeemBtn(_ sender: Any) {
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MilestoneRedemptionVC") as! FG_MilestoneRedemptionVC
         vc.comingFrom = "Statement"
+        vc.itsFrom = "SideMenu"
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

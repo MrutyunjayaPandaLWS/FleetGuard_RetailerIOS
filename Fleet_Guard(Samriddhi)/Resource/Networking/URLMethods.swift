@@ -97,3 +97,6 @@ let bindLandingImageList_URLMethodes = "BindLandingImageList"
 let customerTicketRegister_URLMethodes = "CustomerTicketRegistration"
 let getRetailerBondingDetails_URLMethode = "GetRetailerBondingDetails"
 let counterGap_URLMethode = "BindProductDetailsMobile"
+
+let redemptionDetailsOrderStatus_URLMethode = "GetCustomerRedemptionHistorydetails"
+let redemptionDetail_URLMethode = "GetCatalogueDetails"

@@ -39,6 +39,7 @@ class FG_RangeTrendGraphVC: BaseViewController, ChartViewDelegate {
         rangeChartView.dragEnabled = true
         rangeChartView.setScaleEnabled(true)
         rangeChartView.pinchZoomEnabled = true
+        rangeChartView.xAxis.drawAxisLineEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,23 +111,24 @@ class FG_RangeTrendGraphVC: BaseViewController, ChartViewDelegate {
             }
         
     
-        let chartDataSet = LineChartDataSet(entries: yVals2)
+        let chartDataSet = LineChartDataSet(entries: yVals2,  label: "Previous financial year")
         chartDataSet.axisDependency = .left
-        chartDataSet.setColor(.green)
+        chartDataSet.setColor(.red)
         chartDataSet.lineWidth = 2
         chartDataSet.fillAlpha = 65/255
         chartDataSet.fillColor = .red
-        chartDataSet.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        chartDataSet.highlightColor =  UIColor(red: 100/255, green: 110/255, blue: 220/255, alpha: 1)
         chartDataSet.circleHoleRadius = 2
         chartDataSet.drawValuesEnabled = true
+        chartDataSet.circleColors = [.systemYellow]
         
-        let chartDataSet1 = LineChartDataSet(entries: yVals3)
+        let chartDataSet1 = LineChartDataSet(entries: yVals3, label: "Current financial year")
         chartDataSet1.axisDependency = .left
-        chartDataSet1.setColor(.red)
+        chartDataSet1.setColor(.green)
         chartDataSet1.lineWidth = 2
         chartDataSet1.fillAlpha = 65/255
         chartDataSet1.fillColor = UIColor.yellow.withAlphaComponent(200/255)
-        chartDataSet1.highlightColor = UIColor(red: 100/255, green: 110/255, blue: 220/255, alpha: 1)
+        chartDataSet1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
         chartDataSet1.circleHoleRadius = 2
         chartDataSet1.drawValuesEnabled = true
 
@@ -137,16 +139,17 @@ class FG_RangeTrendGraphVC: BaseViewController, ChartViewDelegate {
 
         rangeChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: self.monthsData)
         rangeChartView.xAxis.labelPosition = .bottom
+        rangeChartView.xAxis.setLabelCount(monthsData.count, force: true)
         rangeChartView.xAxis.drawGridLinesEnabled = false
         rangeChartView.xAxis.avoidFirstLastClippingEnabled = true
 
-        rangeChartView.rightAxis.drawAxisLineEnabled = true
+        rangeChartView.rightAxis.drawAxisLineEnabled = false
         rangeChartView.rightAxis.drawLabelsEnabled = false
 
         rangeChartView.leftAxis.drawAxisLineEnabled = true
         rangeChartView.pinchZoomEnabled = false
         rangeChartView.doubleTapToZoomEnabled = false
-        rangeChartView.legend.enabled = false
+        rangeChartView.legend.enabled = true
     }
 
     @IBAction func notificationActBTN(_ sender: Any) {

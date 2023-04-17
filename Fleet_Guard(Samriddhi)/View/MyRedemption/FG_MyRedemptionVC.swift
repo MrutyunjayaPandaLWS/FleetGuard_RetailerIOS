@@ -55,28 +55,30 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     var selectedFromDate = ""
     var selectedToDate = ""
     var collectionViewCatagory = ""
-    var collectionViewDataNumber = ""
+    var collectionViewDataNumber = "-1"
     
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     
     var VM = MyRedemptionListingVM()
     var collectionData:[String] = ["Pending","Processed","Rejected","Vendor Alloted","Return Pickup Schedule","Cancelled","Vendor Rejected","Dispatched","Re-Dispatched","Delivery Confirmed","InTransit","Return Request","Picked-Up"]
-    var addingData = ["0","2","5","2","21","17","15","10","8","19","24","20","22"]
+    var addingData = ["0","2","5","14","21","3","15","10","8","19","24","20","22"]
     
     //        pending = 0
-    //        processed = 2
+    //        processed = 2                         //12
     //        rejected = 5
     //        vendorAlloted = 2
     //        returnPickupSchedule =21
-    //        cancelled = 17
+    //        cancelled = 17                        //3
     //        vendorRejected = 15
     //        dispatched = 10
-    //        deliveryConfirmed = 19
+    //        deliveryConfirmed = 19                    //19
     //        inTransit =24
     //        returnRequest = 20
     //        pickedUp = 22
     //        reDispatched = 8
+    
+//    delivery = 14
     
 
     override func viewDidLoad() {
@@ -220,12 +222,15 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     @IBAction func clearbtn(_ sender: Any) {
         self.status = ""
         self.collectionViewCatagory = ""
+        self.collectionViewDataNumber = "-1"
         self.fromDateBtn.setTitle("From Date", for: .normal)
         self.toDateBtn.setTitle("To Date", for: .normal)
-        self.approvedBtn.backgroundColor = .white
-        self.pendingBtn.backgroundColor = .white
-        self.cancelledBtn.backgroundColor = .white
-        self.filterView.isHidden = true
+//        self.approvedBtn.backgroundColor = .white
+//        self.pendingBtn.backgroundColor = .white
+//        self.cancelledBtn.backgroundColor = .white
+        self.myRedemptionListing()
+        collectionView.reloadData()
+//        self.filterView.isHidden = true
     }
    
 }
@@ -247,8 +252,8 @@ extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource, UIColle
         
         let date = (VM.myRedemptionList[indexPath.row].jRedemptionDate ?? "").split(separator: " ")
         //let dateFormate = convertDateFormaterString("\(date[0])", fromDate: "MM-dd-yyyy", toDate: "dd/MM/yyyy")
-        let convertDateFormate = self.convertDateFormaterString("\(date[0])", fromDate: "MM-dd-yyyy", toDate: "dd/MM/yyyy")
-        cell.dateTitleLbl.text = "\(convertDateFormate)"
+//        let convertDateFormate = self.convertDateFormaterString("\(date[0])", fromDate: "MM-dd-yyyy", toDate: "dd/MM/yyyy")
+        cell.dateTitleLbl.text = "\(date[0])" //"\(convertDateFormate)"
         cell.ptsLbl.text = "\(Int(VM.myRedemptionList[indexPath.row].redeemedPoints ?? 0))"
         
         
@@ -257,14 +262,58 @@ extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource, UIColle
         //cell.statusLbl.setTitle("\(VM.myRedemptionList[indexPath.row].status ?? 0)", for: .normal)
         if statusDtata == 0{
             cell.statusLbl.setTitle("Pending",for: .normal)
-            cell.statusLbl.backgroundColor = .systemOrange
-        }else if statusDtata == 1{
-            cell.statusLbl.setTitle("Approved", for: .normal)
+            cell.statusLbl.backgroundColor = .systemYellow
+        }else if statusDtata == 12{
+            cell.statusLbl.setTitle("Processd", for: .normal)
+            cell.statusLbl.backgroundColor = .systemYellow
+        }else if statusDtata == 14{
+            cell.statusLbl.setTitle("Processd",for: .normal)
+            cell.statusLbl.backgroundColor = .systemYellow
+        }else if statusDtata == 2{
+            cell.statusLbl.setTitle("Processd", for: .normal)
+            cell.statusLbl.backgroundColor = .systemYellow
+        }else if statusDtata == 15{
+            cell.statusLbl.setTitle("Processd",for: .normal)
+            cell.statusLbl.backgroundColor = .systemYellow
+        }else if statusDtata == 10{
+            cell.statusLbl.setTitle("Dispatched", for: .normal)
+            cell.statusLbl.backgroundColor = UIColor.systemGreen
+        }else if statusDtata == 4{
+            cell.statusLbl.setTitle("Delivered",for: .normal)
+            cell.statusLbl.backgroundColor = .green
+        }else if statusDtata == 24{
+            cell.statusLbl.setTitle("In Transit", for: .normal)
+            cell.statusLbl.backgroundColor = .systemBlue
+        }else if statusDtata == 19{
+            cell.statusLbl.setTitle("Delivery Confirmed",for: .normal)
             cell.statusLbl.backgroundColor = .systemGreen
-        }else{
+        }else if statusDtata == 20{
+            cell.statusLbl.setTitle("Return Requested", for: .normal)
+            cell.statusLbl.backgroundColor = .systemYellow
+        }else if statusDtata == 21{
+            cell.statusLbl.setTitle("Return Pickup Schedule",for: .normal)
+            cell.statusLbl.backgroundColor = .systemYellow
+        }else if statusDtata == 22{
+            cell.statusLbl.setTitle("Picked Up", for: .normal)
+            cell.statusLbl.backgroundColor = .systemYellow
+        }else if statusDtata == 23{
+            cell.statusLbl.setTitle("Return Received", for: .normal)
+            cell.statusLbl.backgroundColor = .systemGreen
+        }else if statusDtata == 8{
+            cell.statusLbl.setTitle("Re dispatched", for: .normal)
+            cell.statusLbl.backgroundColor = .systemGreen
+        }else if statusDtata == 5{
             cell.statusLbl.setTitle("Rejected", for: .normal)
             cell.statusLbl.backgroundColor = .systemRed
+        }else if statusDtata == 3{
+            cell.statusLbl.setTitle("Cancelled", for: .normal)
+            cell.statusLbl.backgroundColor = .systemRed
+        }else{
+            cell.statusLbl.setTitle("Cancelled", for: .normal)
+            cell.statusLbl.backgroundColor = .systemRed
         }
+        
+        
         
         
         return cell
@@ -275,7 +324,12 @@ extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource, UIColle
     }
     
     
-   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyRedemptionDetailsVC") as? FG_MyRedemptionDetailsVC
+        vc?.redepmtionId = "\(self.VM.myRedemptionList[indexPath.row].redemptionId ?? 0)"
+        vc?.productRefno = "\(self.VM.myRedemptionList[indexPath.row].redemptionRefno ?? "")"
+        navigationController?.pushViewController(vc!, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return VM.myRedemptionList.count

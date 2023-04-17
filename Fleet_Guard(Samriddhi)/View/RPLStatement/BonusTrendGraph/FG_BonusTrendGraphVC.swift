@@ -34,9 +34,11 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
         self.VM.VC = self
         bonusTrendGraphView.delegate = self
         bonusTrendGraphView.chartDescription.enabled = false
+//        bonusTrendGraphView.xAxis.spaceMax = 1
         bonusTrendGraphView.dragEnabled = true
         bonusTrendGraphView.setScaleEnabled(true)
         bonusTrendGraphView.pinchZoomEnabled = true
+        bonusTrendGraphView.xAxis.drawAxisLineEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,25 +115,27 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
             }
         
     
-        let chartDataSet = LineChartDataSet(entries: yVals2)
+        let chartDataSet = LineChartDataSet(entries: yVals2,  label: "Previous financial year")
         chartDataSet.axisDependency = .left
-        chartDataSet.setColor(.green)
+        chartDataSet.setColor(.red)
         chartDataSet.lineWidth = 2
         chartDataSet.fillAlpha = 65/255
         chartDataSet.fillColor = .red
-        chartDataSet.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        chartDataSet.highlightColor = UIColor(red: 100/255, green: 110/255, blue: 220/255, alpha: 1)
         chartDataSet.circleHoleRadius = 2
         chartDataSet.drawValuesEnabled = true
+        chartDataSet.circleColors = [.systemYellow]
         
-        let chartDataSet1 = LineChartDataSet(entries: yVals3)
+        let chartDataSet1 = LineChartDataSet(entries: yVals3, label: "Current financial year")
         chartDataSet1.axisDependency = .left
-        chartDataSet1.setColor(.red)
+        chartDataSet1.setColor(.green)
         chartDataSet1.lineWidth = 2
         chartDataSet1.fillAlpha = 65/255
         chartDataSet1.fillColor = UIColor.yellow.withAlphaComponent(200/255)
-        chartDataSet1.highlightColor = UIColor(red: 100/255, green: 110/255, blue: 220/255, alpha: 1)
+        chartDataSet1.highlightColor =  UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
         chartDataSet1.circleHoleRadius = 2
         chartDataSet1.drawValuesEnabled = true
+        chartDataSet1.circleColors = [.blue]
 
         let chartData = LineChartData(dataSets: [chartDataSet, chartDataSet1])
 
@@ -139,17 +143,18 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
         bonusTrendGraphView.data = chartData
 
         bonusTrendGraphView.xAxis.valueFormatter = IndexAxisValueFormatter(values: self.monthsData)
+        bonusTrendGraphView.xAxis.setLabelCount(monthsData.count, force: true)
         bonusTrendGraphView.xAxis.labelPosition = .bottom
         bonusTrendGraphView.xAxis.drawGridLinesEnabled = false
         bonusTrendGraphView.xAxis.avoidFirstLastClippingEnabled = true
 
-        bonusTrendGraphView.rightAxis.drawAxisLineEnabled = true
+        bonusTrendGraphView.rightAxis.drawAxisLineEnabled = false
         bonusTrendGraphView.rightAxis.drawLabelsEnabled = false
 
         bonusTrendGraphView.leftAxis.drawAxisLineEnabled = true
         bonusTrendGraphView.pinchZoomEnabled = false
         bonusTrendGraphView.doubleTapToZoomEnabled = false
-        bonusTrendGraphView.legend.enabled = false
+        bonusTrendGraphView.legend.enabled = true
     }
     
     

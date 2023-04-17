@@ -54,6 +54,7 @@ class FG_DashBoardVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        dashboardApi()
         print(deviceID,"kjslk")
         self.emptyImageView.isHidden = true
         subView.clipsToBounds = true
@@ -137,7 +138,7 @@ class FG_DashBoardVC: BaseViewController {
     }
     
     @IBAction func viewProductBtn(_ sender: Any) {
-        self.viewProductButton.isUserInteractionEnabled = false
+//        self.viewProductButton.isUserInteractionEnabled = false
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_NewAdditionVC") as! FG_NewAdditionVC
         self.navigationController?.pushViewController(vc, animated: true)
     }

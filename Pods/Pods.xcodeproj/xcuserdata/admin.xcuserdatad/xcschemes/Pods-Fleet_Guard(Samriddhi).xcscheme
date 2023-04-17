@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4B3829E3DDABEF7F4A5A8DE4247B9B67"
-               BuildableName = "libPods-Fleet_Guard(Samriddhi).a"
+               BuildableName = "Pods_Fleet_Guard_Samriddhi_.framework"
                BlueprintName = "Pods-Fleet_Guard(Samriddhi)"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

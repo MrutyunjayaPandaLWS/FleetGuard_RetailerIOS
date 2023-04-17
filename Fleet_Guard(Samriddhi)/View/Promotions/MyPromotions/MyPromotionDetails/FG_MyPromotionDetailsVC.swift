@@ -9,6 +9,7 @@ import UIKit
 
 class FG_MyPromotionDetailsVC: BaseViewController {
 
+    @IBOutlet weak var heightOfPointsLbl: NSLayoutConstraint!
     @IBOutlet weak var termsandconditionLbl: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var pointsLbl: UILabel!
@@ -30,6 +31,7 @@ class FG_MyPromotionDetailsVC: BaseViewController {
         self.termsandconditionLbl.text = selectedLongDesc
         self.descriptionLbl.text = self.selectedShortDesc
         self.offerNameLbl.text  = self.selectedTitle
+        heightOfPointsLbl.constant = 0
         
         let imageURL = self.selectedImage
         if imageURL != ""{
