@@ -254,6 +254,9 @@
 		849E0756297978DF00F033CD /* FG_MyPromotionDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E0755297978DF00F033CD /* FG_MyPromotionDetailsVC.swift */; };
 		849E07592979790C00F033CD /* FG_MyPromotionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E07582979790C00F033CD /* FG_MyPromotionsTVC.swift */; };
 		84A9A320297EB7900063A4FC /* FG_CatalogueFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9A31F297EB7900063A4FC /* FG_CatalogueFilterView.swift */; };
+		84BD93D02A0DF2DF0059A96A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD93CF2A0DF2DF0059A96A /* NotificationService.swift */; };
+		84BD93D42A0DF2DF0059A96A /* NotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 84BD93CD2A0DF2DF0059A96A /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84BD93DB2A0DFAD20059A96A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BD93DA2A0DFAD20059A96A /* GoogleService-Info.plist */; };
 		84BDEF862988E7F1007EED1E /* FG_LodgeQueryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDEF852988E7F1007EED1E /* FG_LodgeQueryTVC.swift */; };
 		84BDEF8929890D4B007EED1E /* FG_CreatenewqueryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BDEF8829890D4B007EED1E /* FG_CreatenewqueryVC.swift */; };
 		84BE3172298E2CD10067C2C4 /* RedemptionCatalogueMyCartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE3171298E2CD10067C2C4 /* RedemptionCatalogueMyCartVM.swift */; };
@@ -303,6 +306,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		84BD93D22A0DF2DF0059A96A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84C1E3F029758A6D00D188C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BD93CC2A0DF2DF0059A96A;
+			remoteInfo = NotificationService;
+		};
 		84C1E41229758A7000D188C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84C1E3F029758A6D00D188C5 /* Project object */;
@@ -318,6 +328,20 @@
 			remoteInfo = "Fleet_Guard(Samriddhi)";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84BD93D82A0DF2DF0059A96A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				84BD93D42A0DF2DF0059A96A /* NotificationService.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		176194061075BA26EA28D9C7 /* Pods-Fleet_Guard(Samriddhi).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fleet_Guard(Samriddhi).release.xcconfig"; path = "Target Support Files/Pods-Fleet_Guard(Samriddhi)/Pods-Fleet_Guard(Samriddhi).release.xcconfig"; sourceTree = "<group>"; };
@@ -574,6 +598,11 @@
 		849E0755297978DF00F033CD /* FG_MyPromotionDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyPromotionDetailsVC.swift; sourceTree = "<group>"; };
 		849E07582979790C00F033CD /* FG_MyPromotionsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyPromotionsTVC.swift; sourceTree = "<group>"; };
 		84A9A31F297EB7900063A4FC /* FG_CatalogueFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_CatalogueFilterView.swift; sourceTree = "<group>"; };
+		84BD93CD2A0DF2DF0059A96A /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BD93CF2A0DF2DF0059A96A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		84BD93D12A0DF2DF0059A96A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BD93D92A0DF50A0059A96A /* Fleet_Guard(Samriddhi).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fleet_Guard(Samriddhi).entitlements"; sourceTree = "<group>"; };
+		84BD93DA2A0DFAD20059A96A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84BDEF852988E7F1007EED1E /* FG_LodgeQueryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_LodgeQueryTVC.swift; sourceTree = "<group>"; };
 		84BDEF8829890D4B007EED1E /* FG_CreatenewqueryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_CreatenewqueryVC.swift; sourceTree = "<group>"; };
 		84BE3171298E2CD10067C2C4 /* RedemptionCatalogueMyCartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionCatalogueMyCartVM.swift; sourceTree = "<group>"; };
@@ -628,6 +657,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		84BD93CA2A0DF2DF0059A96A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84C1E3F529758A6D00D188C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1343,6 +1379,7 @@
 		84068D8229765D9800D4360F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				84BD93DA2A0DFAD20059A96A /* GoogleService-Info.plist */,
 				251F0B8B299F679100E2881A /* TCandFAQ */,
 				8488E402298A258C0032A2D7 /* Networking */,
 				84068DB62976777200D4360F /* Roboto-Font */,
@@ -2105,6 +2142,15 @@
 			path = CatalogueList;
 			sourceTree = "<group>";
 		};
+		84BD93CE2A0DF2DF0059A96A /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				84BD93CF2A0DF2DF0059A96A /* NotificationService.swift */,
+				84BD93D12A0DF2DF0059A96A /* Info.plist */,
+			);
+			path = NotificationService;
+			sourceTree = "<group>";
+		};
 		84BDEF8729890BDD007EED1E /* CreateNewQuery */ = {
 			isa = PBXGroup;
 			children = (
@@ -2151,6 +2197,7 @@
 				84C1E3FA29758A6D00D188C5 /* Fleet_Guard(Samriddhi) */,
 				84C1E41429758A7000D188C5 /* Fleet_Guard(Samriddhi)Tests */,
 				84C1E41E29758A7000D188C5 /* Fleet_Guard(Samriddhi)UITests */,
+				84BD93CE2A0DF2DF0059A96A /* NotificationService */,
 				84C1E3F929758A6D00D188C5 /* Products */,
 				D9BEED5C6BF8B4DCD39FC454 /* Pods */,
 				4C409D5B08435EFF04ECD537 /* Frameworks */,
@@ -2163,6 +2210,7 @@
 				84C1E3F829758A6D00D188C5 /* Fleet_Guard(Samriddhi).app */,
 				84C1E41129758A7000D188C5 /* Fleet_Guard(Samriddhi)Tests.xctest */,
 				84C1E41B29758A7000D188C5 /* Fleet_Guard(Samriddhi)UITests.xctest */,
+				84BD93CD2A0DF2DF0059A96A /* NotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2170,6 +2218,7 @@
 		84C1E3FA29758A6D00D188C5 /* Fleet_Guard(Samriddhi) */ = {
 			isa = PBXGroup;
 			children = (
+				84BD93D92A0DF50A0059A96A /* Fleet_Guard(Samriddhi).entitlements */,
 				84068D8729765DF600D4360F /* Models */,
 				84068D8829765E0200D4360F /* View */,
 				84068D8929765E0A00D4360F /* ViewModels */,
@@ -2369,6 +2418,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		84BD93CC2A0DF2DF0059A96A /* NotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BD93D52A0DF2DF0059A96A /* Build configuration list for PBXNativeTarget "NotificationService" */;
+			buildPhases = (
+				84BD93C92A0DF2DF0059A96A /* Sources */,
+				84BD93CA2A0DF2DF0059A96A /* Frameworks */,
+				84BD93CB2A0DF2DF0059A96A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationService;
+			productName = NotificationService;
+			productReference = 84BD93CD2A0DF2DF0059A96A /* NotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		84C1E3F729758A6D00D188C5 /* Fleet_Guard(Samriddhi) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C1E42529758A7000D188C5 /* Build configuration list for PBXNativeTarget "Fleet_Guard(Samriddhi)" */;
@@ -2378,10 +2444,12 @@
 				84C1E3F529758A6D00D188C5 /* Frameworks */,
 				84C1E3F629758A6D00D188C5 /* Resources */,
 				541EDA00A4D0DF8728BDA39A /* [CP] Embed Pods Frameworks */,
+				84BD93D82A0DF2DF0059A96A /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				84BD93D32A0DF2DF0059A96A /* PBXTargetDependency */,
 			);
 			name = "Fleet_Guard(Samriddhi)";
 			productName = "Fleet_Guard(Samriddhi)";
@@ -2431,9 +2499,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					84BD93CC2A0DF2DF0059A96A = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					84C1E3F729758A6D00D188C5 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -2465,11 +2536,19 @@
 				84C1E3F729758A6D00D188C5 /* Fleet_Guard(Samriddhi) */,
 				84C1E41029758A7000D188C5 /* Fleet_Guard(Samriddhi)Tests */,
 				84C1E41A29758A7000D188C5 /* Fleet_Guard(Samriddhi)UITests */,
+				84BD93CC2A0DF2DF0059A96A /* NotificationService */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		84BD93CB2A0DF2DF0059A96A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84C1E3F629758A6D00D188C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2494,6 +2573,7 @@
 				84068DC42976777200D4360F /* Roboto-Medium.ttf in Resources */,
 				25C865EA29A7237F00C1801E /* otherInfoImageTableViewCell.xib in Resources */,
 				25C865DC29A7237F00C1801E /* senderInfoImageTableViewCell.xib in Resources */,
+				84BD93DB2A0DFAD20059A96A /* GoogleService-Info.plist in Resources */,
 				84068DA3297664C800D4360F /* lf30_editor_qd1wdceq.json in Resources */,
 				84068DC52976777200D4360F /* Roboto-Light.ttf in Resources */,
 				25C865E129A7237F00C1801E /* senderInfoTableViewCell.xib in Resources */,
@@ -2564,6 +2644,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		84BD93C92A0DF2DF0059A96A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BD93D02A0DF2DF0059A96A /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84C1E3F429758A6D00D188C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2852,6 +2940,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		84BD93D32A0DF2DF0059A96A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BD93CC2A0DF2DF0059A96A /* NotificationService */;
+			targetProxy = 84BD93D22A0DF2DF0059A96A /* PBXContainerItemProxy */;
+		};
 		84C1E41329758A7000D188C5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 84C1E3F729758A6D00D188C5 /* Fleet_Guard(Samriddhi) */;
@@ -2898,6 +2991,60 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		84BD93D62A0DF2DF0059A96A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi.NotificationService";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84BD93D72A0DF2DF0059A96A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi.NotificationService";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		84C1E42329758A7000D188C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3018,14 +3165,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC8B76E5C0211CD0461EB36B /* Pods-Fleet_Guard(Samriddhi).debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Fleet_Guard(Samriddhi)/Fleet_Guard(Samriddhi).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fleet_Guard(Samriddhi)/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "FleetGuard Need to Access the camera to upload profile Image and Customer support";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "FleetGuard Need to Access the Photo Library to upload profile Image  and Customer support";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -3050,14 +3201,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 176194061075BA26EA28D9C7 /* Pods-Fleet_Guard(Samriddhi).release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Fleet_Guard(Samriddhi)/Fleet_Guard(Samriddhi).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fleet_Guard(Samriddhi)/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "FleetGuard Need to Access the camera to upload profile Image and Customer support";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "FleetGuard Need to Access the Photo Library to upload profile Image  and Customer support";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -3157,6 +3312,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		84BD93D52A0DF2DF0059A96A /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BD93D62A0DF2DF0059A96A /* Debug */,
+				84BD93D72A0DF2DF0059A96A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		84C1E3F329758A6D00D188C5 /* Build configuration list for PBXProject "Fleet_Guard(Samriddhi)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

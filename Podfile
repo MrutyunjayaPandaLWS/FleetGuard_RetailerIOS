@@ -15,4 +15,9 @@ pod 'Kingfisher'
 pod 'LanguageManager-iOS'
 pod 'Charts'
 
+pod 'Firebase/Messaging'
+pod 'FirebaseAuth'
+pod 'FirebaseFirestore'
+pod 'Firebase/Core'
+
 end

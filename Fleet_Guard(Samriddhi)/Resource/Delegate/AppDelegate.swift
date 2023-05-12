@@ -11,9 +11,14 @@ import SlideMenuControllerSwift
 import IQKeyboardManagerSwift
 import LanguageManager_iOS
 
+import FirebaseCore
+import Firebase
+import UserNotificationsUI
+import FirebaseMessaging
+
 @available(iOS 13.0, *)
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate{
 
     var window: UIWindow?
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -44,11 +49,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.setInitialViewAsRootViewController()
         }
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
-//        if let tabBarController = self.window?.rootViewController as? UITabBarController {
-//            tabBarController.selectedIndex = 1
-//        }
 
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        FirebaseApp.configure()
+        
+       //   Messaging.messaging().isAutoInitEnabled = true
+          application.registerForRemoteNotifications()
+          Messaging.messaging().delegate = self
+          Messaging.messaging().token { token, error in
+            if let error = error {
+              print("Error fetching FCM registration token: \(error)")
+            } else if let token = token {
+              print("FCM registration token: \(token)")
+              UserDefaults.standard.setValue(token, forKey: "UD_DEVICE_TOKEN")
+            }
+          }
+        print("App Launch Screen")
+        
         return true
+        return true
+    }
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+        Messaging.messaging().token { (token, error) in
+            if let error = error {
+                print("Error fetching remote instance ID: \(error.localizedDescription)")
+            } else if let token = token {
+                print("Token is \(token)")
+            }
+        }
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        completionHandler([.alert, .badge, .sound])
+    }
+    //MessagingDelegate
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print("Firebase token: \(fcmToken)")
+        UserDefaults.standard.setValue(fcmToken, forKey: "DEVICE_TOKEN")
+
     }
 
     // MARK: UISceneSession Lifecycle
