@@ -70,6 +70,8 @@ class FG_DropDownVC: BaseViewController {
             // self.lodgeQueryStatusApi()
          }else if isComeFrom == 4{
              self.getHelpTopicApi()
+         }else if isComeFrom == 6{
+             self.languageListApi()
          }
         print(isComeFrom, "isComeFrom")
     }
@@ -115,6 +117,13 @@ class FG_DropDownVC: BaseViewController {
     }
     
     
+    func languageListApi(){
+        let parameter = [
+            "ActionType":"18"
+        ] as [String : Any]
+        self.VM.languageListApi(parameter: parameter)
+        
+    }
     
     
 //    func preferredLanguageApi(){
@@ -184,13 +193,20 @@ extension FG_DropDownVC: UITableViewDataSource, UITableViewDelegate{
         print(isComeFrom, "Its From")
         
         if isComeFrom == 1{
+            heightOfTable.constant = CGFloat(30 * self.VM.stateArray.count)
             return self.VM.stateArray.count
         }else if isComeFrom == 2{
+            heightOfTable.constant = CGFloat(30 * self.VM.cityArray.count)
             return self.VM.cityArray.count
         }else if self.isComeFrom == 4{
+            heightOfTable.constant = CGFloat(30 * self.VM.helpTopicListArray.count)
             return self.VM.helpTopicListArray.count
         }else if self.isComeFrom == 5{
+            heightOfTable.constant = CGFloat(30 * genderList.count)
             return genderList.count
+        }else if self.isComeFrom == 6{
+            heightOfTable.constant = CGFloat(30 * self.VM.languageList.count)
+            return self.VM.languageList.count
         }else{
             return 0
         }
@@ -208,6 +224,8 @@ extension FG_DropDownVC: UITableViewDataSource, UITableViewDelegate{
             cell!.dropdownInfo.text = self.VM.helpTopicListArray[indexPath.row].helpTopicName ?? ""
         }else if self.isComeFrom == 5{
             cell!.dropdownInfo.text = self.genderList[indexPath.row]
+        }else if self.isComeFrom == 6{
+            cell!.dropdownInfo.text = self.VM.languageList[indexPath.row].attributeValue ?? ""
         }
         return cell!
     }
@@ -237,6 +255,11 @@ extension FG_DropDownVC: UITableViewDataSource, UITableViewDelegate{
         }else if isComeFrom == 5 {
             self.selectedGender = self.genderList[indexPath.row]
             self.delegate?.genderDidTap(self)
+            self.dismiss(animated: true, completion: nil)
+        }else if isComeFrom == 6{
+            self.selectedLanguage = self.VM.languageList[indexPath.row].attributeValue ?? ""
+            self.selectedPreferredID = self.VM.languageList[indexPath.row].attributeId ?? -1
+            self.delegate?.preferredLanguageDidTap(self)
             self.dismiss(animated: true, completion: nil)
         }
     }

@@ -9,7 +9,7 @@ import UIKit
 
 class HistoryNotificationsViewModel{
     
-    weak var VC: FG_NotificationVC?
+    weak var VC: HistoryNotificationsViewController?
     var requestAPIs = RestAPI_Requests()
     var notificationListArray = [LstPushHistoryJson]()
     

@@ -49,6 +49,7 @@ class FG_CounterGapVC: BaseViewController, CounterGapDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        noDataFound.isHidden = true
         counterGap(startIndex: startindex)
     }
     

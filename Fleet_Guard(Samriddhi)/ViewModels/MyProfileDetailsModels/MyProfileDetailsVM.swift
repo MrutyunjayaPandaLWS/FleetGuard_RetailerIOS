@@ -19,7 +19,7 @@ class MyProfileDetailsVM: popUpDelegate{
     weak var VC: FG_MyProfileVC?
     var requestAPIs = RestAPI_Requests()
     var myProfileDetailsarray = [LstCustomerOfficalInfoJson1]()
-    
+    var profileDetailsData : ProfileDetailsModels?
     
     func myProifleDetails(parameters:JSON) -> (){
         DispatchQueue.main.async {
@@ -30,6 +30,7 @@ class MyProfileDetailsVM: popUpDelegate{
                 if result != nil{
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
+                        self.profileDetailsData = result
                         self.VC?.firstNameLbl.text = result?.lstCustomerJson?[0].firstName ?? "-"
                         self.VC?.lastNameLbl.text = result?.lstCustomerJson?[0].lastName ?? "-"
                         self.VC?.mobileNumberLbl.text = result?.lstCustomerJson?[0].mobile ?? "-"
@@ -40,6 +41,7 @@ class MyProfileDetailsVM: popUpDelegate{
                         self.VC?.cityLbl.text = result?.lstCustomerJson?[0].cityName ?? "-"
                         self.VC?.pincodeLbl.text = result?.lstCustomerJson?[0].zip ?? "-"
                         self.VC?.preferredLanguageLbl.text = result?.lstCustomerJson?[0].languageName ?? "English"
+                        self.VC?.languageID = result?.lstCustomerJson?[0].languageId ?? -1
                         let createdDate = (result?.lstCustomerJson?[0].jdob ?? "-").split(separator: " ")
                         let convertDateFormate = self.VC?.convertDateFormaterString("\(createdDate[0])", fromDate: "dd-MM-yyyy", toDate: "dd/MM/yyyy")
                         self.VC?.dobLbl.text = "\(convertDateFormate ?? "")"

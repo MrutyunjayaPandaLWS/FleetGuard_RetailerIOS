@@ -26,7 +26,7 @@ class FG_RedemptionDetailsVM{
                     self.redemptionDetails = result?.objCatalogueList ?? []
                     if self.redemptionDetails.count != 0{
                         DispatchQueue.main.async {
-                            self.VC?.categoryNameLbl.text = "Category : \(self.redemptionDetails[0].categoryName ?? "Category : _")"
+                            self.VC?.categoryNameLbl.text = "Category : \(self.redemptionDetails[0].catogoryName ?? "_")"
                             self.VC?.productName.text = "\(self.redemptionDetails[0].productName ?? "__")"
                             self.VC?.redemptionRefno.text = "\(self.redemptionDetails[0].redemptionRefno ?? "_")"
                             self.VC?.pointsBalLbl.text = "\(self.redemptionDetails[0].pointsRequired ?? 0)"

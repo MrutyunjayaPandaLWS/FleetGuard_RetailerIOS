@@ -22,7 +22,7 @@ class CounterGapVM {
                 if error == nil{
                     if result != nil{
                     DispatchQueue.main.async {
-                        self.VC?.stopLoading()
+                        
                         self.myCounterGapArray1 = result?.lsrProductDetails ?? []
                         self.VC?.noofelements = self.myCounterGapArray1.count
                         self.myCounterGapArray = self.myCounterGapArray + self.myCounterGapArray1
@@ -36,17 +36,19 @@ class CounterGapVM {
                             self.VC?.CounterGapTableView.isHidden = true
                             self.VC?.noDataFound.isHidden = false
                         }
-                        
+                        self.VC?.stopLoading()
                     }
 
                 }else{
                     DispatchQueue.main.async {
+                        self.VC?.noDataFound.isHidden = false
                         self.VC?.stopLoading()
                         print("\(error)")
                     }
                 }
             }else{
                 DispatchQueue.main.async {
+                    self.VC?.noDataFound.isHidden = false
                     self.VC?.stopLoading()
                     print("\(error)")
                 }

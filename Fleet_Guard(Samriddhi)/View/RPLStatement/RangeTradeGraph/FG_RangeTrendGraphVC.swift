@@ -69,9 +69,20 @@ class FG_RangeTrendGraphVC: BaseViewController, ChartViewDelegate {
                         
                         //self.myPointsArrayOfD.append(pointsTradegraph(monthName: data.monthName, previousYearPoint: "\(Int(data.previousYearPoint ?? 0))", currentYearPoint: "\(data.currentYearPoint ?? 0)"))
                         
-                        self.firstGraphData.append(data.currentYearPoint!)
-                        self.secondGraphData.append(data.previousYearPoint!)
-                        self.monthsData.append(data.monthName!)
+//                        self.firstGraphData.append(data.currentYearPoint!)
+//                        self.secondGraphData.append(data.previousYearPoint!)
+//                        self.monthsData.append(data.monthName!)
+                        
+                        if self.firstGraphData.count < 12{
+                            self.firstGraphData.append(data.currentYearPoint!)
+                        }
+                        if self.secondGraphData.count < 12{
+                            self.secondGraphData.append(data.previousYearPoint!)
+                        }
+                        if self.monthsData.count < 12{
+                            self.monthsData.append(data.monthName!)
+                        }
+                        
                         print(self.firstGraphData,"sljd")
 
                         let stringArray = self.secondGraphData.map {Double($0)}
@@ -118,7 +129,8 @@ class FG_RangeTrendGraphVC: BaseViewController, ChartViewDelegate {
         chartDataSet.fillAlpha = 65/255
         chartDataSet.fillColor = .red
         chartDataSet.highlightColor =  UIColor(red: 100/255, green: 110/255, blue: 220/255, alpha: 1)
-        chartDataSet.circleHoleRadius = 2
+        chartDataSet.circleHoleRadius = 1
+        chartDataSet.circleRadius = 6
         chartDataSet.drawValuesEnabled = true
         chartDataSet.circleColors = [.systemYellow]
         
@@ -129,7 +141,8 @@ class FG_RangeTrendGraphVC: BaseViewController, ChartViewDelegate {
         chartDataSet1.fillAlpha = 65/255
         chartDataSet1.fillColor = UIColor.yellow.withAlphaComponent(200/255)
         chartDataSet1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
-        chartDataSet1.circleHoleRadius = 2
+        chartDataSet1.circleHoleRadius = 1
+        chartDataSet1.circleRadius = 6
         chartDataSet1.drawValuesEnabled = true
 
         let chartData = LineChartData(dataSets: [chartDataSet, chartDataSet1])

@@ -32,24 +32,26 @@ class MileStoneRedemptionListVM: popUpDelegate {
                         print(self.myRedemptionList.count)
                         if self.myRedemptionList.count != 0 {
                             self.VC?.myRedemptionTableView.isHidden = false
+                            self.VC?.nodatafoundLbl.isHidden = true
                             self.VC?.myRedemptionTableView.reloadData()
                             
                         }else{
                             self.VC?.myRedemptionTableView.isHidden = true
+                            self.VC?.nodatafoundLbl.isHidden = false
                             
                         }
                     }
                 } else {
                     print("No Response")
                     DispatchQueue.main.async {
-                        
+                        self.VC?.nodatafoundLbl.isHidden = false
                         self.VC?.stopLoading()
                     }
                 }
             }else{
                 print("ERROR_Login \(error)")
                 DispatchQueue.main.async {
-                    
+                    self.VC?.nodatafoundLbl.isHidden = false
                     self.VC?.stopLoading()
                 }
 

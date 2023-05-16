@@ -11,6 +11,7 @@ import SlideMenuControllerSwift
 import Kingfisher
 class FG_DashBoardVC: BaseViewController {
 
+    @IBOutlet weak var nodataFoundLbl: UILabel!
     @IBOutlet weak var promotionBtn: UIButton!
     //    @IBOutlet weak var offersandPromLbl: UILabel!
 //    @IBOutlet weak var redemptionCatalogueLbl: UILabel!
@@ -43,7 +44,11 @@ class FG_DashBoardVC: BaseViewController {
     var dashboardAarray = [ObjCustomerDashboardList]()
     
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
-    var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
+    var loyaltyId = ""{
+        didSet{
+            pointsAPI()
+        }
+    }
     var secondToken = UserDefaults.standard.string(forKey: "SECONDTOKEN") ?? ""
     var deviceID =  UserDefaults.standard.string(forKey: "deviceID") ?? ""
     var bannerImagesArray = [ObjImageGalleryList]()
@@ -54,6 +59,7 @@ class FG_DashBoardVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        nodataFoundLbl.isHidden = true
         dashboardApi()
         print(deviceID,"kjslk")
         self.emptyImageView.isHidden = true
@@ -146,6 +152,8 @@ class FG_DashBoardVC: BaseViewController {
     }
     
     @IBAction func notificationBell(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryNotificationsViewController") as? HistoryNotificationsViewController
+        navigationController?.pushViewController(vc!, animated: true)
     }
 
     @IBAction func promotionActBTN(_ sender: Any) {
@@ -254,12 +262,15 @@ class FG_DashBoardVC: BaseViewController {
                     }else{
                         self.bannerImage.isHidden = true
                         self.emptyImageView.isHidden = false
+                        self.emptyImageView.image =  UIImage(named: "ic_default_img")
                     }
                 }
                
                 
                 // self.offersandPromotionsApi()
             }else{
+                self.bannerImage.isHidden = true
+                self.emptyImageView.isHidden = false
             print("No Resdflksjadfljkasdjflasldjf")
             }
         }
@@ -319,7 +330,7 @@ class FG_DashBoardVC: BaseViewController {
                     self.dashboardApi()
                     self.dashboardPointsApi()
                     self.productsCategoryListApi()
-                    self.pointsAPI()
+//                    self.pointsAPI()
                      }catch let parsingError {
                     print("Error", parsingError)
                 }

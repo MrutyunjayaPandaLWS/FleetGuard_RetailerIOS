@@ -33,6 +33,7 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     
     func genderDidTap(_ vc: FG_DropDownVC) {
         self.selectGenderLbl.text = vc.selectedGender
+        genderName = vc.selectedGender
     }
     
     func titleDidTap(_ vc: FG_DropDownVC) {}
@@ -95,7 +96,8 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     var city = ""
     var pincode = ""
     var dob = ""
-    var prefLanguage = ""
+    var prefLanguage = "Select Preferred Language"
+    var genderName = ""
     
     
     var selectedStateId = -1
@@ -108,6 +110,16 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     var itsComeFrom = ""
     let userID = UserDefaults.standard.string(forKey: "UserID") ?? ""
     let loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
+    var profileDetails: ProfileDetailsModels?
+    
+    var addressId: Int = 0
+    var customerTypeID = 0
+    var customerType = 1
+    var isactive = 1
+    var loyaltyAutoGen = 1
+    var merchantId = 1
+    var countryId = -1
+    var locationCode = 1
     
     var VM = EditProfileVM()
     
@@ -127,6 +139,21 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
         self.selectDOBLbl.text = dob
         self.selectCountryLbl.text = "India"
         self.addressTF.text = self.addressLbl
+        
+        genderName == "-" ? (self.selectGenderLbl.text = "Select Gender") : (self.selectGenderLbl.text = genderName)
+        dob == "-" ? (self.selectDOBLbl.text = "Select_DOB".localiz()) : (self.selectDOBLbl.text = dob)
+        prefLanguage == "-" ? (self.selectPreferredLanguage.text = "Select Preferred Language") : (self.selectPreferredLanguage.text = prefLanguage)
+        
+        addressId = profileDetails?.lstCustomerJson?[0].addressId ?? 0
+        customerTypeID = profileDetails?.lstCustomerJson?[0].customerTypeID ?? 54
+        customerType = profileDetails?.lstCustomerJson?[0].customerId ?? 0
+//        isactive = profileDetails?.lstCustomerJson?[0].isActive ?? 1
+//        loyaltyAutoGen = profileDetails?.lstCustomerJson?[0].loyaltyIdAutoGen ?? 1
+//        merchantId = profileDetails?.lstCustomerJson?[0].merchantId ?? 1
+        countryId = profileDetails?.lstCustomerJson?[0].countryId ?? -1
+        locationCode = profileDetails?.lstCustomerJson?[0].locationId ?? -1
+        selectedStateId = profileDetails?.lstCustomerJson?[0].stateId ?? -1
+        selectedCityId = profileDetails?.lstCustomerJson?[0].cityId ?? -1
     }
     
 
@@ -162,6 +189,12 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     }
     
     @IBAction func preferredLanguageBtn(_ sender: Any) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DropDownVC") as? FG_DropDownVC
+        vc!.delegate = self
+        vc!.isComeFrom = 6
+        vc!.modalPresentationStyle = .overCurrentContext
+        vc!.modalTransitionStyle = .crossDissolve
+        self.present(vc!, animated: true, completion: nil)
     }
     
     @IBAction func selectStatebtn(_ sender: Any) {
@@ -205,37 +238,36 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     
     
     func editDataAPI(){
-        let parameters = [
+        let parameters : [String : Any] = [
             "ActionType": "4",
             "ActorId": "\(userID)",
             "IsMobileRequest": 1,
-            "ObjCustomerDetails": [],
+            "ObjCustomerDetails": [
+                "Gender": genderName,
+                "LanguageID": selectedLanguageId
+            ],
             "ObjCustomerJson": [
-                "AccountNumber": "",
-                "AcountHolderName": "",
-                "Address1": "",
-                "AddressId": 0,
-                "BankName": "",
-                "CustomerId": "3",
-                "CustomerTypeID": 1,
-                "Email": "\(self.emailTF.text ?? "")",
-                "FirstName": "\(self.firstNameTF.text ?? "")",
-                "IFSCCode": "",
-                "IsActive": "1",
-                "JDOB": "\(self.selectDOBLbl.text ?? "")",
-                "LoyaltyIdAutoGen": "1",
+                "Address1": addressTF.text ?? "",
+                "AddressId": addressId,
+                "CustomerId": customerType,
+                "CustomerTypeID": customerTypeID,
+                "Email": emailTF.text ?? "",
+                "FirstName": firstNameTF.text ?? "",
+                "LastName": lastNameTF.text ?? "",
+                "IsActive": "\(isactive)",
+                "JDOB": dob,
+                "LoyaltyIdAutoGen": 1,
                 "MerchantId": 1,
-                "CountryId": 15,
-                "LocationId": "",
-                "Mobile": "\(self.mobileTF.text ?? "")",
-                "RegStatusid": 1,
+                "CountryId": countryId,
+                "LocationId": locationCode ,
+                "Mobile": mobileTF.text ?? "",
+                "RegStatusid": 2,
                 "RegistrationSource": "5",
-                "StateId": "\(self.selectedStateId)",
-                "WalletNumber": "",
-                "Zip": "\(pincodeTF.text ?? "")",
-                "cityid": self.selectedCityId
+                "StateId": selectedStateId,
+                "Zip": pincodeTF.text ?? "",
+                "cityid": selectedCityId
             ]
-        ] as [String: Any]
+        ]
         print(parameters)
         self.VM.editProfileSubmissionAPI(paramters: parameters)
     }

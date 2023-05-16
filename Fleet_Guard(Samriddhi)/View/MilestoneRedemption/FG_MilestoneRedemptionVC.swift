@@ -15,6 +15,7 @@ class FG_MilestoneRedemptionVC : BaseViewController, mileStoneDelegateData{
     }
     
 
+    @IBOutlet weak var nodatafoundLbl: UILabel!
     @IBOutlet weak var backBtn: UIButton!
 //    @IBOutlet weak var filterTitle: UILabel!
 //    @IBOutlet weak var subView: UIView!

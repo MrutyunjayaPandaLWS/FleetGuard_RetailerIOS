@@ -33,22 +33,26 @@ class FG_QueryListVM {
                         self.VC?.noofelements = self.queryListArray.count
                         print(self.queryListArray.count,"skjhdks")
                         if self.queryListArray.count != 0 {
+                            self.VC?.noDataFoundLbl.isHidden = true
                             self.VC?.lodgeQueryListTableView.isHidden = false
                             self.VC?.lodgeQueryListTableView.reloadData()
                         }else{
                             self.VC?.view.makeToast("No data found !", duration: 2.0, position: .bottom)
                             self.VC?.lodgeQueryListTableView.isHidden = true
+                            self.VC?.noDataFoundLbl.isHidden = false
                             //self.VC?.filterView.isHidden = true
                         }
                     }
                 }else{
                     DispatchQueue.main.async {
+                        self.VC?.noDataFoundLbl.isHidden = false
                         self.VC?.stopLoading()
                       
                     }
                 }
             }else{
                 DispatchQueue.main.async {
+                    self.VC?.noDataFoundLbl.isHidden = false
                     self.VC?.stopLoading()
                 }
             }

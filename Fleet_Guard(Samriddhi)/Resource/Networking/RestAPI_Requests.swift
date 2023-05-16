@@ -885,4 +885,20 @@ class RestAPI_Requests {
            }
        }
     }
+    
+    
+    //    MARK: -LANGUAGE API
+        func language_Api(parameters: JSON, completion: @escaping (LanguageModel?, Error?) -> ()) -> URLSessionDataTask? {
+                return client.load(path: language_URLMethod, method: .post, params: parameters) { data, error in
+                    do{
+                        if data != nil{
+                            let result1 =  try JSONDecoder().decode(LanguageModel?.self, from: data as! Data)
+                            completion(result1, nil)
+                        }
+                    }catch{
+                        completion(nil, error)
+                    }
+                }
+            }
+    
 }

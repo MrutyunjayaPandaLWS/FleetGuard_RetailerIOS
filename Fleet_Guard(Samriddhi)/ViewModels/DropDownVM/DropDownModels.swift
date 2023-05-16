@@ -13,6 +13,7 @@ class DropDownModels{
     var requestAPIs = RestAPI_Requests()
     var stateArray = [StateList]()
     var cityArray = [CityList]()
+    var languageList = [LstAttributesDetails1]()
     var helpTopicListArray = [ObjHelpTopicList]()
     func statelisting(parameters:JSON){
         DispatchQueue.main.async {
@@ -162,4 +163,45 @@ class DropDownModels{
 //
 //        }
 //    }
+    
+    func languageListApi(parameter: JSON){
+        self.languageList.removeAll()
+        VC?.startLoading()
+        requestAPIs.language_Api(parameters: parameter) { result, error in
+            if error == nil{
+                if result != nil{
+                    DispatchQueue.main.async {
+                        self.languageList = result?.lstAttributesDetails ?? []
+                        if self.languageList.count != 0{
+//                            self.VC?.heightOfTableView.constant = CGFloat(45 * self.languageList.count)
+//                            self.VC?.rowNumber = self.languageList.count
+                            self.VC?.dropDownTableView.reloadData()
+                            self.VC?.stopLoading()
+                            
+                        }else{
+                            self.VC?.dropDownTableView.isHidden = true
+                            self.VC?.noDataFoundLbl.isHidden = false
+                            self.VC?.stopLoading()
+                        }
+                    }
+                }else{
+                    DispatchQueue.main.async {
+                        self.VC?.dropDownTableView.isHidden = true
+                        self.VC?.noDataFoundLbl.isHidden = false
+                        self.VC?.stopLoading()
+                    }
+                }
+            }else{
+                print("Language Api error",error?.localizedDescription)
+                DispatchQueue.main.async {
+                    self.VC?.dropDownTableView.isHidden = true
+                    self.VC?.noDataFoundLbl.isHidden = false
+                    self.VC?.stopLoading()
+                }
+            }
+        }
+        
+    }
+    
+    
 }

@@ -22,6 +22,7 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
         self.dismiss(animated: true)
     }
     
+    @IBOutlet weak var filterShadowView: UIView!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var filterTitle: UILabel!
     @IBOutlet weak var subView: UIView!
@@ -54,7 +55,7 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
         myMilestoneRedemptionTableView.dataSource = self
         myMilestoneRedemptionTableView.separatorStyle = .none
         
-        self.filterView.isHidden = true
+        self.filterShadowView.isHidden = true
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 20
         subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -65,8 +66,22 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        noDataFoundLBl.isHidden = true
         self.mileStoneRedemptionAPI()
     }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        self.status = ""
+//        self.fromDateBtn.setTitle("From Date", for: .normal)
+//        self.toDateBtn.setTitle("To Date", for: .normal)
+//        self.approvedBtn.backgroundColor = .white
+//        self.pendingBtn.backgroundColor = .white
+//        self.cancelledBtn.backgroundColor = .white
+//        selectedFromDate = ""
+//        selectedToDate = ""
+//        self.filterShadowView.isHidden = true
+//    }
     
     
     @IBAction func backButton(_ sender: Any) {
@@ -78,14 +93,14 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
     @IBAction func notificationBtn(_ sender: Any) {
     }
     @IBAction func filterBtn(_ sender: Any) {
-        if self.filterView.isHidden == false{
-            self.filterView.isHidden = true
+        if self.filterShadowView.isHidden == false{
+            self.filterShadowView.isHidden = true
         }else{
-            self.filterView.isHidden = false
+            self.filterShadowView.isHidden = false
         }
     }
     @IBAction func closeBtn(_ sender: Any) {
-        self.filterView.isHidden = true
+        self.filterShadowView.isHidden = true
     }
     
     @IBAction func fromDateButton(_ sender: Any) {
@@ -128,8 +143,44 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
         self.cancelledBtn.backgroundColor = .systemOrange
     }
     @IBAction func applyButton(_ sender: Any) {
-        mileStoneRedemptionAPI()
-        self.filterView.isHidden = true
+
+        if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.status == ""{
+            self.view.makeToast("Select date or filter status or both", duration: 2.0, position: .center)
+        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.status != ""{
+            
+            mileStoneRedemptionAPI()
+            self.filterShadowView.isHidden = true
+            
+        }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle == "To Date"{
+            
+            self.view.makeToast("Select To Date", duration: 2.0, position: .center)
+            
+        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle != "To Date"{
+            
+            self.view.makeToast("Select From Date", duration: 2.0, position: .center)
+            
+        }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle != "To Date" && self.status == "" || self.status != ""{
+            
+            if selectedToDate < selectedFromDate{
+                
+                self.view.makeToast("ToDate should be lower than FromDate", duration: 2.0, position: .center)
+                
+            }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.status != ""{
+                
+                mileStoneRedemptionAPI()
+                self.filterShadowView.isHidden = true
+            }else{
+                mileStoneRedemptionAPI()
+                self.filterShadowView.isHidden = true
+            }
+            
+        }else{
+            
+            mileStoneRedemptionAPI()
+            self.filterShadowView.isHidden = true
+        }
+        
+        
     }
     @IBAction func clearAllBtn(_ sender: Any) {
         self.status = ""
@@ -138,6 +189,10 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
         self.approvedBtn.backgroundColor = .white
         self.pendingBtn.backgroundColor = .white
         self.cancelledBtn.backgroundColor = .white
+        selectedFromDate = ""
+        selectedToDate = ""
+        mileStoneRedemptionAPI()
+        self.filterShadowView.isHidden = true
     }
     
     

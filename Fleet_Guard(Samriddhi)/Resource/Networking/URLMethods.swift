@@ -100,3 +100,4 @@ let counterGap_URLMethode = "BindProductDetailsMobile"
 
 let redemptionDetailsOrderStatus_URLMethode = "GetCustomerRedemptionHistorydetails"
 let redemptionDetail_URLMethode = "GetCatalogueDetails"
+let language_URLMethod = "GetAttributeDetailsMobileApp"

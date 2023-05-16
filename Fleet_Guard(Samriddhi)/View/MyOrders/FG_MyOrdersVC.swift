@@ -37,6 +37,7 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
     }
     
 
+    @IBOutlet weak var filterShadowView: UIView!
     @IBOutlet weak var fromDateBtn: UIButton!
 
     @IBOutlet weak var toDateBtn: UIButton!
@@ -70,7 +71,7 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
     var selectedStatusId = -1
     var selectedFromDate = ""
     var selectedToDate = ""
-    var status = 0
+    var status = -1
     var searchText = ""
     
     override func viewDidLoad() {
@@ -79,8 +80,9 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
         self.myOrderTableView.delegate = self
         self.myOrderTableView.dataSource = self
         self.myOrderListingAPI(startInx: 1, orderStatusId: -1, fromDate: "", toDate: "")
-        self.subView.isHidden = true
+        self.filterShadowView.isHidden = true
         //self.filterView.isHidden = true
+        noDataFound.isHidden = true
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 20
         subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -92,6 +94,22 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
         orderHeaderStack.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        self.status = -1
+//        self.fromDateBtn.setTitle("From Date", for: .normal)
+//        self.toDateBtn.setTitle("To Date", for: .normal)
+//        self.selectedFromDate = ""
+//        self.selectedToDate = ""
+//        selectedQueryTopicId = -1
+//        self.approvedBtn.backgroundColor = .white
+//    self.pendingBtn.backgroundColor = .white
+//    self.rejectedBtn.backgroundColor = .white
+//    escalatedBtn.backgroundColor = .white
+//    self.cancelledBtn.backgroundColor = .white
+//    postedForApprovalBtn.backgroundColor = .white
+//        self.filterShadowView.isHidden = true
+//    }
 
 
     @IBAction func backBtn(_ sender: Any) {
@@ -99,26 +117,26 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
     }
     
     @IBAction func filterBtn(_ sender: Any) {
-        if self.subView.isHidden == false{
-            self.subView.isHidden = true
+        if self.filterShadowView.isHidden == false{
+            self.filterShadowView.isHidden = true
         }else{
-            self.subView.isHidden = false
+            self.filterShadowView.isHidden = false
             self.approvedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
             self.pendingBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
             self.rejectedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
             self.escalatedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
             self.cancelledBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
             self.postedForApprovalBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
-            self.approvedBtn.backgroundColor = .white
-            self.pendingBtn.backgroundColor = .white
-            self.rejectedBtn.backgroundColor = .white
-            self.escalatedBtn.backgroundColor = .white
-            self.cancelledBtn.backgroundColor = .white
-            self.postedForApprovalBtn.backgroundColor = .white
+//            self.approvedBtn.backgroundColor = .white
+//            self.pendingBtn.backgroundColor = .white
+//            self.rejectedBtn.backgroundColor = .white
+//            self.escalatedBtn.backgroundColor = .white
+//            self.cancelledBtn.backgroundColor = .white
+//            self.postedForApprovalBtn.backgroundColor = .white
         }
 }
 @IBAction func closeBtn(_ sender: Any) {
-    self.subView.isHidden = true
+    self.filterShadowView.isHidden = true
 }
     
     @IBAction func applyButton(_ sender: Any) {
@@ -127,8 +145,45 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
         print(selectedToDate,"lskdjsldm")
 //        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
         self.VM.myOrderListingArray.removeAll()
-        self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
-        self.subView.isHidden = true
+        
+        if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.searchText == ""{
+            self.view.makeToast("Select date or filter status or both", duration: 2.0, position: .center)
+        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.searchText != ""{
+            
+            self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
+            self.filterShadowView.isHidden = true
+            
+        }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle == "To Date"{
+            
+            self.view.makeToast("Select To Date", duration: 2.0, position: .center)
+            
+        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle != "To Date"{
+            
+            self.view.makeToast("Select From Date", duration: 2.0, position: .center)
+            
+        }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle != "To Date" && self.searchText == "" || self.searchText != ""{
+            
+            if selectedToDate < selectedFromDate{
+                
+                self.view.makeToast("ToDate should be lower than FromDate", duration: 2.0, position: .center)
+                
+            }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.searchText != ""{
+                
+                self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
+                self.filterShadowView.isHidden = true
+            }else{
+                self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
+                self.filterShadowView.isHidden = true
+            }
+            
+        }else{
+            
+            self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
+            self.filterShadowView.isHidden = true
+        }
+        
+        
+        
     }
     @IBAction func clearbtn(_ sender: Any) {
         
@@ -137,13 +192,19 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
         self.toDateBtn.setTitle("To Date", for: .normal)
         self.selectedFromDate = ""
         self.selectedToDate = ""
+        selectedQueryTopicId = -1
+        noofelements = 0
+        startindex = 1
+        searchText = ""
+        self.approvedBtn.backgroundColor = .white
+        self.pendingBtn.backgroundColor = .white
+        self.rejectedBtn.backgroundColor = .white
+        escalatedBtn.backgroundColor = .white
+        self.cancelledBtn.backgroundColor = .white
+        postedForApprovalBtn.backgroundColor = .white
         
-//        self.approvedBtn.backgroundColor = .white
-//        self.pendingBtn.backgroundColor = .white
-//        self.cancelledBtn.backgroundColor = .white
-//        self.reopenBtn.backgroundColor = .white
-//        self.resolveFollowUpBtn.backgroundColor = .white
-        self.subView.isHidden = true
+        self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
+        self.filterShadowView.isHidden = true
     }
     
     @IBAction func fromDateButton(_ sender: Any) {

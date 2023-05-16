@@ -23,6 +23,7 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     }
     
 
+    @IBOutlet weak var filterShadowView: UIView!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var filterTitle: UILabel!
     @IBOutlet weak var subView: UIView!
@@ -86,7 +87,7 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
         self.VM.VC = self
         myRedemptionTableView.delegate = self
         myRedemptionTableView.dataSource = self
-        self.filterView.isHidden = true
+        self.filterShadowView.isHidden = true
         
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 20
@@ -118,6 +119,18 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
 //         self.collectionView.collectionViewLayout = collectionViewFLowLayout2
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.status = ""
+        self.collectionViewCatagory = ""
+        self.collectionViewDataNumber = "-1"
+        self.fromDateBtn.setTitle("From Date", for: .normal)
+        self.toDateBtn.setTitle("To Date", for: .normal)
+        self.myRedemptionListing()
+        collectionView.reloadData()
+        self.filterShadowView.isHidden = true
+    }
+    
     
     func myRedemptionListing(){
         let parameter = [
@@ -146,10 +159,10 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     @IBAction func notificationBtn(_ sender: Any) {
     }
     @IBAction func filterBtn(_ sender: Any) {
-        if self.filterView.isHidden == false{
-            self.filterView.isHidden = true
+        if self.filterShadowView.isHidden == false{
+            self.filterShadowView.isHidden = true
         }else{
-            self.filterView.isHidden = false
+            self.filterShadowView.isHidden = false
         }
        // let collectionViewFLowLayout2 = UICollectionViewFlowLayout()
        // collectionViewFLowLayout2.itemSize = CGSize(width: CGFloat(((self.view.bounds.width - 38) - (self.collectionView.contentInset.left + self.collectionView.contentInset.right)) / 3), height: 30)
@@ -159,7 +172,7 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
 //         self.collectionView.collectionViewLayout = collectionViewFLowLayout2
     }
     @IBAction func closeBtn(_ sender: Any) {
-        self.filterView.isHidden = true
+        self.filterShadowView.isHidden = true
     }
     
     @IBAction func fromDateButton(_ sender: Any) {
@@ -213,10 +226,40 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
         print(status,"srjdh")
         print(self.selectedFromDate,"slkdls")
         print(selectedToDate,"lskdjsldm")
-        self.filterView.isHidden = true
-        self.collectionViewCatagory
-        self.collectionViewDataNumber
-        self.myRedemptionListing()
+        
+        
+        if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.collectionViewDataNumber == "-1"{
+            self.view.makeToast("Select Date Range or Status or both", duration: 2.0, position: .center)
+        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.collectionViewDataNumber != "-1"{
+            
+            self.myRedemptionListing()
+            self.filterShadowView.isHidden = true
+            
+        }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle == "To Date"{
+            
+            self.view.makeToast("Select ToDate", duration: 2.0, position: .center)
+            
+        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle != "To Date"{
+            
+            self.view.makeToast("Select From Date", duration: 2.0, position: .center)
+            
+        }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle != "To Date" && self.collectionViewDataNumber == "-1" || self.collectionViewDataNumber != "-1"{
+            
+            if selectedToDate < selectedFromDate{
+                
+                self.view.makeToast("To Date should be smallar than From Date", duration: 2.0, position: .center)
+            }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.collectionViewDataNumber != "-1"{
+                
+                self.myRedemptionListing()
+                self.filterShadowView.isHidden = true
+            }else{
+                self.myRedemptionListing()
+                self.filterShadowView.isHidden = true
+            }
+        }else{
+            self.myRedemptionListing()
+            self.filterShadowView.isHidden = true
+        }
         
     }
     @IBAction func clearbtn(_ sender: Any) {
@@ -225,12 +268,9 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
         self.collectionViewDataNumber = "-1"
         self.fromDateBtn.setTitle("From Date", for: .normal)
         self.toDateBtn.setTitle("To Date", for: .normal)
-//        self.approvedBtn.backgroundColor = .white
-//        self.pendingBtn.backgroundColor = .white
-//        self.cancelledBtn.backgroundColor = .white
         self.myRedemptionListing()
         collectionView.reloadData()
-//        self.filterView.isHidden = true
+        self.filterShadowView.isHidden = true
     }
    
 }

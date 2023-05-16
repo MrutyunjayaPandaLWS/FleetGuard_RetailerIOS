@@ -233,19 +233,19 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //guard let tappedIndexPath = self.productCatalgoueTableView.indexPath(for: cell) else{return}
         //if cell.nextButton.tag == tappedIndexPath.row{
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueDetailsVC") as! FG_ProductCatalogueDetailsVC
-            vc.productImageURL = self.VM.productListArray[indexPath.row].productImg ?? ""
-            vc.productName = self.VM.productListArray[indexPath.row].productName ?? ""
-            vc.partNo = self.VM.productListArray[indexPath.row].productCode ?? ""
-            vc.shortDesc = self.VM.productListArray[indexPath.row].productShortDesc ?? ""
-            vc.dap = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"
-            let splitData = "\(self.VM.productListArray[indexPath.row].mrp ?? "")".split(separator: ".")
-            vc.mrp = "\(splitData[0])"
-            vc.productId = "\(self.VM.productListArray[indexPath.row].productId ?? 0)"
-            vc.productDesc = "\(self.VM.productListArray[indexPath.row].productDesc ?? "")"
-//          vc.cateogryId = "\(self.VM.productListArray[tappedIndexPath.row].category ?? 0)"
-         
-            self.navigationController?.pushViewController(vc, animated: true)
+//            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueDetailsVC") as! FG_ProductCatalogueDetailsVC
+//            vc.productImageURL = self.VM.productListArray[indexPath.row].productImg ?? ""
+//            vc.productName = self.VM.productListArray[indexPath.row].productName ?? ""
+//            vc.partNo = self.VM.productListArray[indexPath.row].productCode ?? ""
+//            vc.shortDesc = self.VM.productListArray[indexPath.row].productShortDesc ?? ""
+//            vc.dap = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"
+//            let splitData = "\(self.VM.productListArray[indexPath.row].mrp ?? "")".split(separator: ".")
+//            vc.mrp = "\(splitData[0])"
+//            vc.productId = "\(self.VM.productListArray[indexPath.row].productId ?? 0)"
+//            vc.productDesc = "\(self.VM.productListArray[indexPath.row].productDesc ?? "")"
+////          vc.cateogryId = "\(self.VM.productListArray[tappedIndexPath.row].category ?? 0)"
+//         
+//            self.navigationController?.pushViewController(vc, animated: true)
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
             if indexPath.row == VM.productListArray.count - 2{

@@ -50,6 +50,7 @@ class FG_MarketGapVC: BaseViewController, MarketingGapDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        noDataFoundLbl.isHidden = true
         counterGap(startIndex: startindex)
     }
     

@@ -47,9 +47,6 @@
 		2565C96A29B0B83D0020D93A /* ObjCustomerDashboardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2565C96429B0B83D0020D93A /* ObjCustomerDashboardList.swift */; };
 		2576D41129D30657000B2502 /* PointBalenceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2576D40F29D30657000B2502 /* PointBalenceModels.swift */; };
 		2576D41229D30657000B2502 /* ObjCustomerDashboardList11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2576D41029D30657000B2502 /* ObjCustomerDashboardList11.swift */; };
-		257C074F29BF0B5900AED042 /* FG_NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C074E29BF0B5900AED042 /* FG_NotificationVC.swift */; };
-		257C075129BF0BD400AED042 /* MSP_NotificationTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 257C075029BF0BD300AED042 /* MSP_NotificationTVC.xib */; };
-		257C075329BF0C5800AED042 /* FG_NotificationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C075229BF0C5800AED042 /* FG_NotificationTVC.swift */; };
 		257C075629BF0CB100AED042 /* HistoryNotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C075529BF0CB100AED042 /* HistoryNotificationsViewModel.swift */; };
 		257C075A29BF0CF800AED042 /* NotificationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C075829BF0CF800AED042 /* NotificationModels.swift */; };
 		257C075B29BF0CF800AED042 /* LstPushHistoryJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C075929BF0CF800AED042 /* LstPushHistoryJson.swift */; };
@@ -207,6 +204,10 @@
 		8427D7AF29E92C4B00AEFBD1 /* FG_RedemptionDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427D7AE29E92C4B00AEFBD1 /* FG_RedemptionDetailsVM.swift */; };
 		842B4CF32977EBC10039450A /* FG_LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B4CF22977EBC10039450A /* FG_LanguageVC.swift */; };
 		8439109E29812E29007D73B6 /* FG_StatementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439109D29812E29007D73B6 /* FG_StatementVC.swift */; };
+		8445026B2A0F706100A6D3D4 /* HistoryNotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844502682A0F706000A6D3D4 /* HistoryNotificationsTableViewCell.swift */; };
+		8445026C2A0F706100A6D3D4 /* HistoryNotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844502692A0F706100A6D3D4 /* HistoryNotificationsTableViewCell.xib */; };
+		8445026D2A0F706100A6D3D4 /* HistoryNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8445026A2A0F706100A6D3D4 /* HistoryNotificationsViewController.swift */; };
+		8445026F2A0F72A100A6D3D4 /* lf30_editor_jh47f7lt.json in Resources */ = {isa = PBXBuildFile; fileRef = 8445026E2A0F72A100A6D3D4 /* lf30_editor_jh47f7lt.json */; };
 		845425A329780F0A002A86D1 /* FG_MyRedemptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845425A229780F0A002A86D1 /* FG_MyRedemptionVC.swift */; };
 		845425A7297817DA002A86D1 /* FG_MyRedemptionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845425A6297817DA002A86D1 /* FG_MyRedemptionTVC.swift */; };
 		84597BAB2979020800F3A7BC /* FG_CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597BAA2979020800F3A7BC /* FG_CategoryCVC.swift */; };
@@ -222,6 +223,8 @@
 		84597BCA29790CC100F3A7BC /* FG_FAQsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597BC929790CC100F3A7BC /* FG_FAQsVC.swift */; };
 		84597BCC29790CD900F3A7BC /* FG_TermsandconditionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84597BCB29790CD900F3A7BC /* FG_TermsandconditionsVC.swift */; };
 		845FD71F29782A2F00CE487E /* FG_SideMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FD71E29782A2F00CE487E /* FG_SideMenuTVC.swift */; };
+		8461E4FD2A12050100B56457 /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461E4FC2A12050100B56457 /* LanguageModel.swift */; };
+		8461E4FF2A12052100B56457 /* LstAttributesDetails1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461E4FE2A12052100B56457 /* LstAttributesDetails1.swift */; };
 		84662003298138B500D28026 /* FG_StatementTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84662002298138B500D28026 /* FG_StatementTVC.swift */; };
 		84662005298145CA00D28026 /* FG_MyOrderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84662004298145CA00D28026 /* FG_MyOrderTVC.swift */; };
 		84662007298145E800D28026 /* FG_MyBillingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84662006298145E800D28026 /* FG_MyBillingTVC.swift */; };
@@ -385,9 +388,6 @@
 		2565C96429B0B83D0020D93A /* ObjCustomerDashboardList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCustomerDashboardList.swift; sourceTree = "<group>"; };
 		2576D40F29D30657000B2502 /* PointBalenceModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointBalenceModels.swift; sourceTree = "<group>"; };
 		2576D41029D30657000B2502 /* ObjCustomerDashboardList11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjCustomerDashboardList11.swift; sourceTree = "<group>"; };
-		257C074E29BF0B5900AED042 /* FG_NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_NotificationVC.swift; sourceTree = "<group>"; };
-		257C075029BF0BD300AED042 /* MSP_NotificationTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSP_NotificationTVC.xib; sourceTree = "<group>"; };
-		257C075229BF0C5800AED042 /* FG_NotificationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_NotificationTVC.swift; sourceTree = "<group>"; };
 		257C075529BF0CB100AED042 /* HistoryNotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNotificationsViewModel.swift; sourceTree = "<group>"; };
 		257C075829BF0CF800AED042 /* NotificationModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModels.swift; sourceTree = "<group>"; };
 		257C075929BF0CF800AED042 /* LstPushHistoryJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstPushHistoryJson.swift; sourceTree = "<group>"; };
@@ -550,6 +550,10 @@
 		8427D7AE29E92C4B00AEFBD1 /* FG_RedemptionDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_RedemptionDetailsVM.swift; sourceTree = "<group>"; };
 		842B4CF22977EBC10039450A /* FG_LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_LanguageVC.swift; sourceTree = "<group>"; };
 		8439109D29812E29007D73B6 /* FG_StatementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_StatementVC.swift; sourceTree = "<group>"; };
+		844502682A0F706000A6D3D4 /* HistoryNotificationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryNotificationsTableViewCell.swift; sourceTree = "<group>"; };
+		844502692A0F706100A6D3D4 /* HistoryNotificationsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryNotificationsTableViewCell.xib; sourceTree = "<group>"; };
+		8445026A2A0F706100A6D3D4 /* HistoryNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryNotificationsViewController.swift; sourceTree = "<group>"; };
+		8445026E2A0F72A100A6D3D4 /* lf30_editor_jh47f7lt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_jh47f7lt.json; sourceTree = "<group>"; };
 		845425A229780F0A002A86D1 /* FG_MyRedemptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyRedemptionVC.swift; sourceTree = "<group>"; };
 		845425A6297817DA002A86D1 /* FG_MyRedemptionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyRedemptionTVC.swift; sourceTree = "<group>"; };
 		84597BAA2979020800F3A7BC /* FG_CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_CategoryCVC.swift; sourceTree = "<group>"; };
@@ -565,6 +569,8 @@
 		84597BC929790CC100F3A7BC /* FG_FAQsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_FAQsVC.swift; sourceTree = "<group>"; };
 		84597BCB29790CD900F3A7BC /* FG_TermsandconditionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_TermsandconditionsVC.swift; sourceTree = "<group>"; };
 		845FD71E29782A2F00CE487E /* FG_SideMenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_SideMenuTVC.swift; sourceTree = "<group>"; };
+		8461E4FC2A12050100B56457 /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
+		8461E4FE2A12052100B56457 /* LstAttributesDetails1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LstAttributesDetails1.swift; sourceTree = "<group>"; };
 		84662002298138B500D28026 /* FG_StatementTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_StatementTVC.swift; sourceTree = "<group>"; };
 		84662004298145CA00D28026 /* FG_MyOrderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyOrderTVC.swift; sourceTree = "<group>"; };
 		84662006298145E800D28026 /* FG_MyBillingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyBillingTVC.swift; sourceTree = "<group>"; };
@@ -910,9 +916,9 @@
 		257C074D29BF0B2000AED042 /* NotificationVC */ = {
 			isa = PBXGroup;
 			children = (
-				257C075029BF0BD300AED042 /* MSP_NotificationTVC.xib */,
-				257C074E29BF0B5900AED042 /* FG_NotificationVC.swift */,
-				257C075229BF0C5800AED042 /* FG_NotificationTVC.swift */,
+				8445026A2A0F706100A6D3D4 /* HistoryNotificationsViewController.swift */,
+				844502682A0F706000A6D3D4 /* HistoryNotificationsTableViewCell.swift */,
+				844502692A0F706100A6D3D4 /* HistoryNotificationsTableViewCell.xib */,
 			);
 			path = NotificationVC;
 			sourceTree = "<group>";
@@ -1427,6 +1433,7 @@
 		84068D8729765DF600D4360F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8461E4FB2A1204F200B56457 /* Language Models */,
 				8427D7A629E9295600AEFBD1 /* RedemptionDetailsModels */,
 				8427D7A129E9284400AEFBD1 /* RedemptionDetailsOrderStatusModel */,
 				257C075729BF0CF800AED042 /* NotificationModels */,
@@ -1605,6 +1612,7 @@
 			isa = PBXGroup;
 			children = (
 				84068DA2297664C800D4360F /* lf30_editor_qd1wdceq.json */,
+				8445026E2A0F72A100A6D3D4 /* lf30_editor_jh47f7lt.json */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -1827,8 +1835,8 @@
 		84597BAC297909F600F3A7BC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				84E13C662979421500FD2837 /* FG_EditProfileVC.swift */,
 				84597BB729790B6000F3A7BC /* FG_MyProfileVC.swift */,
+				84E13C662979421500FD2837 /* FG_EditProfileVC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1929,6 +1937,15 @@
 				84597BCB29790CD900F3A7BC /* FG_TermsandconditionsVC.swift */,
 			);
 			path = "T&C";
+			sourceTree = "<group>";
+		};
+		8461E4FB2A1204F200B56457 /* Language Models */ = {
+			isa = PBXGroup;
+			children = (
+				8461E4FC2A12050100B56457 /* LanguageModel.swift */,
+				8461E4FE2A12052100B56457 /* LstAttributesDetails1.swift */,
+			);
+			path = "Language Models";
 			sourceTree = "<group>";
 		};
 		84795F4D2979593900DDA192 /* PopUp */ = {
@@ -2556,7 +2573,6 @@
 				84068DC82976777200D4360F /* Roboto-ThinItalic.ttf in Resources */,
 				84068DC92976777200D4360F /* Roboto-BoldItalic.ttf in Resources */,
 				25C865DD29A7237F00C1801E /* otherInfoTableViewCell.xib in Resources */,
-				257C075129BF0BD400AED042 /* MSP_NotificationTVC.xib in Resources */,
 				84068DCF2976777200D4360F /* Roboto-Thin.ttf in Resources */,
 				84068DCA2976777200D4360F /* Roboto-LightItalic.ttf in Resources */,
 				251F0B8D299F67A600E2881A /* fleetguard-retailer-t&c.html in Resources */,
@@ -2573,6 +2589,7 @@
 				84068DC42976777200D4360F /* Roboto-Medium.ttf in Resources */,
 				25C865EA29A7237F00C1801E /* otherInfoImageTableViewCell.xib in Resources */,
 				25C865DC29A7237F00C1801E /* senderInfoImageTableViewCell.xib in Resources */,
+				8445026F2A0F72A100A6D3D4 /* lf30_editor_jh47f7lt.json in Resources */,
 				84BD93DB2A0DFAD20059A96A /* GoogleService-Info.plist in Resources */,
 				84068DA3297664C800D4360F /* lf30_editor_qd1wdceq.json in Resources */,
 				84068DC52976777200D4360F /* Roboto-Light.ttf in Resources */,
@@ -2582,6 +2599,7 @@
 				84068DC72976777200D4360F /* Roboto-MediumItalic.ttf in Resources */,
 				84068DCE2976777200D4360F /* Roboto-Bold.ttf in Resources */,
 				84C1E40329758A6D00D188C5 /* Main.storyboard in Resources */,
+				8445026C2A0F706100A6D3D4 /* HistoryNotificationsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2689,10 +2707,10 @@
 				25A760C429ACE95F00FF5C0E /* LstCustomerJson.swift in Sources */,
 				84068D9B2976649D00D4360F /* TextfieldExtension.swift in Sources */,
 				2580EFFB29A651F60097A50D /* DD_QueryListVM.swift in Sources */,
+				8461E4FD2A12050100B56457 /* LanguageModel.swift in Sources */,
 				849D350B298A8C93005A41FC /* DashboardTotalPointsModel.swift in Sources */,
 				25C465E229A8EA6200CCA30C /* LstRetailerBonding2.swift in Sources */,
 				25D88FCD29A9E4B1002815A7 /* FilterRedemptionCatVM.swift in Sources */,
-				257C075329BF0C5800AED042 /* FG_NotificationTVC.swift in Sources */,
 				25C865F229A7256100C1801E /* ChatDetailsModels.swift in Sources */,
 				8427D7A429E9286100AEFBD1 /* RedemptionDetailsOrderStatusModel.swift in Sources */,
 				25C865E429A7237F00C1801E /* otherInfoTableViewCell.swift in Sources */,
@@ -2773,7 +2791,6 @@
 				8488E410298A25BF0032A2D7 /* URLMethods.swift in Sources */,
 				25D58BC729ADDE1400DB135D /* MileStonesRedeemBTNModels.swift in Sources */,
 				2565C96829B0B83D0020D93A /* LstPromotionListJsonApi.swift in Sources */,
-				257C074F29BF0B5900AED042 /* FG_NotificationVC.swift in Sources */,
 				8427D7AC29E9297500AEFBD1 /* RedemptionCatalogueList.swift in Sources */,
 				84C9879B298B73FC007F00B2 /* FG_ProductDetailsVM.swift in Sources */,
 				2565C96729B0B83D0020D93A /* LstCustomerFeedBackJsonApi.swift in Sources */,
@@ -2799,6 +2816,7 @@
 				25C865DE29A7237F00C1801E /* customerqueryTableViewCell.swift in Sources */,
 				84FBC3F329796E1E0061ABAE /* FG_MarketGapTVC.swift in Sources */,
 				25C865E329A7237F00C1801E /* senderInfoImageTableViewCell.swift in Sources */,
+				8445026B2A0F706100A6D3D4 /* HistoryNotificationsTableViewCell.swift in Sources */,
 				25C865E829A7237F00C1801E /* SelectquerytopicInListingTableViewCell.swift in Sources */,
 				84FF28E02978224300A86B41 /* FG_SideMenuVC.swift in Sources */,
 				84597BC029790BC900F3A7BC /* RPLStatementVC.swift in Sources */,
@@ -2845,6 +2863,7 @@
 				84597BBA29790B8400F3A7BC /* FG_RedemptionCatalogueVC.swift in Sources */,
 				84F6A3622980F01C00F62714 /* FG_ProdMyCartTVC.swift in Sources */,
 				25C465B929A8AE7300CCA30C /* ObjCustomerDashboardList2.swift in Sources */,
+				8445026D2A0F706100A6D3D4 /* HistoryNotificationsViewController.swift in Sources */,
 				848B2BD22977D4FF00A58C73 /* FG_MyEarningVC.swift in Sources */,
 				25D88FC929A9C59E002815A7 /* LstPromotionJsonList1.swift in Sources */,
 				25C865E029A7237F00C1801E /* ChatListViewController.swift in Sources */,
@@ -2897,6 +2916,7 @@
 				84068D912976646F00D4360F /* PersistanceService.swift in Sources */,
 				84597BC629790C5700F3A7BC /* FG_LodgeQueryVC.swift in Sources */,
 				84795F4F2979594F00DDA192 /* FG_PopUpVC.swift in Sources */,
+				8461E4FF2A12052100B56457 /* LstAttributesDetails1.swift in Sources */,
 				25C465CF29A8C80800CCA30C /* RemoveGiftModels.swift in Sources */,
 				84D10F76298E78E600DE283E /* CityList.swift in Sources */,
 				84597BAB2979020800F3A7BC /* FG_CategoryCVC.swift in Sources */,

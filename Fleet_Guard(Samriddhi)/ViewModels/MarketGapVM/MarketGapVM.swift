@@ -24,7 +24,6 @@ class MarketGapVM: UIViewController {
                 if error == nil{
                     if result != nil{
                     DispatchQueue.main.async {
-                        self.VC?.stopLoading()
                         self.myMarketGapArray1 = result?.lsrProductDetails ?? []
                         self.VC?.noofelements = self.myMarketGapArray1.count
                         self.myMarketGapArray = self.myMarketGapArray + self.myMarketGapArray1
@@ -32,22 +31,26 @@ class MarketGapVM: UIViewController {
                         print(self.myMarketGapArray.count, "myBillingsListingArrayCount")
                         if self.myMarketGapArray.count != 0{
                             self.VC?.markrtingGapView.isHidden = false
+                            self.VC?.noDataFoundLbl.isHidden = true
                             self.VC?.markrtingGapView.reloadData()
                             
                         }else{
                             self.VC?.markrtingGapView.isHidden = true
+                            self.VC?.noDataFoundLbl.isHidden = false
                         }
-                        
+                        self.VC?.stopLoading()
                     }
 
                 }else{
                     DispatchQueue.main.async {
+                        self.VC?.noDataFoundLbl.isHidden = false
                         self.VC?.stopLoading()
                         print("\(error)")
                     }
                 }
             }else{
                 DispatchQueue.main.async {
+                    self.VC?.noDataFoundLbl.isHidden = false
                     self.VC?.stopLoading()
                     print("\(error)")
                 }

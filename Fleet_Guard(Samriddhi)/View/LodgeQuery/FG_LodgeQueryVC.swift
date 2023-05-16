@@ -22,6 +22,8 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
          self.dismiss(animated: true)
      }
     
+    @IBOutlet weak var noDataFoundLbl: UILabel!
+    @IBOutlet weak var filetrShadowView: UIView!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var filterTitle: UILabel!
     @IBOutlet weak var subView: UIView!
@@ -56,7 +58,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     var selectedStatusId = -1
     var selectedFromDate = ""
     var selectedToDate = ""
-    var status = ""
+    var status = "-1"
     var noofelements = 0
     var startindex = 1
     
@@ -72,8 +74,9 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         lodgeQueryListTableView.delegate = self
         lodgeQueryListTableView.dataSource = self
         
-        self.subView.isHidden = true
+        self.filetrShadowView.isHidden = true
         //self.filterView.isHidden = true
+        noDataFoundLbl.isHidden = true
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 20
         subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -128,14 +131,14 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     @IBAction func notificationBtn(_ sender: Any) {
     }
     @IBAction func filterBtn(_ sender: Any) {
-        if self.subView.isHidden == false{
-            self.subView.isHidden = true
+        if self.filetrShadowView.isHidden == false{
+            self.filetrShadowView.isHidden = true
         }else{
-            self.subView.isHidden = false
+            self.filetrShadowView.isHidden = false
         }
 }
 @IBAction func closeBtn(_ sender: Any) {
-    self.subView.isHidden = true
+    self.filetrShadowView.isHidden = true
 }
 
 @IBAction func fromDateButton(_ sender: Any) {
@@ -224,12 +227,47 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     print(status,"srjdh")
     print(self.selectedFromDate,"slkdls")
     print(selectedToDate,"lskdjsldm")
-    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
-    self.subView.isHidden = true
+//    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+//    self.filetrShadowView.isHidden = true
+    
+    if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.status == "-1"{
+        self.view.makeToast("Select date or filter status or both", duration: 2.0, position: .center)
+    }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.status != "-1"{
+        
+        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+        self.filetrShadowView.isHidden = true
+        
+    }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle == "To Date"{
+        
+        self.view.makeToast("Select To Date", duration: 2.0, position: .center)
+        
+    }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle != "To Date"{
+        
+        self.view.makeToast("Select From Date", duration: 2.0, position: .center)
+        
+    }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle != "To Date" && self.status == "-1" || self.status != "-1"{
+        
+        if selectedToDate < selectedFromDate{
+            
+            self.view.makeToast("ToDate should be lower than FromDate", duration: 2.0, position: .center)
+            
+        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.status != "-1"{
+            
+            self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+            self.filetrShadowView.isHidden = true
+        }else{
+            self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+            self.filetrShadowView.isHidden = true
+        }
+        
+    }else{
+        
+        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+        self.filetrShadowView.isHidden = true
+    }
 }
 @IBAction func clearbtn(_ sender: Any) {
     
-    self.status = ""
     self.fromDateBtn.setTitle("From Date", for: .normal)
     self.toDateBtn.setTitle("To Date", for: .normal)
     self.approvedBtn.backgroundColor = .white
@@ -237,8 +275,13 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     self.cancelledBtn.backgroundColor = .white
     self.reopenBtn.backgroundColor = .white
     self.resolveFollowUpBtn.backgroundColor = .white
-    self.subView.isHidden = true
-}
+    selectedQueryTopicId = -1
+    status = "-1"
+    selectedFromDate = ""
+    selectedToDate = ""
+    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+    self.filetrShadowView.isHidden = true
+    }
 }
 
 extension FG_LodgeQueryVC: UITableViewDelegate, UITableViewDataSource{

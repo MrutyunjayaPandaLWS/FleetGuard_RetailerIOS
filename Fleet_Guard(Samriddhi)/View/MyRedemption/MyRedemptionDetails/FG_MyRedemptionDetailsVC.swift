@@ -53,6 +53,8 @@ class FG_MyRedemptionDetailsVC: BaseViewController, UITableViewDelegate, UITable
         myRedemptionDetailsApi()
     }
     
+
+    
     @IBAction func selectBackBtn(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
