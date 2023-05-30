@@ -9,6 +9,7 @@ import UIKit
 
 class FG_MyEarningVC: BaseViewController {
 
+    @IBOutlet weak var emptyMessageLbl: UILabel!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var myEarningTableView: UITableView!
@@ -63,16 +64,16 @@ extension FG_MyEarningVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_MyEarningTVC", for: indexPath) as! FG_MyEarningTVC
         cell.selectionStyle = .none
-        cell.bonusPtsLbl.text = "Bonus Points \(VM.myEarningsArray[indexPath.row].referralBonusPoints ?? 0)"
+        cell.bonusPtsLbl.text = "Bonus Points \(Int(VM.myEarningsArray[indexPath.row].referralBonusPoints ?? 0))"
         cell.totalPtsLbl.text = "Total Points \(VM.myEarningsArray[indexPath.row].totalEarnedPoints ?? 0)"
         cell.monthLblPts.text = "Months \(VM.myEarningsArray[indexPath.row].createdDate ?? "")"
         cell.fixedBasePtsLbl.text = "Fixed Base Points \(VM.myEarningsArray[indexPath.row].currentPointBalance ?? 0)"
-        cell.miscellaneousPtsLbl.text = "Miscellaneous Points \(VM.myEarningsArray[indexPath.row].multiplierPointBalance ?? 0)"
+        cell.miscellaneousPtsLbl.text = "Miscellaneous Points \(Int(VM.myEarningsArray[indexPath.row].multiplierPointBalance ?? 0))"
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 160
+//    }
     
 }

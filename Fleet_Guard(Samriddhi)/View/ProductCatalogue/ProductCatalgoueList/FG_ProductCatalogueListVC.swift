@@ -8,6 +8,12 @@
 import UIKit
 
 class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,sendProductFilterDelegate {
+    func didTappedImageViewBtn(cell: FG_ProdCatalogueTVC) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductImageDetailsVC") as? FG_ProductImageDetailsVC
+        vc?.imageUrl = cell.imageUrl
+        navigationController?.pushViewController(vc!, animated: true)
+    }
+    
     func sendProductFilter(_ vc: FG_ProductCatalogueFilterVC) {
         self.VM.productsArray.removeAll()
         self.VM.productListArray.removeAll()
@@ -84,10 +90,10 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     @IBAction func filterButton(_ sender: Any) {
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueFilterVC") as! FG_ProductCatalogueFilterVC
         vc.delegate = self
-        vc.selectedArrayDataID2 = 0
-        vc.selectedArrayDataID = 0
-        vc.selectedArrayDataID3 = 0
-        vc.selectedArrayDataID4 = 0
+        vc.selectedArrayDataID2 = categoryId1
+        vc.selectedArrayDataID = categoryId
+        vc.selectedArrayDataID3 = categoryId2
+        vc.selectedArrayDataID4 = categoryId3
         vc.modalTransitionStyle = .coverVertical
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true)
@@ -218,6 +224,15 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
         let splitData = "\(self.VM.productListArray[indexPath.row].mrp ?? "")".split(separator: ".")
         cell.mrpValue.text = "\(splitData[0])"
         cell.productName.backgroundColor = .white
+        let image = self.VM.productListArray[indexPath.row].productImg
+        if image?.count == 0 || image == nil{
+            cell.imageViewBtn.isEnabled = false
+        }else{
+            cell.imageViewBtn.isEnabled = true
+            let imageUrl = "\(product_Image_Url)\(String(describing: image?.replacingOccurrences(of: " ", with: "%20")))"
+            cell.imageUrl = imageUrl
+            cell.productImage.kf.setImage(with: URL(string: "\(imageUrl)"),placeholder: UIImage(named: "Image 3"))
+        }
 //        vc.dap = "\(self.VM.productListArray[tappedIndexPath.row].salePrice ?? 0)"
 //        vc.mrp = "\(self.VM.productListArray[tappedIndexPath.row].mrp ?? "")"
         cell.nextButton.tag = indexPath.row

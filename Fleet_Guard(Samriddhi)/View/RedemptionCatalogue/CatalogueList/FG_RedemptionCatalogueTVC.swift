@@ -14,6 +14,7 @@ protocol DidTapActionDelegate: AnyObject{
 
 class FG_RedemptionCatalogueTVC: UITableViewCell {
 
+    @IBOutlet weak var imageBtn: UIButton!
     @IBOutlet weak var addedToCartView: UIView!
     @IBOutlet weak var addToCartView: UIView!
     @IBOutlet weak var productNameLbl: UILabel!
@@ -23,7 +24,7 @@ class FG_RedemptionCatalogueTVC: UITableViewCell {
     @IBOutlet weak var pointView: UIView!
     
     @IBOutlet weak var pointsLbl: UILabel!
-    
+    var imageUrl = ""
     var delegate: DidTapActionDelegate!
     
     override func awakeFromNib() {
@@ -38,6 +39,8 @@ class FG_RedemptionCatalogueTVC: UITableViewCell {
         
     }
 
+    @IBAction func didTappedImageViewBtn(_ sender: UIButton) {
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

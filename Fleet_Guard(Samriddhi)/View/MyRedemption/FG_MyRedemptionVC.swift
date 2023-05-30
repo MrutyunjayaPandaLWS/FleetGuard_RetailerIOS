@@ -302,55 +302,55 @@ extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource, UIColle
         //cell.statusLbl.setTitle("\(VM.myRedemptionList[indexPath.row].status ?? 0)", for: .normal)
         if statusDtata == 0{
             cell.statusLbl.setTitle("Pending",for: .normal)
-            cell.statusLbl.backgroundColor = .systemYellow
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.9461504817, green: 0.7704986334, blue: 0, alpha: 1)
         }else if statusDtata == 12{
-            cell.statusLbl.setTitle("Processd", for: .normal)
-            cell.statusLbl.backgroundColor = .systemYellow
+            cell.statusLbl.setTitle("Processed", for: .normal)
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.1163375601, green: 0.3691613376, blue: 0.9526111484, alpha: 1)
         }else if statusDtata == 14{
-            cell.statusLbl.setTitle("Processd",for: .normal)
-            cell.statusLbl.backgroundColor = .systemYellow
+            cell.statusLbl.setTitle("Processed",for: .normal)
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.1163375601, green: 0.3691613376, blue: 0.9526111484, alpha: 1)
         }else if statusDtata == 2{
-            cell.statusLbl.setTitle("Processd", for: .normal)
-            cell.statusLbl.backgroundColor = .systemYellow
+            cell.statusLbl.setTitle("Processed", for: .normal)
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.1163375601, green: 0.3691613376, blue: 0.9526111484, alpha: 1)
         }else if statusDtata == 15{
-            cell.statusLbl.setTitle("Processd",for: .normal)
-            cell.statusLbl.backgroundColor = .systemYellow
+            cell.statusLbl.setTitle("Processed",for: .normal)
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.1163375601, green: 0.3691613376, blue: 0.9526111484, alpha: 1)
         }else if statusDtata == 10{
             cell.statusLbl.setTitle("Dispatched", for: .normal)
-            cell.statusLbl.backgroundColor = UIColor.systemGreen
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.3173321187, green: 0.8275942802, blue: 0.4152476192, alpha: 1)
         }else if statusDtata == 4{
             cell.statusLbl.setTitle("Delivered",for: .normal)
-            cell.statusLbl.backgroundColor = .green
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0, green: 0.6749680638, blue: 0, alpha: 1)
         }else if statusDtata == 24{
             cell.statusLbl.setTitle("In Transit", for: .normal)
-            cell.statusLbl.backgroundColor = .systemBlue
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.1163375601, green: 0.3691613376, blue: 0.9526111484, alpha: 1)
         }else if statusDtata == 19{
             cell.statusLbl.setTitle("Delivery Confirmed",for: .normal)
-            cell.statusLbl.backgroundColor = .systemGreen
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0, green: 0.6749680638, blue: 0, alpha: 1)
         }else if statusDtata == 20{
             cell.statusLbl.setTitle("Return Requested", for: .normal)
-            cell.statusLbl.backgroundColor = .systemYellow
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.9461504817, green: 0.7704986334, blue: 0, alpha: 1)
         }else if statusDtata == 21{
             cell.statusLbl.setTitle("Return Pickup Schedule",for: .normal)
-            cell.statusLbl.backgroundColor = .systemYellow
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.9461504817, green: 0.7704986334, blue: 0, alpha: 1)
         }else if statusDtata == 22{
             cell.statusLbl.setTitle("Picked Up", for: .normal)
-            cell.statusLbl.backgroundColor = .systemYellow
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.9461504817, green: 0.7704986334, blue: 0, alpha: 1)
         }else if statusDtata == 23{
             cell.statusLbl.setTitle("Return Received", for: .normal)
-            cell.statusLbl.backgroundColor = .systemGreen
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.3173321187, green: 0.8275942802, blue: 0.4152476192, alpha: 1)
         }else if statusDtata == 8{
             cell.statusLbl.setTitle("Re dispatched", for: .normal)
-            cell.statusLbl.backgroundColor = .systemGreen
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.3173321187, green: 0.8275942802, blue: 0.4152476192, alpha: 1)
         }else if statusDtata == 5{
             cell.statusLbl.setTitle("Rejected", for: .normal)
-            cell.statusLbl.backgroundColor = .systemRed
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.8189941049, green: 0, blue: 0, alpha: 1)
         }else if statusDtata == 3{
             cell.statusLbl.setTitle("Cancelled", for: .normal)
-            cell.statusLbl.backgroundColor = .systemRed
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.8189941049, green: 0, blue: 0, alpha: 1)
         }else{
             cell.statusLbl.setTitle("Cancelled", for: .normal)
-            cell.statusLbl.backgroundColor = .systemRed
+            cell.statusLbl.backgroundColor = #colorLiteral(red: 0.8189941049, green: 0, blue: 0, alpha: 1)
         }
         
         
@@ -359,9 +359,9 @@ extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource, UIColle
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 200
+//    }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

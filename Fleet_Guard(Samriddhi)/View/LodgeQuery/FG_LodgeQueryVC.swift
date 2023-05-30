@@ -306,11 +306,17 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 //    cell.timeLbl.text = "\(querydateAndTimeArray[1])"
     
     if cell.statusLbl.text == "Pending"{
-        cell.statusLbl.backgroundColor = .systemOrange
+        cell.statusLbl.backgroundColor = #colorLiteral(red: 0.8146452308, green: 0.6417329907, blue: 0.1795035601, alpha: 1)
     }else if cell.statusLbl.text == "Approved"{
-        cell.statusLbl.backgroundColor = .green
+        cell.statusLbl.backgroundColor = #colorLiteral(red: 0, green: 0.616204381, blue: 0, alpha: 1)
+    }else if cell.statusLbl.text == "Resolved"{
+        cell.statusLbl.backgroundColor = #colorLiteral(red: 0, green: 0.616204381, blue: 0, alpha: 1)
+    }else if cell.statusLbl.text == "Re-Open"{
+        cell.statusLbl.backgroundColor = #colorLiteral(red: 0.8146452308, green: 0.6417329907, blue: 0.1795035601, alpha: 1)
+    }else if cell.statusLbl.text == "Resolved-Follow Up"{
+        cell.statusLbl.backgroundColor = #colorLiteral(red: 0, green: 0.616204381, blue: 0, alpha: 1)
     }else{
-        cell.statusLbl.backgroundColor = .red
+        cell.statusLbl.backgroundColor = #colorLiteral(red: 0.7347359657, green: 0, blue: 0, alpha: 1)
     }
 
     return cell

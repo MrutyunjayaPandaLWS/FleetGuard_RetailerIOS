@@ -35,6 +35,7 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        headerText.text = "My Cart"
         self.prodCatalogueCartTableView.dataSource = self
         self.prodCatalogueCartTableView.delegate = self
         self.myCartApi()

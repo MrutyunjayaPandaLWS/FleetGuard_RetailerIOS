@@ -269,9 +269,15 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
         cell.categoryLbl.text = "Catogory / \(self.VM.redemptionCatalougeListArray[indexPath.row].catogoryName ?? "")"
         cell.pointsLbl.text = "\(self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0)"
         let filterArray = self.myCartIds.filter{$0 == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId ?? 0}
-        let image = VM.redemptionCatalougeListArray[indexPath.row].productImage ?? ""
-    
-        
+        let image = VM.redemptionCatalougeListArray[indexPath.row].productImage
+        if image?.count == 0 || image == nil{
+            cell.imageBtn.isEnabled = false
+        }else{
+            cell.imageBtn.isEnabled = true
+            let imageUrl = "\(product_Image_Url)\(String(describing: image?.replacingOccurrences(of: " ", with: "%20")))"
+            cell.imageUrl = imageUrl
+            cell.productImage.kf.setImage(with: URL(string: "\(imageUrl)"),placeholder: UIImage(named: "Image 3"))
+        }
         
         if filterArray.count > 0 {
             cell.addedToCartView.isHidden = false

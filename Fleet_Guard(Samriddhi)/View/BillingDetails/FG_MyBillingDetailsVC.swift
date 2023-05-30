@@ -83,7 +83,7 @@ class FG_MyBillingDetailsVC: BaseViewController {
                 let urltoUse = String(PROMO_IMG1 + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
                 let urlt = URL(string: "\(urltoUse)")
                 print(urlt)
-                cell.billingimageView.kf.setImage(with: URL(string: "\(String(describing: urlt))"), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"));
+                cell.billingimageView.kf.setImage(with: URL(string: "\(String(describing: urlt))"), placeholder: UIImage(named: "Image 3"));
             }
             
 //                    if (indexPath.row) % 2 == 0{

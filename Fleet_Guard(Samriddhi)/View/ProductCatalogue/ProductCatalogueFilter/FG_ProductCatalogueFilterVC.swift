@@ -100,11 +100,13 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
             self.view.makeToast("Please select Segment value", duration: 3.0, position: .bottom)
         }else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 == 0 && self.selectedArrayDataID3 == 0 && self.selectedArrayDataID4 == 0{
             self.view.makeToast("Please select OME value", duration: 3.0, position: .bottom)
-        }else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 != 0 && self.selectedArrayDataID3 == 0 && self.selectedArrayDataID4 == 0{
-            self.view.makeToast("Please select Model value", duration: 3.0, position: .bottom)
-        }else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 != 0 && self.selectedArrayDataID3 != 0 && self.selectedArrayDataID4 == 0{
-            self.view.makeToast("Please select Product Catagory value", duration: 3.0, position: .bottom)
-        }else{
+        }
+//        else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 != 0 && self.selectedArrayDataID3 == 0 && self.selectedArrayDataID4 == 0{
+//            self.view.makeToast("Please select Model value", duration: 3.0, position: .bottom)
+//        }else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 != 0 && self.selectedArrayDataID3 != 0 && self.selectedArrayDataID4 == 0{
+//            self.view.makeToast("Please select Product Catagory value", duration: 3.0, position: .bottom)
+//        }
+        else{
             self.delegate.sendProductFilter(self)
             self.dismiss(animated: true)
         }
