@@ -38,6 +38,7 @@ class FG_DashBoardVC: BaseViewController {
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
+    @IBOutlet var companyNameLbl: UILabel!
     
     var categoryItemArray = ["Filters", "Coolant & Chemicals", "Center Bearing", "Break Liner"]
     var categoryImageArray = ["OUTLINE", "OUTLINE", "OUTLINE","OUTLINE"]

@@ -10,7 +10,6 @@ import CoreData
 import SlideMenuControllerSwift
 import IQKeyboardManagerSwift
 import LanguageManager_iOS
-
 import FirebaseCore
 import Firebase
 import UserNotificationsUI
@@ -76,7 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
           }
         print("App Launch Screen")
         
-        return true
         return true
     }
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
