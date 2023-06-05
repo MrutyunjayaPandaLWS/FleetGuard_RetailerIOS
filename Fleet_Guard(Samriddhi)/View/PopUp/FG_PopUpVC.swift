@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import LanguageManager_iOS
+
 protocol popUpDelegate : AnyObject {
     func popupAlertDidTap(_ vc: FG_PopUpVC)
 }
@@ -28,7 +30,7 @@ class FG_PopUpVC: BaseViewController {
         subView.layer.cornerRadius = 20
         subView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         self.titleLbl.text = descriptionInfo
-        self.okBtn.setTitle("OK", for: .normal)
+        self.okBtn.setTitle("ok".localiz(), for: .normal)
         
         if itsComeFrom == "DeviceLogedIn"{
             self.successImage.image = UIImage(named: "high-priority-48")
@@ -47,6 +49,10 @@ class FG_PopUpVC: BaseViewController {
         }else if itsComeFrom == "Registration"{
             NotificationCenter.default.post(name: .redirectingToLogin, object: nil)
             self.dismiss(animated: true)
+        }else if itsComeFrom == "AccounthasbeenDeleted"{
+            self.dismiss(animated: true){
+                self.delegate?.popupAlertDidTap(self)
+            }
         }else{
             self.dismiss(animated: true)
         }

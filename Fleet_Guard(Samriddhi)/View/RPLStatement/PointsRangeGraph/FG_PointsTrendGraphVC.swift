@@ -9,6 +9,7 @@
 import UIKit
 import Charts
 import CoreData
+import LanguageManager_iOS
 
 class FG_PointsTrendGraphVC: BaseViewController, ChartViewDelegate {
     
@@ -28,6 +29,7 @@ class FG_PointsTrendGraphVC: BaseViewController, ChartViewDelegate {
     
     var firstGraphData = [Int]()
     var secondGraphData = [Int]()
+    var tempfirstGraphData = [Int]()
     var monthsData = [String]()
     
     
@@ -41,6 +43,7 @@ class FG_PointsTrendGraphVC: BaseViewController, ChartViewDelegate {
         pointsTrendGraphView.pinchZoomEnabled = true
         pointsTrendGraphView.xAxis.drawAxisLineEnabled = false
         pointsTrendGraphView.xAxis.labelHeight = 30
+        localization()
         
     
     }
@@ -51,6 +54,10 @@ class FG_PointsTrendGraphVC: BaseViewController, ChartViewDelegate {
         print(myPointsArrayOfD,"skdjlsdj")
         print(firstGraphData)
         print(secondGraphData)
+    }
+    
+    private func localization(){
+        pointsTrendHeadingLbl.text = "points_trends".localiz()
     }
     
     func pointsTrendAPI(){
@@ -75,11 +82,11 @@ class FG_PointsTrendGraphVC: BaseViewController, ChartViewDelegate {
 //                        self.firstGraphData.append(data.currentYearPoint!)
 //                        self.secondGraphData.append(data.previousYearPoint!)
 //                        self.monthsData.append(data.monthName!)
-                        if self.firstGraphData.count < 12{
-                            self.firstGraphData.append(data.currentYearPoint!)
-                        }
+//                    
                         if self.secondGraphData.count < 12{
                             self.secondGraphData.append(data.previousYearPoint!)
+                        }else{
+                            self.firstGraphData.append(data.currentYearPoint!)
                         }
                         if self.monthsData.count < 12{
                             self.monthsData.append(data.monthName!)

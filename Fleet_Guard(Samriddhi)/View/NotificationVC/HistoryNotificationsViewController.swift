@@ -10,6 +10,7 @@ import Lottie
 //import SDWebImage
 import Kingfisher
 import Firebase
+import LanguageManager_iOS
 
 class HistoryNotificationsViewController: BaseViewController, notificationDelgate {
     func didTappedNotificationimage(cell: HistoryNotificationsTableViewCell) {
@@ -40,6 +41,7 @@ class HistoryNotificationsViewController: BaseViewController, notificationDelgat
         self.VM.VC = self
         expandedview.isHidden = true
         self.noDataFound.isHidden = true
+        self.noDataFound.text = "noDataFound".localiz()
         self.NotificationstableView.register(UINib(nibName: "HistoryNotificationsTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryNotificationsTableViewCell")
         notificationListApi()
         self.NotificationstableView.delegate = self

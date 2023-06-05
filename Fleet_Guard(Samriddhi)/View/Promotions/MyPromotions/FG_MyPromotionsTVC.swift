@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import LanguageManager_iOS
+
 protocol SendOffersDetailsDelegate {
     func sendOffersDetails(_ cell: FG_MyPromotionsTVC)
 }
@@ -23,11 +25,16 @@ class FG_MyPromotionsTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        localization()
         self.selectionStyle = .none
         self.subView.clipsToBounds = true
         self.subView.layer.cornerRadius = 16
         self.subView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     
+    }
+    
+    private func localization(){
+        viewText.text = "View".localiz()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

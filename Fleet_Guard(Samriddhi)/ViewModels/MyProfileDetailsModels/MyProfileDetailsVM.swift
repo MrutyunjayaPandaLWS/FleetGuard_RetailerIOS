@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import LanguageManager_iOS
 
 class MyProfileDetailsVM: popUpDelegate{
     
@@ -160,7 +161,7 @@ class MyProfileDetailsVM: popUpDelegate{
                                 vc!.delegate = self
                                 vc!.titleInfo = ""
                                 vc!.itsComeFrom = "MyProfileImage"
-                                vc!.descriptionInfo = "Profile image updated successfully"
+                                vc!.descriptionInfo = "profile_update_message".localiz()
                                 vc!.modalPresentationStyle = .overFullScreen
                                 vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)
@@ -177,7 +178,7 @@ class MyProfileDetailsVM: popUpDelegate{
 //                                vc!.modalTransitionStyle = .crossDissolve
 //                                self.VC?.present(vc!, animated: true, completion: nil)
                                 
-                                self.VC?.view.makeToast("Profile image update Failed", duration: 3.0, position: .bottom)
+                                self.VC?.view.makeToast("profile_update_failed".localiz(), duration: 3.0, position: .bottom)
                                 
                                 
                             }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class RedemptionCatalogueMyCartVM: popUpDelegate{
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -73,7 +74,7 @@ class RedemptionCatalogueMyCartVM: popUpDelegate{
                             DispatchQueue.main.async{
                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                vc!.delegate = self
-                                vc!.descriptionInfo = "Product added into cart successfully."
+                                vc!.descriptionInfo = "added_to_cart_success_message".localiz()
                                vc!.modalPresentationStyle = .overCurrentContext
                                vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)
@@ -88,7 +89,7 @@ class RedemptionCatalogueMyCartVM: popUpDelegate{
 //                               vc!.modalTransitionStyle = .crossDissolve
 //                                self.VC?.present(vc!, animated: true, completion: nil)
 //                            }
-                            self.VC?.view.makeToast("Something went wrong! Try againg Later...", duration: 3.0, position: .bottom)
+                            self.VC?.view.makeToast("Something_went_wrong_error".localiz(), duration: 3.0, position: .bottom)
                         }
                     }
                     
@@ -126,7 +127,7 @@ class RedemptionCatalogueMyCartVM: popUpDelegate{
 //                                self.VC?.present(vc!, animated: true, completion: nil)
 //                                self.VC?.stopLoading()
 //                            }
-                            self.VC?.view.makeToast("Something went wrong. Try againg later!", duration: 3.0, position: .bottom)
+                            self.VC?.view.makeToast("Something_went_wrong_error".localiz(), duration: 3.0, position: .bottom)
                         }else{
                             self.VC?.myCartListApi()
                         }
@@ -167,12 +168,12 @@ class RedemptionCatalogueMyCartVM: popUpDelegate{
 //                                self.VC?.present(vc!, animated: true, completion: nil)
 //                                self.VC?.stopLoading()
 //                            }
-                            self.VC?.view.makeToast("Something went wrong. Try againg later!", duration: 3.0, position: .bottom)
+                            self.VC?.view.makeToast("Something_went_wrong_error".localiz(), duration: 3.0, position: .bottom)
                         }else{
                             DispatchQueue.main.async{
                                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                 vc!.delegate = self
-                                vc!.descriptionInfo = "Product has been removed successfully!"
+                                vc!.descriptionInfo = "product_removed_success".localiz()
                                 vc!.modalPresentationStyle = .overCurrentContext
                                 vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)

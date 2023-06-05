@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     
@@ -71,12 +72,14 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        localiZation()
         lodgeQueryListTableView.delegate = self
         lodgeQueryListTableView.dataSource = self
         
         self.filetrShadowView.isHidden = true
         //self.filterView.isHidden = true
         noDataFoundLbl.isHidden = true
+        noDataFoundLbl.text = "noDataFound".localiz()
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 20
         subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -101,6 +104,11 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
     }
     
+    
+    private func localiZation(){
+        headerText.text = "Lodge_Query".localiz()
+        lodgeQueryBtn.setTitle("Lodge_Query".localiz(), for: .normal)
+    }
 //
 //    "ActionType": "1",
 //               "ActorId": "45822",

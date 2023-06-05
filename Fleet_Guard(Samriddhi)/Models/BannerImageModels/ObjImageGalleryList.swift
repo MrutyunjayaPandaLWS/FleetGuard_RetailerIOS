@@ -16,12 +16,14 @@ struct ObjImageGalleryList : Codable {
 	let imageGalleryUrl : String?
 	let albumCategoryID : Int?
 	let actionImageUrl : String?
+    let albumID : Int?
+    let displayName : String?
 	let token : String?
 	let actorId : Int?
 	let isActive : Bool?
 	let actorRole : String?
 	let actionType : Int?
-
+    
 	enum CodingKeys: String, CodingKey {
 
 		case imageGalleryUrl = "imageGalleryUrl"
@@ -32,6 +34,8 @@ struct ObjImageGalleryList : Codable {
 		case isActive = "isActive"
 		case actorRole = "actorRole"
 		case actionType = "actionType"
+        case albumID = "albumID"
+        case displayName = "displayName"
 	}
 
 	init(from decoder: Decoder) throws {
@@ -44,6 +48,8 @@ struct ObjImageGalleryList : Codable {
 		isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive)
 		actorRole = try values.decodeIfPresent(String.self, forKey: .actorRole)
 		actionType = try values.decodeIfPresent(Int.self, forKey: .actionType)
+        albumID = try values.decodeIfPresent(Int.self, forKey: .albumID)
+        displayName = try values.decodeIfPresent(String.self, forKey: .displayName)
 	}
 
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_LoginVM: popUpDelegate{
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -60,7 +61,7 @@ class FG_LoginVM: popUpDelegate{
 //                        vc!.modalPresentationStyle = .overFullScreen
 //                        vc!.modalTransitionStyle = .crossDissolve
 //                        self.VC?.present(vc!, animated: true, completion: nil)
-                        self.VC?.view.makeToast("The mobile number that you have entered is not present in the  system.", duration: 3.0, position: .bottom)
+                        self.VC?.view.makeToast("mobileNumber_isnot_exit_system".localiz(), duration: 3.0, position: .bottom)
                         self.VC?.mobileTF.text = ""
                     }
                 }

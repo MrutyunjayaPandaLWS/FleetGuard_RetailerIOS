@@ -27,7 +27,7 @@ class MilestoneRedemptionListingTVC: UITableViewCell {
     @IBOutlet var descriptionHeadingLbl: UILabel!
     
     var delegate:mileStoneDelegateData!
-    
+    var levelpoints = 0
     
     @IBOutlet var downloadBTN: UIButton!
     override func awakeFromNib() {

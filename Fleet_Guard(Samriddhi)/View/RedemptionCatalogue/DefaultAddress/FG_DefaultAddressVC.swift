@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -26,6 +27,11 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
     }
     
     
+    @IBOutlet weak var redeemablePointTitleLbl: UILabel!
+    @IBOutlet weak var confirmBtn: UIButton!
+    @IBOutlet weak var defaultAddressTitleLbl: UILabel!
+    @IBOutlet weak var editAddressLbl: UILabel!
+    @IBOutlet weak var headerLbl: UILabel!
     @IBOutlet weak var addressTextView: UITextView!
     @IBOutlet weak var userNameLbl: UILabel!
     @IBOutlet weak var redeemablepts: UILabel!
@@ -57,6 +63,7 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        localization()
         self.VM.VC = self
         self.profileDetailsApi()
         self.redeemablepts.text = "\(self.totalPts)"
@@ -65,6 +72,15 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
         
         NotificationCenter.default.addObserver(self, selector: #selector(goToMain), name: Notification.Name.goToMain, object: nil)
     }
+    
+    func localization(){
+        redeemablePointTitleLbl.text = "Redeemable_Points".localiz()
+        confirmBtn.setTitle("Confirm_Order".localiz(), for: .normal)
+        headerLbl.text = "Default_Address".localiz()
+        defaultAddressTitleLbl.text = "Default_Address".localiz()
+        editAddressLbl.text = "Edit_Address".localiz()
+    }
+    
     
     @objc func goToMain(){
         self.navigationController?.popToRootViewController(animated: true)
@@ -114,7 +130,7 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
 //                      vc!.modalTransitionStyle = .crossDissolve
 //                      self.present(vc!, animated: true, completion: nil)
                       
-                      self.view.makeToast("Shipping address requires: State,City,Address,Pin code and Mobile Number,details,Click on 'Edit' to edit and add details", duration: 3.0, position: .bottom)
+                      self.view.makeToast("Shipping_address_requires".localiz(), duration: 3.0, position: .bottom)
                   }
               }else{
                   let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionOTPVC") as? FG_RedemptionOTPVC
@@ -142,7 +158,7 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
 //                  vc!.modalPresentationStyle = .overCurrentContext
 //                  vc!.modalTransitionStyle = .crossDissolve
 //                  self.present(vc!, animated: true, completion: nil)
-                  self.view.makeToast("Your account is unverified! Kindly contact the administrator to access the redemption Catalogue", duration: 3.0, position: .bottom)
+                  self.view.makeToast("your_account_is_unverified_for_redeemption".localiz(), duration: 3.0, position: .bottom)
               }
           }
         

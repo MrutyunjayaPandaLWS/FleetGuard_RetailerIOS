@@ -7,6 +7,8 @@
 
 import UIKit
 import Photos
+import LanguageManager_iOS
+
 
 class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {
@@ -28,6 +30,7 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     
     @IBOutlet weak var headerTitleLbl: UILabel!
     
+    @IBOutlet weak var genderTitleLbl: UILabel!
     @IBOutlet weak var personalInfoLbl: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var subView: UIView!
@@ -66,6 +69,7 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        localization()
         self.picker.delegate = self
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 30
@@ -74,6 +78,24 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.profileDetailsAPI()
+        localization()
+    }
+    
+    private func localization(){
+        headerTitleLbl.text  = "Profile".localiz()
+        personalInfoLbl.text = "Personal_Information".localiz()
+        firstNameTitleLbl.text = "First_Name".localiz()
+        lastNameTitleLbl.text = "Last_Name".localiz()
+        mobileNumberTitleLbl.text = "Mobilenumber".localiz()
+        emailTitleLbl.text = "Email_address".localiz()
+        dobTitleLbl.text = "DOB".localiz()
+        genderTitleLbl.text =  "Gender".localiz()
+        addressTitleLbl.text = "Address".localiz()
+        stateTitleLbl.text = "state".localiz()
+        cityTitleLbl.text = "city".localiz()
+        pincodeTitleLbl.text = "pincode".localiz()
+        preferredLanguageTitleLbl.text = "preferred_Language".localiz()
+        editProfileBtn.setTitle("edit_profile".localiz(), for: .normal)
     }
     
 

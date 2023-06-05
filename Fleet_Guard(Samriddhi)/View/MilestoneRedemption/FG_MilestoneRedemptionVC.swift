@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_MilestoneRedemptionVC : BaseViewController, mileStoneDelegateData{
     func doenloadData(_ cell: MilestoneRedemptionListingTVC) {
         guard let tappedIndexPath = self.myRedemptionTableView.indexPath(for: cell) else{return}
         self.saveMileStoneCode = VM.myRedemptionList[tappedIndexPath.row].milstoneCode ?? ""
+        self.levelPoints = cell.levelpoints
         self.redeemDataAPI()
     }
     
@@ -38,22 +40,26 @@ class FG_MilestoneRedemptionVC : BaseViewController, mileStoneDelegateData{
 //    @IBOutlet weak var clearButton: UIButton!
 //    @IBOutlet weak var applyBtn: UIButton!
     
-    
+    var color1 = #colorLiteral(red: 0.4804053903, green: 0.7616635561, blue: 0.2726997733, alpha: 1)
+    var color2 = #colorLiteral(red: 0.4804053903, green: 0.7616635561, blue: 0.2726997733, alpha: 0.5)
     var itsFrom = ""
     var comingFrom = ""
     var saveMileStoneCode = ""
-    
+    var levelPoints = 0
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     
     var VM = MileStoneRedemptionListVM()
-    
+    var pointsBal = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        localization()
         myRedemptionTableView.delegate = self
         myRedemptionTableView.dataSource = self
+        nodatafoundLbl.isHidden = true
+        nodatafoundLbl.text = "noDataFound".localiz()
         //self.filterView.isHidden = true
         
 //        subView.clipsToBounds = true
@@ -69,6 +75,10 @@ class FG_MilestoneRedemptionVC : BaseViewController, mileStoneDelegateData{
             self.backBtn.isHidden = true
         }
         self.myRedemptionListing()
+    }
+    
+    private func localization(){
+        headerText.text = "My_Milestone_Redemption".localiz()
     }
     
     
@@ -144,10 +154,10 @@ extension FG_MilestoneRedemptionVC: UITableViewDelegate, UITableViewDataSource{
         cell.selectionStyle = .none
         cell.delegate = self
         cell.milestoneCodeDataLbl.text = VM.myRedemptionList[indexPath.row].milstoneCode ?? ""
-        cell.leavelPointsLbl.text =  "\(VM.myRedemptionList[indexPath.row].mileStonePoint ?? 0)"
-        
+        let levelPoints = VM.myRedemptionList[indexPath.row].mileStonePoint ?? 0
+        cell.leavelPointsLbl.text =  "\(levelPoints)"
         cell.descriptionDataLbl.text = VM.myRedemptionList[indexPath.row].description ?? ""
-        
+        cell.levelpoints = levelPoints
         let fromDate = VM.myRedemptionList[indexPath.row].fromDate ?? ""
         let toDate = VM.myRedemptionList[indexPath.row].toDate ?? ""
         let splitFrom = fromDate.split(separator: " ")
@@ -155,6 +165,19 @@ extension FG_MilestoneRedemptionVC: UITableViewDelegate, UITableViewDataSource{
         
         let compbinedDta = "From -\(splitFrom[0]) " + "To -\(splitToDate[0])"
         cell.validityDataLbl.text = compbinedDta
+        if levelPoints < (Int(pointsBal) ?? 0){
+            if levelPoints < 0{
+                cell.downloadBTN.isEnabled = false
+                cell.downloadBTN.backgroundColor = color2
+            }else{
+                cell.downloadBTN.isEnabled = true
+                cell.downloadBTN.backgroundColor = color1
+            }
+            
+        }else{
+            cell.downloadBTN.isEnabled = false
+            cell.downloadBTN.backgroundColor = color2
+        }
         
         return cell
     }

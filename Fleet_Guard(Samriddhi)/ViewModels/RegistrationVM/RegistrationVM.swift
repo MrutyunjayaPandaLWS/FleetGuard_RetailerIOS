@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class RegistrationVM: popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {
@@ -36,7 +37,7 @@ class RegistrationVM: popUpDelegate {
                                     vc!.titleInfo = ""
                                     vc!.itsComeFrom = "Registration"
                                     //vc!.itsFrom = self.VC?.itsComeFrom ?? ""
-                                    vc!.descriptionInfo = "Your application successfully submitted"
+                                    vc!.descriptionInfo = "query_Submission_SuccessMesage".localiz()
                                     vc!.modalPresentationStyle = .overCurrentContext
                                     vc!.modalTransitionStyle = .crossDissolve
                                     self.VC?.present(vc!, animated: true, completion: nil)
@@ -44,7 +45,7 @@ class RegistrationVM: popUpDelegate {
                                 }
                             }else{
                                 
-                                self.VC?.view.makeToast("Your submission failed.", duration: 3.0, position: .bottom)
+                                self.VC?.view.makeToast("query_Submission_failed".localiz(), duration: 3.0, position: .bottom)
 //                                DispatchQueue.main.async{
 //                                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                                    vc!.delegate = self
@@ -118,7 +119,7 @@ class RegistrationVM: popUpDelegate {
 //                            vc!.modalPresentationStyle = .overCurrentContext
 //                            vc!.modalTransitionStyle = .crossDissolve
 //                            self.VC?.present(vc!, animated: true, completion: nil)
-                            self.VC?.view.makeToast("Mobile number already registered !", duration: 3.0, position: .bottom)
+                            self.VC?.view.makeToast("Mobile_number_already_registered".localiz(), duration: 3.0, position: .bottom)
                             self.VC?.mobileTF.text = ""
                         }
                     }

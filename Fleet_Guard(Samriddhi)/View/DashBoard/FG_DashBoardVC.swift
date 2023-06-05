@@ -9,7 +9,13 @@ import UIKit
 import ImageSlideshow
 import SlideMenuControllerSwift
 import Kingfisher
-class FG_DashBoardVC: BaseViewController {
+import LanguageManager_iOS
+
+class FG_DashBoardVC: BaseViewController, LanguageDelegate {
+    func didtappedLanguageBtn(item: LanguageVC) {
+        self.localization()
+    }
+    
 
     @IBOutlet weak var nodataFoundLbl: UILabel!
     @IBOutlet weak var promotionBtn: UIButton!
@@ -33,13 +39,18 @@ class FG_DashBoardVC: BaseViewController {
     @IBOutlet var emptyImageView: UIImageView!
     @IBOutlet weak var filtrationLbl: UILabel!
     
+    @IBOutlet weak var knowMoreLbl: UILabel!
+    @IBOutlet weak var redemptionCatalogueLbl: UILabel!
     @IBOutlet weak var redemptionCatalogueBtn: UIButton!
     @IBOutlet weak var orderNowBtn: UIButton!
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
+    @IBOutlet weak var shopNameTitleLbl: UILabel!
     @IBOutlet var companyNameLbl: UILabel!
     
+    @IBOutlet weak var productCatalogueLbl: UILabel!
+    @IBOutlet weak var addmoreRangeLbl: UILabel!
     var categoryItemArray = ["Filters", "Coolant & Chemicals", "Center Bearing", "Break Liner"]
     var categoryImageArray = ["OUTLINE", "OUTLINE", "OUTLINE","OUTLINE"]
     var dashboardAarray = [ObjCustomerDashboardList]()
@@ -47,7 +58,9 @@ class FG_DashBoardVC: BaseViewController {
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = ""{
         didSet{
-            pointsAPI()
+            if loyaltyId != "" && loyaltyId != nil{
+                pointsAPI()
+            }
         }
     }
     var secondToken = UserDefaults.standard.string(forKey: "SECONDTOKEN") ?? ""
@@ -61,6 +74,7 @@ class FG_DashBoardVC: BaseViewController {
         super.viewDidLoad()
         self.VM.VC = self
         nodataFoundLbl.isHidden = true
+        nodataFoundLbl.text = "noDataFound".localiz()
         dashboardApi()
         print(deviceID,"kjslk")
         self.emptyImageView.isHidden = true
@@ -93,12 +107,27 @@ class FG_DashBoardVC: BaseViewController {
         self.orderNowBtn.isUserInteractionEnabled = true
         self.redemptionCatalogueBtn.isUserInteractionEnabled = true
         self.viewProductButton.isUserInteractionEnabled = true
+        localization()
         
     }
     
     override func viewDidLayoutSubviews() {
         self.orderNowBtn.layer.cornerRadius = 14
         self.orderNowBtn.clipsToBounds = true
+        
+    }
+    
+    
+    private func localization(){
+        totalPtsBalance.text = "total_Point_bal".localiz()
+        welcomeLbl.text = "welcome".localiz()
+        productCatalogueLbl.text = "product_Catalogoue".localiz()
+        redemptionCatalogueLbl.text = "redemption_catalogue".localiz()
+        knowMoreLbl.text = "know_more".localiz()
+        shopNameTitleLbl.text = "Shop_name".localiz()
+        addmoreRangeLbl.text  = "Add_More_Range".localiz()
+        viewProductButton.setTitle("View_Products".localiz(), for: .normal)
+        orderNowBtn.setTitle("Order_Now".localiz(), for: .normal)
         
     }
     
@@ -150,6 +179,12 @@ class FG_DashBoardVC: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func languageChangeBtn(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LanguageVC") as? LanguageVC
+        vc?.delegate = self
+        vc?.modalPresentationStyle = .overFullScreen
+        vc?.modalTransitionStyle = .crossDissolve
+        present(vc!, animated: true)
+        
     }
     
     @IBAction func notificationBell(_ sender: Any) {
@@ -217,26 +252,26 @@ class FG_DashBoardVC: BaseViewController {
     }
     @objc func didTap() {
         if bannerImagesArray.count > 0 {
-//            bannerView.presentFullScreenController(from: self)
-            for image in bannerImagesArray {
-                print(image.actionImageUrl,"imageURL")
-                if let url = URL(string: "\(image.actionImageUrl ?? "")")
-                    {
-                        UIApplication.shared.openURL(url)
-                    }
-            }
+            print(bannerImage.currentPage)
+            if bannerImagesArray[(bannerImage.currentPage ?? 0)].actionImageUrl == "" || bannerImagesArray[(bannerImage.currentPage ?? 0)].actionImageUrl == nil{
+                
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_FocusGroupVC") as? FG_FocusGroupVC
+                vc?.albumID = "\(bannerImagesArray[(bannerImage.currentPage ?? 0)].albumID ?? 0)"
+                navigationController?.pushViewController(vc!, animated: true)
+                }else{
+                    print(bannerImagesArray[(bannerImage.currentPage ?? 0)].actionImageUrl,"imageURL")
+                    if let url = URL(string: "\(bannerImagesArray[(bannerImage.currentPage ?? 0)].actionImageUrl ?? "")")
+                        {
+                            UIApplication.shared.openURL(url)
+                        }
+                }
         }
-        
-//        if self.bannerImagesArray.count > 0 {
-//            
-//            bannerImage.presentFullScreenController(from: self)
-//        }
-//
     }
     func bannerImagesAPI() {
         let parameters = [
                 "ObjImageGallery": [
-                "AlbumCategoryID": "1"
+                "AlbumCategoryID": "1",
+                "ActorId":"\(userId)"
             ]
             ] as [String: Any]
         print(parameters)

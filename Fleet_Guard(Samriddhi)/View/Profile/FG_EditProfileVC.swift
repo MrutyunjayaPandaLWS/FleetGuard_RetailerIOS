@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import LanguageManager_iOS
+
 protocol EditDataDelegate {
     func updatedAddressDetails(_ vc: FG_EditProfileVC)
 }
@@ -128,11 +130,12 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
-        
+        localization()
         self.firstNameTF.text = "\(firstName)"
         self.lastNameTF.text = lastName
         self.mobileTF.text = mobileNumber
         self.emailTF.text = emailLbl
+        emailTF.keyboardType = .emailAddress
         self.selectSateLbl.text = state
         self.selectCityLbl.text = city
         self.pincodeTF.text = pincode
@@ -157,6 +160,42 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     }
     
 
+    private func localization(){
+        self.headerLbl.text = "Profile".localiz()
+        self.firstNameLbl.text = "First_Name".localiz()
+        self.lastNameLbl.text = "Last_Name".localiz()
+        self.mobileNumberLbl.text = "Mobilenumber".localiz()
+        self.emailAddessLbl.text  = "Email_address".localiz()
+        self.addressDataLbl.text = "Address".localiz()
+        self.dobLbl.text = "DOB".localiz()
+        self.genderLbl.text = "Gender".localiz()
+        self.preferredLanguageLbl.text = "preferred_Language".localiz()
+        self.countryLbl.text = "Country".localiz()
+        self.stateLbl.text = "state".localiz()
+        self.cityLbl.text = "city".localiz()
+        self.pincodeLbl.text = "pincode".localiz()
+        self.savebtn.setTitle("Save_changes".localiz(), for: .normal)
+        
+        
+        
+        
+    }
+    
+    @IBAction func didTappedemailTF(_ sender: Any) {
+        
+        if emailTF.text?.count != 0{
+            if emailTF.text?.isValidEmail == true{
+                
+            }else{
+                self.view.makeToast("Please enter a valid email adress",duration: 2.0,position: .bottom)
+                emailTF.text = ""
+            }
+        }
+        
+    }
+    
+    
+    
     @IBAction func backBtn(_ sender: Any) {
         self.delegate?.updatedAddressDetails(self)
         self.navigationController?.popViewController(animated: true)
@@ -217,7 +256,7 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Please select state", duration: 3.0, position: .bottom)
+                self.view.makeToast("Please_select_state".localiz(), duration: 3.0, position: .bottom)
             }
         }else{
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DropDownVC") as? FG_DropDownVC

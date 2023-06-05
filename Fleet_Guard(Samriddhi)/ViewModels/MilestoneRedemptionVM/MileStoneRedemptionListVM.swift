@@ -74,6 +74,9 @@ class MileStoneRedemptionListVM: popUpDelegate {
                         print(result?.returnMessage ?? "")
                     if result?.returnMessage ?? "" == "1"{
                         //FG_PopUpVC
+                        let totalbal = (Int(self.VC?.pointsBal ?? "0") ?? 0) - (self.VC?.levelPoints ?? 0)
+                        self.VC?.pointsBal = "\(totalbal)"
+                        self.VC?.levelPoints = 0
                         DispatchQueue.main.async{
                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                             vc!.delegate = self
@@ -83,6 +86,7 @@ class MileStoneRedemptionListVM: popUpDelegate {
                             self.VC?.present(vc!, animated: true, completion: nil)
                         }
                     }else{
+                        self.VC?.levelPoints = 0
                         self.VC!.view.makeToast("Something went wrong please try again later.", duration: 3.0, position: .bottom)
                         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
                             self.VC?.navigationController?.popViewController(animated: true)
@@ -91,6 +95,7 @@ class MileStoneRedemptionListVM: popUpDelegate {
                        
                     }
                 } else {
+                    self.VC?.levelPoints = 0
                     print("No Response")
                     DispatchQueue.main.async {
                         

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     func acceptDate(_ vc: FG_DOBVC) {
@@ -85,6 +86,8 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        self.noDataFoundLbl.text = "noDataFound".localiz()
+        self.noDataFoundLbl.isHidden = true
         myRedemptionTableView.delegate = self
         myRedemptionTableView.dataSource = self
         self.filterShadowView.isHidden = true
@@ -117,6 +120,11 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
 //        collectionViewFLowLayout2.minimumLineSpacing = 2.5
 //        collectionViewFLowLayout2.minimumInteritemSpacing = 2.5
 //         self.collectionView.collectionViewLayout = collectionViewFLowLayout2
+        localization()
+    }
+    
+    private func localization(){
+        headerText.text = "My_Redemption".localiz()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

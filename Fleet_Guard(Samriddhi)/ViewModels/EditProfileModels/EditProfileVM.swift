@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class EditProfileVM: popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {
@@ -34,7 +35,7 @@ class EditProfileVM: popUpDelegate {
                                     vc!.titleInfo = ""
                                     vc!.itsComeFrom = "EDIT"
                                     //vc!.itsFrom = self.VC?.itsComeFrom ?? ""
-                                    vc!.descriptionInfo = "Your details have been submitted successfully."
+                                    vc!.descriptionInfo = "edit_Profile_submitted_successfully".localiz()
                                     vc!.modalPresentationStyle = .overCurrentContext
                                     vc!.modalTransitionStyle = .crossDissolve
                                     self.VC?.present(vc!, animated: true, completion: nil)
@@ -51,7 +52,7 @@ class EditProfileVM: popUpDelegate {
 //                                    vc!.modalPresentationStyle = .overCurrentContext
 //                                    vc!.modalTransitionStyle = .crossDissolve
 //                                    self.VC?.present(vc!, animated: true, completion: nil)
-                                    self.VC?.view.makeToast("Failed to submit your details try after some time", duration: 3.0, position: .bottom)
+                                    self.VC?.view.makeToast("edit_Profile_submit_failed".localiz(), duration: 3.0, position: .bottom)
                                 }
                             }
                         }

@@ -22,5 +22,10 @@ public enum Languages: String {
   case zhHK = "zh-HK"
   case es419 = "es-419"
   case ptPT = "pt-PT"
+    case taIN = "ta-IN"
+    case teIN = "te-IN"
+    case bnIN = "bn-IN"
+    case knIN = "kn-IN"
   case deviceLanguage
 }
+

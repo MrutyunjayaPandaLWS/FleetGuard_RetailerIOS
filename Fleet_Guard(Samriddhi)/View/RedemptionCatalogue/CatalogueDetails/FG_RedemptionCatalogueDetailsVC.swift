@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {
@@ -76,14 +77,14 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
         self.productPoints.text = "Points: \(productPoint)"
         self.descriptionLbl.text = productDetails
         self.termsAndConLbl.text = termsandContions
-        let receivedImage = "\(String(describing: productImage))"
+        let receivedImage = "\(String(describing: productImages))"
         print(receivedImage)
-        self.productImag.kf.setImage(with: URL(string: "\(PROMO_IMG1)\(receivedImage)"), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"));
+        self.productImag.kf.setImage(with: URL(string: "\(receivedImage)"), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"));
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        headerText.text = "Redemption_Catalogue".localiz()
         myCartListApi()
     }
     
@@ -112,7 +113,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
 //            }
-            self.view.makeToast("You are not allowled to redeem. Please contact your administrator", duration: 3.0, position: .bottom)
+            self.view.makeToast("redeem_failed_contact_to_admin".localiz(), duration: 3.0, position: .bottom)
                
             
         }else{
@@ -134,7 +135,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
 //                    vc!.modalTransitionStyle = .crossDissolve
 //                    self.present(vc!, animated: true, completion: nil)
 //                }
-                self.view.makeToast("Insufficent Point Balance", duration: 3.0, position: .bottom)
+                self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
             }
         }  
     }

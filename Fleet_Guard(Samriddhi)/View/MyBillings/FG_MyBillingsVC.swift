@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_MyBillingsVC: BaseViewController,myBillingsDelegate {
     
@@ -21,6 +22,7 @@ class FG_MyBillingsVC: BaseViewController,myBillingsDelegate {
     }
     
 
+    @IBOutlet weak var headerLbl: UILabel!
     @IBOutlet weak var myBillingsTableView: UITableView!
     @IBOutlet weak var noDataFound: UILabel!
     @IBOutlet var billingHeaderStack: UIStackView!
@@ -30,9 +32,11 @@ class FG_MyBillingsVC: BaseViewController,myBillingsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
-
+        localization()
         self.myBillingsTableView.delegate = self
         self.myBillingsTableView.dataSource = self
+        noDataFound.isHidden = true
+        noDataFound.text = "noDataFound".localiz()
         billingsListingAPI()
         
         
@@ -41,6 +45,11 @@ class FG_MyBillingsVC: BaseViewController,myBillingsDelegate {
         billingHeaderStack.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         
+    }
+    
+    
+    private func localization(){
+        headerLbl.text = "My_Billings".localiz()
     }
 //    func billingsListingAPI() {
 //        let parametets = [

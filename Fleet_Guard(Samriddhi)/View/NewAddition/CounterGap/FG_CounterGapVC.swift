@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_CounterGapVC: BaseViewController, CounterGapDelegate {
     func counterGapForward(_ cell: FG_CounterGapTVC) {        
@@ -42,7 +43,7 @@ class FG_CounterGapVC: BaseViewController, CounterGapDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
-        
+        self.noDataFound.text = "noDataFound".localiz()
         CounterGapTableView.delegate = self
         CounterGapTableView.dataSource = self
     }
@@ -50,6 +51,7 @@ class FG_CounterGapVC: BaseViewController, CounterGapDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         noDataFound.isHidden = true
+        self.VM.myCounterGapArray.removeAll()
         counterGap(startIndex: startindex)
     }
     

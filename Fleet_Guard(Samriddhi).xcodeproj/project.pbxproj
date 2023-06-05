@@ -15,8 +15,6 @@
 		251F0B81299F4F2E00E2881A /* PromotionsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251F0B7E299F4F2D00E2881A /* PromotionsModels.swift */; };
 		251F0B82299F4F2E00E2881A /* LstPromotionJsonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251F0B7F299F4F2E00E2881A /* LstPromotionJsonList.swift */; };
 		251F0B84299F4F7B00E2881A /* PromotionsApiVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251F0B83299F4F7B00E2881A /* PromotionsApiVM.swift */; };
-		251F0B8D299F67A600E2881A /* fleetguard-retailer-t&c.html in Resources */ = {isa = PBXBuildFile; fileRef = 251F0B8C299F67A600E2881A /* fleetguard-retailer-t&c.html */; };
-		251F0B8F299F67B600E2881A /* fleetguard-retailer-faq.html in Resources */ = {isa = PBXBuildFile; fileRef = 251F0B8E299F67B600E2881A /* fleetguard-retailer-faq.html */; };
 		252AC5CF29DAA1A700E6D139 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252AC5CD29DAA1A600E6D139 /* LoginModel.swift */; };
 		252AC5D029DAA1A700E6D139 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252AC5CE29DAA1A700E6D139 /* UserList.swift */; };
 		2547607B29AA1A9A00B5186E /* RedemptionCatalogeDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2547607A29AA1A9A00B5186E /* RedemptionCatalogeDetailsVM.swift */; };
@@ -102,7 +100,6 @@
 		25C465DE29A8E5E200CCA30C /* RPLStatmentViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C465DD29A8E5E200CCA30C /* RPLStatmentViewVM.swift */; };
 		25C465E229A8EA6200CCA30C /* LstRetailerBonding2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C465E029A8EA6200CCA30C /* LstRetailerBonding2.swift */; };
 		25C465E329A8EA6200CCA30C /* RPLStatementViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C465E129A8EA6200CCA30C /* RPLStatementViewModels.swift */; };
-		25C6EABA29AC7AFA00F0CF01 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 25C6EAB929AC7AFA00F0CF01 /* about.html */; };
 		25C865DC29A7237F00C1801E /* senderInfoImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25C865CC29A7237F00C1801E /* senderInfoImageTableViewCell.xib */; };
 		25C865DD29A7237F00C1801E /* otherInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25C865CD29A7237F00C1801E /* otherInfoTableViewCell.xib */; };
 		25C865DE29A7237F00C1801E /* customerqueryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C865CE29A7237F00C1801E /* customerqueryTableViewCell.swift */; };
@@ -185,6 +182,8 @@
 		841FCE06297FDC790026CD44 /* FG_MyCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841FCE05297FDC790026CD44 /* FG_MyCartVC.swift */; };
 		841FCE08297FDC950026CD44 /* FG_DefaultAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841FCE07297FDC950026CD44 /* FG_DefaultAddressVC.swift */; };
 		841FCE0A297FDCB40026CD44 /* FG_RedemptionOTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841FCE09297FDCB40026CD44 /* FG_RedemptionOTPVC.swift */; };
+		842050F02A2A0F0800634C80 /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842050EF2A2A0F0800634C80 /* LanguageVC.swift */; };
+		842050F22A2A11D200634C80 /* LanguageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842050F12A2A11D200634C80 /* LanguageTVC.swift */; };
 		842326BA297FFA6A00DF7325 /* FG_EditAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842326B9297FFA6A00DF7325 /* FG_EditAddressVC.swift */; };
 		842326C22980076F00DF7325 /* FG_ProductCatalogueFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842326C12980076F00DF7325 /* FG_ProductCatalogueFilterVC.swift */; };
 		842326C42980079800DF7325 /* FG_ProdCatalogueTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842326C32980079800DF7325 /* FG_ProdCatalogueTVC.swift */; };
@@ -228,6 +227,11 @@
 		84662003298138B500D28026 /* FG_StatementTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84662002298138B500D28026 /* FG_StatementTVC.swift */; };
 		84662005298145CA00D28026 /* FG_MyOrderTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84662004298145CA00D28026 /* FG_MyOrderTVC.swift */; };
 		84662007298145E800D28026 /* FG_MyBillingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84662006298145E800D28026 /* FG_MyBillingTVC.swift */; };
+		84671B532A2B4506004D0ADB /* fg-retailer-faq-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 84671B4E2A2B4504004D0ADB /* fg-retailer-faq-Kannada.html */; };
+		84671B542A2B4506004D0ADB /* fg-retailer-faq-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 84671B4F2A2B4505004D0ADB /* fg-retailer-faq-Hindi.html */; };
+		84671B552A2B4506004D0ADB /* fg-retailer-faq-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 84671B502A2B4505004D0ADB /* fg-retailer-faq-Bengali.html */; };
+		84671B562A2B4506004D0ADB /* fg-retailer-faq-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 84671B512A2B4506004D0ADB /* fg-retailer-faq-Telugu.html */; };
+		84671B572A2B4506004D0ADB /* fg-retailer-faq-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 84671B522A2B4506004D0ADB /* fg-retailer-faq-Tamil.html */; };
 		84795F4F2979594F00DDA192 /* FG_PopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84795F4E2979594F00DDA192 /* FG_PopUpVC.swift */; };
 		8488E40B298A25BF0032A2D7 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488E403298A25BD0032A2D7 /* ServiceError.swift */; };
 		8488E40C298A25BF0032A2D7 /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488E404298A25BD0032A2D7 /* WebClient.swift */; };
@@ -257,7 +261,25 @@
 		849D3513298A93E2005A41FC /* FG_ProductListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849D3512298A93E2005A41FC /* FG_ProductListVM.swift */; };
 		849E0756297978DF00F033CD /* FG_MyPromotionDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E0755297978DF00F033CD /* FG_MyPromotionDetailsVC.swift */; };
 		849E07592979790C00F033CD /* FG_MyPromotionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E07582979790C00F033CD /* FG_MyPromotionsTVC.swift */; };
+		84A54AED2A2D9D4E007DB559 /* FG_FocusGroupTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A54AEC2A2D9D4E007DB559 /* FG_FocusGroupTVC.swift */; };
+		84A54AF02A2D9D7A007DB559 /* FG_FocusGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A54AEF2A2D9D7A007DB559 /* FG_FocusGroupVC.swift */; };
+		84A54AF32A2DA2F8007DB559 /* FG_FocusGroupVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A54AF22A2DA2F8007DB559 /* FG_FocusGroupVM.swift */; };
+		84A5F77B2A29B3AB001D2849 /* DeleteAccountModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5F77A2A29B3AB001D2849 /* DeleteAccountModels.swift */; };
 		84A9A320297EB7900063A4FC /* FG_CatalogueFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A9A31F297EB7900063A4FC /* FG_CatalogueFilterView.swift */; };
+		84ABAE712A29E89900200F39 /* String+extenssion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ABAE702A29E89900200F39 /* String+extenssion.swift */; };
+		84ABAE842A2A086E00200F39 /* fleetguard-retailer-T&C-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 84ABAE722A2A086000200F39 /* fleetguard-retailer-T&C-Hindi.html */; };
+		84ABAE852A2A086E00200F39 /* fg-retailer-about-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 84ABAE732A2A086100200F39 /* fg-retailer-about-Bengali.html */; };
+		84ABAE872A2A086E00200F39 /* fg-retailer-about-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 84ABAE752A2A086200200F39 /* fg-retailer-about-Tamil.html */; };
+		84ABAE882A2A086E00200F39 /* fg-retailer-about-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 84ABAE762A2A086300200F39 /* fg-retailer-about-Kannada.html */; };
+		84ABAE8A2A2A086E00200F39 /* fleetguard-retailer-T&C-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 84ABAE782A2A086500200F39 /* fleetguard-retailer-T&C-Bengali.html */; };
+		84ABAE8D2A2A086E00200F39 /* fg-retailer-about-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 84ABAE7B2A2A086800200F39 /* fg-retailer-about-Hindi.html */; };
+		84ABAE8E2A2A086E00200F39 /* fleetguard-retailer-T&C-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 84ABAE7C2A2A086800200F39 /* fleetguard-retailer-T&C-Kannada.html */; };
+		84ABAE8F2A2A086E00200F39 /* fg-retailer-faq-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 84ABAE7D2A2A086900200F39 /* fg-retailer-faq-Eng.html */; };
+		84ABAE902A2A086E00200F39 /* fg-retailer-about-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 84ABAE7E2A2A086A00200F39 /* fg-retailer-about-Eng.html */; };
+		84ABAE912A2A086E00200F39 /* fleetguard-retailer-T&C-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 84ABAE7F2A2A086B00200F39 /* fleetguard-retailer-T&C-Tamil.html */; };
+		84ABAE932A2A086E00200F39 /* fleetguard-retailer-T&C-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 84ABAE812A2A086C00200F39 /* fleetguard-retailer-T&C-Eng.html */; };
+		84ABAE942A2A086E00200F39 /* fleetguard-retailer-T&C-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 84ABAE822A2A086D00200F39 /* fleetguard-retailer-T&C-Telugu.html */; };
+		84ABAE952A2A086E00200F39 /* fg-retailer-about-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 84ABAE832A2A086E00200F39 /* fg-retailer-about-Telugu.html */; };
 		84BD93D02A0DF2DF0059A96A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD93CF2A0DF2DF0059A96A /* NotificationService.swift */; };
 		84BD93D42A0DF2DF0059A96A /* NotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 84BD93CD2A0DF2DF0059A96A /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		84BD93DB2A0DFAD20059A96A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BD93DA2A0DFAD20059A96A /* GoogleService-Info.plist */; };
@@ -357,8 +379,6 @@
 		251F0B7E299F4F2D00E2881A /* PromotionsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromotionsModels.swift; sourceTree = "<group>"; };
 		251F0B7F299F4F2E00E2881A /* LstPromotionJsonList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstPromotionJsonList.swift; sourceTree = "<group>"; };
 		251F0B83299F4F7B00E2881A /* PromotionsApiVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsApiVM.swift; sourceTree = "<group>"; };
-		251F0B8C299F67A600E2881A /* fleetguard-retailer-t&c.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-t&c.html"; sourceTree = "<group>"; };
-		251F0B8E299F67B600E2881A /* fleetguard-retailer-faq.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-faq.html"; sourceTree = "<group>"; };
 		252AC5CD29DAA1A600E6D139 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		252AC5CE29DAA1A700E6D139 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		2547607A29AA1A9A00B5186E /* RedemptionCatalogeDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionCatalogeDetailsVM.swift; sourceTree = "<group>"; };
@@ -449,7 +469,6 @@
 		25C465DD29A8E5E200CCA30C /* RPLStatmentViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPLStatmentViewVM.swift; sourceTree = "<group>"; };
 		25C465E029A8EA6200CCA30C /* LstRetailerBonding2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstRetailerBonding2.swift; sourceTree = "<group>"; };
 		25C465E129A8EA6200CCA30C /* RPLStatementViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPLStatementViewModels.swift; sourceTree = "<group>"; };
-		25C6EAB929AC7AFA00F0CF01 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		25C865CC29A7237F00C1801E /* senderInfoImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = senderInfoImageTableViewCell.xib; sourceTree = "<group>"; };
 		25C865CD29A7237F00C1801E /* otherInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = otherInfoTableViewCell.xib; sourceTree = "<group>"; };
 		25C865CE29A7237F00C1801E /* customerqueryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customerqueryTableViewCell.swift; sourceTree = "<group>"; };
@@ -532,6 +551,21 @@
 		841FCE05297FDC790026CD44 /* FG_MyCartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyCartVC.swift; sourceTree = "<group>"; };
 		841FCE07297FDC950026CD44 /* FG_DefaultAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_DefaultAddressVC.swift; sourceTree = "<group>"; };
 		841FCE09297FDCB40026CD44 /* FG_RedemptionOTPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_RedemptionOTPVC.swift; sourceTree = "<group>"; };
+		842050EF2A2A0F0800634C80 /* LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
+		842050F12A2A11D200634C80 /* LanguageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTVC.swift; sourceTree = "<group>"; };
+		842050F32A2A1EE600634C80 /* ta-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ta-IN"; path = "ta-IN.lproj/Main.strings"; sourceTree = "<group>"; };
+		842050F42A2A1EE600634C80 /* ta-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ta-IN"; path = "ta-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		842050F52A2A1EE700634C80 /* ta-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ta-IN"; path = "ta-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		842050F62A2A1F0100634C80 /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/Main.strings"; sourceTree = "<group>"; };
+		842050F72A2A1F0200634C80 /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		842050F82A2A1F0200634C80 /* te-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "te-IN"; path = "te-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		842050F92A2A1F2300634C80 /* bn-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "bn-IN"; path = "bn-IN.lproj/Main.strings"; sourceTree = "<group>"; };
+		842050FA2A2A1F2300634C80 /* bn-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "bn-IN"; path = "bn-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		842050FB2A2A1F2400634C80 /* bn-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "bn-IN"; path = "bn-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		842050FC2A2A1F3B00634C80 /* kn-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "kn-IN"; path = "kn-IN.lproj/Main.strings"; sourceTree = "<group>"; };
+		842050FD2A2A1F3B00634C80 /* kn-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "kn-IN"; path = "kn-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		842050FE2A2A1F3C00634C80 /* kn-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "kn-IN"; path = "kn-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		842050FF2A2A1F9B00634C80 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		842326B9297FFA6A00DF7325 /* FG_EditAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_EditAddressVC.swift; sourceTree = "<group>"; };
 		842326C12980076F00DF7325 /* FG_ProductCatalogueFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_ProductCatalogueFilterVC.swift; sourceTree = "<group>"; };
 		842326C32980079800DF7325 /* FG_ProdCatalogueTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_ProdCatalogueTVC.swift; sourceTree = "<group>"; };
@@ -575,6 +609,11 @@
 		84662002298138B500D28026 /* FG_StatementTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_StatementTVC.swift; sourceTree = "<group>"; };
 		84662004298145CA00D28026 /* FG_MyOrderTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyOrderTVC.swift; sourceTree = "<group>"; };
 		84662006298145E800D28026 /* FG_MyBillingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyBillingTVC.swift; sourceTree = "<group>"; };
+		84671B4E2A2B4504004D0ADB /* fg-retailer-faq-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Kannada.html"; sourceTree = "<group>"; };
+		84671B4F2A2B4505004D0ADB /* fg-retailer-faq-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Hindi.html"; sourceTree = "<group>"; };
+		84671B502A2B4505004D0ADB /* fg-retailer-faq-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Bengali.html"; sourceTree = "<group>"; };
+		84671B512A2B4506004D0ADB /* fg-retailer-faq-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Telugu.html"; sourceTree = "<group>"; };
+		84671B522A2B4506004D0ADB /* fg-retailer-faq-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Tamil.html"; sourceTree = "<group>"; };
 		84795F4E2979594F00DDA192 /* FG_PopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_PopUpVC.swift; sourceTree = "<group>"; };
 		8488E403298A25BD0032A2D7 /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		8488E404298A25BD0032A2D7 /* WebClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebClient.swift; sourceTree = "<group>"; };
@@ -605,7 +644,25 @@
 		849D3512298A93E2005A41FC /* FG_ProductListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_ProductListVM.swift; sourceTree = "<group>"; };
 		849E0755297978DF00F033CD /* FG_MyPromotionDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyPromotionDetailsVC.swift; sourceTree = "<group>"; };
 		849E07582979790C00F033CD /* FG_MyPromotionsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_MyPromotionsTVC.swift; sourceTree = "<group>"; };
+		84A54AEC2A2D9D4E007DB559 /* FG_FocusGroupTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_FocusGroupTVC.swift; sourceTree = "<group>"; };
+		84A54AEF2A2D9D7A007DB559 /* FG_FocusGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_FocusGroupVC.swift; sourceTree = "<group>"; };
+		84A54AF22A2DA2F8007DB559 /* FG_FocusGroupVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_FocusGroupVM.swift; sourceTree = "<group>"; };
+		84A5F77A2A29B3AB001D2849 /* DeleteAccountModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountModels.swift; sourceTree = "<group>"; };
 		84A9A31F297EB7900063A4FC /* FG_CatalogueFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FG_CatalogueFilterView.swift; sourceTree = "<group>"; };
+		84ABAE702A29E89900200F39 /* String+extenssion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extenssion.swift"; sourceTree = "<group>"; };
+		84ABAE722A2A086000200F39 /* fleetguard-retailer-T&C-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-T&C-Hindi.html"; sourceTree = "<group>"; };
+		84ABAE732A2A086100200F39 /* fg-retailer-about-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Bengali.html"; sourceTree = "<group>"; };
+		84ABAE752A2A086200200F39 /* fg-retailer-about-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Tamil.html"; sourceTree = "<group>"; };
+		84ABAE762A2A086300200F39 /* fg-retailer-about-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Kannada.html"; sourceTree = "<group>"; };
+		84ABAE782A2A086500200F39 /* fleetguard-retailer-T&C-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-T&C-Bengali.html"; sourceTree = "<group>"; };
+		84ABAE7B2A2A086800200F39 /* fg-retailer-about-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Hindi.html"; sourceTree = "<group>"; };
+		84ABAE7C2A2A086800200F39 /* fleetguard-retailer-T&C-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-T&C-Kannada.html"; sourceTree = "<group>"; };
+		84ABAE7D2A2A086900200F39 /* fg-retailer-faq-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Eng.html"; sourceTree = "<group>"; };
+		84ABAE7E2A2A086A00200F39 /* fg-retailer-about-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Eng.html"; sourceTree = "<group>"; };
+		84ABAE7F2A2A086B00200F39 /* fleetguard-retailer-T&C-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-T&C-Tamil.html"; sourceTree = "<group>"; };
+		84ABAE812A2A086C00200F39 /* fleetguard-retailer-T&C-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-T&C-Eng.html"; sourceTree = "<group>"; };
+		84ABAE822A2A086D00200F39 /* fleetguard-retailer-T&C-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-T&C-Telugu.html"; sourceTree = "<group>"; };
+		84ABAE832A2A086E00200F39 /* fg-retailer-about-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Telugu.html"; sourceTree = "<group>"; };
 		84BD93CD2A0DF2DF0059A96A /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BD93CF2A0DF2DF0059A96A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		84BD93D12A0DF2DF0059A96A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -763,9 +820,24 @@
 		251F0B8B299F679100E2881A /* TCandFAQ */ = {
 			isa = PBXGroup;
 			children = (
-				251F0B8E299F67B600E2881A /* fleetguard-retailer-faq.html */,
-				25C6EAB929AC7AFA00F0CF01 /* about.html */,
-				251F0B8C299F67A600E2881A /* fleetguard-retailer-t&c.html */,
+				84ABAE732A2A086100200F39 /* fg-retailer-about-Bengali.html */,
+				84ABAE7E2A2A086A00200F39 /* fg-retailer-about-Eng.html */,
+				84ABAE7B2A2A086800200F39 /* fg-retailer-about-Hindi.html */,
+				84ABAE762A2A086300200F39 /* fg-retailer-about-Kannada.html */,
+				84ABAE752A2A086200200F39 /* fg-retailer-about-Tamil.html */,
+				84ABAE832A2A086E00200F39 /* fg-retailer-about-Telugu.html */,
+				84671B502A2B4505004D0ADB /* fg-retailer-faq-Bengali.html */,
+				84671B4F2A2B4505004D0ADB /* fg-retailer-faq-Hindi.html */,
+				84671B4E2A2B4504004D0ADB /* fg-retailer-faq-Kannada.html */,
+				84671B522A2B4506004D0ADB /* fg-retailer-faq-Tamil.html */,
+				84671B512A2B4506004D0ADB /* fg-retailer-faq-Telugu.html */,
+				84ABAE7D2A2A086900200F39 /* fg-retailer-faq-Eng.html */,
+				84ABAE782A2A086500200F39 /* fleetguard-retailer-T&C-Bengali.html */,
+				84ABAE812A2A086C00200F39 /* fleetguard-retailer-T&C-Eng.html */,
+				84ABAE722A2A086000200F39 /* fleetguard-retailer-T&C-Hindi.html */,
+				84ABAE7C2A2A086800200F39 /* fleetguard-retailer-T&C-Kannada.html */,
+				84ABAE7F2A2A086B00200F39 /* fleetguard-retailer-T&C-Tamil.html */,
+				84ABAE822A2A086D00200F39 /* fleetguard-retailer-T&C-Telugu.html */,
 			);
 			path = TCandFAQ;
 			sourceTree = "<group>";
@@ -1434,6 +1506,7 @@
 		84068D8729765DF600D4360F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84A5F7792A29B38B001D2849 /* DeleteAccountModels */,
 				8461E4FB2A1204F200B56457 /* Language Models */,
 				8427D7A629E9295600AEFBD1 /* RedemptionDetailsModels */,
 				8427D7A129E9284400AEFBD1 /* RedemptionDetailsOrderStatusModel */,
@@ -1500,6 +1573,8 @@
 		84068D8829765E0200D4360F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84A54AEB2A2D9D21007DB559 /* Focus Group */,
+				842050EE2A2A0ED900634C80 /* LanguageVC */,
 				84369F4A2A13C08300D1CA28 /* Product Image Details */,
 				257C074D29BF0B2000AED042 /* NotificationVC */,
 				25D58BB729ADCC4E00DB135D /* MilestoneRedemption */,
@@ -1539,6 +1614,7 @@
 		84068D8929765E0A00D4360F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				84A54AF12A2DA2D7007DB559 /* FocusGroupVM */,
 				8427D7AD29E92C2100AEFBD1 /* RedemptionDetailsVM */,
 				257C075429BF0C8A00AED042 /* NotificationVM */,
 				2592E71129B99E0C005689CF /* MarketGapVM */,
@@ -1606,6 +1682,7 @@
 				84068D972976649D00D4360F /* NotificationExtension.swift */,
 				84068D952976649C00D4360F /* TextfieldExtension.swift */,
 				84068D982976649D00D4360F /* ViewExtension.swift */,
+				84ABAE702A29E89900200F39 /* String+extenssion.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1723,6 +1800,15 @@
 				841FCE09297FDCB40026CD44 /* FG_RedemptionOTPVC.swift */,
 			);
 			path = RedemptionOTP;
+			sourceTree = "<group>";
+		};
+		842050EE2A2A0ED900634C80 /* LanguageVC */ = {
+			isa = PBXGroup;
+			children = (
+				842050EF2A2A0F0800634C80 /* LanguageVC.swift */,
+				842050F12A2A11D200634C80 /* LanguageTVC.swift */,
+			);
+			path = LanguageVC;
 			sourceTree = "<group>";
 		};
 		842326BB298006F800DF7325 /* ProductCatalogue */ = {
@@ -2150,6 +2236,31 @@
 			path = Promotions;
 			sourceTree = "<group>";
 		};
+		84A54AEB2A2D9D21007DB559 /* Focus Group */ = {
+			isa = PBXGroup;
+			children = (
+				84A54AEF2A2D9D7A007DB559 /* FG_FocusGroupVC.swift */,
+				84A54AEC2A2D9D4E007DB559 /* FG_FocusGroupTVC.swift */,
+			);
+			path = "Focus Group";
+			sourceTree = "<group>";
+		};
+		84A54AF12A2DA2D7007DB559 /* FocusGroupVM */ = {
+			isa = PBXGroup;
+			children = (
+				84A54AF22A2DA2F8007DB559 /* FG_FocusGroupVM.swift */,
+			);
+			path = FocusGroupVM;
+			sourceTree = "<group>";
+		};
+		84A5F7792A29B38B001D2849 /* DeleteAccountModels */ = {
+			isa = PBXGroup;
+			children = (
+				84A5F77A2A29B3AB001D2849 /* DeleteAccountModels.swift */,
+			);
+			path = DeleteAccountModels;
+			sourceTree = "<group>";
+		};
 		84A9A31D297EB7180063A4FC /* CatalogueFilterView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2555,6 +2666,10 @@
 				Base,
 				hi,
 				"en-IN",
+				"ta-IN",
+				"te-IN",
+				"bn-IN",
+				"kn-IN",
 			);
 			mainGroup = 84C1E3EF29758A6D00D188C5;
 			productRefGroup = 84C1E3F929758A6D00D188C5 /* Products */;
@@ -2582,33 +2697,48 @@
 			buildActionMask = 2147483647;
 			files = (
 				84068DC82976777200D4360F /* Roboto-ThinItalic.ttf in Resources */,
+				84671B542A2B4506004D0ADB /* fg-retailer-faq-Hindi.html in Resources */,
 				84068DC92976777200D4360F /* Roboto-BoldItalic.ttf in Resources */,
 				25C865DD29A7237F00C1801E /* otherInfoTableViewCell.xib in Resources */,
 				84068DCF2976777200D4360F /* Roboto-Thin.ttf in Resources */,
 				84068DCA2976777200D4360F /* Roboto-LightItalic.ttf in Resources */,
-				251F0B8D299F67A600E2881A /* fleetguard-retailer-t&c.html in Resources */,
 				84068DB1297667E700D4360F /* Localizable.strings in Resources */,
+				84671B552A2B4506004D0ADB /* fg-retailer-faq-Bengali.html in Resources */,
 				84068DD02976777200D4360F /* Roboto-Black.ttf in Resources */,
+				84ABAE8D2A2A086E00200F39 /* fg-retailer-about-Hindi.html in Resources */,
 				84C1E40B29758A7000D188C5 /* LaunchScreen.storyboard in Resources */,
 				84068DCB2976777200D4360F /* Roboto-Italic.ttf in Resources */,
 				84068DCC2976777200D4360F /* LICENSE.txt in Resources */,
+				84671B572A2B4506004D0ADB /* fg-retailer-faq-Tamil.html in Resources */,
+				84ABAE952A2A086E00200F39 /* fg-retailer-about-Telugu.html in Resources */,
 				84068DCD2976777200D4360F /* Roboto-BlackItalic.ttf in Resources */,
+				84ABAE8A2A2A086E00200F39 /* fleetguard-retailer-T&C-Bengali.html in Resources */,
 				25C865E229A7237F00C1801E /* otherImageTableViewCell.xib in Resources */,
 				84068DC62976777200D4360F /* Roboto-Regular.ttf in Resources */,
-				251F0B8F299F67B600E2881A /* fleetguard-retailer-faq.html in Resources */,
-				25C6EABA29AC7AFA00F0CF01 /* about.html in Resources */,
 				84068DC42976777200D4360F /* Roboto-Medium.ttf in Resources */,
 				25C865EA29A7237F00C1801E /* otherInfoImageTableViewCell.xib in Resources */,
+				84671B562A2B4506004D0ADB /* fg-retailer-faq-Telugu.html in Resources */,
 				25C865DC29A7237F00C1801E /* senderInfoImageTableViewCell.xib in Resources */,
 				8445026F2A0F72A100A6D3D4 /* lf30_editor_jh47f7lt.json in Resources */,
 				84BD93DB2A0DFAD20059A96A /* GoogleService-Info.plist in Resources */,
+				84ABAE8E2A2A086E00200F39 /* fleetguard-retailer-T&C-Kannada.html in Resources */,
 				84068DA3297664C800D4360F /* lf30_editor_qd1wdceq.json in Resources */,
 				84068DC52976777200D4360F /* Roboto-Light.ttf in Resources */,
+				84ABAE842A2A086E00200F39 /* fleetguard-retailer-T&C-Hindi.html in Resources */,
+				84ABAE882A2A086E00200F39 /* fg-retailer-about-Kannada.html in Resources */,
+				84ABAE872A2A086E00200F39 /* fg-retailer-about-Tamil.html in Resources */,
 				25C865E129A7237F00C1801E /* senderInfoTableViewCell.xib in Resources */,
+				84ABAE902A2A086E00200F39 /* fg-retailer-about-Eng.html in Resources */,
+				84671B532A2B4506004D0ADB /* fg-retailer-faq-Kannada.html in Resources */,
+				84ABAE912A2A086E00200F39 /* fleetguard-retailer-T&C-Tamil.html in Resources */,
+				84ABAE8F2A2A086E00200F39 /* fg-retailer-faq-Eng.html in Resources */,
 				84C1E40829758A7000D188C5 /* Assets.xcassets in Resources */,
+				84ABAE942A2A086E00200F39 /* fleetguard-retailer-T&C-Telugu.html in Resources */,
 				25C865EB29A7237F00C1801E /* senderImageTableViewCell.xib in Resources */,
 				84068DC72976777200D4360F /* Roboto-MediumItalic.ttf in Resources */,
 				84068DCE2976777200D4360F /* Roboto-Bold.ttf in Resources */,
+				84ABAE932A2A086E00200F39 /* fleetguard-retailer-T&C-Eng.html in Resources */,
+				84ABAE852A2A086E00200F39 /* fg-retailer-about-Bengali.html in Resources */,
 				84C1E40329758A6D00D188C5 /* Main.storyboard in Resources */,
 				8445026C2A0F706100A6D3D4 /* HistoryNotificationsTableViewCell.xib in Resources */,
 			);
@@ -2737,6 +2867,7 @@
 				84FD0A82297EC01600E01B00 /* FG_CategoryListCVC.swift in Sources */,
 				2551C3DD29B75EB900EED0FB /* LstRetailerBonding5.swift in Sources */,
 				84068DAB2976656600D4360F /* Reachability.swift in Sources */,
+				84ABAE712A29E89900200F39 /* String+extenssion.swift in Sources */,
 				25C865E729A7237F00C1801E /* senderImageTableViewCell.swift in Sources */,
 				25E8F66329B5C4020033F405 /* FG_BonusTrendGraphVC.swift in Sources */,
 				2551C3D429B75BE000EED0FB /* RangeTrendsVM.swift in Sources */,
@@ -2784,6 +2915,7 @@
 				84C987AA298B86FD007F00B2 /* ProductQuantityUpdateModel.swift in Sources */,
 				2580EFF129A6414D0097A50D /* ObjHelpTopicList.swift in Sources */,
 				84D10F70298E787B00DE283E /* StateList.swift in Sources */,
+				84A54AF32A2DA2F8007DB559 /* FG_FocusGroupVM.swift in Sources */,
 				25C865F329A7256100C1801E /* ObjQueryResponseJsonList.swift in Sources */,
 				84597BCC29790CD900F3A7BC /* FG_TermsandconditionsVC.swift in Sources */,
 				848B2BD42977D52900A58C73 /* FG_MyEarningTVC.swift in Sources */,
@@ -2821,6 +2953,7 @@
 				251F0B84299F4F7B00E2881A /* PromotionsApiVM.swift in Sources */,
 				84597BB829790B6000F3A7BC /* FG_MyProfileVC.swift in Sources */,
 				25A760C729ACE95F00FF5C0E /* LstCustomerOfficalInfoJson.swift in Sources */,
+				842050F02A2A0F0800634C80 /* LanguageVC.swift in Sources */,
 				84C987A6298B7680007F00B2 /* PlaceOrderModel.swift in Sources */,
 				841FCE06297FDC790026CD44 /* FG_MyCartVC.swift in Sources */,
 				2592E70F29B99D27005689CF /* LsrProductDetails12.swift in Sources */,
@@ -2872,6 +3005,7 @@
 				25A760B729ACE0DE00FF5C0E /* LstCustomerCart.swift in Sources */,
 				842326D129800CB000DF7325 /* FG_ProductCatalogueListTVC.swift in Sources */,
 				25E8F66629B5D1A20033F405 /* LstTransactionApprovalDetails.swift in Sources */,
+				842050F22A2A11D200634C80 /* LanguageTVC.swift in Sources */,
 				84597BBA29790B8400F3A7BC /* FG_RedemptionCatalogueVC.swift in Sources */,
 				84F6A3622980F01C00F62714 /* FG_ProdMyCartTVC.swift in Sources */,
 				25C465B929A8AE7300CCA30C /* ObjCustomerDashboardList2.swift in Sources */,
@@ -2892,6 +3026,7 @@
 				8488E418298A38C00032A2D7 /* FG_LoginVM.swift in Sources */,
 				25D58BC329ADD59D00DB135D /* LstRetailerBonding11.swift in Sources */,
 				84BE317B298E5EF30067C2C4 /* DefaultAddressVM.swift in Sources */,
+				84A54AED2A2D9D4E007DB559 /* FG_FocusGroupTVC.swift in Sources */,
 				84E13C672979421500FD2837 /* FG_EditProfileVC.swift in Sources */,
 				25C865F929A725BC00C1801E /* NewChatSubmission.swift in Sources */,
 				250FFCAD29B7128B003FB8A0 /* BillingDetialsDataModels.swift in Sources */,
@@ -2909,6 +3044,7 @@
 				25A760C629ACE95F00FF5C0E /* MyProfileModel.swift in Sources */,
 				84C987A3298B761E007F00B2 /* RemoveProductModel.swift in Sources */,
 				84597BBC29790B9F00F3A7BC /* FG_MyMilestoneRedemptionVC.swift in Sources */,
+				84A54AF02A2D9D7A007DB559 /* FG_FocusGroupVC.swift in Sources */,
 				2593083A29A76FC1009A2FBA /* EditProfileModels.swift in Sources */,
 				254D8AE6299F7E7400CBBBDE /* MileStoneRedemptionVM.swift in Sources */,
 				254D8AE9299F9A1C00CBBBDE /* MyEarningsVM.swift in Sources */,
@@ -2943,6 +3079,7 @@
 				2585AE0929ADFEB700E745C7 /* RegistrationModels.swift in Sources */,
 				84C98798298B7349007F00B2 /* AddToCartModel.swift in Sources */,
 				849E07592979790C00F033CD /* FG_MyPromotionsTVC.swift in Sources */,
+				84A5F77B2A29B3AB001D2849 /* DeleteAccountModels.swift in Sources */,
 				84FD0A85297ECA0800E01B00 /* FG_RedemptionCatalogueDetailsVC.swift in Sources */,
 				84BE3175298E384A0067C2C4 /* RedemptionCatalogueCartUpdateModel.swift in Sources */,
 				842326C22980076F00DF7325 /* FG_ProductCatalogueFilterVC.swift in Sources */,
@@ -2995,6 +3132,11 @@
 			children = (
 				84068DB2297667E700D4360F /* en */,
 				25A760AF29ACD6D700FF5C0E /* en-IN */,
+				842050F52A2A1EE700634C80 /* ta-IN */,
+				842050F82A2A1F0200634C80 /* te-IN */,
+				842050FB2A2A1F2400634C80 /* bn-IN */,
+				842050FE2A2A1F3C00634C80 /* kn-IN */,
+				842050FF2A2A1F9B00634C80 /* hi */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -3006,6 +3148,10 @@
 				849D34ED298A5F24005A41FC /* en */,
 				25A760AB29ACD19000FF5C0E /* hi */,
 				25A760AD29ACD6D500FF5C0E /* en-IN */,
+				842050F32A2A1EE600634C80 /* ta-IN */,
+				842050F62A2A1F0100634C80 /* te-IN */,
+				842050F92A2A1F2300634C80 /* bn-IN */,
+				842050FC2A2A1F3B00634C80 /* kn-IN */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -3016,6 +3162,10 @@
 				84C1E40A29758A7000D188C5 /* Base */,
 				25A760AC29ACD19100FF5C0E /* hi */,
 				25A760AE29ACD6D600FF5C0E /* en-IN */,
+				842050F42A2A1EE600634C80 /* ta-IN */,
+				842050F72A2A1F0200634C80 /* te-IN */,
+				842050FA2A2A1F2300634C80 /* bn-IN */,
+				842050FD2A2A1F3B00634C80 /* kn-IN */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -3027,11 +3177,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
@@ -3046,7 +3194,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi.NotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Fleet-Guard-Samriddhi.Notification-DEV";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -3058,11 +3205,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
@@ -3077,7 +3222,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi.NotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Fleet-Guard-Samriddhi.Notification-DEV";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -3210,11 +3354,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fleet_Guard(Samriddhi)/Fleet_Guard(Samriddhi).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fleet_Guard(Samriddhi)/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "FleetGuard Need to Access the camera to upload profile Image and Customer support";
@@ -3234,7 +3376,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = FleetGuardSamriddhi_Dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3250,11 +3391,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fleet_Guard(Samriddhi)/Fleet_Guard(Samriddhi).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fleet_Guard(Samriddhi)/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "FleetGuard Need to Access the camera to upload profile Image and Customer support";
@@ -3274,7 +3413,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = FleetGuardSamriddhi_Dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

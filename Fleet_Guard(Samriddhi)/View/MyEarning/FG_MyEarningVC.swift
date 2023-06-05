@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_MyEarningVC: BaseViewController {
 
@@ -21,10 +22,17 @@ class FG_MyEarningVC: BaseViewController {
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         self.VM.VC = self
         self.myEarningTableView.delegate = self
         self.myEarningTableView.dataSource = self
-        
+        emptyMessageLbl.isHidden = true
+        emptyMessageLbl.text = "noDataFound".localiz()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localization()
         if self.itsFrom == "SideMenu"{
             self.backBtn.isHidden = false
         }else{
@@ -32,6 +40,10 @@ class FG_MyEarningVC: BaseViewController {
         }
         
         self.myEarningsAPI()
+    }
+    
+    private func localization(){
+        titleLbl.text = "My_Earnings".localiz()
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -58,17 +70,22 @@ class FG_MyEarningVC: BaseViewController {
 }
 extension FG_MyEarningVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if VM.myEarningsArray.count == 0{
+            emptyMessageLbl.isHidden = false
+        }else{
+            emptyMessageLbl.isHidden = true
+        }
         return VM.myEarningsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_MyEarningTVC", for: indexPath) as! FG_MyEarningTVC
         cell.selectionStyle = .none
-        cell.bonusPtsLbl.text = "Bonus Points \(Int(VM.myEarningsArray[indexPath.row].referralBonusPoints ?? 0))"
-        cell.totalPtsLbl.text = "Total Points \(VM.myEarningsArray[indexPath.row].totalEarnedPoints ?? 0)"
-        cell.monthLblPts.text = "Months \(VM.myEarningsArray[indexPath.row].createdDate ?? "")"
-        cell.fixedBasePtsLbl.text = "Fixed Base Points \(VM.myEarningsArray[indexPath.row].currentPointBalance ?? 0)"
-        cell.miscellaneousPtsLbl.text = "Miscellaneous Points \(Int(VM.myEarningsArray[indexPath.row].multiplierPointBalance ?? 0))"
+        cell.bonusPtsLbl.text = "Bonus Points : \(Int(VM.myEarningsArray[indexPath.row].referralBonusPoints ?? 0))"
+        cell.totalPtsLbl.text = "Total Points : \(VM.myEarningsArray[indexPath.row].totalWithDrawl ?? 0)"
+        cell.monthLblPts.text = "Months : \(VM.myEarningsArray[indexPath.row].createdDate ?? "")"
+        cell.fixedBasePtsLbl.text = "Fixed Base Points : \(VM.myEarningsArray[indexPath.row].pointExpiryCount ?? 0)"
+        cell.miscellaneousPtsLbl.text = "Miscellaneous Points :  \(Int(VM.myEarningsArray[indexPath.row].multiplierPointBalance ?? 0))"
         return cell
     }
     

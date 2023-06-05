@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 protocol SendUpdatedAddressDelegate: NSObject {
     func updatedAddressDetails(_ vc: FG_EditAddressVC)
 }
@@ -58,6 +59,9 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
     @IBOutlet weak var country: UILabel!
     @IBOutlet weak var selectCountry: UILabel!
     
+    @IBOutlet weak var headerLbl: UILabel!
+    @IBOutlet weak var saveChangesBtn: UIButton!
+    @IBOutlet weak var cityTitleLbl: UILabel!
     @IBOutlet weak var selectCityLbl: UILabel!
     @IBOutlet weak var stateLbl: UILabel!
     
@@ -90,6 +94,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        localization()
         self.pincodeTF.keyboardType = .numberPad
         self.mobileTF.keyboardType = .numberPad
         self.pincodeTF.delegate = self
@@ -103,8 +108,23 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
         self.stateLbl.text = selectedState
         self.selectCityLbl.text = selectedCity
         self.pincodeTF.text = selectedpincode
+        
 
     }
+    
+    private func localization(){
+        nameLbl.text = "name".localiz()
+        mobileLbl.text = "Mobilenumber".localiz()
+        emailAddress.text = "Email_address".localiz()
+        address.text = "Address".localiz()
+        country.text = "Country".localiz()
+        stateLbl.text = "state".localiz()
+        cityTitleLbl.text = "city".localiz()
+        pincodeLbl.text = "pincode".localiz()
+        saveChangesBtn.setTitle("Save_changes".localiz(), for: .normal)
+        headerLbl.text = "Edit_Address".localiz()
+    }
+    
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -128,11 +148,11 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
                 DispatchQueue.main.async{
 //                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                    vc!.delegate = self
-//                        vc!.descriptionInfo = "No Internet"
+//                        vc!.descriptionInfo = "No_Internet".localiz()
 //                    vc!.modalPresentationStyle = .overCurrentContext
 //                    vc!.modalTransitionStyle = .crossDissolve
 //                    self.present(vc!, animated: true, completion: nil)
-                    self.view.makeToast("No Internet", duration: 4.0, position: .bottom)
+                    self.view.makeToast("No_Internet".localiz(), duration: 4.0, position: .bottom)
                 }
             }else{
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DropDownVC") as? FG_DropDownVC
@@ -156,20 +176,20 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalPresentationStyle = .overCurrentContext
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Select State", duration: 3.0, position: .bottom)
+                self.view.makeToast("Please_select_state".localiz(), duration: 3.0, position: .bottom)
             }
         }else{
             if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
                 DispatchQueue.main.async{
 //                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                    vc!.delegate = self
-//                        vc!.descriptionInfo = "No Internet"
+//                        vc!.descriptionInfo = "No_Internet".localiz()
 //
 //                    vc!.modalPresentationStyle = .overCurrentContext
 //                    vc!.modalTransitionStyle = .crossDissolve
 //                    self.present(vc!, animated: true, completion: nil)
                     
-                    self.view.makeToast("No Internet", duration: 4.0, position: .bottom)
+                    self.view.makeToast("No_Internet".localiz(), duration: 4.0, position: .bottom)
                 }
             }else{
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DropDownVC") as? FG_DropDownVC
@@ -194,7 +214,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter Name", duration: 3.0, position: .bottom)
+                self.view.makeToast("Please_enter_name".localiz(), duration: 3.0, position: .bottom)
             }
 
         }else if mobileTF.text?.count == 0 {
@@ -205,7 +225,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalPresentationStyle = .overFullScreen
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Enter Mobile Number", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enteryourmobilenumber".localiz(), duration: 3.0, position: .bottom)
             }
 
         }else if mobileTF.text?.count != 10 {
@@ -217,7 +237,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter Valid Mobile Number", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_valid_mobile_number".localiz(), duration: 3.0, position: .bottom)
             }
 
         }
@@ -254,7 +274,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter Address", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_Address".localiz(), duration: 3.0, position: .bottom)
             }
 
        }else if self.stateLbl.text == "Select State" || self.stateLbl.text == "" || self.stateLbl.text == nil{
@@ -267,7 +287,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Select State", duration: 3.0, position: .bottom)
+                self.view.makeToast("Please_select_state".localiz(), duration: 3.0, position: .bottom)
             }
 
        }else if self.selectCityLbl.text == "Select City" || self.selectCityLbl.text == "" || self.selectCityLbl.text == nil{
@@ -280,7 +300,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Select City", duration: 3.0, position: .bottom)
+                self.view.makeToast("Please_select_city".localiz(), duration: 3.0, position: .bottom)
             }
 
         }else if pincodeTF.text?.count == 0{
@@ -293,7 +313,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter Pin", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_Pin".localiz(), duration: 3.0, position: .bottom)
             }
 
         }else if pincodeTF.text?.count != 6{
@@ -305,7 +325,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter Valid Zip", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_Valid_Zip".localiz(), duration: 3.0, position: .bottom)
             }
 
         }else{

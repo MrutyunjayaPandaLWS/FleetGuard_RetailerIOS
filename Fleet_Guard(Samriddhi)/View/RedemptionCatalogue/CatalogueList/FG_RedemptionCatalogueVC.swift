@@ -8,6 +8,7 @@
 import UIKit
 import ImageSlideshow
 import Lottie
+import LanguageManager_iOS
 
 protocol SendDataDelegate: AnyObject{
     func moveToProductList(_ vc: FG_RedemptionCatalogueVC)
@@ -27,7 +28,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
             
             if self.miniValue != "" && self.maximiumValue != "" {
                 if maximiumValue <= miniValue{
-                    self.view.makeToast("Maximum feild should be higher then Minimum field", duration: 3.0, position: .bottom)
+                    self.view.makeToast("Maximum field should be higher then Minimum field", duration: 3.0, position: .bottom)
                 
                 }else{
                    // if minMax != "-"{
@@ -85,6 +86,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         self.stopLoading()
         self.VM.VC = self
         self.countLbl.isHidden = true
+        self.noDataFoundLbl.text = "noDataFound".localiz()
         self.catalogueListTableView.delegate = self
         self.catalogueListTableView.dataSource = self
         self.levelTwoView.clipsToBounds = true
@@ -93,6 +95,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        localization()
         self.VM.redemptionCatalougeListArray.removeAll()
         self.totalPts.text = "\(UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "0")"
         self.passBookNumber.text = self.loyaltyId
@@ -100,6 +103,16 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         self.myCartListApi()
     }
 
+    private func localization(){
+        totalPtsBalanceLbl.text = "points".localiz()
+        passBookLbl.text = "passbook_number".localiz()
+        headerTextLbl.text = "redemption_catalogue".localiz()
+        
+    }
+    
+    
+    
+    
     @IBAction func filterBtn(_ sender: Any) {
         
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_CatalogueFilterView") as! FG_CatalogueFilterView
@@ -168,36 +181,54 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         self.VM.redemptionCatalogueAddToCartApi(parameter: parameter)
     }
     
+    
+    @IBAction func didTapeedSearchBtn(_ sender: Any) {
+        if self.searchTF.text!.count != 0 || self.searchTF.text ?? "" != ""{
+            self.VM.redemptionCatalougeListArray.removeAll()
+            self.catalogueListTableView.reloadData()
+            self.redemptionCatalogueListApi(startIndex: startindex)
+        }else{
+            self.VM.redemptionCatalougeListArray.removeAll()
+            self.catalogueListTableView.reloadData()
+            self.redemptionCatalogueListApi(startIndex: startindex)
+            noDataFoundLbl.isHidden = true
+        }
+    }
+    
+    
 @IBAction func searchByEditingTFAct(_ sender: Any) {
         if self.searchTF.text!.count != 0 || self.searchTF.text ?? "" != ""{
-            if self.VM.redemptionCatalougeListArray.count > 0 {
-                let arr = self.VM.redemptionCatalougeListArray.filter{ ($0.productName!.localizedCaseInsensitiveContains(self.searchTF.text!))}
-                print(arr.count,"dsds")
-                if self.searchTF.text! != ""{
-                    if arr.count > 0 {
-                        self.VM.redemptionCatalougeListArray.removeAll(keepingCapacity: true)
-                        print(VM.redemptionCatalougeListArray.count,"jshdhs")
-                        self.VM.redemptionCatalougeListArray = arr
-                        self.catalogueListTableView.reloadData()
-                        self.catalogueListTableView.isHidden = false
-                        noDataFoundLbl.isHidden = true
-                    }else {
-                        self.VM.redemptionCatalougeListArray = self.VM.productArray
-                        self.catalogueListTableView.reloadData()
-                        self.catalogueListTableView.isHidden = true
-                        noDataFoundLbl.isHidden = false
-                    }
-                }else{
-                    self.VM.redemptionCatalougeListArray = self.VM.productArray
-                    self.catalogueListTableView.reloadData()
-                    catalogueListTableView.isHidden = true
-                    noDataFoundLbl.isHidden = false
-                }
-                let searchText = self.searchTF.text!
-                if searchText.count > 0 || self.VM.redemptionCatalougeListArray.count == self.VM.productArray.count {
-                    self.catalogueListTableView.reloadData()
-                }
-            }
+//            if self.VM.redemptionCatalougeListArray.count > 0 {
+//                let arr = self.VM.redemptionCatalougeListArray.filter{ ($0.productName!.localizedCaseInsensitiveContains(self.searchTF.text!))}
+//                print(arr.count,"dsds")
+//                if self.searchTF.text! != ""{
+//                    if arr.count > 0 {
+//                        self.VM.redemptionCatalougeListArray.removeAll(keepingCapacity: true)
+//                        print(VM.redemptionCatalougeListArray.count,"jshdhs")
+//                        self.VM.redemptionCatalougeListArray = arr
+//                        self.catalogueListTableView.reloadData()
+//                        self.catalogueListTableView.isHidden = false
+//                        noDataFoundLbl.isHidden = true
+//                    }else {
+//                        self.VM.redemptionCatalougeListArray = self.VM.productArray
+//                        self.catalogueListTableView.reloadData()
+//                        self.catalogueListTableView.isHidden = true
+//                        noDataFoundLbl.isHidden = false
+//                    }
+//                }else{
+//                    self.VM.redemptionCatalougeListArray = self.VM.productArray
+//                    self.catalogueListTableView.reloadData()
+//                    catalogueListTableView.isHidden = true
+//                    noDataFoundLbl.isHidden = false
+//                }
+//                let searchText = self.searchTF.text!
+//                if searchText.count > 0 || self.VM.redemptionCatalougeListArray.count == self.VM.productArray.count {
+//                    self.catalogueListTableView.reloadData()
+//                }
+//            }
+            self.VM.redemptionCatalougeListArray.removeAll()
+            self.catalogueListTableView.reloadData()
+            self.redemptionCatalogueListApi(startIndex: startindex)
         }else{
             self.VM.redemptionCatalougeListArray.removeAll()
             self.catalogueListTableView.reloadData()
@@ -239,7 +270,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionCatalogueDetailsVC") as! FG_RedemptionCatalogueDetailsVC
         vc.isComeFrom = "Catalogue"
         //vc.delegate = self
-        vc.productImages = self.VM.redemptionCatalougeListArray[tappedIndex.row].productImage ?? ""
+        vc.productImages = cell.imageUrl//self.VM.redemptionCatalougeListArray[tappedIndex.row].productImage ?? ""
         vc.prodRefNo = self.VM.redemptionCatalougeListArray[tappedIndex.row].redemptionRefno ?? ""
         vc.productCategory = self.VM.redemptionCatalougeListArray[tappedIndex.row].catogoryName ?? ""
         vc.productName = self.VM.redemptionCatalougeListArray[tappedIndex.row].productName ?? ""
@@ -269,12 +300,12 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
         cell.categoryLbl.text = "Catogory / \(self.VM.redemptionCatalougeListArray[indexPath.row].catogoryName ?? "")"
         cell.pointsLbl.text = "\(self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0)"
         let filterArray = self.myCartIds.filter{$0 == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId ?? 0}
-        let image = VM.redemptionCatalougeListArray[indexPath.row].productImage
-        if image?.count == 0 || image == nil{
+        let image = VM.redemptionCatalougeListArray[indexPath.row].productImage ?? ""
+        if image.count == 0 || image == nil{
             cell.imageBtn.isEnabled = false
         }else{
             cell.imageBtn.isEnabled = true
-            let imageUrl = "\(product_Image_Url)\(String(describing: image?.replacingOccurrences(of: " ", with: "%20")))"
+            let imageUrl = "\(product_Image_Url)\(String(describing: image.replacingOccurrences(of: " ", with: "%20")))"
             cell.imageUrl = imageUrl
             cell.productImage.kf.setImage(with: URL(string: "\(imageUrl)"),placeholder: UIImage(named: "Image 3"))
         }

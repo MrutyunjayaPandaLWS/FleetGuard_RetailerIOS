@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 
 class FG_LoginOTPVM: popUpDelegate {
@@ -66,12 +67,12 @@ class FG_LoginOTPVM: popUpDelegate {
                             DispatchQueue.main.async{
 //                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                                vc!.delegate = self
-//                                vc!.descriptionInfo = "Your account has been deleted. Kindly contact your administrator."
+//                                vc!.descriptionInfo = "your_account_is_deleted".localiz()
 //                                vc!.modalPresentationStyle = .overCurrentContext
 //                                vc!.modalTransitionStyle = .crossDissolve
 //                                self.VC?.present(vc!, animated: true, completion: nil)
                                 
-                                self.VC?.view.makeToast("Your account has been deleted. Kindly contact your administrator.", duration: 4.0, position: .bottom)
+                                self.VC?.view.makeToast("your_account_is_deleted".localiz(), duration: 4.0, position: .bottom)
                                 self.VC?.stopLoading()
                             }
                         }
@@ -80,11 +81,11 @@ class FG_LoginOTPVM: popUpDelegate {
 //                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                            vc!.delegate = self
 //
-//                            vc!.descriptionInfo = "Your account has been deleted. Kindly contact your administrator."
+//                            vc!.descriptionInfo = "your_account_is_deleted".localiz()
 //                            vc!.modalPresentationStyle = .overCurrentContext
 //                            vc!.modalTransitionStyle = .crossDissolve
 //                            self.VC?.present(vc!, animated: true, completion: nil)
-                            self.VC?.view.makeToast("Your account has been deactivated. Kindly contact your administrator to activate your account", duration: 4.0, position: .bottom)
+                            self.VC?.view.makeToast("account_is_deactivated".localiz(), duration: 4.0, position: .bottom)
                             
                         }
                         else if response?.userList?[0].verifiedStatus ?? 0 != 1 && response?.userList?[0].verifiedStatus ?? 0 != 4 && response?.userList?[0].isUserActive ?? 0 != 1 {
@@ -96,7 +97,7 @@ class FG_LoginOTPVM: popUpDelegate {
 //                            vc!.modalTransitionStyle = .crossDissolve
 //                            self.VC?.present(vc!, animated: true, completion: nil)
                             
-                            self.VC?.view.makeToast("Your account is in verification pending. Kindly contact your administrator to verify your account.", duration: 4.0, position: .bottom)
+                            self.VC?.view.makeToast("account_verification_pending".localiz(), duration: 4.0, position: .bottom)
                             
                         }else if response?.userList?[0].isUserActive ?? 0 != 1 {
                             
@@ -108,7 +109,7 @@ class FG_LoginOTPVM: popUpDelegate {
 //                            vc!.modalTransitionStyle = .crossDissolve
 //                            self.VC?.present(vc!, animated: true, completion: nil)
                             
-                            self.VC?.view.makeToast("Your account has been deactivated. Kindly contact your administrator to activate your account", duration: 4.0, position: .bottom)
+                            self.VC?.view.makeToast("account_is_deactivated".localiz(), duration: 4.0, position: .bottom)
                             
                         }else{
                             
@@ -148,7 +149,7 @@ class FG_LoginOTPVM: popUpDelegate {
     //                                vc!.modalTransitionStyle = .crossDissolve
     //                                self.VC?.present(vc!, animated: true, completion: nil)
                                     
-                                    self.VC?.view.makeToast("Your account has been deactivated. Kindly contact your administrator to activate your account", duration: 4.0, position: .bottom)
+                                    self.VC?.view.makeToast("account_is_deactivated".localiz(), duration: 4.0, position: .bottom)
                                 }
                             }else{
                                 

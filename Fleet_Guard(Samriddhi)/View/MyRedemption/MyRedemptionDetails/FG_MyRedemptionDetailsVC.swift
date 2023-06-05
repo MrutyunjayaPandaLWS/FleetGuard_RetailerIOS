@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 import Kingfisher
 
 class FG_MyRedemptionDetailsVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
@@ -46,14 +47,20 @@ class FG_MyRedemptionDetailsVC: BaseViewController, UITableViewDelegate, UITable
         orderStatusTV.dataSource = self
         cancelOrderBtn.isHidden = true
         emptyMessage.isHidden = true
+        emptyMessage.text = "noDataFound".localiz()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         myRedemptionDetailsApi()
+        localization()
     }
     
 
+    private func localization(){
+        self.VCtitle.text = "My_Redemption".localiz()
+    }
+    
     
     @IBAction func selectBackBtn(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)

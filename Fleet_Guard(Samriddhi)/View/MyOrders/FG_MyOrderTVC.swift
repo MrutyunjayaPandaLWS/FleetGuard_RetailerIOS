@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 protocol myOrderDelegate {
     func myOrderDelegate(_ cell: FG_MyOrderTVC)
@@ -25,6 +26,11 @@ class FG_MyOrderTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+        localization()
+    }
+    
+    private func localization(){
+        viewButtn.setTitle("View".localiz(), for: .normal)
     }
 
     @IBAction func viewBtn(_ sender: Any) {

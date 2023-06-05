@@ -8,6 +8,7 @@
 import UIKit
 import Charts
 import CoreData
+import LanguageManager_iOS
 
 class FG_RangeTrendGraphVC: BaseViewController, ChartViewDelegate {
 
@@ -34,6 +35,7 @@ class FG_RangeTrendGraphVC: BaseViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        localization()
         rangeChartView.delegate = self
         rangeChartView.chartDescription.enabled = false
         rangeChartView.dragEnabled = true
@@ -47,6 +49,10 @@ class FG_RangeTrendGraphVC: BaseViewController, ChartViewDelegate {
         self.pointsTrendAPI()
         print(firstGraphData)
         print(secondGraphData)
+    }
+    
+    private func localization(){
+        rangeTrendHeadingLbl.text = "range_trends".localiz()
     }
 
     func pointsTrendAPI(){
@@ -72,12 +78,14 @@ class FG_RangeTrendGraphVC: BaseViewController, ChartViewDelegate {
 //                        self.firstGraphData.append(data.currentYearPoint!)
 //                        self.secondGraphData.append(data.previousYearPoint!)
 //                        self.monthsData.append(data.monthName!)
-                        
-                        if self.firstGraphData.count < 12{
-                            self.firstGraphData.append(data.currentYearPoint!)
-                        }
+//                        
+//                        if self.firstGraphData.count < 12{
+//                            
+//                        }
                         if self.secondGraphData.count < 12{
                             self.secondGraphData.append(data.previousYearPoint!)
+                        }else{
+                            self.firstGraphData.append(data.currentYearPoint!)
                         }
                         if self.monthsData.count < 12{
                             self.monthsData.append(data.monthName!)

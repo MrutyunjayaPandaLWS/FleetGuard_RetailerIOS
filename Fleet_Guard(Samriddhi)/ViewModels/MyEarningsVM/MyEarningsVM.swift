@@ -24,25 +24,27 @@ class MyEarningsVM {
                         self.myEarningsArray = result?.objCustomerDashboardList ?? []
                         print(self.myEarningsArray.count)
                         if self.myEarningsArray.count != 0 {
+                            self.VC?.emptyMessageLbl.isHidden = true
                             self.VC?.myEarningTableView.isHidden = false
                             self.VC?.myEarningTableView.reloadData()
                             
                         }else{
                             self.VC?.myEarningTableView.isHidden = true
+                            self.VC?.emptyMessageLbl.isHidden = false
                             
                         }
                     }
                 } else {
                     print("No Response")
                     DispatchQueue.main.async {
-                        
+                        self.VC?.emptyMessageLbl.isHidden = false
                         self.VC?.stopLoading()
                     }
                 }
             }else{
                 print("ERROR_Login \(error)")
                 DispatchQueue.main.async {
-                    
+                    self.VC?.emptyMessageLbl.isHidden = false
                     self.VC?.stopLoading()
                 }
 

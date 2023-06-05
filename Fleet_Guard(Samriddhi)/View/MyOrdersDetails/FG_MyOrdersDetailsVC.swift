@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_MyOrdersDetailsVC: BaseViewController, DateSelectedDelegate {
     func acceptDate(_ vc: FG_DOBVC) {
@@ -48,6 +49,8 @@ class FG_MyOrdersDetailsVC: BaseViewController, DateSelectedDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        self.noDataFoundLbl.text = "noDataFound".localiz()
+        self.noDataFoundLbl.isHidden = true
         self.orderDetailsTV.delegate = self
         self.orderDetailsTV.dataSource = self
         self.orderDetailsTV.separatorStyle = .none

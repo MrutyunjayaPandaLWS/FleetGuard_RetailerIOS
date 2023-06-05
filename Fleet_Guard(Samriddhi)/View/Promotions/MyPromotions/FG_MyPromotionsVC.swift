@@ -7,6 +7,8 @@
 
 import UIKit
 import Kingfisher
+import LanguageManager_iOS
+
 class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
     func sendOffersDetails(_ cell: FG_MyPromotionsTVC) {
         guard let tappedIndexPath = myPromotionsTableView.indexPath(for: cell) else {return}
@@ -24,6 +26,7 @@ class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
     }
     
 
+    @IBOutlet weak var headerTitleLbl: UILabel!
     @IBOutlet weak var myPromotionsTableView: UITableView!
     @IBOutlet weak var noDataFound: UILabel!
     
@@ -33,10 +36,18 @@ class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        localiation()
+        noDataFound.isHidden = true
+        noDataFound.text = "noDataFound".localiz()
         self.VM.VC = self
         self.myPromotionsTableView.delegate = self
         self.myPromotionsTableView.dataSource = self
         promotionListingAPI()
+    }
+    
+    
+    private func localiation(){
+        headerTitleLbl.text = "My_Promotions".localiz()
     }
     
 
@@ -78,7 +89,7 @@ extension FG_MyPromotionsVC: UITableViewDelegate, UITableViewDataSource{
             let urltoUse = String(Promo_ImageData + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
             let urlt = URL(string: "\(urltoUse)")
             print(urlt)
-            cell.promotionImage.kf.setImage(with: urlt, placeholder: UIImage(named: "Asset 2"));
+            cell.promotionImage.kf.setImage(with: urlt!, placeholder: UIImage(named: "Asset 2"));
            // self.productImag.kf.setImage(with: URL(string: "\(PROMO_IMG1)\(receivedImage)"), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"));
         }
         return cell

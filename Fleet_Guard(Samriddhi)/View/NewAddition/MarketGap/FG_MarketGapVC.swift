@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_MarketGapVC: BaseViewController, MarketingGapDelegate {
     func marketGapForward(_ cell: FG_MarketGapTVC) {
@@ -44,6 +45,7 @@ class FG_MarketGapVC: BaseViewController, MarketingGapDelegate {
         super.viewDidLoad()
         self.VM.VC = self
         noDataFoundLbl.isHidden = true
+        self.noDataFoundLbl.text = "noDataFound".localiz()
         self.markrtingGapView.delegate = self
         self.markrtingGapView.dataSource = self
 
@@ -51,6 +53,7 @@ class FG_MarketGapVC: BaseViewController, MarketingGapDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         noDataFoundLbl.isHidden = true
+        self.VM.myMarketGapArray.removeAll()
         counterGap(startIndex: startindex)
     }
     

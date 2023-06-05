@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
     
@@ -37,6 +38,12 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
     }
     
 
+    @IBOutlet weak var viewTitleLbl: UILabel!
+    @IBOutlet weak var statusTitleLbl: UILabel!
+    @IBOutlet weak var sourcesTitlelbl: UILabel!
+    @IBOutlet weak var orderDateTitle: UILabel!
+    @IBOutlet weak var myOrderTitle: UILabel!
+    @IBOutlet weak var headerlbl: UILabel!
     @IBOutlet weak var filterShadowView: UIView!
     @IBOutlet weak var fromDateBtn: UIButton!
 
@@ -77,12 +84,14 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        localization()
         self.myOrderTableView.delegate = self
         self.myOrderTableView.dataSource = self
         self.myOrderListingAPI(startInx: 1, orderStatusId: -1, fromDate: "", toDate: "")
         self.filterShadowView.isHidden = true
         //self.filterView.isHidden = true
         noDataFound.isHidden = true
+        self.noDataFound.text = "noDataFound".localiz()
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 20
         subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -111,6 +120,16 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
 //        self.filterShadowView.isHidden = true
 //    }
 
+    private func localization(){
+        headerlbl.text = "My_Orders".localiz()
+        
+        viewTitleLbl.text = "View".localiz()
+        statusTitleLbl.text = "Status".localiz()
+        sourcesTitlelbl.text = "Sources".localiz()
+        orderDateTitle.text = "OrderDate".localiz()
+        myOrderTitle.text = "My_Orders".localiz()
+        
+    }
 
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)

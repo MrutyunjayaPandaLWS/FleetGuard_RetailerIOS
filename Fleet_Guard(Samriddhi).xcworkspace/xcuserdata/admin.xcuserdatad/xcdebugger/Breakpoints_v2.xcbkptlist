@@ -7,81 +7,1333 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "58165D8E-F814-4BE0-9DCB-A7039C06663F"
+            uuid = "47109EBA-1A41-4D41-8438-FDE58E9415FF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/RPLStatement/PointsRangeGraph/FG_PointsTrendGraphVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "pointsTrendAPI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "47109EBA-1A41-4D41-8438-FDE58E9415FF - ac628171807ab68e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_PointsTrendGraphVC.pointsTrendAPI() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/PointsRangeGraph/FG_PointsTrendGraphVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "47109EBA-1A41-4D41-8438-FDE58E9415FF - ac628171807ab68e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_PointsTrendGraphVC.pointsTrendAPI() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/PointsRangeGraph/FG_PointsTrendGraphVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "163">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99C974F3-534F-42EA-8F94-96B9EFBC1252"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/ViewModels/MyProfileDetailsModels/MyProfileDetailsVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "myProifleDetails(parameters:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "99C974F3-534F-42EA-8F94-96B9EFBC1252 - 575fc1dbab22ce1e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 (Swift.Optional&lt;Fleet_Guard_Samriddhi_.ProfileDetailsModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Fleet_Guard_Samriddhi_.MyProfileDetailsVM.myProifleDetails(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/ViewModels/MyProfileDetailsModels/MyProfileDetailsVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "39044">
+               </Location>
+               <Location
+                  uuid = "99C974F3-534F-42EA-8F94-96B9EFBC1252 - 575fc1dbab22ce1e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 (Swift.Optional&lt;Fleet_Guard_Samriddhi_.ProfileDetailsModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Fleet_Guard_Samriddhi_.MyProfileDetailsVM.myProifleDetails(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/ViewModels/MyProfileDetailsModels/MyProfileDetailsVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "49883">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C4111A7-E16F-490C-98D3-003402A3D95C"
             shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D40E940-1771-46F4-AA7F-57879EDCF521"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
+            landmarkName = "detailsDidTap(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4D40E940-1771-46F4-AA7F-57879EDCF521 - 5d7d7d1730d5d0a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_RedemptionCatalogueVC.detailsDidTap(Fleet_Guard_Samriddhi_.FG_RedemptionCatalogueTVC) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "273"
+                  endingLineNumber = "273"
+                  offsetFromSymbolStart = "1568">
+               </Location>
+               <Location
+                  uuid = "4D40E940-1771-46F4-AA7F-57879EDCF521 - 5d7d7d1730d5d0a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_RedemptionCatalogueVC.detailsDidTap(Fleet_Guard_Samriddhi_.FG_RedemptionCatalogueTVC) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "273"
+                  endingLineNumber = "273"
+                  offsetFromSymbolStart = "1138">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41C3682C-C3F2-4DEA-BCE8-963040FF3528"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/Resource/Networking/URLMethods.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "41C3682C-C3F2-4DEA-BCE8-963040FF3528 - 3ff500361d014892"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "one-time initialization function for productList_URLMethod"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Networking/URLMethods.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "41C3682C-C3F2-4DEA-BCE8-963040FF3528 - eceb94176a116d9d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.productList_URLMethod.unsafeMutableAddressor : Swift.String"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Networking/URLMethods.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "41C3682C-C3F2-4DEA-BCE8-963040FF3528 - 3ff500361d014892"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "one-time initialization function for productList_URLMethod"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Networking/URLMethods.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "41C3682C-C3F2-4DEA-BCE8-963040FF3528 - eceb94176a116d9d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.productList_URLMethod.unsafeMutableAddressor : Swift.String"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Networking/URLMethods.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8E9E45E-0046-4020-A217-AB13F1BF8B09"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/Focus Group/FG_FocusGroupVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "productListApi(startIndex:searchText:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E8E9E45E-0046-4020-A217-AB13F1BF8B09 - dab40d247cb7426a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_FocusGroupVC.productListApi(startIndex: Swift.Int, searchText: Swift.String) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/Focus%20Group/FG_FocusGroupVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "1884">
+               </Location>
+               <Location
+                  uuid = "E8E9E45E-0046-4020-A217-AB13F1BF8B09 - dab40d247cb7426a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_FocusGroupVC.productListApi(startIndex: Swift.Int, searchText: Swift.String) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/Focus%20Group/FG_FocusGroupVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "2421">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2B97CFA-D17D-4976-992C-D59378E4D0C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "productListingApi(parameters:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F2B97CFA-D17D-4976-992C-D59378E4D0C2 - c97999eddb223bf0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Fleet_Guard_Samriddhi_.ServiceError&gt;) -&gt; () in Fleet_Guard_Samriddhi_.RestAPI_Requests.productListingApi(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;Fleet_Guard_Samriddhi_.ProductListingModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "532">
+               </Location>
+               <Location
+                  uuid = "F2B97CFA-D17D-4976-992C-D59378E4D0C2 - c97999eddb223bf0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Fleet_Guard_Samriddhi_.ServiceError&gt;) -&gt; () in Fleet_Guard_Samriddhi_.RestAPI_Requests.productListingApi(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;Fleet_Guard_Samriddhi_.ProductListingModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "643">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6872E46B-BBA1-4F0C-B672-544B132E1075"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "productListingApi(parameters:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6872E46B-BBA1-4F0C-B672-544B132E1075 - c97999eddb223a13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Fleet_Guard_Samriddhi_.ServiceError&gt;) -&gt; () in Fleet_Guard_Samriddhi_.RestAPI_Requests.productListingApi(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;Fleet_Guard_Samriddhi_.ProductListingModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "652">
+               </Location>
+               <Location
+                  uuid = "6872E46B-BBA1-4F0C-B672-544B132E1075 - c97999eddb223a13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Fleet_Guard_Samriddhi_.ServiceError&gt;) -&gt; () in Fleet_Guard_Samriddhi_.RestAPI_Requests.productListingApi(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;Fleet_Guard_Samriddhi_.ProductListingModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "850">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5B661FF-0359-4CED-844C-BA6A24EB5394"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/ViewModels/FocusGroupVM/FG_FocusGroupVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "productListApi(parameter:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C5B661FF-0359-4CED-844C-BA6A24EB5394 - 412e8dad394ae6ff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 (Swift.Optional&lt;Fleet_Guard_Samriddhi_.ProductListingModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Fleet_Guard_Samriddhi_.FG_FocusGroupVM.productListApi(parameter: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/ViewModels/FocusGroupVM/FG_FocusGroupVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "2452">
+               </Location>
+               <Location
+                  uuid = "C5B661FF-0359-4CED-844C-BA6A24EB5394 - 412e8dad394ae6ff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 (Swift.Optional&lt;Fleet_Guard_Samriddhi_.ProductListingModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Fleet_Guard_Samriddhi_.FG_FocusGroupVM.productListApi(parameter: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/ViewModels/FocusGroupVM/FG_FocusGroupVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "2557">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A584FA4-B375-4A1D-A111-4204786CA683"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
+            landmarkName = "didTap()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1A584FA4-B375-4A1D-A111-4204786CA683 - 4d2b4bb7feeaa33f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.didTap() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "262"
+                  endingLineNumber = "262"
+                  offsetFromSymbolStart = "3143">
+               </Location>
+               <Location
+                  uuid = "1A584FA4-B375-4A1D-A111-4204786CA683 - 4d2b4bb7feeaa33f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.didTap() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "262"
+                  endingLineNumber = "262"
+                  offsetFromSymbolStart = "3194">
+               </Location>
+               <Location
+                  uuid = "1A584FA4-B375-4A1D-A111-4204786CA683 - 4d2b4bb7feeaa3da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.didTap() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "259"
+                  endingLineNumber = "259"
+                  offsetFromSymbolStart = "796">
+               </Location>
+               <Location
+                  uuid = "1A584FA4-B375-4A1D-A111-4204786CA683 - 4d2b4bb7feeaa3bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.didTap() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "3004">
+               </Location>
+               <Location
+                  uuid = "1A584FA4-B375-4A1D-A111-4204786CA683 - 4d2b4bb7feeaa3bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.didTap() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "3055">
+               </Location>
+               <Location
+                  uuid = "1A584FA4-B375-4A1D-A111-4204786CA683 - 4d2b4bb7feeaa3bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.didTap() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "2677">
+               </Location>
+               <Location
+                  uuid = "1A584FA4-B375-4A1D-A111-4204786CA683 - 4d2b4bb7feeaa3bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.didTap() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "2728">
+               </Location>
+               <Location
+                  uuid = "1A584FA4-B375-4A1D-A111-4204786CA683 - 4d2b4bb7feeaa3da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.didTap() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "259"
+                  endingLineNumber = "259"
+                  offsetFromSymbolStart = "2444">
+               </Location>
+               <Location
+                  uuid = "1A584FA4-B375-4A1D-A111-4204786CA683 - 4d2b4bb7feeaa3da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.didTap() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "259"
+                  endingLineNumber = "259"
+                  offsetFromSymbolStart = "2504">
+               </Location>
+               <Location
+                  uuid = "1A584FA4-B375-4A1D-A111-4204786CA683 - 4d2b4bb7feeaa3da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.didTap() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "259"
+                  endingLineNumber = "259"
+                  offsetFromSymbolStart = "2677">
+               </Location>
+               <Location
+                  uuid = "1A584FA4-B375-4A1D-A111-4204786CA683 - 4d2b4bb7feeaa3da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.didTap() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "259"
+                  endingLineNumber = "259"
+                  offsetFromSymbolStart = "2728">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E3187F1-431F-49D7-B2B5-DB4CE0136D62"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
+            landmarkName = "didTap()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2E3187F1-431F-49D7-B2B5-DB4CE0136D62 - 4d2b4bb7feeaa246"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.didTap() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "255"
+                  endingLineNumber = "255"
+                  offsetFromSymbolStart = "440">
+               </Location>
+               <Location
+                  uuid = "2E3187F1-431F-49D7-B2B5-DB4CE0136D62 - 4d2b4bb7feeaa246"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.didTap() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "255"
+                  endingLineNumber = "255"
+                  offsetFromSymbolStart = "276">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FFBBCA0C-DF5B-4770-AA03-6C53E935FDD8"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fleet_Guard(Samriddhi)/View/MyMilestoneRedemption/FG_MyMilestoneRedemptionVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "mileStoneRedemptionAPI()"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FFBBCA0C-DF5B-4770-AA03-6C53E935FDD8 - 593dcba3d105a60c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_MyMilestoneRedemptionVC.viewDidLoad() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/MyMilestoneRedemption/FG_MyMilestoneRedemptionVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "FFBBCA0C-DF5B-4770-AA03-6C53E935FDD8 - 593dcba3d105a60c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_MyMilestoneRedemptionVC.viewDidLoad() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/MyMilestoneRedemption/FG_MyMilestoneRedemptionVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9B4D1E1C-FC3C-4DF7-995B-0D2D524F3694"
-            shouldBeEnabled = "No"
+            uuid = "ED6EC022-D25B-489C-A678-E1CCB1351BDE"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+            filePath = "Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "324"
-            endingLineNumber = "324"
-            landmarkName = "mileStoneRedemptionAPI(parameters:completion:)"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "pointsAPI()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "ED6EC022-D25B-489C-A678-E1CCB1351BDE - 90c7b789e611ebe0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.pointsAPI() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "249"
+                  endingLineNumber = "249"
+                  offsetFromSymbolStart = "808">
+               </Location>
+               <Location
+                  uuid = "ED6EC022-D25B-489C-A678-E1CCB1351BDE - 90c7b789e611ebe0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_DashBoardVC.pointsAPI() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "249"
+                  endingLineNumber = "249"
+                  offsetFromSymbolStart = "966">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "962BF00D-2CE4-400E-B260-551775A1750E"
-            shouldBeEnabled = "No"
+            uuid = "2B91D233-F441-4A21-8E4C-5E3CC09F9F19"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+            filePath = "Fleet_Guard(Samriddhi)/View/MyEarning/FG_MyEarningVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
-            landmarkName = "mileStoneRedemptionAPI(parameters:completion:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "myEarningsAPI()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2B91D233-F441-4A21-8E4C-5E3CC09F9F19 - 6cc0b5437f19bfd2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_MyEarningVC.myEarningsAPI() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/MyEarning/FG_MyEarningVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "808">
+               </Location>
+               <Location
+                  uuid = "2B91D233-F441-4A21-8E4C-5E3CC09F9F19 - 6cc0b5437f19bfd2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_MyEarningVC.myEarningsAPI() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/MyEarning/FG_MyEarningVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "1117">
+               </Location>
+               <Location
+                  uuid = "2B91D233-F441-4A21-8E4C-5E3CC09F9F19 - 6cc0b5437f19bfd2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_MyEarningVC.myEarningsAPI() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/MyEarning/FG_MyEarningVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "966">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0E1DBE96-1A28-40BD-A599-E100A8EBCBA5"
+            uuid = "88C21044-3B3C-47E8-B47E-81D02928BF4F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "790"
-            endingLineNumber = "790"
-            landmarkName = "bonusTrendGraphAPI(parameters:completion:)"
+            startingLineNumber = "538"
+            endingLineNumber = "538"
+            landmarkName = "myEarningAPI(parameters:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "88C21044-3B3C-47E8-B47E-81D02928BF4F - 240ec18e2a3bc3d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Fleet_Guard_Samriddhi_.ServiceError&gt;) -&gt; () in Fleet_Guard_Samriddhi_.RestAPI_Requests.myEarningAPI(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;Fleet_Guard_Samriddhi_.MyEarningModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "538"
+                  endingLineNumber = "538"
+                  offsetFromSymbolStart = "540">
+               </Location>
+               <Location
+                  uuid = "88C21044-3B3C-47E8-B47E-81D02928BF4F - 240ec18e2a3bc3d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Fleet_Guard_Samriddhi_.ServiceError&gt;) -&gt; () in Fleet_Guard_Samriddhi_.RestAPI_Requests.myEarningAPI(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;Fleet_Guard_Samriddhi_.MyEarningModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "538"
+                  endingLineNumber = "538"
+                  offsetFromSymbolStart = "643">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "660105FA-87BA-4AD0-AF44-789E2F95F1E3"
+            uuid = "8B5F0DA2-8F15-4E73-9F85-C67B3BC06636"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "793"
-            endingLineNumber = "793"
-            landmarkName = "bonusTrendGraphAPI(parameters:completion:)"
+            startingLineNumber = "543"
+            endingLineNumber = "543"
+            landmarkName = "myEarningAPI(parameters:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8B5F0DA2-8F15-4E73-9F85-C67B3BC06636 - 240ec18e2a3bc47c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Fleet_Guard_Samriddhi_.ServiceError&gt;) -&gt; () in Fleet_Guard_Samriddhi_.RestAPI_Requests.myEarningAPI(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;Fleet_Guard_Samriddhi_.MyEarningModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "543"
+                  endingLineNumber = "543"
+                  offsetFromSymbolStart = "908">
+               </Location>
+               <Location
+                  uuid = "8B5F0DA2-8F15-4E73-9F85-C67B3BC06636 - 240ec18e2a3bc47c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Fleet_Guard_Samriddhi_.ServiceError&gt;) -&gt; () in Fleet_Guard_Samriddhi_.RestAPI_Requests.myEarningAPI(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;Fleet_Guard_Samriddhi_.MyEarningModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "543"
+                  endingLineNumber = "543"
+                  offsetFromSymbolStart = "1158">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57B2E6F9-CB69-45B4-90A1-D11501AEB266"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/Promotions/MyPromotions/FG_MyPromotionsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "promotionListingAPI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "57B2E6F9-CB69-45B4-90A1-D11501AEB266 - 7435cd3292bb570d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_MyPromotionsVC.promotionListingAPI() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/Promotions/MyPromotions/FG_MyPromotionsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "596">
+               </Location>
+               <Location
+                  uuid = "57B2E6F9-CB69-45B4-90A1-D11501AEB266 - 7435cd3292bb570d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_MyPromotionsVC.promotionListingAPI() -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/Promotions/MyPromotions/FG_MyPromotionsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "706">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61BC8755-B48F-49D4-9B23-B392D478790C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "milestonePtsRedeemBtn(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "61BC8755-B48F-49D4-9B23-B392D478790C - 4b46006adb3ab265"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.RPLStatementVC.milestonePtsRedeemBtn(Any) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "61BC8755-B48F-49D4-9B23-B392D478790C - 4b46006adb3ab265"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.RPLStatementVC.milestonePtsRedeemBtn(Any) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "78">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5DA90704-1482-4A2F-8D51-C19B2C79A924"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "balancePtsRedeemBtn(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5DA90704-1482-4A2F-8D51-C19B2C79A924 - 89c1e7ba80377cef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.RPLStatementVC.balancePtsRedeemBtn(Any) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "5DA90704-1482-4A2F-8D51-C19B2C79A924 - 89c1e7ba80377cef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.RPLStatementVC.balancePtsRedeemBtn(Any) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "78">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6332FBE-5220-4518-B2CC-667F0706206C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "statementNewBtn(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B6332FBE-5220-4518-B2CC-667F0706206C - 7f013e4c58185532"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.RPLStatementVC.statementNewBtn(Any) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "320">
+               </Location>
+               <Location
+                  uuid = "B6332FBE-5220-4518-B2CC-667F0706206C - 7f013e4c58185532"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.RPLStatementVC.statementNewBtn(Any) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "78">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "725D0FB3-8055-4603-B8A2-40BFC71C33DF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "ptsTrendbtn(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "725D0FB3-8055-4603-B8A2-40BFC71C33DF - 9b3f75fd728c9be3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.RPLStatementVC.ptsTrendbtn(Any) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "320">
+               </Location>
+               <Location
+                  uuid = "725D0FB3-8055-4603-B8A2-40BFC71C33DF - 9b3f75fd728c9be3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.RPLStatementVC.ptsTrendbtn(Any) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "78">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9294198-C0ED-4B1B-82CD-C255F69C7353"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "rangeTrendBtn(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C9294198-C0ED-4B1B-82CD-C255F69C7353 - d284bbb7e0d49560"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.RPLStatementVC.rangeTrendBtn(Any) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "320">
+               </Location>
+               <Location
+                  uuid = "C9294198-C0ED-4B1B-82CD-C255F69C7353 - d284bbb7e0d49560"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.RPLStatementVC.rangeTrendBtn(Any) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "78">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86B002E3-C222-405A-95C2-999C3D7AAB74"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "bonusTrendBtn(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "86B002E3-C222-405A-95C2-999C3D7AAB74 - 3aa1e0b4167a8bc2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.RPLStatementVC.bonusTrendBtn(Any) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "320">
+               </Location>
+               <Location
+                  uuid = "86B002E3-C222-405A-95C2-999C3D7AAB74 - 3aa1e0b4167a8bc2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.RPLStatementVC.bonusTrendBtn(Any) -&gt; ()"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/RPLStatement/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "78">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C2BADB4B-0BCF-45EF-BD85-CF7378CD23EC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/ViewModels/MilestoneRedemptionVM/MilestoneRedemptionListingTVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "downloadActBtn(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A715E959-EFFB-4413-AFE2-28565927D2D4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/ViewModels/RLPStatemnetModels/RLPStatementVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "rlpStatemnetData(parameters:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C146D9F-C099-4D63-86FC-C9A5280A319A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/MilestoneRedemption/FG_MilestoneRedemptionVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7C146D9F-C099-4D63-86FC-C9A5280A319A - 6830b1954f1a5095"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_MilestoneRedemptionVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/MilestoneRedemption/FG_MilestoneRedemptionVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "2612">
+               </Location>
+               <Location
+                  uuid = "7C146D9F-C099-4D63-86FC-C9A5280A319A - 6830b1954f1a5095"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Fleet_Guard_Samriddhi_.FG_MilestoneRedemptionVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "Fleet_Guard(Samriddhi)"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/View/MilestoneRedemption/FG_MilestoneRedemptionVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "2098">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegate, popUpDelegate{
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -35,7 +36,9 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
-        headerText.text = "My Cart"
+        headerText.text = "myCart".localiz()
+        self.noDataFoundLbl.text = "noDataFound".localiz()
+        noDataFoundLbl.isHidden = true
         self.prodCatalogueCartTableView.dataSource = self
         self.prodCatalogueCartTableView.delegate = self
         self.myCartApi()

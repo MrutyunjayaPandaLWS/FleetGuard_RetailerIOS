@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import WebKit
+import LanguageManager_iOS
 
 class FG_MyPromotionDetailsVC: BaseViewController {
 
+    @IBOutlet weak var descriptionTitleLbl: UILabel!
+    @IBOutlet weak var descriptionWebView: WKWebView!
     @IBOutlet weak var heightOfPointsLbl: NSLayoutConstraint!
-    @IBOutlet weak var termsandconditionLbl: UILabel!
+//    @IBOutlet weak var termsandconditionLbl: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var pointsLbl: UILabel!
     @IBOutlet weak var offerNameLbl: UILabel!
@@ -25,14 +29,14 @@ class FG_MyPromotionDetailsVC: BaseViewController {
     var selectedLongDesc = ""
     var selectedShortDesc = ""
     var selectedImage = ""
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.termsandconditionLbl.text = selectedLongDesc
-        self.descriptionLbl.text = self.selectedShortDesc
+        descriptionData()
         self.offerNameLbl.text  = self.selectedTitle
         heightOfPointsLbl.constant = 0
-        
+        localization()
         let imageURL = self.selectedImage
         if imageURL != ""{
             let filteredURLArray = imageURL.dropFirst(2)
@@ -51,6 +55,17 @@ class FG_MyPromotionDetailsVC: BaseViewController {
         subView.layer.shadowColor = UIColor.darkGray.cgColor
     }
     
+    private func localization(){
+        headerText.text = "My_Promotions".localiz()
+        descriptionTitleLbl.text = "Description".localiz()
+        categoryTitle.text = "OffersAndPromotions".localiz()
+    }
+    
+    
+    func descriptionData(){
+        let plainText = convertHTMLToPlainText(htmlString: selectedLongDesc)
+        self.descriptionLbl.text = plainText
+    }
     
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -59,5 +74,29 @@ class FG_MyPromotionDetailsVC: BaseViewController {
     }
     
     
+    func convertHTMLToPlainText(htmlString: String) -> String {
+        if let attributedString = NSAttributedString(htmlString: htmlString) {
+            return attributedString.string
+        } else {
+            return ""
+        }
+    }
+
+
+   
+    
     
 }
+
+
+extension NSAttributedString {
+    convenience init?(htmlString: String) {
+        guard let data = htmlString.data(using: .utf8) else { return nil }
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+        ]
+        try? self.init(data: data, options: options, documentAttributes: nil)
+    }
+}
+

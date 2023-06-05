@@ -27,7 +27,9 @@ class RLPStatementVM {
                         if self.rlpStatemnetArray.count != 0 {
                             self.VC?.shopNameValue.text = result?.lstRetailerBonding?[0].companyName ?? ""
                             self.VC?.balancePts.text = "\(result?.sumOfTotalPoint ?? "")"
-                            self.VC?.milestonePts.text = "\(result?.sumOfMilstonPoints ?? "")"
+                            self.VC?.pointBalance = result?.sumOfTotalPoint ?? ""
+                            let milstonepts = Int(Double(result?.sumOfMilstonPoints ?? "0") ?? 0)
+                            self.VC?.milestonePts.text = "\(milstonepts )"
                         }else{
                                 self.VC?.view.makeToast("Datas not available !", duration: 2.0, position: .bottom)
                         }

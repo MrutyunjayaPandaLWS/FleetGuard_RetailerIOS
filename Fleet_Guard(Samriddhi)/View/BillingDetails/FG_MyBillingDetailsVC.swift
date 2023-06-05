@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_MyBillingDetailsVC: BaseViewController {
     
@@ -39,6 +40,8 @@ class FG_MyBillingDetailsVC: BaseViewController {
             self.VM.VC = self
             self.orderDetailsTV.delegate = self
             self.orderDetailsTV.dataSource = self
+            self.noDataFoundLbl.isHidden = true
+            noDataFoundLbl.text = "noDataFound".localiz()
             self.orderDetailsTV.separatorStyle = .none
             self.myBillingDetailsAPI()
             self.orderNumberHeadingLbl.text = "Order No"

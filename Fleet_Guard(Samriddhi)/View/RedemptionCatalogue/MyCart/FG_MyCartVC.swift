@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -33,9 +34,16 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        localization()
+        self.nodataFoundLbl.text = "noDataFound".localiz()
+        self.nodataFoundLbl.isHidden = true
         myCartTableView.delegate = self
         myCartTableView.dataSource = self
         self.myCartListApi()
+    }
+    
+    func localization(){
+        myCartLbl.text = "myCart".localiz()
     }
     
     @IBAction func backBtn(_ sender: Any) {
@@ -59,7 +67,7 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
 //            }
-            self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
+            self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
         }
     }
     
@@ -143,7 +151,7 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
 //                    vc!.modalPresentationStyle = .overFullScreen
 //                    vc!.modalTransitionStyle = .crossDissolve
 //                    self.present(vc!, animated: true, completion: nil)
-                    self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
+                    self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
                 }
             }
         }else{
@@ -162,7 +170,7 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
 //                    vc!.modalPresentationStyle = .overFullScreen
 //                    vc!.modalTransitionStyle = .crossDissolve
 //                    self.present(vc!, animated: true, completion: nil)
-                    self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
+                    self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
                 }
             }
         }

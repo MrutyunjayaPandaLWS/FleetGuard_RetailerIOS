@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import LanguageManager_iOS
+
 
 class FG_DashboardVM: popUpDelegate{
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -34,7 +36,7 @@ class FG_DashboardVM: popUpDelegate{
                         DispatchQueue.main.async {
                             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                             vc!.delegate = self
-                            vc!.descriptionInfo = "Your account loged in by other mobile."
+                            vc!.descriptionInfo = "Your_account_loged_in_by_other_mobile".localiz()
                             vc!.itsComeFrom = "DeviceLogedIn"
                             vc!.modalPresentationStyle = .overCurrentContext
                             vc!.modalTransitionStyle = .crossDissolve
@@ -70,14 +72,14 @@ class FG_DashboardVM: popUpDelegate{
 //                                        vc!.modalTransitionStyle = .crossDissolve
 //                                        self.VC?.present(vc!, animated: true, completion: nil)
                                         
-                                        self.VC?.view.makeToast("Your account is deactivated please check with the administrator", duration: 4.0, position: .bottom)
+                                        self.VC?.view.makeToast("account_is_deactivated".localiz(), duration: 4.0, position: .bottom)
                                     }
                                 }else{
                                     self.VC?.welcomeTitle.text = result?.lstCustomerFeedBackJsonApi?[0].firstName ?? ""
                                     self.VC?.rplValueLbl.text = result?.lstCustomerFeedBackJsonApi?[0].passBookNumber ?? ""
                                     self.VC?.retailerCodeLbl.text = result?.lstCustomerFeedBackJsonApi?[0].loyaltyId ?? ""
                                     //  self.VC?.totalValue.text = result?.lstCustomerFeedBackJsonApi?[0].loyaltyId ?? ""
-                                    self.VC?.companyNameLbl.text = result?.lstCustomerFeedBackJsonApi?[0].company ?? ""
+                                    self.VC?.companyNameLbl.text = result?.lstCustomerFeedBackJsonApi?[0].ownerName ?? ""
                                     UserDefaults.standard.setValue(result?.lstCustomerFeedBackJsonApi?[0].passBookNumber, forKey: "passBookNumber")
                                     UserDefaults.standard.setValue(result?.lstCustomerFeedBackJsonApi?[0].firstName, forKey: "FirstName")
                                     
@@ -190,17 +192,17 @@ class FG_DashboardVM: popUpDelegate{
     
     func pointBalenceAPI(parameter: JSON){
         DispatchQueue.main.async {
-            self.VC?.startLoading()
+//            self.VC?.startLoading()
         }
         self.requestApis.pointBalenceAPI(parameters: parameter) { (result, error) in
             if error == nil{
                 if result != nil{
                 DispatchQueue.main.async {
-                    self.VC?.stopLoading()
+//                    self.VC?.stopLoading()
                     self.pointBalence = result?.objCustomerDashboardList ?? []
                     
                     if result?.objCustomerDashboardList?.count != 0 {
-                        self.VC?.totalValue.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
+                        self.VC?.totalValue.text = "\(Int(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0))"
                         UserDefaults.standard.set(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
                         UserDefaults.standard.set(result?.objCustomerDashboardList?[0].redeemablePointsBalance, forKey: "redeemablePointsBalance")
                         
@@ -212,12 +214,12 @@ class FG_DashboardVM: popUpDelegate{
                 }
                 }else{
                     DispatchQueue.main.async {
-                    self.VC?.stopLoading()
+//                    self.VC?.stopLoading()
                     }
                 }
             }else{
                 DispatchQueue.main.async {
-                self.VC?.stopLoading()
+//                self.VC?.stopLoading()
                 }
             }
         }
@@ -254,6 +256,86 @@ class FG_DashboardVM: popUpDelegate{
                 
             }
             
+        }
+    }
+    
+    
+    func deleteAccount(parameters: JSON, completion: @escaping (DeleteAccountModels?) -> ()) {
+        self.VC1?.startLoading()
+        self.requestApis.deleteAccountApi(parameters: parameters) { (result, error) in
+            if error == nil {
+                if result != nil {
+                    DispatchQueue.main.async {
+                        completion(result)
+                        self.VC?.stopLoading()
+                    }
+                } else {
+                    print("No Response")
+                    DispatchQueue.main.async {
+                        self.VC1?.stopLoading()
+                    }
+                }
+            }else{
+                print("ERROR_Login \(error)")
+                DispatchQueue.main.async {
+                    self.VC1?.stopLoading()
+                }
+                
+            }
+            
+        }
+    }
+    
+    
+    //MARK: - PROFILE Image Submission
+    func imageSubmissionAPI(loyaltyID: String ,base64: String) {
+        DispatchQueue.main.async {
+            self.VC?.startLoading()
+         }
+        let parameters = [
+            "ActorId": "\(UserDefaults.standard.string(forKey: "UserID") ?? "")",
+            "ObjCustomerJson": [
+                "DisplayImage": "\(VC1?.strdata1 ?? "")",
+                "LoyaltyId": "\(loyaltyID)"
+            ]
+        ]as [String : Any]
+        print(parameters,"imageAPI")
+        self.requestApis.imageSavingAPI(parameters: parameters) { (result, error) in
+            if error == nil{
+                if result != nil{
+                    DispatchQueue.main.async {
+                        print(result?.returnMessage ?? "", "ReturnMessage")
+                        if result?.returnMessage ?? "" == "1"{
+                            DispatchQueue.main.async{
+                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                                vc!.titleInfo = ""
+                                vc!.itsComeFrom = "sidemenu"
+                                vc!.descriptionInfo = "profile_update_message".localiz()
+                                vc!.modalPresentationStyle = .overFullScreen
+                                vc!.modalTransitionStyle = .crossDissolve
+                                self.VC1?.closeLeft()
+                                self.VC1?.present(vc!, animated: true, completion: nil)
+                            }
+                        }else{
+                            DispatchQueue.main.async{
+                                self.VC1?.closeLeft()
+                                self.VC1?.view.makeToast("profile_update_failed".localiz(), duration: 3.0, position: .bottom)
+                            }
+                        }
+                        
+                        self.VC1?.stopLoading()
+                    }
+                }else{
+                    DispatchQueue.main.async {
+                        self.VC1?.stopLoading()
+                    }
+                }
+                
+            }else{
+                DispatchQueue.main.async {
+                    self.VC1?.stopLoading()
+                }
+            }
         }
     }
     

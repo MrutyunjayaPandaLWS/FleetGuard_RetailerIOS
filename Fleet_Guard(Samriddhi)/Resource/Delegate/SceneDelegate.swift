@@ -9,6 +9,7 @@ import UIKit
 
 import SlideMenuControllerSwift
 import IQKeyboardManagerSwift
+import LanguageManager_iOS
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -16,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     var slider : SlideMenuController!
     var nav : UINavigationController!
+    let languageStatus = UserDefaults.standard.string(forKey: "LanguageName")
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -25,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         IQKeyboardManager.shared.enable = true
         let isUserLoggedIn: Bool = UserDefaults.standard.bool(forKey: "IsloggedIn?")
         print(isUserLoggedIn)
+        languageUpdate()
         if isUserLoggedIn {
             self.setHomeAsRootViewController()
         } else {
@@ -33,6 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
     }
     func setHomeAsRootViewController(){
+        languageUpdate()
         let leftVC = storyboard.instantiateViewController(withIdentifier: "FG_SideMenuVC") as! FG_SideMenuVC
         let homeVC = storyboard.instantiateViewController(withIdentifier: "FG_TabbarVc") as! FG_TabbarVc
         slider = SlideMenuController(mainViewController: homeVC, leftMenuViewController: leftVC)
@@ -48,6 +52,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
     }
     func setInitialViewAsRootViewController(){
+      languageUpdate()
         let mainStoryboard = UIStoryboard(name: "Main" , bundle: nil)
         let initialVC = mainStoryboard.instantiateViewController(withIdentifier: "FG_LoginVC") as! FG_LoginVC
         UserDefaults.standard.set("1", forKey: "LanguageLocalizable")
@@ -59,6 +64,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
     }
+    
+    func languageUpdate(){
+        if languageStatus == "English"{
+            LanguageManager.shared.setLanguage(language: .en)
+        }else if languageStatus == "Hindi"{
+            LanguageManager.shared.setLanguage(language: .hi)
+        }else if languageStatus == "Tamil"{
+            LanguageManager.shared.setLanguage(language: .taIN)
+        }else if languageStatus == "Telugu"{
+            LanguageManager.shared.setLanguage(language: .teIN)
+        }else if languageStatus == "Bengali"{
+            LanguageManager.shared.setLanguage(language: .bnIN)
+        }else if languageStatus == "Kannada"{
+            LanguageManager.shared.setLanguage(language: .knIN)
+        }else{
+            LanguageManager.shared.setLanguage(language: .en)
+        }
+    }
+        
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

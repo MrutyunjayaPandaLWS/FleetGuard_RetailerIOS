@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
    
@@ -54,7 +55,7 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
         myMilestoneRedemptionTableView.delegate = self
         myMilestoneRedemptionTableView.dataSource = self
         myMilestoneRedemptionTableView.separatorStyle = .none
-        
+        self.noDataFoundLBl.text = "noDataFound".localiz()
         self.filterShadowView.isHidden = true
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 20
@@ -67,9 +68,15 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         noDataFoundLBl.isHidden = true
+        localization()
         self.mileStoneRedemptionAPI()
     }
+
     
+    private func localization(){
+        headerText.text = "My_Milestone_Redemption".localiz()
+        
+    }
 //    override func viewWillDisappear(_ animated: Bool) {
 //        super.viewWillDisappear(animated)
 //        self.status = ""

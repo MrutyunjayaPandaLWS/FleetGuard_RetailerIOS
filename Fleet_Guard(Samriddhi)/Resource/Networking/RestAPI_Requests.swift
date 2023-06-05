@@ -900,5 +900,20 @@ class RestAPI_Requests {
                     }
                 }
             }
+
+//    MARK: - DELETE ACCOUNT API
+    func deleteAccountApi(parameters: JSON, completion: @escaping (DeleteAccountModels?, Error?) -> ()) -> URLSessionDataTask? {
+       return client.load(path: deleteAccountMethodName, method: .post, params: parameters) { data, error in
+           do{
+               if data != nil{
+                   let result1 =  try JSONDecoder().decode(DeleteAccountModels?.self, from: data as! Data)
+                   completion(result1, nil)
+               }
+           }catch{
+               completion(nil, error)
+           }
+       }
+    }
+    
     
 }

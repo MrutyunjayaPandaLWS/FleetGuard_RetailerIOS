@@ -8,6 +8,7 @@
 import UIKit
 import Charts
 import CoreData
+import LanguageManager_iOS
 
 class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
 
@@ -32,6 +33,7 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        localization()
         bonusTrendGraphView.delegate = self
         bonusTrendGraphView.chartDescription.enabled = false
 //        bonusTrendGraphView.xAxis.spaceMax = 1
@@ -46,6 +48,10 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
         self.pointsTrendAPI()
         print(firstGraphData)
         print(secondGraphData)
+    }
+    
+    private func localization(){
+        bonusTrendHeadingLbl.text = "bonus_trend".localiz()
     }
     func pointsTrendAPI(){
         let parameters = [
@@ -65,11 +71,10 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
                         let previousYearPoint = data.previousYearPoint
                         let currentYear = data.currentYearPoint
                         
-                        if self.firstGraphData.count < 12{
-                            self.firstGraphData.append(data.currentYearPoint!)
-                        }
                         if self.secondGraphData.count < 12{
                             self.secondGraphData.append(data.previousYearPoint!)
+                        }else{
+                            self.firstGraphData.append(data.currentYearPoint!)
                         }
                         if self.monthsData.count < 12{
                             self.monthsData.append(data.monthName!)

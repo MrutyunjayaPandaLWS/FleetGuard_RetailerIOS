@@ -7,6 +7,7 @@
 
 import UIKit
 import Toast_Swift
+import LanguageManager_iOS
 
 class FG_SubmitNewQueryVM: popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -32,7 +33,7 @@ class FG_SubmitNewQueryVM: popUpDelegate {
                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                             vc!.delegate = self
                             vc!.itsComeFrom = "LodgeQuery"
-                            vc!.descriptionInfo = "Query Submitted successfully!"
+                            vc!.descriptionInfo = "Query_Submitted_successfully".localiz()
                             vc!.modalPresentationStyle = .overFullScreen
                             vc!.modalTransitionStyle = .crossDissolve
                             self.VC?.present(vc!, animated: true, completion: nil)
@@ -42,7 +43,7 @@ class FG_SubmitNewQueryVM: popUpDelegate {
 //                        })
                         
                 }else{
-                    self.VC!.view.makeToast("Something went wrong please try again later.", duration: 3.0, position: .bottom)
+                    self.VC!.view.makeToast("Something_went_wrong_error".localiz(), duration: 3.0, position: .bottom)
                     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
                         self.VC?.navigationController?.popViewController(animated: true)
                     })

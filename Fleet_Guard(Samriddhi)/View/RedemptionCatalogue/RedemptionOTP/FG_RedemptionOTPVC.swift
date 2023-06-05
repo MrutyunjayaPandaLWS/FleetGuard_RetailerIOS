@@ -8,6 +8,7 @@
 import UIKit
 import DPOTPView
 //import Firebase
+import LanguageManager_iOS
 import Lottie
 class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -231,7 +232,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
 //                        vc!.modalTransitionStyle = .crossDissolve
 //                        self.present(vc!, animated: true, completion: nil)
                         
-                        self.view.makeToast("InValid OTP", duration: 3.0, position: .bottom)
+                        self.view.makeToast("InValid_OTP".localiz(), duration: 3.0, position: .bottom)
                     }
                 
             }
@@ -246,7 +247,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter OTP", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_OTP".localiz(), duration: 3.0, position: .bottom)
             }
         }else if enteredValue.count != 4{
             DispatchQueue.main.async{
@@ -259,7 +260,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
                 
-                self.view.makeToast("Enter valid OTP", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
             }
         }
     }

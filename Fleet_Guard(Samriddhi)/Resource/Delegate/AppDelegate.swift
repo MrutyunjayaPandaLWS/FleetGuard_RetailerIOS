@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var slider : SlideMenuController!
     var nav : UINavigationController!
     var gcmMessageIDKey = "gcm.message_id"
+    var languageStatus = UserDefaults.standard.string(forKey: "LanguageName")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
@@ -38,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UIApplication.shared.statusBarStyle = .lightContent
         tokendata()
         tokendata1()
+        languageUpdate()
         let tokenStatus: Bool = UserDefaults.standard.bool(forKey: "AfterLog")
         print(tokenStatus, "Status")
         let isUserLoggedIn: Bool = UserDefaults.standard.bool(forKey: "IsloggedIn?")
@@ -77,6 +79,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         return true
     }
+    
+    func languageUpdate(){
+        if languageStatus == "English"{
+            LanguageManager.shared.setLanguage(language: .en)
+        }else if languageStatus == "Hindi"{
+            LanguageManager.shared.setLanguage(language: .hi)
+        }else if languageStatus == "Tamil"{
+            LanguageManager.shared.setLanguage(language: .taIN)
+        }else if languageStatus == "Telugu"{
+            LanguageManager.shared.setLanguage(language: .teIN)
+        }else if languageStatus == "Bengali"{
+            LanguageManager.shared.setLanguage(language: .bnIN)
+        }else if languageStatus == "Kannada"{
+            LanguageManager.shared.setLanguage(language: .knIN)
+        }else{
+            LanguageManager.shared.setLanguage(language: .en)
+        }
+    }
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
         Messaging.messaging().token { (token, error) in
@@ -114,7 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     func setHomeAsRootViewController(){
         let leftVC = storyboard.instantiateViewController(withIdentifier: "FG_SideMenuVC") as! FG_SideMenuVC
-        
+       languageUpdate()
 //        let nav = NavigationController(rootViewController: yourController1)
 //        self.yourViewInsertedInController1.addSubview(nav.view)
         let homeVC = storyboard.instantiateViewController(withIdentifier: "FG_TabbarVc") as! FG_TabbarVc
@@ -134,6 +154,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
        
     }
     func setInitialViewAsRootViewController(){
+        languageUpdate()
         let mainStoryboard = UIStoryboard(name: "Main" , bundle: nil)
         let initialVC = mainStoryboard.instantiateViewController(withIdentifier: "FG_LoginVC") as! FG_LoginVC
         UserDefaults.standard.set("1", forKey: "LanguageLocalizable")
@@ -188,7 +209,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func tokendata1(){
             if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             }else{
-                let parameters : Data = "username=\(username)&password=\(password)&grant_type=password".data(using: .utf8)!
+                let parameters : Data = "username=\(username2)&password=\(password2)&grant_type=password".data(using: .utf8)!
 
             let url = URL(string: secondToken)!
             let session = URLSession.shared

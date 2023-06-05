@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UITextFieldDelegate {
     func stateDidTap(_ vc: FG_DropDownVC) {
@@ -106,7 +107,28 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
         self.selectCityLbl.text = "Select City"
         
         NotificationCenter.default.addObserver(self, selector: #selector(redirectingToLogin), name: Notification.Name.redirectingToLogin, object: nil)
+        localization()
     }
+    
+    private func localization(){
+        self.newToSamriddhiLbl.text = "NewtoSamriddhi".localiz()
+        self.contactUsNowLbl.text = "Contactusnow".localiz()
+        self.nameLbl.text = "name".localiz()
+        self.nameTF.placeholder = "enterName".localiz()
+        self.mobileNumberLbl.text = "Mobile_number".localiz()
+        self.mobileTF.placeholder = "enter_mobile_number".localiz()
+        stateLbl.text = "state".localiz()
+        cityLbl.text = "city".localiz()
+        commentsLbl.text = "comment".localiz()
+        submitBtn.setTitle("submit", for: .normal)
+        alreadyMemberLbl.text = "AlreadyaMember".localiz()
+        loginNowBtn.setTitle( "LoginNow".localiz(), for: .normal)
+        
+        
+        
+    }
+    
+    
     
     @objc func redirectingToLogin(){
         self.navigationController?.popViewController(animated: true)
@@ -132,7 +154,7 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
 //                vc!.modalPresentationStyle = .overCurrentContext
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Enter mobile number", duration: 3.0, position: .bottom)
+                self.view.makeToast("enter_mobile_number".localiz(), duration: 3.0, position: .bottom)
             }
         }else if self.mobileTF.text!.count != 10{
             DispatchQueue.main.async{
@@ -143,7 +165,7 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
 //                vc!.modalPresentationStyle = .overCurrentContext
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Enter valid mobile number", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enter_valid_mobile_number".localiz(), duration: 3.0, position: .bottom)
             }
         }else{
             let parameterJSON = [
@@ -166,11 +188,11 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
                 DispatchQueue.main.async{
 //                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                    vc!.delegate = self
-//                        vc!.descriptionInfo = "No Internet"
+//                        vc!.descriptionInfo = "No_Internet".localiz()
 //                    vc!.modalPresentationStyle = .overCurrentContext
 //                    vc!.modalTransitionStyle = .crossDissolve
 //                    self.present(vc!, animated: true, completion: nil)
-                    self.view.makeToast("No Internet", duration: 3.0, position: .bottom)
+                    self.view.makeToast("No_Internet".localiz(), duration: 3.0, position: .bottom)
                 }
             }else{
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DropDownVC") as? FG_DropDownVC
@@ -189,13 +211,13 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
                 DispatchQueue.main.async{
 //                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                    vc!.delegate = self
-//                        vc!.descriptionInfo = "No Internet"
+//                        vc!.descriptionInfo = "No_Internet".localiz()
 //
 //                    vc!.modalPresentationStyle = .overCurrentContext
 //                    vc!.modalTransitionStyle = .crossDissolve
 //                    self.present(vc!, animated: true, completion: nil)
                     
-                    self.view.makeToast("No Internet", duration: 3.0, position: .bottom)
+                    self.view.makeToast("No_Internet".localiz(), duration: 3.0, position: .bottom)
                 }
             }else{
             let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DropDownVC") as? FG_DropDownVC
@@ -219,7 +241,7 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
 //                vc!.modalPresentationStyle = .overCurrentContext
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Please enter name", duration: 3.0, position: .bottom)
+                self.view.makeToast("Please_enter_name".localiz(), duration: 3.0, position: .bottom)
             }
         }else if mobileTF.text?.count == 0 {
             DispatchQueue.main.async{
@@ -229,7 +251,7 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
 //                vc!.modalPresentationStyle = .overCurrentContext
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Please enter mobile number", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enteryourmobilenumber".localiz(), duration: 3.0, position: .bottom)
             }
         }else if selectStateLbl.text == "Select State" {
             DispatchQueue.main.async{
@@ -239,7 +261,7 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
 //                vc!.modalPresentationStyle = .overCurrentContext
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Please select state", duration: 3.0, position: .bottom)
+                self.view.makeToast("Please_select_state".localiz(), duration: 3.0, position: .bottom)
             }
         }else if selectCityLbl.text == "Select City" {
             DispatchQueue.main.async{
@@ -249,7 +271,7 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
 //                vc!.modalPresentationStyle = .overCurrentContext
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Please select city", duration: 3.0, position: .bottom)
+                self.view.makeToast("Please_select_city".localiz(), duration: 3.0, position: .bottom)
             }
         }else {
             self.registerationAPI()
@@ -266,8 +288,8 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
             "CustomerName":"\(nameTF.text ?? "")",
             "StateId":"\(selectedStateID)",
             "CityId":"\(selectedCityID)",
-            "HelpTopicID":"1",
-            "SourceTypeId" :"5"
+            "HelpTopicID":"31",
+            "SourceTypeId" :"3"
         ] as [String: Any]
         print(parameters)
         self.VM.myRegistrationAPI(parameter: parameters)

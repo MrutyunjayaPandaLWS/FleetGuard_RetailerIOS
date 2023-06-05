@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_StatementVC: BaseViewController,StatementViewDelegate{
     func viewActBTN(_ cell: FG_StatementTVC) {
@@ -93,6 +94,7 @@ class FG_StatementVC: BaseViewController,StatementViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        localization()
         self.VM.VC = self
         self.statementTableView.delegate = self
         self.statementTableView.dataSource = self
@@ -102,6 +104,14 @@ class FG_StatementVC: BaseViewController,StatementViewDelegate{
         self.statementViewStack.clipsToBounds = true
         statementViewStack.layer.cornerRadius = 15
         statementViewStack.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+    }
+    
+    private func localization(){
+        headerText.text = "statementView".localiz()
+        viewLbl.text = "View".localiz()
+        balanceLbl.text = "Balance".localiz()
+        monthLbl.text = "month".localiz()
+        ptsEarnedLbl.text = "Points_Earned".localiz()
     }
         
     func rlpStatemnet(){
@@ -126,11 +136,11 @@ extension FG_StatementVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_StatementTVC", for: indexPath) as! FG_StatementTVC
         cell.delegate = self
-        cell.balanceLbl.text = "\(VM.rlpStatemnetArray[indexPath.row].previousOpeningBalance ?? 0)"
+        cell.balanceLbl.text = "\(VM.rlpStatemnetArray[indexPath.row].pointsEarned ?? 0)"
         let date = (VM.rlpStatemnetArray[indexPath.row].date ?? "").split(separator: " ")
         cell.monthLbl.text = "\(date[0])"
         cell.pointEarnedLbl.text = "\(VM.rlpStatemnetArray[indexPath.row].pointsEarned ?? 0)"
-        
+        cell.viewOutBtn.setTitle("View".localiz(), for: .normal)
         
         return cell
     }

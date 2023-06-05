@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Kingfisher
+
 
 class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -68,6 +70,7 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
     override func viewWillAppear(_ animated: Bool) {
         self.myCartApi()
       //  self.productListApi()
+        productImage.kf.setImage(with: URL(string: "\(productImageURL)"),placeholder: UIImage(named: "Image 3"))
         self.qtyTF.isEnabled = false
         
     }

@@ -5,6 +5,10 @@
   Created by ADMIN on 17/01/2023.
   
 */
+"No_Internet" = "No Internet";
+
+
+
 "welcome" = "Welcome to";
 "LoginNow" = "Login now";
 "Mobilenumber" = "Mobile number";
@@ -12,5 +16,162 @@
 "SendOTP" = "Send OTP";
 "NewtoSamriddhi" = "New to Samriddhi ?";
 "Contactusnow" = "Contact us now";
-"Enteryourmobilenumber" = "Enter your mobile number";
+"Enteryourmobilenumber" = "Please Enter your mobile number";
+"accept_Terms_Cond" = "Accept Terms and Conditions";
+"Decline" = "Decline";
+"Accept" = "Accept";
+"termsAndCondition" = "Terms and conditions";
+"mobileNumber_isnot_exit_system" = "The mobile number that you have entered is not present in the  system.";
+"name" = "Name";
+"enterName" = "Enter name";
+"Mobile_number" = "Mobile number";
+"enter_mobile_number" = "Enter mobile number";
+"state" = "State";
+"city" = "City";
+"comment" = "Comments";
+"submit" = "Submit";
+"Enter_valid_mobile_number" = "Enter valid mobile number";
+"Please_enter_name" = "Please enter name";
+"Please_select_state" = "Please select state";
+"Please_select_city" = "Please select city";
+"query_Submission_SuccessMesage" = "Your application successfully submitted";
+"query_Submission_failed" = "Your submission failed.";
+"Mobile_number_already_registered" = "Mobile number already registered !";
+"Resend_OTP" = "Resend Otp";
+"OTP_will_receive_within" = "OTP will receive within";
+"Back" = "Back";
+"Enter_OTP_sent_to" = "Enter OTP sent to";
+"Enter_OTP" = "Enter OTP";
+"Enter_valid_OTP" = "Enter valid OTP";
+"your_account_is_deleted" = "Your account has been deleted. Kindly contact your administrator.";
+"account_is_deactivated" = "Your account has been deactivated. Kindly contact your administrator to activate your account";
+"account_verification_pending" = "Your account is in verification pending. Kindly contact your administrator to verify your account.";
 
+//MARK: - DASHBOARD
+"Shop_name" = "SHOP NAME";
+"total_Point_bal" = "Total Point Balance";
+"passbook_number" = "Passbook Number";
+"welcome" = "Welcome !";
+"product_Catalogoue" = "Product Catalogue";
+"redemption_catalogue" = "Redemption Catalogue";
+"know_more" = "Know more";
+"Add_More_Range" = "Add More Range";
+"View_Products" = "View Products";
+"Order_Now" = "Order Now";
+"Your_account_loged_in_by_other_mobile" = "Your account loged in by other mobile.";
+
+
+// MARK: - SIDE MENU
+
+"Profile" = "Profile";
+"My_Redemption_History" = "My Redemption History";
+"Redemption_Catalogue" = "Redemption Catalogue";
+"Product_Catalogue" = "Product Catalogue";
+"My_Promotions" = "My Promotions";
+"Lodge_Query" = "Lodge Query";
+"About" = "About";
+"FAQs" = "FAQs";
+"T&C" = "T&C";
+"Logout" = "Logout";
+"Delete" = "Delete";
+"Since" = "Since";
+"My_Billings" = "My Billings";
+"My_Orders" = "My Orders";
+"RPL_Statement" = "RLP Statement";
+"My_Milestone_Redemption" = "My Milestone Redemption";
+"Retailer_code" = "Retailer code";
+"My_Earnings" = "My Earnings";
+"My_Redemption" = "My Redemption";
+
+//MARK: - PROFILE
+"Personal_Information" = "Personal Information";
+"First_Name" = "First Name";
+"Last_Name" = "Last Name";
+"Address" = "Address";
+"Email_address" = "Email Address";
+"DOB" = "DOB";
+"Select_DOB" = "Select DOB";
+"Gender" = "Gender";
+"Select_Gender" = "Select Gender";
+"preferred_Language" = "Preferred Language";
+"select_preferred_Language" = "Select Preferred Language";
+"Country" = "Country";
+"Select_Country" = "Select Country";
+"Select_State" = "Select State";
+"Select_City" = "Select City";
+"pincode" = "Pincode";
+"edit_profile" = "Edit Profile";
+"Save_changes" = "Save Changes";
+"profile_update_message" = "Profile image updated successfully";
+"profile_update_failed" = "Profile image update Failed";
+"Product_Catalogue_Details" = "Product Catalogue Details";
+
+"points" = "Points";
+"Date" = "Date";
+"edit_Profile_submitted_successfully" = "Your details have been submitted successfully.";
+"edit_Profile_submit_failed" = "Failed to submit your details try after some time";
+
+"redeem_failed_contact_to_admin" = "You are not allowled to redeem .Please contact your administrator";
+"Insufficent_Point_Balance" = "Insufficient Point Balance";
+"added_to_cart_success_message" = "Product added into cart successfully.";
+"Something_went_wrong_error" = "Something went wrong! Try againg Later...";
+
+//MARK: - MY CART
+"myCart" = "My Cart";
+"Default_Address" = "Default Address";
+"Edit_Address" = "Edit Address";
+"Enter_Address" = "Enter Address";
+"Enter_Pin" = "Enter Pin";
+"Enter_Valid_Zip" = "Enter Valid Zip";
+"product_removed_success" = "Product has been removed successfully!";
+"Confirm_Order" = "Confirm Order";
+"Redeemable_Points" = "Redeemable Points";
+"Shipping_address_requires" = "Shipping address requires: State,City,Address,Pin code and Mobile Number,details,Click on 'Edit' to edit and add details";
+"your_account_is_unverified_for_redeemption" = "Your account is unverified! Kindly contact the administrator to access the redemption Catalogue";
+"InValid_OTP" = "InValid OTP";
+
+//MARK: - RPL STATEMENT
+"RPL_No" = "RPL No";
+"Balance_Points" = "Balance Points";
+"Milestone_Points" = "MILESTONE POINTS";
+"Redeem_Now" = "Redeem NOW";
+"statementView" = "STATEMENT VIEW";
+"points_trends" = "Points Trend";
+"range_trends" = "Range Trend";
+"bonus_trend" = "Bonus Trend";
+
+"createLodgequeryInfo" = "Please submit your query";
+"select_your_topic" = "Select Your Topic";
+"Query_Details" = "Query Details";
+"UploadImage" = "Upload Image";
+"imageUploadInfo" = "Note: Image format should be .jpg , .png, .webp, .pdf";
+
+"Select_query_topic" = "Select query topic";
+"Enter_query_Details" = "Enter query Details";
+"Query_Submitted_successfully" = "Query Submitted successfully!";
+
+
+"Account_deleted_successfully" = "Account deleted successfully";
+"are_sure_delete_account" = "Are you sure you really want to delete your account?";
+"ok" = "OK";
+"noDataFound" = "No data found";
+
+"month" = "Month";
+"Points_Earned" = "Points Earned";
+"Balance" = "Balance";
+"View" = "View";
+
+"OrderDate" = "Order Date";
+"Sources" = "Sources";
+"Status" = "Status";
+
+"OffersAndPromotions" = "Offers and promotions";
+"Description" = "Description";
+
+
+"Fromdate" = "From Date";
+"Todate" = "To Date";
+"Filter" = "Filter";
+"Filter_by_Status" = "Filter By Status";
+"Clear_all" = "Clear all";
+"Apply" = "Apply";

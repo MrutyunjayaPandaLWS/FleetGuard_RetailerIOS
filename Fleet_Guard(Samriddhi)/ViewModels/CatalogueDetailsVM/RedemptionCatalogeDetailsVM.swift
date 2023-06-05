@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class RedemptionCatalogeDetailsVM: popUpDelegate {
     
@@ -73,7 +74,7 @@ class RedemptionCatalogeDetailsVM: popUpDelegate {
                             DispatchQueue.main.async{
                                 let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                 vc!.delegate = self
-                                vc!.descriptionInfo = "Product added into cart successfully."
+                                vc!.descriptionInfo = "added_to_cart_success_message".localiz()
                                 vc!.modalPresentationStyle = .overCurrentContext
                                 vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)
@@ -90,7 +91,7 @@ class RedemptionCatalogeDetailsVM: popUpDelegate {
 //                                vc!.modalPresentationStyle = .overCurrentContext
 //                                vc!.modalTransitionStyle = .crossDissolve
 //                                self.VC?.present(vc!, animated: true, completion: nil)
-                                self.VC?.view.makeToast("Something went wrong! Try againg Later...", duration: 3.0, position: .bottom)
+                                self.VC?.view.makeToast("Something_went_wrong_error".localiz(), duration: 3.0, position: .bottom)
                             }
                         }
                     }

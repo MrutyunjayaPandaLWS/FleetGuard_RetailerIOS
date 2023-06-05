@@ -34,6 +34,7 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate, CheckB
     @IBOutlet weak var loginNowLbl: UILabel!
     @IBOutlet weak var mobileNumberLbl: UILabel!
     
+    @IBOutlet weak var termAndCondLbl: UILabel!
     @IBOutlet weak var contactUsBtn: UIButton!
     @IBOutlet weak var newToSamriddhiLbl: UILabel!
     @IBOutlet weak var sendOtpBtn: UIButton!
@@ -56,6 +57,7 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate, CheckB
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.contactUsBtn.isUserInteractionEnabled = true
+        self.localization()
         self.tokendata()
     }
     
@@ -67,7 +69,8 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate, CheckB
         self.sendOtpBtn.setTitle("SendOTP".localiz(), for: .normal)
         self.newToSamriddhiLbl.text = "NewtoSamriddhi".localiz()
         self.contactUsBtn.setTitle("Contactusnow".localiz(), for: .normal)
-        self.mobileTF.placeholder = "Enteryourmobilenumber".localiz()
+        self.mobileTF.placeholder = "enter_mobile_number".localiz()
+        self.termsAndConLbl.text = "accept_Terms_Cond".localiz()
     }
     
     
@@ -89,7 +92,7 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate, CheckB
 //                vc!.modalPresentationStyle = .overFullScreen
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Enter mobile number", duration: 3.0, position: .bottom)
+                self.view.makeToast("Enteryourmobilenumber".localiz(), duration: 3.0, position: .bottom)
             }
         }
 //        else if self.boolResult == false{
