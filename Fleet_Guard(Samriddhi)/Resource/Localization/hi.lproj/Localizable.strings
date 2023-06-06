@@ -166,8 +166,7 @@
 "Sources" = "स्रोत";
 "Status" = "स्टेटओस";
 
-"OffersAndPromotions" = "Offers and promotions";
-"Description" = "Description";
+
 
 
 "Fromdate" = "From Date";
@@ -176,3 +175,7 @@
 "Filter_by_Status" = "Filter By Status";
 "Clear_all" = "Clear all";
 "Apply" = "Apply";
+
+
+"OffersAndPromotions" = "ऑफ़र और प्रचार";
+"Description" = "विवरण";

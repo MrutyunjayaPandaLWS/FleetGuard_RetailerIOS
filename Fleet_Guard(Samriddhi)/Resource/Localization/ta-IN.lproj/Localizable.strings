@@ -166,8 +166,7 @@
 "Status" = "ಸ್ಥಿತಿ";
 
 
-"OffersAndPromotions" = "Offers and promotions";
-"Description" = "Description";
+
 
 "Fromdate" = "From Date";
 "Todate" = "To Date";
@@ -175,3 +174,8 @@
 "Filter_by_Status" = "Filter By Status";
 "Clear_all" = "Clear all";
 "Apply" = "Apply";
+"OffersAndPromotions" = "சலுகைகள் மற்றும் விளம்பரங்கள்";
+"Description" = "விளக்கம்";
+
+
+

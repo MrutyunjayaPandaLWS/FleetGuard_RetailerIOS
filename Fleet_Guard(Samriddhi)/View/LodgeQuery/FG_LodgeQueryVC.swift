@@ -108,7 +108,14 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     private func localiZation(){
         headerText.text = "Lodge_Query".localiz()
         lodgeQueryBtn.setTitle("Lodge_Query".localiz(), for: .normal)
+        self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+        self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
+        self.filterTitle.text = "Filter".localiz()
+        self.filterByStatusLbl.text = "Filter_by_Status".localiz()
+        self.clearButton.setTitle("Clear_all".localiz(), for: .normal)
+        self.applyBtn.setTitle("Apply".localiz(), for: .normal)
     }
+    
 //
 //    "ActionType": "1",
 //               "ActorId": "45822",
@@ -238,28 +245,28 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
 //    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
 //    self.filetrShadowView.isHidden = true
     
-    if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.status == "-1"{
-        self.view.makeToast("Select date or filter status or both", duration: 2.0, position: .center)
-    }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.status != "-1"{
+    if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status == "-1"{
+        self.view.makeToast("Select date or filter status or both".localiz(), duration: 2.0, position: .center)
+    }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status != "-1"{
         
         self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
         self.filetrShadowView.isHidden = true
         
-    }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle == "To Date"{
+    }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz(){
         
         self.view.makeToast("Select To Date", duration: 2.0, position: .center)
         
-    }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle != "To Date"{
+    }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz(){
         
         self.view.makeToast("Select From Date", duration: 2.0, position: .center)
         
-    }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle != "To Date" && self.status == "-1" || self.status != "-1"{
+    }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz() && self.status == "-1" || self.status != "-1"{
         
         if selectedToDate < selectedFromDate{
             
             self.view.makeToast("ToDate should be lower than FromDate", duration: 2.0, position: .center)
             
-        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.status != "-1"{
+        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status != "-1"{
             
             self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
             self.filetrShadowView.isHidden = true
@@ -276,8 +283,8 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
 }
 @IBAction func clearbtn(_ sender: Any) {
     
-    self.fromDateBtn.setTitle("From Date", for: .normal)
-    self.toDateBtn.setTitle("To Date", for: .normal)
+    self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+    self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
     self.approvedBtn.backgroundColor = .white
     self.pendingBtn.backgroundColor = .white
     self.cancelledBtn.backgroundColor = .white

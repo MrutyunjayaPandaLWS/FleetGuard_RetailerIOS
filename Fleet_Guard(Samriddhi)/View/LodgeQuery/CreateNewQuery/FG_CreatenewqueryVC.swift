@@ -87,7 +87,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
     
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if self.queryDetailsView.text == "Please Enter Query Details"{
+        if self.queryDetailsView.text == "Please Enter Query Details".localiz(){
             self.queryDetailsView.text = ""
             self.queryDetailsView.textColor = .black
         }
@@ -132,7 +132,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
                 
                 self.view.makeToast("Select_query_topic".localiz(), duration: 3.0, position: .bottom)
             }
-        }else if self.queryDetailsView.text!.count == 0 || self.queryDetailsView.text == "-" || self.queryDetailsView.text == "Please Enter Query Details"{
+        }else if self.queryDetailsView.text!.count == 0 || self.queryDetailsView.text == "-" || self.queryDetailsView.text == "Please Enter Query Details".localiz(){
             DispatchQueue.main.async{
 //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
 //                vc!.delegate = self

@@ -167,8 +167,6 @@
 "Sources" = "উৎস";
 "Status" = "ಸ್ಥಿತಿ";
 
-"OffersAndPromotions" = "Offers and promotions";
-"Description" = "Description";
 
 
 "Fromdate" = "From Date";
@@ -177,3 +175,12 @@
 "Filter_by_Status" = "Filter By Status";
 "Clear_all" = "Clear all";
 "Apply" = "Apply";
+
+
+"OffersAndPromotions" = "ಕೊಡುಗೆಗಳು ಮತ್ತು ಪ್ರಚಾರಗಳು";
+
+
+
+"Description" = "ವಿವರಣೆ";
+
+

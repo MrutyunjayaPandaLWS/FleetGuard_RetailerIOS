@@ -166,8 +166,7 @@
 "Sources" = "మూలం";
 "Status" = " హోదా";
 
-"OffersAndPromotions" = "Offers and promotions";
-"Description" = "Description";
+
 
 "Fromdate" = "From Date";
 "Todate" = "To Date";
@@ -175,3 +174,9 @@
 "Filter_by_Status" = "Filter By Status";
 "Clear_all" = "Clear all";
 "Apply" = "Apply";
+
+"OffersAndPromotions" = "ఆఫర్లు మరియు ప్రమోషన్లు";
+"Description" = "వివరణ";
+
+
+
