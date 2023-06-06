@@ -10,13 +10,17 @@ import ImageSlideshow
 import SlideMenuControllerSwift
 import Kingfisher
 import LanguageManager_iOS
+import Alamofire
+import Lottie
 
 class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     func didtappedLanguageBtn(item: LanguageVC) {
         self.localization()
     }
     
-
+    @IBOutlet var underMaintananceView: LottieAnimationView!
+    
+    @IBOutlet var maintananceView: UIView!
     @IBOutlet weak var nodataFoundLbl: UILabel!
     @IBOutlet weak var promotionBtn: UIButton!
     //    @IBOutlet weak var offersandPromLbl: UILabel!
@@ -54,6 +58,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     var categoryItemArray = ["Filters", "Coolant & Chemicals", "Center Bearing", "Break Liner"]
     var categoryImageArray = ["OUTLINE", "OUTLINE", "OUTLINE","OUTLINE"]
     var dashboardAarray = [ObjCustomerDashboardList]()
+    private var animationView: LottieAnimationView?
     
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = ""{
@@ -75,6 +80,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
         self.VM.VC = self
         nodataFoundLbl.isHidden = true
         nodataFoundLbl.text = "noDataFound".localiz()
+        self.maintananceView.isHidden = true
         dashboardApi()
         print(deviceID,"kjslk")
         self.emptyImageView.isHidden = true
@@ -100,6 +106,8 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        maintenanceAPI()
         slideMenuController()?.changeLeftViewWidth(self.view.frame.size.width * 0.8)
         SlideMenuOptions.contentViewScale = 1
         self.tokendata()
@@ -117,6 +125,20 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
         
     }
     
+    func playAnimation(){
+        animationView = .init(name: "94350-gears-lottie-animation")
+        animationView!.frame = underMaintananceView.bounds
+          // 3. Set animation content mode
+        animationView!.contentMode = .scaleAspectFit
+          // 4. Set animation loop mode
+        animationView!.loopMode = .loop
+          // 5. Adjust animation speed
+        animationView!.animationSpeed = 1
+        underMaintananceView.addSubview(animationView!)
+          // 6. Play animation
+        animationView!.play()
+
+    }
     
     private func localization(){
         totalPtsBalance.text = "total_Point_bal".localiz()
@@ -375,6 +397,74 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
             task.resume()
         }
         }
+    
+    func maintenanceAPI(){
+        guard let url = URL(string: "http://appupdate.arokiait.com/updates/serviceget?pid=com.loyaltyWorks.Fleet-Guard-Samriddhi") else {return}
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let dataResponse = data,
+                  error == nil else {
+                print(error?.localizedDescription ?? "Response Error")
+                return }
+            do{
+                //here dataResponse received from a network request
+                let jsonResponse = try JSONSerialization.jsonObject(with:dataResponse, options: [])
+                print(jsonResponse)
+                let isMaintenanceValue = ((jsonResponse as AnyObject).value(forKeyPath: "Result.is_maintenance") as? String)
+                let forceupdatevalue = ((jsonResponse as AnyObject).value(forKeyPath: "Result.version_number") as? String)
+                print(forceupdatevalue)
+                if isMaintenanceValue == "1"{
+                    print(isMaintenanceValue)
+                    DispatchQueue.main.async {
+                        self.maintananceView.isHidden = false
+                        self.playAnimation()
+
+                    }
+                }else if isMaintenanceValue == "0"{
+                    self.tokendata()
+                    self.animationView?.stop()
+                }
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
+    }
+    
+    func isUpdateAvailable() {
+        let bundleId = Bundle.main.infoDictionary!["CFBundleIdentifier"] as! String
+        print(bundleId)
+        Alamofire.request("https://itunes.apple.com/in/lookup?bundleId=\(bundleId)").responseJSON { response in
+            if let json = response.result.value as? NSDictionary, let results = json["results"] as? NSArray, let entry = results.firstObject as? NSDictionary, let appStoreVersion = entry["version"] as? String,let appstoreid = entry["trackId"], let trackUrl = entry["trackViewUrl"], let installedVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                let installed = Int(installedVersion.replacingOccurrences(of: ".", with: "")) ?? 0
+                print(installed)
+                let appStore = Int(appStoreVersion.replacingOccurrences(of: ".", with: "")) ?? 0
+                print(appStore)
+                print(appstoreid)
+                if appStore>installed {
+                        let alertController = UIAlertController(title: "New update Available!", message: "Update is available to download. Downloading the latest update you will get the latest features, improvements and bug fixes of Fleet Guard APP", preferredStyle: .alert)
+
+                        // Create the actions
+                        let okAction = UIAlertAction(title: "Update Now", style: UIAlertAction.Style.default) {
+                            UIAlertAction in
+                            UIApplication.shared.openURL(NSURL(string: "\(trackUrl)")! as URL)
+
+                        }
+                        //                     Add the actions
+                        alertController.addAction(okAction)
+                        // Present the controller
+                        self.present(alertController, animated: true, completion: nil)
+
+                }else{
+                    print("no updates")
+
+                }
+            }
+        }
+    }
+    
+    
+    
+    
 }
 extension FG_DashBoardVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

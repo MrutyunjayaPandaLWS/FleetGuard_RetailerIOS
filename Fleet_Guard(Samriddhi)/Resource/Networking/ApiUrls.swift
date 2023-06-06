@@ -63,13 +63,7 @@ let MerchantUserName = "FleedguardLive"
 let username2 = "FleetGuardUser"
 let password2 = "fl@ert#$%Gu@#d"
 let grant_type2 = "password"
-//let PROMO_IMG1 = "https://fgliveserv.loyltwo3ks.com/"
-//let Promo_ImageData = "http://fleetguarddemo.loyltwo3ks.com/"
-//let imageBaseURL = "https://fgliveserv.loyltwo3ks.com/UploadFiles/ProductManager/ProductImages/"
-//let product_Image_Url = "https://fglivebridge.samriddhi.in/FGimages/FG_SFTPCWR_Data/"
 
-
-//grant_type=password&UserName=FleetGuardUser&Password=fl@ert#$%Gu@#d
 
 
 

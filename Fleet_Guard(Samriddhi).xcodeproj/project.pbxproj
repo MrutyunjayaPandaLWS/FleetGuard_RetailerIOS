@@ -53,6 +53,7 @@
 		2580EFF529A6437B0097A50D /* FG_SubmitNewQueryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580EFF429A6437B0097A50D /* FG_SubmitNewQueryVM.swift */; };
 		2580EFF829A646BC0097A50D /* SubmitNewQueryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580EFF729A646BC0097A50D /* SubmitNewQueryModels.swift */; };
 		2580EFFB29A651F60097A50D /* DD_QueryListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580EFFA29A651F60097A50D /* DD_QueryListVM.swift */; };
+		25812DDC2A2F69C8008BB3E7 /* 94350-gears-lottie-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 25812DDB2A2F69C8008BB3E7 /* 94350-gears-lottie-animation.json */; };
 		2585AE0929ADFEB700E745C7 /* RegistrationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2585AE0829ADFEB700E745C7 /* RegistrationModels.swift */; };
 		2585AE0C29ADFF0F00E745C7 /* RegistrationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2585AE0B29ADFF0F00E745C7 /* RegistrationVM.swift */; };
 		2585AE1529AE380000E745C7 /* LstCustomerCartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2585AE1229AE37FE00E745C7 /* LstCustomerCartApi.swift */; };
@@ -417,6 +418,7 @@
 		2580EFF429A6437B0097A50D /* FG_SubmitNewQueryVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FG_SubmitNewQueryVM.swift; sourceTree = "<group>"; };
 		2580EFF729A646BC0097A50D /* SubmitNewQueryModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitNewQueryModels.swift; sourceTree = "<group>"; };
 		2580EFFA29A651F60097A50D /* DD_QueryListVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DD_QueryListVM.swift; sourceTree = "<group>"; };
+		25812DDB2A2F69C8008BB3E7 /* 94350-gears-lottie-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "94350-gears-lottie-animation.json"; sourceTree = "<group>"; };
 		2585AE0829ADFEB700E745C7 /* RegistrationModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationModels.swift; sourceTree = "<group>"; };
 		2585AE0B29ADFF0F00E745C7 /* RegistrationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVM.swift; sourceTree = "<group>"; };
 		2585AE1229AE37FE00E745C7 /* LstCustomerCartApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LstCustomerCartApi.swift; sourceTree = "<group>"; };
@@ -1690,6 +1692,7 @@
 		84068DA1297664B300D4360F /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				25812DDB2A2F69C8008BB3E7 /* 94350-gears-lottie-animation.json */,
 				84068DA2297664C800D4360F /* lf30_editor_qd1wdceq.json */,
 				8445026E2A0F72A100A6D3D4 /* lf30_editor_jh47f7lt.json */,
 			);
@@ -2740,6 +2743,7 @@
 				84ABAE932A2A086E00200F39 /* fleetguard-retailer-T&C-Eng.html in Resources */,
 				84ABAE852A2A086E00200F39 /* fg-retailer-about-Bengali.html in Resources */,
 				84C1E40329758A6D00D188C5 /* Main.storyboard in Resources */,
+				25812DDC2A2F69C8008BB3E7 /* 94350-gears-lottie-animation.json in Resources */,
 				8445026C2A0F706100A6D3D4 /* HistoryNotificationsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3177,9 +3181,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
@@ -3194,6 +3200,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi.NotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Fleet-Guard-Samriddhi-Notification-AppStore";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -3205,9 +3212,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
@@ -3222,6 +3231,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi.NotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Fleet-Guard-Samriddhi-Notification-AppStore";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -3354,11 +3364,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fleet_Guard(Samriddhi)/Fleet_Guard(Samriddhi).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fleet_Guard(Samriddhi)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "FFPL SAMRIDDHI";
 				INFOPLIST_KEY_NSCameraUsageDescription = "FleetGuard Need to Access the camera to upload profile Image and Customer support";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "FleetGuard Need to Access the Photo Library to upload profile Image  and Customer support";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -3375,6 +3388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "FleetGuardSamriddhi-AppStore";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3390,11 +3404,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Fleet_Guard(Samriddhi)/Fleet_Guard(Samriddhi).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fleet_Guard(Samriddhi)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "FFPL SAMRIDDHI";
 				INFOPLIST_KEY_NSCameraUsageDescription = "FleetGuard Need to Access the camera to upload profile Image and Customer support";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "FleetGuard Need to Access the Photo Library to upload profile Image  and Customer support";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -3411,6 +3428,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "FleetGuardSamriddhi-AppStore";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

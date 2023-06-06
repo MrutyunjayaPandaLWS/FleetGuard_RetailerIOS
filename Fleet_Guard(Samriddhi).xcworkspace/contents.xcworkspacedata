@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Fleet_Guard(Samriddhi).xcodeproj">
+      location = "group:/Users/arokia-m3/Documents/LWS Projects/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi).xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

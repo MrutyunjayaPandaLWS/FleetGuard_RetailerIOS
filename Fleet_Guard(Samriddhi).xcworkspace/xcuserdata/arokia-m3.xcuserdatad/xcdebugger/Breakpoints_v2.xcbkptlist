@@ -30,9 +30,9 @@
             filePath = "Fleet_Guard(Samriddhi)/View/DashBoard/FG_DashBoardVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
-            landmarkName = "pointsAPI()"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "redemptionCatalogueBtn(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,246 +62,41 @@
             filePath = "Fleet_Guard(Samriddhi)/View/Login OTP/FG_LoginOTPVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "OtpApi()"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "submitButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E57981EE-28AF-4D5C-9C2D-6BF34AE8010F"
+            uuid = "24952B85-FBFE-45DC-9A12-1F5F0E22A225"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/View/Login/FG_LoginVC.swift"
+            filePath = "Fleet_Guard(Samriddhi)/View/Login OTP/FG_LoginOTPVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "submitButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5A2EDD8B-2C9A-41CA-A592-58169C312512"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fleet_Guard(Samriddhi)/View/Login OTP/FG_LoginOTPVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E2830FFF-E0E0-45EC-94D0-23BD3A431F3F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/Resource/Delegate/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C01C1AFB-4BCF-4A0B-81B2-16D4ABE875B6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/Resource/Delegate/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "27FBFE76-E652-4907-81D9-06EAB195EF49"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/Resource/Delegate/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7B3D82A0-B257-4E11-8E47-4109358133B6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/Resource/Delegate/AppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "application(_:didRegisterForRemoteNotificationsWithDeviceToken:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7B3D82A0-B257-4E11-8E47-4109358133B6 - f6d25269e886ec38"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Fleet_Guard_Samriddhi_.AppDelegate.application(_: __C.UIApplication, didRegisterForRemoteNotificationsWithDeviceToken: Foundation.Data) -&gt; ()"
-                  moduleName = "Fleet_Guard(Samriddhi)"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Delegate/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "211">
-               </Location>
-               <Location
-                  uuid = "7B3D82A0-B257-4E11-8E47-4109358133B6 - a5e87a00447e5767"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Fleet_Guard_Samriddhi_.AppDelegate.application(_: __C.UIApplication, didRegisterForRemoteNotificationsWithDeviceToken: Foundation.Data) -&gt; ()"
-                  moduleName = "Fleet_Guard(Samriddhi)"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Delegate/AppDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "163">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4B83677A-F9B3-47A7-BF86-36BD58C8FDD7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/Resource/Delegate/SceneDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "SceneDelegate"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "4B83677A-F9B3-47A7-BF86-36BD58C8FDD7 - 4d8ae1da73a0279a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Fleet_Guard_Samriddhi_.SceneDelegate.slider.getter : Swift.Optional&lt;SlideMenuControllerSwift.SlideMenuController&gt;"
-                  moduleName = "Fleet_Guard(Samriddhi)"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Delegate/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "94">
-               </Location>
-               <Location
-                  uuid = "4B83677A-F9B3-47A7-BF86-36BD58C8FDD7 - bfb0959b8871638e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Fleet_Guard_Samriddhi_.SceneDelegate.slider.setter : Swift.Optional&lt;SlideMenuControllerSwift.SlideMenuController&gt;"
-                  moduleName = "Fleet_Guard(Samriddhi)"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Delegate/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "132">
-               </Location>
-               <Location
-                  uuid = "4B83677A-F9B3-47A7-BF86-36BD58C8FDD7 - 6df6c5f0be19869f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Fleet_Guard_Samriddhi_.SceneDelegate.slider.modify : Swift.Optional&lt;SlideMenuControllerSwift.SlideMenuController&gt;"
-                  moduleName = "Fleet_Guard(Samriddhi)"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Delegate/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "0">
-               </Location>
-               <Location
-                  uuid = "4B83677A-F9B3-47A7-BF86-36BD58C8FDD7 - 888371b62a2d2b30"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Fleet_Guard_Samriddhi_.SceneDelegate.slider.modify : Swift.Optional&lt;SlideMenuControllerSwift.SlideMenuController&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Fleet_Guard(Samriddhi)"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Delegate/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "15">
-               </Location>
-               <Location
-                  uuid = "4B83677A-F9B3-47A7-BF86-36BD58C8FDD7 - 720b729ba5f47d55"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Fleet_Guard_Samriddhi_.SceneDelegate.init() -&gt; Fleet_Guard_Samriddhi_.SceneDelegate"
-                  moduleName = "Fleet_Guard(Samriddhi)"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arokia-m3/Documents/LWS%20Projects/FleetGuard_RetailerIOS/Fleet_Guard(Samriddhi)/Resource/Delegate/SceneDelegate.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "197">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E9827084-2C01-40C2-B773-B719D2B386DE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/Resource/Delegate/SceneDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "setHomeAsRootViewController()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6C651D96-A711-4B6C-AF7A-9B7D89F65460"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fleet_Guard(Samriddhi)/Resource/Delegate/SceneDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "setInitialViewAsRootViewController()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
