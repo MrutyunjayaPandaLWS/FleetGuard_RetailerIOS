@@ -161,24 +161,35 @@
 "Points_Earned" = "পয়েন্ট অর্জিত";
 "Balance" = "বালা এনসি";
 "View" = "দেখুন";
-
-
 "OrderDate" = "অর্ডারের তারিখ";
 "Sources" = "উৎস";
 "Status" = "অবস্থা";
-
-
-
-
-"Fromdate" = "From Date";
-"Todate" = "To Date";
-"Filter" = "Filter";
-"Filter_by_Status" = "Filter By Status";
-"Clear_all" = "Clear all";
-"Apply" = "Apply";
-
+"Fromdate" = "তারিখ হইতে";
+"Todate" = "এখন পর্যন্ত";
+"Filter" = "ছাঁকনি";
+"Filter_by_Status" = "অবস্থা দ্বারা ফিল্টার";
+"Clear_all" = "সব পরিষ্কার করে দাও";
+"Apply" = "আবেদন";
 "OffersAndPromotions" = "অফার এবং প্রচার";
 "Description" = "বর্ণনা";
 
 
+"Select date or filter status or both" = "তারিখ বা ফিল্টার স্ট্যাটাস বা উভয় নির্বাচন করুন";
+"Select To Date" = "তারিখ নির্বাচন করুন";
+"Select From Date" = "তারিখ থেকে নির্বাচন করুন";
+"ToDate should be lower than FromDate" = "এখন পর্যন্ত তারিখ হইতে এর চেয়ে কম হওয়া উচিত";
+"Please Enter Query Details" = "দয়া করে ক্যোয়ারী বিবরণ লিখুন";
+"Category" = "শ্রেণী";
+"Order Status" = "অর্ডারের অবস্থা";
 
+
+"New Range Addition" = "নতুন পরিসর সংযোজন";
+"Counter Gap" = "কাউন্টার গ্যাপ";
+"Market Gap" =  "মার্কেট গ্যাপ";
+"Search by part no/ cross reference" = "অংশ নং/ ক্রস রেফারেন্স দ্বারা অনুসন্ধান করুন";
+"Search by product / description name" = "পণ্য / বর্ণনার নাম দ্বারা অনুসন্ধান করুন";
+"Please select Segment value" = "দয়া করে সেগমেন্ট মান নির্বাচন করুন";
+"Please select OME value" = "অনুগ্রহ করে OME মান নির্বাচন করুন";
+"Please select Model value" =  "দয়া করে মডেল মান নির্বাচন করুন";
+"Product Image" =  "পণ্যের ছবি";
+"Maximum field should be higher then Minimum field" = "সর্বাধিক ক্ষেত্রটি সর্বনিম্ন ক্ষেত্রের চেয়ে বেশি হওয়া উচিত";

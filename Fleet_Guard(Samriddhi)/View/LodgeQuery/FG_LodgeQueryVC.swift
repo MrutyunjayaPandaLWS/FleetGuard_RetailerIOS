@@ -254,17 +254,17 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         
     }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz(){
         
-        self.view.makeToast("Select To Date", duration: 2.0, position: .center)
+        self.view.makeToast("Select To Date".localiz(), duration: 2.0, position: .center)
         
     }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz(){
         
-        self.view.makeToast("Select From Date", duration: 2.0, position: .center)
+        self.view.makeToast("Select From Date".localiz(), duration: 2.0, position: .center)
         
     }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz() && self.status == "-1" || self.status != "-1"{
         
         if selectedToDate < selectedFromDate{
             
-            self.view.makeToast("ToDate should be lower than FromDate", duration: 2.0, position: .center)
+            self.view.makeToast("ToDate should be lower than FromDate".localiz(), duration: 2.0, position: .center)
             
         }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status != "-1"{
             

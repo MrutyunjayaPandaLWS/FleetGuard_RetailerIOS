@@ -175,13 +175,21 @@
 "Clear_all" = "Clear all";
 "Apply" = "Apply";
 "Select date or filter status or both" = "Select date or filter status or both";
- 
 "Select To Date" = "Select To Date";
 "Select From Date" = "Select From Date";
 "ToDate should be lower than FromDate" = "ToDate should be lower than FromDate";
-
 "Please Enter Query Details" = "Please Enter Query Details";
+"Category" = "Category";
+"Order Status" = "Order Status";
 
 
-
-
+"New Range Addition" = "New Range Addition";
+"Counter Gap" = "Counter Gap";
+"Market Gap" = "Market Gap";
+"Search by part no/ cross reference" = "Search by part no/ cross reference";
+"Search by product / description name" = "Search by product / description name";
+"Please select Segment value" = "Please select Segment value";
+"Please select OME value" = "Please select OME value";
+"Please select Model value" = "Please select Model value";
+"Product Image" = "Product Image";
+"Maximum field should be higher then Minimum field" = "Maximum field should be higher then Minimum field";

@@ -39,7 +39,9 @@ class FG_TabbarVc: UITabBarController {
             let rootView = self.viewControllers![self.selectedIndex] as! UINavigationController
             rootView.popToRootViewController(animated: false)
         }else if self.selectedIndex == 2{
-            self.tabBarController?.selectedIndex = selectedIndex
+            let rootView = self.viewControllers![self.selectedIndex] as! UINavigationController
+            rootView.popToRootViewController(animated: false)
+//            self.tabBarController?.selectedIndex = selectedIndex
         }
     }
 

@@ -74,7 +74,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
         //self.searchTF.delegate = self
         productCatalgoueTableView.delegate = self
         productCatalgoueTableView.dataSource = self
-        searchTF.placeholder = "Search by part no/ cross reference"
+        searchTF.placeholder = "Search by part no/ cross reference".localiz()
         self.subView.clipsToBounds = true
         self.subView.layer.cornerRadius = 20
         self.subView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
@@ -85,9 +85,15 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        localization()
         self.VM.productListArray.removeAll()
         self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
         self.myCartApi()
+    }
+    
+    private func localization(){
+        headerText.text = "product_Catalogoue".localiz()
+        
     }
     
     

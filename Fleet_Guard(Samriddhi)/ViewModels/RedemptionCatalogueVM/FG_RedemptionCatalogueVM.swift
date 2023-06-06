@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_RedemptionCatalogueVM: popUpDelegate{
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
@@ -115,7 +116,7 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
                             DispatchQueue.main.async{
                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                                vc!.delegate = self
-                                vc!.descriptionInfo = "Product added into cart successfully."
+                                vc!.descriptionInfo = "added_to_cart_success_message".localiz()
                                vc!.modalPresentationStyle = .overCurrentContext
                                vc!.modalTransitionStyle = .crossDissolve
                                 self.VC?.present(vc!, animated: true, completion: nil)
@@ -130,7 +131,7 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
 //                               vc!.modalTransitionStyle = .crossDissolve
 //                                self.VC?.present(vc!, animated: true, completion: nil)
                                 
-                                self.VC?.view.makeToast("Something went wrong! Try againg Later...", duration: 4.0, position: .bottom)
+                                self.VC?.view.makeToast("Something_went_wrong_error".localiz(), duration: 4.0, position: .bottom)
                             }
                         }
                     }

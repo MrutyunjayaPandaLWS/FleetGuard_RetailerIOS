@@ -87,6 +87,8 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
         super.viewDidLoad()
         self.VM.VC = self
         self.noDataFoundLbl.text = "noDataFound".localiz()
+        self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+        self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
         self.noDataFoundLbl.isHidden = true
         myRedemptionTableView.delegate = self
         myRedemptionTableView.dataSource = self
@@ -125,6 +127,10 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     
     private func localization(){
         headerText.text = "My_Redemption".localiz()
+        self.filterTitle.text = "Filter".localiz()
+        self.filterByStatusLbl.text = "Filter_by_Status".localiz()
+        self.clearButton.setTitle("Clear_all".localiz(), for: .normal)
+        self.applyBtn.setTitle("Apply".localiz(), for: .normal)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -132,8 +138,8 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
         self.status = ""
         self.collectionViewCatagory = ""
         self.collectionViewDataNumber = "-1"
-        self.fromDateBtn.setTitle("From Date", for: .normal)
-        self.toDateBtn.setTitle("To Date", for: .normal)
+        self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+        self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
         self.myRedemptionListing()
         collectionView.reloadData()
         self.filterShadowView.isHidden = true
@@ -236,27 +242,27 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
         print(selectedToDate,"lskdjsldm")
         
         
-        if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.collectionViewDataNumber == "-1"{
-            self.view.makeToast("Select Date Range or Status or both", duration: 2.0, position: .center)
-        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.collectionViewDataNumber != "-1"{
+        if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.collectionViewDataNumber == "-1"{
+            self.view.makeToast("Select date or filter status or both".localiz(), duration: 2.0, position: .center)
+        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.collectionViewDataNumber != "-1"{
             
             self.myRedemptionListing()
             self.filterShadowView.isHidden = true
             
-        }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle == "To Date"{
+        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz(){
             
-            self.view.makeToast("Select ToDate", duration: 2.0, position: .center)
+            self.view.makeToast("Select To Date".localiz(), duration: 2.0, position: .center)
             
-        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle != "To Date"{
+        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz(){
             
-            self.view.makeToast("Select From Date", duration: 2.0, position: .center)
+            self.view.makeToast("Select From Date".localiz(), duration: 2.0, position: .center)
             
-        }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle != "To Date" && self.collectionViewDataNumber == "-1" || self.collectionViewDataNumber != "-1"{
+        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz() && self.collectionViewDataNumber == "-1" || self.collectionViewDataNumber != "-1"{
             
             if selectedToDate < selectedFromDate{
                 
-                self.view.makeToast("To Date should be smallar than From Date", duration: 2.0, position: .center)
-            }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.collectionViewDataNumber != "-1"{
+                self.view.makeToast("ToDate should be lower than FromDate".localiz(), duration: 2.0, position: .center)
+            }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.collectionViewDataNumber != "-1"{
                 
                 self.myRedemptionListing()
                 self.filterShadowView.isHidden = true
@@ -274,8 +280,8 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
         self.status = ""
         self.collectionViewCatagory = ""
         self.collectionViewDataNumber = "-1"
-        self.fromDateBtn.setTitle("From Date", for: .normal)
-        self.toDateBtn.setTitle("To Date", for: .normal)
+        self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+        self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
         self.myRedemptionListing()
         collectionView.reloadData()
         self.filterShadowView.isHidden = true

@@ -7,12 +7,20 @@
 
 import UIKit
 import Kingfisher
+import LanguageManager_iOS
 
 
 class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
     
 
+    @IBOutlet weak var addmorePartnoBtn: UIButton!
+    @IBOutlet weak var orderNowBtn: UIButton!
+    @IBOutlet weak var dapTitle: UILabel!
+    @IBOutlet weak var mrpTitle: UILabel!
+    @IBOutlet weak var shortDescriptionTitle: UILabel!
+    @IBOutlet weak var partNoTitlelbl: UILabel!
+    @IBOutlet weak var headerLbl: UILabel!
     @IBOutlet weak var cartCountLbl: UILabel!
     @IBOutlet weak var productNameLbl: UILabel!
     @IBOutlet weak var orderNowStackView: UIStackView!
@@ -70,11 +78,16 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
     override func viewWillAppear(_ animated: Bool) {
         self.myCartApi()
       //  self.productListApi()
+        localizatiuon()
         productImage.kf.setImage(with: URL(string: "\(productImageURL)"),placeholder: UIImage(named: "Image 3"))
         self.qtyTF.isEnabled = false
         
     }
     
+    private func localizatiuon(){
+        headerLbl.text = "Product_Catalogue_Details".localiz()
+        shortDescriptionTitle.text = "Short Desription:"
+    }
 
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

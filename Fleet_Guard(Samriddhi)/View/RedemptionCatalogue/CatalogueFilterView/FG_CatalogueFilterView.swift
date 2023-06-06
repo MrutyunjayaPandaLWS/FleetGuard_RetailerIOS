@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 protocol sendProductDelegate {
     func prodiuctDetails(_ vc:FG_CatalogueFilterView)
@@ -13,6 +14,10 @@ protocol sendProductDelegate {
 
 class FG_CatalogueFilterView: BaseViewController {
     
+    @IBOutlet weak var choosePointRangeLbl: UILabel!
+    @IBOutlet weak var applyBtn: UIButton!
+    @IBOutlet weak var clearAllBtn: UIButton!
+    @IBOutlet weak var filterTitle: UILabel!
     @IBOutlet weak var categoryListTopConstraints: NSLayoutConstraint!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var subView: UIView!
@@ -62,8 +67,14 @@ class FG_CatalogueFilterView: BaseViewController {
         mainView.clipsToBounds = true
         mainView.layer.cornerRadius = 20
         mainView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
+        localization()
         self.redemptionCategoryList()
+    }
+    
+    private func localization(){
+        filterTitle.text = "Filter".localiz()
+        clearAllBtn.setTitle("Clear_all".localiz(), for: .normal)
+        applyBtn.setTitle("Apply".localiz(), for: .normal)
     }
     
 //    {

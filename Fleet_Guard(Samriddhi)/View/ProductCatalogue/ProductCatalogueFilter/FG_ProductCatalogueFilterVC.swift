@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 protocol sendProductFilterDelegate {
     func sendProductFilter(_ vc: FG_ProductCatalogueFilterVC)
@@ -14,6 +15,9 @@ protocol sendProductFilterDelegate {
 
 class FG_ProductCatalogueFilterVC: BaseViewController {
 
+    @IBOutlet weak var applyBtn: UIButton!
+    @IBOutlet weak var clearAllBtn: UIButton!
+    @IBOutlet weak var filterTitle: UILabel!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var subView: UIView!
     @IBOutlet weak var categoryTypeTableView: UITableView!
@@ -71,8 +75,15 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        localization()
         self.filterArrayAPI()
         self.categoryListCollectionView.reloadData()
+    }
+    
+    private func localization(){
+        filterTitle.text = "Filter".localiz()
+        clearAllBtn.setTitle("Clear_all".localiz(), for: .normal)
+        applyBtn.setTitle("Apply".localiz(), for: .normal)
     }
     
     @IBAction func closeBtn(_ sender: Any) {
@@ -97,9 +108,9 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
         print(self.selectedArrayDataID4)
         
         if self.selectedArrayDataID == 0 {
-            self.view.makeToast("Please select Segment value", duration: 3.0, position: .bottom)
+            self.view.makeToast("Please select Segment value".localiz(), duration: 3.0, position: .bottom)
         }else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 == 0 && self.selectedArrayDataID3 == 0 && self.selectedArrayDataID4 == 0{
-            self.view.makeToast("Please select OME value", duration: 3.0, position: .bottom)
+            self.view.makeToast("Please select OME value".localiz(), duration: 3.0, position: .bottom)
         }
 //        else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 != 0 && self.selectedArrayDataID3 == 0 && self.selectedArrayDataID4 == 0{
 //            self.view.makeToast("Please select Model value", duration: 3.0, position: .bottom)
@@ -278,7 +289,7 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
         }else if self.catagoryName == "OEM" {
             if selectedArrayDataID == 0{
                 //"Segment","OEM","Model","Product Catagory"
-                self.view.makeToast("Please select Segment value", duration: 3.0, position: .bottom)
+                self.view.makeToast("Please select Segment value".localiz(), duration: 3.0, position: .bottom)
             }else{
                 self.catagoryId = 0
                 self.catagoryId1 = 2
@@ -292,7 +303,7 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
             }
         }else if self.catagoryName == "Model"{
             if selectedArrayDataID2 == 0{
-                self.view.makeToast("Please select OEM value", duration: 3.0, position: .bottom)
+                self.view.makeToast("Please select OEM value".localiz(), duration: 3.0, position: .bottom)
             }else{
                 self.catagoryId = 0
                 self.catagoryId1 = 0
@@ -305,7 +316,7 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
             }
         }else if self.catagoryName == "Product Catagory"{
             if selectedArrayDataID3 == 0{
-                self.view.makeToast("Please select Model value", duration: 3.0, position: .bottom)
+                self.view.makeToast("Please select Model value".localiz(), duration: 3.0, position: .bottom)
             }else{
                 self.catagoryId = 0
                 self.catagoryId1 = 0

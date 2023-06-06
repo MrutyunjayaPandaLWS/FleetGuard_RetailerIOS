@@ -38,6 +38,8 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
     }
     
 
+    @IBOutlet weak var filterByStatusLbl: UILabel!
+    @IBOutlet weak var filterTitle: UILabel!
     @IBOutlet weak var viewTitleLbl: UILabel!
     @IBOutlet weak var statusTitleLbl: UILabel!
     @IBOutlet weak var sourcesTitlelbl: UILabel!
@@ -101,6 +103,8 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
         self.orderHeaderStack.clipsToBounds = true
         orderHeaderStack.layer.cornerRadius = 15
         orderHeaderStack.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+        self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
     }
     
 //    override func viewWillDisappear(_ animated: Bool) {
@@ -128,6 +132,11 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
         sourcesTitlelbl.text = "Sources".localiz()
         orderDateTitle.text = "OrderDate".localiz()
         myOrderTitle.text = "My_Orders".localiz()
+        
+        self.filterTitle.text = "Filter".localiz()
+        self.filterByStatusLbl.text = "Filter_by_Status".localiz()
+        self.clearButton.setTitle("Clear_all".localiz(), for: .normal)
+        self.applyBtn.setTitle("Apply".localiz(), for: .normal)
         
     }
 
@@ -165,28 +174,28 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
 //        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
         self.VM.myOrderListingArray.removeAll()
         
-        if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.searchText == ""{
-            self.view.makeToast("Select date or filter status or both", duration: 2.0, position: .center)
-        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.searchText != ""{
+        if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.searchText == ""{
+            self.view.makeToast("Select date or filter status or both".localiz(), duration: 2.0, position: .center)
+        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.searchText != ""{
             
             self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
             self.filterShadowView.isHidden = true
             
-        }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle == "To Date"{
+        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz(){
             
-            self.view.makeToast("Select To Date", duration: 2.0, position: .center)
+            self.view.makeToast("Select To Date".localiz(), duration: 2.0, position: .center)
             
-        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle != "To Date"{
+        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz(){
             
-            self.view.makeToast("Select From Date", duration: 2.0, position: .center)
+            self.view.makeToast("Select From Date".localiz(), duration: 2.0, position: .center)
             
-        }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle != "To Date" && self.searchText == "" || self.searchText != ""{
+        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz() && self.searchText == "" || self.searchText != ""{
             
             if selectedToDate < selectedFromDate{
                 
-                self.view.makeToast("ToDate should be lower than FromDate", duration: 2.0, position: .center)
+                self.view.makeToast("ToDate should be lower than FromDate".localiz(), duration: 2.0, position: .center)
                 
-            }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.searchText != ""{
+            }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.searchText != ""{
                 
                 self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
                 self.filterShadowView.isHidden = true
@@ -207,8 +216,8 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
     @IBAction func clearbtn(_ sender: Any) {
         
         self.status = -1
-        self.fromDateBtn.setTitle("From Date", for: .normal)
-        self.toDateBtn.setTitle("To Date", for: .normal)
+        self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+        self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
         self.selectedFromDate = ""
         self.selectedToDate = ""
         selectedQueryTopicId = -1

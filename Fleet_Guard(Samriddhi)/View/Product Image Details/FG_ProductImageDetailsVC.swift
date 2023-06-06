@@ -29,7 +29,7 @@ class FG_ProductImageDetailsVC: BaseViewController,UIScrollViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        headerNameLbl.text = headerName
+        headerNameLbl.text = headerName.localiz()
         
     }
 

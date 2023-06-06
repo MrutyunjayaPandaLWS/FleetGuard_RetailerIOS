@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_NewAdditionVC: BaseViewController {
 
@@ -28,19 +29,25 @@ class FG_NewAdditionVC: BaseViewController {
         let titleTextAttributes1 = [NSAttributedString.Key.foregroundColor: UIColor.white]
         segmentController.setTitleTextAttributes(titleTextAttributes1, for: .selected)
         segmentController.setTitleTextAttributes(titleTextAttributes, for: .normal)
-        
+        segmentController.setTitle("Counter Gap".localiz(), forSegmentAt: 0)
+        segmentController.setTitle("Market Gap".localiz(), forSegmentAt: 1)
         self.container.segueIdentifierReceivedFromParent("first")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         myCartApi()
+        localization()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "container"{
             self.container = segue.destination as? ContainerViewController
         }
+    }
+    
+    private func localization(){
+        headerText.text = "New Range Addition".localiz()
     }
     @IBAction func segmentedController(_ sender: Any) {
         if segmentController.selectedSegmentIndex == 0{

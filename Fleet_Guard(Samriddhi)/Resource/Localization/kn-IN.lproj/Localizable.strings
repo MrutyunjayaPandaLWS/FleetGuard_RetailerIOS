@@ -169,18 +169,32 @@
 
 
 
-"Fromdate" = "From Date";
-"Todate" = "To Date";
-"Filter" = "Filter";
-"Filter_by_Status" = "Filter By Status";
-"Clear_all" = "Clear all";
-"Apply" = "Apply";
-
-
+"Fromdate" = "ದಿನಾಂಕದಿಂದ";
+"Todate" = "ಇಲ್ಲಿಯವರೆಗೆ";
+"Filter" = "ಫಿಲ್ಟರ್";
+"Filter_by_Status" = "ಸ್ಥಿತಿಯ ಮೂಲಕ ಫಿಲ್ಟರ್ ಮಾಡಿ";
+"Clear_all" = "ಎಲ್ಲವನ್ನೂ ತೆಗೆ";
+"Apply" = "ಅನ್ವಯಿಸು";
 "OffersAndPromotions" = "ಕೊಡುಗೆಗಳು ಮತ್ತು ಪ್ರಚಾರಗಳು";
-
-
-
 "Description" = "ವಿವರಣೆ";
 
+"Select date or filter status or both" = "ದಿನಾಂಕ ಅಥವಾ ಫಿಲ್ಟರ್ ಸ್ಥಿತಿ ಅಥವಾ ಎರಡನ್ನೂ ಆಯ್ಕೆಮಾಡಿ";
+"Select To Date" = "ಸೆಲೆಕ್ಟ್ ಟು ಡೇಟ್";
+"Select From Date" = "ದಿನಾಂಕದಿಂದ ಆಯ್ಕೆಮಾಡಿ";
+"ToDate should be lower than FromDate" = "ಇಲ್ಲಿಯವರೆಗೆ ದಿನಾಂಕದಿಂದ ಗಿಂತ ಕಡಿಮೆ ಇರಬೇಕು";
+"Please Enter Query Details" = "ದಯವಿಟ್ಟು ಪ್ರಶ್ನೆ ವಿವರಗಳನ್ನು ನಮೂದಿಸಿ";
+"Category" = "ವರ್ಗ";
+"Order Status" = "ಆದೇಶ ಸ್ಥಿತಿ";
 
+
+"New Range Addition" =  "ಹೊಸ ಶ್ರೇಣಿಯ ಸೇರ್ಪಡೆ";
+"Counter Gap" = "ಕೌಂಟರ್ ಗ್ಯಾಪ್";
+"Market Gap" = "ಮಾರುಕಟ್ಟೆ ಅಂತರ";
+"Search by part no/ cross reference" =  "ಭಾಗ ಸಂಖ್ಯೆ/ ಅಡ್ಡ ಉಲ್ಲೇಖದ ಮೂಲಕ ಹುಡುಕಿ";
+"Search by product / description name" =  "ಉತ್ಪನ್ನ / ವಿವರಣೆಯ ಹೆಸರಿನ ಮೂಲಕ ಹುಡುಕಿ";
+"Please select Segment value" =  "ದಯವಿಟ್ಟು ಸೆಗ್ಮೆಂಟ್ ಮೌಲ್ಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
+"Please select OME value" =  "ದಯವಿಟ್ಟು OME ಮೌಲ್ಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
+"Please select Model value" =  "ದಯವಿಟ್ಟು ಮಾದರಿ ಮೌಲ್ಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
+"Product Image" =  "ಉತ್ಪನ್ನ ಚಿತ್ರ";
+"Maximum field should be higher then Minimum field" = "ಗರಿಷ್ಠ ಕ್ಷೇತ್ರವು ಕನಿಷ್ಟ ಕ್ಷೇತ್ರಕ್ಕಿಂತ ಹೆಚ್ಚಿರಬೇಕು";
+ 

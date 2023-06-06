@@ -59,8 +59,13 @@ class FG_MyRedemptionDetailsVC: BaseViewController, UITableViewDelegate, UITable
 
     private func localization(){
         self.VCtitle.text = "My_Redemption".localiz()
+        categoryNameLbl.text = "Category".localiz()
+        descriptionTitle.text = "Description".localiz()
+        termAndConditionTitle.text = "accept_Terms_Cond".localiz()
+        OrderStatusTitleLbl.text = "Order Status".localiz()
     }
     
+
     
     @IBAction func selectBackBtn(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)

@@ -128,6 +128,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
         addmoreRangeLbl.text  = "Add_More_Range".localiz()
         viewProductButton.setTitle("View_Products".localiz(), for: .normal)
         orderNowBtn.setTitle("Order_Now".localiz(), for: .normal)
+        redemptionCatalogueBtn.setTitle("Redeem_Now".localiz(), for: .normal)
         
     }
     

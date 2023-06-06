@@ -57,6 +57,10 @@ class FG_MarketGapVC: BaseViewController, MarketingGapDelegate {
         counterGap(startIndex: startindex)
     }
     
+    private func localization(){
+    
+    }
+    
     func counterGap(startIndex: Int){
         let parameters = [
             "ActionType": "16",

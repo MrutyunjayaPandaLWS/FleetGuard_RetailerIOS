@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Kingfisher
+import LanguageManager_iOS
 
 class FG_RedemptionDetailsVM{
     weak var VC: FG_MyRedemptionDetailsVC?
@@ -26,7 +27,7 @@ class FG_RedemptionDetailsVM{
                     self.redemptionDetails = result?.objCatalogueList ?? []
                     if self.redemptionDetails.count != 0{
                         DispatchQueue.main.async {
-                            self.VC?.categoryNameLbl.text = "Category : \(self.redemptionDetails[0].catogoryName ?? "_")"
+                            self.VC?.categoryNameLbl.text = "\("Category".localiz()) : \(self.redemptionDetails[0].catogoryName ?? "_")"
                             self.VC?.productName.text = "\(self.redemptionDetails[0].productName ?? "__")"
                             self.VC?.redemptionRefno.text = "\(self.redemptionDetails[0].redemptionRefno ?? "_")"
                             self.VC?.pointsBalLbl.text = "\(self.redemptionDetails[0].pointsRequired ?? 0)"

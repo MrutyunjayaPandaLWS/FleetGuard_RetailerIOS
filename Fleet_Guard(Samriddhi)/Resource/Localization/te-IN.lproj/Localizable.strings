@@ -168,15 +168,31 @@
 
 
 
-"Fromdate" = "From Date";
-"Todate" = "To Date";
-"Filter" = "Filter";
-"Filter_by_Status" = "Filter By Status";
-"Clear_all" = "Clear all";
-"Apply" = "Apply";
+"Fromdate" = "తేదీ నుంచి";
+"Todate" = "ఇప్పటి వరకు";
+"Filter" = "వడపోత";
+"Filter_by_Status" = "స్థితి ద్వారా ఫిల్టర్ చేయండి";
+"Clear_all" = "అన్నింటినీ క్లియర్ చేయండి ";
+"Apply" = "దరఖాస్తు";
 
 "OffersAndPromotions" = "ఆఫర్లు మరియు ప్రమోషన్లు";
 "Description" = "వివరణ";
 
+"Select date or filter status or both" = "తేదీ లేదా ఫిల్టర్ స్థితి లేదా రెండింటినీ ఎంచుకోండి";
+"Select To Date" = "తేదీని ఎంచుకోండి";
+"Select From Date" = "తేదీ నుండి ఎంచుకోండి";
+"ToDate should be lower than FromDate" = "ఈ తేదీ నుండి తేదీ కంటే తక్కువగా ఉండాలి";
+"Please Enter Query Details" = "దయచేసి ప్రశ్న వివరాలను నమోదు చేయండి";
+"Category" = "వర్గం";
+"Order Status" = "ఆర్డర్ స్థితి";
 
-
+"New Range Addition" = "కొత్త శ్రేణి జోడింపు";
+"Counter Gap" = "కౌంటర్ గ్యాప్";
+"Market Gap" =  "మార్కెట్ గ్యాప్";
+"Search by part no/ cross reference" = "పార్ట్ సంఖ్య/ క్రాస్ రిఫరెన్స్ ద్వారా శోధించండి";
+"Search by product / description name" =  "ఉత్పత్తి / వివరణ పేరు ద్వారా శోధించండి";
+"Please select Segment value" = "దయచేసి సెగ్మెంట్ విలువను ఎంచుకోండి";
+"Please select OME value" =  "దయచేసి OME విలువను ఎంచుకోండి";
+"Please select Model value" = "దయచేసి మోడల్ విలువను ఎంచుకోండి";
+"Product Image" =  "ఉత్పత్తి చిత్రం";
+"Maximum field should be higher then Minimum field" = "గరిష్ట ఫీల్డ్ కనిష్ట ఫీల్డ్ కంటే ఎక్కువగా ఉండాలి";

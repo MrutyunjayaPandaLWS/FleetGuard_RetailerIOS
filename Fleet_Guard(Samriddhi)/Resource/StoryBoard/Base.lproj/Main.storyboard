@@ -3659,13 +3659,13 @@
                                                         <rect key="frame" x="8" y="8" width="167.66666666666666" height="76"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BALANCE POINTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIu-ET-sgO">
-                                                                <rect key="frame" x="8" y="8.0000000000000018" width="151.66666666666666" height="18.666666666666671"/>
+                                                                <rect key="frame" x="8" y="8" width="151.66666666666666" height="19"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfv-Zo-8P8">
-                                                                <rect key="frame" x="10" y="29.666666666666657" width="147.66666666666666" height="20"/>
+                                                                <rect key="frame" x="10" y="30" width="147.66666666666666" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="MlU-3R-oiZ"/>
                                                                 </constraints>
@@ -3732,13 +3732,13 @@
                                                         <rect key="frame" x="8" y="8" width="167.33333333333334" height="76"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MILESTONE POINTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0Z-fG-Djh">
-                                                                <rect key="frame" x="8" y="8.0000000000000018" width="151.33333333333334" height="18.666666666666671"/>
+                                                                <rect key="frame" x="8" y="8" width="151.33333333333334" height="19"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMy-nM-wmt">
-                                                                <rect key="frame" x="10" y="29.666666666666657" width="147.33333333333334" height="20"/>
+                                                                <rect key="frame" x="10" y="30" width="147.33333333333334" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="D8e-sv-uAw"/>
                                                                 </constraints>
@@ -4101,7 +4101,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lodge Query" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AO2-eo-egv">
-                                        <rect key="frame" x="41.999999999999993" y="22" width="110.33333333333331" height="22.333333333333329"/>
+                                        <rect key="frame" x="42.000000000000007" y="22" width="106.66666666666669" height="22.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -4167,28 +4167,28 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yn3-t9-d5v">
-                                                            <rect key="frame" x="10" y="13.33333333333333" width="6.3333333333333321" height="18.666666666666671"/>
+                                                            <rect key="frame" x="10" y="13" width="4.6666666666666679" height="19"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Query Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ye-jQ-Yet">
-                                                            <rect key="frame" x="10" y="55" width="71" height="16.333333333333329"/>
+                                                            <rect key="frame" x="10" y="55" width="69.333333333333329" height="16.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUf-bB-sbW">
-                                                            <rect key="frame" x="10" y="77.333333333333329" width="6" height="17.666666666666671"/>
+                                                            <rect key="frame" x="10" y="77.666666666666671" width="4.3333333333333321" height="17.666666666666671"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                             <color key="textColor" red="0.1829453707" green="0.21425572039999999" blue="0.48237735030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JKl-RQ-hkC">
-                                                            <rect key="frame" x="278.33333333333331" y="119" width="90.666666666666686" height="15"/>
+                                                            <rect key="frame" x="275.33333333333331" y="119" width="93.666666666666686" height="15"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="9Zv-1s-pUi">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="90.666666666666671" height="15"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="15"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="xQK-Sn-pu3">
                                                                             <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
@@ -4198,7 +4198,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00/00/0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3os-Hu-pXm">
-                                                                            <rect key="frame" x="19" y="0.0" width="71.666666666666671" height="15"/>
+                                                                            <rect key="frame" x="19" y="0.0" width="74.666666666666671" height="15"/>
                                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -4354,7 +4354,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sr-Fi-g8W">
-                                                        <rect key="frame" x="20.000000000000004" y="21.333333333333314" width="33.333333333333343" height="17.666666666666671"/>
+                                                        <rect key="frame" x="19.999999999999996" y="21.333333333333314" width="33.666666666666657" height="17.666666666666671"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -4435,13 +4435,13 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter By Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IR-Bb-5r5">
-                                                <rect key="frame" x="12" y="119.99999999999999" width="95.666666666666671" height="16.333333333333329"/>
+                                                <rect key="frame" x="12" y="120.00000000000001" width="93.666666666666671" height="16.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                 <color key="textColor" red="0.1829453707" green="0.21425572039999999" blue="0.48237735030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="aYy-MY-stQ">
-                                                <rect key="frame" x="30" y="151.33333333333337" width="333" height="40"/>
+                                                <rect key="frame" x="30" y="151.66666666666663" width="333" height="40"/>
                                                 <subviews>
                                                     <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gns-dF-cty">
                                                         <rect key="frame" x="0.0" y="0.0" width="101" height="40"/>
@@ -4516,7 +4516,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="RWi-y5-c1t">
-                                                <rect key="frame" x="30" y="211.33333333333337" width="333" height="40"/>
+                                                <rect key="frame" x="30" y="211.66666666666663" width="333" height="40"/>
                                                 <subviews>
                                                     <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cof-W5-v66">
                                                         <rect key="frame" x="0.0" y="0.0" width="159" height="40"/>
@@ -4590,7 +4590,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="aVf-LX-4Lz">
-                                                <rect key="frame" x="40" y="266.33333333333337" width="313" height="40"/>
+                                                <rect key="frame" x="40" y="266.66666666666663" width="313" height="40"/>
                                                 <subviews>
                                                     <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iI-lm-7D4">
                                                         <rect key="frame" x="0.0" y="0.0" width="149" height="40"/>
@@ -7407,10 +7407,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="applyBtn" destination="JUZ-sk-W4r" id="Swj-sA-E6h"/>
                         <outlet property="categoryListCollectionView" destination="ux8-us-AHc" id="JJ8-AD-gbm"/>
                         <outlet property="categoryListTopConstraints" destination="yvm-JD-I2v" id="c20-Tt-6i8"/>
                         <outlet property="categoryTypeTableView" destination="VTu-kP-l5P" id="1vC-de-TO4"/>
+                        <outlet property="choosePointRangeLbl" destination="7Dl-Vd-9wC" id="rPE-WF-YDX"/>
                         <outlet property="choosePointView" destination="VgW-hs-CIp" id="O6y-xb-8uN"/>
+                        <outlet property="clearAllBtn" destination="Wsd-Mh-lyI" id="SPg-GL-3bl"/>
+                        <outlet property="filterTitle" destination="p2U-Na-jco" id="oI2-NY-3Of"/>
                         <outlet property="mainView" destination="1vE-vV-HTT" id="H7i-0c-KiF"/>
                         <outlet property="maximumValueTF" destination="tt2-nb-703" id="RCE-wE-1hQ"/>
                         <outlet property="minimumValueTF" destination="EAo-Cc-EhO" id="7kZ-rb-9NP"/>
@@ -11489,16 +11493,23 @@
                         <outlet property="addToCartBtn" destination="hLl-1i-rsB" id="PKN-v5-6at"/>
                         <outlet property="addToCartView" destination="3WN-6k-Xov" id="ooZ-qm-dgI"/>
                         <outlet property="addToDreamGfit" destination="plw-XU-Kmt" id="9Aq-Pe-0nm"/>
+                        <outlet property="addmorePartnoBtn" destination="lMD-RJ-Vfv" id="2jD-Jj-lgV"/>
                         <outlet property="cartCountLbl" destination="r0B-pR-uXX" id="fh0-KN-EhW"/>
+                        <outlet property="dapTitle" destination="lsj-3u-rdA" id="fQj-xt-Pab"/>
                         <outlet property="dapValue" destination="Rwi-Gm-aq5" id="kmf-wW-dvy"/>
+                        <outlet property="headerLbl" destination="rlo-rx-C53" id="qac-sj-CD7"/>
+                        <outlet property="mrpTitle" destination="iTT-Dy-2fb" id="Cez-Wg-SZ0"/>
                         <outlet property="mrpValue" destination="RsO-BV-Jde" id="5FY-ti-8F6"/>
+                        <outlet property="orderNowBtn" destination="cY3-fh-Qok" id="aME-FO-jPQ"/>
                         <outlet property="orderNowStackView" destination="Ei8-Wm-tjD" id="OM2-wV-CA0"/>
                         <outlet property="partNoLbl" destination="kH6-o9-ba5" id="3mk-ex-rgT"/>
+                        <outlet property="partNoTitlelbl" destination="4w9-Fo-Vyx" id="LMl-Hd-s6O"/>
                         <outlet property="productImage" destination="Xrm-sw-bQi" id="w0O-ov-BJw"/>
                         <outlet property="productNameLbl" destination="Tfl-Ho-ifH" id="EH4-sh-8TZ"/>
                         <outlet property="productQuantityView" destination="6GU-tg-wxP" id="mN9-5b-meX"/>
                         <outlet property="qtyTF" destination="4M7-N4-kv5" id="5No-fM-Eo6"/>
                         <outlet property="shortDescLbl" destination="w0H-dQ-TdX" id="dt4-Of-vOk"/>
+                        <outlet property="shortDescriptionTitle" destination="uY3-7f-sKM" id="xnB-jD-ght"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5W5-Rj-Y1y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -13711,8 +13722,10 @@
                         <outlet property="cancelledBtn" destination="mpK-fU-WXj" id="1sX-lB-2kO"/>
                         <outlet property="clearButton" destination="aeF-ip-1GH" id="em7-VE-Biv"/>
                         <outlet property="escalatedBtn" destination="iQb-8h-b9M" id="tuT-20-ecc"/>
+                        <outlet property="filterByStatusLbl" destination="htO-EO-uLd" id="a6z-IF-Q1k"/>
                         <outlet property="filterClickBTN" destination="R1B-sg-YQo" id="u3C-Aa-Lqq"/>
                         <outlet property="filterShadowView" destination="mYe-aX-Ql1" id="e9i-cA-kph"/>
+                        <outlet property="filterTitle" destination="bU7-ul-ryA" id="5JZ-cF-0rx"/>
                         <outlet property="filterView" destination="xpz-vg-cR2" id="bZQ-Tf-yuv"/>
                         <outlet property="fromDateBtn" destination="Yya-Tt-by4" id="23V-hn-pTM"/>
                         <outlet property="headerlbl" destination="dwc-WQ-zoO" id="bsd-Yt-Af9"/>
@@ -13733,7 +13746,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dpe-K8-Qcf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8440" y="1527"/>
+            <point key="canvasLocation" x="8439.6946564885493" y="1526.7605633802818"/>
         </scene>
         <!--CreatenewqueryVC-->
         <scene sceneID="2JY-J8-Hlj">
@@ -16517,8 +16530,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="applyBtn" destination="Zsh-IR-F1M" id="7Ut-Mm-A99"/>
                         <outlet property="categoryListCollectionView" destination="hAp-x5-IV2" id="M46-HV-bng"/>
                         <outlet property="categoryTypeTableView" destination="NHr-OU-lxK" id="M7w-Wy-vZF"/>
+                        <outlet property="clearAllBtn" destination="5Jw-bd-xdc" id="3sT-K8-RYK"/>
+                        <outlet property="filterTitle" destination="4p1-Cj-HeE" id="8pO-1F-Sw6"/>
                         <outlet property="mainView" destination="CYd-0U-j2Z" id="cw5-YV-oLh"/>
                         <outlet property="subView" destination="Zys-QR-rWc" id="yOE-IW-nK5"/>
                     </connections>
@@ -17023,7 +17039,7 @@
                                                         <rect key="frame" x="12" y="177" width="390" height="59.666666666666657"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Etx-k5-vHn">
-                                                                <rect key="frame" x="8" y="7.9999999999999982" width="177.66666666666666" height="21.333333333333329"/>
+                                                                <rect key="frame" x="8" y="7.9999999999999982" width="374" height="21.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="18"/>
                                                                 <color key="textColor" white="0.0" alpha="0.81000000000000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -17041,6 +17057,7 @@
                                                             <constraint firstItem="7ZG-fy-dbm" firstAttribute="leading" secondItem="30N-Vc-jUh" secondAttribute="leading" constant="8" id="L0g-WL-RhJ"/>
                                                             <constraint firstItem="Etx-k5-vHn" firstAttribute="top" secondItem="30N-Vc-jUh" secondAttribute="top" constant="8" id="SaU-EV-rTu"/>
                                                             <constraint firstItem="7ZG-fy-dbm" firstAttribute="top" secondItem="Etx-k5-vHn" secondAttribute="bottom" constant="8" id="WiW-px-IB9"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Etx-k5-vHn" secondAttribute="trailing" constant="8" id="cUS-ID-AZd"/>
                                                             <constraint firstAttribute="trailing" secondItem="7ZG-fy-dbm" secondAttribute="trailing" constant="8" id="eeJ-qV-w1j"/>
                                                             <constraint firstItem="Etx-k5-vHn" firstAttribute="leading" secondItem="30N-Vc-jUh" secondAttribute="leading" constant="8" id="hqs-DT-uKj"/>
                                                         </constraints>
@@ -17740,16 +17757,16 @@
             <size key="intrinsicContentSize" width="30" height="44"/>
         </designable>
         <designable name="EwF-XE-fGf">
-            <size key="intrinsicContentSize" width="102" height="30"/>
+            <size key="intrinsicContentSize" width="96" height="30"/>
         </designable>
         <designable name="QQ3-Sn-2Pg">
-            <size key="intrinsicContentSize" width="102" height="30"/>
+            <size key="intrinsicContentSize" width="96" height="30"/>
         </designable>
         <designable name="RPH-vP-cEN">
-            <size key="intrinsicContentSize" width="123" height="31"/>
+            <size key="intrinsicContentSize" width="120" height="31"/>
         </designable>
         <designable name="aNV-MH-g07">
-            <size key="intrinsicContentSize" width="82" height="31"/>
+            <size key="intrinsicContentSize" width="80" height="31"/>
         </designable>
         <designable name="eUp-wU-aqJ">
             <size key="intrinsicContentSize" width="57" height="34"/>
@@ -17758,7 +17775,7 @@
             <size key="intrinsicContentSize" width="49" height="30"/>
         </designable>
         <designable name="j4S-dZ-Gz5">
-            <size key="intrinsicContentSize" width="109" height="32"/>
+            <size key="intrinsicContentSize" width="105" height="32"/>
         </designable>
         <designable name="js5-sz-uug">
             <size key="intrinsicContentSize" width="48" height="32"/>

@@ -28,7 +28,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
             
             if self.miniValue != "" && self.maximiumValue != "" {
                 if maximiumValue <= miniValue{
-                    self.view.makeToast("Maximum field should be higher then Minimum field", duration: 3.0, position: .bottom)
+                    self.view.makeToast("Maximum field should be higher then Minimum field".localiz(), duration: 3.0, position: .bottom)
                 
                 }else{
                    // if minMax != "-"{
@@ -99,14 +99,14 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         self.VM.redemptionCatalougeListArray.removeAll()
         self.totalPts.text = "\(UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "0")"
         self.passBookNumber.text = self.loyaltyId
-        self.passBookLbl.text = "Retailer code"
         self.myCartListApi()
     }
 
     private func localization(){
         totalPtsBalanceLbl.text = "points".localiz()
-        passBookLbl.text = "passbook_number".localiz()
+        passBookLbl.text = "Retailer_code".localiz()
         headerTextLbl.text = "redemption_catalogue".localiz()
+        searchTF.placeholder = "Search by product / description name".localiz()
         
     }
     
@@ -258,7 +258,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
 //                vc!.modalPresentationStyle = .overFullScreen
 //                vc!.modalTransitionStyle = .crossDissolve
 //                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
+                self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
                 
             }
         }

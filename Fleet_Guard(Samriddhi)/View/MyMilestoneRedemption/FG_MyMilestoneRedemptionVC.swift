@@ -64,6 +64,8 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
         filterView.layer.cornerRadius = 20
         filterView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         self.backBtn.isHidden = false
+        self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+        self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -75,6 +77,10 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
     
     private func localization(){
         headerText.text = "My_Milestone_Redemption".localiz()
+        self.filterTitle.text = "Filter".localiz()
+        self.filterByStatusLbl.text = "Filter_by_Status".localiz()
+        self.clearAllBtn.setTitle("Clear_all".localiz(), for: .normal)
+        self.applyBtn.setTitle("Apply".localiz(), for: .normal)
         
     }
 //    override func viewWillDisappear(_ animated: Bool) {
@@ -151,28 +157,28 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
     }
     @IBAction func applyButton(_ sender: Any) {
 
-        if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.status == ""{
+        if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status == ""{
             self.view.makeToast("Select date or filter status or both", duration: 2.0, position: .center)
-        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.status != ""{
+        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status != ""{
             
             mileStoneRedemptionAPI()
             self.filterShadowView.isHidden = true
             
-        }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle == "To Date"{
+        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz(){
             
-            self.view.makeToast("Select To Date", duration: 2.0, position: .center)
+            self.view.makeToast("Select To Date".localiz(), duration: 2.0, position: .center)
             
-        }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle != "To Date"{
+        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz(){
             
-            self.view.makeToast("Select From Date", duration: 2.0, position: .center)
+            self.view.makeToast("Select From Date".localiz(), duration: 2.0, position: .center)
             
-        }else if self.fromDateBtn.currentTitle != "From Date" && self.toDateBtn.currentTitle != "To Date" && self.status == "" || self.status != ""{
+        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz() && self.status == "" || self.status != ""{
             
             if selectedToDate < selectedFromDate{
                 
-                self.view.makeToast("ToDate should be lower than FromDate", duration: 2.0, position: .center)
+                self.view.makeToast("ToDate should be lower than FromDate".localiz(), duration: 2.0, position: .center)
                 
-            }else if self.fromDateBtn.currentTitle == "From Date" && self.toDateBtn.currentTitle == "To Date" && self.status != ""{
+            }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status != ""{
                 
                 mileStoneRedemptionAPI()
                 self.filterShadowView.isHidden = true
@@ -191,8 +197,8 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
     }
     @IBAction func clearAllBtn(_ sender: Any) {
         self.status = ""
-        self.fromDateBtn.setTitle("From Date", for: .normal)
-        self.toDateBtn.setTitle("To Date", for: .normal)
+        self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+        self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
         self.approvedBtn.backgroundColor = .white
         self.pendingBtn.backgroundColor = .white
         self.cancelledBtn.backgroundColor = .white

@@ -168,14 +168,29 @@
 
 
 
-"Fromdate" = "From Date";
-"Todate" = "To Date";
-"Filter" = "Filter";
-"Filter_by_Status" = "Filter By Status";
-"Clear_all" = "Clear all";
-"Apply" = "Apply";
+"Fromdate" = "தேதியிலிருந்து";
+"Todate" = "இன்றுவரை";
+"Filter" = "வடிகட்டி";
+"Filter_by_Status" = "நிலை மூலம் வடிகட்டி";
+"Clear_all" = "அனைத்தையும் அழி";
+"Apply" = "விண்ணப்பிக்க";
 "OffersAndPromotions" = "சலுகைகள் மற்றும் விளம்பரங்கள்";
 "Description" = "விளக்கம்";
+"Select date or filter status or both" = "தேதி அல்லது வடிகட்டி நிலை அல்லது இரண்டையும் தேர்ந்தெடு";
+"Select To Date" = "தேர்ந்தெடு தேதி";
+"Select From Date" = "தேதியிலிருந்து தேர்ந்தெடு";
+"ToDate should be lower than FromDate" = "இன்றுவரை தேதியிலிருந்து ஐ விட குறைவாக இருக்க வேண்டும்";
+"Please Enter Query Details" = "தயவுசெய்து வினவல் விவரங்களை உள்ளிடவும்";
+"Category" = "வகை";
+"Order Status" = "ஆர்டர் நிலை";
 
-
-
+"New Range Addition" =  "புதிய வரம்பு கூட்டல்";
+"Counter Gap" = "எதிர் இடைவெளி";
+"Market Gap" = "சந்தை இடைவெளி";
+"Search by part no/ cross reference" = "பகுதி எண்/ குறுக்கு குறிப்பு மூலம் தேடு";
+"Search by product / description name" = "தயாரிப்பு / விளக்கம் பெயர் மூலம் தேடு";
+"Please select Segment value" =  "தயவுசெய்து பிரிவு மதிப்பைத் தேர்ந்தெடுக்கவும்";
+"Please select OME value" =  "தயவுசெய்து OME மதிப்பைத் தேர்ந்தெடுக்கவும்";
+"Please select Model value" =  "தயவுசெய்து மாதிரி மதிப்பைத் தேர்ந்தெடுக்கவும்";
+"Product Image" =  "தயாரிப்பு படம்";
+"Maximum field should be higher then Minimum field" =  "அதிகபட்ச புலம் குறைந்தபட்ச புலத்தை விட அதிகமாக இருக்க வேண்டும்";
