@@ -26,6 +26,6 @@ public enum Languages: String {
     case teIN = "te-IN"
     case bnIN = "bn-IN"
     case knIN = "kn-IN"
+
   case deviceLanguage
 }
-

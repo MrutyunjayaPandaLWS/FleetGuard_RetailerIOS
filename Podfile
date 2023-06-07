@@ -1,10 +1,11 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'Fleet_Guard(Samriddhi)' do
+target 'FleetGuard_Retailer' do
+  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-pod 'SlideMenuControllerSwift'
+ pod 'SlideMenuControllerSwift'
 pod 'IQKeyboardManagerSwift'
 pod 'Alamofire', '~> 4.0'
 pod 'lottie-ios'

@@ -1,0 +1,6 @@
+framework module Pods_FleetGuard_Retailer {
+  umbrella header "Pods-FleetGuard_Retailer-umbrella.h"
+
+  export *
+  module * { export * }
+}
