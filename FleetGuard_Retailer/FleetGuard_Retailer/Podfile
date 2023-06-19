@@ -1,0 +1,35 @@
+# Uncomment the next line to define a global platform for your project
+
+
+target 'FleetGuard_Retailer' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+ pod 'SlideMenuControllerSwift'
+pod 'IQKeyboardManagerSwift'
+pod 'Alamofire', '~> 4.0'
+pod 'lottie-ios'
+pod 'Toast-Swift', '~> 5.0.1'
+pod "ImageSlideshow/Alamofire"
+pod 'DPOTPView'
+pod 'Kingfisher'
+pod 'LanguageManager-iOS'
+pod 'Charts'
+
+pod 'Firebase/Messaging'
+pod 'FirebaseAuth'
+pod 'FirebaseFirestore'
+pod 'Firebase/Core'
+
+
+end
+
+ post_install do |installer|
+     installer.pods_project.targets.each do |target|
+         target.build_configurations.each do |config|
+            if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 11.0
+              config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+            end
+         end
+     end
+  end

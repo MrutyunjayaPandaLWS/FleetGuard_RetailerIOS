@@ -1,0 +1,197 @@
+/* 
+  Localizable.strings
+  Fleet_Guard(Samriddhi)
+
+  Created by ADMIN on 17/01/2023.
+  
+*/
+"No_Internet" = "No Internet";
+
+
+
+"welcome" = "வரவேற்கிறேன்";
+"LoginNow" = "இப்போது உள்நுழை";
+"Mobilenumber" = "மொபைல் எண்";
+"AlreadyaMember" = "ஏற்கனவே உறுப்பினரா?";
+"SendOTP" = "OTP ஐ அனுப்பு";
+"NewtoSamriddhi" = "சம்ரித்திக்கு புதியதா?";
+"Contactusnow" = "இப்போது எங்களைத் தொடர்பு கொள்ளுங்கள்";
+"Enteryourmobilenumber" = "உங்கள் மொபைல் எண்ணை உள்ளிடவும்";
+"accept_Terms_Cond" = "விதிமுறைகள் மற்றும் நிபந்தனைகளை ஏற்றுக்கொள்";
+"Decline" = "நிராகரி";
+"Accept" = "ஏற்றுக்கொள்";
+"termsAndCondition" = "விதிமுறைகள் மற்றும் நிபந்தனைகள்";
+"mobileNumber_isnot_exit_system" = "நீங்கள் உள்ளிட்ட மொபைல் எண் கணினியில் இல்லை.";
+"name" = "பெயர்";
+"enterName" = "பெயரை உள்ளிடவும்";
+"Mobile_number" = "மொபைல் எண்";
+"enter_mobile_number" = "மொபைல் எண்ணை உள்ளிடவும்";
+"state" = "மாநிலம்";
+"city" = "நகரம்";
+"comment" = "கருத்துகள்";
+"submit" = "சமர்ப்பி";
+"Enter_valid_mobile_number" = "சரியான மொபைல் எண்ணை உள்ளிடவும்";
+"Please_enter_name" = "தயவுசெய்து பெயரை உள்ளிடவும்";
+"Please_select_state" = "தயவுசெய்து மாநிலத்தைத் தேர்ந்தெடுக்கவும்";
+"Please_select_city" = "தயவுசெய்து நகரத்தைத் தேர்ந்தெடுக்கவும்";
+"query_Submission_SuccessMesage" = "உங்கள் விண்ணப்பம் வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது";
+"query_Submission_failed" = "உங்கள் சமர்ப்பிப்பு தோல்வியடைந்தது.";
+"Mobile_number_already_registered" = "மொபைல் எண் ஏற்கனவே பதிவு செய்யப்பட்டுள்ளது!";
+"Resend_OTP" = "Otp ஐ மீண்டும் அனுப்பு";
+"OTP_will_receive_within" = "OTP உள்ளே பெறப்படும்";
+"Back" = "பின்";
+"Enter_OTP_sent_to" = "OTP அனுப்பப்பட்டது";
+"Enter_OTP" = "OTP ஐ உள்ளிடவும்";
+"Enter_valid_OTP" = "சரியான OTP ஐ உள்ளிடவும்";
+"your_account_is_deleted" = "உங்கள் கணக்கு நீக்கப்பட்டது. தயவுசெய்து உங்கள் நிர்வாகியைத் தொடர்பு கொள்ளவும்.";
+"account_is_deactivated" = "உங்கள் கணக்கு செயலிழக்கப்பட்டது. உங்கள் கணக்கை செயல்படுத்த உங்கள் நிர்வாகியைத் தொடர்பு கொள்ளவும்";
+"account_verification_pending" = "உங்கள் கணக்கு சரிபார்ப்பு நிலுவையில் உள்ளது. உங்கள் கணக்கைச் சரிபார்க்க உங்கள் நிர்வாகியைத் தொடர்பு கொள்ளவும்.";
+
+//MARK: - DASHBOARD
+"Shop_name" = "கடை பெயர்";
+"total_Point_bal" = "மொத்த புள்ளி இருப்பு";
+"passbook_number" = "பாஸ்புக் எண்";
+"welcome" = "வெல்கம்!";
+"product_Catalogoue" = "பொருள் பட்டியல்";
+"redemption_catalogue" = "மீட்பு பட்டியல்";
+"know_more" = "மேலும் அறிக";
+"Add_More_Range" = "மேலும் வரம்பைச் சேர்";
+"View_Products" = "பொருட்களை காண்க";
+"Order_Now" = "இப்போதே ஆர்டர் செய்";
+"Your_account_loged_in_by_other_mobile" = "உங்கள் கணக்கு மற்ற மொபைல் மூலம் உள்நுழைந்தது.";
+
+
+// MARK: - SIDE MENU
+
+"Profile" = "சுயவிவரம்";
+"My_Redemption_History" = "எனது மீட்பு வரலாறு";
+"Redemption_Catalogue" = "மீட்பு பட்டியல்";
+"Product_Catalogue" = "பொருள் பட்டியல்";
+"My_Promotions" = "எனது விளம்பரங்கள்";
+"Lodge_Query" = "லாட்ஜ் வினவல்";
+"About" = "பற்றி";
+"FAQs" = "அடிக்கடி கேட்கப்படும் கேள்விகள்";
+"T&C" = "டி&சி";
+"Logout" = "வெளியேறு";
+"Delete" = "நீக்கு";
+"Since" = "இருந்து";
+"My_Billings" = "என் பில்லிங்ஸ்";
+"My_Orders" = "என் ஆர்டர்";
+"RPL_Statement" = "RLP அறிக்கை";
+"My_Milestone_Redemption" = "எனது மைல்கல் மீட்பு";
+"Retailer_code" = "சில்லறை விற்பனையாளர் குறியீடு";
+"My_Earnings" = "என் வருவாய்";
+"My_Redemption" = "எனது மீட்பு";
+
+//MARK: - PROFILE
+"Personal_Information" = "தனிப்பட்ட தகவல்";
+"First_Name" = "முதல் பெயர்";
+"Last_Name" = "Last Name";
+"Address" = "முகவரி";
+"Email_address" = "மின்னஞ்சல் முகவரி";
+"DOB" = "பிறந்த தேதி";
+"Select_DOB" = "பிறந்த தேதி ஐ தேர்ந்தெடு";
+"Gender" = "பாலினம்";
+"Select_Gender" = "பாலினத்தைத் தேர்ந்தெடு";
+"preferred_Language" = "விருப்பமான மொழி";
+"select_preferred_Language" = "விருப்பமான மொழியை தேர்ந்தெடு";
+"Country" = "நாடு";
+"Select_Country" = "நாடு ஐ தேர்ந்தெடு";
+"Select_State" = "மாநிலத்தைத் தேர்ந்தெடுக்கவும்";
+"Select_City" = "நகரம் ஐ தேர்ந்தெடு";
+"pincode" = "அஞ்சல் குறியீடு";
+"edit_profile" = "சுயவிவரத்தைத் திருத்து";
+"Save_changes" = "மாற்றங்களைச் சேமி";
+"profile_update_message" = "சுயவிவரப் படம் வெற்றிகரமாக புதுப்பிக்கப்பட்டது";
+"profile_update_failed" = "சுயவிவரப் படத்தை மேம்படுத்துவதில் தோல்வி";
+"Product_Catalogue_Details" = "பொருள் பட்டியல் விவரங்கள்";
+
+"points" = "புள்ளிகள்";
+"Date" = "தேதி";
+"edit_Profile_submitted_successfully" = "உங்கள் விவரங்கள் வெற்றிகரமாக சமர்ப்பிக்கப்பட்டுள்ளன.";
+"edit_Profile_submit_failed" = "உங்கள் விவரங்களைச் சமர்ப்பிக்கத் தவறிவிட்டது, சிறிது நேரம் கழித்து முயற்சிக்கவும்";
+
+"redeem_failed_contact_to_admin" = "மீட்க உங்களுக்கு அனுமதி இல்லை .தயவுசெய்து உங்கள் நிர்வாகியைத் தொடர்புகொள்ளவும்";
+"Insufficent_Point_Balance" = "போதுமான புள்ளி இருப்பு இல்லை";
+"added_to_cart_success_message" = "பொருள் வெற்றிகரமாக கார்ட் சேர்க்கப்பட்டது.";
+"Something_went_wrong_error" = "ஏதோ தவறாகிவிட்டது! பிறகு முயற்சிக்கவும்...";
+
+//MARK: - MY CART
+"myCart" = "எனது கார்ட்";
+"Default_Address" = "இயல்புநிலை முகவரி";
+"Edit_Address" = "முகவரியைத் திருத்து";
+"Enter_Address" = "முகவரியை உள்ளிடவும்";
+"Enter_Pin" = "பின்னை உள்ளிடவும்";
+"Enter_Valid_Zip" = "சரியான ஜிப்பை உள்ளிடவும்";
+"product_removed_success" = "பொருள் வெற்றிகரமாக அகற்றப்பட்டது!";
+"Confirm_Order" = "உறுதிப்படுத்தல்";
+"Redeemable_Points" = "ரிடீம் செய்யக்கூடிய புள்ளிகள்";
+"Shipping_address_requires" = "ஷிப்பிங் முகவரிக்கு தேவை: மாநிலம், நகரம், முகவரி, பின் குறியீடு மற்றும் மொபைல் எண், விவரங்கள், திருத்த மற்றும் விவரங்களைச் சேர்க்க 'திருத்து' என்பதைக் கிளிக் செய்யவும்";
+"your_account_is_unverified_for_redeemption" = "உங்கள் கணக்கு சரிபார்க்கப்படவில்லை! மீட்புப் பட்டியலை அணுக நிர்வாகியைத் தொடர்பு கொள்ளவும்";
+"InValid_OTP" = "தவறான OTP";
+
+//MARK: - RPL STATEMENT
+"RPL_No" = "RPL எண்";
+"Balance_Points" = "இருப்பு புள்ளிகள்";
+"Milestone_Points" = "மைல்ஸ்டோன் பாயின்ட்ஸ்";
+"Redeem_Now" = "இப்போது மீட்டுக்கொள்ளவும்";
+"statementView" = "ஸ்டேட்மெண்ட் பார்வை";
+"points_trends" = "புள்ளிகள் போக்கு";
+"range_trends" = "வரம்பு போக்கு";
+"bonus_trend" = "போனஸ் போக்கு";
+
+"createLodgequeryInfo" = "உங்கள் வினவலை சமர்ப்பிக்கவும்";
+"select_your_topic" = "உங்கள் தலைப்பை தேர்ந்தெடு";
+"Query_Details" = "வினவல் விவரங்கள்";
+"UploadImage" = "படத்தைப் பதிவேற்று";
+"imageUploadInfo" = "குறிப்பு: பட வடிவம் .jpg , .png, .webp, .pdf";
+
+"Select_query_topic" = "வினவல் தலைப்பை தேர்ந்தெடு";
+"Enter_query_Details" = "வினவல் விவரங்களை உள்ளிடவும்";
+"Query_Submitted_successfully" = "வினவல் வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது!";
+
+
+"Account_deleted_successfully" = "கணக்கு வெற்றிகரமாக நீக்கப்பட்டது";
+"are_sure_delete_account" = "நிச்சயமாக உங்கள் கணக்கை நீக்க விரும்புகிறீர்களா??";
+"ok" = "சரி";
+"noDataFound" = "வேறு தகவல்கள் இல்லை";
+
+"month" = "மாதம்";
+"Points_Earned" = "ಪಾಯಿಂಟ್ ಗಳಿಸಿದರು";
+"Balance" = "ಬಾಲ ಎನ್ಸಿ";
+"View" = "ನೋಟ";
+
+"OrderDate" = "ஆர்டர் தேதி";
+"Sources" = "ஆதாரம்";
+"Status" = "ಸ್ಥಿತಿ";
+
+
+
+
+"Fromdate" = "தேதியிலிருந்து";
+"Todate" = "இன்றுவரை";
+"Filter" = "வடிகட்டி";
+"Filter_by_Status" = "நிலை மூலம் வடிகட்டி";
+"Clear_all" = "அனைத்தையும் அழி";
+"Apply" = "விண்ணப்பிக்க";
+"OffersAndPromotions" = "சலுகைகள் மற்றும் விளம்பரங்கள்";
+"Description" = "விளக்கம்";
+"Select date or filter status or both" = "தேதி அல்லது வடிகட்டி நிலை அல்லது இரண்டையும் தேர்ந்தெடு";
+"Select To Date" = "தேர்ந்தெடு தேதி";
+"Select From Date" = "தேதியிலிருந்து தேர்ந்தெடு";
+"ToDate should be lower than FromDate" = "இன்றுவரை தேதியிலிருந்து ஐ விட குறைவாக இருக்க வேண்டும்";
+"Please Enter Query Details" = "தயவுசெய்து வினவல் விவரங்களை உள்ளிடவும்";
+"Category" = "வகை";
+"Order Status" = "ஆர்டர் நிலை";
+
+"New Range Addition" =  "புதிய வரம்பு கூட்டல்";
+"Counter Gap" = "எதிர் இடைவெளி";
+"Market Gap" = "சந்தை இடைவெளி";
+"Search by part no/ cross reference" = "பகுதி எண்/ குறுக்கு குறிப்பு மூலம் தேடு";
+"Search by product / description name" = "தயாரிப்பு / விளக்கம் பெயர் மூலம் தேடு";
+"Please select Segment value" =  "தயவுசெய்து பிரிவு மதிப்பைத் தேர்ந்தெடுக்கவும்";
+"Please select OME value" =  "தயவுசெய்து OME மதிப்பைத் தேர்ந்தெடுக்கவும்";
+"Please select Model value" =  "தயவுசெய்து மாதிரி மதிப்பைத் தேர்ந்தெடுக்கவும்";
+"Product Image" =  "தயாரிப்பு படம்";
+"Maximum field should be higher then Minimum field" =  "அதிகபட்ச புலம் குறைந்தபட்ச புலத்தை விட அதிகமாக இருக்க வேண்டும்";
+"RLP_No" = "RLP No";
