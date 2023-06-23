@@ -133,7 +133,13 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
         vc.state = self.stateLbl.text ?? ""
         vc.city = self.cityLbl.text ?? ""
         vc.pincode = self.pincodeLbl.text ?? ""
-        vc.dob = self.dobLbl.text ?? "Select DOB"
+        if self.dobLbl.text != ""{
+            
+            vc.dob =  convertDateFormater1(self.dobLbl.text!)
+        }else{
+            vc.dob = "Select DOB"
+        }
+        
         vc.genderName = self.genderLbl.text ?? "Select Gender"
         vc.prefLanguage = self.preferredLanguageLbl.text ?? "Select Preferred Language"
         vc.selectedLanguageId = languageID
@@ -276,6 +282,21 @@ extension FG_MyProfileVC: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
+     func convertDateFormater1(_ date: String) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let date1 = dateFormatter.date(from: date)
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        if date1 != nil{
+            return  dateFormatter.string(from: date1!)
+        }else{
+            return date
+        }
+    }
+    
    
 }
 

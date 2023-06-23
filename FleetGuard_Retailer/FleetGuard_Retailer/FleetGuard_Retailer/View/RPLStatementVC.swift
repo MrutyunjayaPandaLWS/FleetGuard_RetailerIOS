@@ -45,6 +45,7 @@ class RPLStatementVC: BaseViewController {
         self.rlpNoValueLbl.text = passBookNumber
         self.rlpStatemnet()
         getLastDayOfPreviousMonth()
+        pointsAPI()
         lastPreviousData()
         
         
@@ -150,6 +151,18 @@ class RPLStatementVC: BaseViewController {
         ] as [String: Any]
         print(parameters)
         self.VM.rlpStatemnetData(parameters: parameters)
+    }
+    
+    func pointsAPI(){
+        UserDefaults.standard.set(false, forKey: "AfterLog")
+        UserDefaults.standard.synchronize()
+        let parameters = [
+              "ActionType": "1",
+              "LoyaltyId": "\(loyaltyId)"
+        ] as [String: Any]
+        print(parameters)
+        self.VM.pointBalenceAPI(parameter: parameters)
+        
     }
     
 }

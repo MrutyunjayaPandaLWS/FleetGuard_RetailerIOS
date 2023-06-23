@@ -12,7 +12,7 @@ class RLPStatementVM {
         weak var VC: RPLStatementVC?
         var requestAPIs = RestAPI_Requests()
         var rlpStatemnetArray = [LstRetailerBonding1]()
-    
+    var pointBalence = [ObjCustomerDashboardList11]()
     func rlpStatemnetData(parameters: JSON) -> (){
         DispatchQueue.main.async {
             self.VC?.startLoading()
@@ -26,7 +26,7 @@ class RLPStatementVM {
                         print(self.rlpStatemnetArray.count,"dlskjdkj")
                         if self.rlpStatemnetArray.count != 0 {
                             self.VC?.shopNameValue.text = result?.lstRetailerBonding?[0].companyName ?? ""
-                            self.VC?.balancePts.text = "\(result?.sumOfTotalPoint ?? "")"
+//                            self.VC?.balancePts.text = "\(result?.sumOfTotalPoint ?? "")"
                             self.VC?.pointBalance = result?.sumOfTotalPoint ?? ""
                             let milstonepts = Int(Double(result?.sumOfMilstonPoints ?? "0") ?? 0)
                             self.VC?.milestonePts.text = "\(milstonepts )"
@@ -52,4 +52,41 @@ class RLPStatementVM {
     }
     
     }
+    
+    
+    
+    func pointBalenceAPI(parameter: JSON){
+        DispatchQueue.main.async {
+//            self.VC?.startLoading()
+        }
+        self.requestAPIs.pointBalenceAPI(parameters: parameter) { (result, error) in
+            if error == nil{
+                if result != nil{
+                DispatchQueue.main.async {
+//                    self.VC?.stopLoading()
+                    self.pointBalence = result?.objCustomerDashboardList ?? []
+                    
+                    if result?.objCustomerDashboardList?.count != 0 {
+                        self.VC?.balancePts.text = "\(Int(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0))"
+                        UserDefaults.standard.set(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
+                        UserDefaults.standard.set(result?.objCustomerDashboardList?[0].redeemablePointsBalance, forKey: "redeemablePointsBalance")
+                        UserDefaults.standard.set(true, forKey: "AfterLog")
+                        UserDefaults.standard.synchronize()
+                    }
+                   
+                }
+                }else{
+                    DispatchQueue.main.async {
+//                    self.VC?.stopLoading()
+                    }
+                }
+            }else{
+                DispatchQueue.main.async {
+//                self.VC?.stopLoading()
+                }
+            }
+        }
+        
+    }
+    
 }

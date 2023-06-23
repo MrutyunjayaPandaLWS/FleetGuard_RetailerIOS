@@ -296,6 +296,7 @@ extension FG_MyRedemptionVC: UITableViewDelegate, UITableViewDataSource, UIColle
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_MyRedemptionTVC", for: indexPath) as! FG_MyRedemptionTVC
         cell.selectionStyle = .none
+        cell.categoryTitle.text = "\("Category".localiz()) : \(VM.myRedemptionList[indexPath.row].categoryName ?? "")"
         cell.categoryTitleLbl.text = VM.myRedemptionList[indexPath.row].productName ?? ""
         //cell.refNoTitleLbl.text = "Ref.No"
         cell.refNoLbl.text = VM.myRedemptionList[indexPath.row].redemptionRefno

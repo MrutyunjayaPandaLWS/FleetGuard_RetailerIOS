@@ -28,7 +28,8 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
     var firstGraphData = [Int]()
     var secondGraphData = [Int]()
     var monthsData = [String]()
-    
+    var currentYear = ""
+    var previousYear = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,8 +74,12 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
                         
                         if self.secondGraphData.count < 12{
                             self.secondGraphData.append(data.previousYearPoint!)
+                            let year1 = "\((data.year ?? 0) + 1)"
+                            self.previousYear = "\(data.year ?? 0) - \(year1.suffix(2))"
                         }else{
                             self.firstGraphData.append(data.currentYearPoint!)
+                            let year2 = "\((data.year ?? 0) + 1)"
+                            self.currentYear = "\(data.year ?? 0) - \(year2.suffix(2))"
                         }
                         if self.monthsData.count < 12{
                             self.monthsData.append(data.monthName!)
@@ -126,7 +131,7 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
             }
         
     
-        let chartDataSet = LineChartDataSet(entries: yVals2,  label: "Previous financial year")
+        let chartDataSet = LineChartDataSet(entries: yVals2,  label: previousYear)
         chartDataSet.axisDependency = .left
         chartDataSet.setColor(.red)
         chartDataSet.lineWidth = 2
@@ -138,7 +143,7 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
         chartDataSet.circleRadius = 6
         chartDataSet.circleColors = [.systemYellow]
         
-        let chartDataSet1 = LineChartDataSet(entries: yVals3, label: "Current financial year")
+        let chartDataSet1 = LineChartDataSet(entries: yVals3, label: currentYear)
         chartDataSet1.axisDependency = .left
         chartDataSet1.setColor(.green)
         chartDataSet1.lineWidth = 2

@@ -49,7 +49,7 @@ class FG_DOBVC: BaseViewController {
                 self.present(alert, animated: true, completion: nil)
             }else{
                 let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd"
+                formatter.dateFormat = "MM-dd-yyyy"
                 selectedDate = formatter.string(from: datePicker.date)
                 self.delegate.acceptDate(self)
                 self.dismiss(animated: true, completion: nil)

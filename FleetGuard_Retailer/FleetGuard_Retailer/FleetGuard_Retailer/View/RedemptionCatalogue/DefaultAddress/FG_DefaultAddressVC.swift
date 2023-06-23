@@ -76,7 +76,7 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
     func localization(){
         redeemablePointTitleLbl.text = "Redeemable_Points".localiz()
         confirmBtn.setTitle("Confirm_Order".localiz(), for: .normal)
-        headerLbl.text = "Default_Address".localiz()
+        headerLbl.text = "redemption_catalogue".localiz()
         defaultAddressTitleLbl.text = "Default_Address".localiz()
         editAddressLbl.text = "Edit_Address".localiz()
     }

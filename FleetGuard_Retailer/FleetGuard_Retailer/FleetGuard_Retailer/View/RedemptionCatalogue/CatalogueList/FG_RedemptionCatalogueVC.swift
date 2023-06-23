@@ -159,6 +159,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
             "ActionType": "2",
             "LoyaltyID": "\(self.loyaltyId)"
         ] as [String: Any]
+        print(parameter,"myCartListApi")
         self.VM.redemptionCatalogueMyCartListApi(parameter: parameter)
     }
     

@@ -120,7 +120,7 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
         stateLbl.text = "state".localiz()
         cityLbl.text = "city".localiz()
         commentsLbl.text = "comment".localiz()
-        submitBtn.setTitle("submit", for: .normal)
+        submitBtn.setTitle("submit".localiz(), for: .normal)
         alreadyMemberLbl.text = "AlreadyaMember".localiz()
         loginNowBtn.setTitle( "LoginNow".localiz(), for: .normal)
         

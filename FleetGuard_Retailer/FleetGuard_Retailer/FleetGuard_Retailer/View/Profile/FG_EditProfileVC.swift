@@ -29,7 +29,7 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     }
     
     func preferredLanguageDidTap(_ vc: FG_DropDownVC) {
-        self.preferredLanguageLbl.text = vc.selectedLanguage
+        self.selectPreferredLanguage.text = vc.selectedLanguage
         self.selectedLanguageId = vc.selectedPreferredID
     }
     
@@ -51,6 +51,7 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     func acceptDate(_ vc: FG_DOBVC) {
         //if vc.isComeFrom == "1"{
             self.selectDOBLbl.text = vc.selectedDate
+        dob = vc.selectedDate
 //        }else{
 //            print("ItsNotHappening")
 //        }
@@ -159,7 +160,8 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
         selectedCityId = profileDetails?.lstCustomerJson?[0].cityId ?? -1
     }
     
-
+   
+    
     private func localization(){
         self.headerLbl.text = "Profile".localiz()
         self.firstNameLbl.text = "First_Name".localiz()
@@ -248,13 +250,6 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
         
         if self.selectedStateId == -1{
             DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "Please select state"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
                 
                 self.view.makeToast("Please_select_state".localiz(), duration: 3.0, position: .bottom)
             }
@@ -293,20 +288,24 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
                 "Email": emailTF.text ?? "",
                 "FirstName": firstNameTF.text ?? "",
                 "LastName": lastNameTF.text ?? "",
-                "IsActive": "\(isactive)",
+                "IsActive": "1",
                 "JDOB": dob,
                 "LoyaltyIdAutoGen": 1,
                 "MerchantId": 1,
                 "CountryId": countryId,
                 "LocationId": locationCode ,
                 "Mobile": mobileTF.text ?? "",
-                "RegStatusid": 2,
-                "RegistrationSource": "5",
+                "RegStatusid": 1,
+                "RegistrationSource": "3",
                 "StateId": selectedStateId,
                 "Zip": pincodeTF.text ?? "",
                 "cityid": selectedCityId
             ]
         ]
+//    ["ActionType":"4","ActorId":"8389","IsMobileRequest":1,"ObjCustomerDetails":["Gender":"","LanguageID":1],"ObjCustomerJson":["Address1":"CHANDWAD VADNER BHAIRAO NASHIK","AddressId":158261,"CustomerId":"70613","CustomerTypeID":55,"Email":"","FirstName":"Vivek","LastName":"Niphade","IsActive":"1","JDOB":"12/3/1998","LoyaltyIdAutoGen":"1","MerchantId":1,"CountryId":15,"LocationId":9213,"Mobile":"9145593821","RegStatusid":1,"RegistrationSource":"5","StateId":"376","Zip":"422003","cityid":"27826"]]
+        
+//        ["ObjCustomerDetails": ["Gender": "Male", "LanguageID": 2], "ObjCustomerJson": ["AddressId": 172489, "LastName": "Niphade", "FirstName": "Vivek", "RegStatusid": 1, "MerchantId": 1, "CustomerId": 75884, "JDOB": "19/06/1967", "CustomerTypeID": 55, "CountryId": 15, "RegistrationSource": "3", "StateId": 376, "Zip": "422003", "Mobile": "9145593821", "Address1": "MUMBAI AGRA ROAD SHOP NU 5 APP ASHOK LEYLAND SHOWROOM NASHIK", "IsActive": "1", "cityid": 26915, "Email": "hhhh@gmail.com", "LocationId": 10043, "LoyaltyIdAutoGen": 1], "ActionType": "4", "IsMobileRequest": 1, "ActorId": "91037"]
+        
         print(parameters)
         self.VM.editProfileSubmissionAPI(paramters: parameters)
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_MyRedemptionTVC: UITableViewCell {
 
@@ -24,9 +25,18 @@ class FG_MyRedemptionTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+        localization()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    private func localization(){
+        refNoTitleLbl.text = "Ref. No".localiz()
+        ptsRedemeedLbl.text = "Points Redeemed".localiz()
+        dateTitle.text = "Date".localiz()
+        qtyTitleLbl.text = "Qty".localiz()
+    }
+    
 }

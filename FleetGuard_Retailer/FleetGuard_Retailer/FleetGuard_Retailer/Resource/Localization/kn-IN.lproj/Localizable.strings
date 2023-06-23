@@ -70,8 +70,8 @@
 "My_Promotions" = "ನನ್ನ ಪ್ರಚಾರಗಳು";
 "Lodge_Query" = "ಲಾಡ್ಜ್ ಪ್ರಶ್ನೆ";
 "About" = "ಬಗ್ಗೆ";
-"FAQs" = "पूछे जाने वाले प्रश्न";
-"T&C" = "टी एंड सी";
+"FAQs" = "ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು";
+"T&C" = "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು";
 "Logout" = "ಲಾಗ್ ಔಟ್";
 "Delete" = "ಅಳಿಸು";
 "Since" = "ಇಂದಿನಿಂದ";
@@ -199,4 +199,8 @@
 "Maximum field should be higher then Minimum field" = "ಗರಿಷ್ಠ ಕ್ಷೇತ್ರವು ಕನಿಷ್ಟ ಕ್ಷೇತ್ರಕ್ಕಿಂತ ಹೆಚ್ಚಿರಬೇಕು";
  
 "RLP_No" = "RLP No";
-"NoteDateason" = "Note: Date as on ";
+"NoteDateason" = "ಗಮನಿಸಿ: ದಿನಾಂಕದಂತೆ ";
+"Add more part no" = "ಹೆಚ್ಚಿನ ಭಾಗ ಸಂಖ್ಯೆ ಸೇರಿಸಿ";
+"Ref. No" = "Ref. No";
+"Points Redeemed" = "Points Redeemed";
+"Qty" = "Qty" ;

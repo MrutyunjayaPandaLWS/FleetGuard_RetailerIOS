@@ -87,6 +87,8 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
     private func localizatiuon(){
         headerLbl.text = "Product_Catalogue_Details".localiz()
         shortDescriptionTitle.text = "Short Desription:"
+        orderNowBtn.setTitle("Order_Now".localiz(), for: .normal)
+        addmorePartnoBtn.setTitle("Add more part no".localiz(), for: .normal)
     }
 
     @IBAction func backBtn(_ sender: Any) {
