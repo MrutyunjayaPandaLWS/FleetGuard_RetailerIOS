@@ -75,34 +75,43 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
     var enteredValue = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.VM.VC = self
-        myCartList()
-        getOTP()
-        NotificationCenter.default.addObserver(self, selector: #selector(sendSuccess), name: Notification.Name.redemptionSubmission, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(dismissVC), name: Notification.Name.dismissScreen, object: nil)
-
-        self.resendOTPStackView.isHidden = true
-        self.resendOTPHeightConstraint.constant = 0
-        self.submitBtnTopSpace.constant = 70
-        // Do any additional setup after loading the view.
-        otpView.dpOTPViewDelegate = self
-        otpView.fontTextField = UIFont.systemFont(ofSize: 16)
-        otpView.textEdgeInsets = UIEdgeInsets(top: 0, left: -1, bottom: 0, right: 0)
-        otpView.editingTextEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        
-        
-        otpView.spacing = 30
-        otpView.fontTextField = UIFont(name: "HelveticaNeue-Bold", size: CGFloat(16.0))!
-        otpView.dismissOnLastEntry = true
-        otpView.borderColorTextField = .systemOrange
-        otpView.selectedBorderColorTextField = .blue
-        otpView.borderWidthTextField = 1
-        otpView.backGroundColorTextField = #colorLiteral(red: 1, green: 0.9882352941, blue: 0.937254902, alpha: 1)
-        otpView.cornerRadiusTextField = 8
-        otpView.isCursorHidden = true
-        
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(dismissNavigator), name: Notification.Name.sendDashboard, object: nil)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.VM.VC = self
+            myCartList()
+            getOTP()
+            NotificationCenter.default.addObserver(self, selector: #selector(sendSuccess), name: Notification.Name.redemptionSubmission, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(dismissVC), name: Notification.Name.dismissScreen, object: nil)
+            
+            self.resendOTPStackView.isHidden = true
+            self.resendOTPHeightConstraint.constant = 0
+            self.submitBtnTopSpace.constant = 70
+            // Do any additional setup after loading the view.
+            otpView.dpOTPViewDelegate = self
+            otpView.fontTextField = UIFont.systemFont(ofSize: 16)
+            otpView.textEdgeInsets = UIEdgeInsets(top: 0, left: -1, bottom: 0, right: 0)
+            otpView.editingTextEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            
+            
+            otpView.spacing = 30
+            otpView.fontTextField = UIFont(name: "HelveticaNeue-Bold", size: CGFloat(16.0))!
+            otpView.dismissOnLastEntry = true
+            otpView.borderColorTextField = .systemOrange
+            otpView.selectedBorderColorTextField = .blue
+            otpView.borderWidthTextField = 1
+            otpView.backGroundColorTextField = #colorLiteral(red: 1, green: 0.9882352941, blue: 0.937254902, alpha: 1)
+            otpView.cornerRadiusTextField = 8
+            otpView.isCursorHidden = true
+            
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(dismissNavigator), name: Notification.Name.sendDashboard, object: nil)
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -138,129 +147,138 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
     }
     
     @IBAction func submitBtn(_ sender: Any) {
-        print(contractorName, "Contractor Name")
-        print(self.cityID, "City ID")
-        if self.enteredValue.count == 4{
-//            if self.OTPforVerification == self.enteredValue{
-            if "1234" == self.enteredValue{
-              
-                self.stopLoading()
-                self.timer.invalidate()
-                if self.contractorName == ""{
-                    productsParameter = [
-                        "ActionType": 51,
-                        "ActorId": userID,
-                        "MemberName": "\(self.customerName)",
-                        "ObjCatalogueDetails": [
-                              "DomainName": "FLEET_GUARD"
-                          ],
-                        "ObjCatalogueList": self.newproductArray as [[String: Any]],
-                        "ObjCustShippingAddressDetails":["Address1":"\(self.address1)","CityId":"\(self.cityID)", "CityName":"\(self.cityName)","CountryId":"\(self.countryId)","StateName": "\(self.stateName)","StateId":"\(self.stateID)","Zip":"\(self.pincode)","Email":"\(self.emailId)","FullName":"\(self.customerName)","Mobile": self.mobile],"SourceMode":5
-                    ]
-                    print(productsParameter ?? [])
-                }else{
-                    self.productsParameter = [
-                        "ActionType": 51,
-                        "ActorId": userID,
-                        "MemberName": "\(contractorName)",
-                        "ObjCatalogueDetails": [
-                               "DomainName": "FLEET_GUARD"
-                           ],
-                        "ObjCustShippingAddressDetails": [
-                            "Address1": "\(self.address1)",
-                            "CityId": self.cityID,
-                            "CityName": "\(self.cityName)",
-                            "CountryId": 103,
-                            "Email": "\(self.emailId)",
-                            "FullName": "\(contractorName)",
-                            "Mobile": "\(loyaltyId)",
-                            "StateId": self.stateID,
-                            "StateName": "\(self.stateName)",
-                            "Zip": "\(self.pincode)"
-                        ],
-                        "SourceMode": 5
-
-                    ] as [String: Any]
-                    print(self.productsParameter ?? [], "Dream Gift")
-                }
-                self.VM.redemptionSubmission(parameters: productsParameter!) { response in
-                    print(response?.returnMessage ?? "", "Redemption Submission")
-                    print(response?.returnValue ?? "", "ReturnValue")
-                    let message = response?.returnMessage ?? ""
-                    print(message)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            print(contractorName, "Contractor Name")
+            print(self.cityID, "City ID")
+            if self.enteredValue.count == 4{
+                //            if self.OTPforVerification == self.enteredValue{
+                if "1234" == self.enteredValue{
                     
-                    let seperateMessage = message.split(separator: "-")
-//                    print(seperateMessage[1], "Filtered Value")
-//                    print(seperateMessage[2], "Filtered Value")
-                    if seperateMessage[2] != "0" {
-                        print("Success")
-                        self.redemptionRefId = response?.returnMessage ?? ""
-                        if self.contractorName == ""{
-                            self.myCartList()
-                        }else{
-                            
-                           // self.removeDreamGift()
-                        }
-                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionCataloguePopUp") as! FG_RedemptionCataloguePopUp
-                        vc.modalPresentationStyle = .overCurrentContext
-                        vc.modalTransitionStyle = .crossDissolve
-                        self.present(vc, animated: true, completion: nil)
-                        
+                    self.stopLoading()
+                    self.timer.invalidate()
+                    if self.contractorName == ""{
+                        productsParameter = [
+                            "ActionType": 51,
+                            "ActorId": userID,
+                            "MemberName": "\(self.customerName)",
+                            "ObjCatalogueDetails": [
+                                "DomainName": "FLEET_GUARD"
+                            ],
+                            "ObjCatalogueList": self.newproductArray as [[String: Any]],
+                            "ObjCustShippingAddressDetails":["Address1":"\(self.address1)","CityId":"\(self.cityID)", "CityName":"\(self.cityName)","CountryId":"\(self.countryId)","StateName": "\(self.stateName)","StateId":"\(self.stateID)","Zip":"\(self.pincode)","Email":"\(self.emailId)","FullName":"\(self.customerName)","Mobile": self.mobile],"SourceMode":5
+                        ]
+                        print(productsParameter ?? [])
                     }else{
-                        DispatchQueue.main.async{
-//                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                            vc!.delegate = self
-//                            vc!.titleInfo = ""
-//
-//                            vc!.descriptionInfo = "Redemption Failed"
-//                            vc!.modalPresentationStyle = .overFullScreen
-//                            vc!.modalTransitionStyle = .crossDissolve
-//                            self.present(vc!, animated: true, completion: nil)
+                        self.productsParameter = [
+                            "ActionType": 51,
+                            "ActorId": userID,
+                            "MemberName": "\(contractorName)",
+                            "ObjCatalogueDetails": [
+                                "DomainName": "FLEET_GUARD"
+                            ],
+                            "ObjCustShippingAddressDetails": [
+                                "Address1": "\(self.address1)",
+                                "CityId": self.cityID,
+                                "CityName": "\(self.cityName)",
+                                "CountryId": 103,
+                                "Email": "\(self.emailId)",
+                                "FullName": "\(contractorName)",
+                                "Mobile": "\(loyaltyId)",
+                                "StateId": self.stateID,
+                                "StateName": "\(self.stateName)",
+                                "Zip": "\(self.pincode)"
+                            ],
+                            "SourceMode": 5
                             
-                            self.view.makeToast("Redemption Failed", duration: 3.0, position: .bottom)
+                        ] as [String: Any]
+                        print(self.productsParameter ?? [], "Dream Gift")
+                    }
+                    self.VM.redemptionSubmission(parameters: productsParameter!) { response in
+                        print(response?.returnMessage ?? "", "Redemption Submission")
+                        print(response?.returnValue ?? "", "ReturnValue")
+                        let message = response?.returnMessage ?? ""
+                        print(message)
+                        
+                        let seperateMessage = message.split(separator: "-")
+                        //                    print(seperateMessage[1], "Filtered Value")
+                        //                    print(seperateMessage[2], "Filtered Value")
+                        if seperateMessage[2] != "0" {
+                            print("Success")
+                            self.redemptionRefId = response?.returnMessage ?? ""
+                            if self.contractorName == ""{
+                                self.myCartList()
+                            }else{
+                                
+                                // self.removeDreamGift()
+                            }
+                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionCataloguePopUp") as! FG_RedemptionCataloguePopUp
+                            vc.modalPresentationStyle = .overCurrentContext
+                            vc.modalTransitionStyle = .crossDissolve
+                            self.present(vc, animated: true, completion: nil)
+                            
+                        }else{
+                            DispatchQueue.main.async{
+                                //                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                                //                            vc!.delegate = self
+                                //                            vc!.titleInfo = ""
+                                //
+                                //                            vc!.descriptionInfo = "Redemption Failed"
+                                //                            vc!.modalPresentationStyle = .overFullScreen
+                                //                            vc!.modalTransitionStyle = .crossDissolve
+                                //                            self.present(vc!, animated: true, completion: nil)
+                                
+                                self.view.makeToast("Redemption Failed", duration: 3.0, position: .bottom)
+                            }
                         }
                     }
-                }
-            }else{
-                
+                }else{
+                    
                     DispatchQueue.main.async{
-//                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                        vc!.delegate = self
-//                        vc!.titleInfo = ""
-//                        vc!.descriptionInfo = "InValid OTP"
-//                        vc!.modalPresentationStyle = .overCurrentContext
-//                        vc!.modalTransitionStyle = .crossDissolve
-//                        self.present(vc!, animated: true, completion: nil)
+                        //                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                        //                        vc!.delegate = self
+                        //                        vc!.titleInfo = ""
+                        //                        vc!.descriptionInfo = "InValid OTP"
+                        //                        vc!.modalPresentationStyle = .overCurrentContext
+                        //                        vc!.modalTransitionStyle = .crossDissolve
+                        //                        self.present(vc!, animated: true, completion: nil)
                         
                         self.view.makeToast("InValid_OTP".localiz(), duration: 3.0, position: .bottom)
                     }
-                
-            }
-        }else if enteredValue.count == 0 {
-            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "Enter OTP"
-//
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                
-                self.view.makeToast("Enter_OTP".localiz(), duration: 3.0, position: .bottom)
-            }
-        }else if enteredValue.count != 4{
-            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "Enter valid OTP"
-//
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                
-                self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
+                    
+                }
+            }else if enteredValue.count == 0 {
+                DispatchQueue.main.async{
+                    //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                vc!.delegate = self
+                    //                vc!.titleInfo = ""
+                    //                vc!.descriptionInfo = "Enter OTP"
+                    //
+                    //                vc!.modalPresentationStyle = .overCurrentContext
+                    //                vc!.modalTransitionStyle = .crossDissolve
+                    //                self.present(vc!, animated: true, completion: nil)
+                    
+                    self.view.makeToast("Enter_OTP".localiz(), duration: 3.0, position: .bottom)
+                }
+            }else if enteredValue.count != 4{
+                DispatchQueue.main.async{
+                    //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                vc!.delegate = self
+                    //                vc!.titleInfo = ""
+                    //                vc!.descriptionInfo = "Enter valid OTP"
+                    //
+                    //                vc!.modalPresentationStyle = .overCurrentContext
+                    //                vc!.modalTransitionStyle = .crossDissolve
+                    //                self.present(vc!, animated: true, completion: nil)
+                    
+                    self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
+                }
             }
         }
     }

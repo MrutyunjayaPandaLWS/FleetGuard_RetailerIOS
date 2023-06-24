@@ -21,10 +21,19 @@ class FG_ProductImageDetailsVC: BaseViewController,UIScrollViewDelegate {
     var imageUrl = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollviewToZoom.delegate = self
-        scrollviewToZoom.minimumZoomScale = 1.0
-        scrollviewToZoom.maximumZoomScale = 10.0
-        configure()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            scrollviewToZoom.delegate = self
+            scrollviewToZoom.minimumZoomScale = 1.0
+            scrollviewToZoom.maximumZoomScale = 10.0
+            configure()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

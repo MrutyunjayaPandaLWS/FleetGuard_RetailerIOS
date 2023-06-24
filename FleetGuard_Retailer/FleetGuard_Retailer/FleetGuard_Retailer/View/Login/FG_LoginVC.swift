@@ -56,9 +56,18 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate, CheckB
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.contactUsBtn.isUserInteractionEnabled = true
-        self.localization()
-        self.tokendata()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.contactUsBtn.isUserInteractionEnabled = true
+            self.localization()
+            self.tokendata()
+        }
     }
     
     func localization() {
@@ -75,59 +84,86 @@ class FG_LoginVC: BaseViewController, popUpDelegate, UITextFieldDelegate, CheckB
     
     
     @IBAction func termsAndConditionBTN(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_TermsandconditionsVC") as! FG_TermsandconditionsVC
-        vc.comingFrom = "LoginScreen"
-        vc.delegate = self
-        vc.modalTransitionStyle = .coverVertical
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_TermsandconditionsVC") as! FG_TermsandconditionsVC
+            vc.comingFrom = "LoginScreen"
+            vc.delegate = self
+            vc.modalTransitionStyle = .coverVertical
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
+        }
     }
     
     @IBAction func sendOTPBtn(_ sender: Any) {
-        if self.mobileTF.text!.count == 0 {
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
-//               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Enter mobile number"
-//                vc!.modalPresentationStyle = .overFullScreen
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Enteryourmobilenumber".localiz(), duration: 3.0, position: .bottom)
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
             }
-        }
-//        else if self.boolResult == false{
-//            self.view.makeToast("Accept Terms and Conditions", duration: 3.0, position: .bottom)
-//        }
-//        else if self.mobileTF.text!.count != 10 {
-//            DispatchQueue.main.async{
-//               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Enter valid mobile number"
-//                vc!.modalPresentationStyle = .overFullScreen
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-//            }
-//        }
-        else{
-            let parameter = [
+        }else{
+            if self.mobileTF.text!.count == 0 {
+                DispatchQueue.main.async{
+                    //               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                vc!.delegate = self
+                    //                vc!.descriptionInfo = "Enter mobile number"
+                    //                vc!.modalPresentationStyle = .overFullScreen
+                    //                vc!.modalTransitionStyle = .crossDissolve
+                    //                self.present(vc!, animated: true, completion: nil)
+                    self.view.makeToast("Enteryourmobilenumber".localiz(), duration: 3.0, position: .bottom)
+                }
+            }
+            //        else if self.boolResult == false{
+            //            self.view.makeToast("Accept Terms and Conditions", duration: 3.0, position: .bottom)
+            //        }
+            //        else if self.mobileTF.text!.count != 10 {
+            //            DispatchQueue.main.async{
+            //               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+            //                vc!.delegate = self
+            //                vc!.descriptionInfo = "Enter valid mobile number"
+            //                vc!.modalPresentationStyle = .overFullScreen
+            //                vc!.modalTransitionStyle = .crossDissolve
+            //                self.present(vc!, animated: true, completion: nil)
+            //            }
+            //        }
+            else{
+                let parameter = [
                     "ActionType": "57",
                     "Location": [
                         "UserName": "\(self.mobileTF.text ?? "")"
                     ]
-            ] as [String: Any]
-            print(parameter)
-            self.VM.verifyMobileNumberAPI(paramters: parameter)
-           
+                ] as [String: Any]
+                print(parameter)
+                self.VM.verifyMobileNumberAPI(paramters: parameter)
+                
+            }
         }
        
     }
     
     @IBAction func contactUsNowBtn(_ sender: Any) {
-        self.contactUsBtn.isUserInteractionEnabled = false
-//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.contactUsBtn.isUserInteractionEnabled = false
+            //        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RegistrationVC") as! FG_RegistrationVC
             self.navigationController?.pushViewController(vc, animated: true)
-//        })
+            //        })
+        }
         
     }
     

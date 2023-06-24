@@ -33,26 +33,35 @@ class FG_MyPromotionDetailsVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        descriptionData()
-        self.offerNameLbl.text  = self.selectedTitle
-        heightOfPointsLbl.constant = 0
-        localization()
-        let imageURL = self.selectedImage
-        if imageURL != ""{
-            let filteredURLArray = imageURL.dropFirst(2)
-            let urltoUse = String(Promo_ImageData + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
-            let urlt = URL(string: "\(urltoUse)")
-            print(urlt)
-            self.headerImage.kf.setImage(with: urlt, placeholder: UIImage(named: "Asset 2"));
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            descriptionData()
+            self.offerNameLbl.text  = self.selectedTitle
+            heightOfPointsLbl.constant = 0
+            localization()
+            let imageURL = self.selectedImage
+            if imageURL != ""{
+                let filteredURLArray = imageURL.dropFirst(2)
+                let urltoUse = String(Promo_ImageData + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
+                let urlt = URL(string: "\(urltoUse)")
+                print(urlt)
+                self.headerImage.kf.setImage(with: urlt, placeholder: UIImage(named: "Asset 2"));
+            }
+            
+            self.subView.clipsToBounds = false
+            self.subView.layer.cornerRadius = 36
+            self.subView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+            subView.layer.shadowOffset = CGSize(width: 0.1, height: 0.1)
+            subView.layer.shadowOpacity = 0.4
+            subView.layer.shadowRadius = 0.4
+            subView.layer.shadowColor = UIColor.darkGray.cgColor
         }
-        
-        self.subView.clipsToBounds = false
-        self.subView.layer.cornerRadius = 36
-        self.subView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        subView.layer.shadowOffset = CGSize(width: 0.1, height: 0.1)
-        subView.layer.shadowOpacity = 0.4
-        subView.layer.shadowRadius = 0.4
-        subView.layer.shadowColor = UIColor.darkGray.cgColor
     }
     
     private func localization(){

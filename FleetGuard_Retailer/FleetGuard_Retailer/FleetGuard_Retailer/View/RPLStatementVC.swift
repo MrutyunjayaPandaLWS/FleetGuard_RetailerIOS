@@ -40,13 +40,22 @@ class RPLStatementVC: BaseViewController {
     var pointBalance = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        localization()
-        self.VM.VC = self
-        self.rlpNoValueLbl.text = passBookNumber
-        self.rlpStatemnet()
-        getLastDayOfPreviousMonth()
-        pointsAPI()
-        lastPreviousData()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            localization()
+            self.VM.VC = self
+            self.rlpNoValueLbl.text = passBookNumber
+            self.rlpStatemnet()
+            getLastDayOfPreviousMonth()
+            pointsAPI()
+            lastPreviousData()
+        }
         
         
         

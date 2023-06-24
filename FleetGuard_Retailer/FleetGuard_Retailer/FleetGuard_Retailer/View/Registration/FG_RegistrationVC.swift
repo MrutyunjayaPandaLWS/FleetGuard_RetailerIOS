@@ -97,17 +97,26 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.stopLoading()
-        self.VM.VC = self
-        self.mobileTF.delegate = self
-        self.nameTF.setLeftPaddingPoints(13)
-        self.mobileTF.setLeftPaddingPoints(13)
-        self.commetsTF.setLeftPaddingPoints(13)
-        self.selectStateLbl.text = "Select State"
-        self.selectCityLbl.text = "Select City"
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(redirectingToLogin), name: Notification.Name.redirectingToLogin, object: nil)
-        localization()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.stopLoading()
+            self.VM.VC = self
+            self.mobileTF.delegate = self
+            self.nameTF.setLeftPaddingPoints(13)
+            self.mobileTF.setLeftPaddingPoints(13)
+            self.commetsTF.setLeftPaddingPoints(13)
+            self.selectStateLbl.text = "Select State"
+            self.selectCityLbl.text = "Select City"
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(redirectingToLogin), name: Notification.Name.redirectingToLogin, object: nil)
+            localization()
+        }
     }
     
     private func localization(){
@@ -231,52 +240,61 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
     }
     
     @IBAction func submitButton(_ sender: Any) {
-        
-        if nameTF.text == "" {
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                    vc!.descriptionInfo = "Please enter name"
-//
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Please_enter_name".localiz(), duration: 3.0, position: .bottom)
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
             }
-        }else if mobileTF.text?.count == 0 {
-            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Please enter mobile number"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Enteryourmobilenumber".localiz(), duration: 3.0, position: .bottom)
+        }else{
+            
+            if nameTF.text == "" {
+                DispatchQueue.main.async{
+                    //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                vc!.delegate = self
+                    //                    vc!.descriptionInfo = "Please enter name"
+                    //
+                    //                vc!.modalPresentationStyle = .overCurrentContext
+                    //                vc!.modalTransitionStyle = .crossDissolve
+                    //                self.present(vc!, animated: true, completion: nil)
+                    self.view.makeToast("Please_enter_name".localiz(), duration: 3.0, position: .bottom)
+                }
+            }else if mobileTF.text?.count == 0 {
+                DispatchQueue.main.async{
+                    //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                vc!.delegate = self
+                    //                vc!.descriptionInfo = "Please enter mobile number"
+                    //                vc!.modalPresentationStyle = .overCurrentContext
+                    //                vc!.modalTransitionStyle = .crossDissolve
+                    //                self.present(vc!, animated: true, completion: nil)
+                    self.view.makeToast("Enteryourmobilenumber".localiz(), duration: 3.0, position: .bottom)
+                }
+            }else if selectStateLbl.text == "Select State" {
+                DispatchQueue.main.async{
+                    //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                vc!.delegate = self
+                    //                vc!.descriptionInfo = "Please select state"
+                    //                vc!.modalPresentationStyle = .overCurrentContext
+                    //                vc!.modalTransitionStyle = .crossDissolve
+                    //                self.present(vc!, animated: true, completion: nil)
+                    self.view.makeToast("Please_select_state".localiz(), duration: 3.0, position: .bottom)
+                }
+            }else if selectCityLbl.text == "Select City" {
+                DispatchQueue.main.async{
+                    //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                vc!.delegate = self
+                    //                vc!.descriptionInfo = "Please select city"
+                    //                vc!.modalPresentationStyle = .overCurrentContext
+                    //                vc!.modalTransitionStyle = .crossDissolve
+                    //                self.present(vc!, animated: true, completion: nil)
+                    self.view.makeToast("Please_select_city".localiz(), duration: 3.0, position: .bottom)
+                }
+            }else {
+                self.registerationAPI()
             }
-        }else if selectStateLbl.text == "Select State" {
-            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Please select state"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Please_select_state".localiz(), duration: 3.0, position: .bottom)
-            }
-        }else if selectCityLbl.text == "Select City" {
-            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Please select city"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Please_select_city".localiz(), duration: 3.0, position: .bottom)
-            }
-        }else {
-            self.registerationAPI()
+            
         }
-        
     }
     
     

@@ -51,10 +51,19 @@ class FG_PointsTrendGraphVC: BaseViewController, ChartViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.pointsTrendAPI()
-        print(myPointsArrayOfD,"skdjlsdj")
-        print(firstGraphData)
-        print(secondGraphData)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.pointsTrendAPI()
+            print(myPointsArrayOfD,"skdjlsdj")
+            print(firstGraphData)
+            print(secondGraphData)
+        }
     }
     
     private func localization(){

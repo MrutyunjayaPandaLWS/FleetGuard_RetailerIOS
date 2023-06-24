@@ -41,16 +41,25 @@ class FG_TermsandconditionsVC: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.startLoading()
-        if comingFrom == "LoginScreen"{
-            self.termsStackView.isHidden = false
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
         }else{
-            self.termsStackView.isHidden = true
+            self.startLoading()
+            if comingFrom == "LoginScreen"{
+                self.termsStackView.isHidden = false
+            }else{
+                self.termsStackView.isHidden = true
+            }
+            //        DispatchQueue.main.async {
+            //            self.stopLoading()
+            //            self.webviewKit.loadRequest(NSURLRequest(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "fleetguard-retailer-t&c", ofType: "html")!) as URL) as URLRequest)
+            //        }
         }
-//        DispatchQueue.main.async {
-//            self.stopLoading()
-//            self.webviewKit.loadRequest(NSURLRequest(url: NSURL(fileURLWithPath: Bundle.main.path(forResource: "fleetguard-retailer-t&c", ofType: "html")!) as URL) as URLRequest)
-//        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

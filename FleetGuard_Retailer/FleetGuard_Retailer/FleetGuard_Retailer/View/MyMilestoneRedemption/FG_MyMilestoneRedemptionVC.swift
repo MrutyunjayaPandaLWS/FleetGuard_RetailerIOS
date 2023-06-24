@@ -69,9 +69,18 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        noDataFoundLBl.isHidden = true
-        localization()
-        self.mileStoneRedemptionAPI()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            noDataFoundLBl.isHidden = true
+            localization()
+            self.mileStoneRedemptionAPI()
+        }
     }
 
     
@@ -106,106 +115,188 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
     @IBAction func notificationBtn(_ sender: Any) {
     }
     @IBAction func filterBtn(_ sender: Any) {
-        if self.filterShadowView.isHidden == false{
-            self.filterShadowView.isHidden = true
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
         }else{
-            self.filterShadowView.isHidden = false
+            if self.filterShadowView.isHidden == false{
+                self.filterShadowView.isHidden = true
+            }else{
+                self.filterShadowView.isHidden = false
+            }
         }
     }
     @IBAction func closeBtn(_ sender: Any) {
-        self.filterShadowView.isHidden = true
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.filterShadowView.isHidden = true
+        }
     }
     
     @IBAction func fromDateButton(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DOBVC") as? FG_DOBVC
-        vc!.delegate = self
-        vc!.isComeFrom = "1"
-        vc!.modalPresentationStyle = .overCurrentContext
-        vc!.modalTransitionStyle = .coverVertical
-        self.present(vc!, animated: true, completion: nil)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DOBVC") as? FG_DOBVC
+            vc!.delegate = self
+            vc!.isComeFrom = "1"
+            vc!.modalPresentationStyle = .overCurrentContext
+            vc!.modalTransitionStyle = .coverVertical
+            self.present(vc!, animated: true, completion: nil)
+        }
     }
     
     @IBAction func toDateButton(_ sender: Any) {
-        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DOBVC") as? FG_DOBVC
-        vc!.delegate = self
-        vc!.isComeFrom = "2"
-        vc!.modalPresentationStyle = .overCurrentContext
-        vc!.modalTransitionStyle = .coverVertical
-        self.present(vc!, animated: true, completion: nil)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DOBVC") as? FG_DOBVC
+            vc!.delegate = self
+            vc!.isComeFrom = "2"
+            vc!.modalPresentationStyle = .overCurrentContext
+            vc!.modalTransitionStyle = .coverVertical
+            self.present(vc!, animated: true, completion: nil)
+        }
     }
     
     @IBAction func pendingButton(_ sender: Any) {
-        self.status = "0"
-        self.approvedBtn.backgroundColor = .white
-        self.pendingBtn.backgroundColor = .systemOrange
-        self.cancelledBtn.backgroundColor = .white
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.status = "0"
+            self.approvedBtn.backgroundColor = .white
+            self.pendingBtn.backgroundColor = .systemOrange
+            self.cancelledBtn.backgroundColor = .white
+        }
     }
     
     @IBAction func approvedButton(_ sender: Any) {
-        self.status = "1"
-        self.approvedBtn.backgroundColor = .systemOrange
-        self.pendingBtn.backgroundColor = .white
-        self.cancelledBtn.backgroundColor = .white
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.status = "1"
+            self.approvedBtn.backgroundColor = .systemOrange
+            self.pendingBtn.backgroundColor = .white
+            self.cancelledBtn.backgroundColor = .white
+        }
         
     }
     
     @IBAction func cancelledButton(_ sender: Any) {
-        self.status = "2"
-        self.approvedBtn.backgroundColor = .white
-        self.pendingBtn.backgroundColor = .white
-        self.cancelledBtn.backgroundColor = .systemOrange
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.status = "2"
+            self.approvedBtn.backgroundColor = .white
+            self.pendingBtn.backgroundColor = .white
+            self.cancelledBtn.backgroundColor = .systemOrange
+        }
     }
     @IBAction func applyButton(_ sender: Any) {
-
-        if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status == ""{
-            self.view.makeToast("Select date or filter status or both", duration: 2.0, position: .center)
-        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status != ""{
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
             
-            mileStoneRedemptionAPI()
-            self.filterShadowView.isHidden = true
-            
-        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz(){
-            
-            self.view.makeToast("Select To Date".localiz(), duration: 2.0, position: .center)
-            
-        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz(){
-            
-            self.view.makeToast("Select From Date".localiz(), duration: 2.0, position: .center)
-            
-        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz() && self.status == "" || self.status != ""{
-            
-            if selectedToDate < selectedFromDate{
-                
-                self.view.makeToast("ToDate should be lower than FromDate".localiz(), duration: 2.0, position: .center)
-                
+            if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status == ""{
+                self.view.makeToast("Select date or filter status or both", duration: 2.0, position: .center)
             }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status != ""{
                 
                 mileStoneRedemptionAPI()
                 self.filterShadowView.isHidden = true
+                
+            }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz(){
+                
+                self.view.makeToast("Select To Date".localiz(), duration: 2.0, position: .center)
+                
+            }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz(){
+                
+                self.view.makeToast("Select From Date".localiz(), duration: 2.0, position: .center)
+                
+            }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz() && self.status == "" || self.status != ""{
+                
+                if selectedToDate < selectedFromDate{
+                    
+                    self.view.makeToast("ToDate should be lower than FromDate".localiz(), duration: 2.0, position: .center)
+                    
+                }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status != ""{
+                    
+                    mileStoneRedemptionAPI()
+                    self.filterShadowView.isHidden = true
+                }else{
+                    mileStoneRedemptionAPI()
+                    self.filterShadowView.isHidden = true
+                }
+                
             }else{
+                
                 mileStoneRedemptionAPI()
                 self.filterShadowView.isHidden = true
             }
-            
-        }else{
-            
-            mileStoneRedemptionAPI()
-            self.filterShadowView.isHidden = true
         }
         
         
     }
     @IBAction func clearAllBtn(_ sender: Any) {
-        self.status = ""
-        self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
-        self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
-        self.approvedBtn.backgroundColor = .white
-        self.pendingBtn.backgroundColor = .white
-        self.cancelledBtn.backgroundColor = .white
-        selectedFromDate = ""
-        selectedToDate = ""
-        mileStoneRedemptionAPI()
-        self.filterShadowView.isHidden = true
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.status = ""
+            self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+            self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
+            self.approvedBtn.backgroundColor = .white
+            self.pendingBtn.backgroundColor = .white
+            self.cancelledBtn.backgroundColor = .white
+            selectedFromDate = ""
+            selectedToDate = ""
+            mileStoneRedemptionAPI()
+            self.filterShadowView.isHidden = true
+        }
     }
     
     

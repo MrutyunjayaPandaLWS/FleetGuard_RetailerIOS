@@ -130,34 +130,43 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.VM.VC = self
-        localization()
-        self.firstNameTF.text = "\(firstName)"
-        self.lastNameTF.text = lastName
-        self.mobileTF.text = mobileNumber
-        self.emailTF.text = emailLbl
-        emailTF.keyboardType = .emailAddress
-        self.selectSateLbl.text = state
-        self.selectCityLbl.text = city
-        self.pincodeTF.text = pincode
-        self.selectDOBLbl.text = dob
-        self.selectCountryLbl.text = "India"
-        self.addressTF.text = self.addressLbl
-        
-        genderName == "-" ? (self.selectGenderLbl.text = "Select Gender") : (self.selectGenderLbl.text = genderName)
-        dob == "-" ? (self.selectDOBLbl.text = "Select_DOB".localiz()) : (self.selectDOBLbl.text = dob)
-        prefLanguage == "-" ? (self.selectPreferredLanguage.text = "Select Preferred Language") : (self.selectPreferredLanguage.text = prefLanguage)
-        
-        addressId = profileDetails?.lstCustomerJson?[0].addressId ?? 0
-        customerTypeID = profileDetails?.lstCustomerJson?[0].customerTypeID ?? 54
-        customerType = profileDetails?.lstCustomerJson?[0].customerId ?? 0
-//        isactive = profileDetails?.lstCustomerJson?[0].isActive ?? 1
-//        loyaltyAutoGen = profileDetails?.lstCustomerJson?[0].loyaltyIdAutoGen ?? 1
-//        merchantId = profileDetails?.lstCustomerJson?[0].merchantId ?? 1
-        countryId = profileDetails?.lstCustomerJson?[0].countryId ?? -1
-        locationCode = profileDetails?.lstCustomerJson?[0].locationId ?? -1
-        selectedStateId = profileDetails?.lstCustomerJson?[0].stateId ?? -1
-        selectedCityId = profileDetails?.lstCustomerJson?[0].cityId ?? -1
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.VM.VC = self
+            localization()
+            self.firstNameTF.text = "\(firstName)"
+            self.lastNameTF.text = lastName
+            self.mobileTF.text = mobileNumber
+            self.emailTF.text = emailLbl
+            emailTF.keyboardType = .emailAddress
+            self.selectSateLbl.text = state
+            self.selectCityLbl.text = city
+            self.pincodeTF.text = pincode
+            self.selectDOBLbl.text = dob
+            self.selectCountryLbl.text = "India"
+            self.addressTF.text = self.addressLbl
+            
+            genderName == "-" ? (self.selectGenderLbl.text = "Select Gender") : (self.selectGenderLbl.text = genderName)
+            dob == "-" ? (self.selectDOBLbl.text = "Select_DOB".localiz()) : (self.selectDOBLbl.text = dob)
+            prefLanguage == "-" ? (self.selectPreferredLanguage.text = "Select Preferred Language") : (self.selectPreferredLanguage.text = prefLanguage)
+            
+            addressId = profileDetails?.lstCustomerJson?[0].addressId ?? 0
+            customerTypeID = profileDetails?.lstCustomerJson?[0].customerTypeID ?? 54
+            customerType = profileDetails?.lstCustomerJson?[0].customerId ?? 0
+            //        isactive = profileDetails?.lstCustomerJson?[0].isActive ?? 1
+            //        loyaltyAutoGen = profileDetails?.lstCustomerJson?[0].loyaltyIdAutoGen ?? 1
+            //        merchantId = profileDetails?.lstCustomerJson?[0].merchantId ?? 1
+            countryId = profileDetails?.lstCustomerJson?[0].countryId ?? -1
+            locationCode = profileDetails?.lstCustomerJson?[0].locationId ?? -1
+            selectedStateId = profileDetails?.lstCustomerJson?[0].stateId ?? -1
+            selectedCityId = profileDetails?.lstCustomerJson?[0].cityId ?? -1
+        }
     }
     
    
@@ -266,7 +275,16 @@ class FG_EditProfileVC: BaseViewController, DateSelectedDelegate, DropDownDelega
     
     
     @IBAction func saveChangesBtn(_ sender: Any) {
-        self.editDataAPI()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.editDataAPI()
+        }
     }
     
     

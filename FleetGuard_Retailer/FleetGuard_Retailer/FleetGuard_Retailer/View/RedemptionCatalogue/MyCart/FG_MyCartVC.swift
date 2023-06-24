@@ -33,13 +33,22 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.VM.VC = self
-        localization()
-        self.nodataFoundLbl.text = "noDataFound".localiz()
-        self.nodataFoundLbl.isHidden = true
-        myCartTableView.delegate = self
-        myCartTableView.dataSource = self
-        self.myCartListApi()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.VM.VC = self
+            localization()
+            self.nodataFoundLbl.text = "noDataFound".localiz()
+            self.nodataFoundLbl.isHidden = true
+            myCartTableView.delegate = self
+            myCartTableView.dataSource = self
+            self.myCartListApi()
+        }
     }
     
     func localization(){
@@ -50,24 +59,33 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func processToCheckOutBtn(_ sender: Any) {
-        print(totalRedeemablePtsLbl.text,"slkjdl")
-        print(totalPoints,"sjhdjsk")
-        print(Int(totalRedeemablePtsLbl.text ?? "") ?? 0,"dksjdkj")
-        
-        if Int(totalRedeemablePtsLbl.text ?? "") ?? 0 <= Int(totalPoints) ?? 0 {
-            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DefaultAddressVC") as! FG_DefaultAddressVC
-            vc.totalPts = self.totalRedeemabelPts
-            self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
         }else{
-//            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Insufficient point balance"
-//                vc!.modalPresentationStyle = .overFullScreen
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-//            }
-            self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
+            print(totalRedeemablePtsLbl.text,"slkjdl")
+            print(totalPoints,"sjhdjsk")
+            print(Int(totalRedeemablePtsLbl.text ?? "") ?? 0,"dksjdkj")
+            
+            if Int(totalRedeemablePtsLbl.text ?? "") ?? 0 <= Int(totalPoints) ?? 0 {
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_DefaultAddressVC") as! FG_DefaultAddressVC
+                vc.totalPts = self.totalRedeemabelPts
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                //            DispatchQueue.main.async{
+                //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                //                vc!.delegate = self
+                //                vc!.descriptionInfo = "Insufficient point balance"
+                //                vc!.modalPresentationStyle = .overFullScreen
+                //                vc!.modalTransitionStyle = .crossDissolve
+                //                self.present(vc!, animated: true, completion: nil)
+                //            }
+                self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
+            }
         }
     }
     

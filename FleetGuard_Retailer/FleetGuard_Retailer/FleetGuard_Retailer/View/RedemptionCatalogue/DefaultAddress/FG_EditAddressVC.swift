@@ -94,23 +94,31 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        localization()
-        self.pincodeTF.keyboardType = .numberPad
-        self.mobileTF.keyboardType = .numberPad
-        self.pincodeTF.delegate = self
-        self.mobileTF.delegate = self
-        self.nameTF.text = selectedname
-        self.mobileTF.text = selectedmobile
-        self.emailAddressTF.text = selectedemail
-        self.addressTF.text = selectedaddress
-        self.selectCountry.text = "India"
-        self.selectCountry.isEnabled = false
-        self.stateLbl.text = selectedState
-        self.selectCityLbl.text = selectedCity
-        self.pincodeTF.text = selectedpincode
-        emailAddressTF.keyboardType = .emailAddress
-        
-
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            localization()
+            self.pincodeTF.keyboardType = .numberPad
+            self.mobileTF.keyboardType = .numberPad
+            self.pincodeTF.delegate = self
+            self.mobileTF.delegate = self
+            self.nameTF.text = selectedname
+            self.mobileTF.text = selectedmobile
+            self.emailAddressTF.text = selectedemail
+            self.addressTF.text = selectedaddress
+            self.selectCountry.text = "India"
+            self.selectCountry.isEnabled = false
+            self.stateLbl.text = selectedState
+            self.selectCityLbl.text = selectedCity
+            self.pincodeTF.text = selectedpincode
+            emailAddressTF.keyboardType = .emailAddress
+            
+        }
     }
     
     private func localization(){

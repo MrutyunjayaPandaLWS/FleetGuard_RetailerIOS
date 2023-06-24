@@ -94,16 +94,25 @@ class FG_StatementVC: BaseViewController,StatementViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        localization()
-        self.VM.VC = self
-        self.statementTableView.delegate = self
-        self.statementTableView.dataSource = self
-        self.rlpStatemnet()
-        
-        
-        self.statementViewStack.clipsToBounds = true
-        statementViewStack.layer.cornerRadius = 15
-        statementViewStack.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            localization()
+            self.VM.VC = self
+            self.statementTableView.delegate = self
+            self.statementTableView.dataSource = self
+            self.rlpStatemnet()
+            
+            
+            self.statementViewStack.clipsToBounds = true
+            statementViewStack.layer.cornerRadius = 15
+            statementViewStack.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        }
     }
     
     private func localization(){

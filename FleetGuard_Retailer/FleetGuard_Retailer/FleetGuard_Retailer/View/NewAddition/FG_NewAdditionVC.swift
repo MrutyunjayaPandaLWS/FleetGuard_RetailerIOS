@@ -36,8 +36,17 @@ class FG_NewAdditionVC: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        myCartApi()
-        localization()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            myCartApi()
+            localization()
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,15 +59,24 @@ class FG_NewAdditionVC: BaseViewController {
         headerText.text = "New Range Addition".localiz()
     }
     @IBAction func segmentedController(_ sender: Any) {
-        if segmentController.selectedSegmentIndex == 0{
-            container?.segueIdentifierReceivedFromParent("first")
-            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-            segmentController.setTitleTextAttributes(titleTextAttributes, for: .selected)
-        }else if segmentController.selectedSegmentIndex == 1{
-            container?.segueIdentifierReceivedFromParent("second")
-            let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-            segmentController.setTitleTextAttributes(titleTextAttributes, for: .selected)
-               
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            if segmentController.selectedSegmentIndex == 0{
+                container?.segueIdentifierReceivedFromParent("first")
+                let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+                segmentController.setTitleTextAttributes(titleTextAttributes, for: .selected)
+            }else if segmentController.selectedSegmentIndex == 1{
+                container?.segueIdentifierReceivedFromParent("second")
+                let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+                segmentController.setTitleTextAttributes(titleTextAttributes, for: .selected)
+                
+            }
         }
     }
     
@@ -67,8 +85,17 @@ class FG_NewAdditionVC: BaseViewController {
     }
     
     @IBAction func selectMyCartBtn(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueMyCartVC") as! FG_ProductCatalogueMyCartVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueMyCartVC") as! FG_ProductCatalogueMyCartVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
 
     }
     

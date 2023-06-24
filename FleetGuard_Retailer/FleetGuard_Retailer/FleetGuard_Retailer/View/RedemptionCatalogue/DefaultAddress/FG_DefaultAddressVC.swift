@@ -63,14 +63,23 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        localization()
-        self.VM.VC = self
-        self.profileDetailsApi()
-        self.redeemablepts.text = "\(self.totalPts)"
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(afterDismissed), name: Notification.Name.dismissCurrentVC, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(goToMain), name: Notification.Name.goToMain, object: nil)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            localization()
+            self.VM.VC = self
+            self.profileDetailsApi()
+            self.redeemablepts.text = "\(self.totalPts)"
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(afterDismissed), name: Notification.Name.dismissCurrentVC, object: nil)
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(goToMain), name: Notification.Name.goToMain, object: nil)
+        }
     }
     
     func localization(){
@@ -92,8 +101,16 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
     }
     
     @IBAction func editAddressBtn(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_EditAddressVC") as! FG_EditAddressVC
-        vc.delegate = self
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_EditAddressVC") as! FG_EditAddressVC
+            vc.delegate = self
             vc.selectedname = self.VM.defaultAddressArray[0].firstName ?? "-"
             vc.selectedemail = self.VM.defaultAddressArray[0].email ?? "-"
             vc.selectedmobile = self.VM.defaultAddressArray[0].mobile ?? "-"
@@ -105,7 +122,8 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
             vc.selectedpincode = self.VM.defaultAddressArray[0].zip ?? "-"
             vc.selectedCountryId = self.VM.defaultAddressArray[0].countryId ?? 0
             vc.selectedCountry = self.VM.defaultAddressArray[0].countryName ?? "-"
-        self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func backBtn(_ sender: Any) {
@@ -113,56 +131,64 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
     }
     
     @IBAction func processToCheckOut(_ sender: Any) {
-        print(selectedStateID)
-          print(selectedCityID)
-          print(selectedaddress)
-          print(selectedpincode)
-          print(selectedmobile)
-
-          if UserDefaults.standard.string(forKey: "verificationStatus") == "1"{
-              if selectedStateID == -1 || selectedCityID == -1 || selectedaddress == "" || selectedpincode == "" || selectedmobile == ""{
-                  DispatchQueue.main.async{
-//                      let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                      vc!.delegate = self
-//                      vc!.titleInfo = ""
-//                      vc!.descriptionInfo = "Shipping address requires: State,City,Address,Pin code and Mobile Number,details,Click on 'Edit' to edit and add details"
-//                      vc!.modalPresentationStyle = .overCurrentContext
-//                      vc!.modalTransitionStyle = .crossDissolve
-//                      self.present(vc!, animated: true, completion: nil)
-                      
-                      self.view.makeToast("Shipping_address_requires".localiz(), duration: 3.0, position: .bottom)
-                  }
-              }else{
-                  let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionOTPVC") as? FG_RedemptionOTPVC
-                  vc!.stateID = self.selectedStateID
-                  vc!.cityID = self.selectedCityID
-                  vc!.stateName = self.selectedState
-                  vc!.cityName = self.selectedCity
-                  vc!.pincode = self.selectedpincode
-                  vc!.address1 = self.selectedaddress
-                  vc!.customerName = self.userNameLbl.text ?? ""
-                  vc!.mobile = self.selectedmobile
-                  vc!.emailId = self.selectedemail
-                  vc!.countryId = self.selectedCountryId
-                  vc!.countryName = self.selectedCountry
-                  vc!.redeemedPoints = self.totalPoint
-                  self.navigationController?.pushViewController(vc!, animated: true)
-              }
-              
-          }else{
-              DispatchQueue.main.async{
-//                  let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                  vc!.delegate = self
-//                  vc!.titleInfo = ""
-//                  vc!.descriptionInfo = "Your account is unverified! Kindly contact the administrator to access the redemption Catalogue"
-//                  vc!.modalPresentationStyle = .overCurrentContext
-//                  vc!.modalTransitionStyle = .crossDissolve
-//                  self.present(vc!, animated: true, completion: nil)
-                  self.view.makeToast("your_account_is_unverified_for_redeemption".localiz(), duration: 3.0, position: .bottom)
-              }
-          }
-        
-        
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            print(selectedStateID)
+            print(selectedCityID)
+            print(selectedaddress)
+            print(selectedpincode)
+            print(selectedmobile)
+            
+            if UserDefaults.standard.string(forKey: "verificationStatus") == "1"{
+                if selectedStateID == -1 || selectedCityID == -1 || selectedaddress == "" || selectedpincode == "" || selectedmobile == ""{
+                    DispatchQueue.main.async{
+                        //                      let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                        //                      vc!.delegate = self
+                        //                      vc!.titleInfo = ""
+                        //                      vc!.descriptionInfo = "Shipping address requires: State,City,Address,Pin code and Mobile Number,details,Click on 'Edit' to edit and add details"
+                        //                      vc!.modalPresentationStyle = .overCurrentContext
+                        //                      vc!.modalTransitionStyle = .crossDissolve
+                        //                      self.present(vc!, animated: true, completion: nil)
+                        
+                        self.view.makeToast("Shipping_address_requires".localiz(), duration: 3.0, position: .bottom)
+                    }
+                }else{
+                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionOTPVC") as? FG_RedemptionOTPVC
+                    vc!.stateID = self.selectedStateID
+                    vc!.cityID = self.selectedCityID
+                    vc!.stateName = self.selectedState
+                    vc!.cityName = self.selectedCity
+                    vc!.pincode = self.selectedpincode
+                    vc!.address1 = self.selectedaddress
+                    vc!.customerName = self.userNameLbl.text ?? ""
+                    vc!.mobile = self.selectedmobile
+                    vc!.emailId = self.selectedemail
+                    vc!.countryId = self.selectedCountryId
+                    vc!.countryName = self.selectedCountry
+                    vc!.redeemedPoints = self.totalPoint
+                    self.navigationController?.pushViewController(vc!, animated: true)
+                }
+                
+            }else{
+                DispatchQueue.main.async{
+                    //                  let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                  vc!.delegate = self
+                    //                  vc!.titleInfo = ""
+                    //                  vc!.descriptionInfo = "Your account is unverified! Kindly contact the administrator to access the redemption Catalogue"
+                    //                  vc!.modalPresentationStyle = .overCurrentContext
+                    //                  vc!.modalTransitionStyle = .crossDissolve
+                    //                  self.present(vc!, animated: true, completion: nil)
+                    self.view.makeToast("your_account_is_unverified_for_redeemption".localiz(), duration: 3.0, position: .bottom)
+                }
+            }
+            
+        }
     }
     
     func profileDetailsApi(){

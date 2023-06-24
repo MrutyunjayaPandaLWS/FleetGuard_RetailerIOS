@@ -35,17 +35,26 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.VM.VC = self
-        headerText.text = "myCart".localiz()
-        self.noDataFoundLbl.text = "noDataFound".localiz()
-        noDataFoundLbl.isHidden = true
-        self.prodCatalogueCartTableView.dataSource = self
-        self.prodCatalogueCartTableView.delegate = self
-        self.myCartApi()
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToProductsList), name: Notification.Name.navigateToProductList, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToDashBoard), name: Notification.Name.navigateToDashboard, object: nil)
-        self.orderTotalLbl.text = "Order Total"
-        self.placeOrderOutBtn.setTitle("Place Order", for: .normal)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.VM.VC = self
+            headerText.text = "myCart".localiz()
+            self.noDataFoundLbl.text = "noDataFound".localiz()
+            noDataFoundLbl.isHidden = true
+            self.prodCatalogueCartTableView.dataSource = self
+            self.prodCatalogueCartTableView.delegate = self
+            self.myCartApi()
+            NotificationCenter.default.addObserver(self, selector: #selector(navigateToProductsList), name: Notification.Name.navigateToProductList, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(navigateToDashBoard), name: Notification.Name.navigateToDashboard, object: nil)
+            self.orderTotalLbl.text = "Order Total"
+            self.placeOrderOutBtn.setTitle("Place Order", for: .normal)
+        }
     }
     
 

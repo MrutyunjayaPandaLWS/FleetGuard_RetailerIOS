@@ -31,19 +31,27 @@ class FG_MyBillingsVC: BaseViewController,myBillingsDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.VM.VC = self
-        localization()
-        self.myBillingsTableView.delegate = self
-        self.myBillingsTableView.dataSource = self
-        noDataFound.isHidden = true
-        noDataFound.text = "noDataFound".localiz()
-        billingsListingAPI()
-        
-        
-        self.billingHeaderStack.clipsToBounds = true
-        billingHeaderStack.layer.cornerRadius = 15
-        billingHeaderStack.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.VM.VC = self
+            localization()
+            self.myBillingsTableView.delegate = self
+            self.myBillingsTableView.dataSource = self
+            noDataFound.isHidden = true
+            noDataFound.text = "noDataFound".localiz()
+            billingsListingAPI()
+            
+            
+            self.billingHeaderStack.clipsToBounds = true
+            billingHeaderStack.layer.cornerRadius = 15
+            billingHeaderStack.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        }
         
     }
     

@@ -194,6 +194,10 @@
 "RLP_No" = "RLP No";
 "NoteDateason" = "नोट: दिनांक यथावत ";
 "Add more part no" = "और भाग संख्या जोड़ें";
-"Ref. No" = "Ref. No";
-"Points Redeemed" = "Points Redeemed";
+"Ref. No" = "संदर्भ। नहीं";
+"Points Redeemed" = "अंक भुनाए गए";
 "Qty" = "Qty" ;
+"Query Type" = "क्वेरी प्रकार";
+"offersAndPromotionsText" = "ऑफर और प्रमोशन यहां
+क्लिक करें";
+

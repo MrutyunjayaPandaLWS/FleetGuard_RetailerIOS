@@ -58,13 +58,22 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        localization()
-        self.VM.VC = self
-        self.picker.delegate = self
-        self.queryDetailsView.textColor = .gray
-        self.queryDetailsView.text = "Please Enter Query Details"
-        self.queryDetailsView.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(navigateToProductsList), name: Notification.Name.sendBackTOQuery, object: nil)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            localization()
+            self.VM.VC = self
+            self.picker.delegate = self
+            self.queryDetailsView.textColor = .gray
+            self.queryDetailsView.text = "Please Enter Query Details"
+            self.queryDetailsView.delegate = self
+            NotificationCenter.default.addObserver(self, selector: #selector(navigateToProductsList), name: Notification.Name.sendBackTOQuery, object: nil)
+        }
     }
     
     private func localization(){
@@ -121,46 +130,55 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
         self.present(vc, animated: true)
     }
     @IBAction func submitBtn(_ sender: Any) {
-        if self.selectTopicLbl.text == "" || self.selectTopicLbl.text == "Select Topic"{
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Select query topic"
-//                vc!.modalPresentationStyle = .overFullScreen
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                
-                self.view.makeToast("Select_query_topic".localiz(), duration: 3.0, position: .bottom)
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
             }
-        }else if self.queryDetailsView.text!.count == 0 || self.queryDetailsView.text == "-" || self.queryDetailsView.text == "Please Enter Query Details".localiz(){
-            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Enter query Details"
-//                vc!.modalPresentationStyle = .overFullScreen
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                
-                self.view.makeToast("Enter_query_Details".localiz(), duration: 3.0, position: .bottom)
-            }
-            
         }else{
-            let parameter = [
-                "IsQueryFromMobile": "true",
-                "ActorId": "\(self.userId)",
-                "CustomerName": "",
-                "Email": "",
-                "HelpTopic": "\(self.selectedTopic)",
-                "HelpTopicID": "\(self.selectedTopicId)",
-                "QueryDetails": "\(self.queryDetailsView.text!)",
-                "QuerySummary": "\(self.queryDetailsView.text!)",
-                "ImageUrl": "\(self.strBase64)",
-                "LoyaltyID": "\(self.loyaltyId)",
-                "SourceType": "3",
-                "ActionType": "0"
-            ] as [String: Any]
-            print(parameter,"dsljd")
-            self.VM.querySubmissionApi(parameter: parameter)
+            if self.selectTopicLbl.text == "" || self.selectTopicLbl.text == "Select Topic"{
+                DispatchQueue.main.async{
+                    //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                vc!.delegate = self
+                    //                vc!.descriptionInfo = "Select query topic"
+                    //                vc!.modalPresentationStyle = .overFullScreen
+                    //                vc!.modalTransitionStyle = .crossDissolve
+                    //                self.present(vc!, animated: true, completion: nil)
+                    
+                    self.view.makeToast("Select_query_topic".localiz(), duration: 3.0, position: .bottom)
+                }
+            }else if self.queryDetailsView.text!.count == 0 || self.queryDetailsView.text == "-" || self.queryDetailsView.text == "Please Enter Query Details".localiz(){
+                DispatchQueue.main.async{
+                    //                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                vc!.delegate = self
+                    //                vc!.descriptionInfo = "Enter query Details"
+                    //                vc!.modalPresentationStyle = .overFullScreen
+                    //                vc!.modalTransitionStyle = .crossDissolve
+                    //                self.present(vc!, animated: true, completion: nil)
+                    
+                    self.view.makeToast("Enter_query_Details".localiz(), duration: 3.0, position: .bottom)
+                }
+                
+            }else{
+                let parameter = [
+                    "IsQueryFromMobile": "true",
+                    "ActorId": "\(self.userId)",
+                    "CustomerName": "",
+                    "Email": "",
+                    "HelpTopic": "\(self.selectedTopic)",
+                    "HelpTopicID": "\(self.selectedTopicId)",
+                    "QueryDetails": "\(self.queryDetailsView.text!)",
+                    "QuerySummary": "\(self.queryDetailsView.text!)",
+                    "ImageUrl": "\(self.strBase64)",
+                    "LoyaltyID": "\(self.loyaltyId)",
+                    "SourceType": "3",
+                    "ActionType": "0"
+                ] as [String: Any]
+                print(parameter,"dsljd")
+                self.VM.querySubmissionApi(parameter: parameter)
+            }
         }
     }
 }

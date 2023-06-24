@@ -38,15 +38,24 @@ class HistoryNotificationsViewController: BaseViewController, notificationDelgat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.VM.VC = self
-        expandedview.isHidden = true
-        self.noDataFound.isHidden = true
-        self.noDataFound.text = "noDataFound".localiz()
-        self.NotificationstableView.register(UINib(nibName: "HistoryNotificationsTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryNotificationsTableViewCell")
-        notificationListApi()
-        self.NotificationstableView.delegate = self
-        self.NotificationstableView.dataSource = self
-        languagelocalization()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.VM.VC = self
+            expandedview.isHidden = true
+            self.noDataFound.isHidden = true
+            self.noDataFound.text = "noDataFound".localiz()
+            self.NotificationstableView.register(UINib(nibName: "HistoryNotificationsTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryNotificationsTableViewCell")
+            notificationListApi()
+            self.NotificationstableView.delegate = self
+            self.NotificationstableView.dataSource = self
+            languagelocalization()
+        }
         
     }
     

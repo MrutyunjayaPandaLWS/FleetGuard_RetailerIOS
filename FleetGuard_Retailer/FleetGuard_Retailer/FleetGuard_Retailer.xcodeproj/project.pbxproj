@@ -328,6 +328,8 @@
 		257849632A3047360058B25A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257849622A3047360058B25A /* NotificationService.swift */; };
 		257849672A3047360058B25A /* NotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 257849602A3047360058B25A /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2578496D2A3047A70058B25A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2578496C2A3047A70058B25A /* GoogleService-Info.plist */; };
+		8470C17F2A4564D60063C511 /* IOS_FG_Internet_Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470C17E2A4564D60063C511 /* IOS_FG_Internet_Check.swift */; };
+		8470C1832A4566C80063C511 /* no_internet_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 8470C1822A4566C80063C511 /* no_internet_lottie.json */; };
 		FD31AECFDAA8DB1BDB5A69C3 /* Pods_FleetGuard_Retailer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DC0AEAD7C06DE141638545 /* Pods_FleetGuard_Retailer.framework */; };
 /* End PBXBuildFile section */
 
@@ -706,6 +708,8 @@
 		63DC0AEAD7C06DE141638545 /* Pods_FleetGuard_Retailer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FleetGuard_Retailer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		678D8053A910CE156B732928 /* Pods-FleetGuard_Retailer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetGuard_Retailer.debug.xcconfig"; path = "Target Support Files/Pods-FleetGuard_Retailer/Pods-FleetGuard_Retailer.debug.xcconfig"; sourceTree = "<group>"; };
 		77990815D1018D8B18ACBD10 /* Pods-FleetGuard_Retailer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetGuard_Retailer.release.xcconfig"; path = "Target Support Files/Pods-FleetGuard_Retailer/Pods-FleetGuard_Retailer.release.xcconfig"; sourceTree = "<group>"; };
+		8470C17E2A4564D60063C511 /* IOS_FG_Internet_Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_FG_Internet_Check.swift; sourceTree = "<group>"; };
+		8470C1822A4566C80063C511 /* no_internet_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = no_internet_lottie.json; path = ../../../../../../../../Desktop/no_internet_lottie.json; sourceTree = "<group>"; };
 		848128DC2A3D947200C004AD /* FleetGuard_Retailer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FleetGuard_Retailer.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1470,6 +1474,7 @@
 				257847632A3043860058B25A /* MyOrders */,
 				257847662A3043860058B25A /* Product Image Details */,
 				257847682A3043860058B25A /* LanguageVC */,
+				8470C17E2A4564D60063C511 /* IOS_FG_Internet_Check.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2100,6 +2105,7 @@
 		257847B42A3043870058B25A /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				8470C1822A4566C80063C511 /* no_internet_lottie.json */,
 				257847B52A3043870058B25A /* lf30_editor_jh47f7lt.json */,
 				257847B62A3043870058B25A /* 94350-gears-lottie-animation.json */,
 				257847B72A3043870058B25A /* lf30_editor_qd1wdceq.json */,
@@ -2703,6 +2709,7 @@
 				257849112A3043890058B25A /* fg-retailer-faq-Tamil.html in Resources */,
 				257849132A3043890058B25A /* fg-retailer-faq-Telugu.html in Resources */,
 				257848FB2A3043890058B25A /* Roboto-BoldItalic.ttf in Resources */,
+				8470C1832A4566C80063C511 /* no_internet_lottie.json in Resources */,
 				257849122A3043890058B25A /* fg-retailer-faq-Bengali.html in Resources */,
 				257849142A3043890058B25A /* fg-retailer-about-Tamil.html in Resources */,
 				257849002A3043890058B25A /* Roboto-Bold.ttf in Resources */,
@@ -2887,6 +2894,7 @@
 				257848822A3043890058B25A /* UserList.swift in Sources */,
 				257848592A3043880058B25A /* ProductQuantityUpdateModel.swift in Sources */,
 				257848552A3043880058B25A /* MileStonesRedemptionListModels.swift in Sources */,
+				8470C17F2A4564D60063C511 /* IOS_FG_Internet_Check.swift in Sources */,
 				257848DA2A3043890058B25A /* FG_DOBVC.swift in Sources */,
 				257848B52A3043890058B25A /* FG_RedemptionOTPVC.swift in Sources */,
 				257848B22A3043890058B25A /* FG_MyCartTVC.swift in Sources */,
@@ -3264,9 +3272,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FleetGuard_Retailer/FleetGuard_Retailer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FleetGuard_Retailer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "FFPL SAMRIDDHI";
@@ -3287,6 +3297,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = FleetGuardSamriddhi_Dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3302,9 +3313,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FleetGuard_Retailer/FleetGuard_Retailer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FleetGuard_Retailer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "FFPL SAMRIDDHI";
@@ -3325,6 +3338,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = FleetGuardSamriddhi_Dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3411,9 +3425,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
@@ -3428,6 +3444,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi.NotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Fleet-Guard-Samriddhi.Notification-DEV";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -3439,9 +3456,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
@@ -3456,6 +3475,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi.NotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Fleet-Guard-Samriddhi.Notification-DEV";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

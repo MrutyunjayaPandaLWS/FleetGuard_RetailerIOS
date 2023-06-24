@@ -201,6 +201,13 @@
 "RLP_No" = "RLP No";
 "NoteDateason" = "ಗಮನಿಸಿ: ದಿನಾಂಕದಂತೆ ";
 "Add more part no" = "ಹೆಚ್ಚಿನ ಭಾಗ ಸಂಖ್ಯೆ ಸೇರಿಸಿ";
-"Ref. No" = "Ref. No";
-"Points Redeemed" = "Points Redeemed";
-"Qty" = "Qty" ;
+
+"Ref. No" = "Ref. ಸಂ";
+"Points Redeemed" = "ಪಾಯಿಂಟ್ಗಳನ್ನು ರಿಡೀಮ್ ಮಾಡಲಾಗಿದೆ";
+"Qty" = "Qty";
+"Query Type" = "ಪ್ರಶ್ನೆ ಪ್ರಕಾರ";
+
+
+"offersAndPromotionsText" = "ಕೊಡುಗೆಗಳು ಮತ್ತು ಪ್ರಚಾರಗಳು
+ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ";
+

@@ -52,9 +52,18 @@ class FG_MarketGapVC: BaseViewController, MarketingGapDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        noDataFoundLbl.isHidden = true
-        self.VM.myMarketGapArray.removeAll()
-        counterGap(startIndex: startindex)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            noDataFoundLbl.isHidden = true
+            self.VM.myMarketGapArray.removeAll()
+            counterGap(startIndex: startindex)
+        }
     }
     
     private func localization(){

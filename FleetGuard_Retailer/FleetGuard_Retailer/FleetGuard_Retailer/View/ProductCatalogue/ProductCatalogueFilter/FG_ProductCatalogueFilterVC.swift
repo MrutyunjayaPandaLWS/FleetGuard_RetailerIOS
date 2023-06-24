@@ -75,9 +75,18 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        localization()
-        self.filterArrayAPI()
-        self.categoryListCollectionView.reloadData()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            localization()
+            self.filterArrayAPI()
+            self.categoryListCollectionView.reloadData()
+        }
     }
     
     private func localization(){
@@ -101,25 +110,34 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
     }
     
     @IBAction func applyBtn(_ sender: Any) {
-        
-        print(self.selectedArrayDataID)
-        print(self.selectedArrayDataID2)
-        print(self.selectedArrayDataID3)
-        print(self.selectedArrayDataID4)
-        
-        if self.selectedArrayDataID == 0 {
-            self.view.makeToast("Please select Segment value".localiz(), duration: 3.0, position: .bottom)
-        }else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 == 0 && self.selectedArrayDataID3 == 0 && self.selectedArrayDataID4 == 0{
-            self.view.makeToast("Please select OME value".localiz(), duration: 3.0, position: .bottom)
-        }
-//        else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 != 0 && self.selectedArrayDataID3 == 0 && self.selectedArrayDataID4 == 0{
-//            self.view.makeToast("Please select Model value", duration: 3.0, position: .bottom)
-//        }else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 != 0 && self.selectedArrayDataID3 != 0 && self.selectedArrayDataID4 == 0{
-//            self.view.makeToast("Please select Product Catagory value", duration: 3.0, position: .bottom)
-//        }
-        else{
-            self.delegate.sendProductFilter(self)
-            self.dismiss(animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            
+            print(self.selectedArrayDataID)
+            print(self.selectedArrayDataID2)
+            print(self.selectedArrayDataID3)
+            print(self.selectedArrayDataID4)
+            
+            if self.selectedArrayDataID == 0 {
+                self.view.makeToast("Please select Segment value".localiz(), duration: 3.0, position: .bottom)
+            }else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 == 0 && self.selectedArrayDataID3 == 0 && self.selectedArrayDataID4 == 0{
+                self.view.makeToast("Please select OME value".localiz(), duration: 3.0, position: .bottom)
+            }
+            //        else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 != 0 && self.selectedArrayDataID3 == 0 && self.selectedArrayDataID4 == 0{
+            //            self.view.makeToast("Please select Model value", duration: 3.0, position: .bottom)
+            //        }else if self.selectedArrayDataID != 0 && self.selectedArrayDataID2 != 0 && self.selectedArrayDataID3 != 0 && self.selectedArrayDataID4 == 0{
+            //            self.view.makeToast("Please select Product Catagory value", duration: 3.0, position: .bottom)
+            //        }
+            else{
+                self.delegate.sendProductFilter(self)
+                self.dismiss(animated: true)
+            }
         }
     }
     

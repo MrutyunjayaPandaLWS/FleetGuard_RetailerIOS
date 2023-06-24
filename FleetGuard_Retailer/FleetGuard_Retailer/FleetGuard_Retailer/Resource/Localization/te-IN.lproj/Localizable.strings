@@ -199,6 +199,12 @@
 "RLP_No" = "RLP No";
 "NoteDateason" = "గమనిక: తేదీ ప్రకారం ";
 "Add more part no" = "మరింత భాగం సంఖ్యను జోడించండి";
-"Ref. No" = "Ref. No";
-"Points Redeemed" = "Points Redeemed";
-"Qty" = "Qty" ;
+
+//newLine
+"Ref. No" = "Ref. సంఖ్య";
+"Points Redeemed" = "పాయింట్లు రీడీమ్ చేయబడ్డాయి";
+"Qty" = "Qty";
+"Query Type" = "ప్రశ్న రకం";
+"offersAndPromotionsText" = "ఆఫర్‌లు మరియు ప్రమోషన్‌లు
+ఇక్కడ నొక్కండి";
+

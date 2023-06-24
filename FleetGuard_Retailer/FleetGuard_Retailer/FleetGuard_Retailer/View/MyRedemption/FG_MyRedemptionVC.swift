@@ -114,15 +114,24 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.myRedemptionListing()
-        
-//        let collectionViewFLowLayout2 = UICollectionViewFlowLayout()
-//        collectionViewFLowLayout2.itemSize = CGSize(width: CGFloat(((self.view.bounds.width - 38) - (self.collectionView.contentInset.left + self.collectionView.contentInset.right)) / 2), height: 45)
-//        collectionViewFLowLayout2.minimumLineSpacing = 2.5
-//        collectionViewFLowLayout2.minimumInteritemSpacing = 2.5
-//         self.collectionView.collectionViewLayout = collectionViewFLowLayout2
-        localization()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            
+            self.myRedemptionListing()
+            
+            //        let collectionViewFLowLayout2 = UICollectionViewFlowLayout()
+            //        collectionViewFLowLayout2.itemSize = CGSize(width: CGFloat(((self.view.bounds.width - 38) - (self.collectionView.contentInset.left + self.collectionView.contentInset.right)) / 2), height: 45)
+            //        collectionViewFLowLayout2.minimumLineSpacing = 2.5
+            //        collectionViewFLowLayout2.minimumInteritemSpacing = 2.5
+            //         self.collectionView.collectionViewLayout = collectionViewFLowLayout2
+            localization()
+        }
     }
     
     private func localization(){
@@ -173,17 +182,26 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     @IBAction func notificationBtn(_ sender: Any) {
     }
     @IBAction func filterBtn(_ sender: Any) {
-        if self.filterShadowView.isHidden == false{
-            self.filterShadowView.isHidden = true
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
         }else{
-            self.filterShadowView.isHidden = false
+            if self.filterShadowView.isHidden == false{
+                self.filterShadowView.isHidden = true
+            }else{
+                self.filterShadowView.isHidden = false
+            }
+            // let collectionViewFLowLayout2 = UICollectionViewFlowLayout()
+            // collectionViewFLowLayout2.itemSize = CGSize(width: CGFloat(((self.view.bounds.width - 38) - (self.collectionView.contentInset.left + self.collectionView.contentInset.right)) / 3), height: 30)
+            //collectionViewFLowLayout2.itemSize = CGSize(width: , height: 30)
+            //        collectionViewFLowLayout2.minimumLineSpacing = 2.5
+            //        collectionViewFLowLayout2.minimumInteritemSpacing = 2.5
+            //         self.collectionView.collectionViewLayout = collectionViewFLowLayout2
         }
-       // let collectionViewFLowLayout2 = UICollectionViewFlowLayout()
-       // collectionViewFLowLayout2.itemSize = CGSize(width: CGFloat(((self.view.bounds.width - 38) - (self.collectionView.contentInset.left + self.collectionView.contentInset.right)) / 3), height: 30)
-        //collectionViewFLowLayout2.itemSize = CGSize(width: , height: 30)
-//        collectionViewFLowLayout2.minimumLineSpacing = 2.5
-//        collectionViewFLowLayout2.minimumInteritemSpacing = 2.5
-//         self.collectionView.collectionViewLayout = collectionViewFLowLayout2
     }
     @IBAction func closeBtn(_ sender: Any) {
         self.filterShadowView.isHidden = true
@@ -237,54 +255,72 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     }
     
     @IBAction func applyButton(_ sender: Any) {
-        print(status,"srjdh")
-        print(self.selectedFromDate,"slkdls")
-        print(selectedToDate,"lskdjsldm")
-        
-        
-        if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.collectionViewDataNumber == "-1"{
-            self.view.makeToast("Select date or filter status or both".localiz(), duration: 2.0, position: .center)
-        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.collectionViewDataNumber != "-1"{
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            print(status,"srjdh")
+            print(self.selectedFromDate,"slkdls")
+            print(selectedToDate,"lskdjsldm")
             
-            self.myRedemptionListing()
-            self.filterShadowView.isHidden = true
             
-        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz(){
-            
-            self.view.makeToast("Select To Date".localiz(), duration: 2.0, position: .center)
-            
-        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz(){
-            
-            self.view.makeToast("Select From Date".localiz(), duration: 2.0, position: .center)
-            
-        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz() && self.collectionViewDataNumber == "-1" || self.collectionViewDataNumber != "-1"{
-            
-            if selectedToDate < selectedFromDate{
-                
-                self.view.makeToast("ToDate should be lower than FromDate".localiz(), duration: 2.0, position: .center)
+            if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.collectionViewDataNumber == "-1"{
+                self.view.makeToast("Select date or filter status or both".localiz(), duration: 2.0, position: .center)
             }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.collectionViewDataNumber != "-1"{
                 
                 self.myRedemptionListing()
                 self.filterShadowView.isHidden = true
+                
+            }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz(){
+                
+                self.view.makeToast("Select To Date".localiz(), duration: 2.0, position: .center)
+                
+            }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz(){
+                
+                self.view.makeToast("Select From Date".localiz(), duration: 2.0, position: .center)
+                
+            }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz() && self.collectionViewDataNumber == "-1" || self.collectionViewDataNumber != "-1"{
+                
+                if selectedToDate < selectedFromDate{
+                    
+                    self.view.makeToast("ToDate should be lower than FromDate".localiz(), duration: 2.0, position: .center)
+                }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.collectionViewDataNumber != "-1"{
+                    
+                    self.myRedemptionListing()
+                    self.filterShadowView.isHidden = true
+                }else{
+                    self.myRedemptionListing()
+                    self.filterShadowView.isHidden = true
+                }
             }else{
                 self.myRedemptionListing()
                 self.filterShadowView.isHidden = true
             }
-        }else{
-            self.myRedemptionListing()
-            self.filterShadowView.isHidden = true
         }
         
     }
     @IBAction func clearbtn(_ sender: Any) {
-        self.status = ""
-        self.collectionViewCatagory = ""
-        self.collectionViewDataNumber = "-1"
-        self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
-        self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
-        self.myRedemptionListing()
-        collectionView.reloadData()
-        self.filterShadowView.isHidden = true
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.status = ""
+            self.collectionViewCatagory = ""
+            self.collectionViewDataNumber = "-1"
+            self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+            self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
+            self.myRedemptionListing()
+            collectionView.reloadData()
+            self.filterShadowView.isHidden = true
+        }
     }
    
 }

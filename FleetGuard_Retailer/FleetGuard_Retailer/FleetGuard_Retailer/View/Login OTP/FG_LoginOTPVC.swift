@@ -37,34 +37,43 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.VM.VC = self
-        localization()
-        self.otpValueLbl.isHidden = false
-        self.resendBtn.isHidden = true
-        txtDPOTPView.dpOTPViewDelegate = self
-        txtDPOTPView.fontTextField = UIFont.systemFont(ofSize: 25)
-        txtDPOTPView.textEdgeInsets = UIEdgeInsets(top: 0, left: -1, bottom: 0, right: 0)
-        txtDPOTPView.editingTextEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-
-        txtDPOTPView.spacing = 10
-        txtDPOTPView.fontTextField = UIFont(name: "HelveticaNeue-Bold", size: CGFloat(16.0))!
-        txtDPOTPView.dismissOnLastEntry = true
-        txtDPOTPView.borderColorTextField = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 1)
-        txtDPOTPView.borderWidthTextField = 1
-        txtDPOTPView.backGroundColorTextField = #colorLiteral(red: 1, green: 0.9999999404, blue: 0.9999999404, alpha: 1)
-        txtDPOTPView.cornerRadiusTextField = 8
-        txtDPOTPView.isCursorHidden = true
-
-        self.VM.otpTimer()
-        self.OtpApi()
-        self.otpSentToLbl.text = "\("Enter_OTP_sent_to".localiz()) \(self.enterMobileNumber)"
-        
-        guard let deviceID = UIDevice.current.identifierForVendor?.uuidString else {
-              return
-           }
-        print(deviceID)
-        self.deviceID = deviceID
-        UserDefaults.standard.set(deviceID, forKey: "deviceID")
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.VM.VC = self
+            localization()
+            self.otpValueLbl.isHidden = false
+            self.resendBtn.isHidden = true
+            txtDPOTPView.dpOTPViewDelegate = self
+            txtDPOTPView.fontTextField = UIFont.systemFont(ofSize: 25)
+            txtDPOTPView.textEdgeInsets = UIEdgeInsets(top: 0, left: -1, bottom: 0, right: 0)
+            txtDPOTPView.editingTextEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            
+            txtDPOTPView.spacing = 10
+            txtDPOTPView.fontTextField = UIFont(name: "HelveticaNeue-Bold", size: CGFloat(16.0))!
+            txtDPOTPView.dismissOnLastEntry = true
+            txtDPOTPView.borderColorTextField = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 1)
+            txtDPOTPView.borderWidthTextField = 1
+            txtDPOTPView.backGroundColorTextField = #colorLiteral(red: 1, green: 0.9999999404, blue: 0.9999999404, alpha: 1)
+            txtDPOTPView.cornerRadiusTextField = 8
+            txtDPOTPView.isCursorHidden = true
+            
+            self.VM.otpTimer()
+            self.OtpApi()
+            self.otpSentToLbl.text = "\("Enter_OTP_sent_to".localiz()) \(self.enterMobileNumber)"
+            
+            guard let deviceID = UIDevice.current.identifierForVendor?.uuidString else {
+                return
+            }
+            print(deviceID)
+            self.deviceID = deviceID
+            UserDefaults.standard.set(deviceID, forKey: "deviceID")
+        }
     }
     //9993870230
     
@@ -84,9 +93,18 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
     
     
     @IBAction func resendButton(_ sender: Any) {
-        self.VM.timer.invalidate()
-        self.VM.otpTimer()
-        self.OtpApi()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.VM.timer.invalidate()
+            self.VM.otpTimer()
+            self.OtpApi()
+        }
     }
     @IBAction func backBtn(_ sender: Any) {
         self.VM.timer.invalidate()
@@ -94,68 +112,76 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
     }
     
     @IBAction func submitButton(_ sender: Any) {
-        
-        if self.enteredValue.count == 0 {
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
-//               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Enter OTP"
-//                vc!.modalPresentationStyle = .overFullScreen
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Enter_OTP".localiz(), duration: 3.0, position: .bottom)
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
             }
-        }else if self.enteredValue.count != 4 {
-            DispatchQueue.main.async{
-//               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Enter valid OTP"
-//                vc!.modalPresentationStyle = .overFullScreen
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
-            }
-        }else if self.enteredValue.count == 4{
-            print(self.enteredValue)
-            print(self.receivedOTP)
-            print(self.enterMobileNumber,"ckjhk")
-//            if self.enteredValue == self.VM.otpVerify{
-            if self.enteredValue == "1234"{
+        }else{
+            
+            if self.enteredValue.count == 0 {
                 DispatchQueue.main.async{
-                    self.loginSubmissionApi()
+                    //               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                vc!.delegate = self
+                    //                vc!.descriptionInfo = "Enter OTP"
+                    //                vc!.modalPresentationStyle = .overFullScreen
+                    //                vc!.modalTransitionStyle = .crossDissolve
+                    //                self.present(vc!, animated: true, completion: nil)
+                    self.view.makeToast("Enter_OTP".localiz(), duration: 3.0, position: .bottom)
                 }
-            } else if self.enterMobileNumber == "\(8142434867)"{
-                if self.enteredValue == self.receivedOTP{
+            }else if self.enteredValue.count != 4 {
+                DispatchQueue.main.async{
+                    //               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                vc!.delegate = self
+                    //                vc!.descriptionInfo = "Enter valid OTP"
+                    //                vc!.modalPresentationStyle = .overFullScreen
+                    //                vc!.modalTransitionStyle = .crossDissolve
+                    //                self.present(vc!, animated: true, completion: nil)
+                    self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
+                }
+            }else if self.enteredValue.count == 4{
+                print(self.enteredValue)
+                print(self.receivedOTP)
+                print(self.enterMobileNumber,"ckjhk")
+                //            if self.enteredValue == self.VM.otpVerify{
+                if self.enteredValue == "1234"{
                     DispatchQueue.main.async{
                         self.loginSubmissionApi()
                     }
+                } else if self.enterMobileNumber == "\(8142434867)"{
+                    if self.enteredValue == self.receivedOTP{
+                        DispatchQueue.main.async{
+                            self.loginSubmissionApi()
+                        }
+                    }else{
+                        self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
+                    }
+                    
                 }else{
-                    self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
+                    DispatchQueue.main.async{
+                        //                   let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                        //                    vc!.delegate = self
+                        //                    vc!.descriptionInfo = "Enter valid OTP"
+                        //                    vc!.modalPresentationStyle = .overFullScreen
+                        //                    vc!.modalTransitionStyle = .crossDissolve
+                        //                    self.present(vc!, animated: true, completion: nil)
+                        self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
+                    }
                 }
-                
             }else{
                 DispatchQueue.main.async{
-//                   let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                    vc!.delegate = self
-//                    vc!.descriptionInfo = "Enter valid OTP"
-//                    vc!.modalPresentationStyle = .overFullScreen
-//                    vc!.modalTransitionStyle = .crossDissolve
-//                    self.present(vc!, animated: true, completion: nil)
+                    //               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                    //                vc!.delegate = self
+                    //                vc!.descriptionInfo = "Enter valid OTP"
+                    //                vc!.modalPresentationStyle = .overFullScreen
+                    //                vc!.modalTransitionStyle = .crossDissolve
+                    //                self.present(vc!, animated: true, completion: nil)
                     self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
                 }
             }
-        }else{
-            DispatchQueue.main.async{
-//               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Enter valid OTP"
-//                vc!.modalPresentationStyle = .overFullScreen
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
-            }
         }
-        
         
     }
     

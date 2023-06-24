@@ -196,6 +196,11 @@
 "RLP_No" = "RLP No";
 "NoteDateason" = "দ্রষ্টব্য: তারিখ হিসাবে ";
 "Add more part no" = "আরো অংশ নং যোগ করুন";
-"Ref. No" = "Ref. No";
-"Points Redeemed" = "Points Redeemed";
-"Qty" = "Qty" ;
+
+"Ref. No" = "রেফ. না";
+"Points Redeemed" = "পয়েন্ট রিডিম করা হয়েছে";
+"Qty" = "Qty";
+"Query Type" = "প্রশ্নের ধরন";
+"offersAndPromotionsText" = "অফার এবং প্রচার
+                    এখানে ক্লিক করুন";
+

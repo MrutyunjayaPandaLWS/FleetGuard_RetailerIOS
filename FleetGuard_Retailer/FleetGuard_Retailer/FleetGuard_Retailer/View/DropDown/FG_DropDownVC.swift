@@ -59,21 +59,30 @@ class FG_DropDownVC: BaseViewController {
     var selectedStatusId = -1
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.VM.VC = self
-        self.dropDownTableView.delegate = self
-        self.dropDownTableView.dataSource = self
-        if isComeFrom == 1{
-             self.stateListingAPI(CountryID: countryIDfromPreviousScreen)
-         }else if isComeFrom == 2{
-             self.cityListingAPI(stateID: stateIDfromPreviousScreen)
-         }else if isComeFrom == 3{
-            // self.lodgeQueryStatusApi()
-         }else if isComeFrom == 4{
-             self.getHelpTopicApi()
-         }else if isComeFrom == 6{
-             self.languageListApi()
-         }
-        print(isComeFrom, "isComeFrom")
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.VM.VC = self
+            self.dropDownTableView.delegate = self
+            self.dropDownTableView.dataSource = self
+            if isComeFrom == 1{
+                self.stateListingAPI(CountryID: countryIDfromPreviousScreen)
+            }else if isComeFrom == 2{
+                self.cityListingAPI(stateID: stateIDfromPreviousScreen)
+            }else if isComeFrom == 3{
+                // self.lodgeQueryStatusApi()
+            }else if isComeFrom == 4{
+                self.getHelpTopicApi()
+            }else if isComeFrom == 6{
+                self.languageListApi()
+            }
+            print(isComeFrom, "isComeFrom")
+        }
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
         {

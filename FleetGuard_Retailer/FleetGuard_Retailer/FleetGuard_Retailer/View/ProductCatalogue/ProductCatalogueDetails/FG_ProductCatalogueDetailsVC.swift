@@ -76,11 +76,21 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
         self.orderNowStackView.isHidden = true
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.myCartApi()
-      //  self.productListApi()
-        localizatiuon()
-        productImage.kf.setImage(with: URL(string: "\(productImageURL)"),placeholder: UIImage(named: "Image 3"))
-        self.qtyTF.isEnabled = false
+        super.viewWillAppear(animated)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.myCartApi()
+            //  self.productListApi()
+            localizatiuon()
+            productImage.kf.setImage(with: URL(string: "\(productImageURL)"),placeholder: UIImage(named: "Image 3"))
+            self.qtyTF.isEnabled = false
+        }
         
     }
     
@@ -96,10 +106,18 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
         
     }
     @IBAction func addToCartButton(_ sender: Any) {
-        if self.addToCartView.isHidden == false{
-            print(Int(self.totalPoints))
-            print((self.mrp))
-           // if Int(self.mrp ) ?? 0 <= Int(self.totalPoints ) ?? 0{
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            if self.addToCartView.isHidden == false{
+                print(Int(self.totalPoints))
+                print((self.mrp))
+                // if Int(self.mrp ) ?? 0 <= Int(self.totalPoints ) ?? 0{
                 self.productQuantityView.isHidden = false
                 self.addToCartView.isHidden = true
                 let parameter = [
@@ -117,79 +135,97 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
                 ] as [String: Any]
                 print(parameter)
                 self.VM.addToCartApi(parameter: parameter)
-          //  }else{
-//                self.addToCartView.isHidden = false
-//                self.productQuantityView.isHidden = true
-//                self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
-//            }
+                //  }else{
+                //                self.addToCartView.isHidden = false
+                //                self.productQuantityView.isHidden = true
+                //                self.view.makeToast("Insufficient point balance", duration: 3.0, position: .bottom)
+                //            }
+            }
         }
-        
     }
     
     @IBAction func minusBtn(_ sender: Any) {
-        if self.value > 1{
-            self.value -= 1
-            self.quantity = "\(value)"
-            self.qtyTF.text = self.quantity
-            self.productQuantityUpdate()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
         }else{
-            self.value = 1
-            self.quantity = "1"
-            self.qtyTF.text = self.quantity
+            if self.value > 1{
+                self.value -= 1
+                self.quantity = "\(value)"
+                self.qtyTF.text = self.quantity
+                self.productQuantityUpdate()
+            }else{
+                self.value = 1
+                self.quantity = "1"
+                self.qtyTF.text = self.quantity
+            }
         }
        
     }
     
     @IBAction func plusBtn(_ sender: Any) {
-        let calcValues = self.rowTotalPrice * Int(self.productQty)
-        print(calcValues)
-        print(totalRedeemabelPts,"dkjshj")
-        let calcExisting =  self.totalRedeemabelPts - calcValues
-        print(calcExisting)
-        
-        if self.value < 1{
-            self.value = 1
-            self.quantity = "1"
-            let calcValue = self.rowTotalPrice * self.value
-            print(calcValue)
-            let finalValue = calcValue + calcExisting
-            print(finalValue)
-            //if finalValue <= Int(self.totalPoints) ?? 0{
-                self.qtyTF.text = self.quantity
-                self.productQuantityUpdate()
-//            }else{
-//                DispatchQueue.main.async{
-//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                    vc!.delegate = self
-//                    vc!.descriptionInfo = "Insufficient point balance"
-//                    vc!.modalPresentationStyle = .overFullScreen
-//                    vc!.modalTransitionStyle = .crossDissolve
-//                    self.present(vc!, animated: true, completion: nil)
-//                }
-//            }
-            
-            
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
         }else{
-            self.value += 1
-            self.quantity = "\(value)"
-            print(self.value)
-            let calcValue = self.rowTotalPrice * self.value
-            print(calcValue)
-            let finalValue = calcValue + calcExisting
-            print(finalValue)
-           // if finalValue <= Int(self.totalPoints) ?? 0{
+            let calcValues = self.rowTotalPrice * Int(self.productQty)
+            print(calcValues)
+            print(totalRedeemabelPts,"dkjshj")
+            let calcExisting =  self.totalRedeemabelPts - calcValues
+            print(calcExisting)
+            
+            if self.value < 1{
+                self.value = 1
+                self.quantity = "1"
+                let calcValue = self.rowTotalPrice * self.value
+                print(calcValue)
+                let finalValue = calcValue + calcExisting
+                print(finalValue)
+                //if finalValue <= Int(self.totalPoints) ?? 0{
                 self.qtyTF.text = self.quantity
                 self.productQuantityUpdate()
-//            }else{
-//                DispatchQueue.main.async{
-//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                    vc!.delegate = self
-//                    vc!.descriptionInfo = "Insufficient point balance"
-//                    vc!.modalPresentationStyle = .overFullScreen
-//                    vc!.modalTransitionStyle = .crossDissolve
-//                    self.present(vc!, animated: true, completion: nil)
-//                }
-//            }
+                //            }else{
+                //                DispatchQueue.main.async{
+                //                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                //                    vc!.delegate = self
+                //                    vc!.descriptionInfo = "Insufficient point balance"
+                //                    vc!.modalPresentationStyle = .overFullScreen
+                //                    vc!.modalTransitionStyle = .crossDissolve
+                //                    self.present(vc!, animated: true, completion: nil)
+                //                }
+                //            }
+                
+                
+            }else{
+                self.value += 1
+                self.quantity = "\(value)"
+                print(self.value)
+                let calcValue = self.rowTotalPrice * self.value
+                print(calcValue)
+                let finalValue = calcValue + calcExisting
+                print(finalValue)
+                // if finalValue <= Int(self.totalPoints) ?? 0{
+                self.qtyTF.text = self.quantity
+                self.productQuantityUpdate()
+                //            }else{
+                //                DispatchQueue.main.async{
+                //                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+                //                    vc!.delegate = self
+                //                    vc!.descriptionInfo = "Insufficient point balance"
+                //                    vc!.modalPresentationStyle = .overFullScreen
+                //                    vc!.modalTransitionStyle = .crossDissolve
+                //                    self.present(vc!, animated: true, completion: nil)
+                //                }
+                //            }
+            }
         }
        
     }
@@ -204,16 +240,34 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
     
     
     @IBAction func orderNowButton(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueMyCartVC") as! FG_ProductCatalogueMyCartVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueMyCartVC") as! FG_ProductCatalogueMyCartVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func addMorePartNoButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func myCartBtn(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueMyCartVC") as! FG_ProductCatalogueMyCartVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueMyCartVC") as! FG_ProductCatalogueMyCartVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func myCartApi(){

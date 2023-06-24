@@ -32,14 +32,23 @@ class FG_MyEarningVC: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        localization()
-        if self.itsFrom == "SideMenu"{
-            self.backBtn.isHidden = false
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
         }else{
-            self.backBtn.isHidden = true
+            localization()
+            if self.itsFrom == "SideMenu"{
+                self.backBtn.isHidden = false
+            }else{
+                self.backBtn.isHidden = true
+            }
+            
+            self.myEarningsAPI()
         }
-        
-        self.myEarningsAPI()
     }
     
     private func localization(){

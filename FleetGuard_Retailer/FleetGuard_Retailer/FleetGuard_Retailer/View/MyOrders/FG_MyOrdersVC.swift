@@ -85,26 +85,35 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.VM.VC = self
-        localization()
-        self.myOrderTableView.delegate = self
-        self.myOrderTableView.dataSource = self
-        self.myOrderListingAPI(startInx: 1, orderStatusId: -1, fromDate: "", toDate: "")
-        self.filterShadowView.isHidden = true
-        //self.filterView.isHidden = true
-        noDataFound.isHidden = true
-        self.noDataFound.text = "noDataFound".localiz()
-        subView.clipsToBounds = true
-        subView.layer.cornerRadius = 20
-        subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        filterView.clipsToBounds = true
-        filterView.layer.cornerRadius = 20
-        filterView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        self.orderHeaderStack.clipsToBounds = true
-        orderHeaderStack.layer.cornerRadius = 15
-        orderHeaderStack.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
-        self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.VM.VC = self
+            localization()
+            self.myOrderTableView.delegate = self
+            self.myOrderTableView.dataSource = self
+            self.myOrderListingAPI(startInx: 1, orderStatusId: -1, fromDate: "", toDate: "")
+            self.filterShadowView.isHidden = true
+            //self.filterView.isHidden = true
+            noDataFound.isHidden = true
+            self.noDataFound.text = "noDataFound".localiz()
+            subView.clipsToBounds = true
+            subView.layer.cornerRadius = 20
+            subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            filterView.clipsToBounds = true
+            filterView.layer.cornerRadius = 20
+            filterView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            self.orderHeaderStack.clipsToBounds = true
+            orderHeaderStack.layer.cornerRadius = 15
+            orderHeaderStack.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+            self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
+        }
     }
     
 //    override func viewWillDisappear(_ animated: Bool) {
@@ -168,71 +177,87 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
 }
     
     @IBAction func applyButton(_ sender: Any) {
-        print(status,"srjdh")
-        print(self.selectedFromDate,"slkdls")
-        print(selectedToDate,"lskdjsldm")
-//        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
-        self.VM.myOrderListingArray.removeAll()
-        
-        if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.searchText == ""{
-            self.view.makeToast("Select date or filter status or both".localiz(), duration: 2.0, position: .center)
-        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.searchText != ""{
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            print(status,"srjdh")
+            print(self.selectedFromDate,"slkdls")
+            print(selectedToDate,"lskdjsldm")
+            //        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+            self.VM.myOrderListingArray.removeAll()
             
-            self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
-            self.filterShadowView.isHidden = true
-            
-        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz(){
-            
-            self.view.makeToast("Select To Date".localiz(), duration: 2.0, position: .center)
-            
-        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz(){
-            
-            self.view.makeToast("Select From Date".localiz(), duration: 2.0, position: .center)
-            
-        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz() && self.searchText == "" || self.searchText != ""{
-            
-            if selectedToDate < selectedFromDate{
-                
-                self.view.makeToast("ToDate should be lower than FromDate".localiz(), duration: 2.0, position: .center)
-                
+            if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.searchText == ""{
+                self.view.makeToast("Select date or filter status or both".localiz(), duration: 2.0, position: .center)
             }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.searchText != ""{
                 
                 self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
                 self.filterShadowView.isHidden = true
+                
+            }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz(){
+                
+                self.view.makeToast("Select To Date".localiz(), duration: 2.0, position: .center)
+                
+            }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz(){
+                
+                self.view.makeToast("Select From Date".localiz(), duration: 2.0, position: .center)
+                
+            }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz() && self.searchText == "" || self.searchText != ""{
+                
+                if selectedToDate < selectedFromDate{
+                    
+                    self.view.makeToast("ToDate should be lower than FromDate".localiz(), duration: 2.0, position: .center)
+                    
+                }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.searchText != ""{
+                    
+                    self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
+                    self.filterShadowView.isHidden = true
+                }else{
+                    self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
+                    self.filterShadowView.isHidden = true
+                }
+                
             }else{
+                
                 self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
                 self.filterShadowView.isHidden = true
             }
-            
-        }else{
-            
-            self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
-            self.filterShadowView.isHidden = true
         }
-        
         
         
     }
     @IBAction func clearbtn(_ sender: Any) {
-        
-        self.status = -1
-        self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
-        self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
-        self.selectedFromDate = ""
-        self.selectedToDate = ""
-        selectedQueryTopicId = -1
-        noofelements = 0
-        startindex = 1
-        searchText = ""
-        self.approvedBtn.backgroundColor = .white
-        self.pendingBtn.backgroundColor = .white
-        self.rejectedBtn.backgroundColor = .white
-        escalatedBtn.backgroundColor = .white
-        self.cancelledBtn.backgroundColor = .white
-        postedForApprovalBtn.backgroundColor = .white
-        
-        self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
-        self.filterShadowView.isHidden = true
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.status = -1
+            self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+            self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
+            self.selectedFromDate = ""
+            self.selectedToDate = ""
+            selectedQueryTopicId = -1
+            noofelements = 0
+            startindex = 1
+            searchText = ""
+            self.approvedBtn.backgroundColor = .white
+            self.pendingBtn.backgroundColor = .white
+            self.rejectedBtn.backgroundColor = .white
+            escalatedBtn.backgroundColor = .white
+            self.cancelledBtn.backgroundColor = .white
+            postedForApprovalBtn.backgroundColor = .white
+            
+            self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
+            self.filterShadowView.isHidden = true
+        }
     }
     
     @IBAction func fromDateButton(_ sender: Any) {

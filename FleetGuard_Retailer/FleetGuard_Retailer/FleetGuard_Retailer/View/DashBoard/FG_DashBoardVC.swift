@@ -55,6 +55,11 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     
     @IBOutlet weak var productCatalogueLbl: UILabel!
     @IBOutlet weak var addmoreRangeLbl: UILabel!
+    
+    @IBOutlet weak var offersAndPromotionsLbl: UILabel!
+    
+    
+    
     var categoryItemArray = ["Filters", "Coolant & Chemicals", "Center Bearing", "Break Liner"]
     var categoryImageArray = ["OUTLINE", "OUTLINE", "OUTLINE","OUTLINE"]
     var dashboardAarray = [ObjCustomerDashboardList]()
@@ -77,32 +82,40 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.VM.VC = self
-        nodataFoundLbl.isHidden = true
-        nodataFoundLbl.text = "noDataFound".localiz()
-        self.maintananceView.isHidden = true
-        dashboardApi()
-        print(deviceID,"kjslk")
-        self.emptyImageView.isHidden = true
-        subView.clipsToBounds = true
-        subView.layer.cornerRadius = 20
-        subView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        self.bannerImagesAPI()
-        secondLevelView.clipsToBounds = true
-        secondLevelView.layer.cornerRadius = 16
-        secondLevelView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        self.categoryCollectionView.delegate = self
-        self.categoryCollectionView.dataSource = self
-        
-        let collectionViewFLowLayout = UICollectionViewFlowLayout()
-        collectionViewFLowLayout.itemSize = CGSize(width: (self.view.bounds.width - 150 - (self.categoryCollectionView.contentInset.left + self.categoryCollectionView.contentInset.right)) / 2,  height: 105)
-        collectionViewFLowLayout.minimumLineSpacing = 2.5
-        collectionViewFLowLayout.scrollDirection = .horizontal
-        collectionViewFLowLayout.minimumInteritemSpacing = 2.5
-        self.categoryCollectionView.collectionViewLayout = collectionViewFLowLayout
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(logedInByOtherMobile), name: Notification.Name.logedInByOtherMobile, object: nil)
-        
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.VM.VC = self
+            nodataFoundLbl.isHidden = true
+            nodataFoundLbl.text = "noDataFound".localiz()
+            self.maintananceView.isHidden = true
+            dashboardApi()
+            print(deviceID,"kjslk")
+            self.emptyImageView.isHidden = true
+            subView.clipsToBounds = true
+            subView.layer.cornerRadius = 20
+            subView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+            self.bannerImagesAPI()
+            secondLevelView.clipsToBounds = true
+            secondLevelView.layer.cornerRadius = 16
+            secondLevelView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+            self.categoryCollectionView.delegate = self
+            self.categoryCollectionView.dataSource = self
+            
+            let collectionViewFLowLayout = UICollectionViewFlowLayout()
+            collectionViewFLowLayout.itemSize = CGSize(width: (self.view.bounds.width - 150 - (self.categoryCollectionView.contentInset.left + self.categoryCollectionView.contentInset.right)) / 2,  height: 105)
+            collectionViewFLowLayout.minimumLineSpacing = 2.5
+            collectionViewFLowLayout.scrollDirection = .horizontal
+            collectionViewFLowLayout.minimumInteritemSpacing = 2.5
+            self.categoryCollectionView.collectionViewLayout = collectionViewFLowLayout
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(logedInByOtherMobile), name: Notification.Name.logedInByOtherMobile, object: nil)
+        }
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -141,6 +154,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     }
     
     private func localization(){
+        self.offersAndPromotionsLbl.text = "offersAndPromotionsText".localiz()
         totalPtsBalance.text = "total_Point_bal".localiz()
         welcomeLbl.text = "welcome".localiz()
         productCatalogueLbl.text = "product_Catalogoue".localiz()
@@ -198,42 +212,96 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     }
     
     @IBAction func viewProductBtn(_ sender: Any) {
-//        self.viewProductButton.isUserInteractionEnabled = false
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_NewAdditionVC") as! FG_NewAdditionVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            //        self.viewProductButton.isUserInteractionEnabled = false
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_NewAdditionVC") as! FG_NewAdditionVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     @IBAction func languageChangeBtn(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LanguageVC") as? LanguageVC
-        vc?.delegate = self
-        vc?.modalPresentationStyle = .overFullScreen
-        vc?.modalTransitionStyle = .crossDissolve
-        present(vc!, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LanguageVC") as? LanguageVC
+            vc?.delegate = self
+            vc?.modalPresentationStyle = .overFullScreen
+            vc?.modalTransitionStyle = .crossDissolve
+            present(vc!, animated: true)
+        }
         
     }
     
     @IBAction func notificationBell(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryNotificationsViewController") as? HistoryNotificationsViewController
-        navigationController?.pushViewController(vc!, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HistoryNotificationsViewController") as? HistoryNotificationsViewController
+            navigationController?.pushViewController(vc!, animated: true)
+        }
     }
 
     @IBAction func promotionActBTN(_ sender: Any) {
-        self.promotionBtn.isUserInteractionEnabled = false
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyPromotionsVC") as! FG_MyPromotionsVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.promotionBtn.isUserInteractionEnabled = false
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyPromotionsVC") as! FG_MyPromotionsVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func orderNowBtn(_ sender: Any) {
-//        self.startLoading()
-        self.orderNowBtn.isUserInteractionEnabled = false
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueListVC") as! FG_ProductCatalogueListVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            //        self.startLoading()
+            self.orderNowBtn.isUserInteractionEnabled = false
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueListVC") as! FG_ProductCatalogueListVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func redemptionCatalogueBtn(_ sender: Any) {
-//        self.startLoading()
-        self.redemptionCatalogueBtn.isUserInteractionEnabled = false
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionCatalogueVC") as! FG_RedemptionCatalogueVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            //        self.startLoading()
+            self.redemptionCatalogueBtn.isUserInteractionEnabled = false
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_RedemptionCatalogueVC") as! FG_RedemptionCatalogueVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func dashboardApi(){
@@ -418,6 +486,13 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
                     DispatchQueue.main.async {
                         self.maintananceView.isHidden = false
                         self.playAnimation()
+                        
+//                        if let tapGestureRecognizers = self.maintananceView.gestureRecognizers?.compactMap({ $0 as? UITapGestureRecognizer }) {
+//                            for tapGestureRecognizer in tapGestureRecognizers {
+//                                // Remove the tap gesture recognizer
+//                                self.maintananceView.removeGestureRecognizer(tapGestureRecognizer)
+//                            }
+//                        }
 
                     }
                 }else if isMaintenanceValue == "0"{

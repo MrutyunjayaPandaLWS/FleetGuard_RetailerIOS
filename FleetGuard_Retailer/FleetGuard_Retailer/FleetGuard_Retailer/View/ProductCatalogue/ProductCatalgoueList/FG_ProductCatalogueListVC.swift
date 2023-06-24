@@ -69,6 +69,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.stopLoading()
         self.VM.VC = self
         //self.searchTF.delegate = self
@@ -85,10 +86,19 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        localization()
-        self.VM.productListArray.removeAll()
-        self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
-        self.myCartApi()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            localization()
+            self.VM.productListArray.removeAll()
+            self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
+            self.myCartApi()
+        }
     }
     
     private func localization(){
@@ -143,23 +153,41 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     
     
     @IBAction func filterButton(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueFilterVC") as! FG_ProductCatalogueFilterVC
-        vc.delegate = self
-        vc.selectedArrayDataID2 = categoryId1
-        vc.selectedArrayDataID = categoryId
-        vc.selectedArrayDataID3 = categoryId2
-        vc.selectedArrayDataID4 = categoryId3
-        vc.modalTransitionStyle = .coverVertical
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueFilterVC") as! FG_ProductCatalogueFilterVC
+            vc.delegate = self
+            vc.selectedArrayDataID2 = categoryId1
+            vc.selectedArrayDataID = categoryId
+            vc.selectedArrayDataID3 = categoryId2
+            vc.selectedArrayDataID4 = categoryId3
+            vc.modalTransitionStyle = .coverVertical
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        }
     }
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func cartBtn(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueMyCartVC") as! FG_ProductCatalogueMyCartVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueMyCartVC") as! FG_ProductCatalogueMyCartVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func productListApi(startIndex: Int, searchText: String){

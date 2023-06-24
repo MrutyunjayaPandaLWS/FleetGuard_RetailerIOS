@@ -197,6 +197,10 @@
 "RLP_No" = "RLP No";
 "NoteDateason" = "குறிப்பு: தேதி ";
 "Add more part no" = "மேலும் பகுதி எண் சேர்க்கவும்";
-"Ref. No" = "Ref. No";
-"Points Redeemed" = "Points Redeemed";
-"Qty" = "Qty" ;
+
+"Ref. No" = "Ref. இல்லை";
+"Points Redeemed" = "புள்ளிகள் மீட்டெடுக்கப்பட்டன";
+"Qty" = "Qty";
+"Query Type" = "வினவல் வகை";
+"offersAndPromotionsText" = "சலுகைகள் மற்றும் விளம்பரங்கள் இங்கே கிளிக் செய்யவும்";
+

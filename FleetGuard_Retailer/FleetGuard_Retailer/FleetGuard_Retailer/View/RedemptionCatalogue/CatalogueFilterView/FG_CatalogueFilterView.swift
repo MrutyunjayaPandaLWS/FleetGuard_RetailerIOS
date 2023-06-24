@@ -49,26 +49,35 @@ class FG_CatalogueFilterView: BaseViewController {
     var delegate: sendProductDelegate!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.VM.VC = self
-        categoryTypeTableView.dataSource = self
-        categoryTypeTableView.delegate = self
-        categoryListCollectionView.dataSource = self
-        categoryListCollectionView.delegate = self
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: (self.view.bounds.width - 100 - (self.categoryListCollectionView.contentInset.left + self.categoryListCollectionView.contentInset.right)) / 2, height: 35)
-        layout.minimumLineSpacing = 2.5
-        layout.minimumInteritemSpacing = 2.5
-        self.categoryListCollectionView.collectionViewLayout = layout
-        
-        subView.clipsToBounds = true
-        subView.layer.cornerRadius = 20
-        subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        mainView.clipsToBounds = true
-        mainView.layer.cornerRadius = 20
-        mainView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        localization()
-        self.redemptionCategoryList()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.VM.VC = self
+            categoryTypeTableView.dataSource = self
+            categoryTypeTableView.delegate = self
+            categoryListCollectionView.dataSource = self
+            categoryListCollectionView.delegate = self
+            
+            let layout = UICollectionViewFlowLayout()
+            layout.itemSize = CGSize(width: (self.view.bounds.width - 100 - (self.categoryListCollectionView.contentInset.left + self.categoryListCollectionView.contentInset.right)) / 2, height: 35)
+            layout.minimumLineSpacing = 2.5
+            layout.minimumInteritemSpacing = 2.5
+            self.categoryListCollectionView.collectionViewLayout = layout
+            
+            subView.clipsToBounds = true
+            subView.layer.cornerRadius = 20
+            subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            mainView.clipsToBounds = true
+            mainView.layer.cornerRadius = 20
+            mainView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            localization()
+            self.redemptionCategoryList()
+        }
     }
     
     private func localization(){

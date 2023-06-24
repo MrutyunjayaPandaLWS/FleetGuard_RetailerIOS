@@ -37,17 +37,26 @@ class FG_MyBillingDetailsVC: BaseViewController {
     
         override func viewDidLoad() {
             super.viewDidLoad()
-            self.VM.VC = self
-            self.orderDetailsTV.delegate = self
-            self.orderDetailsTV.dataSource = self
-            self.noDataFoundLbl.isHidden = true
-            noDataFoundLbl.text = "noDataFound".localiz()
-            self.orderDetailsTV.separatorStyle = .none
-            self.myBillingDetailsAPI()
-            self.orderNumberHeadingLbl.text = "Order No"
-            self.orderDateHeadingLbl.text = "Order Date"
-            self.orderDateLbl.text = orderDate
-            self.orderNumberLbl.text = invoiceNumber
+            if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+                DispatchQueue.main.async{
+                    let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    self.present(vc, animated: true)
+                }
+            }else{
+                self.VM.VC = self
+                self.orderDetailsTV.delegate = self
+                self.orderDetailsTV.dataSource = self
+                self.noDataFoundLbl.isHidden = true
+                noDataFoundLbl.text = "noDataFound".localiz()
+                self.orderDetailsTV.separatorStyle = .none
+                self.myBillingDetailsAPI()
+                self.orderNumberHeadingLbl.text = "Order No"
+                self.orderDateHeadingLbl.text = "Order Date"
+                self.orderDateLbl.text = orderDate
+                self.orderNumberLbl.text = invoiceNumber
+            }
         }
 
         func myBillingDetailsAPI() {

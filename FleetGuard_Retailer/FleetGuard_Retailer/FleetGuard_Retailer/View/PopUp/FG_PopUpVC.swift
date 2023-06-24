@@ -40,21 +40,30 @@ class FG_PopUpVC: BaseViewController {
     
 
     @IBAction func okBtn(_ sender: Any) {
-        if itsComeFrom == "LodgeQuery" {
-            NotificationCenter.default.post(name: .sendBackTOQuery, object: nil)
-            self.dismiss(animated: true)
-        } else if itsComeFrom == "DeviceLogedIn"{
-            NotificationCenter.default.post(name: .logedInByOtherMobile, object: nil)
-            self.dismiss(animated: true)
-        }else if itsComeFrom == "Registration"{
-            NotificationCenter.default.post(name: .redirectingToLogin, object: nil)
-            self.dismiss(animated: true)
-        }else if itsComeFrom == "AccounthasbeenDeleted"{
-            self.dismiss(animated: true){
-                self.delegate?.popupAlertDidTap(self)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
             }
         }else{
-            self.dismiss(animated: true)
+            if itsComeFrom == "LodgeQuery" {
+                NotificationCenter.default.post(name: .sendBackTOQuery, object: nil)
+                self.dismiss(animated: true)
+            } else if itsComeFrom == "DeviceLogedIn"{
+                NotificationCenter.default.post(name: .logedInByOtherMobile, object: nil)
+                self.dismiss(animated: true)
+            }else if itsComeFrom == "Registration"{
+                NotificationCenter.default.post(name: .redirectingToLogin, object: nil)
+                self.dismiss(animated: true)
+            }else if itsComeFrom == "AccounthasbeenDeleted"{
+                self.dismiss(animated: true){
+                    self.delegate?.popupAlertDidTap(self)
+                }
+            }else{
+                self.dismiss(animated: true)
+            }
         }
         
     }

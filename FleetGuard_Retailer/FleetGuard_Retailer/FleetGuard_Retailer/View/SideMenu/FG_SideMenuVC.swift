@@ -68,7 +68,7 @@ class FG_SideMenuVC: BaseViewController, popUpDelegate {
     var VM = FG_DashboardVM()
     var pointBalence = [ObjCustomerDashboardList11]()
     let picker = UIImagePickerController()
-    var strdata1 = ""
+    var strdata1 = "", maintanance = ""
 //    UserDefaults.standard.set(result?.objCustomerDashboardList?[0].redeemablePointsBalance, forKey: "redeemablePointsBalance")
 //    self.VC?.totalValue.text = "\(result?.objCustomerDashboardList?[0].totalEarnedPoints ?? 0)"
 //    UserDefaults.standard.set(result?.objCustomerDashboardList?[0].totalEarnedPoints, forKey: "totalEarnedPoints")
@@ -83,16 +83,26 @@ class FG_SideMenuVC: BaseViewController, popUpDelegate {
         self.sideMenuTableView.delegate = self
         self.sideMenuTableView.dataSource = self
         //self.sideMenuTableView.reloadData()
+        self.maintenanceAPI()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.menuTitleArray()
-        print(CGFloat(sideMenuArray.count * 50))
-        self.sideMenuTableHeight.constant = 750
-        self.sinceLbl.text = "\("Since".localiz()) \(userSince)"
-        localization()
-        dashboardApi()
-        pointsAPI()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.menuTitleArray()
+            print(CGFloat(sideMenuArray.count * 50))
+            self.sideMenuTableHeight.constant = 750
+            self.sinceLbl.text = "\("Since".localiz()) \(userSince)"
+            localization()
+            dashboardApi()
+            pointsAPI()
+        }
     }
     
     private func localization(){
@@ -233,6 +243,38 @@ class FG_SideMenuVC: BaseViewController, popUpDelegate {
 //        }
 //    })
 //}
+    func maintenanceAPI(){
+        guard let url = URL(string: "http://appupdate.arokiait.com/updates/serviceget?pid=com.loyaltyWorks.Fleet-Guard-Samriddhi") else {return}
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let dataResponse = data,
+                  error == nil else {
+                print(error?.localizedDescription ?? "Response Error")
+                return }
+            do{
+                //here dataResponse received from a network request
+                let jsonResponse = try JSONSerialization.jsonObject(with:dataResponse, options: [])
+                print(jsonResponse)
+                let isMaintenanceValue = ((jsonResponse as AnyObject).value(forKeyPath: "Result.is_maintenance") as? String)
+                let forceupdatevalue = ((jsonResponse as AnyObject).value(forKeyPath: "Result.version_number") as? String)
+                print(forceupdatevalue)
+                if isMaintenanceValue == "1"{
+                    print(isMaintenanceValue)
+                    DispatchQueue.main.async {
+//                        self.maintananceView.isHidden = false
+//                        self.playAnimation()
+                        self.maintanance = "1"
+
+                    }
+                }else if isMaintenanceValue == "0"{
+//                    self.tokendata()
+//                    self.animationView?.stop()
+                }
+            } catch let parsingError {
+                print("Error", parsingError)
+            }
+        }
+        task.resume()
+    }
     
     
     

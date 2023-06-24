@@ -36,13 +36,22 @@ class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        localiation()
-        noDataFound.isHidden = true
-        noDataFound.text = "noDataFound".localiz()
-        self.VM.VC = self
-        self.myPromotionsTableView.delegate = self
-        self.myPromotionsTableView.dataSource = self
-        promotionListingAPI()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            localiation()
+            noDataFound.isHidden = true
+            noDataFound.text = "noDataFound".localiz()
+            self.VM.VC = self
+            self.myPromotionsTableView.delegate = self
+            self.myPromotionsTableView.dataSource = self
+            promotionListingAPI()
+        }
     }
     
     

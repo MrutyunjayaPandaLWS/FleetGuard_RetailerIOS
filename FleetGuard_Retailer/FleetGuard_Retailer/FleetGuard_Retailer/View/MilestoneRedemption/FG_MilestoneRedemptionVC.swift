@@ -54,27 +54,36 @@ class FG_MilestoneRedemptionVC : BaseViewController, mileStoneDelegateData{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.VM.VC = self
-        localization()
-        myRedemptionTableView.delegate = self
-        myRedemptionTableView.dataSource = self
-        nodatafoundLbl.isHidden = true
-        nodatafoundLbl.text = "noDataFound".localiz()
-        //self.filterView.isHidden = true
-        
-//        subView.clipsToBounds = true
-//        subView.layer.cornerRadius = 20
-//        subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-//        filterView.clipsToBounds = true
-//        filterView.layer.cornerRadius = 20
-//        filterView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
-        if self.itsFrom == "SideMenu"{
-            self.backBtn.isHidden = false
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
         }else{
-            self.backBtn.isHidden = true
+            self.VM.VC = self
+            localization()
+            myRedemptionTableView.delegate = self
+            myRedemptionTableView.dataSource = self
+            nodatafoundLbl.isHidden = true
+            nodatafoundLbl.text = "noDataFound".localiz()
+            //self.filterView.isHidden = true
+            
+            //        subView.clipsToBounds = true
+            //        subView.layer.cornerRadius = 20
+            //        subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            //        filterView.clipsToBounds = true
+            //        filterView.layer.cornerRadius = 20
+            //        filterView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            
+            if self.itsFrom == "SideMenu"{
+                self.backBtn.isHidden = false
+            }else{
+                self.backBtn.isHidden = true
+            }
+            self.myRedemptionListing()
         }
-        self.myRedemptionListing()
     }
     
     private func localization(){

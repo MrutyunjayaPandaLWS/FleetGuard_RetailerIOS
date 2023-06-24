@@ -101,7 +101,16 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+        }
     }
     
     
@@ -146,10 +155,19 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     @IBAction func notificationBtn(_ sender: Any) {
     }
     @IBAction func filterBtn(_ sender: Any) {
-        if self.filetrShadowView.isHidden == false{
-            self.filetrShadowView.isHidden = true
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
         }else{
-            self.filetrShadowView.isHidden = false
+            if self.filetrShadowView.isHidden == false{
+                self.filetrShadowView.isHidden = true
+            }else{
+                self.filetrShadowView.isHidden = false
+            }
         }
 }
 @IBAction func closeBtn(_ sender: Any) {
@@ -232,70 +250,97 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     }
     
     @IBAction func createNewQueryBtn(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_CreatenewqueryVC") as! FG_CreatenewqueryVC
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_CreatenewqueryVC") as! FG_CreatenewqueryVC
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     
 @IBAction func applyButton(_ sender: Any) {
-    print(status,"srjdh")
-    print(self.selectedFromDate,"slkdls")
-    print(selectedToDate,"lskdjsldm")
-//    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
-//    self.filetrShadowView.isHidden = true
-    
-    if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status == "-1"{
-        self.view.makeToast("Select date or filter status or both".localiz(), duration: 2.0, position: .center)
-    }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status != "-1"{
+    if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+        DispatchQueue.main.async{
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        }
+    }else{
+        print(status,"srjdh")
+        print(self.selectedFromDate,"slkdls")
+        print(selectedToDate,"lskdjsldm")
+        //    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+        //    self.filetrShadowView.isHidden = true
         
-        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
-        self.filetrShadowView.isHidden = true
-        
-    }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz(){
-        
-        self.view.makeToast("Select To Date".localiz(), duration: 2.0, position: .center)
-        
-    }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz(){
-        
-        self.view.makeToast("Select From Date".localiz(), duration: 2.0, position: .center)
-        
-    }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz() && self.status == "-1" || self.status != "-1"{
-        
-        if selectedToDate < selectedFromDate{
-            
-            self.view.makeToast("ToDate should be lower than FromDate".localiz(), duration: 2.0, position: .center)
-            
+        if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status == "-1"{
+            self.view.makeToast("Select date or filter status or both".localiz(), duration: 2.0, position: .center)
         }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status != "-1"{
             
             self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
             self.filetrShadowView.isHidden = true
+            
+        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz(){
+            
+            self.view.makeToast("Select To Date".localiz(), duration: 2.0, position: .center)
+            
+        }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz(){
+            
+            self.view.makeToast("Select From Date".localiz(), duration: 2.0, position: .center)
+            
+        }else if self.fromDateBtn.currentTitle != "Fromdate".localiz() && self.toDateBtn.currentTitle != "Todate".localiz() && self.status == "-1" || self.status != "-1"{
+            
+            if selectedToDate < selectedFromDate{
+                
+                self.view.makeToast("ToDate should be lower than FromDate".localiz(), duration: 2.0, position: .center)
+                
+            }else if self.fromDateBtn.currentTitle == "Fromdate".localiz() && self.toDateBtn.currentTitle == "Todate".localiz() && self.status != "-1"{
+                
+                self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+                self.filetrShadowView.isHidden = true
+            }else{
+                self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+                self.filetrShadowView.isHidden = true
+            }
+            
         }else{
+            
             self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
             self.filetrShadowView.isHidden = true
         }
-        
-    }else{
-        
-        self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
-        self.filetrShadowView.isHidden = true
     }
 }
-@IBAction func clearbtn(_ sender: Any) {
-    
-    self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
-    self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
-    self.approvedBtn.backgroundColor = .white
-    self.pendingBtn.backgroundColor = .white
-    self.cancelledBtn.backgroundColor = .white
-    self.reopenBtn.backgroundColor = .white
-    self.resolveFollowUpBtn.backgroundColor = .white
-    selectedQueryTopicId = -1
-    status = "-1"
-    selectedFromDate = ""
-    selectedToDate = ""
-    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
-    self.filetrShadowView.isHidden = true
+    @IBAction func clearbtn(_ sender: Any) {
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            
+            self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
+            self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
+            self.approvedBtn.backgroundColor = .white
+            self.pendingBtn.backgroundColor = .white
+            self.cancelledBtn.backgroundColor = .white
+            self.reopenBtn.backgroundColor = .white
+            self.resolveFollowUpBtn.backgroundColor = .white
+            selectedQueryTopicId = -1
+            status = "-1"
+            selectedFromDate = ""
+            selectedToDate = ""
+            self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+            self.filetrShadowView.isHidden = true
+        }
     }
 }
 

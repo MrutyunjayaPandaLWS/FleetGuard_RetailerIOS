@@ -77,8 +77,17 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.profileDetailsAPI()
-        localization()
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            self.profileDetailsAPI()
+            localization()
+        }
     }
     
     private func localization(){
@@ -104,18 +113,27 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     }
     
     @IBAction func updateImageBtn(_ sender: Any) {
-        let alert = UIAlertController(title: "Choose any option", message: "", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Camera", style: .default , handler:{ (UIAlertAction)in
-            self.openCamera()
-        }))
-        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler:{ (UIAlertAction)in
-            self.openGallery()
-        }))
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
-        }))
-        self.present(alert, animated: true, completion: {
-            print("completion block")
-        })
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
+        }else{
+            let alert = UIAlertController(title: "Choose any option", message: "", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Camera", style: .default , handler:{ (UIAlertAction)in
+                self.openCamera()
+            }))
+            alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler:{ (UIAlertAction)in
+                self.openGallery()
+            }))
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+            }))
+            self.present(alert, animated: true, completion: {
+                print("completion block")
+            })
+        }
     }
     @IBAction func languageBtn(_ sender: Any) {
     }
@@ -123,28 +141,37 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
     }
     
     @IBAction func editProfileBtn(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_EditProfileVC") as! FG_EditProfileVC
-        vc.delegate = self
-        vc.firstName = self.firstNameLbl.text ?? ""
-        vc.lastName = self.lastNameLbl.text ?? ""
-        vc.mobileNumber = self.mobileNumberLbl.text ?? ""
-        vc.emailLbl = self.emailLbl.text ?? ""
-        vc.addressLbl = self.addressLbl.text ?? ""
-        vc.state = self.stateLbl.text ?? ""
-        vc.city = self.cityLbl.text ?? ""
-        vc.pincode = self.pincodeLbl.text ?? ""
-        if self.dobLbl.text != ""{
-            
-            vc.dob =  convertDateFormater1(self.dobLbl.text!)
+        if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
+            DispatchQueue.main.async{
+                let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }
         }else{
-            vc.dob = "Select DOB"
+            let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_EditProfileVC") as! FG_EditProfileVC
+            vc.delegate = self
+            vc.firstName = self.firstNameLbl.text ?? ""
+            vc.lastName = self.lastNameLbl.text ?? ""
+            vc.mobileNumber = self.mobileNumberLbl.text ?? ""
+            vc.emailLbl = self.emailLbl.text ?? ""
+            vc.addressLbl = self.addressLbl.text ?? ""
+            vc.state = self.stateLbl.text ?? ""
+            vc.city = self.cityLbl.text ?? ""
+            vc.pincode = self.pincodeLbl.text ?? ""
+            if self.dobLbl.text != ""{
+                
+                vc.dob =  convertDateFormater1(self.dobLbl.text!)
+            }else{
+                vc.dob = "Select DOB"
+            }
+            
+            vc.genderName = self.genderLbl.text ?? "Select Gender"
+            vc.prefLanguage = self.preferredLanguageLbl.text ?? "Select Preferred Language"
+            vc.selectedLanguageId = languageID
+            vc.profileDetails = self.VM.profileDetailsData
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-        
-        vc.genderName = self.genderLbl.text ?? "Select Gender"
-        vc.prefLanguage = self.preferredLanguageLbl.text ?? "Select Preferred Language"
-        vc.selectedLanguageId = languageID
-        vc.profileDetails = self.VM.profileDetailsData
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func profileDetailsAPI(){
