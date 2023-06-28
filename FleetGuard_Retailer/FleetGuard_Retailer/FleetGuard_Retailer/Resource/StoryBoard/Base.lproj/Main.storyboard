@@ -1303,7 +1303,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="373" height="159.33333333333334"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1G-qw-XQ2" userLabel="Offers">
-                                                        <rect key="frame" x="136.66666666666666" y="61" width="100" height="47"/>
+                                                        <rect key="frame" x="136.66666666666666" y="60.666666666666742" width="100" height="48"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Offers and Promotions  ">
                                                                 <attributes>
@@ -1313,7 +1313,7 @@
                                                             </fragment>
                                                             <fragment content="Click Here">
                                                                 <attributes>
-                                                                    <font key="NSFont" metaFont="system" size="12"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -6929,13 +6929,13 @@
                                                             </connections>
                                                         </button>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Eui-Je-BKd">
-                                                            <rect key="frame" x="156" y="61" width="133" height="35"/>
+                                                            <rect key="frame" x="156" y="61" width="153" height="35"/>
                                                             <subviews>
                                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thR-FL-T1Y">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="133" height="35"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="153" height="35"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="02z-Jv-KgX">
-                                                                            <rect key="frame" x="18.333333333333336" y="7.6666666666666714" width="96.333333333333314" height="20"/>
+                                                                            <rect key="frame" x="28.333333333333336" y="7.6666666666666714" width="96.333333333333314" height="20"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add To Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9t-W2-1WB">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="68.333333333333329" height="20"/>
@@ -6953,7 +6953,7 @@
                                                                             </subviews>
                                                                         </stackView>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="948-Rz-GZQ">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="133" height="35"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="153" height="35"/>
                                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                             <connections>
                                                                                 <action selector="addToCartButton:" destination="n8e-Ai-kX1" eventType="touchUpInside" id="GYx-G6-Fku"/>
@@ -7162,7 +7162,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="6qR-xW-eYS" secondAttribute="trailing" constant="18" id="QnF-xZ-2UX"/>
                                                         <constraint firstItem="6qR-xW-eYS" firstAttribute="top" secondItem="hmn-eH-RCM" secondAttribute="bottom" constant="4" id="SW8-F4-xhV"/>
                                                         <constraint firstItem="UvN-Ag-eVc" firstAttribute="top" secondItem="r5o-0X-gYU" secondAttribute="top" constant="1" id="ZvQ-cs-eTe"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Eui-Je-BKd" secondAttribute="trailing" constant="80" id="eTg-6f-R7c"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Eui-Je-BKd" secondAttribute="trailing" constant="60" id="eTg-6f-R7c"/>
                                                         <constraint firstItem="bZb-Mn-PVa" firstAttribute="leading" secondItem="UvN-Ag-eVc" secondAttribute="leading" id="hdH-ew-toX"/>
                                                         <constraint firstItem="Eui-Je-BKd" firstAttribute="top" secondItem="6qR-xW-eYS" secondAttribute="bottom" constant="4" id="qdH-Te-sbQ"/>
                                                         <constraint firstItem="hmn-eH-RCM" firstAttribute="leading" secondItem="UvN-Ag-eVc" secondAttribute="trailing" constant="18" id="r1E-Nu-aBG"/>
@@ -7198,11 +7198,15 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="addToCartLbl" destination="a9t-W2-1WB" id="qRR-Zv-9Fj"/>
                                             <outlet property="addToCartView" destination="thR-FL-T1Y" id="ZiG-UK-Oti"/>
                                             <outlet property="addedToCartView" destination="k5r-nE-SxW" id="M7q-MP-LQl"/>
+                                            <outlet property="addedtocartLbl" destination="18K-TZ-eI2" id="Epk-DJ-FeL"/>
                                             <outlet property="categoryLbl" destination="hmn-eH-RCM" id="EtX-XU-ceZ"/>
+                                            <outlet property="detailsOutBtn" destination="cqh-9g-ahF" id="SeJ-oz-Ai0"/>
                                             <outlet property="imageBtn" destination="bZb-Mn-PVa" id="tRJ-YN-1Eu"/>
                                             <outlet property="pointView" destination="h4s-BI-1Fq" id="8Gl-kR-ft7"/>
+                                            <outlet property="pointsHeadingLbl" destination="XGS-HS-N8I" id="h84-yU-6Mm"/>
                                             <outlet property="pointsLbl" destination="iqE-aB-sNd" id="v2h-l9-bu6"/>
                                             <outlet property="productImage" destination="UvN-Ag-eVc" id="fIy-aO-Xm3"/>
                                             <outlet property="productNameLbl" destination="6qR-xW-eYS" id="hnW-et-SRv"/>
@@ -9187,7 +9191,6 @@
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <connections>
                                                             <action selector="addToCartBTN:" destination="uvk-kP-4cr" eventType="touchUpInside" id="mDw-Xe-3bd"/>
-                                                            <action selector="addToDreamGiftBtn:" destination="uvk-kP-4cr" eventType="touchUpInside" id="h78-0X-mu4"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -9435,6 +9438,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addToCartActionBTN" destination="iyp-uv-uB4" id="UY9-s6-Uov"/>
                         <outlet property="addToCartBtn" destination="7bf-Dm-t5P" id="SqE-gM-0MD"/>
                         <outlet property="addToCartLbl" destination="7bf-Dm-t5P" id="9aV-7Z-3nt"/>
                         <outlet property="addToCartView" destination="H29-jH-HC2" id="eHv-1k-93d"/>
@@ -9446,6 +9450,7 @@
                         <outlet property="addedToDreamGiftView" destination="RJA-Gv-aOm" id="e0o-Ut-JaM"/>
                         <outlet property="categoryLbl" destination="Adh-eh-us9" id="K48-m9-OST"/>
                         <outlet property="countLbl" destination="U45-Ts-Ugy" id="JH4-lJ-niS"/>
+                        <outlet property="descriptionHeadingLbl" destination="RWg-yb-pZi" id="z3X-Tc-Osg"/>
                         <outlet property="descriptionLbl" destination="jtc-0f-2mA" id="DSZ-XN-vB3"/>
                         <outlet property="headerText" destination="LWa-2I-Mx7" id="LZ6-1f-Zli"/>
                         <outlet property="productImag" destination="ons-eK-arw" id="Wfc-9N-vOE"/>
@@ -9453,6 +9458,7 @@
                         <outlet property="productNameLbl" destination="02H-ae-CcQ" id="gGx-q6-UBG"/>
                         <outlet property="productPoints" destination="qZr-5f-3vi" id="9c1-RQ-pU8"/>
                         <outlet property="termsAndConLbl" destination="xIt-v6-Sal" id="Ixv-ZD-bnm"/>
+                        <outlet property="termsAndCponditionHeadingLbl" destination="adU-VT-Zcp" id="Vw0-kJ-43e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9l8-IW-RUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -9710,7 +9716,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vnq-3P-M5q">
                                         <rect key="frame" x="8" y="17.666666666666625" width="103.33333333333333" height="44.666666666666657"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redeemable Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkp-Md-EcS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redeemable Points" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkp-Md-EcS">
                                                 <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="14.333333333333334"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -9814,6 +9820,8 @@
                         <outlet property="myCartTableView" destination="hI9-uw-dqI" id="G7l-aW-Wqa"/>
                         <outlet property="nodataFoundLbl" destination="cyw-TW-OpE" id="Wt2-Bn-NN5"/>
                         <outlet property="popUpView" destination="AlA-Aw-XWV" id="O5B-1D-9lA"/>
+                        <outlet property="proceedToCheckoutOutBTN" destination="Sar-sX-yCG" id="007-93-0u9"/>
+                        <outlet property="redeemPointsHeadingLbl" destination="Tkp-Md-EcS" id="Cln-3C-LSB"/>
                         <outlet property="totalRedeemablePtsLbl" destination="tSK-Lf-M08" id="lmF-l9-PyP"/>
                     </connections>
                 </viewController>
@@ -10681,6 +10689,7 @@
                         <outlet property="saveChangesBtn" destination="Csj-Jr-zju" id="YaM-b3-15c"/>
                         <outlet property="selectCityLbl" destination="QiB-Fg-pUa" id="2Ay-zo-gdT"/>
                         <outlet property="selectCountry" destination="IkD-4p-SRk" id="vIg-SQ-feB"/>
+                        <outlet property="stateHeadingLbl" destination="TUp-Be-jO0" id="4Cv-3e-eZe"/>
                         <outlet property="stateLbl" destination="L1i-OO-z04" id="68N-jO-o4I"/>
                     </connections>
                 </viewController>
@@ -15702,6 +15711,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="goToDashBoatrdBtn" destination="3DO-wD-KRp" id="7Na-JF-MGr"/>
                         <outlet property="infoLbl" destination="VCZ-Ol-rF5" id="oWn-sL-nof"/>
                     </connections>
                 </viewController>
@@ -15904,6 +15914,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="didntReceiveOTPTitleLbl" destination="Ume-2h-Le2" id="bEf-By-ZJd"/>
+                        <outlet property="otpReceiveInfoTitleLbl" destination="3eZ-hh-BVw" id="EqK-tr-NVs"/>
+                        <outlet property="otpVerificationTitle" destination="dcm-96-7kG" id="za8-4V-1OR"/>
+                        <outlet property="otpVeroificationinfoTitleLbl" destination="qZs-2c-r0E" id="ApG-LJ-yVN"/>
                         <outlet property="otpView" destination="b6q-eY-Qz6" id="G1w-QD-9qz"/>
                         <outlet property="otpWithinLabelHeightConstraint" destination="3yt-ki-Yq2" id="t8f-Mm-l6J"/>
                         <outlet property="resendOTPButton" destination="ZEK-Ho-V3z" id="iIJ-Zs-83V"/>
@@ -17916,9 +17930,11 @@
         <designable name="DMG-XN-TW8">
             <size key="intrinsicContentSize" width="105" height="32"/>
         </designable>
+        <designable name="EIk-LS-NxC"/>
         <designable name="EYq-la-TRE">
             <size key="intrinsicContentSize" width="57" height="34"/>
         </designable>
+        <designable name="FjM-I2-4cV"/>
         <designable name="HVr-Xz-dQk">
             <size key="intrinsicContentSize" width="96" height="30"/>
         </designable>

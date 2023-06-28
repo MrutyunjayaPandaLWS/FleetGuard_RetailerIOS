@@ -37,6 +37,15 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     @IBOutlet var productImag: UIImageView!
     @IBOutlet weak var addToCartBtn: UILabel!
     
+    
+    
+    @IBOutlet weak var descriptionHeadingLbl: UILabel!
+    @IBOutlet weak var termsAndCponditionHeadingLbl: UILabel!
+    
+    @IBOutlet weak var addToCartActionBTN: UIButton!
+    
+    
+    
     var productImages = ""
     var prodRefNo = ""
     var productCategory = ""
@@ -64,7 +73,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
         self.productImage.clipsToBounds = false
         print(catalogueId,"skjhdk")
         //  self.productImage.layer.borderWidth = 1
-        
+        languageLoc()
         self.productImage.layer.cornerRadius = 36
         self.productImage.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         
@@ -72,9 +81,9 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
         productImage.layer.shadowOpacity = 0.4
         productImage.layer.shadowRadius = 0.4
         productImage.layer.shadowColor = UIColor.darkGray.cgColor
-        //self.categoryLbl.text = productCategory
+        self.categoryLbl.text = "\("CategorySlash".localiz()) \(self.productCategory)"
         self.productNameLbl.text = productName
-        self.productPoints.text = "Points: \(productPoint)"
+        self.productPoints.text = "\("PointsData".localiz()) \(productPoint)"
         self.descriptionLbl.text = productDetails
         self.termsAndConLbl.text = termsandContions
         let receivedImage = "\(String(describing: productImages))"
@@ -97,6 +106,15 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
         }
     }
     
+    
+    func languageLoc(){
+        self.descriptionHeadingLbl.text = "Descriptions".localiz()
+        self.termsAndCponditionHeadingLbl.text = "Terms and conditions".localiz()
+        self.addToCartLbl.text = "addToCart".localiz()
+        self.addedToCartLbl.text = "addedToCart".localiz()
+        
+    }
+    
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -111,42 +129,29 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     }
     
     @IBAction func addToCartBTN(_ sender: Any) {
-
-        if self.verifiedStatus != 1{
-//            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.titleInfo = ""
-//                vc!.descriptionInfo = "You are not allowled to redeem .Please contact your administrator"
-//                vc!.modalPresentationStyle = .overCurrentContext
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-//            }
-            self.view.makeToast("redeem_failed_contact_to_admin".localiz(), duration: 3.0, position: .bottom)
-               
-            
-        }else{
-            
-            print(productPoint,"skjds")
-            print(pointBalance,"slkjds")
-            
-            if Int(productPoint) ?? 0 <= Int(pointBalance) ?? 0 {
-                self.addToCartApi()
-                self.myCartListApi()
-                
+        
+        self.addToCartActionBTN.isEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            if self.verifiedStatus != 1{
+                self.view.makeToast("redeem_failed_contact_to_admin".localiz(), duration: 3.0, position: .bottom)
             }else{
-//                DispatchQueue.main.async{
-//                    let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                    vc!.delegate = self
-//                    vc!.titleInfo = ""
-//                    vc!.descriptionInfo = "Insufficent Point Balance"
-//                    vc!.modalPresentationStyle = .overCurrentContext
-//                    vc!.modalTransitionStyle = .crossDissolve
-//                    self.present(vc!, animated: true, completion: nil)
-//                }
-                self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
+                print(self.productPoint,"skjds")
+                print(self.pointBalance,"slkjds")
+                
+                if Int(self.productPoint) ?? 0 <= Int(self.pointBalance) ?? 0 {
+                    let filterArray = self.VM.redemptionCatalogueMyCartListArray.filter{$0.catalogueId == self.catalogueId}
+                    if filterArray.count > 0 {
+                        self.view.makeToast("Product is Already there in my cart".localiz(), duration: 3.0, position: .bottom)
+                    }else{
+                    self.addToCartApi()
+                    }
+                    
+                }else{
+                    self.view.makeToast("Insufficent_Point_Balance".localiz(), duration: 3.0, position: .bottom)
+                }
+               
             }
-        }  
+        }
     }
     
     
@@ -176,11 +181,13 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
             "LoyaltyID": "\(self.loyaltyId)"
         ] as [String: Any]
        // self.VM.redemptionCatalogueMyCartListApi(parameter: parameter)
+        print(parameter,"dkjfkf")
         self.requestApis.redemptionCatalogueMycartListApi(parameters: parameter) { (result, error) in
             if error == nil{
                 if result != nil{
                     DispatchQueue.main.async {
                         self.stopLoading()
+                        self.addToCartActionBTN.isEnabled = true
                         self.VM.redemptionCatalogueMyCartListArray = result?.catalogueSaveCartDetailListResponse ?? []
                         
                         if self.VM.redemptionCatalogueMyCartListArray.count != 0 {

@@ -132,6 +132,7 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
         submitBtn.setTitle("submit".localiz(), for: .normal)
         alreadyMemberLbl.text = "AlreadyaMember".localiz()
         loginNowBtn.setTitle( "LoginNow".localiz(), for: .normal)
+        self.commetsTF.placeholder = "Enter_Comments".localiz()
         
         
         

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 protocol CatalogueActionDelegate: AnyObject{
     
     func removeBtnDidTap(_ cell: FG_MyCartTVC)
@@ -35,6 +36,7 @@ class FG_MyCartTVC: UITableViewCell {
         self.productImage.layer.cornerRadius = 16
         self.productImage.layer.maskedCorners = [.layerMinXMinYCorner]
         self.qtyTF.isEnabled = false
+        self.pointsTitle.text = "Points".localiz()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

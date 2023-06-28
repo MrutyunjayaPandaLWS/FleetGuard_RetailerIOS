@@ -25,7 +25,13 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
     @IBOutlet var resendOTPButton: UIButton!
     @IBOutlet weak var submitBTN: GradientButton!
     
-//    @IBOutlet weak var loaderAnimatedView: LottieAnimationView!
+    @IBOutlet weak var otpVerificationTitle: UILabel!
+    @IBOutlet weak var otpVeroificationinfoTitleLbl: UILabel!
+    @IBOutlet weak var otpReceiveInfoTitleLbl: UILabel!
+    @IBOutlet weak var didntReceiveOTPTitleLbl: UILabel!
+    
+    
+    //    @IBOutlet weak var loaderAnimatedView: LottieAnimationView!
 //       @IBOutlet weak var loaderView: UIView!
 
     private var animationView11: LottieAnimationView?
@@ -86,6 +92,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
             self.VM.VC = self
             myCartList()
             getOTP()
+            localize()
             NotificationCenter.default.addObserver(self, selector: #selector(sendSuccess), name: Notification.Name.redemptionSubmission, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(dismissVC), name: Notification.Name.dismissScreen, object: nil)
             
@@ -116,6 +123,17 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.otpView.text = ""
+    }
+    
+    
+    
+    func localize(){
+        otpVerificationTitle.text = "OTP Verification".localiz()
+        otpVeroificationinfoTitleLbl.text = "We send a OTP to your number".localiz()
+        otpReceiveInfoTitleLbl.text = "OTP will Receive within".localiz()
+        didntReceiveOTPTitleLbl.text = "Didn't receive OTP Code ?".localiz()
+        self.resendOTPButton.setTitle("Resend Code".localiz(), for: .normal)
+        self.submitBTN.setTitle("submit".localiz(), for: .normal)
     }
     
     @objc func sendSuccess(){

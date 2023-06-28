@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 protocol DidTapActionDelegate: AnyObject{
     func addToCartDidTap(_ cell: FG_RedemptionCatalogueTVC)
@@ -24,6 +25,14 @@ class FG_RedemptionCatalogueTVC: UITableViewCell {
     @IBOutlet weak var pointView: UIView!
     
     @IBOutlet weak var pointsLbl: UILabel!
+    @IBOutlet weak var addToCartLbl: UILabel!
+    
+    @IBOutlet weak var addedtocartLbl: UILabel!
+    
+    @IBOutlet weak var pointsHeadingLbl: UILabel!
+    @IBOutlet weak var detailsOutBtn: UIButton!
+    
+    
     var imageUrl = ""
     var delegate: DidTapActionDelegate!
     
@@ -36,6 +45,11 @@ class FG_RedemptionCatalogueTVC: UITableViewCell {
         self.productImage.clipsToBounds = true
         self.productImage.layer.cornerRadius = 16
         self.productImage.layer.maskedCorners = [.layerMinXMinYCorner]
+        
+        self.addToCartLbl.text = "addToCart".localiz()
+        self.addedtocartLbl.text = "addedToCart".localiz()
+        self.pointsHeadingLbl.text = "Points".localiz()
+        self.detailsOutBtn.setTitle("Details".localiz(), for: .normal)
         
     }
 

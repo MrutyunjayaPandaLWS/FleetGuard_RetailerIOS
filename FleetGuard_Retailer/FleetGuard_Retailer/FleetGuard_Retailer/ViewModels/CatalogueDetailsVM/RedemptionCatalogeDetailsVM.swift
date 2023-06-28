@@ -80,9 +80,10 @@ class RedemptionCatalogeDetailsVM: popUpDelegate {
                                 self.VC?.present(vc!, animated: true, completion: nil)
                                 self.VC?.addToCartView.isHidden = true
                                 self.VC?.addedToCartView.isHidden = false
-                                
+                                self.VC?.addToCartActionBTN.isEnabled = true
+                                self.VC?.myCartListApi()
                             }
-                            self.VC?.myCartListApi()
+                          
                         }else{
                             DispatchQueue.main.async{
 //                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC

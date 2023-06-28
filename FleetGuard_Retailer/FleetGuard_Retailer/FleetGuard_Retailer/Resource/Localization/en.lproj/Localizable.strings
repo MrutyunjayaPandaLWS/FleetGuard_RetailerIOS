@@ -205,3 +205,29 @@
 Click Here";
 
 
+
+///NewLine
+"Home" = "Home";
+"addToCart" = "Add To Cart";
+"addedToCart" = "Added To Cart";
+"Points" = "Points";
+"Details" = "Details";
+"CategorySlash" = "Catogory / ";
+"PointsData" = "Points : ";
+"Descriptions" = "Descriptions";
+"Terms and conditions" = "Terms and conditions";
+"BonusPoints" = "Bonus Points : ";
+"TotalPoints" = "Total Points : ";
+"Months" = "Months : ";
+"FixedBasePoints" = "Fixed Base Points : ";
+"MiscellaneousPoints" = "Miscellaneous Points :";
+"Rdeemable Points" = "Rdeemable Points";
+"Process to checkout" = "Process to checkout";
+"OTP Verification" = "OTP Verification";
+"We send a OTP to your number" = "We send a OTP to your number";
+"OTP will Receive within" = "OTP will Receive within";
+"Didn't receive OTP Code ?" = "Didn't receive OTP Code ?";
+"Resend Code" = "Resend Code";
+"Your order placed successfully !" = "Your order placed successfully !";
+"Go to Dashboard" = "Go to Dashboard";
+"Enter_Comments" = "Enter Comments";

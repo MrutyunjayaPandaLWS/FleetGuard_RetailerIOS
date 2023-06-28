@@ -90,11 +90,11 @@ extension FG_MyEarningVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_MyEarningTVC", for: indexPath) as! FG_MyEarningTVC
         cell.selectionStyle = .none
-        cell.bonusPtsLbl.text = "Bonus Points : \(Int(VM.myEarningsArray[indexPath.row].referralBonusPoints ?? 0))"
-        cell.totalPtsLbl.text = "Total Points : \(VM.myEarningsArray[indexPath.row].totalWithDrawl ?? 0)"
-        cell.monthLblPts.text = "Months : \(VM.myEarningsArray[indexPath.row].createdDate ?? "")"
-        cell.fixedBasePtsLbl.text = "Fixed Base Points : \(VM.myEarningsArray[indexPath.row].pointExpiryCount ?? 0)"
-        cell.miscellaneousPtsLbl.text = "Miscellaneous Points :  \(Int(VM.myEarningsArray[indexPath.row].multiplierPointBalance ?? 0))"
+        cell.bonusPtsLbl.text = "\("BonusPoints".localiz()) \(Int(VM.myEarningsArray[indexPath.row].referralBonusPoints ?? 0))"
+        cell.totalPtsLbl.text = "\("TotalPoints".localiz()) \(VM.myEarningsArray[indexPath.row].totalWithDrawl ?? 0)"
+        cell.monthLblPts.text = "\("Months".localiz()) \(VM.myEarningsArray[indexPath.row].createdDate ?? "")"
+        cell.fixedBasePtsLbl.text = "\("FixedBasePoints".localiz()) \(VM.myEarningsArray[indexPath.row].pointExpiryCount ?? 0)"
+        cell.miscellaneousPtsLbl.text = "\("MiscellaneousPoints".localiz()) \(Int(VM.myEarningsArray[indexPath.row].multiplierPointBalance ?? 0))"
         return cell
     }
     

@@ -208,3 +208,29 @@
 "offersAndPromotionsText" = "ఆఫర్‌లు మరియు ప్రమోషన్‌లు
 ఇక్కడ నొక్కండి";
 
+
+///NewLine
+"Home" = "హోమ్";
+"addToCart" = "కార్ట్";
+"addedToCart" = "కార్ట్";
+"Points" = "పాయింట్లు";
+"Details" = "వివరాలు";
+"CategorySlash" = "Catogory / ";
+"PointsData" = "పాయింట్లు : ";
+"Descriptions" = "వివరణలు";
+"Terms and conditions" = "నిబంధనలు మరియు షరతులు";
+"BonusPoints" = "బోనస్ పాయింట్లు : ";
+"TotalPoints" = "మొత్తం పాయింట్లు : ";
+"Months" = "నెలలు : ";
+"FixedBasePoints" = "ఫిక్స్డ్ బేస్ పాయింట్లు : ";
+"MiscellaneousPoints" = "ఇతర పాయింట్లు :";
+"Rdeemable Points" = "Rdeemable Points";
+"Process to checkout"= "చెక్అవుట్ చేయడానికి ప్రాసెస్";
+"OTP Verification"  = "OTP ధృవీకరణ";
+"We send a OTP to your number" = "మేము మీ నంబర్";
+"OTP will Receive within" = "OTP లోపల అందుతుంది";
+"Didn't receive OTP Code ?" = "OTP కోడ్ అందలేదా ?";
+"Resend Code"  = "కోడ్";
+"Your order placed successfully !" = "మీ ఆర్డర్ విజయవంతంగా చేయబడింది!";
+"Go to Dashboard"= "డ్యాష్";
+"Enter_Comments" = "వ్యాఖ్యలను నమోదు చేయండి";

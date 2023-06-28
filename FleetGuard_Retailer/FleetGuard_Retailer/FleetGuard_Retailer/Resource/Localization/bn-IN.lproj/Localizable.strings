@@ -64,7 +64,7 @@
 // MARK: - SIDE MENU
 
 "Profile" = "প্রোফাইল";
-"My_Redemption_History" = "আমার মুক্তির ইতিহাস";
+"My_Redemption_History" = "আমার রিডেম্পশন ইতিহাস";
 "Redemption_Catalogue" = "রিডেম্পশন ক্যাটালগ";
 "Product_Catalogue" = "পণ্য ক্যাটালগ";
 "My_Promotions" = "আমার প্রচার";
@@ -73,12 +73,12 @@
 "FAQs" = "প্রশ্নাবলী";
 "T&C" = "T&C";
 "Logout" = "লগআউট";
-"Delete" = "মুছুন";
+"Delete" = "হিসাব মুছে ফেলা";
 "Since" = "যখন থেকে";
 "My_Billings" = "আমার বিলিংস";
 "My_Orders" = "আমার আদেশ";
 "RPL_Statement" = "আরএলপি বিবৃতি";
-"My_Milestone_Redemption" = "আমার মাইলস্টোন রিডেম্পশন";
+"My_Milestone_Redemption" = " মাইলস্টোন রিডেম্পশন";
 "Retailer_code" = "খুচরা বিক্রেতার কোড";
 "My_Earnings" = "আমার উপার্জন";
 "My_Redemption" = "আমার মুক্তি";
@@ -89,8 +89,8 @@
 "Last_Name" = "শেষ নাম";
 "Address" = "ঠিকানা";
 "Email_address" = "ইমেল ঠিকানা";
-"DOB" = "DOB";
-"Select_DOB" = "DOB নির্বাচন করুন";
+"DOB" = "ডিওবি";
+"Select_DOB" = "ডিওবি নির্বাচন করুন";
 "Gender" = "লিঙ্গ";
 "Select_Gender" = "লিঙ্গ নির্বাচন করুন";
 "preferred_Language" = "পছন্দের ভাষা";
@@ -204,3 +204,27 @@
 "offersAndPromotionsText" = "অফার এবং প্রচার
                     এখানে ক্লিক করুন";
 
+"Home" = "বাড়ি";
+"addToCart" = "কার্টে যোগ করুন";
+"addedToCart" = "কার্টে যোগ করা হয়েছে";
+"Points" = "পয়েন্ট";
+"Details" = "বিশদ বিবরণ";
+"CategorySlash" = "বিভাগ / ";
+"PointsData" = "পয়েন্ট: ";
+"Descriptions" = "বর্ণনা";
+"Terms and conditions" = "নিয়ম ও শর্তাবলী";
+"BonusPoints" = "বোনাস পয়েন্ট : ";
+"TotalPoints" = "মোট পয়েন্ট : ";
+"Months" = "মাস: ";
+"FixedBasePoints" = "স্থির ভিত্তি পয়েন্ট : ";
+"MiscellaneousPoints" = "বিবিধ পয়েন্ট :";
+"Rdeemable Points" = "Rdeemable Points";
+"Process to checkout" = "চেকআউট করার প্রক্রিয়া";
+"OTP Verification" = "OTP যাচাইকরণ";
+"We send a OTP to your number" = "আমরা আপনার নম্বরে একটি ওটিপি পাঠাই";
+"OTP will receive within" = "ওটিপি ভিতরে প্রাপ্ত হবে";
+"Didn't receive OTP Code ?" = "ওটিপি কোড পাননি?";
+"Resend Code" = "কোড আবার পাঠান";
+"Your order placed successfully !"= "আপনার অর্ডার সফলভাবে স্থাপন করা হয়েছে!";
+"Go to Dashboard" = "ড্যাশবোর্ডে যান";
+"Enter_Comments" = "মন্তব্য লিখুন";

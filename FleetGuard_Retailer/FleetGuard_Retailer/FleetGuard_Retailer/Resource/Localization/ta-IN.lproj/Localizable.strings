@@ -86,7 +86,7 @@
 //MARK: - PROFILE
 "Personal_Information" = "தனிப்பட்ட தகவல்";
 "First_Name" = "முதல் பெயர்";
-"Last_Name" = "Last Name";
+"Last_Name" = "கடைசி பெயர்";
 "Address" = "முகவரி";
 "Email_address" = "மின்னஞ்சல் முகவரி";
 "DOB" = "பிறந்த தேதி";
@@ -157,13 +157,15 @@
 "noDataFound" = "வேறு தகவல்கள் இல்லை";
 
 "month" = "மாதம்";
-"Points_Earned" = "ಪಾಯಿಂಟ್ ಗಳಿಸಿದರು";
-"Balance" = "ಬಾಲ ಎನ್ಸಿ";
-"View" = "ನೋಟ";
+"Points_Earned" = "பெற்ற புள்ளிகள்";
+"Balance" = "சமநிலை";
+"View" = "பார்வை";
+"Status" = "நிலை";
+
 
 "OrderDate" = "ஆர்டர் தேதி";
 "Sources" = "ஆதாரம்";
-"Status" = "ಸ್ಥಿತಿ";
+
 
 
 
@@ -204,3 +206,30 @@
 "Query Type" = "வினவல் வகை";
 "offersAndPromotionsText" = "சலுகைகள் மற்றும் விளம்பரங்கள் இங்கே கிளிக் செய்யவும்";
 
+
+
+///NewLine
+"Home" = "வீடு";
+"addToCart" = "பெட்டகத்தில் சேர்";
+"addedToCart" = "வண்டியில் சேர்க்கப்பட்டது";
+"Points" = "புள்ளிகள்";
+"Details" = "விவரங்கள்";
+"CategorySlash" = "வகை / ";
+"PointsData" = "புள்ளிகள் : ";
+"Descriptions" = "விளக்கங்கள்";
+"Terms and conditions" = "விதிமுறைகள் மற்றும் நிபந்தனைகள்";
+"BonusPoints" = "போனஸ் புள்ளிகள் : ";
+"TotalPoints" = "மொத்த புள்ளிகள் : ";
+"Months" = "மாதங்கள் : ";
+"FixedBasePoints" = "நிலையான அடிப்படை புள்ளிகள் : ";
+"MiscellaneousPoints" = "இதர புள்ளிகள் :";
+"Rdeemable Points" = "மீட்டெடுக்கக்கூடிய புள்ளிகள்";
+"Process to checkout" = "செக் அவுட் செய்வதற்கான செயல்முறை";
+"OTP Verification" = "OTP சரிபார்ப்பு";
+"We send a OTP to your number" = "உங்கள் எண்ணுக்கு OTP அனுப்புகிறோம்";
+"OTP will Receive within" = "உள்ளே OTP பெறப்படும்";
+"Didn't receive OTP Code ?" = "OTP குறியீட்டைப் பெறவில்லையா?";
+"Resend Code" = "குறியீட்டை மீண்டும் அனுப்பு";
+"Your order placed successfully !" = "உங்கள் ஆர்டர் வெற்றிகரமாக முடிந்தது!";
+"Go to Dashboard" = "டாஷ்போர்டுக்குச் செல்லவும்";
+"Enter_Comments" = "கருத்துகளை உள்ளிடவும்";

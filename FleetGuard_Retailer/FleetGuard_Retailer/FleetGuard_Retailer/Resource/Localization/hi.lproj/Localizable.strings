@@ -56,7 +56,7 @@
 "redemption_catalogue" = "रिडेम्पशन कैटलॉग";
 "know_more" = "और जानें";
 "Add_More_Range" = "ज़्यादा रेंज जोड़ें";
-"View_Products" = "Products देखें";
+"View_Products" = "उत्पाद देखें";
 "Order_Now" = "अभी आदेश दें";
 "Your_account_loged_in_by_other_mobile" = "आपका खाता दूसरे मोबाइल से लॉग इन है।";
 
@@ -201,3 +201,27 @@
 "offersAndPromotionsText" = "ऑफर और प्रमोशन यहां
 क्लिक करें";
 
+"Home"= "घर";
+"addToCart" = "कार्ट में जोड़ें";
+"addedToCart" = "कार्ट में जोड़ा गया";
+"Points" = "अंक";
+"Details"= "विवरण";
+"CategorySlash"  = "श्रेणी/";
+"PointsData" = "पॉइंट्स:";
+"Descriptions" = "विवरण";
+"Terms and conditions"= "नियम एवं शर्तें";
+"BonusPoints" = "बोनस पॉइंट्स:";
+"TotalPoints" = "कुल अंक:";
+"Months"= "महीने :";
+"FixedBasePoints"  = "फिक्स्ड बेसपॉइंट्स:";
+"MiscellaneousPoints" = "विविध बिंदु:";
+"Rdeemable Points"= "वापसीयोग्य अंक";
+"Process to checkout"= "चेकआउट करने की प्रक्रिया";
+"OTP Verification" = "ओटीपी सत्यापन";
+"We send a OTP to your number"= "हम आपके नंबर पर एक ओटीपी भेजते हैं";
+"OTP will Receive within"= "ओटीपी भीतर प्राप्त होगा";
+"Didn't receive OTP Code ?" = "ओटीपी कोड प्राप्त नहीं हुआ?";
+"Resend Code" = "कोड पुनः भेजें";
+"Your order placed successfully !" = "आपका ऑर्डर सफलतापूर्वक पूरा हो गया!";
+"Go to Dashboard" = "डैशबोर्ड पर जाएँ";
+"Enter_Comments" = "टिप्पणियाँ दर्ज करें";

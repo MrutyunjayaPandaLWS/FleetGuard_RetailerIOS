@@ -17,6 +17,9 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
     @IBOutlet weak var myCartLbl: UILabel!
     @IBOutlet weak var totalRedeemablePtsLbl: UILabel!
     
+    @IBOutlet weak var redeemPointsHeadingLbl: UILabel!
+    @IBOutlet weak var proceedToCheckoutOutBTN: UIButton!
+    
     
     var VM = RedemptionCatalogueMyCartVM()
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
@@ -53,8 +56,9 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
     
     func localization(){
         myCartLbl.text = "myCart".localiz()
+        redeemPointsHeadingLbl.text = "Rdeemable Points".localiz()
+        proceedToCheckoutOutBTN.setTitle("Process to checkout".localiz(), for: .normal)
     }
-    
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }

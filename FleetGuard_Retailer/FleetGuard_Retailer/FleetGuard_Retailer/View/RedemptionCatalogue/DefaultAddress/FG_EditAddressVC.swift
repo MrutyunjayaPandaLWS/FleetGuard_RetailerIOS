@@ -69,6 +69,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
     
     @IBOutlet weak var pincodeTF: UITextField!
     
+    @IBOutlet weak var stateHeadingLbl: UILabel!
     
     var selectedStateIdProtocol = -1
     var selectedCityIdProtocol = -1
@@ -128,6 +129,7 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
         address.text = "Address".localiz()
         country.text = "Country".localiz()
         stateLbl.text = "state".localiz()
+        stateHeadingLbl.text = "state".localiz()
         cityTitleLbl.text = "city".localiz()
         pincodeLbl.text = "pincode".localiz()
         saveChangesBtn.setTitle("Save_changes".localiz(), for: .normal)

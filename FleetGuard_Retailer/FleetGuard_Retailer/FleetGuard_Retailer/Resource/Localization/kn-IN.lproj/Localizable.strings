@@ -211,3 +211,30 @@
 "offersAndPromotionsText" = "ಕೊಡುಗೆಗಳು ಮತ್ತು ಪ್ರಚಾರಗಳು
 ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ";
 
+
+
+
+"Home" = "ಮನೆ";
+"addToCart" = "ಕಾರ್ಟ್";
+"addedToCart" = "ಕಾರ್ಟ್";
+"Points"  = "ಪಾಯಿಂಟ್";
+"Details" = "ವಿವರಗಳು";
+"CategorySlash" = "Catogory / ";
+"PointsData" = "ಪಾಯಿಂಟ್";
+"Descriptions" = "ವಿವರಣೆಗಳು";
+"Terms and conditions" = "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು";
+"BonusPoints" = "Bonus Points : ";
+"TotalPoints" = "ಒಟ್ಟು ಅಂಕಗಳು : ";
+"Months" = "ತಿಂಗಳು : ";
+"FixedBasePoints" = "ಸ್ಥಿರ ಬೇಸ್ ಪಾಯಿಂಟ್";
+"MiscellaneousPoints" = "ಮಿಸೆಲೇನಿಯಸ್ ಪಾಯಿಂಟ್";
+"Rdeemable Points" = "Rdeemable Points";
+"Process to checkout" = "Process to checkout";
+"OTP ಪರಿಶೀಲನೆ" = "OTP ಪರಿಶೀಲನೆ";
+"We send a OTP to your number"  = "ನಿಮ್ಮ ಸಂಖ್ಯೆಗೆ ನಾವು OTP ಕಳುಹಿಸುತ್ತೇವೆ";
+"OTP will Receive within" = "OTP ಒಳಗೆ ಸ್ವೀಕರಿಸುತ್ತದೆ";
+"Didn't receive OTP Code ?" = "ಒಟಿಪಿ ಕೋಡ್ ಸ್ವೀಕರಿಸಲಿಲ್ಲವೇ?";
+"Resend Code" = "ಕೋಡ್ ಅನ್ನು ಮರುಕಳುಹಿಸಿ";
+"Your order placed successfully !" = "ನಿಮ್ಮ ಆದೇಶವನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಇರಿಸಲಾಗಿದೆ!";
+"Go to Dashboard"  = "ಡ್ಯಾಶ್";
+"Enter_Comments" = "ಕಾಮೆಂಟ್";

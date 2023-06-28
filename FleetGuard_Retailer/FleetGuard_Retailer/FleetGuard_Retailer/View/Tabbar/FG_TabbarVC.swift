@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_TabbarVc: UITabBarController {
 
@@ -16,6 +17,9 @@ class FG_TabbarVc: UITabBarController {
 //        if self.comingFrom == "DelegateData"{
 //            _ = self.tabBarController?.selectedIndex = 1
 //        }
+        tabBarController?.tabBar.items![0].title = "My_Earnings".localiz()
+        tabBarController?.tabBar.items![1].title = "Home".localiz()
+        tabBarController?.tabBar.items![2].title = "My_Redemption".localiz()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -35,6 +39,7 @@ class FG_TabbarVc: UITabBarController {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if self.selectedIndex == 0 {
             self.tabBarController?.selectedIndex = selectedIndex
+            
         }else if self.selectedIndex == 1{
             let rootView = self.viewControllers![self.selectedIndex] as! UINavigationController
             rootView.popToRootViewController(animated: false)

@@ -154,6 +154,9 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     }
     
     private func localization(){
+        tabBarController?.tabBar.items![0].title = "My_Earnings".localiz()
+        tabBarController?.tabBar.items![1].title = "Home".localiz()
+        tabBarController?.tabBar.items![2].title = "My_Redemption".localiz()
         self.offersAndPromotionsLbl.text = "offersAndPromotionsText".localiz()
         totalPtsBalance.text = "total_Point_bal".localiz()
         welcomeLbl.text = "welcome".localiz()
