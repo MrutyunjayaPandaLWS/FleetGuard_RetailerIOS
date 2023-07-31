@@ -13,6 +13,7 @@ protocol SendDataToDetailsDelegate: class{
 
 class FG_ProdCatalogueTVC: UITableViewCell {
 
+    @IBOutlet weak var dapTitleLbl: UILabel!
     @IBOutlet weak var imageViewBtn: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var mrpValue: UILabel!
@@ -20,6 +21,8 @@ class FG_ProdCatalogueTVC: UITableViewCell {
     @IBOutlet weak var partNoLbl: UILabel!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var partNoTitleLbl: UILabel!
+    @IBOutlet weak var mrpTitleLbl: UILabel!
     
     var delegate: SendDataToDetailsDelegate!
     var imageUrl: String = ""

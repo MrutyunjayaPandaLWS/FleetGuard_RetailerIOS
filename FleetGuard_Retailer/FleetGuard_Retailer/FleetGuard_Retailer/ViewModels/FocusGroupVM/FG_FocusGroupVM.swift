@@ -18,8 +18,8 @@ class FG_FocusGroupVM{
     func productListApi(parameter: JSON){
         DispatchQueue.main.async {
             self.VC?.startLoading()
-//            self.productsArray.removeAll()
-//            self.productListArray.removeAll()
+            self.productsArray.removeAll()
+            self.productListArray.removeAll()
         }
         self.requestApis.productListingApi(parameters: parameter) { (result, error) in
             if error == nil{

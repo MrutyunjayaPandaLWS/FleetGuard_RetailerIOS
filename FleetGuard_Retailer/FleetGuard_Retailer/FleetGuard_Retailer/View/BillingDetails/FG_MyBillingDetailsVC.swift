@@ -49,22 +49,27 @@ class FG_MyBillingDetailsVC: BaseViewController {
                 self.orderDetailsTV.delegate = self
                 self.orderDetailsTV.dataSource = self
                 self.noDataFoundLbl.isHidden = true
-                noDataFoundLbl.text = "noDataFound".localiz()
                 self.orderDetailsTV.separatorStyle = .none
                 self.myBillingDetailsAPI()
-                self.orderNumberHeadingLbl.text = "Order No"
-                self.orderDateHeadingLbl.text = "Order Date"
                 self.orderDateLbl.text = orderDate
                 self.orderNumberLbl.text = invoiceNumber
             }
         }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        noDataFoundLbl.text = "noDataFound".localiz()
+        self.orderNumberHeadingLbl.text = "Order No".localiz()
+        self.orderDateHeadingLbl.text = "OrderDate".localiz()
+    }
 
         func myBillingDetailsAPI() {
             let parameters = [
                     "ActionType": 23,
                     "ActorId": "\(userId)",
-                    "invoiceNo": "\(invoiceNumber)"
+                    "ClaimID": "\(invoiceNumber)"
             ] as [String: Any]
+            print(parameters,"my bilings details")
             self.VM.billingsDetailsAPI(parameters: parameters)
         }
         
@@ -91,11 +96,11 @@ class FG_MyBillingDetailsVC: BaseViewController {
             let imageURL = VM.myBillingsDetailArray[indexPath.row].productImage ?? ""
             print(imageURL)
             if imageURL != ""{
-                let filteredURLArray = imageURL.dropFirst(2)
-                let urltoUse = String(PROMO_IMG1 + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
+                let filteredURLArray = imageURL
+                let urltoUse = String(product_Image_Url + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
                 let urlt = URL(string: "\(urltoUse)")
                 print(urlt)
-                cell.billingimageView.kf.setImage(with: URL(string: "\(String(describing: urlt))"), placeholder: UIImage(named: "Image 3"));
+                cell.billingimageView.kf.setImage(with: URL(string: "\(String(describing: urltoUse))")!, placeholder: UIImage(named: "Image 3"));
             }
             
 //                    if (indexPath.row) % 2 == 0{

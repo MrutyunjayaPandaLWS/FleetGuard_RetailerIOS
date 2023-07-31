@@ -1,9 +1,8 @@
 /*
-  Localizable.strings
-  Fleet_Guard(Samriddhi)
+Localizable.strings
+Fleet_Guard(Samriddhi)
 
-  Created by ADMIN on 17/01/2023.
-  
+Created by ADMIN on 17/01/2023.
 */
 "No_Internet" = "No Internet";
 
@@ -21,7 +20,7 @@
 "Decline" = "Decline";
 "Accept" = "Accept";
 "termsAndCondition" = "Terms and conditions";
-"mobileNumber_isnot_exit_system" = "The mobile number that you have entered is not present in the  system.";
+"mobileNumber_isnot_exit_system" = "The mobile number that you have entered is not present in the system.";
 "name" = "Name";
 "enterName" = "Enter name";
 "Mobile_number" = "Mobile number";
@@ -50,6 +49,7 @@
 //MARK: - DASHBOARD
 "Shop_name" = "SHOP NAME";
 "total_Point_bal" = "Total Point Balance";
+"total_Point_bal" = "Total Point Balance";
 "passbook_number" = "Passbook Number";
 "welcome" = "Welcome !";
 "product_Catalogoue" = "Product Catalogue";
@@ -67,7 +67,7 @@
 "My_Redemption_History" = "My Redemption History";
 "Redemption_Catalogue" = "Redemption Catalogue";
 "Product_Catalogue" = "Product Catalogue";
-"My_Promotions" = "My Promotions";
+"My_Promotions" = "Offers & Promotions";
 "Lodge_Query" = "Lodge Query";
 "About" = "About";
 "FAQs" = "FAQs";
@@ -79,7 +79,6 @@
 "My_Orders" = "My Orders";
 "RPL_Statement" = "RLP Statement";
 "My_Milestone_Redemption" = "My Milestone Redemption";
-"Retailer_code" = "Retailer code";
 "My_Earnings" = "My Earnings";
 "My_Redemption" = "My Redemption";
 
@@ -134,7 +133,7 @@
 "RPL_No" = "RPL No";
 "Balance_Points" = "Balance Points";
 "Milestone_Points" = "MILESTONE POINTS";
-"Redeem_Now" = "Redeem NOW";
+"Redeem_Now" = "Redeem Now";
 "statementView" = "STATEMENT VIEW";
 "points_trends" = "Points Trend";
 "range_trends" = "Range Trend";
@@ -160,6 +159,7 @@
 "Points_Earned" = "Points Earned";
 "Balance" = "Balance";
 "View" = "View";
+
 "OrderDate" = "Order Date";
 "Sources" = "Sources";
 "Status" = "Status";
@@ -180,8 +180,8 @@
 "ToDate should be lower than FromDate" = "ToDate should be lower than FromDate";
 "Please Enter Query Details" = "Please Enter Query Details";
 "Category" = "Category";
+"Retailer_code" = "Retailer code";
 "Order Status" = "Order Status";
-
 
 "New Range Addition" = "New Range Addition";
 "Counter Gap" = "Counter Gap";
@@ -194,9 +194,73 @@
 "Product Image" = "Product Image";
 "Maximum field should be higher then Minimum field" = "Maximum field should be higher then Minimum field";
 "RLP_No" = "RLP No";
+
 "NoteDateason" = "Note: Date as on ";
 "Add more part no" = "Add more part no";
 "Ref. No" = "Ref. No";
 "Points Redeemed" = "Points Redeemed";
-"Qty" = "Qty" ;
+"Qty" = "Qty";
 "Query Type" = "Query Type";
+"offersAndPromotionsText" = "Offers and Promotions
+Click Here";
+
+
+
+///NewLine
+"Home" = "Home";
+"addToCart" = "Add To Cart";
+"addedToCart" = "Added To Cart";
+"Points" = "Points";
+"Details" = "Details";
+"CategorySlash" = "Catogory / ";
+"PointsData" = "Points : ";
+"Descriptions" = "Descriptions";
+"Terms and conditions" = "Terms and conditions";
+"BonusPoints" = "Bonus Points : ";
+"TotalPoints" = "Total Points : ";
+"Months" = "Months : ";
+"FixedBasePoints" = "Fixed Base Points : ";
+"MiscellaneousPoints" = "Miscellaneous Points :";
+"Rdeemable Points" = "Rdeemable Points";
+"Process to checkout" = "Process to checkout";
+"OTP Verification" = "OTP Verification";
+"We send a OTP to your number" = "We send a OTP to your number";
+"OTP will Receive within" = "OTP will Receive within";
+"Didn't receive OTP Code ?" = "Didn't receive OTP Code ?";
+"Resend Code" = "Resend Code";
+"Your order placed successfully !" = "Your order placed successfully !";
+"Go to Dashboard" = "Go to Dashboard";
+"Enter_Comments" = "Enter Comments";
+
+
+"Milestone code" = "Milestone code";
+"Level Points" = "Level Points";
+"Validity" = "Validity";
+"Redeem" = "Redeem";
+"Points Range" = "Points Range";
+"Choose a point range below" = "Choose a point range below";
+
+
+
+//MARK: NEW
+
+"Part No" = "Part No";
+"DAP" = "DAP";
+"MRP" = "MRP";
+"Short Description" = "Short Description";
+"Order Total" = "Order Total";
+"Value" = "Value";
+"Place Order" = "Place Order";
+//MARK: - NEW
+"Segment" = "Segment";
+"OEM" = "OEM";
+"Model" = "Model";
+"Product Catgeory" = "Product Catgeory";
+"Order No" = "Order No";
+"Order Qty" = "Order Qty";
+"Dispatched Qty" = "Dispatched Qty";
+"Invoice No" = "Invoice No";
+"Invoice Date" = "Invoice Date";
+"Total value" = "Total value";
+"Order More" = "Order More";
+"Order No" = "Order No";

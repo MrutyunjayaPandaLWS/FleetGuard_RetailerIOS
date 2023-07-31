@@ -160,8 +160,8 @@ class FG_MyProfileVC: BaseViewController,EditDataDelegate, popUpDelegate {
             vc.city = self.cityLbl.text ?? ""
             vc.pincode = self.pincodeLbl.text ?? ""
             if self.dobLbl.text != ""{
-                
-                vc.dob =  convertDateFormater1(self.dobLbl.text!)
+                vc.dob =  self.dobLbl.text ?? ""
+//                vc.dob =  convertDateFormater1(self.dobLbl.text!)
             }else{
                 vc.dob = "Select DOB"
             }

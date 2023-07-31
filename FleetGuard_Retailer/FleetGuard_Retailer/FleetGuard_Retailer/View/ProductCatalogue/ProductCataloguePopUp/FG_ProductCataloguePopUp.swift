@@ -6,16 +6,20 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_ProductCataloguePopUp: BaseViewController {
 
+    @IBOutlet weak var dashBoardBtn: UIButton!
+    @IBOutlet weak var orderMoreBtn: GradientButton!
     @IBOutlet weak var infoLbl: UILabel!
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dashBoardBtn.setTitle("Dashboard".localiz(), for: .normal)
+        orderMoreBtn.setTitle("Order More".localiz(), for: .normal)
     }
 
     @IBAction func dashBoardBtn(_ sender: Any) {

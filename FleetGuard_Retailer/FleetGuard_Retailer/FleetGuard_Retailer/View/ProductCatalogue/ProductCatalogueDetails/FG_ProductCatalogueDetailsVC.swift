@@ -88,7 +88,11 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
             self.myCartApi()
             //  self.productListApi()
             localizatiuon()
-            productImage.kf.setImage(with: URL(string: "\(productImageURL)"),placeholder: UIImage(named: "Image 3"))
+            if productImageURL.count != 0{
+                let totalImgURL = product_Image_Url + productImageURL
+                productImage.kf.setImage(with: URL(string: "\(totalImgURL)"),placeholder: UIImage(named: "Image 3"))
+            }
+
             self.qtyTF.isEnabled = false
         }
         
@@ -96,9 +100,14 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
     
     private func localizatiuon(){
         headerLbl.text = "Product_Catalogue_Details".localiz()
-        shortDescriptionTitle.text = "Short Desription:"
+        shortDescriptionTitle.text = "\("Short Description".localiz()) :"
         orderNowBtn.setTitle("Order_Now".localiz(), for: .normal)
         addmorePartnoBtn.setTitle("Add more part no".localiz(), for: .normal)
+        addToCartBtn.setTitle("addToCart".localiz(), for: .normal)
+        addToDreamGfit.setTitle("".localiz(), for: .normal)
+        partNoTitlelbl.text = "Part No".localiz()
+        dapTitle.text = "DAP".localiz()
+        mrpTitle.text = "MRP".localiz()
     }
 
     @IBAction func backBtn(_ sender: Any) {

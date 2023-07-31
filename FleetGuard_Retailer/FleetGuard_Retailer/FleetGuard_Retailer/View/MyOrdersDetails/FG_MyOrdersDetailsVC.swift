@@ -7,6 +7,7 @@
 
 import UIKit
 import LanguageManager_iOS
+import Kingfisher
 
 class FG_MyOrdersDetailsVC: BaseViewController, DateSelectedDelegate {
     func acceptDate(_ vc: FG_DOBVC) {
@@ -57,17 +58,23 @@ class FG_MyOrdersDetailsVC: BaseViewController, DateSelectedDelegate {
             }
         }else{
             self.VM.VC = self
-            self.noDataFoundLbl.text = "noDataFound".localiz()
             self.noDataFoundLbl.isHidden = true
             self.orderDetailsTV.delegate = self
             self.orderDetailsTV.dataSource = self
             self.orderDetailsTV.separatorStyle = .none
             self.myOrderDetailsAPI()
-            self.orderNumberHeadingLbl.text = "Order No"
-            self.orderDateHeadingLbl.text = "Order Date"
+            self.orderNumberHeadingLbl.text = "Order No".localiz()
+            self.orderDateHeadingLbl.text = "OrderDate".localiz()
             self.orderDateLbl.text = orderDate
             self.orderNumberLbl.text = ordernumber
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.noDataFoundLbl.text = "noDataFound".localiz()
+        myOrdersHeaderLbl.text = "My_Orders".localiz()
+        
     }
 
     func myOrderDetailsAPI() {
@@ -121,7 +128,16 @@ extension FG_MyOrdersDetailsVC: UITableViewDelegate,UITableViewDataSource {
         cell.orderQTYLbl.text = "\(VM.myOrderListingDetailsArray[0].lstCustomerCartApi?[indexPath.row].quantity ?? 0)"
         cell.dispatchQtyLbl.text = "\(VM.myOrderListingDetailsArray[0].lstCustomerCartApi?[indexPath.row].productStockQuantity ?? 0)"
         cell.statusLbl.text = "\(VM.myOrderListingDetailsArray[0].lstCustomerCartApi?[indexPath.row].statusName ?? "")"
-        
+
+        let imageURL = VM.myOrderListingDetailsArray[0].lstCustomerCartApi?[indexPath.row].productImg ?? ""
+        print(imageURL)
+        if imageURL != ""{
+            let filteredURLArray = imageURL
+            let urltoUse = String(product_Image_Url + filteredURLArray).replacingOccurrences(of: " ", with: "%20")
+            let urlt = URL(string: "\(urltoUse)")
+            print(urlt)
+            cell.orderDetailsImg.kf.setImage(with: URL(string: "\(String(describing: urltoUse))")!, placeholder: UIImage(named: "Image 3"));
+        }
         if (indexPath.row) % 2 == 0{
             cell.productView.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 1)
         }else{

@@ -79,7 +79,6 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         self.filetrShadowView.isHidden = true
         //self.filterView.isHidden = true
         noDataFoundLbl.isHidden = true
-        noDataFoundLbl.text = "noDataFound".localiz()
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 20
         subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -101,6 +100,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        noDataFoundLbl.text = "noDataFound".localiz()
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
                 let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check

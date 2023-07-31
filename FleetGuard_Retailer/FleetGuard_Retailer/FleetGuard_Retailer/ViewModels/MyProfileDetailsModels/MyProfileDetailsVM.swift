@@ -37,14 +37,14 @@ class MyProfileDetailsVM: popUpDelegate{
                         self.VC?.mobileNumberLbl.text = result?.lstCustomerJson?[0].mobile ?? "-"
                         self.VC?.emailLbl.text = result?.lstCustomerJson?[0].email ?? "-"
                         //self.dateOfBirthTF.text = response?.lstCustomerJson?[0].dob ?? "-"
-                        self.VC?.addressLbl.text = result?.lstCustomerJson?[0].address1 ?? "-"
+                        self.VC?.addressLbl.text = result?.lstCustomerJson?[0].address2 ?? "-"
                         self.VC?.stateLbl.text = result?.lstCustomerJson?[0].stateName ?? "-"
                         self.VC?.cityLbl.text = result?.lstCustomerJson?[0].cityName ?? "-"
                         self.VC?.pincodeLbl.text = result?.lstCustomerJson?[0].zip ?? "-"
                         self.VC?.preferredLanguageLbl.text = result?.lstCustomerJson?[0].languageName ?? "English"
                         self.VC?.languageID = result?.lstCustomerJson?[0].languageId ?? -1
                         let createdDate = (result?.lstCustomerJson?[0].jdob ?? "-").split(separator: " ")
-                        let convertDateFormate = self.VC?.convertDateFormaterString("\(createdDate[0])", fromDate: "dd-MM-yyyy", toDate: "dd/MM/yyyy")
+                        let convertDateFormate = self.VC?.convertDateFormaterString("\(createdDate[0])", fromDate: "MM-dd-yyyy", toDate: "dd/MM/yyyy")
                         self.VC?.dobLbl.text = "\(convertDateFormate ?? "")"
                         self.VC?.genderLbl.text = result?.lstCustomerJson?[0].gender ?? ""
                         let profileDetails = result?.lstCustomerJson ?? []

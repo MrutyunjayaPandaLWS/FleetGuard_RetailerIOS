@@ -1,19 +1,18 @@
-/* 
-  Localizable.strings
-  Fleet_Guard(Samriddhi)
+/*
+Localizable.strings
+Fleet_Guard(Samriddhi)
 
-  Created by ADMIN on 17/01/2023.
-  
+Created by ADMIN on 17/01/2023.
 */
 "No_Internet" = "ইন্টারনেট নেই";
 
 
 
-"welcome" = "আপনাকে স্বাগতম";
+"welcome" = "স্বাগত";
 "LoginNow" = "এখনই লগইন করুন";
 "Mobilenumber" = "মোবাইল নম্বর";
 "AlreadyaMember" = "ইতিমধ্যে একজন সদস্য?";
-"SendOTP" = "ওটিপি পাঠান";
+"SendOTP" = "OTP পাঠান";
 "NewtoSamriddhi" = "সমৃদ্ধিতে নতুন?";
 "Contactusnow" = "এখনই আমাদের সাথে যোগাযোগ করুন";
 "Enteryourmobilenumber" = "অনুগ্রহ করে আপনার মোবাইল নম্বর লিখুন";
@@ -23,9 +22,9 @@
 "termsAndCondition" = "নিয়ম ও শর্তাবলী";
 "mobileNumber_isnot_exit_system" = "আপনি যে মোবাইল নম্বরটি লিখেছেন সেটি সিস্টেমে নেই।";
 "name" = "নাম";
-"enterName" = "নাম লিখুন";
+"enterName" = "আপনার নাম লিখুন";
 "Mobile_number" = "মোবাইল নম্বর";
-"enter_mobile_number" = "মোবাইল নম্বর লিখুন";
+"enter_mobile_number" = "আপনার মোবাইল প্রদান করুন";
 "state" = "রাষ্ট্র";
 "city" = "শহর";
 "comment" = "মন্তব্য";
@@ -38,9 +37,9 @@
 "query_Submission_failed" = "আপনার জমা দেওয়া ব্যর্থ হয়েছে।";
 "Mobile_number_already_registered" = "মোবাইল নম্বর ইতিমধ্যে নিবন্ধিত!";
 "Resend_OTP" = "Otp আবার পাঠান";
-"OTP_will_receive_within" = "ওটিপি এর মধ্যে পাওয়া যাবে";
+"OTP_will_receive_within" = "OTP এরমধ্যেইপাবেন";
 "Back" = "ব্যাক";
-"Enter_OTP_sent_to" = "প্রেরিত OTP লিখুন";
+"Enter_OTP_sent_to" = "এপাঠানো OTP লিখুন";
 "Enter_OTP" = "ওটিপি লিখুন";
 "Enter_valid_OTP" = "বৈধ OTP লিখুন";
 "your_account_is_deleted" = "আপনার অ্যাকাউন্ট মুছে ফেলা হয়েছে। অনুগ্রহ করে আপনার প্রশাসকের সাথে যোগাযোগ করুন।";
@@ -48,15 +47,15 @@
 "account_verification_pending" = "আপনার অ্যাকাউন্ট যাচাইকরণ মুলতুবি আছে। আপনার অ্যাকাউন্ট যাচাই করার জন্য অনুগ্রহ করে আপনার প্রশাসকের সাথে যোগাযোগ করুন।";
 
 //MARK: - DASHBOARD
-"Shop_name" = "শপের নাম";
+"Shop_name" = "দোকানের নাম";
 "total_Point_bal" = "মোট পয়েন্ট ব্যালেন্স";
 "passbook_number" = "পাসবুক নম্বর";
 "welcome" = "স্বাগত!";
 "product_Catalogoue" = "পণ্য ক্যাটালগ";
-"redemption_catalogue" = "মুক্তির ক্যাটালগ";
+"redemption_catalogue" = "রিডেম্পশন ক্যাটালগ";
 "know_more" = "আরো জানুন";
 "Add_More_Range" = "আরো পরিসর যোগ করুন";
-"View_Products" = "পণ্য দেখুন";
+"View_Products" = "পণ্যগূলো দেখেন";
 "Order_Now" = "এখনই অর্ডার করুন";
 "Your_account_loged_in_by_other_mobile" = "আপনার অ্যাকাউন্ট অন্য মোবাইল দ্বারা লগ ইন করা হয়েছে।";
 
@@ -67,29 +66,29 @@
 "My_Redemption_History" = "আমার রিডেম্পশন ইতিহাস";
 "Redemption_Catalogue" = "রিডেম্পশন ক্যাটালগ";
 "Product_Catalogue" = "পণ্য ক্যাটালগ";
-"My_Promotions" = "আমার প্রচার";
-"Lodge_Query" = "লজ কোয়েরি";
+"My_Promotions" = "অফার এবং প্রচার";
+"Lodge_Query" = "লজ প্রশ্ন";
 "About" = "সম্পর্কে";
 "FAQs" = "প্রশ্নাবলী";
 "T&C" = "T&C";
-"Logout" = "লগআউট";
+"Logout" = "প্রস্থান";
 "Delete" = "হিসাব মুছে ফেলা";
 "Since" = "যখন থেকে";
 "My_Billings" = "আমার বিলিংস";
 "My_Orders" = "আমার আদেশ";
 "RPL_Statement" = "আরএলপি বিবৃতি";
-"My_Milestone_Redemption" = " মাইলস্টোন রিডেম্পশন";
-"Retailer_code" = "খুচরা বিক্রেতার কোড";
+"My_Milestone_Redemption" = " আমার মাইলস্টোন রিডেম্পশন";
+"Retailer_code" = "বিক্রেতার কোড";
 "My_Earnings" = "আমার উপার্জন";
 "My_Redemption" = "আমার মুক্তি";
 
 //MARK: - PROFILE
 "Personal_Information" = "ব্যক্তিগত তথ্য";
-"First_Name" = "প্রথম নাম";
-"Last_Name" = "শেষ নাম";
+"First_Name" = "নামের প্রথম অংশ";
+"Last_Name" = "নামের শেষাংশ";
 "Address" = "ঠিকানা";
-"Email_address" = "ইমেল ঠিকানা";
-"DOB" = "ডিওবি";
+"Email_address" = "ইমেইল";
+"DOB" = "জন্মতারিখ";
 "Select_DOB" = "ডিওবি নির্বাচন করুন";
 "Gender" = "লিঙ্গ";
 "Select_Gender" = "লিঙ্গ নির্বাচন করুন";
@@ -100,8 +99,8 @@
 "Select_State" = "রাজ্য নির্বাচন করুন";
 "Select_City" = "সিলেক্ট সিটি";
 "pincode" = "পিনকোড";
-"edit_profile" = "প্রোফাইল সম্পাদনা করুন";
-"Save_changes" = "পরিবর্তনগুলি সংরক্ষণ করুন";
+"edit_profile" = "জীবন বৃত্তান্ত সম্পাদনা";
+"Save_changes" = "পরিবর্তনগুলোর সংরক্ষন";
 "profile_update_message" = "প্রোফাইল ছবি সফলভাবে আপডেট হয়েছে";
 "profile_update_failed" = "প্রোফাইল ইমেজ আপডেট ব্যর্থ হয়েছে";
 "Product_Catalogue_Details" = "পণ্য ক্যাটালগ বিবরণ";
@@ -134,8 +133,8 @@
 "RPL_No" = "আরপিএল না";
 "Balance_Points" = "ব্যালেন্স পয়েন্ট";
 "Milestone_Points" = "মাইলস্টোন পয়েন্ট";
-"Redeem_Now" = "এখনই রিডিম করুন";
-"statementView" = "স্টেটমেন্ট ভিউ";
+"Redeem_Now" = "এখনরিডিম করুন";
+"statementView" = "বিবৃতি দেখুন";
 "points_trends" = "পয়েন্ট ট্রেন্ড";
 "range_trends" = "রেঞ্জ ট্রেন্ড";
 "bonus_trend" = "বোনাস ট্রেন্ড";
@@ -159,17 +158,17 @@
 
 "month" = "মাস";
 "Points_Earned" = "পয়েন্ট অর্জিত";
-"Balance" = "বালা এনসি";
+"Balance" = "ভারসাম্য";
 "View" = "দেখুন";
 "OrderDate" = "অর্ডারের তারিখ";
 "Sources" = "উৎস";
 "Status" = "অবস্থা";
-"Fromdate" = "তারিখ হইতে";
+"Filter_by_Status" = "স্থিতি দ্বারা ফিল্টার করুন";
 "Todate" = "এখন পর্যন্ত";
 "Filter" = "ছাঁকনি";
-"Filter_by_Status" = "অবস্থা দ্বারা ফিল্টার";
+
 "Clear_all" = "সব পরিষ্কার করে দাও";
-"Apply" = "আবেদন";
+"Apply" = "আবেদন করুন";
 "OffersAndPromotions" = "অফার এবং প্রচার";
 "Description" = "বর্ণনা";
 
@@ -185,15 +184,15 @@
 
 "New Range Addition" = "নতুন পরিসর সংযোজন";
 "Counter Gap" = "কাউন্টার গ্যাপ";
-"Market Gap" =  "মার্কেট গ্যাপ";
+"Market Gap" = "মার্কেট গ্যাপ";
 "Search by part no/ cross reference" = "অংশ নং/ ক্রস রেফারেন্স দ্বারা অনুসন্ধান করুন";
 "Search by product / description name" = "পণ্য / বর্ণনার নাম দ্বারা অনুসন্ধান করুন";
 "Please select Segment value" = "দয়া করে সেগমেন্ট মান নির্বাচন করুন";
 "Please select OME value" = "অনুগ্রহ করে OME মান নির্বাচন করুন";
-"Please select Model value" =  "দয়া করে মডেল মান নির্বাচন করুন";
-"Product Image" =  "পণ্যের ছবি";
+"Please select Model value" = "দয়া করে মডেল মান নির্বাচন করুন";
+"Product Image" = "পণ্যের ছবি";
 "Maximum field should be higher then Minimum field" = "সর্বাধিক ক্ষেত্রটি সর্বনিম্ন ক্ষেত্রের চেয়ে বেশি হওয়া উচিত";
-"RLP_No" = "RLP No";
+"RLP_No" = "আরএলপি নম্বর";
 "NoteDateason" = "দ্রষ্টব্য: তারিখ হিসাবে ";
 "Add more part no" = "আরো অংশ নং যোগ করুন";
 
@@ -202,7 +201,7 @@
 "Qty" = "Qty";
 "Query Type" = "প্রশ্নের ধরন";
 "offersAndPromotionsText" = "অফার এবং প্রচার
-                    এখানে ক্লিক করুন";
+এখানে ক্লিক করুন";
 
 "Home" = "বাড়ি";
 "addToCart" = "কার্টে যোগ করুন";
@@ -219,7 +218,7 @@
 "FixedBasePoints" = "স্থির ভিত্তি পয়েন্ট : ";
 "MiscellaneousPoints" = "বিবিধ পয়েন্ট :";
 "Rdeemable Points" = "Rdeemable Points";
-"Process to checkout" = "চেকআউট করার প্রক্রিয়া";
+"Process to checkout" = "চেকআউটএগিয়ে";
 "OTP Verification" = "OTP যাচাইকরণ";
 "We send a OTP to your number" = "আমরা আপনার নম্বরে একটি ওটিপি পাঠাই";
 "OTP will receive within" = "ওটিপি ভিতরে প্রাপ্ত হবে";
@@ -228,3 +227,34 @@
 "Your order placed successfully !"= "আপনার অর্ডার সফলভাবে স্থাপন করা হয়েছে!";
 "Go to Dashboard" = "ড্যাশবোর্ডে যান";
 "Enter_Comments" = "মন্তব্য লিখুন";
+
+"Milestone code" = "মাইলস্টোন কোড";
+"Level Points" = "লেভেল পয়েন্ট";
+"Validity" = "বৈধতা";
+"Redeem" = "খালাস";
+"Points Range" = "পয়েন্ট রেঞ্জ";
+"Choose a point range below" = "নীচে একটি বিন্দু পরিসীমা চয়ন করুন";
+
+
+//MARK: NEW
+
+"Part No" = "অংশ নং";
+"DAP" = "DAP";
+"MRP" = "MRP";
+"Short Description" = "ছোট বিবরণ";
+"Order Total" = "আদেশ মোট";
+"Value" = "মান";
+"Place Order" = "অর্ডার করুন";
+
+"Segment" = "সেগমেন্ট";
+"Model" = "মডেল";
+"Product Catgeory" = "পণ্যেরবিভাগ";
+"Dashboard" = "ড্যাশবোর্ড";
+"Order More" = "আরও অর্ডার করুন";
+"Order No" = "অর্ডারনং";
+"Order Qty" = "অর্ডারের পরিমাণ";
+"Dispatched Qty" = "প্রেরিত পরিমাণ";
+"Invoice No" = "চালাননং";
+"Invoice Date" = "চালানতারিখ";
+"Total value" = "মোটমূল্য";
+"Fromdate" = "তারিখ হইতে";

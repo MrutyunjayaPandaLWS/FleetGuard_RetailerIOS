@@ -92,7 +92,6 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
         }else{
             self.VM.VC = self
             nodataFoundLbl.isHidden = true
-            nodataFoundLbl.text = "noDataFound".localiz()
             self.maintananceView.isHidden = true
             dashboardApi()
             print(deviceID,"kjslk")
@@ -120,6 +119,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         maintenanceAPI()
         slideMenuController()?.changeLeftViewWidth(self.view.frame.size.width * 0.8)
         SlideMenuOptions.contentViewScale = 1
@@ -154,6 +154,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     }
     
     private func localization(){
+        nodataFoundLbl.text = "noDataFound".localiz()
         tabBarController?.tabBar.items![0].title = "My_Earnings".localiz()
         tabBarController?.tabBar.items![1].title = "Home".localiz()
         tabBarController?.tabBar.items![2].title = "My_Redemption".localiz()
@@ -178,12 +179,13 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
 //         vc!.modalTransitionStyle = .crossDissolve
 //         self.present(vc!, animated: true, completion: nil)
         UserDefaults.standard.set(false, forKey: "IsloggedIn?")
-        
+        let languageStatus = UserDefaults.standard.string(forKey: "LanguageName") ?? ""
         if #available(iOS 13.0, *) {
             DispatchQueue.main.async {
                 let pushID = UserDefaults.standard.string(forKey: "UD_DEVICE_TOKEN") ?? ""
                 let domain = Bundle.main.bundleIdentifier!
                 UserDefaults.standard.removePersistentDomain(forName: domain)
+                UserDefaults.standard.set(languageStatus, forKey: "LanguageName")
                 UserDefaults.standard.synchronize()
                 UserDefaults.standard.setValue(pushID, forKey: "UD_DEVICE_TOKEN")
                 let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
@@ -195,6 +197,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
                 let pushID = UserDefaults.standard.string(forKey: "UD_DEVICE_TOKEN") ?? ""
                 let domain = Bundle.main.bundleIdentifier!
                 UserDefaults.standard.removePersistentDomain(forName: domain)
+                UserDefaults.standard.set(languageStatus, forKey: "LanguageName")
                 UserDefaults.standard.synchronize()
                 UserDefaults.standard.setValue(pushID, forKey: "UD_DEVICE_TOKEN")
                 if #available(iOS 13.0, *) {

@@ -86,7 +86,6 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
-        self.noDataFoundLbl.text = "noDataFound".localiz()
         self.fromDateBtn.setTitle("Fromdate".localiz(), for: .normal)
         self.toDateBtn.setTitle("Todate".localiz(), for: .normal)
         self.noDataFoundLbl.isHidden = true
@@ -114,6 +113,7 @@ class FG_MyRedemptionVC: BaseViewController, DateSelectedDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.noDataFoundLbl.text = "noDataFound".localiz()
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
                 let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check

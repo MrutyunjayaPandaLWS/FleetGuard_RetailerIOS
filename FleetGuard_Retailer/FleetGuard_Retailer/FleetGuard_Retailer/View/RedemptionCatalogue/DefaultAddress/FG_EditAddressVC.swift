@@ -228,28 +228,28 @@ class FG_EditAddressVC: BaseViewController, UITextFieldDelegate, popUpDelegate, 
                 self.view.makeToast("Please_enter_name".localiz(), duration: 3.0, position: .bottom)
             }
 
-        }else if mobileTF.text?.count == 0 {
-            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Enter Mobile Number"
-//                vc!.modalPresentationStyle = .overFullScreen
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                self.view.makeToast("Enteryourmobilenumber".localiz(), duration: 3.0, position: .bottom)
-            }
+//        }else if mobileTF.text?.count == 0 {
+//            DispatchQueue.main.async{
+////                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+////                vc!.delegate = self
+////                vc!.descriptionInfo = "Enter Mobile Number"
+////                vc!.modalPresentationStyle = .overFullScreen
+////                vc!.modalTransitionStyle = .crossDissolve
+////                self.present(vc!, animated: true, completion: nil)
+//                self.view.makeToast("Enteryourmobilenumber".localiz(), duration: 3.0, position: .bottom)
+//            }
 
-        }else if mobileTF.text?.count != 10 {
-            DispatchQueue.main.async{
-//                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-//                vc!.delegate = self
-//                vc!.descriptionInfo = "Enter Valid Mobile Number"
-//                vc!.modalPresentationStyle = .overFullScreen
-//                vc!.modalTransitionStyle = .crossDissolve
-//                self.present(vc!, animated: true, completion: nil)
-                
-                self.view.makeToast("Enter_valid_mobile_number".localiz(), duration: 3.0, position: .bottom)
-            }
+//        }else if mobileTF.text?.count != 10 {
+//            DispatchQueue.main.async{
+////                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+////                vc!.delegate = self
+////                vc!.descriptionInfo = "Enter Valid Mobile Number"
+////                vc!.modalPresentationStyle = .overFullScreen
+////                vc!.modalTransitionStyle = .crossDissolve
+////                self.present(vc!, animated: true, completion: nil)
+//
+//                self.view.makeToast("Enter_valid_mobile_number".localiz(), duration: 3.0, position: .bottom)
+//            }
 
         }
 //        else if emailTF.text?.count == 0{

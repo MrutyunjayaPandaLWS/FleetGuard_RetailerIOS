@@ -44,20 +44,23 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
             }
         }else{
             self.VM.VC = self
-            headerText.text = "myCart".localiz()
-            self.noDataFoundLbl.text = "noDataFound".localiz()
+            
             noDataFoundLbl.isHidden = true
             self.prodCatalogueCartTableView.dataSource = self
             self.prodCatalogueCartTableView.delegate = self
             self.myCartApi()
             NotificationCenter.default.addObserver(self, selector: #selector(navigateToProductsList), name: Notification.Name.navigateToProductList, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(navigateToDashBoard), name: Notification.Name.navigateToDashboard, object: nil)
-            self.orderTotalLbl.text = "Order Total"
-            self.placeOrderOutBtn.setTitle("Place Order", for: .normal)
+            
         }
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        headerText.text = "myCart".localiz()
+        self.noDataFoundLbl.text = "noDataFound".localiz()
+        self.orderTotalLbl.text = "Order Total".localiz()
+        self.placeOrderOutBtn.setTitle("Place Order".localiz(), for: .normal)
+    }
     
     @objc func navigateToProductsList(){
                 for controller in self.navigationController!.viewControllers as Array {
@@ -228,6 +231,11 @@ extension FG_ProductCatalogueMyCartVC: UITableViewDelegate, UITableViewDataSourc
         cell.selectionStyle = .none
         cell.delegate = self
         cell.productNameLbl.text = self.VM.myCartListArray[indexPath.row].productName ?? ""
+        cell.dapTitleLbl.text = "DAP".localiz()
+        cell.partNoTitleLbl.text = "Part No".localiz()
+        cell.valueTitleLbl.text = "Value".localiz()
+        cell.mrpTitleLbl.text = "MRP".localiz()
+        
         cell.ptsLbl.text = "\(self.VM.myCartListArray[indexPath.row].rowTotalPrice ?? 0)"
         cell.mrpLbl.text = "\(self.VM.myCartListArray[indexPath.row].mrp ?? 0.0)"
         cell.dapLbl.text = "\(self.VM.myCartListArray[indexPath.row].rowTotalPrice ?? 0)"

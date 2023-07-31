@@ -30,10 +30,12 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
     var monthsData = [String]()
     var currentYear = ""
     var previousYear = ""
-    
+    var currentMonth = 0
+    var currentYear1 = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
+        getCurrentDate()
         localization()
         bonusTrendGraphView.delegate = self
         bonusTrendGraphView.chartDescription.enabled = false
@@ -60,6 +62,21 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
         }
     }
     
+    
+    func getCurrentDate(){
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let month = calendar.component(.month, from: currentDate)
+        let currentYear = calendar.component(.year, from: currentDate)
+        currentMonth = month
+        currentYear1 = currentYear
+        let year1 = "\(currentYear)"
+        self.previousYear = "\(currentYear - 1) - \(year1.suffix(2))"
+        let year2 = "\(currentYear + 1)"
+        self.currentYear = "\(currentYear) - \(year2.suffix(2))"
+        print("Current month: \(month)")
+    }
+    
     private func localization(){
         bonusTrendHeadingLbl.text = "bonus_trend".localiz()
     }
@@ -83,12 +100,14 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
                         
                         if self.secondGraphData.count < 12{
                             self.secondGraphData.append(data.previousYearPoint!)
-                            let year1 = "\((data.year ?? 0) + 1)"
-                            self.previousYear = "\(data.year ?? 0) - \(year1.suffix(2))"
+                            
                         }else{
-                            self.firstGraphData.append(data.currentYearPoint!)
-                            let year2 = "\((data.year ?? 0) + 1)"
-                            self.currentYear = "\(data.year ?? 0) - \(year2.suffix(2))"
+                            if (self.currentMonth == (data.monthNo ?? 0)) && (self.currentYear1 == (data.year ?? 0)){
+                                break
+                            }else{
+                                self.firstGraphData.append(data.currentYearPoint!)
+                            }
+                            
                         }
                         if self.monthsData.count < 12{
                             self.monthsData.append(data.monthName!)
@@ -130,7 +149,7 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
         print(self.monthsData,"kjdshd")
     
         
-        let yVals2 = (0..<dataPoints.count).map { (i) -> ChartDataEntry in
+        let yVals2 = (0..<values.count).map { (i) -> ChartDataEntry in
                 let val = values[i]
                 return ChartDataEntry(x: Double(i), y: val)
             }
@@ -142,28 +161,27 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
     
         let chartDataSet = LineChartDataSet(entries: yVals2,  label: previousYear)
         chartDataSet.axisDependency = .left
-        chartDataSet.setColor(.red)
+        chartDataSet.setColor(graphPreviousYearColor)
         chartDataSet.lineWidth = 2
         chartDataSet.fillAlpha = 65/255
         chartDataSet.fillColor = .red
         chartDataSet.highlightColor = UIColor(red: 100/255, green: 110/255, blue: 220/255, alpha: 1)
         chartDataSet.circleHoleRadius = 1
         chartDataSet.drawValuesEnabled = true
-        chartDataSet.circleRadius = 6
-        chartDataSet.circleColors = [.systemYellow]
+        chartDataSet.circleRadius = 3
+        chartDataSet.circleColors = [graphPreviousYearColor]
         
         let chartDataSet1 = LineChartDataSet(entries: yVals3, label: currentYear)
         chartDataSet1.axisDependency = .left
-        chartDataSet1.setColor(.green)
+        chartDataSet1.setColor(graphCurrentYearColor)
         chartDataSet1.lineWidth = 2
         chartDataSet1.fillAlpha = 65/255
         chartDataSet1.fillColor = UIColor.yellow.withAlphaComponent(200/255)
         chartDataSet1.highlightColor =  UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
         chartDataSet1.circleHoleRadius = 1
         chartDataSet1.drawValuesEnabled = true
-        chartDataSet1.circleRadius = 6
-        chartDataSet1.circleColors = [.blue]
-
+        chartDataSet1.circleRadius = 3
+        chartDataSet1.circleColors = [graphCurrentYearColor]
         let chartData = LineChartData(dataSets: [chartDataSet, chartDataSet1])
 
         bonusTrendGraphView.chartDescription.text = " "

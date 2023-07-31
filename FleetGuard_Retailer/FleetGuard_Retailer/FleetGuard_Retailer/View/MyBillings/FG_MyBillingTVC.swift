@@ -14,6 +14,7 @@ protocol myBillingsDelegate {
 class FG_MyBillingTVC: UITableViewCell {
 
     
+    @IBOutlet weak var viewBtn: UIButton!
     @IBOutlet weak var totalValueLbl: UILabel!
     @IBOutlet weak var invoiceDateLbl: UILabel!
     @IBOutlet weak var invoiceNoLbl: UILabel!

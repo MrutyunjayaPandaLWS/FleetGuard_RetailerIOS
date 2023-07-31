@@ -86,7 +86,6 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         self.stopLoading()
         self.VM.VC = self
         self.countLbl.isHidden = true
-        self.noDataFoundLbl.text = "noDataFound".localiz()
         self.catalogueListTableView.delegate = self
         self.catalogueListTableView.dataSource = self
         self.levelTwoView.clipsToBounds = true
@@ -95,6 +94,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        localization()
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
                 let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
@@ -103,7 +103,6 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
                 self.present(vc, animated: true)
             }
         }else{
-            localization()
             self.VM.redemptionCatalougeListArray.removeAll()
             self.totalPts.text = "\(UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? "0")"
             self.passBookNumber.text = self.loyaltyId
@@ -116,6 +115,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         passBookLbl.text = "Retailer_code".localiz()
         headerTextLbl.text = "redemption_catalogue".localiz()
         searchTF.placeholder = "Search by product / description name".localiz()
+        self.noDataFoundLbl.text = "noDataFound".localiz()
         
     }
     
@@ -200,7 +200,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
                     "CatalogueId": catalogueId,
                     "DeliveryType": "1",
                     "NoOfQuantity": "1"
-                ]
+                ] as [String : Any]
             ],
             "LoyaltyID": "\(self.loyaltyId)",
             "MerchantId": "1"
@@ -325,7 +325,7 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
         cell.selectionStyle = .none
         cell.delegate = self
         cell.productNameLbl.text = self.VM.redemptionCatalougeListArray[indexPath.row].productName ?? ""
-        cell.categoryLbl.text = "Catogory / \(self.VM.redemptionCatalougeListArray[indexPath.row].catogoryName ?? "")"
+        cell.categoryLbl.text = "\("Category".localiz()) / \(self.VM.redemptionCatalougeListArray[indexPath.row].catogoryName ?? "")"
         cell.pointsLbl.text = "\(self.VM.redemptionCatalougeListArray[indexPath.row].pointsRequired ?? 0)"
         let filterArray = self.myCartIds.filter{$0 == self.VM.redemptionCatalougeListArray[indexPath.row].catalogueId ?? 0}
         let image = VM.redemptionCatalougeListArray[indexPath.row].productImage ?? ""

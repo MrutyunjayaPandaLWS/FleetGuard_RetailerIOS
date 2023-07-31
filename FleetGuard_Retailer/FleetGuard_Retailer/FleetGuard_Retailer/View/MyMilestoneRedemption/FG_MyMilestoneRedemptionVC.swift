@@ -55,7 +55,6 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
         myMilestoneRedemptionTableView.delegate = self
         myMilestoneRedemptionTableView.dataSource = self
         myMilestoneRedemptionTableView.separatorStyle = .none
-        self.noDataFoundLBl.text = "noDataFound".localiz()
         self.filterShadowView.isHidden = true
         subView.clipsToBounds = true
         subView.layer.cornerRadius = 20
@@ -69,6 +68,7 @@ class FG_MyMilestoneRedemptionVC: BaseViewController, DateSelectedDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.noDataFoundLBl.text = "noDataFound".localiz()
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
                 let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
@@ -324,10 +324,12 @@ extension FG_MyMilestoneRedemptionVC: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_MyMilestoneRedemptionTVC") as! FG_MyMilestoneRedemptionTVC
         
         cell.selectionStyle = .none
+        cell.categoryTitle.text = "Milestone code".localiz()
+        cell.dateLbl.text = "Date".localiz()
         cell.categoryNameLbl.text = VM.mileStonRedemptionArray[indexPath.row].milstoneCode ?? "-"
         cell.date.text = VM.mileStonRedemptionArray[indexPath.row].date ?? "-"
         cell.statusBtn.setTitle(VM.mileStonRedemptionArray[indexPath.row].status ?? "-", for: .normal)
-        cell.categoryTitle.text = "Milestone Code"
+//        cell.categoryTitle.text = "Milestone Code"
         
         if cell.statusBtn.currentTitle == "Pending"{
             cell.statusBtn.backgroundColor = .systemOrange

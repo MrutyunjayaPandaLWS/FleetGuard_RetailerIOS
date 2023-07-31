@@ -64,12 +64,13 @@ class FG_FocusGroupVC: BaseViewController, UITableViewDelegate, UITableViewDataS
         focusGroupListTV.dataSource = self
         myCartBadgesLbl.isHidden =  true
         nodatafoundLbl.isHidden = true
-        self.nodatafoundLbl.text = "noDataFound".localiz()
+        
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.nodatafoundLbl.text = "noDataFound".localiz()
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
                 let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
@@ -113,8 +114,6 @@ class FG_FocusGroupVC: BaseViewController, UITableViewDelegate, UITableViewDataS
             "ActionType": "17",
             "ActorId": "\(self.userId)",
             "LoyaltyID": "\(self.loyaltyId)",
-            "StartIndex": startIndex,
-            "PageSize": 10,
             "ProductDetails": [
                 "BrandId": 0,
                 "Cat1": 0,
@@ -128,7 +127,25 @@ class FG_FocusGroupVC: BaseViewController, UITableViewDelegate, UITableViewDataS
             ],
             "SearchText": ""
     ] as [String: Any]
-
+//        let parameter = [
+//            "ActionType": "17",
+//            "ActorId": "\(self.userId)",
+//            "LoyaltyID": "\(self.loyaltyId)",
+//            "StartIndex": startIndex,
+//            "PageSize": 10,
+//            "ProductDetails": [
+//                "BrandId": 0,
+//                "Cat1": 0,
+//                "Cat2": 0,
+//                "Cat3": 0,
+//                "Cat4": 0,
+//                "NlStatus": "NEW",
+//                "SkuMaxPrice": 0,
+//                "SkuMinPrice": 0,
+//                "Alubum_ID": self.albumID
+//            ],
+//            "SearchText": ""
+//    ] as [String: Any]
         print(parameter)
         self.VM.productListApi(parameter: parameter)
     }
@@ -195,20 +212,20 @@ extension FG_FocusGroupVC{
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-            if indexPath.row == VM.productListArray.count - 2{
-                if noofelements == 10{
-                    startindex = startindex + 1
-                    self.productListApi(startIndex: startindex, searchText:  "")
-                }else if noofelements > 10{
-                    startindex = startindex + 1
-                    self.productListApi(startIndex: startindex, searchText:  "")
-                }else if noofelements < 10{
-                    return
-                }else{
-                    print("n0 more elements")
-                    return
-                }
-            }
+//            if indexPath.row == VM.productListArray.count - 2{
+//                if noofelements == 10{
+//                    startindex = startindex + 1
+//                    self.productListApi(startIndex: startindex, searchText:  "")
+//                }else if noofelements > 10{
+//                    startindex = startindex + 1
+//                    self.productListApi(startIndex: startindex, searchText:  "")
+//                }else if noofelements < 10{
+//                    return
+//                }else{
+//                    print("n0 more elements")
+//                    return
+//                }
+//            }
         }
     
 }

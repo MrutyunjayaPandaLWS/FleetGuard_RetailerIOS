@@ -251,24 +251,13 @@
 		257849072A3043890058B25A /* TextfieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257847812A3043870058B25A /* TextfieldExtension.swift */; };
 		257849082A3043890058B25A /* String+extenssion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257847822A3043870058B25A /* String+extenssion.swift */; };
 		257849092A3043890058B25A /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257847832A3043870058B25A /* LabelExtension.swift */; };
-		2578490A2A3043890058B25A /* fg-retailer-faq-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 257847852A3043870058B25A /* fg-retailer-faq-Kannada.html */; };
 		2578490B2A3043890058B25A /* fleetguard-retailer-T&C-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 257847862A3043870058B25A /* fleetguard-retailer-T&C-Bengali.html */; };
-		2578490C2A3043890058B25A /* fg-retailer-about-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 257847872A3043870058B25A /* fg-retailer-about-Kannada.html */; };
-		2578490D2A3043890058B25A /* fg-retailer-faq-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 257847882A3043870058B25A /* fg-retailer-faq-Eng.html */; };
-		2578490E2A3043890058B25A /* fg-retailer-about-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 257847892A3043870058B25A /* fg-retailer-about-Bengali.html */; };
 		2578490F2A3043890058B25A /* fleetguard-retailer-T&C-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 2578478A2A3043870058B25A /* fleetguard-retailer-T&C-Kannada.html */; };
-		257849102A3043890058B25A /* fg-retailer-faq-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 2578478B2A3043870058B25A /* fg-retailer-faq-Hindi.html */; };
-		257849112A3043890058B25A /* fg-retailer-faq-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 2578478C2A3043870058B25A /* fg-retailer-faq-Tamil.html */; };
-		257849122A3043890058B25A /* fg-retailer-faq-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 2578478D2A3043870058B25A /* fg-retailer-faq-Bengali.html */; };
-		257849132A3043890058B25A /* fg-retailer-faq-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 2578478E2A3043870058B25A /* fg-retailer-faq-Telugu.html */; };
-		257849142A3043890058B25A /* fg-retailer-about-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 2578478F2A3043870058B25A /* fg-retailer-about-Tamil.html */; };
 		257849152A3043890058B25A /* fleetguard-retailer-T&C-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 257847902A3043870058B25A /* fleetguard-retailer-T&C-Tamil.html */; };
-		257849162A3043890058B25A /* fg-retailer-about-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 257847912A3043870058B25A /* fg-retailer-about-Hindi.html */; };
 		257849172A3043890058B25A /* fleetguard-retailer-T&C-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 257847922A3043870058B25A /* fleetguard-retailer-T&C-Hindi.html */; };
 		257849182A3043890058B25A /* fleetguard-retailer-T&C-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 257847932A3043870058B25A /* fleetguard-retailer-T&C-Eng.html */; };
 		257849192A3043890058B25A /* fleetguard-retailer-T&C-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 257847942A3043870058B25A /* fleetguard-retailer-T&C-Telugu.html */; };
 		2578491A2A3043890058B25A /* fg-retailer-about-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 257847952A3043870058B25A /* fg-retailer-about-Eng.html */; };
-		2578491B2A3043890058B25A /* fg-retailer-about-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 257847962A3043870058B25A /* fg-retailer-about-Telugu.html */; };
 		257849202A3043890058B25A /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257847AC2A3043870058B25A /* URLRequest.swift */; };
 		257849212A3043890058B25A /* RestAPI_Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257847AD2A3043870058B25A /* RestAPI_Requests.swift */; };
 		257849222A3043890058B25A /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257847AE2A3043870058B25A /* URLExtension.swift */; };
@@ -329,7 +318,20 @@
 		257849672A3047360058B25A /* NotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 257849602A3047360058B25A /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2578496D2A3047A70058B25A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2578496C2A3047A70058B25A /* GoogleService-Info.plist */; };
 		8470C17F2A4564D60063C511 /* IOS_FG_Internet_Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470C17E2A4564D60063C511 /* IOS_FG_Internet_Check.swift */; };
-		8470C1832A4566C80063C511 /* no_internet_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 8470C1822A4566C80063C511 /* no_internet_lottie.json */; };
+		849467392A4C0705009C3319 /* no_internet_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 849467382A4C0705009C3319 /* no_internet_lottie.json */; };
+		8495E0E52A5689BE00290716 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495E0E42A5689BE00290716 /* Colors.swift */; };
+		8495E0E72A56998100290716 /* LineChart+Extenssion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495E0E62A56998100290716 /* LineChart+Extenssion.swift */; };
+		849D45F32A752A4F00E74DE3 /* fg-retailer-about-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 849D45F12A752A4F00E74DE3 /* fg-retailer-about-Telugu.html */; };
+		849D45F42A752A4F00E74DE3 /* fg-retailer-about-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 849D45F22A752A4F00E74DE3 /* fg-retailer-about-Tamil.html */; };
+		849D45F62A752AB800E74DE3 /* fg-retailer-faq-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 849D45F52A752AB800E74DE3 /* fg-retailer-faq-Telugu.html */; };
+		84A77F312A650E49007B5E0E /* fg-retailer-about-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 84A77F2E2A650E49007B5E0E /* fg-retailer-about-Kannada.html */; };
+		84C77CBE2A6F893B00604694 /* fg-retailer-about-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C77CBB2A6F893B00604694 /* fg-retailer-about-Bengali.html */; };
+		84C77CC02A6F893B00604694 /* fg-retailer-about-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C77CBD2A6F893B00604694 /* fg-retailer-about-Hindi.html */; };
+		84C77CC72A6F89F500604694 /* fg-retailer-faq-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C77CC12A6F89F500604694 /* fg-retailer-faq-Bengali.html */; };
+		84C77CC82A6F89F500604694 /* fg-retailer-faq-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C77CC22A6F89F500604694 /* fg-retailer-faq-Eng.html */; };
+		84C77CC92A6F89F500604694 /* fg-retailer-faq-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C77CC32A6F89F500604694 /* fg-retailer-faq-Hindi.html */; };
+		84C77CCA2A6F89F500604694 /* fg-retailer-faq-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C77CC42A6F89F500604694 /* fg-retailer-faq-Kannada.html */; };
+		84C77CCC2A6F89F500604694 /* fg-retailer-faq-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C77CC62A6F89F500604694 /* fg-retailer-faq-Tamil.html */; };
 		FD31AECFDAA8DB1BDB5A69C3 /* Pods_FleetGuard_Retailer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DC0AEAD7C06DE141638545 /* Pods_FleetGuard_Retailer.framework */; };
 /* End PBXBuildFile section */
 
@@ -620,24 +622,13 @@
 		257847812A3043870058B25A /* TextfieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldExtension.swift; sourceTree = "<group>"; };
 		257847822A3043870058B25A /* String+extenssion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extenssion.swift"; sourceTree = "<group>"; };
 		257847832A3043870058B25A /* LabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
-		257847852A3043870058B25A /* fg-retailer-faq-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Kannada.html"; sourceTree = "<group>"; };
 		257847862A3043870058B25A /* fleetguard-retailer-T&C-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-T&C-Bengali.html"; sourceTree = "<group>"; };
-		257847872A3043870058B25A /* fg-retailer-about-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Kannada.html"; sourceTree = "<group>"; };
-		257847882A3043870058B25A /* fg-retailer-faq-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Eng.html"; sourceTree = "<group>"; };
-		257847892A3043870058B25A /* fg-retailer-about-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Bengali.html"; sourceTree = "<group>"; };
 		2578478A2A3043870058B25A /* fleetguard-retailer-T&C-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-T&C-Kannada.html"; sourceTree = "<group>"; };
-		2578478B2A3043870058B25A /* fg-retailer-faq-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Hindi.html"; sourceTree = "<group>"; };
-		2578478C2A3043870058B25A /* fg-retailer-faq-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Tamil.html"; sourceTree = "<group>"; };
-		2578478D2A3043870058B25A /* fg-retailer-faq-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Bengali.html"; sourceTree = "<group>"; };
-		2578478E2A3043870058B25A /* fg-retailer-faq-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Telugu.html"; sourceTree = "<group>"; };
-		2578478F2A3043870058B25A /* fg-retailer-about-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Tamil.html"; sourceTree = "<group>"; };
 		257847902A3043870058B25A /* fleetguard-retailer-T&C-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-T&C-Tamil.html"; sourceTree = "<group>"; };
-		257847912A3043870058B25A /* fg-retailer-about-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Hindi.html"; sourceTree = "<group>"; };
 		257847922A3043870058B25A /* fleetguard-retailer-T&C-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-T&C-Hindi.html"; sourceTree = "<group>"; };
 		257847932A3043870058B25A /* fleetguard-retailer-T&C-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-T&C-Eng.html"; sourceTree = "<group>"; };
 		257847942A3043870058B25A /* fleetguard-retailer-T&C-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fleetguard-retailer-T&C-Telugu.html"; sourceTree = "<group>"; };
 		257847952A3043870058B25A /* fg-retailer-about-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Eng.html"; sourceTree = "<group>"; };
-		257847962A3043870058B25A /* fg-retailer-about-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Telugu.html"; sourceTree = "<group>"; };
 		257847AC2A3043870058B25A /* URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		257847AD2A3043870058B25A /* RestAPI_Requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestAPI_Requests.swift; sourceTree = "<group>"; };
 		257847AE2A3043870058B25A /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
@@ -704,13 +695,25 @@
 		257849622A3047360058B25A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		257849642A3047360058B25A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2578496C2A3047A70058B25A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2578496E2A30566C0058B25A /* FleetGuard_Retailer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FleetGuard_Retailer.entitlements; sourceTree = "<group>"; };
 		63DC0AEAD7C06DE141638545 /* Pods_FleetGuard_Retailer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FleetGuard_Retailer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		678D8053A910CE156B732928 /* Pods-FleetGuard_Retailer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetGuard_Retailer.debug.xcconfig"; path = "Target Support Files/Pods-FleetGuard_Retailer/Pods-FleetGuard_Retailer.debug.xcconfig"; sourceTree = "<group>"; };
 		77990815D1018D8B18ACBD10 /* Pods-FleetGuard_Retailer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FleetGuard_Retailer.release.xcconfig"; path = "Target Support Files/Pods-FleetGuard_Retailer/Pods-FleetGuard_Retailer.release.xcconfig"; sourceTree = "<group>"; };
 		8470C17E2A4564D60063C511 /* IOS_FG_Internet_Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_FG_Internet_Check.swift; sourceTree = "<group>"; };
-		8470C1822A4566C80063C511 /* no_internet_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = no_internet_lottie.json; path = ../../../../../../../../Desktop/no_internet_lottie.json; sourceTree = "<group>"; };
 		848128DC2A3D947200C004AD /* FleetGuard_Retailer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FleetGuard_Retailer.entitlements; sourceTree = "<group>"; };
+		849467382A4C0705009C3319 /* no_internet_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_internet_lottie.json; sourceTree = "<group>"; };
+		8495E0E42A5689BE00290716 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		8495E0E62A56998100290716 /* LineChart+Extenssion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LineChart+Extenssion.swift"; sourceTree = "<group>"; };
+		849D45F12A752A4F00E74DE3 /* fg-retailer-about-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Telugu.html"; sourceTree = "<group>"; };
+		849D45F22A752A4F00E74DE3 /* fg-retailer-about-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Tamil.html"; sourceTree = "<group>"; };
+		849D45F52A752AB800E74DE3 /* fg-retailer-faq-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Telugu.html"; sourceTree = "<group>"; };
+		84A77F2E2A650E49007B5E0E /* fg-retailer-about-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Kannada.html"; sourceTree = "<group>"; };
+		84C77CBB2A6F893B00604694 /* fg-retailer-about-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Bengali.html"; sourceTree = "<group>"; };
+		84C77CBD2A6F893B00604694 /* fg-retailer-about-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Hindi.html"; sourceTree = "<group>"; };
+		84C77CC12A6F89F500604694 /* fg-retailer-faq-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Bengali.html"; sourceTree = "<group>"; };
+		84C77CC22A6F89F500604694 /* fg-retailer-faq-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Eng.html"; sourceTree = "<group>"; };
+		84C77CC32A6F89F500604694 /* fg-retailer-faq-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Hindi.html"; sourceTree = "<group>"; };
+		84C77CC42A6F89F500604694 /* fg-retailer-faq-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Kannada.html"; sourceTree = "<group>"; };
+		84C77CC62A6F89F500604694 /* fg-retailer-faq-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Tamil.html"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -749,7 +752,6 @@
 		257845DB2A303DCD0058B25A = {
 			isa = PBXGroup;
 			children = (
-				2578496E2A30566C0058B25A /* FleetGuard_Retailer.entitlements */,
 				257845E62A303DCD0058B25A /* FleetGuard_Retailer */,
 				257846002A303DD00058B25A /* FleetGuard_RetailerTests */,
 				2578460A2A303DD00058B25A /* FleetGuard_RetailerUITests */,
@@ -1721,8 +1723,8 @@
 		2578471C2A3043860058B25A /* NewAddition */ = {
 			isa = PBXGroup;
 			children = (
-				2578471D2A3043860058B25A /* CounterGap */,
 				257847202A3043860058B25A /* FG_NewAdditionVC.swift */,
+				2578471D2A3043860058B25A /* CounterGap */,
 				257847212A3043860058B25A /* MarketGap */,
 			);
 			path = NewAddition;
@@ -1995,10 +1997,11 @@
 		2578476B2A3043870058B25A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8495E0E32A56899A00290716 /* Colors */,
 				2578476C2A3043870058B25A /* CommonFunctionalUtilities */,
 				2578476E2A3043870058B25A /* Roboto-Font */,
 				2578477C2A3043870058B25A /* Extension */,
-				257847842A3043870058B25A /* TCandFAQ */,
+				257847842A3043870058B25A /* HTML File */,
 				257847972A3043870058B25A /* StoryBoard */,
 				257847AB2A3043870058B25A /* Networking */,
 				257847B42A3043870058B25A /* Animation */,
@@ -2049,33 +2052,19 @@
 				257847812A3043870058B25A /* TextfieldExtension.swift */,
 				257847822A3043870058B25A /* String+extenssion.swift */,
 				257847832A3043870058B25A /* LabelExtension.swift */,
+				8495E0E62A56998100290716 /* LineChart+Extenssion.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		257847842A3043870058B25A /* TCandFAQ */ = {
+		257847842A3043870058B25A /* HTML File */ = {
 			isa = PBXGroup;
 			children = (
-				257847852A3043870058B25A /* fg-retailer-faq-Kannada.html */,
-				257847862A3043870058B25A /* fleetguard-retailer-T&C-Bengali.html */,
-				257847872A3043870058B25A /* fg-retailer-about-Kannada.html */,
-				257847882A3043870058B25A /* fg-retailer-faq-Eng.html */,
-				257847892A3043870058B25A /* fg-retailer-about-Bengali.html */,
-				2578478A2A3043870058B25A /* fleetguard-retailer-T&C-Kannada.html */,
-				2578478B2A3043870058B25A /* fg-retailer-faq-Hindi.html */,
-				2578478C2A3043870058B25A /* fg-retailer-faq-Tamil.html */,
-				2578478D2A3043870058B25A /* fg-retailer-faq-Bengali.html */,
-				2578478E2A3043870058B25A /* fg-retailer-faq-Telugu.html */,
-				2578478F2A3043870058B25A /* fg-retailer-about-Tamil.html */,
-				257847902A3043870058B25A /* fleetguard-retailer-T&C-Tamil.html */,
-				257847912A3043870058B25A /* fg-retailer-about-Hindi.html */,
-				257847922A3043870058B25A /* fleetguard-retailer-T&C-Hindi.html */,
-				257847932A3043870058B25A /* fleetguard-retailer-T&C-Eng.html */,
-				257847942A3043870058B25A /* fleetguard-retailer-T&C-Telugu.html */,
-				257847952A3043870058B25A /* fg-retailer-about-Eng.html */,
-				257847962A3043870058B25A /* fg-retailer-about-Telugu.html */,
+				84C77CCD2A6F89FF00604694 /* TermsAndCondition Html */,
+				84C77CBA2A6F88A600604694 /* FAQ Html */,
+				84C77CB92A6F889F00604694 /* About Html */,
 			);
-			path = TCandFAQ;
+			path = "HTML File";
 			sourceTree = "<group>";
 		};
 		257847972A3043870058B25A /* StoryBoard */ = {
@@ -2105,7 +2094,7 @@
 		257847B42A3043870058B25A /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				8470C1822A4566C80063C511 /* no_internet_lottie.json */,
+				849467382A4C0705009C3319 /* no_internet_lottie.json */,
 				257847B52A3043870058B25A /* lf30_editor_jh47f7lt.json */,
 				257847B62A3043870058B25A /* 94350-gears-lottie-animation.json */,
 				257847B72A3043870058B25A /* lf30_editor_qd1wdceq.json */,
@@ -2524,6 +2513,53 @@
 			path = NotificationService;
 			sourceTree = "<group>";
 		};
+		8495E0E32A56899A00290716 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				8495E0E42A5689BE00290716 /* Colors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		84C77CB92A6F889F00604694 /* About Html */ = {
+			isa = PBXGroup;
+			children = (
+				849D45F22A752A4F00E74DE3 /* fg-retailer-about-Tamil.html */,
+				849D45F12A752A4F00E74DE3 /* fg-retailer-about-Telugu.html */,
+				84C77CBB2A6F893B00604694 /* fg-retailer-about-Bengali.html */,
+				84C77CBD2A6F893B00604694 /* fg-retailer-about-Hindi.html */,
+				84A77F2E2A650E49007B5E0E /* fg-retailer-about-Kannada.html */,
+				257847952A3043870058B25A /* fg-retailer-about-Eng.html */,
+			);
+			path = "About Html";
+			sourceTree = "<group>";
+		};
+		84C77CBA2A6F88A600604694 /* FAQ Html */ = {
+			isa = PBXGroup;
+			children = (
+				84C77CC12A6F89F500604694 /* fg-retailer-faq-Bengali.html */,
+				84C77CC22A6F89F500604694 /* fg-retailer-faq-Eng.html */,
+				84C77CC32A6F89F500604694 /* fg-retailer-faq-Hindi.html */,
+				84C77CC42A6F89F500604694 /* fg-retailer-faq-Kannada.html */,
+				84C77CC62A6F89F500604694 /* fg-retailer-faq-Tamil.html */,
+				849D45F52A752AB800E74DE3 /* fg-retailer-faq-Telugu.html */,
+			);
+			path = "FAQ Html";
+			sourceTree = "<group>";
+		};
+		84C77CCD2A6F89FF00604694 /* TermsAndCondition Html */ = {
+			isa = PBXGroup;
+			children = (
+				257847862A3043870058B25A /* fleetguard-retailer-T&C-Bengali.html */,
+				2578478A2A3043870058B25A /* fleetguard-retailer-T&C-Kannada.html */,
+				257847902A3043870058B25A /* fleetguard-retailer-T&C-Tamil.html */,
+				257847922A3043870058B25A /* fleetguard-retailer-T&C-Hindi.html */,
+				257847932A3043870058B25A /* fleetguard-retailer-T&C-Eng.html */,
+				257847942A3043870058B25A /* fleetguard-retailer-T&C-Telugu.html */,
+			);
+			path = "TermsAndCondition Html";
+			sourceTree = "<group>";
+		};
 		A0946E6652F271FFE4C4E6A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2677,28 +2713,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				257848FA2A3043890058B25A /* Roboto-ThinItalic.ttf in Resources */,
-				257849102A3043890058B25A /* fg-retailer-faq-Hindi.html in Resources */,
-				2578490A2A3043890058B25A /* fg-retailer-faq-Kannada.html in Resources */,
 				257848FD2A3043890058B25A /* Roboto-Italic.ttf in Resources */,
-				2578490D2A3043890058B25A /* fg-retailer-faq-Eng.html in Resources */,
 				2578492A2A3043890058B25A /* lf30_editor_qd1wdceq.json in Resources */,
-				2578491B2A3043890058B25A /* fg-retailer-about-Telugu.html in Resources */,
+				849D45F32A752A4F00E74DE3 /* fg-retailer-about-Telugu.html in Resources */,
+				84C77CC02A6F893B00604694 /* fg-retailer-about-Hindi.html in Resources */,
 				2578489C2A3043890058B25A /* otherInfoTableViewCell.xib in Resources */,
+				84A77F312A650E49007B5E0E /* fg-retailer-about-Kannada.html in Resources */,
 				257849182A3043890058B25A /* fleetguard-retailer-T&C-Eng.html in Resources */,
 				257849342A3043890058B25A /* Localizable.strings in Resources */,
+				84C77CC82A6F89F500604694 /* fg-retailer-faq-Eng.html in Resources */,
 				2578490F2A3043890058B25A /* fleetguard-retailer-T&C-Kannada.html in Resources */,
 				257849172A3043890058B25A /* fleetguard-retailer-T&C-Hindi.html in Resources */,
+				84C77CBE2A6F893B00604694 /* fg-retailer-about-Bengali.html in Resources */,
 				257848AA2A3043890058B25A /* senderImageTableViewCell.xib in Resources */,
+				84C77CC92A6F89F500604694 /* fg-retailer-faq-Hindi.html in Resources */,
 				257849012A3043890058B25A /* Roboto-Thin.ttf in Resources */,
 				257848FE2A3043890058B25A /* LICENSE.txt in Resources */,
 				257848F72A3043890058B25A /* Roboto-Light.ttf in Resources */,
 				257849292A3043890058B25A /* 94350-gears-lottie-animation.json in Resources */,
 				257849282A3043890058B25A /* lf30_editor_jh47f7lt.json in Resources */,
+				84C77CCA2A6F89F500604694 /* fg-retailer-faq-Kannada.html in Resources */,
 				257848A12A3043890058B25A /* otherImageTableViewCell.xib in Resources */,
+				84C77CCC2A6F89F500604694 /* fg-retailer-faq-Tamil.html in Resources */,
+				84C77CC72A6F89F500604694 /* fg-retailer-faq-Bengali.html in Resources */,
 				2578496D2A3047A70058B25A /* GoogleService-Info.plist in Resources */,
 				2578490B2A3043890058B25A /* fleetguard-retailer-T&C-Bengali.html in Resources */,
 				257848FF2A3043890058B25A /* Roboto-BlackItalic.ttf in Resources */,
-				257849162A3043890058B25A /* fg-retailer-about-Hindi.html in Resources */,
 				257849192A3043890058B25A /* fleetguard-retailer-T&C-Telugu.html in Resources */,
 				257848F92A3043890058B25A /* Roboto-MediumItalic.ttf in Resources */,
 				2578489B2A3043890058B25A /* senderInfoImageTableViewCell.xib in Resources */,
@@ -2706,22 +2746,18 @@
 				257849152A3043890058B25A /* fleetguard-retailer-T&C-Tamil.html in Resources */,
 				257848DC2A3043890058B25A /* HistoryNotificationsTableViewCell.xib in Resources */,
 				257848A92A3043890058B25A /* otherInfoImageTableViewCell.xib in Resources */,
-				257849112A3043890058B25A /* fg-retailer-faq-Tamil.html in Resources */,
-				257849132A3043890058B25A /* fg-retailer-faq-Telugu.html in Resources */,
 				257848FB2A3043890058B25A /* Roboto-BoldItalic.ttf in Resources */,
-				8470C1832A4566C80063C511 /* no_internet_lottie.json in Resources */,
-				257849122A3043890058B25A /* fg-retailer-faq-Bengali.html in Resources */,
-				257849142A3043890058B25A /* fg-retailer-about-Tamil.html in Resources */,
+				849467392A4C0705009C3319 /* no_internet_lottie.json in Resources */,
 				257849002A3043890058B25A /* Roboto-Bold.ttf in Resources */,
 				2578491A2A3043890058B25A /* fg-retailer-about-Eng.html in Resources */,
 				257848FC2A3043890058B25A /* Roboto-LightItalic.ttf in Resources */,
 				257845F42A303DCF0058B25A /* Assets.xcassets in Resources */,
-				2578490C2A3043890058B25A /* fg-retailer-about-Kannada.html in Resources */,
+				849D45F62A752AB800E74DE3 /* fg-retailer-faq-Telugu.html in Resources */,
 				257848F62A3043890058B25A /* Roboto-Medium.ttf in Resources */,
+				849D45F42A752A4F00E74DE3 /* fg-retailer-about-Tamil.html in Resources */,
 				257848F82A3043890058B25A /* Roboto-Regular.ttf in Resources */,
 				257848A02A3043890058B25A /* senderInfoTableViewCell.xib in Resources */,
 				257849022A3043890058B25A /* Roboto-Black.ttf in Resources */,
-				2578490E2A3043890058B25A /* fg-retailer-about-Bengali.html in Resources */,
 				257845EF2A303DCD0058B25A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2901,6 +2937,7 @@
 				2578489E2A3043890058B25A /* senderInfoTableViewCell.swift in Sources */,
 				2578494A2A3043890058B25A /* PointsTrendsVM.swift in Sources */,
 				257848572A3043880058B25A /* LsrProductDetails1.swift in Sources */,
+				8495E0E52A5689BE00290716 /* Colors.swift in Sources */,
 				257849092A3043890058B25A /* LabelExtension.swift in Sources */,
 				257848CC2A3043890058B25A /* FG_LoginOTPVC.swift in Sources */,
 				2578487E2A3043880058B25A /* LstRetailerBonding4.swift in Sources */,
@@ -3062,6 +3099,7 @@
 				2578484D2A3043880058B25A /* LstCustomerCartApi.swift in Sources */,
 				2578493F2A3043890058B25A /* MyRedemptionListingVM.swift in Sources */,
 				257848522A3043880058B25A /* LstPromotionJsonList1.swift in Sources */,
+				8495E0E72A56998100290716 /* LineChart+Extenssion.swift in Sources */,
 				257848D42A3043890058B25A /* FG_MyPromotionDetailsVC.swift in Sources */,
 				257848DF2A3043890058B25A /* FG_RangeTrendGraphVC.swift in Sources */,
 				257848962A3043890058B25A /* FG_DropDownTVC.swift in Sources */,
@@ -3272,11 +3310,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FleetGuard_Retailer/FleetGuard_Retailer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FleetGuard_Retailer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "FFPL SAMRIDDHI";
@@ -3286,7 +3322,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3297,7 +3333,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = FleetGuardSamriddhi_Dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3313,11 +3348,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FleetGuard_Retailer/FleetGuard_Retailer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FleetGuard_Retailer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "FFPL SAMRIDDHI";
@@ -3327,7 +3360,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -3338,7 +3371,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = FleetGuardSamriddhi_Dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3425,11 +3457,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
@@ -3444,7 +3474,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi.NotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Fleet-Guard-Samriddhi.Notification-DEV";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -3456,11 +3485,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
+				DEVELOPMENT_TEAM = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
@@ -3475,7 +3502,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi.NotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Fleet-Guard-Samriddhi.Notification-DEV";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

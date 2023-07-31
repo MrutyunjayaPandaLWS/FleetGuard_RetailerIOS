@@ -80,12 +80,13 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
         self.subView.layer.cornerRadius = 20
         self.subView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         self.nodatafoundLbl.isHidden = true
-        self.nodatafoundLbl.text = "noDataFound".localiz()
+        
         self.countLbl.isHidden = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        localization()
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
                 let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
@@ -94,7 +95,6 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
                 self.present(vc, animated: true)
             }
         }else{
-            localization()
             self.VM.productListArray.removeAll()
             self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
             self.myCartApi()
@@ -103,6 +103,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     
     private func localization(){
         headerText.text = "product_Catalogoue".localiz()
+        self.nodatafoundLbl.text = "noDataFound".localiz()
         
     }
     
@@ -304,6 +305,9 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_ProdCatalogueTVC", for: indexPath) as! FG_ProdCatalogueTVC
         cell.selectionStyle = .none
         cell.delegate = self
+        cell.dapTitleLbl.text = "DAP".localiz()
+        cell.mrpTitleLbl.text = "MRP".localiz()
+        cell.partNoTitleLbl.text = "Part No".localiz()
         cell.productName.text = self.VM.productListArray[indexPath.row].productName ?? ""
         cell.partNoLbl.text = self.VM.productListArray[indexPath.row].productCode ?? ""
         cell.dapValue.text = "\(self.VM.productListArray[indexPath.row].salePrice ?? 0)"

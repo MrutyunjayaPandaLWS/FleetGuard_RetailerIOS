@@ -94,14 +94,14 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
             }
         }else{
             self.VM.VC = self
-            localization()
+            
             self.myOrderTableView.delegate = self
             self.myOrderTableView.dataSource = self
             self.myOrderListingAPI(startInx: 1, orderStatusId: -1, fromDate: "", toDate: "")
             self.filterShadowView.isHidden = true
             //self.filterView.isHidden = true
             noDataFound.isHidden = true
-            self.noDataFound.text = "noDataFound".localiz()
+            
             subView.clipsToBounds = true
             subView.layer.cornerRadius = 20
             subView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -132,15 +132,18 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
 //    postedForApprovalBtn.backgroundColor = .white
 //        self.filterShadowView.isHidden = true
 //    }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localization()
+    }
     private func localization(){
         headerlbl.text = "My_Orders".localiz()
-        
+        self.noDataFound.text = "noDataFound".localiz()
         viewTitleLbl.text = "View".localiz()
         statusTitleLbl.text = "Status".localiz()
         sourcesTitlelbl.text = "Sources".localiz()
         orderDateTitle.text = "OrderDate".localiz()
-        myOrderTitle.text = "My_Orders".localiz()
+        myOrderTitle.text = "Order No".localiz()
         
         self.filterTitle.text = "Filter".localiz()
         self.filterByStatusLbl.text = "Filter_by_Status".localiz()

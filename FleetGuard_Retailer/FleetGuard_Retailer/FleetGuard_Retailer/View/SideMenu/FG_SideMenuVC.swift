@@ -14,15 +14,16 @@ class FG_SideMenuVC: BaseViewController, popUpDelegate {
         self.closeLeft()
         
         UserDefaults.standard.set(false, forKey: "IsloggedIn?")
-        
+        let languageStatus = UserDefaults.standard.string(forKey: "LanguageName") ?? ""
         if #available(iOS 13.0, *) {
             DispatchQueue.main.async {
                 let pushID = UserDefaults.standard.string(forKey: "UD_DEVICE_TOKEN") ?? ""
                 let domain = Bundle.main.bundleIdentifier!
                 UserDefaults.standard.removePersistentDomain(forName: domain)
                 UserDefaults.standard.set(true, forKey: "AfterLog")
-                UserDefaults.standard.synchronize()
+                UserDefaults.standard.set(languageStatus, forKey: "LanguageName")
                 UserDefaults.standard.setValue(pushID, forKey: "UD_DEVICE_TOKEN")
+                UserDefaults.standard.synchronize()
                 let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
                 sceneDelegate.setInitialViewAsRootViewController()
              //   self.clearTable2()
@@ -33,14 +34,11 @@ class FG_SideMenuVC: BaseViewController, popUpDelegate {
                 let domain = Bundle.main.bundleIdentifier!
                 UserDefaults.standard.removePersistentDomain(forName: domain)
                 UserDefaults.standard.set(true, forKey: "AfterLog")
+                UserDefaults.standard.set(languageStatus, forKey: "LanguageName")
                 UserDefaults.standard.synchronize()
                 UserDefaults.standard.setValue(pushID, forKey: "UD_DEVICE_TOKEN")
-                if #available(iOS 13.0, *) {
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    appDelegate.setInitialViewAsRootViewController()
-                } else {
-                    // Fallback on earlier versions
-                }
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.setInitialViewAsRootViewController()
                 
               //  self.clearTable2()
             }
@@ -354,13 +352,14 @@ extension FG_SideMenuVC: UITableViewDelegate, UITableViewDataSource{
             self.closeLeft()
             
             UserDefaults.standard.set(false, forKey: "IsloggedIn?")
-            
+            let languageStatus = UserDefaults.standard.string(forKey: "LanguageName") ?? ""
             if #available(iOS 13.0, *) {
                 DispatchQueue.main.async {
                     let pushID = UserDefaults.standard.string(forKey: "UD_DEVICE_TOKEN") ?? ""
                     let domain = Bundle.main.bundleIdentifier!
                     UserDefaults.standard.removePersistentDomain(forName: domain)
                     UserDefaults.standard.set(true, forKey: "AfterLog")
+                    UserDefaults.standard.set(languageStatus, forKey: "LanguageName")
                     UserDefaults.standard.synchronize()
                     UserDefaults.standard.setValue(pushID, forKey: "UD_DEVICE_TOKEN")
                     let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
@@ -373,6 +372,7 @@ extension FG_SideMenuVC: UITableViewDelegate, UITableViewDataSource{
                     let domain = Bundle.main.bundleIdentifier!
                     UserDefaults.standard.removePersistentDomain(forName: domain)
                     UserDefaults.standard.set(true, forKey: "AfterLog")
+                    UserDefaults.standard.set(languageStatus, forKey: "LanguageName")
                     UserDefaults.standard.synchronize()
                     UserDefaults.standard.setValue(pushID, forKey: "UD_DEVICE_TOKEN")
                     if #available(iOS 13.0, *) {

@@ -272,6 +272,7 @@ class FG_DashboardVM: popUpDelegate{
                 } else {
                     print("No Response")
                     DispatchQueue.main.async {
+                        completion(result)
                         self.VC1?.stopLoading()
                     }
                 }

@@ -27,11 +27,13 @@ class FG_MyEarningVC: BaseViewController {
         self.myEarningTableView.delegate = self
         self.myEarningTableView.dataSource = self
         emptyMessageLbl.isHidden = true
-        emptyMessageLbl.text = "noDataFound".localiz()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        localization()
+        emptyMessageLbl.text = "noDataFound".localiz()
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
                 let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
@@ -40,7 +42,6 @@ class FG_MyEarningVC: BaseViewController {
                 self.present(vc, animated: true)
             }
         }else{
-            localization()
             if self.itsFrom == "SideMenu"{
                 self.backBtn.isHidden = false
             }else{

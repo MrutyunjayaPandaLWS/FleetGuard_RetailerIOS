@@ -45,13 +45,13 @@ class FG_MarketGapVC: BaseViewController, MarketingGapDelegate {
         super.viewDidLoad()
         self.VM.VC = self
         noDataFoundLbl.isHidden = true
-        self.noDataFoundLbl.text = "noDataFound".localiz()
         self.markrtingGapView.delegate = self
         self.markrtingGapView.dataSource = self
 
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.noDataFoundLbl.text = "noDataFound".localiz()
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
                 let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
@@ -107,12 +107,14 @@ extension FG_MarketGapVC: UITableViewDelegate,UITableViewDataSource {
         cell.dapAmount.text = "\(VM.myMarketGapArray[indexPath.row].salePrice ?? 0)"
         cell.mrpAmountLbl.text = VM.myMarketGapArray[indexPath.row].mrp ?? "-"
         cell.productNameLbl.text = VM.myMarketGapArray[indexPath.row].productName ?? "-"
-        cell.partNoLbl.text = "Part no: \(VM.myMarketGapArray[indexPath.row].partyLoyaltyId ?? "-")"
+        cell.partNoLbl.text = "\("Part No".localiz()): \(VM.myMarketGapArray[indexPath.row].partyLoyaltyId ?? "-")"
         
-        let imageData = VM.myMarketGapArray[indexPath.row].brandImg ?? ""
+        let imageData = VM.myMarketGapArray[indexPath.row].productImg ?? ""
         //let imageImage = (self.VM.offersandPromotionsArray[indexPath.row].proImage ?? "").dropFirst(3)
-        let totalImgURL = PROMO_IMG1 + imageData
-        cell.productImage.kf.setImage(with: URL(string: totalImgURL), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"))
+        if imageData.count > 0{
+            let totalImgURL = product_Image_Url + imageData
+            cell.productImage.kf.setImage(with: URL(string: totalImgURL), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"))
+        }
         cell.forwardButton.tag = indexPath.row
         cell.delegate = self
         cell.selectionStyle = .none

@@ -45,8 +45,6 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
             }
         }else{
             self.VM.VC = self
-            localization()
-            self.nodataFoundLbl.text = "noDataFound".localiz()
             self.nodataFoundLbl.isHidden = true
             myCartTableView.delegate = self
             myCartTableView.dataSource = self
@@ -54,10 +52,15 @@ class FG_MyCartVC: BaseViewController, CatalogueActionDelegate, popUpDelegate {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        localization()
+    }
+    
     func localization(){
         myCartLbl.text = "myCart".localiz()
         redeemPointsHeadingLbl.text = "Rdeemable Points".localiz()
         proceedToCheckoutOutBTN.setTitle("Process to checkout".localiz(), for: .normal)
+        self.nodataFoundLbl.text = "noDataFound".localiz()
     }
     @IBAction func backBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

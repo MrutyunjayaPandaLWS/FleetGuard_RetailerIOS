@@ -14,7 +14,7 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
     func updatedAddressDetails(_ vc: FG_EditAddressVC) {
         self.selectedname = vc.selectedname
         self.selectedemail = vc.selectedemail
-        self.selectedmobile = vc.selectedmobile
+//        self.selectedmobile = vc.selectedmobile
         self.selectedState = vc.selectedState
         self.selectedStateID = vc.selectedStateID
         self.selectedCity = vc.selectedCity
@@ -23,7 +23,8 @@ class FG_DefaultAddressVC: BaseViewController, SendUpdatedAddressDelegate, popUp
         self.selectedpincode = vc.selectedpincode
         self.selectedCountryId = 15
         self.selectedCountry = "India"
-        self.addressTextView.text = "\(selectedname),\n\(self.selectedmobile),\n\(self.selectedaddress),\n\(self.selectedCity),\n\(self.selectedState),\n\(self.selectedCountry),\n\(self.selectedemail),\n\(self.selectedpincode)"
+        self.addressTextView.text = "\(selectedname),\n\(self.selectedaddress),\n\(self.selectedCity),\n\(self.selectedState),\n\(self.selectedCountry),\n\(self.selectedemail),\n\(self.selectedpincode)"
+//        \n\(self.selectedmobile),
     }
     
     

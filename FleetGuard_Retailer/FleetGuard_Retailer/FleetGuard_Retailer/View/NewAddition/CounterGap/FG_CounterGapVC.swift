@@ -43,13 +43,13 @@ class FG_CounterGapVC: BaseViewController, CounterGapDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.VM.VC = self
-        self.noDataFound.text = "noDataFound".localiz()
         CounterGapTableView.delegate = self
         CounterGapTableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.noDataFound.text = "noDataFound".localiz()
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
                 let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
@@ -101,12 +101,14 @@ extension FG_CounterGapVC: UITableViewDelegate, UITableViewDataSource{
         cell.dapAmount.text = "\(VM.myCounterGapArray[indexPath.row].salePrice ?? 0)"
         cell.mrpAmountLbl.text = VM.myCounterGapArray[indexPath.row].mrp ?? "-"
         cell.productNameLbl.text = VM.myCounterGapArray[indexPath.row].productName ?? "-"
-        cell.partNoLbl.text = "Part no: \(VM.myCounterGapArray[indexPath.row].partyLoyaltyId ?? "-")"
+        cell.partNoLbl.text = "\("Part No".localiz()): \(VM.myCounterGapArray[indexPath.row].partyLoyaltyId ?? "-")"
         
-        let imageData = VM.myCounterGapArray[indexPath.row].brandImg ?? ""
+        let imageData = VM.myCounterGapArray[indexPath.row].productImg ?? ""
         //let imageImage = (self.VM.offersandPromotionsArray[indexPath.row].proImage ?? "").dropFirst(3)
-        let totalImgURL = PROMO_IMG1 + imageData
-        cell.productImage.kf.setImage(with: URL(string: totalImgURL), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"))
+        if imageData.count > 0{
+            let totalImgURL = product_Image_Url + imageData
+            cell.productImage.kf.setImage(with: URL(string: totalImgURL), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"))
+        }
         cell.forwardButton.tag = indexPath.row
         cell.selectionStyle = .none
         return cell

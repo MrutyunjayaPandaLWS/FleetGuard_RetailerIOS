@@ -44,9 +44,8 @@ class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
                 self.present(vc, animated: true)
             }
         }else{
-            localiation()
             noDataFound.isHidden = true
-            noDataFound.text = "noDataFound".localiz()
+            
             self.VM.VC = self
             self.myPromotionsTableView.delegate = self
             self.myPromotionsTableView.dataSource = self
@@ -55,8 +54,14 @@ class FG_MyPromotionsVC: BaseViewController,SendOffersDetailsDelegate{
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localiation()
+    }
+    
     private func localiation(){
         headerTitleLbl.text = "My_Promotions".localiz()
+        noDataFound.text = "noDataFound".localiz()
     }
     
 

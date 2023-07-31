@@ -15,6 +15,10 @@ protocol MyCartButtonActionDelegate: AnyObject{
 
 class FG_ProdMyCartTVC: UITableViewCell {
 
+    @IBOutlet weak var dapTitleLbl: UILabel!
+    @IBOutlet weak var partNoTitleLbl: UILabel!
+    @IBOutlet weak var mrpTitleLbl: UILabel!
+    @IBOutlet weak var valueTitleLbl: UILabel!
     @IBOutlet weak var ptsLbl: UILabel!
     @IBOutlet weak var qtyTF: UITextField!
     @IBOutlet weak var productImage: UIImageView!

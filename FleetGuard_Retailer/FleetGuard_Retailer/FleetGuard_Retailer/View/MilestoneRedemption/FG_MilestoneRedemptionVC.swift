@@ -63,11 +63,9 @@ class FG_MilestoneRedemptionVC : BaseViewController, mileStoneDelegateData{
             }
         }else{
             self.VM.VC = self
-            localization()
             myRedemptionTableView.delegate = self
             myRedemptionTableView.dataSource = self
             nodatafoundLbl.isHidden = true
-            nodatafoundLbl.text = "noDataFound".localiz()
             //self.filterView.isHidden = true
             
             //        subView.clipsToBounds = true
@@ -86,7 +84,12 @@ class FG_MilestoneRedemptionVC : BaseViewController, mileStoneDelegateData{
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        localization()
+    }
     private func localization(){
+        nodatafoundLbl.text = "noDataFound".localiz()
         headerText.text = "My_Milestone_Redemption".localiz()
     }
     

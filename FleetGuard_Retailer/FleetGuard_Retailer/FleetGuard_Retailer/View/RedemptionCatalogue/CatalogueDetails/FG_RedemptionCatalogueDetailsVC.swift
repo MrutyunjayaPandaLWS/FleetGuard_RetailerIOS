@@ -81,7 +81,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
         productImage.layer.shadowOpacity = 0.4
         productImage.layer.shadowRadius = 0.4
         productImage.layer.shadowColor = UIColor.darkGray.cgColor
-        self.categoryLbl.text = "\("CategorySlash".localiz()) \(self.productCategory)"
+        self.categoryLbl.text = "\("Category".localiz()) / \(self.productCategory)"
         self.productNameLbl.text = productName
         self.productPoints.text = "\("PointsData".localiz()) \(productPoint)"
         self.descriptionLbl.text = productDetails

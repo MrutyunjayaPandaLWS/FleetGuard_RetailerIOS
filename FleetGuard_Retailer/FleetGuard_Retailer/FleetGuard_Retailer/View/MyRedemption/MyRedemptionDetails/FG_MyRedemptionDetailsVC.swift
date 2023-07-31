@@ -47,11 +47,12 @@ class FG_MyRedemptionDetailsVC: BaseViewController, UITableViewDelegate, UITable
         orderStatusTV.dataSource = self
         cancelOrderBtn.isHidden = true
         emptyMessage.isHidden = true
-        emptyMessage.text = "noDataFound".localiz()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        localization()
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
                 let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
@@ -61,12 +62,12 @@ class FG_MyRedemptionDetailsVC: BaseViewController, UITableViewDelegate, UITable
             }
         }else{
             myRedemptionDetailsApi()
-            localization()
         }
     }
     
 
     private func localization(){
+        emptyMessage.text = "noDataFound".localiz()
         self.VCtitle.text = "My_Redemption".localiz()
         categoryNameLbl.text = "Category".localiz()
         descriptionTitle.text = "Description".localiz()
@@ -161,7 +162,10 @@ class FG_MyRedemptionDetailsVC: BaseViewController, UITableViewDelegate, UITable
         }
         cell.selectionStyle = .none
         
-        cell.oderDate.text = self.VM.orderStatusArrayList[indexPath.row].createdDate
+        
+        let orderDate = (self.VM.orderStatusArrayList[indexPath.row].createdDate ?? "-").split(separator: " ")
+        let convertDateFormate = self.convertDateFormaterString("\(orderDate[0])", fromDate: "MM-dd-yyyy", toDate: "dd/MM/yyyy")
+        cell.oderDate.text = convertDateFormate
         return cell
     }
     

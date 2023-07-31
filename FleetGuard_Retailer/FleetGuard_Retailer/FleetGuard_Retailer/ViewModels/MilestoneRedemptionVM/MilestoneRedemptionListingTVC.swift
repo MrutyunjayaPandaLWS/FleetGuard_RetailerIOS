@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import LanguageManager_iOS
+
 protocol mileStoneDelegateData{
     
     func doenloadData(_ cell: MilestoneRedemptionListingTVC)
@@ -32,6 +34,15 @@ class MilestoneRedemptionListingTVC: UITableViewCell {
     @IBOutlet var downloadBTN: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
+        localization()
+    }
+    
+    private func localization(){
+        milestoneCodeHeadingLbl.text = "Milestone code".localiz()
+        levelPointsHeadingLbl.text = "Level Points".localiz()
+        validityHeadingLbl.text = "Validity".localiz()
+        downloadBTN.setTitle("Redeem".localiz(), for: .normal)
+        descriptionHeadingLbl.text = "Description".localiz()
     }
 
     @IBAction func downloadActBtn(_ sender: Any) {

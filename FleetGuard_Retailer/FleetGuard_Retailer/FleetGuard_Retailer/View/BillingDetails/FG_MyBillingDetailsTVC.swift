@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class FG_MyBillingDetailsTVC: UITableViewCell {
     
     
+    @IBOutlet weak var totalValuetitleLbl: UILabel!
+    @IBOutlet weak var orderQuantityTitleLbl: UILabel!
+    @IBOutlet weak var partNoTitlelbl: UILabel!
     @IBOutlet var productNameHeadingLbl: UILabel!
     @IBOutlet var paetNumberLbl: UILabel!
     @IBOutlet var qtyLbl: UILabel!
@@ -18,8 +22,13 @@ class FG_MyBillingDetailsTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        localization()
     }
     
-    
+    private func localization(){
+        totalValuetitleLbl.text = "Value".localiz()
+        orderQuantityTitleLbl.text = "Order Qty".localiz()
+        partNoTitlelbl.text = "Part No".localiz()
+    }
     
 }

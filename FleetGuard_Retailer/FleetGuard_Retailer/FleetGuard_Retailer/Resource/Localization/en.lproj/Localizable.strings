@@ -1,9 +1,8 @@
-/* 
-  Localizable.strings
-  Fleet_Guard(Samriddhi)
+/*
+Localizable.strings
+Fleet_Guard(Samriddhi)
 
-  Created by ADMIN on 17/01/2023.
-  
+Created by ADMIN on 17/01/2023.
 */
 "No_Internet" = "No Internet";
 
@@ -21,7 +20,7 @@
 "Decline" = "Decline";
 "Accept" = "Accept";
 "termsAndCondition" = "Terms and conditions";
-"mobileNumber_isnot_exit_system" = "The mobile number that you have entered is not present in the  system.";
+"mobileNumber_isnot_exit_system" = "The mobile number that you have entered is not present in the system.";
 "name" = "Name";
 "enterName" = "Enter name";
 "Mobile_number" = "Mobile number";
@@ -50,6 +49,7 @@
 //MARK: - DASHBOARD
 "Shop_name" = "SHOP NAME";
 "total_Point_bal" = "Total Point Balance";
+"total_Point_bal" = "Total Point Balance";
 "passbook_number" = "Passbook Number";
 "welcome" = "Welcome !";
 "product_Catalogoue" = "Product Catalogue";
@@ -67,7 +67,7 @@
 "My_Redemption_History" = "My Redemption History";
 "Redemption_Catalogue" = "Redemption Catalogue";
 "Product_Catalogue" = "Product Catalogue";
-"My_Promotions" = "My Promotions";
+"My_Promotions" = "Offers & Promotions";
 "Lodge_Query" = "Lodge Query";
 "About" = "About";
 "FAQs" = "FAQs";
@@ -231,3 +231,36 @@ Click Here";
 "Your order placed successfully !" = "Your order placed successfully !";
 "Go to Dashboard" = "Go to Dashboard";
 "Enter_Comments" = "Enter Comments";
+
+
+"Milestone code" = "Milestone code";
+"Level Points" = "Level Points";
+"Validity" = "Validity";
+"Redeem" = "Redeem";
+"Points Range" = "Points Range";
+"Choose a point range below" = "Choose a point range below";
+
+
+
+//MARK: NEW
+
+"Part No" = "Part No";
+"DAP" = "DAP";
+"MRP" = "MRP";
+"Short Description" = "Short Description";
+"Order Total" = "Order Total";
+"Value" = "Value";
+"Place Order" = "Place Order";
+//MARK: - NEW
+"Segment" = "Segment";
+"OEM" = "OEM";
+"Model" = "Model";
+"Product Catgeory" = "Product Catgeory";
+"Order No" = "Order No";
+"Order Qty" = "Order Qty";
+"Dispatched Qty" = "Dispatched Qty";
+"Invoice No" = "Invoice No";
+"Invoice Date" = "Invoice Date";
+"Total value" = "Total value";
+"Order More" = "Order More";
+"Order No" = "Order No";

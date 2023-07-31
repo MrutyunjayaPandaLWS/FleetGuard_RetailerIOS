@@ -49,12 +49,10 @@ class HistoryNotificationsViewController: BaseViewController, notificationDelgat
             self.VM.VC = self
             expandedview.isHidden = true
             self.noDataFound.isHidden = true
-            self.noDataFound.text = "noDataFound".localiz()
             self.NotificationstableView.register(UINib(nibName: "HistoryNotificationsTableViewCell", bundle: nil), forCellReuseIdentifier: "HistoryNotificationsTableViewCell")
             notificationListApi()
             self.NotificationstableView.delegate = self
             self.NotificationstableView.dataSource = self
-            languagelocalization()
         }
         
     }
@@ -66,7 +64,7 @@ class HistoryNotificationsViewController: BaseViewController, notificationDelgat
 //
 //        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
 //        tracker.send(builder.build() as [NSObject : AnyObject])
-
+        languagelocalization()
         tabBarController?.tabBar.isHidden =  true
     }
     
@@ -89,6 +87,7 @@ class HistoryNotificationsViewController: BaseViewController, notificationDelgat
     }
     
     func languagelocalization(){
+        self.noDataFound.text = "noDataFound".localiz()
         if UserDefaults.standard.string(forKey: "LanguageLocalizable") == "1"{
             self.header.text = "Notification"
             

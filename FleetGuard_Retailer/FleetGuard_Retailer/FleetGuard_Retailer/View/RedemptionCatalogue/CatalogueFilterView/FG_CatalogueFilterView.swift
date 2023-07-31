@@ -84,6 +84,7 @@ class FG_CatalogueFilterView: BaseViewController {
         filterTitle.text = "Filter".localiz()
         clearAllBtn.setTitle("Clear_all".localiz(), for: .normal)
         applyBtn.setTitle("Apply".localiz(), for: .normal)
+        choosePointRangeLbl.text = "Choose a point range below".localiz()
     }
     
 //    {
@@ -175,7 +176,7 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FG_CatalogueCategoryTypeTVC", for: indexPath) as! FG_CatalogueCategoryTypeTVC
-        cell.categoryTitleLbl.text = self.pointsCatagoryArray[indexPath.row]
+        cell.categoryTitleLbl.text = self.pointsCatagoryArray[indexPath.row].localiz()
         print(tableViewData,"slkdls")
         if tableViewData == "Points Range"{
             if indexPath.row == 0{

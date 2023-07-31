@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var slider : SlideMenuController!
     var nav : UINavigationController!
     var gcmMessageIDKey = "gcm.message_id"
-    var languageStatus = UserDefaults.standard.string(forKey: "LanguageName")
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
@@ -81,6 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func languageUpdate(){
+        var languageStatus = UserDefaults.standard.string(forKey: "LanguageName")
         if languageStatus == "English"{
             LanguageManager.shared.setLanguage(language: .en)
         }else if languageStatus == "Hindi"{

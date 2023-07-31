@@ -82,7 +82,7 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
         self.alreadyAmemberLbl.text = "AlreadyaMember".localiz()
         welcomeToLbl.text = "welcome".localiz()
         loginNowLbl.text = "LoginNow".localiz()
-        resendBtn.setTitle("Resend_Otp".localiz(), for: .normal)
+        resendBtn.setTitle("Resend_OTP".localiz(), for: .normal)
         otpWillRecieveLbl.text = "OTP_will_receive_within".localiz()
         submitBtn.setTitle("submit".localiz(), for: .normal)
         backBtn.setTitle("Back".localiz(), for: .normal)
