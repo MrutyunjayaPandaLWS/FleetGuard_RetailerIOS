@@ -25,7 +25,7 @@ class FG_MyRedemptionTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        localization()
+//        localization()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

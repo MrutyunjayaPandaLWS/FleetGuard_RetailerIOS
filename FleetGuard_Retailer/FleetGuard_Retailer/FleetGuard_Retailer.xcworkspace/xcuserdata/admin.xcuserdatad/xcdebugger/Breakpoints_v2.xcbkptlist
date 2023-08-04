@@ -64,6 +64,21 @@
                   endingLineNumber = "68"
                   offsetFromSymbolStart = "70">
                </Location>
+               <Location
+                  uuid = "0C4667CF-B41A-42FF-BC3B-DD54AEF77D46 - eceaef95211ad56c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_CounterGapVC.counterGap(startIndex: Swift.Int) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/NewAddition/CounterGap/FG_CounterGapVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "152">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -81,6 +96,38 @@
             endingLineNumber = "45"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B200A2A2-017B-4CC6-9FE8-C23D0ADD8F0B - b537d83f513be6bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_CounterGapVC.viewDidLoad() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/NewAddition/CounterGap/FG_CounterGapVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "B200A2A2-017B-4CC6-9FE8-C23D0ADD8F0B - b537d83f513be6bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_CounterGapVC.viewDidLoad() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/NewAddition/CounterGap/FG_CounterGapVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -97,6 +144,38 @@
             endingLineNumber = "414"
             landmarkName = "deleteAccount()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F13E759E-EC44-4F89-93AF-F3AC4A3D2728 - edc25b5b3f3925c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in FleetGuard_Retailer.FG_SideMenuVC.deleteAccount() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/SideMenu/FG_SideMenuVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "414"
+                  endingLineNumber = "414"
+                  offsetFromSymbolStart = "582">
+               </Location>
+               <Location
+                  uuid = "F13E759E-EC44-4F89-93AF-F3AC4A3D2728 - edc25b5b3f3925c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in FleetGuard_Retailer.FG_SideMenuVC.deleteAccount() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/SideMenu/FG_SideMenuVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "414"
+                  endingLineNumber = "414"
+                  offsetFromSymbolStart = "624">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -113,6 +192,38 @@
             endingLineNumber = "56"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "25C18FE6-7FB0-448A-9428-AA712BFCEC6F - e779201b69cf8969"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.RPLStatementVC.viewDidLoad() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "979">
+               </Location>
+               <Location
+                  uuid = "25C18FE6-7FB0-448A-9428-AA712BFCEC6F - e779201b69cf8969"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.RPLStatementVC.viewDidLoad() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1132">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -129,6 +240,38 @@
             endingLineNumber = "162"
             landmarkName = "rlpStatemnet()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5CD3A4AB-0BB3-4055-B3BD-BD5DB3E76F91 - f4923edb91e3debb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.RPLStatementVC.rlpStatemnet() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "850">
+               </Location>
+               <Location
+                  uuid = "5CD3A4AB-0BB3-4055-B3BD-BD5DB3E76F91 - f4923edb91e3debb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.RPLStatementVC.rlpStatemnet() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "736">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -190,6 +333,21 @@
                   startingLineNumber = "141"
                   endingLineNumber = "141"
                   offsetFromSymbolStart = "1122">
+               </Location>
+               <Location
+                  uuid = "52845800-6333-4818-9B54-88AB376D7394 - bc2eadb75326550f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in FleetGuard_Retailer.FG_RedemptionCatalogueDetailsVC.addToCartBTN(Any) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RedemptionCatalogue/CatalogueDetails/FG_RedemptionCatalogueDetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "972">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -269,6 +427,21 @@
                   endingLineNumber = "83"
                   offsetFromSymbolStart = "2020">
                </Location>
+               <Location
+                  uuid = "8698C847-FF2B-46F4-BCB9-2BD096A6E059 - 2eaa7d384bfd114c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Swift.MainActor () -&gt; () in closure #2 (Swift.Optional&lt;FleetGuard_Retailer.RedemptionCatalogueAddToCartModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in FleetGuard_Retailer.RedemptionCatalogeDetailsVM.redemptionCatalogueAddToCartApi(parameter: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/ViewModels/CatalogueDetailsVM/RedemptionCatalogeDetailsVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "2052">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -331,6 +504,21 @@
                   startingLineNumber = "87"
                   endingLineNumber = "87"
                   offsetFromSymbolStart = "1159">
+               </Location>
+               <Location
+                  uuid = "BDA21D06-4AA0-4B18-B06E-B264D3B71B8A - d6e46804ef24bb5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 (Swift.Optional&lt;FleetGuard_Retailer.RedemptionCatalogueAddToCartModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in FleetGuard_Retailer.RedemptionCatalogeDetailsVM.redemptionCatalogueAddToCartApi(parameter: Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/ViewModels/CatalogueDetailsVM/RedemptionCatalogeDetailsVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "1036">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -410,6 +598,21 @@
                   endingLineNumber = "220"
                   offsetFromSymbolStart = "80">
                </Location>
+               <Location
+                  uuid = "49936B18-E234-4E24-BF6B-DE7620D323FD - b9b7923c78456cee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;FleetGuard_Retailer.RedemptionCatalogueMyCartListModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in FleetGuard_Retailer.FG_RedemptionCatalogueDetailsVC.myCartListApi() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RedemptionCatalogue/CatalogueDetails/FG_RedemptionCatalogueDetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "124">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -487,6 +690,21 @@
                   startingLineNumber = "226"
                   endingLineNumber = "226"
                   offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "C0F33800-C0C2-4DEF-9EC8-0C7DEB17BBBD - 8ff6b70c8f5ccba9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;FleetGuard_Retailer.RedemptionCatalogueMyCartListModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in FleetGuard_Retailer.FG_RedemptionCatalogueDetailsVC.myCartListApi() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RedemptionCatalogue/CatalogueDetails/FG_RedemptionCatalogueDetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "226"
+                  endingLineNumber = "226"
+                  offsetFromSymbolStart = "124">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -566,6 +784,21 @@
                   endingLineNumber = "209"
                   offsetFromSymbolStart = "2748">
                </Location>
+               <Location
+                  uuid = "904F5937-08C9-4776-A0CE-AD9C1BBD7BD5 - ab78cd6c654d917a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;FleetGuard_Retailer.RedemptionCatalogueMyCartListModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in FleetGuard_Retailer.FG_RedemptionCatalogueDetailsVC.myCartListApi() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RedemptionCatalogue/CatalogueDetails/FG_RedemptionCatalogueDetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "209"
+                  endingLineNumber = "209"
+                  offsetFromSymbolStart = "3280">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -583,6 +816,38 @@
             endingLineNumber = "124"
             landmarkName = "balancePtsRedeemBtn(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2F5B3840-7A7C-4E6E-9753-B1FDA01F1C6B - d40636e84e1c19f5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.RPLStatementVC.balancePtsRedeemBtn(Any) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "78">
+               </Location>
+               <Location
+                  uuid = "2F5B3840-7A7C-4E6E-9753-B1FDA01F1C6B - d40636e84e1c19f5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.RPLStatementVC.balancePtsRedeemBtn(Any) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -599,6 +864,38 @@
             endingLineNumber = "130"
             landmarkName = "milestonePtsRedeemBtn(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "84F7051F-5779-40D6-BCB1-9A0D644B829A - 4928c002bfab067d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.RPLStatementVC.milestonePtsRedeemBtn(Any) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "78">
+               </Location>
+               <Location
+                  uuid = "84F7051F-5779-40D6-BCB1-9A0D644B829A - 4928c002bfab067d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.RPLStatementVC.milestonePtsRedeemBtn(Any) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RPLStatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -615,6 +912,38 @@
             endingLineNumber = "750"
             landmarkName = "drawCircles(context:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "126A06B1-CBE3-4F73-8439-3DBF64857C55 - 759fd5fdf85a687e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.LineChartRenderer.drawCircles(context: __C.CGContextRef) -&gt; ()"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/Pods/Charts/Source/Charts/Renderers/LineChartRenderer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "750"
+                  endingLineNumber = "750"
+                  offsetFromSymbolStart = "7223">
+               </Location>
+               <Location
+                  uuid = "126A06B1-CBE3-4F73-8439-3DBF64857C55 - 759fd5fdf85a687e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.LineChartRenderer.drawCircles(context: __C.CGContextRef) -&gt; ()"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/Pods/Charts/Source/Charts/Renderers/LineChartRenderer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "750"
+                  endingLineNumber = "750"
+                  offsetFromSymbolStart = "5604">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -691,6 +1020,36 @@
                   startingLineNumber = "612"
                   endingLineNumber = "612"
                   offsetFromSymbolStart = "429">
+               </Location>
+               <Location
+                  uuid = "C8C26856-3E44-45F6-8713-659CF57B93D9 - 759fd5fdf85a5f80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.LineChartRenderer.drawCircles(context: __C.CGContextRef) -&gt; ()"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/Pods/Charts/Source/Charts/Renderers/LineChartRenderer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "612"
+                  endingLineNumber = "612"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  uuid = "C8C26856-3E44-45F6-8713-659CF57B93D9 - 759fd5fdf85a5f80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.LineChartRenderer.drawCircles(context: __C.CGContextRef) -&gt; ()"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/Pods/Charts/Source/Charts/Renderers/LineChartRenderer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "612"
+                  endingLineNumber = "612"
+                  offsetFromSymbolStart = "384">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -883,6 +1242,21 @@
                   endingLineNumber = "102"
                   offsetFromSymbolStart = "12781">
                </Location>
+               <Location
+                  uuid = "23534425-7783-467C-B43F-BBD3525534C4 - 4f74a164fdd27542"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_MyBillingDetailsVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/BillingDetails/FG_MyBillingDetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "9272">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -900,6 +1274,38 @@
             endingLineNumber = "824"
             landmarkName = "counterGapAPI(parameters:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "833BEF90-22A8-40C2-BD88-82CC3268BFB5 - 7add89220943f389"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;FleetGuard_Retailer.ServiceError&gt;) -&gt; () in FleetGuard_Retailer.RestAPI_Requests.counterGapAPI(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;FleetGuard_Retailer.CounterGapModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "824"
+                  endingLineNumber = "824"
+                  offsetFromSymbolStart = "850">
+               </Location>
+               <Location
+                  uuid = "833BEF90-22A8-40C2-BD88-82CC3268BFB5 - 7add89220943f389"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;FleetGuard_Retailer.ServiceError&gt;) -&gt; () in FleetGuard_Retailer.RestAPI_Requests.counterGapAPI(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;FleetGuard_Retailer.CounterGapModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "824"
+                  endingLineNumber = "824"
+                  offsetFromSymbolStart = "652">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -916,6 +1322,38 @@
             endingLineNumber = "38"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "29523C11-AC2B-46FA-B214-CA7FFCE6D486 - bd494bf385130f2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_NewAdditionVC.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/NewAddition/FG_NewAdditionVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "29523C11-AC2B-46FA-B214-CA7FFCE6D486 - bd494bf385130f2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_NewAdditionVC.viewWillAppear(Swift.Bool) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/NewAddition/FG_NewAdditionVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "212">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -932,6 +1370,38 @@
             endingLineNumber = "109"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "60398AA5-C516-4320-A70F-8881081EDE29 - cd1feac76356405d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_CounterGapVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/NewAddition/CounterGap/FG_CounterGapVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "8721">
+               </Location>
+               <Location
+                  uuid = "60398AA5-C516-4320-A70F-8881081EDE29 - cd1feac76356405d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_CounterGapVC.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/NewAddition/CounterGap/FG_CounterGapVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "6636">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -948,6 +1418,38 @@
             endingLineNumber = "821"
             landmarkName = "counterGapAPI(parameters:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B455F13D-72BB-434B-9E38-7938C4D6B482 - 7add89220943f334"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;FleetGuard_Retailer.ServiceError&gt;) -&gt; () in FleetGuard_Retailer.RestAPI_Requests.counterGapAPI(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;FleetGuard_Retailer.CounterGapModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "821"
+                  endingLineNumber = "821"
+                  offsetFromSymbolStart = "643">
+               </Location>
+               <Location
+                  uuid = "B455F13D-72BB-434B-9E38-7938C4D6B482 - 7add89220943f334"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;FleetGuard_Retailer.ServiceError&gt;) -&gt; () in FleetGuard_Retailer.RestAPI_Requests.counterGapAPI(parameters: Swift.Dictionary&lt;Swift.String, Any&gt;, completion: (Swift.Optional&lt;FleetGuard_Retailer.CounterGapModels&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/Resource/Networking/RestAPI_Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "821"
+                  endingLineNumber = "821"
+                  offsetFromSymbolStart = "532">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -964,6 +1466,38 @@
             endingLineNumber = "15"
             landmarkName = "viewActBTN(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "84BDB9F3-26A9-4532-89DB-31F03C45540F - 44034c797efecdf0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_StatementVC.viewActBTN(FleetGuard_Retailer.FG_StatementTVC) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RPLStatement/PointStatementView/FG_StatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "773">
+               </Location>
+               <Location
+                  uuid = "84BDB9F3-26A9-4532-89DB-31F03C45540F - 44034c797efecdf0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_StatementVC.viewActBTN(FleetGuard_Retailer.FG_StatementTVC) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/RPLStatement/PointStatementView/FG_StatementVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "968">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -980,6 +1514,38 @@
             endingLineNumber = "70"
             landmarkName = "languageUpdate()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0E58B667-742F-4053-96BE-2DCDEB686BA9 - 627a4aa8d2be9ef5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.SceneDelegate.languageUpdate() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/Resource/Delegate/SceneDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "440">
+               </Location>
+               <Location
+                  uuid = "0E58B667-742F-4053-96BE-2DCDEB686BA9 - 627a4aa8d2be9ef5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.SceneDelegate.languageUpdate() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/Resource/Delegate/SceneDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "352">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -996,6 +1562,38 @@
             endingLineNumber = "84"
             landmarkName = "languageUpdate()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B4E4E9EB-43FE-48DB-9080-2DC6C1D435C9 - 14b75b622bd7f623"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.AppDelegate.languageUpdate() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/Resource/Delegate/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "33">
+               </Location>
+               <Location
+                  uuid = "B4E4E9EB-43FE-48DB-9080-2DC6C1D435C9 - 14b75b622bd7f623"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.AppDelegate.languageUpdate() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/Resource/Delegate/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1012,6 +1610,38 @@
             endingLineNumber = "38"
             landmarkName = "popupAlertDidTap(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "57B693A4-5603-42AC-9CCA-DDC138DAF616 - 277f7118594a61d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_SideMenuVC.popupAlertDidTap(FleetGuard_Retailer.FG_PopUpVC) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/SideMenu/FG_SideMenuVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "1146">
+               </Location>
+               <Location
+                  uuid = "57B693A4-5603-42AC-9CCA-DDC138DAF616 - 277f7118594a61d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_SideMenuVC.popupAlertDidTap(FleetGuard_Retailer.FG_PopUpVC) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/SideMenu/FG_SideMenuVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "1236">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1028,6 +1658,86 @@
             endingLineNumber = "24"
             landmarkName = "popupAlertDidTap(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CF778B34-52CA-4115-99E6-260D70DD0036 - 853c7a8576bed97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in FleetGuard_Retailer.FG_SideMenuVC.popupAlertDidTap(FleetGuard_Retailer.FG_PopUpVC) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/SideMenu/FG_SideMenuVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1275">
+               </Location>
+               <Location
+                  uuid = "CF778B34-52CA-4115-99E6-260D70DD0036 - 853c7a8576bed97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in FleetGuard_Retailer.FG_SideMenuVC.popupAlertDidTap(FleetGuard_Retailer.FG_PopUpVC) -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/SideMenu/FG_SideMenuVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD654086-A8CF-4A7E-A7B7-30B5E9B986C1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FleetGuard_Retailer/Resource/Delegate/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "tokendata()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CD654086-A8CF-4A7E-A7B7-30B5E9B986C1 - f0ade7d973f0530f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.AppDelegate.tokendata() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/Resource/Delegate/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "349">
+               </Location>
+               <Location
+                  uuid = "CD654086-A8CF-4A7E-A7B7-30B5E9B986C1 - f0ade7d973f0530f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.AppDelegate.tokendata() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/Resource/Delegate/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "580">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

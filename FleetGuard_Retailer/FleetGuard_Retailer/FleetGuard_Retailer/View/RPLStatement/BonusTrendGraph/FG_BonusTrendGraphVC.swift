@@ -95,8 +95,8 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
                 self.secondGraphData.removeAll()
                 if self.VM.myBonusTrendGraphArray.count != 0 {
                     for data in self.VM.myBonusTrendGraphArray{
-                        let previousYearPoint = data.previousYearPoint
-                        let currentYear = data.currentYearPoint
+//                        let previousYearPoint = data.previousYearPoint
+//                        let currentYear = data.currentYearPoint
                         
                         if self.secondGraphData.count < 12{
                             self.secondGraphData.append(data.previousYearPoint!)
@@ -162,28 +162,30 @@ class FG_BonusTrendGraphVC: BaseViewController, ChartViewDelegate {
         let chartDataSet = LineChartDataSet(entries: yVals2,  label: previousYear)
         chartDataSet.axisDependency = .left
         chartDataSet.setColor(graphPreviousYearColor)
-        chartDataSet.lineWidth = 2
+        chartDataSet.lineWidth = 1.8
         chartDataSet.fillAlpha = 65/255
         chartDataSet.fillColor = .red
         chartDataSet.highlightColor = UIColor(red: 100/255, green: 110/255, blue: 220/255, alpha: 1)
-        chartDataSet.circleHoleRadius = 1
+        chartDataSet.circleHoleRadius = 0.5
         chartDataSet.drawValuesEnabled = true
-        chartDataSet.circleRadius = 3
+        chartDataSet.circleRadius = 0.8
+        chartDataSet.valueFont = UIFont.systemFont(ofSize: 12)
         chartDataSet.circleColors = [graphPreviousYearColor]
         
         let chartDataSet1 = LineChartDataSet(entries: yVals3, label: currentYear)
         chartDataSet1.axisDependency = .left
         chartDataSet1.setColor(graphCurrentYearColor)
-        chartDataSet1.lineWidth = 2
+        chartDataSet1.lineWidth = 1.8
         chartDataSet1.fillAlpha = 65/255
+        chartDataSet1.valueFont = UIFont.systemFont(ofSize: 12)
         chartDataSet1.fillColor = UIColor.yellow.withAlphaComponent(200/255)
         chartDataSet1.highlightColor =  UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
-        chartDataSet1.circleHoleRadius = 1
+        chartDataSet1.circleHoleRadius = 0.5
         chartDataSet1.drawValuesEnabled = true
-        chartDataSet1.circleRadius = 3
+        chartDataSet1.circleRadius = 0.8
         chartDataSet1.circleColors = [graphCurrentYearColor]
         let chartData = LineChartData(dataSets: [chartDataSet, chartDataSet1])
-
+        chartData.setValueFormatter(CustomeValueFormatter())
         bonusTrendGraphView.chartDescription.text = " "
         bonusTrendGraphView.data = chartData
 

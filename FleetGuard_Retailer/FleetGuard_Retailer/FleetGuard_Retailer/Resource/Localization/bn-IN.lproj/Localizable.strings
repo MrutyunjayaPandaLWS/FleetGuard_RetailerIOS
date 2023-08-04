@@ -196,7 +196,7 @@ Created by ADMIN on 17/01/2023.
 "NoteDateason" = "দ্রষ্টব্য: তারিখ হিসাবে ";
 "Add more part no" = "আরো অংশ নং যোগ করুন";
 
-"Ref. No" = "রেফ. না";
+"Ref. No" = "রেফারেন্স নম্বর";
 "Points Redeemed" = "পয়েন্ট রিডিম করা হয়েছে";
 "Qty" = "Qty";
 "Query Type" = "প্রশ্নের ধরন";
@@ -258,3 +258,4 @@ Created by ADMIN on 17/01/2023.
 "Invoice Date" = "চালানতারিখ";
 "Total value" = "মোটমূল্য";
 "Fromdate" = "তারিখ হইতে";
+"Quantity" = "পরিমাণ";

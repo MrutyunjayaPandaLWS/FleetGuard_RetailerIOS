@@ -54,8 +54,8 @@ Created by ADMIN on 17/01/2023.
 "product_Catalogoue" = "ప్రోడక్ట్ కేటలాగ్";
 "redemption_catalogue" = "రిడెంప్షన్ కేటలాగ్";
 "know_more" = "మరింత తెలుసుకోవాలా";
-"Add_More_Range" = "మరింత రెంజ్ని జోడించండి";
-"View_Products" = "ప్రొడక్ట్స్ ను వీక్షించండి";
+"Add_More_Range" = "మరింత రెంజ్ కి ";
+"View_Products" = "జోడించండి";
 "Order_Now" = "ఇప్పుడే ఆర్డర్ చేయండి";
 "Your_account_loged_in_by_other_mobile" = "మీ ఖాతా ఇతర మొబైల్ ద్వారా లాగిన్ చేయబడింది.";
 
@@ -63,12 +63,12 @@ Created by ADMIN on 17/01/2023.
 // MARK: - SIDE MENU
 
 "Profile" = "ప్రొఫైల్";
-"My_Redemption_History" = "నా రెడెంప్షన్ చరిత్ర";
-"Redemption_Catalogue" = "రెడెంప్షన్ కేటలాగ్";
+"My_Redemption_History" = "నా రిడెంప్షన్ చరిత్ర";
+"Redemption_Catalogue" = "రిడెంప్షన్ కేటలాగ్";
 "Product_Catalogue" = "ప్రోడక్ట్ కేటలాగ్";
 "My_Promotions" = "ఆఫర్లు & ప్రమోషన్లు";
 "Lodge_Query" = "లాడ్జ్ ప్రశ్న";
-"About" = "RLP గురించి";
+"About" = "గురించి";
 "FAQs" = "FAQలు";
 "T&C" = "T&C";
 "Logout" = "లాగ్అవుట్";
@@ -77,10 +77,10 @@ Created by ADMIN on 17/01/2023.
 "My_Billings" = "నా బిల్లింగ్స్";
 "My_Orders" = "నా ఆర్డర్లు";
 "RPL_Statement" = "RLP స్టేట్మెంట్";
-"My_Milestone_Redemption" = "నా మైలురాయి రెడెంప్షన్";
+"My_Milestone_Redemption" = "నా మైలురాయి రిడెంప్షన్";
 "Retailer_code" = "రిటైలర్ కోడ్";
 "My_Earnings" = "నా సంపాదన";
-"My_Redemption" = "నా రెడెంప్షన్";
+"My_Redemption" = "నా రిడెంప్షన్";
 
 //MARK: - PROFILE
 "Personal_Information" = "వ్యక్తిగత సమాచారం";
@@ -134,7 +134,7 @@ Created by ADMIN on 17/01/2023.
 "Balance_Points" = "బ్యాలెన్స్ పాయింట్లు";
 "Milestone_Points" = "మైలురాయి పాయింట్లు";
 "Redeem_Now" = "ఇప్పుడే రీడీమ్ చేయండి";
-"statementView" = "స్టేట్మెంట్చూడండి";
+"statementView" = "స్టేట్మెంట్ చూడండి";
 "points_trends" = "పాయింట్ల ట్రెండ్";
 "range_trends" = "రేంజ్ ట్రెండ్";
 "bonus_trend" = "బోనస్ ట్రెండ్";
@@ -157,8 +157,8 @@ Created by ADMIN on 17/01/2023.
 
 "month" = "నెల";
 "Points_Earned" = "సంపాదించిన పాయింట్లు ";
-"Balance" = "బాలన్స్";
-"View" = "వీక్షణ";
+"Balance" = "బ్యాలెన్స్";
+"View" = "చూడండి";
 
 
 "OrderDate" = "ఆర్డర్ తేదీ";
@@ -181,7 +181,7 @@ Created by ADMIN on 17/01/2023.
 "Select To Date" = "తేదీని ఎంచుకోండి";
 "Select From Date" = "తేదీ నుండి ఎంచుకోండి";
 "ToDate should be lower than FromDate" = "ఈ తేదీ నుండి తేదీ కంటే తక్కువగా ఉండాలి";
-"Please Enter Query Details" = "దయచేసి ప్రశ్న వివరాలను నమోదు చేయండి";
+"Please Enter Query Details" = "మీ వివరాలను నమోదు చేయండి";
 "Category" = "కేటగిరి";
 "Order Status" = "ఆర్డర్ స్థితి";
 
@@ -200,7 +200,7 @@ Created by ADMIN on 17/01/2023.
 "Add more part no" = "మరింత భాగం సంఖ్యను జోడించండి";
 
 //newLine
-"Ref. No" = "Ref. సంఖ్య";
+"Ref. No" = "సూచన సంఖ్య";
 "Points Redeemed" = "పాయింట్లు రీడీమ్ చేయబడ్డాయి";
 "Qty" = "Qty";
 "Query Type" = "ప్రశ్నకేటగిరి";
@@ -264,3 +264,4 @@ Created by ADMIN on 17/01/2023.
 "Invoice No" = "ఇన్వాయిస్ నం";
 "Invoice Date" = "చలానా తారీకు";
 "Total value" = "మొత్తం విలువ";
+"Quantity" = "పరిమాణం";

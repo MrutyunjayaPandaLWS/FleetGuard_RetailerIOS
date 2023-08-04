@@ -335,8 +335,10 @@ extension FG_MyMilestoneRedemptionVC: UITableViewDelegate, UITableViewDataSource
             cell.statusBtn.backgroundColor = .systemOrange
         }else if cell.statusBtn.currentTitle == "Approved" {
             cell.statusBtn.backgroundColor = .systemGreen
-        }else if cell.statusBtn.currentTitle == "Canceled"{
+        }else if cell.statusBtn.currentTitle == "Cancelled"{
             cell.statusBtn.backgroundColor = .systemRed
+        } else if cell.statusBtn.currentTitle == "Delivered"{
+            cell.statusBtn.backgroundColor = .systemGreen
         }else{
             cell.statusBtn.backgroundColor = .gray
         }

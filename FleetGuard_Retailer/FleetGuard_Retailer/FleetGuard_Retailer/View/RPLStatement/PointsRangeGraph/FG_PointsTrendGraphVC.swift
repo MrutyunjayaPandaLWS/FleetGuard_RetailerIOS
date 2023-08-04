@@ -100,8 +100,8 @@ class FG_PointsTrendGraphVC: BaseViewController, ChartViewDelegate {
                 self.firstGraphData.removeAll()
                 if self.VM.myPointsTrendGraphArray.count != 0 {
                     for data in self.VM.myPointsTrendGraphArray{
-                        let previousYearPoint = data.previousYearPoint
-                        let currentYear = data.currentYearPoint
+//                        let previousYearPoint = data.previousYearPoint
+//                        let currentYear = data.currentYearPoint
                         
                         self.myPointsArrayOfD.append(pointsTradegraph(monthName: data.monthName, previousYearPoint: "\(Int(data.previousYearPoint ?? 0))", currentYearPoint: "\(data.currentYearPoint ?? 0)"))
                         
@@ -167,12 +167,13 @@ class FG_PointsTrendGraphVC: BaseViewController, ChartViewDelegate {
         let chartDataSet = LineChartDataSet(entries: yVals2,  label: previousYear)
         chartDataSet.axisDependency = .left
         chartDataSet.setColor(graphPreviousYearColor)
-        chartDataSet.lineWidth = 2
+        chartDataSet.lineWidth = 1.8
         chartDataSet.fillAlpha = 65/255
         chartDataSet.fillColor = .red
+        chartDataSet.valueFont = UIFont.systemFont(ofSize: 12)
         chartDataSet.highlightColor = UIColor(red: 100/255, green: 110/255, blue: 220/255, alpha: 1)
-        chartDataSet.circleHoleRadius = 1
-        chartDataSet.circleRadius = 3
+        chartDataSet.circleHoleRadius = 0.5
+        chartDataSet.circleRadius = 0.8
         chartDataSet.drawValuesEnabled = true
         chartDataSet.circleColors = [graphPreviousYearColor]
         chartDataSet.mode = .linear
@@ -180,17 +181,21 @@ class FG_PointsTrendGraphVC: BaseViewController, ChartViewDelegate {
         let chartDataSet1 = LineChartDataSet(entries: yVals3, label: currentYear)
         chartDataSet1.axisDependency = .left
         chartDataSet1.setColor(graphCurrentYearColor)
-        chartDataSet1.lineWidth = 2
+        chartDataSet1.lineWidth = 1.8
         chartDataSet1.fillAlpha = 65/255
         chartDataSet1.fillColor = graphCurrentYearColor
         chartDataSet1.highlightColor = graphCurrentYearColor
-        chartDataSet1.circleHoleRadius = 1
-        chartDataSet1.circleRadius = 3
+        chartDataSet1.circleHoleRadius = 0.5
+        chartDataSet1.circleRadius = 0.8
+        chartDataSet1.valueFont = UIFont.systemFont(ofSize: 12)
         chartDataSet1.circleColors = [graphCurrentYearColor]
         chartDataSet1.drawValuesEnabled = true
         
         chartDataSet1.mode = .linear
+        
         let chartData = LineChartData(dataSets: [chartDataSet, chartDataSet1])
+        
+        chartData.setValueFormatter(CustomeValueFormatter())
 
         pointsTrendGraphView.chartDescription.text = " "
         pointsTrendGraphView.data = chartData
@@ -206,7 +211,7 @@ class FG_PointsTrendGraphVC: BaseViewController, ChartViewDelegate {
         pointsTrendGraphView.rightAxis.drawLabelsEnabled = false
 
         pointsTrendGraphView.leftAxis.drawAxisLineEnabled = true
-        pointsTrendGraphView.pinchZoomEnabled = true
+        pointsTrendGraphView.pinchZoomEnabled = false
         pointsTrendGraphView.doubleTapToZoomEnabled = false
         pointsTrendGraphView.legend.enabled = true
     }

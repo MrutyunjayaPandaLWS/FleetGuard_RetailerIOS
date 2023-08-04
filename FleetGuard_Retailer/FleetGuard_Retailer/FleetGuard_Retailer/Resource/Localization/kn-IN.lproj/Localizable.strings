@@ -200,7 +200,7 @@ Created by ADMIN on 17/01/2023.
 "NoteDateason" = "ಗಮನಿಸಿ: ದಿನಾಂಕದಂತೆ ";
 "Add more part no" = "ಹೆಚ್ಚಿನ ಭಾಗ ಸಂಖ್ಯೆ ಸೇರಿಸಿ";
 
-"Ref. No" = "Ref. ಸಂ";
+"Ref. No" = "ಉಲ್ಲೇಖ ಸಂಖ್ಯೆ";
 "Points Redeemed" = "ಈಗಾಗಲೇ ರಿಡೀಮ್ ಮಾಡಿರುವ ಪಾಯಿಂಟ್";
 "Qty" = "Qty";
 "Query Type" = "ಪ್ರಶ್ನೆ ಪ್ರಕಾರ";
@@ -268,3 +268,4 @@ Created by ADMIN on 17/01/2023.
 
 "Order More" = "Order More";
 "Query Details" = "ಪ್ರಶ್ನೆ ವಿವರಗಳು";
+"Quantity" = "ಪ್ರಮಾಣ";
