@@ -146,6 +146,8 @@ Created by ADMIN on 17/01/2023.
 "imageUploadInfo" = "Note: Image format should be .jpg , .png, .webp, .pdf";
 
 "Select_query_topic" = "Select query topic";
+"select_topic" = "Select Topic";
+"enter_Details" = "Please Enter Query Details";
 "Enter_query_Details" = "Enter query Details";
 "Query_Submitted_successfully" = "Query Submitted successfully!";
 

@@ -141,6 +141,8 @@ Created by ADMIN on 17/01/2023.
 
 "createLodgequeryInfo" = "உங்கள் வினவலை சமர்ப்பிக்கவும்";
 "select_your_topic" = "உங்கள் தலைப்பை தேர்ந்தெடு";
+"select_topic" = "தலைப்பைத் தேர்ந்தெடுக்கவும்";
+"enter_Details" = "வினவல் விவரங்களை உள்ளிடவும்";
 "Query_Details" = "புகார் விவரங்கள்";
 "UploadImage" = "படத்தைப் பதிவேற்று";
 "imageUploadInfo" = "குறிப்பு: பட வடிவம் .jpg , .png, .webp, .pdf";

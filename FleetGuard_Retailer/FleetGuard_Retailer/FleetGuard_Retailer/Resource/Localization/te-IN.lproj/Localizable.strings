@@ -141,6 +141,8 @@ Created by ADMIN on 17/01/2023.
 
 "createLodgequeryInfo" = "దయచేసి మీ ప్రశ్నను సమర్పించండి";
 "select_your_topic" = "మీ అంశాన్ని ఎంచుకోండి";
+"select_topic" = "అంశాన్ని ఎంచుకోండి";
+"enter_Details" = "దయచేసి ప్రశ్న వివరాలను నమోదు చేయండి";
 "Query_Details" = "ప్రశ్న వివరాలు";
 "UploadImage" = "చిత్రాన్ని అప్‌లోడ్ చేయండి";
 "imageUploadInfo" = "గమనిక: చిత్ర ఆకృతి .jpg , .png, .webp, .pdf";

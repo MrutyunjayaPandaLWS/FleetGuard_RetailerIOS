@@ -141,6 +141,8 @@ Created by ADMIN on 17/01/2023.
 
 "createLodgequeryInfo" = "कृपया अपनी क्वेरी सबमिट करें";
 "select_your_topic" = "अपना विषय चुनें";
+"select_topic" = "विषय चुनें";
+"enter_Details" = "कृपया क्वेरी विवरण दर्ज करें";
 "Query_Details" = "प्रश्न की जानकारी";
 "UploadImage" = "इमेज अपलोड करें";
 "imageUploadInfo" = "ध्यान दें: इमेज का फ़ॉर्मैट .jpg , .png, .webp, .pdf होना चाहिए";

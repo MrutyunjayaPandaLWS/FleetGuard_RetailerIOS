@@ -141,6 +141,8 @@ Created by ADMIN on 17/01/2023.
 
 "createLodgequeryInfo" = "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಪ್ರಶ್ನೆಯನ್ನು ಸಲ್ಲಿಸಿ";
 "select_your_topic" = "ನಿಮ್ಮ ವಿಷಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
+"select_topic" = "ವಿಷಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ";
+"enter_Details" = "ದಯವಿಟ್ಟು ಪ್ರಶ್ನೆ ವಿವರಗಳನ್ನು ನಮೂದಿಸಿ";
 "Query_Details" = "ಪ್ರಶ್ನೆ ವಿವರಗಳು";
 "UploadImage" = "ಅಪ್";
 "imageUploadInfo" = "ಗಮನಿಸಿ: ಇಮೇಜ್ ಫಾರ್ಮ್ಯಾಟ್ .jpg , .png, .webp, .pdf ಆಗಿರಬೇಕು";

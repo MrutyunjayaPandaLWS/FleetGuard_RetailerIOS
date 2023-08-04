@@ -141,6 +141,8 @@ Created by ADMIN on 17/01/2023.
 
 "createLodgequeryInfo" = "Please submit your query";
 "select_your_topic" = "Select Your Topic";
+"select_topic" = "Select Topic";
+"enter_Details" = "Please Enter Query Details";
 "Query_Details" = "Query Details";
 "UploadImage" = "Upload Image";
 "imageUploadInfo" = "Note: Image format should be .jpg , .png, .webp, .pdf";

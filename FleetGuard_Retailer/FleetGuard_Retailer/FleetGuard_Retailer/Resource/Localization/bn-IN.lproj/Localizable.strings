@@ -146,6 +146,8 @@ Created by ADMIN on 17/01/2023.
 "imageUploadInfo" = "দ্রষ্টব্য: ছবির বিন্যাস .jpg , .png, .webp, .pdf হওয়া উচিত";
 
 "Select_query_topic" = "কোয়েরি বিষয় নির্বাচন করুন";
+"select_topic" = "বিষয় নির্বাচন করুন";
+"enter_Details" = "অনুগ্রহ করে ক্যোয়ারী বিবরণ লিখুন";
 "Enter_query_Details" = "কোয়েরির বিবরণ লিখুন";
 "Query_Submitted_successfully" = "কোয়েরি সফলভাবে জমা দেওয়া হয়েছে!";
 
