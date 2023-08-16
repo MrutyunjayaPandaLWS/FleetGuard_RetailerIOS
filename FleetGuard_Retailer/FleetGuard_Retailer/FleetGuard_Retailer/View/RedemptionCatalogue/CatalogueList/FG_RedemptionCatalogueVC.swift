@@ -38,6 +38,10 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
 //                    }
                 }
             }
+            if vc.tableViewData == "Points Range"{
+                self.pointsRangeDatas = "\(vc.collectionViewData)"
+                self.categoryIDs = "\(vc.categoryID)"
+            }
             self.redemptionCatalogueListApi(startIndex: startindex)
         }else{
             self.VM.redemptionCatalougeListArray.removeAll()
@@ -114,7 +118,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         totalPtsBalanceLbl.text = "points".localiz()
         passBookLbl.text = "Retailer_code".localiz()
         headerTextLbl.text = "redemption_catalogue".localiz()
-        searchTF.placeholder = "Search by product / description name".localiz()
+        searchTF.placeholder = "Search by product".localiz()
         self.noDataFoundLbl.text = "noDataFound".localiz()
         
     }

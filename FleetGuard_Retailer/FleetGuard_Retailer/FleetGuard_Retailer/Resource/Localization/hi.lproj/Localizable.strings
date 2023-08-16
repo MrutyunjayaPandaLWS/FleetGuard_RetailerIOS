@@ -186,7 +186,7 @@ Created by ADMIN on 17/01/2023.
 "Counter Gap" = "काउंटर गैप";
 "Market Gap" = "मार्केट गैप";
 "Search by part no/ cross reference" = "भाग संख्या/क्रॉस संदर्भ द्वारा खोजें";
-"Search by product / description name" = "उत्पाद / विवरण नाम से खोजें";
+"Search by product" = "उत्पाद के आधार पर खोजें";
 "Please select Segment value" = "कृपया सेगमेंट वैल्यू चुनें";
 "Please select OME value" = "कृपया OME मान चुनें";
 "Please select Model value" = "कृपया मॉडल मूल्य का चयन करें";

@@ -69,8 +69,8 @@ Created by ADMIN on 17/01/2023.
 "My_Promotions" = "অফার এবং প্রচার";
 "Lodge_Query" = "লজ প্রশ্ন";
 "About" = "সম্পর্কে";
-"FAQs" = "প্রশ্নাবলী";
-"T&C" = "T&C";
+"FAQs" = "FAQs";
+"T&C" = "শর্তাবলী";
 "Logout" = "প্রস্থান";
 "Delete" = "হিসাব মুছে ফেলা";
 "Since" = "যখন থেকে";
@@ -188,7 +188,7 @@ Created by ADMIN on 17/01/2023.
 "Counter Gap" = "কাউন্টার গ্যাপ";
 "Market Gap" = "মার্কেট গ্যাপ";
 "Search by part no/ cross reference" = "অংশ নং/ ক্রস রেফারেন্স দ্বারা অনুসন্ধান করুন";
-"Search by product / description name" = "পণ্য / বর্ণনার নাম দ্বারা অনুসন্ধান করুন";
+"Search by product" = "পণ্য দ্বারা অনুসন্ধান করুন";
 "Please select Segment value" = "দয়া করে সেগমেন্ট মান নির্বাচন করুন";
 "Please select OME value" = "অনুগ্রহ করে OME মান নির্বাচন করুন";
 "Please select Model value" = "দয়া করে মডেল মান নির্বাচন করুন";
