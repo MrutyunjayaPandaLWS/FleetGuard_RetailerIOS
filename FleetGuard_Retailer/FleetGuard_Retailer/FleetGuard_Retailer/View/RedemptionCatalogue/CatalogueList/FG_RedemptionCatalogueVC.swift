@@ -79,7 +79,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
     var pointsRangeDatas = ""
     
     var noofelements = 0
-    var startindex = 0
+    var startindex = 1
     
     var miniValue = ""
     var maximiumValue = ""
@@ -169,7 +169,7 @@ class FG_RedemptionCatalogueVC: BaseViewController, DidTapActionDelegate, popUpD
         let parameter = [
                 "ActionType": "6",
                 "ActorId": "\(self.userId)",
-                "NoOfRows": 20,
+                "NoOfRows": 10,
                 "ObjCatalogueDetails": [
                     "MerchantId": 1,
                     "CatogoryId": "\(categoryIDs)",
@@ -361,10 +361,13 @@ extension FG_RedemptionCatalogueVC: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
             if indexPath.row == VM.redemptionCatalougeListArray.count - 2{
-                if noofelements == 20{
+                if noofelements == 10{
                     self.startindex = startindex + 1
                     self.redemptionCatalogueListApi(startIndex: startindex)
-                }else if noofelements < 20{
+                }else if noofelements > 10{
+                    self.startindex = startindex + 1
+                    self.redemptionCatalogueListApi(startIndex: startindex)
+                }else if noofelements < 10{
                     return
                 }else{
                     print("n0 more elements")

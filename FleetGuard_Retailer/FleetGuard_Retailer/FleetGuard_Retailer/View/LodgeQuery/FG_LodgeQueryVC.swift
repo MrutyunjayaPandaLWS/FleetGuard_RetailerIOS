@@ -85,7 +85,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
         filterView.clipsToBounds = true
         filterView.layer.cornerRadius = 20
         filterView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
+        lodgeQueryListTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 70, right: 0)
         lodgeQueryBtn.clipsToBounds = true
         lodgeQueryBtn.layer.cornerRadius = 16
         lodgeQueryBtn.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
@@ -137,7 +137,7 @@ class FG_LodgeQueryVC: BaseViewController, DateSelectedDelegate {
             "HelpTopicID": queryTopic,
             "JFromDate":"\(selectedFromDate)",
             "JToDate":"\(selectedToDate)",
-            "PageSize": 20,
+//            "PageSize": 20,
             "StartIndex": StartIndex,
             "TicketStatusId": "\(self.status)"
         ] as [String: Any]
@@ -401,17 +401,18 @@ func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->
     
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-            if indexPath.row == VM.queryListArray.count - 2{
-                if noofelements == 20{
-                    startindex = startindex + 1
-                    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
-                }else if noofelements < 20{
-                    return
-                }else{
-                    print("n0 more elements")
-                    return
-                }
-            }
+//            if indexPath.row == VM.queryListArray.count - 2{
+//                if noofelements == 20{
+//                    startindex = startindex + 1
+//                    self.queryListApi(queryTopic: self.selectedQueryTopicId, statusId: self.selectedStatusId, StartIndex: startindex)
+//                }else if noofelements < 20{
+//                    print("no need to reload data")
+//                    return
+//                }else{
+//                    print("n0 more elements")
+//                    return
+//                }
+//            }
         }
     
 }

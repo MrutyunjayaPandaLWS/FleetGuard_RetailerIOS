@@ -65,50 +65,20 @@ class FG_LoginOTPVM: popUpDelegate {
                                   ?? 0)
                             if response?[0].isDelete ?? 0 == 1{
                                 DispatchQueue.main.async{
-                                    //                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                                    //                                vc!.delegate = self
-                                    //                                vc!.descriptionInfo = "your_account_is_deleted".localiz()
-                                    //                                vc!.modalPresentationStyle = .overCurrentContext
-                                    //                                vc!.modalTransitionStyle = .crossDissolve
-                                    //                                self.VC?.present(vc!, animated: true, completion: nil)
                                     
                                     self.VC?.view.makeToast("your_account_is_deleted".localiz(), duration: 4.0, position: .bottom)
                                     self.VC?.stopLoading()
                                 }
                             }
                             else if response?[0].verifiedStatus ?? 0 != 1 && response?[0].isUserActive ?? 0 != 1 {
-                                
-                                //                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                                //                            vc!.delegate = self
-                                //
-                                //                            vc!.descriptionInfo = "your_account_is_deleted".localiz()
-                                //                            vc!.modalPresentationStyle = .overCurrentContext
-                                //                            vc!.modalTransitionStyle = .crossDissolve
-                                //                            self.VC?.present(vc!, animated: true, completion: nil)
+                             
                                 self.VC?.view.makeToast("account_is_deactivated".localiz(), duration: 4.0, position: .bottom)
                                 
                             }
                             else if response?[0].verifiedStatus ?? 0 != 1 && response?[0].verifiedStatus ?? 0 != 4 && response?[0].isUserActive ?? 0 != 1 {
-                                
-                                //                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                                //                            vc!.delegate = self
-                                //                            vc!.descriptionInfo = "Your account is not activated! Kindly activate your account."
-                                //                            vc!.modalPresentationStyle = .overCurrentContext
-                                //                            vc!.modalTransitionStyle = .crossDissolve
-                                //                            self.VC?.present(vc!, animated: true, completion: nil)
-                                
+                             
                                 self.VC?.view.makeToast("account_verification_pending".localiz(), duration: 4.0, position: .bottom)
-                                
                             }else if response?[0].isUserActive ?? 0 != 1 {
-                                
-                                //                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                                //                            vc!.delegate = self
-                                //                            vc!.descriptionInfo = "Your account is not activated! Kindly activate your account."
-                                //
-                                //                            vc!.modalPresentationStyle = .overCurrentContext
-                                //                            vc!.modalTransitionStyle = .crossDissolve
-                                //                            self.VC?.present(vc!, animated: true, completion: nil)
-                                
                                 self.VC?.view.makeToast("account_is_deactivated".localiz(), duration: 4.0, position: .bottom)
                                 
                             }else{
@@ -141,13 +111,7 @@ class FG_LoginOTPVM: popUpDelegate {
                                             }
                                         }
                                     }else{
-                                        //                                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                                        //                                vc!.delegate = self
-                                        //                                vc!.descriptionInfo = "Your account is not activated! Kindly activate your account."
-                                        //                                vc!.modalPresentationStyle = .overCurrentContext
-                                        //                                vc!.modalTransitionStyle = .crossDissolve
-                                        //                                self.VC?.present(vc!, animated: true, completion: nil)
-                                        
+                                       
                                         self.VC?.view.makeToast("account_is_deactivated".localiz(), duration: 4.0, position: .bottom)
                                     }
                                 }else{
@@ -156,13 +120,7 @@ class FG_LoginOTPVM: popUpDelegate {
                                     DispatchQueue.main.asyncAfter(deadline: .now()+0.4, execute: {
                                         self.VC?.navigationController?.popViewController(animated: true)
                                     })
-                                    //                                DispatchQueue.main.asyncAfter(deadline: .now()+0.9, execute: {
-                                    //                                    self.chatListingAPI()
-                                    //                                })
                                 }
-                                
-                                
-                                
                             }
                         }else{
                             self.VC?.view.makeToast("Invalid account type", duration: 3.0, position: .bottom)
@@ -170,7 +128,6 @@ class FG_LoginOTPVM: popUpDelegate {
                                 self.VC?.navigationController?.popViewController(animated: true)
                             })
                         }
-                       //m
                     }
                 }else{
                     DispatchQueue.main.async {

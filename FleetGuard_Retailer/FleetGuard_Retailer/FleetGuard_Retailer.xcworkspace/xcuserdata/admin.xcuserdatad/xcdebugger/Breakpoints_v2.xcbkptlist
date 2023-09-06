@@ -1740,5 +1740,69 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C90B682-76B8-486F-8CD5-06E51180EAC2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FleetGuard_Retailer/View/RedemptionCatalogue/CatalogueList/FG_RedemptionCatalogueVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "redemptionCatalogueListApi(startIndex:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "003672BF-7336-411C-9A38-EFB228138190"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FleetGuard_Retailer/View/Login OTP/FG_LoginOTPVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "loginSubmissionApi()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "003672BF-7336-411C-9A38-EFB228138190 - 6451fa7e962ca46e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_LoginOTPVC.loginSubmissionApi() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/Login%20OTP/FG_LoginOTPVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "1604">
+               </Location>
+               <Location
+                  uuid = "003672BF-7336-411C-9A38-EFB228138190 - 6451fa7e962ca44f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FleetGuard_Retailer.FG_LoginOTPVC.loginSubmissionApi() -&gt; ()"
+                  moduleName = "FleetGuard_Retailer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/Ios%20project/LWS%20project/FleetGuard_RetailerIOS/FleetGuard_Retailer/FleetGuard_Retailer/FleetGuard_Retailer/View/Login%20OTP/FG_LoginOTPVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "223"
+                  endingLineNumber = "223"
+                  offsetFromSymbolStart = "1704">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

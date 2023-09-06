@@ -834,7 +834,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_2022_12_20T13_15_20_335Z 1" translatesAutoresizingMaskIntoConstraints="NO" id="GxN-Rp-DG8">
-                                        <rect key="frame" x="24.666666666666657" y="2.6666666666666643" width="344" height="55"/>
+                                        <rect key="frame" x="102.66666666666669" y="2.6666666666666643" width="188" height="55"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeW-Fo-YGJ">
                                         <rect key="frame" x="319" y="18" width="20" height="24"/>
@@ -18153,11 +18153,9 @@
         <designable name="DMG-XN-TW8">
             <size key="intrinsicContentSize" width="109" height="32"/>
         </designable>
-        <designable name="EIk-LS-NxC"/>
         <designable name="EYq-la-TRE">
             <size key="intrinsicContentSize" width="57" height="34"/>
         </designable>
-        <designable name="FjM-I2-4cV"/>
         <designable name="HVr-Xz-dQk">
             <size key="intrinsicContentSize" width="102" height="30"/>
         </designable>
@@ -18198,7 +18196,7 @@
         <image name="Group 6374" width="69" height="40"/>
         <image name="Group 6786" width="140" height="140"/>
         <image name="Group 7384" width="135" height="135"/>
-        <image name="Group 7741" width="244" height="244"/>
+        <image name="Group 7741" width="172" height="172"/>
         <image name="Group 7847" width="828" height="314"/>
         <image name="Group 8078" width="19" height="19"/>
         <image name="Group 8098" width="838" height="329"/>
@@ -18234,7 +18232,7 @@
         <image name="home" width="19" height="21"/>
         <image name="ic_default_img" width="400" height="255"/>
         <image name="image_2022_12_20T13_15_20_335Z" width="344" height="208"/>
-        <image name="image_2022_12_20T13_15_20_335Z 1" width="344" height="208"/>
+        <image name="image_2022_12_20T13_15_20_335Z 1" width="188" height="114"/>
         <image name="logo (1)" width="116" height="86"/>
         <image name="min" width="13" height="2"/>
         <image name="myEarning" width="29" height="25"/>

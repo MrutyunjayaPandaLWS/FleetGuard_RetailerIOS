@@ -63,6 +63,7 @@ func redemptionCatalogueMyCartListApi(parameter: JSON){
         }
     }
     func redemptionCatalogueListApi(parameter: JSON){
+        self.redemptionCatalougeListArray1.removeAll()
         DispatchQueue.main.async {
             self.VC?.startLoading()
         }

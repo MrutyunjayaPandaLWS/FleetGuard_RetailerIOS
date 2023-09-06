@@ -210,10 +210,11 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
     
     func loginSubmissionApi(){
         let parameter = [
+            "SessionId" : "FLEETGUARD",
             "Password": "123456",
             "UserName": "\(self.enterMobileNumber)",
             "UserActionType": "GetPasswordDetails",
-            "Browser": "IOS",
+            "Browser": "55",
             "LoggedDeviceName": "IOS",
             "PushID": "\(pushID)",
             "UserType": "Customer",
