@@ -308,7 +308,7 @@ class FG_RegistrationVC: BaseViewController, popUpDelegate, DropDownDelegate, UI
             "StateId":"\(selectedStateID)",
             "CityId":"\(selectedCityID)",
             "HelpTopicID":"31",
-            "SourceTypeId" :"3"
+            "SourceTypeId" :"9"
         ] as [String: Any]
         print(parameters)
         self.VM.myRegistrationAPI(parameter: parameters)

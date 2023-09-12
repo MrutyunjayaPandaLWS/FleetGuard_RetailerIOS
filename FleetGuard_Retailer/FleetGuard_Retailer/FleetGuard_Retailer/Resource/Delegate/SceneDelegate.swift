@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 import SlideMenuControllerSwift
 import IQKeyboardManagerSwift
@@ -17,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     var slider : SlideMenuController!
     var nav : UINavigationController!
-    
+    var securityStatus = false
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -92,6 +93,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func sceneDidBecomeActive(_ scene: UIScene) {
+        if securityStatus == false{authenticateUser()}else{self.securityStatus = false}
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
     }
@@ -111,4 +113,39 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+    
+    func authenticateUser() {
+        self.securityStatus = true
+            let authenticationContext = LAContext()
+            var error: NSError?
+            let reasonString = "Touch the Touch ID sensor to unlock."
+
+            // Check if the device can evaluate the policy.
+            if authenticationContext.canEvaluatePolicy(LAPolicy.deviceOwnerAuthentication, error: &error) {
+
+                authenticationContext.evaluatePolicy( .deviceOwnerAuthentication, localizedReason: reasonString, reply: { (success, evalPolicyError) in
+
+                    if success {
+                        print("success")
+                        
+                    } else {
+                        if let evaluateError = error as NSError? {
+                            // enter password using system UI
+                        }else{
+                            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                                UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
+                                exit(EXIT_SUCCESS)
+                                
+                                         }
+                        }
+
+                    }
+                })
+
+            } else {
+                print("toch id not available")
+               // enter password using system UI
+            }
+        }
+    
 }

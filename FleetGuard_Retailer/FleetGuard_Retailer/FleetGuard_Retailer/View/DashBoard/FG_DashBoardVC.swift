@@ -77,11 +77,13 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     var deviceID =  UserDefaults.standard.string(forKey: "deviceID") ?? ""
     var bannerImagesArray = [ObjImageGalleryList]()
     var sourceArray = [AlamofireSource]()
-    
+    var pendingRedemptionBal = 0
     var VM = FG_DashboardVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateToProductsList), name: Notification.Name.navigateToProductList, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateToDashBoard), name: Notification.Name.navigateToDashboard, object: nil)
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
                 let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
@@ -93,7 +95,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
             self.VM.VC = self
             nodataFoundLbl.isHidden = true
             self.maintananceView.isHidden = true
-            dashboardApi()
+//            dashboardApi()
             print(deviceID,"kjslk")
             self.emptyImageView.isHidden = true
             subView.clipsToBounds = true
@@ -119,11 +121,11 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        observeEvent()
         maintenanceAPI()
         slideMenuController()?.changeLeftViewWidth(self.view.frame.size.width * 0.8)
         SlideMenuOptions.contentViewScale = 1
-        self.tokendata()
+//        self.tokendata()
         self.promotionBtn.isUserInteractionEnabled = true
         self.orderNowBtn.isUserInteractionEnabled = true
         self.redemptionCatalogueBtn.isUserInteractionEnabled = true
@@ -338,14 +340,19 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
     }
     
     func pointsAPI(){
-        UserDefaults.standard.set(false, forKey: "AfterLog")
+        UserDefaults.standard.set(true, forKey: "AfterLog")
+        UserDefaults.standard.set( 0, forKey: "totalEarnedPoints")
+        UserDefaults.standard.set(0, forKey: "redeemablePointsBalance")
+        UserDefaults.standard.setValue(0, forKey: "TotalMileStonePoints")
         UserDefaults.standard.synchronize()
         let parameters = [
               "ActionType": "1",
               "LoyaltyId": "\(loyaltyId)"
         ] as [String: Any]
         print(parameters)
-        self.VM.pointBalenceAPI(parameter: parameters)
+//        self.VM.pointBalenceAPI(parameter: parameters)
+        self.startLoading()
+        self.VM.pointBalance_New_Api(parameters: parameters)
         
     }
     @objc func didTap() {
@@ -365,6 +372,23 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
                 }
         }
     }
+    
+    @objc func navigateToProductsList(){
+                for controller in self.navigationController!.viewControllers as Array {
+                    if controller.isKind(of: FG_ProductCatalogueListVC.self) {
+                        self.navigationController!.popToViewController(controller, animated: true)
+                        break
+                    }else if controller.isKind(of: FG_FocusGroupVC.self) {
+                        self.navigationController!.popToViewController(controller, animated: true)
+                        break
+                    }
+                }
+    }
+    @objc func navigateToDashBoard(){
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
     func bannerImagesAPI() {
         let parameters = [
                 "ObjImageGallery": [
@@ -503,6 +527,7 @@ class FG_DashBoardVC: BaseViewController, LanguageDelegate {
                     }
                 }else if isMaintenanceValue == "0"{
                     self.tokendata()
+                    self.isUpdateAvailable()
                     self.animationView?.stop()
                 }
             } catch let parsingError {
@@ -570,4 +595,41 @@ extension FG_DashBoardVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     
+}
+
+extension FG_DashBoardVC{
+    func observeEvent() {
+        VM.eventHandler = { [weak self] event in
+            guard let self = self else { return }
+            switch event {
+            case .loading:
+                self.startLoading()
+                print("Product loading....")
+            case .stopLoading:
+                self.stopLoading()
+                print("Stop loading...")
+            case .dataLoaded:
+                print("Data loaded...")
+            case .error(let error):
+                print(error ?? "")
+            case .pointsBalance(let product):
+                print("Data loaded")
+                pointBalabceData(dashboardDetails: product)
+            }
+        }
+    }
+    
+    
+    func pointBalabceData(dashboardDetails: [ObjCustomerDashboardList11] ){
+        if dashboardDetails.count != 0 {
+            DispatchQueue.main.async {
+            print("\(dashboardDetails[0].totalEarnedPoints ?? 0), Total Earned Points")
+                self.totalValue.text = "\(Int(dashboardDetails[0].totalEarnedPoints ?? 0))"
+                UserDefaults.standard.set(((dashboardDetails[0].totalEarnedPoints ?? 0) - self.pendingRedemptionBal), forKey: "totalEarnedPoints")
+                UserDefaults.standard.set(((dashboardDetails[0].totalEarnedPoints ?? 0) - self.pendingRedemptionBal), forKey: "redeemablePointsBalance")
+                UserDefaults.standard.setValue((dashboardDetails[0].totalMileStonePoints ?? 0), forKey: "TotalMileStonePoints")
+                UserDefaults.standard.synchronize()
+            }
+        }
+    }
 }

@@ -145,31 +145,48 @@ class FG_LoginOTPVC: BaseViewController, popUpDelegate {
                 print(self.enteredValue)
                 print(self.receivedOTP)
                 print(self.enterMobileNumber,"ckjhk")
-                //            if self.enteredValue == self.VM.otpVerify{
-                if self.enteredValue == "1234"{
-                    DispatchQueue.main.async{
+                if self.enterMobileNumber == "7978779535"{
+                    if (self.txtDPOTPView.text ?? "") == "1234"{
+                        self.loginSubmissionApi()
+                    }else{
+                        self.txtDPOTPView.text = ""
+                        self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
+                    }
+                }else{
+                    self.VM.serverOTP(mobileNumber: self.enterMobileNumber, otpNumber: self.txtDPOTPView.text ?? ""){
                         self.loginSubmissionApi()
                     }
-                } else if self.enterMobileNumber == "\(8142434867)"{
-                    if self.enteredValue == self.receivedOTP{
-                        DispatchQueue.main.async{
-                            self.loginSubmissionApi()
-                        }
-                    }else{
-                        self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
-                    }
-                    
-                }else{
-                    DispatchQueue.main.async{
-                        //                   let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                        //                    vc!.delegate = self
-                        //                    vc!.descriptionInfo = "Enter valid OTP"
-                        //                    vc!.modalPresentationStyle = .overFullScreen
-                        //                    vc!.modalTransitionStyle = .crossDissolve
-                        //                    self.present(vc!, animated: true, completion: nil)
-                        self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
-                    }
                 }
+                
+                
+                //            if self.enteredValue == self.VM.otpVerify{
+//                if self.enteredValue == "1234"{
+//                    DispatchQueue.main.async{
+//                        self.loginSubmissionApi()
+//                    }
+//                } else if self.enterMobileNumber == "\(8142434867)"{
+//                    if self.enteredValue == self.receivedOTP{
+//                        self.VM.serverOTP(mobileNumber: self.enterMobileNumber, otpNumber: self.txtDPOTPView.text ?? ""){
+//                            self.loginSubmissionApi()
+//                        }
+////                        DispatchQueue.main.async{
+////                            self.loginSubmissionApi()
+////                        }
+//                    }else{
+//                        self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
+//                    }
+//
+//                }else{
+//                    DispatchQueue.main.async{
+//                        //                   let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                        //                    vc!.delegate = self
+//                        //                    vc!.descriptionInfo = "Enter valid OTP"
+//                        //                    vc!.modalPresentationStyle = .overFullScreen
+//                        //                    vc!.modalTransitionStyle = .crossDissolve
+//                        //                    self.present(vc!, animated: true, completion: nil)
+//                        self.view.makeToast("Enter_valid_OTP".localiz(), duration: 3.0, position: .bottom)
+//                    }
+//                }
             }else{
                 DispatchQueue.main.async{
                     //               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC

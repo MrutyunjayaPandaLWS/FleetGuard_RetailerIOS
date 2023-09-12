@@ -43,6 +43,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
     var pincode = ""
     var address1 = ""
     var customerName = ""
+    var customerFullName = ""
     var mobile = ""
     var emailId = ""
     var countryId = 0
@@ -61,7 +62,7 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
     var redemptionTypeId = 0
     
     var userID = UserDefaults.standard.integer(forKey: "UserID")
-    var customerMobile = UserDefaults.standard.string(forKey: "CustomerMobile") ?? ""
+    var customerMobile = UserDefaults.standard.string(forKey: "Mobile") ?? ""
     var merchanMobile = UserDefaults.standard.string(forKey: "MerchantMobile") ?? ""
     let emailID = UserDefaults.standard.string(forKey: "CustomerEmail") ?? ""
     let firstname = UserDefaults.standard.string(forKey: "FirstName") ?? ""
@@ -176,28 +177,29 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
             print(contractorName, "Contractor Name")
             print(self.cityID, "City ID")
             if self.enteredValue.count == 4{
-                //            if self.OTPforVerification == self.enteredValue{
-                if "1234" == self.enteredValue{
+            self.VM.serverOTP(mobileNumber: self.customerMobile, otpNumber: self.otpView.text ?? ""){
+//                if self.OTPforVerification == self.enteredValue{
+                    //                if "1234" == self.enteredValue{
                     
                     self.stopLoading()
                     self.timer.invalidate()
                     if self.contractorName == ""{
-                        productsParameter = [
+                        self.productsParameter = [
                             "ActionType": 51,
-                            "ActorId": userID,
+                            "ActorId": self.userID,
                             "MemberName": "\(self.customerName)",
                             "ObjCatalogueDetails": [
                                 "DomainName": "FLEET_GUARD"
                             ],
                             "ObjCatalogueList": self.newproductArray as [[String: Any]],
-                            "ObjCustShippingAddressDetails":["Address1":"\(self.address1)","CityId":"\(self.cityID)", "CityName":"\(self.cityName)","CountryId":"\(self.countryId)","StateName": "\(self.stateName)","StateId":"\(self.stateID)","Zip":"\(self.pincode)","Email":"\(self.emailId)","FullName":"\(self.customerName)","Mobile": self.mobile],"SourceMode":5
+                            "ObjCustShippingAddressDetails":["Address1":"\(self.address1)","CityId":"\(self.cityID)", "CityName":"\(self.cityName)","CountryId":"\(self.countryId)","StateName": "\(self.stateName)","StateId":"\(self.stateID)","Zip":"\(self.pincode)","Email":"\(self.emailId)","FullName":"\(self.customerFullName)","Mobile": self.mobile],"SourceMode":9
                         ]
-                        print(productsParameter ?? [])
+                        print(self.productsParameter ?? [])
                     }else{
                         self.productsParameter = [
                             "ActionType": 51,
-                            "ActorId": userID,
-                            "MemberName": "\(contractorName)",
+                            "ActorId": self.userID,
+                            "MemberName": "\(self.contractorName)",
                             "ObjCatalogueDetails": [
                                 "DomainName": "FLEET_GUARD"
                             ],
@@ -207,18 +209,18 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
                                 "CityName": "\(self.cityName)",
                                 "CountryId": 103,
                                 "Email": "\(self.emailId)",
-                                "FullName": "\(contractorName)",
-                                "Mobile": "\(loyaltyId)",
+                                "FullName": "\(self.customerFullName)",
+                                "Mobile": "\(self.loyaltyId)",
                                 "StateId": self.stateID,
                                 "StateName": "\(self.stateName)",
                                 "Zip": "\(self.pincode)"
                             ],
-                            "SourceMode": 5
+                            "SourceMode": 9
                             
                         ] as [String: Any]
                         print(self.productsParameter ?? [], "Dream Gift")
                     }
-                    self.VM.redemptionSubmission(parameters: productsParameter!) { response in
+                self.VM.redemptionSubmission(parameters: self.productsParameter!) { response in
                         print(response?.returnMessage ?? "", "Redemption Submission")
                         print(response?.returnValue ?? "", "ReturnValue")
                         let message = response?.returnMessage ?? ""
@@ -256,20 +258,21 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
                             }
                         }
                     }
-                }else{
-                    
-                    DispatchQueue.main.async{
-                        //                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
-                        //                        vc!.delegate = self
-                        //                        vc!.titleInfo = ""
-                        //                        vc!.descriptionInfo = "InValid OTP"
-                        //                        vc!.modalPresentationStyle = .overCurrentContext
-                        //                        vc!.modalTransitionStyle = .crossDissolve
-                        //                        self.present(vc!, animated: true, completion: nil)
-                        
-                        self.view.makeToast("InValid_OTP".localiz(), duration: 3.0, position: .bottom)
-                    }
-                    
+//                }
+//                else{
+//
+//                    DispatchQueue.main.async{
+//                        //                        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
+//                        //                        vc!.delegate = self
+//                        //                        vc!.titleInfo = ""
+//                        //                        vc!.descriptionInfo = "InValid OTP"
+//                        //                        vc!.modalPresentationStyle = .overCurrentContext
+//                        //                        vc!.modalTransitionStyle = .crossDissolve
+//                        //                        self.present(vc!, animated: true, completion: nil)
+//
+//                        self.view.makeToast("InValid_OTP".localiz(), duration: 3.0, position: .bottom)
+//                    }
+//
                 }
             }else if enteredValue.count == 0 {
                 DispatchQueue.main.async{
@@ -304,11 +307,12 @@ class FG_RedemptionOTPVC: BaseViewController, popUpDelegate,UITextFieldDelegate 
     func getOTP(){
         DispatchQueue.main.async {
             let parameterJSON = [
-                "UserName": "",
-                "UserId": -1,
+                "UserName": self.loyaltyId ?? "" ,
+                "UserId": self.userID ?? "",
                 "MobileNo": "\(self.customerMobile)",
-                "OTPType": "Enrollment",
-                "MerchantUserName": "\(MerchantUserName)"
+                "MerchantUserName": "\(MerchantUserName)",
+                "Name": "\(self.firstname)",
+                "CustomerType": "Retailer"
             ] as [String: Any]
             print(parameterJSON)
             self.OTPAPI(paramters: parameterJSON)

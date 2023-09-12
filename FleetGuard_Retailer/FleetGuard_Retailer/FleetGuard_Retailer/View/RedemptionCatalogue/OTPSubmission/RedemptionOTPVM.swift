@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 
 class RedemptionOTPVM{
@@ -218,5 +219,46 @@ class RedemptionOTPVM{
             }
         }
 
+    }
+    
+    func  serverOTP(mobileNumber : String, otpNumber : String,completion: @escaping ()->()) {
+        DispatchQueue.main.async {
+            self.VC?.startLoading()
+        }
+        let parameters = [
+                "ActionType":"Get Encrypted OTP",
+                "MobileNo": mobileNumber,
+                "OTP": otpNumber,
+                "UserName":""
+        ] as [String: Any]
+        print(parameters)
+        self.requestAPIs.OTP_Validation_API(parameters: parameters) { (result, error) in
+            if error == nil{
+                if result != nil{
+                    DispatchQueue.main.async {
+                    let response = result?.returnMessage ?? ""
+                        print(response, "- OTP")
+                        if response > "0"{
+//                        if response <= "0"{
+                            completion()
+                        }else{
+                            DispatchQueue.main.async{
+                                self.VC?.view.makeToast("Enter_valid_OTP".localiz(), duration: 2.0, position: .bottom)
+                                self.VC?.otpView.text = ""
+                            }
+                        }
+                        self.VC?.stopLoading()
+                    }
+                }else{
+                    DispatchQueue.main.async {
+                        self.VC?.stopLoading()
+                    }
+                }
+            }else{
+                DispatchQueue.main.async {
+                    self.VC?.stopLoading()
+                }
+            }
+        }
     }
    }

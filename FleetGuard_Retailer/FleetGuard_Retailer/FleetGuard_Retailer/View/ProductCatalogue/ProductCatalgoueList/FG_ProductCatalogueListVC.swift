@@ -18,12 +18,18 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     func sendProductFilter(_ vc: FG_ProductCatalogueFilterVC) {
         self.VM.productsArray.removeAll()
         self.VM.productListArray.removeAll()
-        
+        filtercatagoryId = vc.catagoryId
+        filtercatagoryId1 = vc.catagoryId1
+        filtercatagoryId2 = vc.catagoryId2
+        filtercatagoryId3 = vc.catagoryId3
+        catagoryName = vc.catagoryName
+        self.passingProductId = vc.passingProductId
         
         self.categoryId = vc.selectedArrayDataID
         self.categoryId1 = vc.selectedArrayDataID2
         self.categoryId2 = vc.selectedArrayDataID3
         self.categoryId3 = vc.selectedArrayDataID4
+        
         //if vc.selectedArrayDataID != 0{
 //            self.categoryId1 = 0
 //            self.categoryId2 = 0
@@ -59,14 +65,18 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
     var userId = UserDefaults.standard.string(forKey: "UserID") ?? ""
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     var noofelements = 0
-    var startindex = 0
+    var startindex = 1
     
     var categoryId = 0
     var categoryId1 = 0
     var categoryId2 = 0
     var categoryId3 = 0
-    
-    
+    var passingProductId = 1
+    var catagoryName = ""
+    var filtercatagoryId = 1
+    var filtercatagoryId1 = 0
+    var filtercatagoryId2 = 0
+    var filtercatagoryId3 = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -96,6 +106,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
             }
         }else{
             self.VM.productListArray.removeAll()
+            self.startindex = 1
             self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
             self.myCartApi()
         }
@@ -168,6 +179,13 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
             vc.selectedArrayDataID = categoryId
             vc.selectedArrayDataID3 = categoryId2
             vc.selectedArrayDataID4 = categoryId3
+            vc.passingProductId = self.passingProductId
+            vc.catagoryId  = filtercatagoryId
+            vc.catagoryId1 = filtercatagoryId1
+            vc.catagoryId2 = filtercatagoryId2
+            vc.catagoryId3 = filtercatagoryId3
+            vc.catagoryName = catagoryName
+            
             vc.modalTransitionStyle = .coverVertical
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true)
@@ -198,7 +216,7 @@ class FG_ProductCatalogueListVC: BaseViewController, SendDataToDetailsDelegate,s
                     "SearchText": searchText,
                     "LoyaltyID": "\(self.loyaltyId)",
                     "StartIndex":startIndex,
-                    "PageSize": 20,
+                    "PageSize": 10,
                     "ProductDetails": [
                         "BrandId": 0,
                         "Cat1": "\(categoryId)",
@@ -315,8 +333,9 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
         cell.mrpValue.text = "\(splitData[0])"
         cell.productName.backgroundColor = .white
         let image = self.VM.productListArray[indexPath.row].productImg ?? ""
-        if image.count == 0 || image == nil{
+        if image.count == 0{
             cell.imageViewBtn.isEnabled = false
+            cell.productImage.image = UIImage(named: "Image 3")
         }else{
             cell.imageViewBtn.isEnabled = true
             let imageUrl = "\(product_Image_Url)\(String(describing: image.replacingOccurrences(of: " ", with: "%20")))"
@@ -354,13 +373,13 @@ extension FG_ProductCatalogueListVC: UITableViewDataSource, UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
             if indexPath.row == VM.productListArray.count - 2{
-                if noofelements == 20{
+                if noofelements == 10{
                     startindex = startindex + 1
                     self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
-                }else if noofelements > 20{
+                }else if noofelements > 10{
                     startindex = startindex + 1
                     self.productListApi(startIndex: startindex, searchText: self.searchTF.text ?? "")
-                }else if noofelements < 20{
+                }else if noofelements < 10{
                     return
                 }else{
                     print("n0 more elements")

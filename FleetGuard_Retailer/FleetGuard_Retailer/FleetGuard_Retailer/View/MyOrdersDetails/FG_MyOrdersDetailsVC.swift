@@ -86,6 +86,7 @@ class FG_MyOrdersDetailsVC: BaseViewController, DateSelectedDelegate {
             "JToDate": "\(selectedToDate)",
             "OrderNumber": "\(ordernumber)"
         ] as [String: Any]
+        print(parameters, "My orders details")
         self.VM.myOrderDetailsListingAPI(parameters: parameters)
     }
     
@@ -117,7 +118,12 @@ class FG_MyOrdersDetailsVC: BaseViewController, DateSelectedDelegate {
 
 extension FG_MyOrdersDetailsVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return VM.myOrderListingDetailsArray.count
+        if VM.myOrderListingDetailsArray.count > 0 {
+            return VM.myOrderListingDetailsArray[0].lstCustomerCartApi?.count ?? 0
+        }else{
+            return 0
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -126,7 +132,7 @@ extension FG_MyOrdersDetailsVC: UITableViewDelegate,UITableViewDataSource {
         cell.productHeadingLbl.text = VM.myOrderListingDetailsArray[0].lstCustomerCartApi?[indexPath.row].productName ?? "-"
         cell.partNoLbl.text = "\(VM.myOrderListingDetailsArray[0].lstCustomerCartApi?[indexPath.row].prodCode ?? "-")"
         cell.orderQTYLbl.text = "\(VM.myOrderListingDetailsArray[0].lstCustomerCartApi?[indexPath.row].quantity ?? 0)"
-        cell.dispatchQtyLbl.text = "\(VM.myOrderListingDetailsArray[0].lstCustomerCartApi?[indexPath.row].productStockQuantity ?? 0)"
+        cell.dispatchQtyLbl.text = "\(VM.myOrderListingDetailsArray[0].lstCustomerCartApi?[indexPath.row].disPatchQty ?? 0)"
         cell.statusLbl.text = "\(VM.myOrderListingDetailsArray[0].lstCustomerCartApi?[indexPath.row].statusName ?? "")"
 
         let imageURL = VM.myOrderListingDetailsArray[0].lstCustomerCartApi?[indexPath.row].productImg ?? ""

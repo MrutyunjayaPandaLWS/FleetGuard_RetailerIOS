@@ -12,6 +12,7 @@ import LanguageManager_iOS
 class FG_DashboardVM: popUpDelegate{
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
     
+    var eventHandler: ((_ event: Event) -> Void)?
     
     weak var VC: FG_DashBoardVC?
     weak var VC1: FG_SideMenuVC?
@@ -50,7 +51,8 @@ class FG_DashboardVM: popUpDelegate{
                                 print(result?.objCustomerDashboardList?[0].memberSince ?? "", "Membersince")
                                 print(result?.objCustomerDashboardList?[0].notificationCount ?? "", "NotificationCount")
                                 print(result?.objCustomerDashboardList?[0].redeemablePointsBalance ?? "", "totalpoints")
-                                
+                                UserDefaults.standard.setValue(result?.totalPendingCount ?? 0, forKey: "totalPendingCount")
+                                self.VC?.pendingRedemptionBal = result?.totalPendingCount ?? 0
                                 
                                 
                                 
@@ -341,4 +343,31 @@ class FG_DashboardVM: popUpDelegate{
     }
     
     
+}
+
+extension FG_DashboardVM{
+    enum Event {
+        case loading
+        case stopLoading
+        case dataLoaded
+        case error(Error?)
+        case pointsBalance(product: [ObjCustomerDashboardList11])
+    }
+    
+    func pointBalance_New_Api(parameters: JSON) {
+        self.eventHandler?(.loading)
+        APIManager.shared.request(
+            modelType: PointBalenceModels.self, params: parameters,
+            type: ProductEndPoint.PointsBalance) {[weak self] response in
+                switch response {
+                case .success(let products):
+                    self?.eventHandler?(.stopLoading)
+                    self?.eventHandler?(.pointsBalance(product: products.objCustomerDashboardList ?? []))
+                case .failure(.unAthoried):
+                    self?.pointBalance_New_Api(parameters: parameters)
+                case .failure(let error):
+                    self?.eventHandler?(.error(error))
+                }
+            }
+    }
 }

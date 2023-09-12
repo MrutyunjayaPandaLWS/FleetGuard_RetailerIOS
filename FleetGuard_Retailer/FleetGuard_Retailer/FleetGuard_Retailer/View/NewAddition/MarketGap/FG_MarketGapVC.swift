@@ -22,6 +22,7 @@ class FG_MarketGapVC: BaseViewController, MarketingGapDelegate {
             vc.mrp = "\(splitData[0])"
             vc.productId = "\(self.VM.myMarketGapArray[tappedIndexPath.row].productId ?? 0)"
             vc.productDesc = "\(self.VM.myMarketGapArray[tappedIndexPath.row].productDesc ?? "")"
+            vc.productImageURL = cell.imageUrl
 //            vc.cateogryId = "\(self.VM.productListArray[tappedIndexPath.row].category ?? 0)"
          
             self.navigationController?.pushViewController(vc, animated: true)
@@ -107,13 +108,16 @@ extension FG_MarketGapVC: UITableViewDelegate,UITableViewDataSource {
         cell.dapAmount.text = "\(VM.myMarketGapArray[indexPath.row].salePrice ?? 0)"
         cell.mrpAmountLbl.text = VM.myMarketGapArray[indexPath.row].mrp ?? "-"
         cell.productNameLbl.text = VM.myMarketGapArray[indexPath.row].productName ?? "-"
-        cell.partNoLbl.text = "\("Part No".localiz()): \(VM.myMarketGapArray[indexPath.row].partyLoyaltyId ?? "-")"
+        cell.partNoLbl.text = "\("Part No".localiz()): \(VM.myMarketGapArray[indexPath.row].productCode ?? "-")"
         
         let imageData = VM.myMarketGapArray[indexPath.row].productImg ?? ""
         //let imageImage = (self.VM.offersandPromotionsArray[indexPath.row].proImage ?? "").dropFirst(3)
         if imageData.count > 0{
-            let totalImgURL = product_Image_Url + imageData
-            cell.productImage.kf.setImage(with: URL(string: totalImgURL), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"))
+            let totalImgURL =  "\(product_Image_Url)\(String(describing: imageData.replacingOccurrences(of: " ", with: "%20")))"
+            cell.productImage.kf.setImage(with: URL(string: totalImgURL), placeholder: UIImage(named: "Image 3"))
+            cell.imageUrl = totalImgURL
+        }else{
+            cell.productImage.image = UIImage(named: "Image 3")
         }
         cell.forwardButton.tag = indexPath.row
         cell.delegate = self

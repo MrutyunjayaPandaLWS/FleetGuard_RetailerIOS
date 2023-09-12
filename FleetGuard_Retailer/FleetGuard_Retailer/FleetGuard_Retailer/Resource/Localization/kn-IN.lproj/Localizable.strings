@@ -50,7 +50,7 @@ Created by ADMIN on 17/01/2023.
 "Shop_name" = "ಅಂಗಡಿ ಹೆಸರು";
 "total_Point_bal" = "ಒಟ್ಟು ಪಾಯಿಂಟ್‌ಗಳ ಬ್ಯಾಲೆನ್ಸ್";
 "passbook_number" = "ಪಾಸ್";
-"welcome" = "ಸ್ವಾಗತ!";
+"welcome" = "ಸ್ವಾಗತ";
 "product_Catalogoue" = "ಪ್ರಾಡಕ್ಟ ಕ್ಯಾಟಲಾಗ್";
 "redemption_catalogue" = "ರಿಡೆಂಪ್ಶನ್ ಕ್ಯಾಟಲಾಗ್";
 "know_more" = "ಹೆಚ್ಚು ತಿಳಿಯಿರಿ";
@@ -271,3 +271,8 @@ Created by ADMIN on 17/01/2023.
 "Order More" = "Order More";
 "Query Details" = "ಪ್ರಶ್ನೆ ವಿವರಗಳು";
 "Quantity" = "ಪ್ರಮಾಣ";
+
+"Please select the points range or category or both" = "ದಯವಿಟ್ಟು ಅಂಕಗಳ ಶ್ರೇಣಿ ಅಥವಾ ವರ್ಗ ಅಥವಾ ಎರಡನ್ನೂ ಆಯ್ಕೆಮಾಡಿ";
+"Please enter the max points" = "ದಯವಿಟ್ಟು ಗರಿಷ್ಠ ಅಂಕಗಳನ್ನು ನಮೂದಿಸಿ";
+"Please enter the Min points" = "ದಯವಿಟ್ಟು ಕನಿಷ್ಠ ಅಂಕಗಳನ್ನು ನಮೂದಿಸಿ";
+

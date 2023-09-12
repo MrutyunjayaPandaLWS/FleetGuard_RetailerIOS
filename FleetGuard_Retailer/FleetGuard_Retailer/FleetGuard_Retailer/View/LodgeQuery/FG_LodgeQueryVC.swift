@@ -354,7 +354,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     cell.selectionStyle = .none
     
     cell.queryId.text = VM.queryListArray[indexPath.row].customerTicketRefNo ?? ""
-    cell.statusLbl.text = VM.queryListArray[indexPath.row].ticketStatus ?? "-"
+    cell.statusLbl.text = "  \(VM.queryListArray[indexPath.row].ticketStatus ?? "-")   "
     
     let querydateAndTime = VM.queryListArray[indexPath.row].jCreatedDate ?? ""
     let querydateAndTimeArray = querydateAndTime.components(separatedBy: " ")
@@ -364,16 +364,16 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     cell.queryInfoLbl.text = VM.queryListArray[indexPath.row].helpTopic ?? "-"
     
 //    cell.timeLbl.text = "\(querydateAndTimeArray[1])"
-    
-    if cell.statusLbl.text == "Pending"{
+    let status = VM.queryListArray[indexPath.row].ticketStatus ?? "-"
+    if status == "Pending"{
         cell.statusLbl.backgroundColor = #colorLiteral(red: 0.8146452308, green: 0.6417329907, blue: 0.1795035601, alpha: 1)
-    }else if cell.statusLbl.text == "Approved"{
+    }else if status == "Approved"{
         cell.statusLbl.backgroundColor = #colorLiteral(red: 0, green: 0.616204381, blue: 0, alpha: 1)
-    }else if cell.statusLbl.text == "Resolved"{
+    }else if status == "Resolved"{
         cell.statusLbl.backgroundColor = #colorLiteral(red: 0, green: 0.616204381, blue: 0, alpha: 1)
-    }else if cell.statusLbl.text == "Re-Open"{
+    }else if status == "Re-Open"{
         cell.statusLbl.backgroundColor = #colorLiteral(red: 0.8146452308, green: 0.6417329907, blue: 0.1795035601, alpha: 1)
-    }else if cell.statusLbl.text == "Resolved-Follow Up"{
+    }else if status == "Resolved-Follow Up"{
         cell.statusLbl.backgroundColor = #colorLiteral(red: 0, green: 0.616204381, blue: 0, alpha: 1)
     }else{
         cell.statusLbl.backgroundColor = #colorLiteral(red: 0.7347359657, green: 0, blue: 0, alpha: 1)

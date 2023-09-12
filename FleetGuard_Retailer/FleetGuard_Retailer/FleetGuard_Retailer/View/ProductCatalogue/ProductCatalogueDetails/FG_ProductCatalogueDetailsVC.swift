@@ -10,7 +10,11 @@ import Kingfisher
 import LanguageManager_iOS
 
 
-class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
+class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate, myCartLitingDelegate {
+    func navigateToBackPage() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
     
 
@@ -89,7 +93,7 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
             //  self.productListApi()
             localizatiuon()
             if productImageURL.count != 0{
-                let totalImgURL = product_Image_Url + productImageURL
+                let totalImgURL = productImageURL
                 productImage.kf.setImage(with: URL(string: "\(totalImgURL)"),placeholder: UIImage(named: "Image 3"))
             }
 
@@ -258,6 +262,7 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
             }
         }else{
             let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueMyCartVC") as! FG_ProductCatalogueMyCartVC
+            vc.delegate = self
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -275,6 +280,7 @@ class FG_ProductCatalogueDetailsVC: BaseViewController, popUpDelegate {
             }
         }else{
             let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_ProductCatalogueMyCartVC") as! FG_ProductCatalogueMyCartVC
+            vc.delegate = self
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

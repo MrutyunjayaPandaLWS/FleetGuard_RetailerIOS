@@ -51,7 +51,7 @@ Created by ADMIN on 17/01/2023.
 "total_Point_bal" = "Total Point Balance";
 "total_Point_bal" = "Total Point Balance";
 "passbook_number" = "Passbook Number";
-"welcome" = "Welcome !";
+"welcome" = "Welcome";
 "product_Catalogoue" = "Product Catalogue";
 "redemption_catalogue" = "Redemption Catalogue";
 "know_more" = "Know more";
@@ -267,3 +267,6 @@ Click Here";
 "Order More" = "Order More";
 "Order No" = "Order No";
 "Quantity" = "Quantity";
+"Please select the points range or category or both" = "Please select the points range or category or both";
+"Please enter the max points" = "Please enter the max points";
+"Please enter the Min points" = "Please enter the Min points";

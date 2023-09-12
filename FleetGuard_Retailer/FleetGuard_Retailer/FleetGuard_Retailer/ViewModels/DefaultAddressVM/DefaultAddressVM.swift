@@ -25,7 +25,8 @@ class DefaultAddressVM: popUpDelegate{
                     DispatchQueue.main.async {
                         self.VC?.stopLoading()
                         self.defaultAddressArray = result?.lstCustomerJson ?? []
-                        self.VC?.addressTextView.text = "\(self.defaultAddressArray[0].firstName ?? "-"),\n\(self.defaultAddressArray[0].mobile ?? "-"),\n\(self.defaultAddressArray[0].address1 ?? "-"),\n\(self.defaultAddressArray[0].cityName ?? "-"),\n\(self.defaultAddressArray[0].stateName ?? "-"),\n\(self.defaultAddressArray[0].countryName ?? "-"),\n\(self.defaultAddressArray[0].zip ?? "-")"
+//                        \n\(self.defaultAddressArray[0].mobile ?? "-"),
+                        self.VC?.addressTextView.text = "\(self.defaultAddressArray[0].firstName ?? "-"),\n\(self.defaultAddressArray[0].address1 ?? "-"),\n\(self.defaultAddressArray[0].cityName ?? "-"),\n\(self.defaultAddressArray[0].stateName ?? "-"),\n\(self.defaultAddressArray[0].countryName ?? "-"),\n\(self.defaultAddressArray[0].zip ?? "-")"
                         self.VC?.selectedname = self.defaultAddressArray[0].firstName ?? "-"
                         self.VC?.selectedemail = self.defaultAddressArray[0].email ?? "-"
                         self.VC?.selectedmobile = self.defaultAddressArray[0].mobile ?? "-"

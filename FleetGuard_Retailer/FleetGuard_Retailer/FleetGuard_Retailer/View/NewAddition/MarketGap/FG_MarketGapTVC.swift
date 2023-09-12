@@ -21,7 +21,7 @@ class FG_MarketGapTVC: UITableViewCell {
     @IBOutlet weak var partNoLbl: UILabel!
     @IBOutlet weak var productNameLbl: UILabel!
     @IBOutlet weak var productImage: UIImageView!
-    
+    var imageUrl = ""
     var delegate: MarketingGapDelegate!
 
     override func awakeFromNib() {

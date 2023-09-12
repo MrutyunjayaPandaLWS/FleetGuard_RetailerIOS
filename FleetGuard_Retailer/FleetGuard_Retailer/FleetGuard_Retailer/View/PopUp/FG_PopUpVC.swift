@@ -61,6 +61,10 @@ class FG_PopUpVC: BaseViewController {
                 self.dismiss(animated: true){
                     self.delegate?.popupAlertDidTap(self)
                 }
+            }else if itsComeFrom == "EDIT"{
+                self.dismiss(animated: true){
+                    self.delegate?.popupAlertDidTap(self)
+                }
             }else{
                 self.dismiss(animated: true)
             }

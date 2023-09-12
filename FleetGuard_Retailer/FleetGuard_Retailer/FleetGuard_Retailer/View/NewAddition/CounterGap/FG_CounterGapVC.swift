@@ -23,7 +23,7 @@ class FG_CounterGapVC: BaseViewController, CounterGapDelegate {
             vc.productId = "\(self.VM.myCounterGapArray[tappedIndexPath.row].productId ?? 0)"
             vc.productDesc = "\(self.VM.myCounterGapArray[tappedIndexPath.row].productDesc ?? "")"
 //            vc.cateogryId = "\(self.VM.myCounterGapArray[tappedIndexPath.row].category ?? 0)"
-         
+            vc.productImageURL = cell.imageUrl
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
@@ -101,13 +101,16 @@ extension FG_CounterGapVC: UITableViewDelegate, UITableViewDataSource{
         cell.dapAmount.text = "\(VM.myCounterGapArray[indexPath.row].salePrice ?? 0)"
         cell.mrpAmountLbl.text = VM.myCounterGapArray[indexPath.row].mrp ?? "-"
         cell.productNameLbl.text = VM.myCounterGapArray[indexPath.row].productName ?? "-"
-        cell.partNoLbl.text = "\("Part No".localiz()): \(VM.myCounterGapArray[indexPath.row].partyLoyaltyId ?? "-")"
+        cell.partNoLbl.text = "\("Part No".localiz()): \(VM.myCounterGapArray[indexPath.row].productCode ?? "-")"
         
         let imageData = VM.myCounterGapArray[indexPath.row].productImg ?? ""
         //let imageImage = (self.VM.offersandPromotionsArray[indexPath.row].proImage ?? "").dropFirst(3)
         if imageData.count > 0{
-            let totalImgURL = product_Image_Url + imageData
-            cell.productImage.kf.setImage(with: URL(string: totalImgURL), placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"))
+            let totalImgURL = "\(product_Image_Url)\(String(describing: imageData.replacingOccurrences(of: " ", with: "%20")))"
+            cell.productImage.kf.setImage(with: URL(string: totalImgURL), placeholder: UIImage(named: "Image 3"))
+            cell.imageUrl = totalImgURL
+        }else{
+            cell.productImage.image = UIImage(named: "Image 3")
         }
         cell.forwardButton.tag = indexPath.row
         cell.selectionStyle = .none

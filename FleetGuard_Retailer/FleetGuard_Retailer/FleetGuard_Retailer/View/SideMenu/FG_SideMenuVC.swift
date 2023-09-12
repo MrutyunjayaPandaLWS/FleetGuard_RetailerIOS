@@ -96,7 +96,6 @@ class FG_SideMenuVC: BaseViewController, popUpDelegate {
             self.menuTitleArray()
             print(CGFloat(sideMenuArray.count * 50))
             self.sideMenuTableHeight.constant = 750
-            self.sinceLbl.text = "\("Since".localiz()) \(userSince)"
             localization()
             dashboardApi()
             pointsAPI()
@@ -146,6 +145,7 @@ class FG_SideMenuVC: BaseViewController, popUpDelegate {
                         self.totalBalance.text = "\(result?.lstCustomerFeedBackJsonApi?[0].passBookNumber ?? "-")"
                         let imageData = (result?.lstCustomerFeedBackJsonApi?[0].customerImage)?.dropFirst(1) ?? ""
                         self.profileImage.kf.setImage(with: URL(string: "\(Promo_ImageData)\(imageData)"), placeholder: UIImage(named: "ic_default_img"));
+                        self.sinceLbl.text = "\("Since".localiz()) \(result?.objCustomerDashboardList?[0].memberSince ?? "")"
                     }
                     self.stopLoading()
                 }

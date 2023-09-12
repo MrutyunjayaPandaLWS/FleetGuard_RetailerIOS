@@ -50,7 +50,7 @@ Created by ADMIN on 17/01/2023.
 "Shop_name" = "दुकान का नाम";
 "total_Point_bal" = "कुल जमा पॉईंट्स";
 "passbook_number" = "पासबुक नंबर";
-"welcome" = "स्वागत है!";
+"welcome" = "स्वागत है";
 "product_Catalogoue" = "प्रॉडक्ट कैटलॉग";
 "redemption_catalogue" = "रिडेम्पशन कैटलॉग";
 "know_more" = "अधिक जानीये";
@@ -185,7 +185,7 @@ Created by ADMIN on 17/01/2023.
 "New Range Addition" = "नई रेंज जोड़ें";
 "Counter Gap" = "काउंटर गैप";
 "Market Gap" = "मार्केट गैप";
-"Search by part no/ cross reference" = "भाग संख्या/क्रॉस संदर्भ द्वारा खोजें";
+"Search by part no/ cross reference" = "पार्ट नंबर / क्रॉस संदर्भ द्वारा खोजें";
 "Search by product" = "उत्पाद के आधार पर खोजें";
 "Please select Segment value" = "कृपया सेगमेंट वैल्यू चुनें";
 "Please select OME value" = "कृपया OME मान चुनें";
@@ -193,7 +193,7 @@ Created by ADMIN on 17/01/2023.
 "Product Image" = "उत्पाद छवि";
 "Maximum field should be higher then Minimum field" = "अधिकतम क्षेत्र न्यूनतम क्षेत्र से अधिक होना चाहिए";
 "RLP_No" = "RLP नंबर";
-"NoteDateason" = "नोट: दिनांक यथावत ";
+"NoteDateason" = "नोट : इस तारीख़ तक";
 "Add more part no" = "अतिरिक्त पार्ट नंबर जोड़ें";
 "Ref. No" = "संदर्भ संख्या";
 "Points Redeemed" = "रिडिम पॉईंट्स";
@@ -253,3 +253,10 @@ Created by ADMIN on 17/01/2023.
 "Model" = "Model";
 "Product Category" = "Product Category";
 "Quantity" = "मात्रा";
+
+"Please select the points range or category or both" = "कृपया अंक सीमा या श्रेणी या दोनों का चयन करें";
+"Please enter the max points" = "कृपया अधिकतम अंक दर्ज करें";
+"Please enter the Min points" = "कृपया न्यूनतम अंक दर्ज करें";
+
+
+

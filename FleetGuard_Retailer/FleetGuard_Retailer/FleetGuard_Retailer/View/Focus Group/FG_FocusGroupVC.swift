@@ -193,6 +193,7 @@ extension FG_FocusGroupVC{
         let image = self.VM.productListArray[indexPath.row].productImg ?? ""
         if image.count == 0 || image == nil{
             cell.imageViewBtn.isEnabled = false
+            cell.productImage.image = UIImage(named: "Image 3")
         }else{
             cell.imageViewBtn.isEnabled = true
             let imageUrl = "\(product_Image_Url)\(String(describing: image.replacingOccurrences(of: " ", with: "%20")))"

@@ -50,20 +50,20 @@ Created by ADMIN on 17/01/2023.
 "Shop_name" = "கடையின் பெயர்";
 "total_Point_bal" = "மொத்த புள்ளிகளின் கையிருப்பு";
 "passbook_number" = "பாஸ்புக் எண்";
-"welcome" = "வெல்கம்!";
+"welcome" = "வெல்கம்";
 "product_Catalogoue" = "பொருள் பட்டியல்";
-"redemption_catalogue" = "பரிசு பட்டியல்";
+"redemption_catalogue" = "பரிசு தொகுப்பு";
 "know_more" = "மேலும் தெரிந்துகொள்ள";
 "Add_More_Range" = "பார்ட் நம்பர் மேலும் அதிகரிக்க";
 "View_Products" = "பொருட்களைப் பார்க்க";
-"Order_Now" = "இப்போது ஆர்டர் செய்யுங்கள்";
+"Order_Now" = "தேவைகளை பதிவிடவும்";
 "Your_account_loged_in_by_other_mobile" = "உங்கள் கணக்கு மற்ற மொபைல் மூலம் உள்நுழைந்தது.";
 
 
 // MARK: - SIDE MENU
 
 "Profile" = "சுயவிபரம்";
-"My_Redemption_History" = "எனது மீட்பு தொகுப்பு";
+"My_Redemption_History" = "நான் வாங்கிய Gift விவரம்";
 "Redemption_Catalogue" = "மீட்பு தொகுப்பு";
 "Product_Catalogue" = "பொருள் பட்டியல்";
 "My_Promotions" = "சலுகைகள் & விளம்பரங்கள்";
@@ -77,9 +77,9 @@ Created by ADMIN on 17/01/2023.
 "My_Billings" = "என் பில்லிங்ஸ்";
 "My_Orders" = "எனது  ஆர்டர்";
 "RPL_Statement" = "RLP அறிக்கை";
-"My_Milestone_Redemption" = "எனது மைல்ஸ்டோன் மீட்பு";
+"My_Milestone_Redemption" = "எனது மைல்ஸ்டோன் விவரம்";
 "Retailer_code" = "கடைக்காரர்  குறியீட்டு எண்";
-"My_Earnings" = "என்னுடைய சேமிப்பு";
+"My_Earnings" = "என் சேமிப்பு";
 "My_Redemption" = "எனது மீட்பு";
 
 //MARK: - PROFILE
@@ -133,10 +133,10 @@ Created by ADMIN on 17/01/2023.
 "RPL_No" = "RPL எண்";
 "Balance_Points" = "இருப்பு புள்ளிகள்";
 "Milestone_Points" = "மைல்கல் புள்ளிகள்";
-"Redeem_Now" = "இப்பொழுது மீட்டுக்கொள்ளவும்";
+"Redeem_Now" = "பரிசு பொருள் பெற";
 "statementView" = "அறிக்கை காண";
 "points_trends" = "பாயிண்ட்களின் நிலவரம்";
-"range_trends" = "வகைகளின் நிலவரம்";
+"range_trends" = "பார்ட் நம்பர் நிலவரம்";
 "bonus_trend" = "போனஸ் புள்ளிகளின் நிலவரம்";
 
 "createLodgequeryInfo" = "உங்கள் வினவலை சமர்ப்பிக்கவும்";
@@ -202,7 +202,7 @@ Created by ADMIN on 17/01/2023.
 "Add more part no" = "மேலும் பொருள்களை சேர்க்க";
 
 "Ref. No" = "குறிப்பு எண்";
-"Points Redeemed" = "மீட்டெடுக்கப்பட்ட பாயிண்ட்கள்";
+"Points Redeemed" = "எடுக்கப்பட்ட  பாயிண்ட்கள்";
 "Qty" = "Qty";
 "Query Type" = "புகார் வகை";
 "offersAndPromotionsText" = "சலுகைகள் மற்றும் விளம்பரங்கள் இங்கே கிளிக் செய்யவும்";
@@ -245,12 +245,12 @@ Created by ADMIN on 17/01/2023.
 
 //MARK: NEW
 "Part No" = "பொருளின் எண்";
-"DAP" = "DAP";
+"DAP" = "அடக்க விலை";
 "MRP" = "MRP";
 "Short Description" = "குறுகிய விவரிப்பு";
 "Order Total" = "மொத்த ஆர்டர்";
 "Value" = "விலைமதிப்பு";
-"Place Order" = "ஆர்டர் செய்யவும்";
+"Place Order" = "Order செய்ய";
 
 //MARK: NEW
 "Dashbaord" = "டாஷ்போர்டு";
@@ -266,3 +266,11 @@ Created by ADMIN on 17/01/2023.
 "Model" = "Model";
 "Product Category" = "Product Category";
 "Quantity" = "அளவு";
+
+"Please select the points range or category or both" = "புள்ளிகள் வரம்பு அல்லது வகை அல்லது இரண்டையும் தேர்ந்தெடுக்கவும்";
+"Please enter the max points" = "அதிகபட்ச புள்ளிகளை உள்ளிடவும்";
+"Please enter the Min points" = "குறைந்தபட்ச புள்ளிகளை உள்ளிடவும்";
+
+
+
+

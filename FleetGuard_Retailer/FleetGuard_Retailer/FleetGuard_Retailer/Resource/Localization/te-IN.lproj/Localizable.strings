@@ -50,7 +50,7 @@ Created by ADMIN on 17/01/2023.
 "Shop_name" = "షాప్ పేరు";
 "total_Point_bal" = "మొత్తం పాయింట్ బ్యాలెన్స్";
 "passbook_number" = "పాస్ బుక్ నంబర్";
-"welcome" = "స్వాగతం!";
+"welcome" = "స్వాగతం";
 "product_Catalogoue" = "ప్రోడక్ట్ కేటలాగ్";
 "redemption_catalogue" = "రిడెంప్షన్ కేటలాగ్";
 "know_more" = "మరింత తెలుసుకోవాలా";
@@ -267,3 +267,8 @@ Created by ADMIN on 17/01/2023.
 "Invoice Date" = "చలానా తారీకు";
 "Total value" = "మొత్తం విలువ";
 "Quantity" = "పరిమాణం";
+
+"Please select the points range or category or both" = "దయచేసి పాయింట్ల పరిధి లేదా వర్గం లేదా రెండింటినీ ఎంచుకోండి";
+"Please enter the max points" = "దయచేసి గరిష్ట పాయింట్లను నమోదు చేయండి";
+"Please enter the Min points" = "దయచేసి కనిష్ట పాయింట్లను నమోదు చేయండి";
+

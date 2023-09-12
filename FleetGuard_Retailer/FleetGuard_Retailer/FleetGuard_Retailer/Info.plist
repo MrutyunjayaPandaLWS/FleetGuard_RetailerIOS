@@ -4,6 +4,10 @@
 <dict>
 	<key>Allow Arbitrary Loads</key>
 	<string>YES</string>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.loyaltyWorks.Fleet-Guard-Samriddhi</string>
+	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -31,7 +35,6 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
-		<string>processing</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UIMainStoryboardFile~ipad</key>

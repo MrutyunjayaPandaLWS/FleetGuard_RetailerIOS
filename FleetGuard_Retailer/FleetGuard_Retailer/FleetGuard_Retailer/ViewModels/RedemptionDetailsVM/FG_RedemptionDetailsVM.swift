@@ -36,7 +36,8 @@ class FG_RedemptionDetailsVM{
                             self.VC?.termAndConditionLbl.text = "\(self.redemptionDetails[0].termsCondition ?? "")"
                             let proImage = self.redemptionDetails[0].productImage ?? ""
                             if proImage.count != 0{
-                                self.VC?.productImage.kf.setImage(with: URL(string: "\(myRedemptionImageURL)\(proImage)")  , placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"))
+                                let imageUrl = "\(product_Image_Url)\(String(describing: proImage.replacingOccurrences(of: " ", with: "%20")))"                                
+                                self.VC?.productImage.kf.setImage(with: URL(string: "\(imageUrl)")  , placeholder: UIImage(named: "image_2022_12_20T13_15_20_335Z"))
                             }else{
                                 self.VC?.productImage.image = UIImage(named: "image_2022_12_20T13_15_20_335Z")
                             }
@@ -77,7 +78,14 @@ class FG_RedemptionDetailsVM{
         
         if error == nil{
             if result != nil{
-                self.orderStatusArrayList = result?.objCatalogueList ?? []
+                let filterData = result?.objCatalogueList ?? []
+                let status  = [2,14,15,9,11,13,14,15,16,17,18]
+                for data in filterData{
+                    if status.contains(data.status ?? 0) == false{
+                        self.orderStatusArrayList.append(data)
+                    }
+                }
+//                self.orderStatusArrayList = result?.objCatalogueList ?? []
                 if self.orderStatusArrayList.count != 0{
                     DispatchQueue.main.async {
                         self.VC?.OrderStatusTitleLbl.isHidden = false

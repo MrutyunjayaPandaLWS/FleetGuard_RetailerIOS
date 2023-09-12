@@ -8,7 +8,11 @@
 import UIKit
 import LanguageManager_iOS
 
-class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
+class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate, RedemptionMyCartDelegate {
+    func navigateToRedemptionList() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func popupAlertDidTap(_ vc: FG_PopUpVC) {
         
     }
@@ -70,6 +74,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     //let verifiedStatus = UserDefaults.standard.integer(forKey: "VerifiedStatus")
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.VM.VC = self
         self.productImage.clipsToBounds = false
         print(catalogueId,"skjhdk")
         //  self.productImage.layer.borderWidth = 1
@@ -120,6 +125,7 @@ class FG_RedemptionCatalogueDetailsVC: BaseViewController, popUpDelegate {
     }
     @IBAction func cartBtn(_ sender: Any) {
         let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_MyCartVC") as! FG_MyCartVC
+        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

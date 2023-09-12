@@ -31,9 +31,14 @@ class FG_CatalogueFilterView: BaseViewController {
     
     @IBOutlet weak var categoryListCollectionView: UICollectionView!
     
-    var pointsCatagoryArray = ["Points Range","Category"]
+    var pointsCatagoryArray = ["Category","Points Range"]
     var selectedPtsRange1 = "All Points"
     var filterByRangeArray = ["All Points", "Under 1000 pts", "1000 - 4999 pts", "5000 - 24999 pts", "25000 & Above pts"]
+    
+    var productCategory = ""
+    var selectedColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
+    var sectedBackgroundcolor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
+    
     
     var productCategoryListArray = [ProductCateogryModels]()
     var VM = FilterRedemptionCatVM()
@@ -41,14 +46,22 @@ class FG_CatalogueFilterView: BaseViewController {
     var loyaltyId = UserDefaults.standard.string(forKey: "LoyaltyId") ?? ""
     var totalPoints = UserDefaults.standard.string(forKey: "totalEarnedPoints") ?? ""
     
-    var collectionViewData = ""
-    var tableViewData = "Points Range"
+    var collectionViewData = ""                 //MARK: - Selected pointRange Id
+    var tableViewData = "Category"          // MARK: - Leftside selected category
     var categoriesId = 1
     var categoryId = 1
-    var categoryID = 0
+    var categoryID = 0                        //MARK: - rightside selected category id
+    var pointRangeCategory = ""               //MARK: - Selected pointRange title
+    var maxValue = ""                        // MARK: - max value enter in TF
+    var minValue = ""                        // MARK: - min value enter in TF
+    
     var delegate: sendProductDelegate!
     override func viewDidLoad() {
         super.viewDidLoad()
+        minimumValueTF.keyboardType = .numberPad
+        maximumValueTF.keyboardType = .numberPad
+        self.minimumValueTF.text = minValue
+        self.maximumValueTF.text = maxValue
         if MyCommonFunctionalUtilities.isInternetCallTheApi() == false{
             DispatchQueue.main.async{
                 let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "IOS_FG_Internet_Check") as! IOS_FG_Internet_Check
@@ -78,6 +91,13 @@ class FG_CatalogueFilterView: BaseViewController {
             localization()
             self.redemptionCategoryList()
         }
+        if tableViewData == "Points Range"{
+        categoryListTopConstraints.constant = 90
+        choosePointView.isHidden = false
+    }else{
+        categoryListTopConstraints.constant = 20
+        choosePointView.isHidden = true
+    }
     }
     
     private func localization(){
@@ -145,24 +165,49 @@ class FG_CatalogueFilterView: BaseViewController {
     
     @IBAction func clearAllBtbn(_ sender: Any) {
         collectionViewData = ""
-        tableViewData = ""
+        tableViewData = "Category"
+        minValue = ""
+        maxValue = ""
         categoryID = 0
+        self.pointRangeCategory = ""
+        self.collectionViewData = ""
+        self.minimumValueTF.text = ""
+        self.maximumValueTF.text = ""
         self.delegate.prodiuctDetails(self)
         self.dismiss(animated: true)
     }
     
     @IBAction func applyBtn(_ sender: Any) {
-        self.delegate.prodiuctDetails(self)
-        self.dismiss(animated: true)
+        self.minValue = minimumValueTF.text ?? ""
+        self.maxValue = maximumValueTF.text ?? ""
+        if categoryID == 0 && pointRangeCategory == "" && minValue == "" && maxValue == ""{
+            self.view.makeToast("Please select the points range or category or both".localiz(),duration: 2.0,position: .bottom)
+        }else if minValue != "" && maxValue == ""{
+            self.view.makeToast("Please enter the max points".localiz(),duration: 2.0,position: .bottom)
+        }else if minValue == "" && maxValue != ""{
+            self.view.makeToast("Please enter the Min points".localiz(),duration: 2.0,position: .bottom)
+        }else if minValue != "" && maxValue != "" && (Int(minValue) ?? 0) > (Int(maxValue) ?? 0){
+            self.view.makeToast("Maximum field should be higher then Minimum field".localiz(),duration: 2.0,position: .bottom)
+        }else{
+            self.dismiss(animated: true){
+                self.delegate.prodiuctDetails(self)
+            }
+        }
+
+
     }
     
     @IBAction func editDidBeginMinValueTF(_ sender: Any) {
         self.tableViewData = "Points Range"
+        pointRangeCategory = ""
+        collectionViewData = ""
         self.categoryTypeTableView.reloadData()
         self.categoryListCollectionView.reloadData()
     }
     
     @IBAction func editDidBeginMaxTF(_ sender: Any) {
+        pointRangeCategory = ""
+        collectionViewData = ""
         self.tableViewData = "Points Range"
         self.categoryTypeTableView.reloadData()
         self.categoryListCollectionView.reloadData()
@@ -179,7 +224,7 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
         cell.categoryTitleLbl.text = self.pointsCatagoryArray[indexPath.row].localiz()
         print(tableViewData,"slkdls")
         if tableViewData == "Points Range"{
-            if indexPath.row == 0{
+            if indexPath.row == 1{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
                 cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
                 cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
@@ -192,7 +237,7 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
             }
             
         }else if tableViewData == "Category"{
-            if indexPath.row == 1{
+            if indexPath.row == 0{
                 cell.categoryTitleLbl.backgroundColor = #colorLiteral(red: 1, green: 0.9647058824, blue: 0.8196078431, alpha: 0.32)
                 cell.categoryTitleLbl.textColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
                 cell.categoryTitleLbl.borderColor = #colorLiteral(red: 0.9607843137, green: 0.6392156863, blue: 0.007843137255, alpha: 0.32)
@@ -212,13 +257,13 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableViewData = self.pointsCatagoryArray[indexPath.row]
         print(tableViewData,"lsjidlsd")
-        collectionViewData = ""
+//        collectionViewData = ""
         if indexPath.row == 0{
-            categoryListTopConstraints.constant = 90
-            choosePointView.isHidden = false
-        }else if indexPath.row == 1{
             categoryListTopConstraints.constant = 20
             choosePointView.isHidden = true
+        }else if indexPath.row == 1{
+            categoryListTopConstraints.constant = 90
+            choosePointView.isHidden = false
         }
         self.redemptionCategoryList()
         self.categoryListCollectionView.reloadData()
@@ -241,9 +286,24 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FG_CategoryCVC", for: indexPath) as! FG_CategoryCVC
         if tableViewData == "Points Range"{
+            if pointRangeCategory == self.filterByRangeArray[indexPath.row]{
+                cell.titleLbl.backgroundColor = sectedBackgroundcolor
+                cell.titleLbl.textColor = selectedColor
+            }else{
+                cell.titleLbl.backgroundColor = .white
+                cell.titleLbl.textColor = .black
+            }
             cell.titleLbl.text = self.filterByRangeArray[indexPath.row]
             
         }else if tableViewData == "Category"{
+            if categoryID == self.VM.redemptionCategoryArray[indexPath.row].catogoryId{
+                cell.titleLbl.backgroundColor = sectedBackgroundcolor
+                cell.titleLbl.textColor = selectedColor
+            }else{
+                cell.titleLbl.backgroundColor = .white
+                cell.titleLbl.textColor = .black
+            }
+            
             cell.titleLbl.text = VM.redemptionCategoryArray[indexPath.row].catogoryName ?? ""
         }
         return cell
@@ -253,9 +313,13 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
         if tableViewData == "Points Range"{
 //            self.collectionViewData = self.filterByRangeArray[indexPath.row]
 //            print(collectionViewData,"ksjsdkj")
-            self.categoryID = 0
+//            self.categoryID = 0
             let selectedData = self.filterByRangeArray[indexPath.row]
-        
+            self.pointRangeCategory = self.filterByRangeArray[indexPath.row]
+            self.maximumValueTF.text = ""
+            self.minimumValueTF.text = ""
+            self.maxValue = ""
+            self.minValue = ""
             if selectedData == "All Points"{
                 self.collectionViewData = "0-1000000"
             }else if selectedData == "Under 1000 pts"{
@@ -270,9 +334,10 @@ extension FG_CatalogueFilterView: UITableViewDelegate, UITableViewDataSource, UI
             //categoryTypeTableView.reloadData()
             
         }else if tableViewData == "Category"{
-            self.collectionViewData = ""
+//            self.collectionViewData = ""
             self.categoryID = self.VM.redemptionCategoryArray[indexPath.row].catogoryId ?? 0
-            categoryTypeTableView.reloadData()
+//            categoryTypeTableView.reloadData()
         }
+        categoryListCollectionView.reloadData()
     }
 }

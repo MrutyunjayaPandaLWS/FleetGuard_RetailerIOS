@@ -105,6 +105,14 @@ class FG_ProductCatalogueFilterVC: BaseViewController {
         self.selectedArrayDataID2 = 0
         self.selectedArrayDataID3 = 0
         self.selectedArrayDataID4 = 0
+        
+        self.catagoryName = ""
+        self.catagoryId = 1
+        self.catagoryId1 = 0
+        self.catagoryId2 = 0
+        self.catagoryId3 = 0
+        self.passingProductId = 1
+        
         self.delegate.sendProductFilter(self)
         self.dismiss(animated: true)
     }
@@ -353,31 +361,51 @@ extension FG_ProductCatalogueFilterVC: UITableViewDelegate, UITableViewDataSourc
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if self.catagoryId == 1{
+            if selectedArrayDataID != VM.myfilterListingArray[indexPath.row].categoryId ?? 0{
+                self.selectedArrayDataID2 = 0
+                self.selectedArrayDataID3 = 0
+                self.selectedArrayDataID4 = 0
+                catagoryId = 1
+                catagoryId1 = 0
+                catagoryId2 = 0
+                catagoryId3 = 0
+            }
             self.selectedArrayData = VM.myfilterListingArray[indexPath.row].productName ?? ""
             self.selectedArrayDataID = VM.myfilterListingArray[indexPath.row].categoryId ?? 0
-            self.passingProductId = 2
+            self.passingProductId = 1
             print(selectedArrayData,"dskhdskh")
             self.categoryListCollectionView.reloadData()
+            self.categoryTypeTableView.reloadData()
         }else if self.catagoryId1 == 2 {
+            if selectedArrayDataID2 != VM.myfilterListingArray[indexPath.row].categoryId ?? 0{
+                self.selectedArrayDataID3 = 0
+                self.selectedArrayDataID4 = 0
+        
+            }
             self.selectedArrayData = VM.myfilterListingArray[indexPath.row].productName ?? ""
             self.selectedArrayDataID2 = VM.myfilterListingArray[indexPath.row].categoryId ?? 0
             print(selectedArrayData,"dskhdskh")
-            self.passingProductId = 3
+            self.passingProductId = 2
             self.categoryListCollectionView.reloadData()
+            self.categoryTypeTableView.reloadData()
             
         }else if self.catagoryId2 == 3 {
+            if selectedArrayDataID3 != VM.myfilterListingArray[indexPath.row].categoryId ?? 0{
+                self.selectedArrayDataID4 = 0
+            }
             self.selectedArrayData = VM.myfilterListingArray[indexPath.row].productName ?? ""
             self.selectedArrayDataID3 = VM.myfilterListingArray[indexPath.row].categoryId ?? 0
             print(selectedArrayData,"dskhdskh")
-            self.passingProductId = 4
+            self.passingProductId = 3
             self.categoryListCollectionView.reloadData()
+            self.categoryTypeTableView.reloadData()
             
         }else if self.catagoryId3 == 4{
             self.selectedArrayData = VM.myfilterListingArray[indexPath.row].productName ?? ""
             self.selectedArrayDataID4 = VM.myfilterListingArray[indexPath.row].categoryId ?? 0
             print(selectedArrayData,"dskhdskh")
             self.categoryListCollectionView.reloadData()
-            
+            self.categoryTypeTableView.reloadData()
         }
         
         

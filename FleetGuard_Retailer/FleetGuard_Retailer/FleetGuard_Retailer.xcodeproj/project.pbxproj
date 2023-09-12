@@ -321,12 +321,21 @@
 		843514232A79229700CEC3AB /* fg-retailer-faq-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 843514212A79229700CEC3AB /* fg-retailer-faq-Hindi.html */; };
 		843514262A79230000CEC3AB /* fg-retailer-about-Hindi.html in Resources */ = {isa = PBXBuildFile; fileRef = 843514242A79230000CEC3AB /* fg-retailer-about-Hindi.html */; };
 		843514272A79230000CEC3AB /* fg-retailer-about-Telugu.html in Resources */ = {isa = PBXBuildFile; fileRef = 843514252A79230000CEC3AB /* fg-retailer-about-Telugu.html */; };
+		843936BB2AAED62900F71136 /* UserList2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843936B92AAED62900F71136 /* UserList2.swift */; };
+		843936BC2AAED62900F71136 /* ServerOTPModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843936BA2AAED62900F71136 /* ServerOTPModels.swift */; };
 		8470C17F2A4564D60063C511 /* IOS_FG_Internet_Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470C17E2A4564D60063C511 /* IOS_FG_Internet_Check.swift */; };
 		849467392A4C0705009C3319 /* no_internet_lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 849467382A4C0705009C3319 /* no_internet_lottie.json */; };
 		8495E0E52A5689BE00290716 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495E0E42A5689BE00290716 /* Colors.swift */; };
 		8495E0E72A56998100290716 /* LineChart+Extenssion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495E0E62A56998100290716 /* LineChart+Extenssion.swift */; };
 		849D45F42A752A4F00E74DE3 /* fg-retailer-about-Tamil.html in Resources */ = {isa = PBXBuildFile; fileRef = 849D45F22A752A4F00E74DE3 /* fg-retailer-about-Tamil.html */; };
 		84A77F312A650E49007B5E0E /* fg-retailer-about-Kannada.html in Resources */ = {isa = PBXBuildFile; fileRef = 84A77F2E2A650E49007B5E0E /* fg-retailer-about-Kannada.html */; };
+		84B50F402AA88F39001E7BC6 /* ProductEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B50F3E2AA88F39001E7BC6 /* ProductEndPoint.swift */; };
+		84B50F412AA88F39001E7BC6 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B50F3F2AA88F39001E7BC6 /* EndPointType.swift */; };
+		84B50F442AA88F7A001E7BC6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B50F432AA88F7A001E7BC6 /* APIManager.swift */; };
+		84B50F4B2AA8993C001E7BC6 /* TokenGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B50F492AA8993C001E7BC6 /* TokenGeneration.swift */; };
+		84B50F512AA9CAC2001E7BC6 /* RedemptionFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B50F502AA9CAC2001E7BC6 /* RedemptionFilterView.swift */; };
+		84B50F532AA9CAE4001E7BC6 /* RedemptionFilterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B50F522AA9CAE4001E7BC6 /* RedemptionFilterVM.swift */; };
+		84B50F552AA9CB09001E7BC6 /* RedemptionFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B50F542AA9CB09001E7BC6 /* RedemptionFilter.storyboard */; };
 		84C77CBE2A6F893B00604694 /* fg-retailer-about-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C77CBB2A6F893B00604694 /* fg-retailer-about-Bengali.html */; };
 		84C77CC72A6F89F500604694 /* fg-retailer-faq-Bengali.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C77CC12A6F89F500604694 /* fg-retailer-faq-Bengali.html */; };
 		84C77CC82A6F89F500604694 /* fg-retailer-faq-Eng.html in Resources */ = {isa = PBXBuildFile; fileRef = 84C77CC22A6F89F500604694 /* fg-retailer-faq-Eng.html */; };
@@ -703,6 +712,8 @@
 		843514212A79229700CEC3AB /* fg-retailer-faq-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Hindi.html"; sourceTree = "<group>"; };
 		843514242A79230000CEC3AB /* fg-retailer-about-Hindi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Hindi.html"; sourceTree = "<group>"; };
 		843514252A79230000CEC3AB /* fg-retailer-about-Telugu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Telugu.html"; sourceTree = "<group>"; };
+		843936B92AAED62900F71136 /* UserList2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList2.swift; sourceTree = "<group>"; };
+		843936BA2AAED62900F71136 /* ServerOTPModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerOTPModels.swift; sourceTree = "<group>"; };
 		8470C17E2A4564D60063C511 /* IOS_FG_Internet_Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_FG_Internet_Check.swift; sourceTree = "<group>"; };
 		848128DC2A3D947200C004AD /* FleetGuard_Retailer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FleetGuard_Retailer.entitlements; sourceTree = "<group>"; };
 		849467382A4C0705009C3319 /* no_internet_lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_internet_lottie.json; sourceTree = "<group>"; };
@@ -710,6 +721,13 @@
 		8495E0E62A56998100290716 /* LineChart+Extenssion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LineChart+Extenssion.swift"; sourceTree = "<group>"; };
 		849D45F22A752A4F00E74DE3 /* fg-retailer-about-Tamil.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Tamil.html"; sourceTree = "<group>"; };
 		84A77F2E2A650E49007B5E0E /* fg-retailer-about-Kannada.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Kannada.html"; sourceTree = "<group>"; };
+		84B50F3E2AA88F39001E7BC6 /* ProductEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductEndPoint.swift; sourceTree = "<group>"; };
+		84B50F3F2AA88F39001E7BC6 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		84B50F432AA88F7A001E7BC6 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		84B50F492AA8993C001E7BC6 /* TokenGeneration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenGeneration.swift; sourceTree = "<group>"; };
+		84B50F502AA9CAC2001E7BC6 /* RedemptionFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionFilterView.swift; sourceTree = "<group>"; };
+		84B50F522AA9CAE4001E7BC6 /* RedemptionFilterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionFilterVM.swift; sourceTree = "<group>"; };
+		84B50F542AA9CB09001E7BC6 /* RedemptionFilter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RedemptionFilter.storyboard; sourceTree = "<group>"; };
 		84C77CBB2A6F893B00604694 /* fg-retailer-about-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-about-Bengali.html"; sourceTree = "<group>"; };
 		84C77CC12A6F89F500604694 /* fg-retailer-faq-Bengali.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Bengali.html"; sourceTree = "<group>"; };
 		84C77CC22A6F89F500604694 /* fg-retailer-faq-Eng.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "fg-retailer-faq-Eng.html"; sourceTree = "<group>"; };
@@ -810,6 +828,7 @@
 		2578461A2A3043830058B25A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				843936B82AAED62900F71136 /* OTP Validation */,
 				2578461B2A3043830058B25A /* CountergapModels */,
 				2578461E2A3043830058B25A /* Token */,
 				257846202A3043830058B25A /* AddToCartModel */,
@@ -1560,6 +1579,7 @@
 		257846F02A3043860058B25A /* RedemptionCatalogue */ = {
 			isa = PBXGroup;
 			children = (
+				84B50F4C2AA9CA8C001E7BC6 /* Filter View */,
 				257846F12A3043860058B25A /* CatalogueDetails */,
 				257846F32A3043860058B25A /* CatalogueFilterView */,
 				257846F72A3043860058B25A /* CatalogueList */,
@@ -2082,6 +2102,7 @@
 		257847AB2A3043870058B25A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				84B50F422AA88F7A001E7BC6 /* Api Manager */,
 				257847AC2A3043870058B25A /* URLRequest.swift */,
 				257847AD2A3043870058B25A /* RestAPI_Requests.swift */,
 				257847AE2A3043870058B25A /* URLExtension.swift */,
@@ -2516,12 +2537,90 @@
 			path = NotificationService;
 			sourceTree = "<group>";
 		};
+		843936B82AAED62900F71136 /* OTP Validation */ = {
+			isa = PBXGroup;
+			children = (
+				843936BA2AAED62900F71136 /* ServerOTPModels.swift */,
+				843936B92AAED62900F71136 /* UserList2.swift */,
+			);
+			path = "OTP Validation";
+			sourceTree = "<group>";
+		};
 		8495E0E32A56899A00290716 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
 				8495E0E42A5689BE00290716 /* Colors.swift */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		84B50F3D2AA88F39001E7BC6 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				84B50F3E2AA88F39001E7BC6 /* ProductEndPoint.swift */,
+				84B50F3F2AA88F39001E7BC6 /* EndPointType.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		84B50F422AA88F7A001E7BC6 /* Api Manager */ = {
+			isa = PBXGroup;
+			children = (
+				84B50F452AA8993C001E7BC6 /* Token */,
+				84B50F3D2AA88F39001E7BC6 /* Utility */,
+				84B50F432AA88F7A001E7BC6 /* APIManager.swift */,
+			);
+			path = "Api Manager";
+			sourceTree = "<group>";
+		};
+		84B50F452AA8993C001E7BC6 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				84B50F482AA8993C001E7BC6 /* View */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		84B50F482AA8993C001E7BC6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84B50F492AA8993C001E7BC6 /* TokenGeneration.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84B50F4C2AA9CA8C001E7BC6 /* Filter View */ = {
+			isa = PBXGroup;
+			children = (
+				84B50F4F2AA9CAA4001E7BC6 /* ViewModels */,
+				84B50F4E2AA9CA9E001E7BC6 /* View  */,
+				84B50F4D2AA9CA97001E7BC6 /* StoryBoard */,
+			);
+			path = "Filter View";
+			sourceTree = "<group>";
+		};
+		84B50F4D2AA9CA97001E7BC6 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				84B50F542AA9CB09001E7BC6 /* RedemptionFilter.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		84B50F4E2AA9CA9E001E7BC6 /* View  */ = {
+			isa = PBXGroup;
+			children = (
+				84B50F502AA9CAC2001E7BC6 /* RedemptionFilterView.swift */,
+			);
+			path = "View ";
+			sourceTree = "<group>";
+		};
+		84B50F4F2AA9CAA4001E7BC6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				84B50F522AA9CAE4001E7BC6 /* RedemptionFilterVM.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		84C77CB92A6F889F00604694 /* About Html */ = {
@@ -2730,6 +2829,7 @@
 				257848AA2A3043890058B25A /* senderImageTableViewCell.xib in Resources */,
 				257849012A3043890058B25A /* Roboto-Thin.ttf in Resources */,
 				257848FE2A3043890058B25A /* LICENSE.txt in Resources */,
+				84B50F552AA9CB09001E7BC6 /* RedemptionFilter.storyboard in Resources */,
 				257848F72A3043890058B25A /* Roboto-Light.ttf in Resources */,
 				257849292A3043890058B25A /* 94350-gears-lottie-animation.json in Resources */,
 				257849282A3043890058B25A /* lf30_editor_jh47f7lt.json in Resources */,
@@ -2879,6 +2979,7 @@
 				2578484A2A3043880058B25A /* LstRetailerBonding5.swift in Sources */,
 				2578486C2A3043880058B25A /* RedemptionCategoryModels.swift in Sources */,
 				257848692A3043880058B25A /* DashboardBannerImageModels.swift in Sources */,
+				84B50F412AA88F39001E7BC6 /* EndPointType.swift in Sources */,
 				257849322A3043890058B25A /* Reachability.swift in Sources */,
 				2578485A2A3043880058B25A /* StateList.swift in Sources */,
 				257848542A3043880058B25A /* LstRetailerBonding11.swift in Sources */,
@@ -2906,6 +3007,7 @@
 				257845F22A303DCD0058B25A /* FleetGuard_Retailer.xcdatamodeld in Sources */,
 				2578494C2A3043890058B25A /* BonusTrendsVM.swift in Sources */,
 				257848602A3043880058B25A /* LstCustomerIdentityInfo.swift in Sources */,
+				843936BB2AAED62900F71136 /* UserList2.swift in Sources */,
 				257848302A3043880058B25A /* LsrProductDetails12.swift in Sources */,
 				257848262A3043880058B25A /* BillingModels.swift in Sources */,
 				257848E12A3043890058B25A /* FG_BonusTrendGraphVC.swift in Sources */,
@@ -2937,6 +3039,7 @@
 				8470C17F2A4564D60063C511 /* IOS_FG_Internet_Check.swift in Sources */,
 				257848DA2A3043890058B25A /* FG_DOBVC.swift in Sources */,
 				257848B52A3043890058B25A /* FG_RedemptionOTPVC.swift in Sources */,
+				84B50F512AA9CAC2001E7BC6 /* RedemptionFilterView.swift in Sources */,
 				257848B22A3043890058B25A /* FG_MyCartTVC.swift in Sources */,
 				2578489E2A3043890058B25A /* senderInfoTableViewCell.swift in Sources */,
 				2578494A2A3043890058B25A /* PointsTrendsVM.swift in Sources */,
@@ -2948,6 +3051,7 @@
 				257849462A3043890058B25A /* FG_DashboardVM.swift in Sources */,
 				2578484E2A3043880058B25A /* LstOrderDetails.swift in Sources */,
 				257848EC2A3043890058B25A /* FG_MyRedemptionVC.swift in Sources */,
+				84B50F532AA9CAE4001E7BC6 /* RedemptionFilterVM.swift in Sources */,
 				257849522A3043890058B25A /* RedemptionCatalogeDetailsVM.swift in Sources */,
 				2578484B2A3043880058B25A /* BonusTrandGraphModels.swift in Sources */,
 				257848862A3043890058B25A /* DashBoardModel.swift in Sources */,
@@ -2962,6 +3066,7 @@
 				257848402A3043880058B25A /* HelpTopicModels.swift in Sources */,
 				257848772A3043880058B25A /* LstRetailerBonding1.swift in Sources */,
 				257848812A3043880058B25A /* LoginModel.swift in Sources */,
+				84B50F4B2AA8993C001E7BC6 /* TokenGeneration.swift in Sources */,
 				257848432A3043880058B25A /* OTPModel.swift in Sources */,
 				257848C22A3043890058B25A /* FG_ProductCatalogueFilterVC.swift in Sources */,
 				257849082A3043890058B25A /* String+extenssion.swift in Sources */,
@@ -2974,6 +3079,7 @@
 				257848D32A3043890058B25A /* FG_MyPromotionsVC.swift in Sources */,
 				257849332A3043890058B25A /* Reach.swift in Sources */,
 				2578482B2A3043880058B25A /* LstCustomerCart.swift in Sources */,
+				84B50F442AA88F7A001E7BC6 /* APIManager.swift in Sources */,
 				257848AF2A3043890058B25A /* FG_RedemptionCatalogueTVC.swift in Sources */,
 				257849352A3043890058B25A /* RangeTrendsVM.swift in Sources */,
 				257848D02A3043890058B25A /* FG_LodgeQueryVC.swift in Sources */,
@@ -3014,6 +3120,7 @@
 				257848832A3043890058B25A /* RemoveGiftModels.swift in Sources */,
 				257849202A3043890058B25A /* URLRequest.swift in Sources */,
 				257848252A3043880058B25A /* EditProfileModels.swift in Sources */,
+				84B50F402AA88F39001E7BC6 /* ProductEndPoint.swift in Sources */,
 				257848742A3043880058B25A /* SideMenuModelClass.swift in Sources */,
 				2578482E2A3043880058B25A /* PointBalenceModels.swift in Sources */,
 				257848202A3043880058B25A /* TokenModels.swift in Sources */,
@@ -3094,6 +3201,7 @@
 				2578495B2A3043890058B25A /* FG_ProductDetailsVM.swift in Sources */,
 				257848532A3043880058B25A /* PromotionListingModels.swift in Sources */,
 				257848EB2A3043890058B25A /* FG_MyRedemptionDetailsTVC.swift in Sources */,
+				843936BC2AAED62900F71136 /* ServerOTPModels.swift in Sources */,
 				257849312A3043890058B25A /* BaseViewController.swift in Sources */,
 				257848512A3043880058B25A /* LstPromotionJsonList.swift in Sources */,
 				257848392A3043880058B25A /* LsrProductDetails.swift in Sources */,
@@ -3314,9 +3422,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FleetGuard_Retailer/FleetGuard_Retailer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FleetGuard_Retailer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "FFPL SAMRIDDHI";
@@ -3333,10 +3443,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "FleetGuardSamriddhi-AppStore";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3352,9 +3466,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FleetGuard_Retailer/FleetGuard_Retailer.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FleetGuard_Retailer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "FFPL SAMRIDDHI";
@@ -3371,10 +3487,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "FleetGuardSamriddhi-AppStore";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3461,9 +3581,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
@@ -3474,10 +3596,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi.NotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Fleet-Guard-Samriddhi-Notification-AppStore";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -3489,9 +3612,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2HG885J5KS;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 2HG885J5KS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
@@ -3502,10 +3627,11 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.loyaltyWorks.Fleet-Guard-Samriddhi.NotificationService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Fleet-Guard-Samriddhi-Notification-AppStore";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

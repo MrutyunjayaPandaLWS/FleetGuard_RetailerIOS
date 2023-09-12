@@ -175,7 +175,7 @@ class FG_CreatenewqueryVC: BaseViewController, popUpDelegate, DropDownDelegate,U
                     "QuerySummary": "\(self.queryDetailsView.text!)",
                     "ImageUrl": "\(self.strBase64)",
                     "LoyaltyID": "\(self.loyaltyId)",
-                    "SourceType": "3",
+                    "SourceType": "9",
                     "ActionType": "0"
                 ] as [String: Any]
                 print(parameter,"dsljd")

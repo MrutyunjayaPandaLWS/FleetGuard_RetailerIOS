@@ -18,11 +18,11 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
             self.selectedToDate = vc.selectedDate
             self.toDateBtn.setTitle("\(vc.selectedDate)", for: .normal)
         }
-        if selectedFromDate >= selectedToDate {
-            self.view.makeToast("Please enter to date less the from date", duration: 3.0, position: .bottom)
-        }else{
-            self.myOrderListingAPI(startInx: 1, orderStatusId: -1, fromDate: "\(selectedFromDate)", toDate: "\(selectedToDate)")
-        }
+//        if selectedFromDate >= selectedToDate {
+//            self.view.makeToast("Please enter to date less the from date", duration: 3.0, position: .bottom)
+//        }else{
+//            self.myOrderListingAPI(startInx: 1, orderStatusId: -1, fromDate: "\(selectedFromDate)", toDate: "\(selectedToDate)")
+//        }
     }
     func declineDate(_ vc: FG_DOBVC) {
         self.dismiss(animated: true)
@@ -257,7 +257,7 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
             escalatedBtn.backgroundColor = .white
             self.cancelledBtn.backgroundColor = .white
             postedForApprovalBtn.backgroundColor = .white
-            
+            self.VM.myOrderListingArray.removeAll()
             self.myOrderListingAPI(startInx: startindex, orderStatusId: self.status, fromDate: self.selectedFromDate, toDate: self.selectedToDate)
             self.filterShadowView.isHidden = true
         }
@@ -302,8 +302,8 @@ class FG_MyOrdersVC: BaseViewController,myOrderDelegate, DateSelectedDelegate {
     }
     
     @IBAction func fulfilledBTN(_ sender: Any) {
-        self.status = 1
-        self.searchText = "Fulfiled"
+        self.status = 11
+        self.searchText = "Fulfilled"
         self.pendingBtn.setTitleColor(.white, for: .normal)
         self.approvedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)
         self.rejectedBtn.setTitleColor(#colorLiteral(red: 0.1750419736, green: 0.2154744267, blue: 0.4999932051, alpha: 1), for: .normal)

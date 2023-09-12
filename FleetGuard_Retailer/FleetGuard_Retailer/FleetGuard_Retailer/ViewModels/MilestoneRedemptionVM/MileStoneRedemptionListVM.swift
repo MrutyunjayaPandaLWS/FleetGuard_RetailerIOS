@@ -8,7 +8,9 @@
 import UIKit
 
 class MileStoneRedemptionListVM: popUpDelegate {
-    func popupAlertDidTap(_ vc: FG_PopUpVC) {}
+    func popupAlertDidTap(_ vc: FG_PopUpVC) {
+        self.VC?.navigationController?.popToRootViewController(animated: true)
+    }
     
 
     weak var VC: FG_MilestoneRedemptionVC?
@@ -81,6 +83,7 @@ class MileStoneRedemptionListVM: popUpDelegate {
                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FG_PopUpVC") as? FG_PopUpVC
                             vc!.delegate = self
                             vc!.descriptionInfo = "Redeemed successfully!"
+                            vc!.itsComeFrom = "EDIT"
                             vc!.modalPresentationStyle = .overFullScreen
                             vc!.modalTransitionStyle = .crossDissolve
                             self.VC?.present(vc!, animated: true, completion: nil)

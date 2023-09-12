@@ -50,7 +50,7 @@ Created by ADMIN on 17/01/2023.
 "Shop_name" = "দোকানের নাম";
 "total_Point_bal" = "মোট পয়েন্ট ব্যালেন্স";
 "passbook_number" = "পাসবুক নম্বর";
-"welcome" = "স্বাগত!";
+"welcome" = "স্বাগত";
 "product_Catalogoue" = "পণ্য ক্যাটালগ";
 "redemption_catalogue" = "রিডেম্পশন ক্যাটালগ";
 "know_more" = "আরো জানুন";
@@ -63,7 +63,7 @@ Created by ADMIN on 17/01/2023.
 // MARK: - SIDE MENU
 
 "Profile" = "প্রোফাইল";
-"My_Redemption_History" = "আমার রিডেম্পশন ইতিহাস";
+"My_Redemption_History" = "আমার রিডেম্পশন  ইতিহাস";
 "Redemption_Catalogue" = "রিডেম্পশন ক্যাটালগ";
 "Product_Catalogue" = "পণ্য ক্যাটালগ";
 "My_Promotions" = "অফার এবং প্রচার";
@@ -261,3 +261,7 @@ Created by ADMIN on 17/01/2023.
 "Total value" = "মোটমূল্য";
 "Fromdate" = "তারিখ হইতে";
 "Quantity" = "পরিমাণ";
+
+"Please select the points range or category or both" = "পয়েন্ট পরিসীমা বা বিভাগ বা উভয় নির্বাচন করুন";
+"Please enter the max points" = "সর্বোচ্চ পয়েন্ট লিখুন";
+"Please enter the Min points" = "অনুগ্রহ করে মিন পয়েন্ট লিখুন";

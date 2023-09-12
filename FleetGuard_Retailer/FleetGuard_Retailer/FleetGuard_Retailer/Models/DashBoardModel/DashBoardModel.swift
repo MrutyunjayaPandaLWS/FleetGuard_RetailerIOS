@@ -27,8 +27,11 @@ struct DashBoardModel : Codable {
 	let activeStatus : Bool?
 	let objProductList : String?
 	let sessionID : String?
+    let saP_Code : String?
 	let deviceID : String?
 	let loggedDeviceName : String?
+    let lastActivatedDate : String?
+    let totalPendingCount : Int?
 	let returnValue : Int?
 	let returnMessage : String?
 	let totalRecords : Int?
@@ -49,8 +52,11 @@ struct DashBoardModel : Codable {
 		case activeStatus = "activeStatus"
 		case objProductList = "objProductList"
 		case sessionID = "sessionID"
+        case saP_Code = "saP_Code"
 		case deviceID = "deviceID"
 		case loggedDeviceName = "loggedDeviceName"
+        case lastActivatedDate = "lastActivatedDate"
+        case totalPendingCount = "totalPendingCount"
 		case returnValue = "returnValue"
 		case returnMessage = "returnMessage"
 		case totalRecords = "totalRecords"
@@ -72,8 +78,11 @@ struct DashBoardModel : Codable {
 		activeStatus = try values.decodeIfPresent(Bool.self, forKey: .activeStatus)
 		objProductList = try values.decodeIfPresent(String.self, forKey: .objProductList)
 		sessionID = try values.decodeIfPresent(String.self, forKey: .sessionID)
+        saP_Code = try values.decodeIfPresent(String.self, forKey: .saP_Code)
 		deviceID = try values.decodeIfPresent(String.self, forKey: .deviceID)
 		loggedDeviceName = try values.decodeIfPresent(String.self, forKey: .loggedDeviceName)
+        lastActivatedDate = try values.decodeIfPresent(String.self, forKey: .lastActivatedDate)
+        totalPendingCount = try values.decodeIfPresent(Int.self, forKey: .totalPendingCount)
 		returnValue = try values.decodeIfPresent(Int.self, forKey: .returnValue)
 		returnMessage = try values.decodeIfPresent(String.self, forKey: .returnMessage)
 		totalRecords = try values.decodeIfPresent(Int.self, forKey: .totalRecords)

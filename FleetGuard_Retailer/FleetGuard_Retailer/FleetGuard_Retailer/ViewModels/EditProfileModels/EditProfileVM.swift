@@ -10,6 +10,9 @@ import LanguageManager_iOS
 
 class EditProfileVM: popUpDelegate {
     func popupAlertDidTap(_ vc: FG_PopUpVC) {
+        if vc.itsComeFrom == "EDIT"{
+            self.VC?.navigationController?.popViewController(animated: true)
+        }
     }
     
     weak var VC: FG_EditProfileVC?
@@ -34,6 +37,7 @@ class EditProfileVM: popUpDelegate {
                                     vc!.delegate = self
                                     vc!.titleInfo = ""
                                     vc!.itsComeFrom = "EDIT"
+                                    vc!.delegate = self
                                     //vc!.itsFrom = self.VC?.itsComeFrom ?? ""
                                     vc!.descriptionInfo = "edit_Profile_submitted_successfully".localiz()
                                     vc!.modalPresentationStyle = .overCurrentContext

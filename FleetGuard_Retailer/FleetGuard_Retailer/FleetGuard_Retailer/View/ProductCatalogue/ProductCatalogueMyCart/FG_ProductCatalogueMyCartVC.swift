@@ -8,6 +8,10 @@
 import UIKit
 import LanguageManager_iOS
 
+protocol myCartLitingDelegate{
+    func navigateToBackPage()
+}
+
 class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegate, popUpDelegate{
     func popupAlertDidTap(_ vc: FG_PopUpVC) {}
     
@@ -31,7 +35,7 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
     var value = 1
     var totalRedeemabelPts = 0
     var cartDetailsArray = [[String: Any]]()
-    
+    var delegate :myCartLitingDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +53,8 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
             self.prodCatalogueCartTableView.dataSource = self
             self.prodCatalogueCartTableView.delegate = self
             self.myCartApi()
-            NotificationCenter.default.addObserver(self, selector: #selector(navigateToProductsList), name: Notification.Name.navigateToProductList, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(navigateToDashBoard), name: Notification.Name.navigateToDashboard, object: nil)
+//            NotificationCenter.default.addObserver(self, selector: #selector(navigateToProductsList), name: Notification.Name.navigateToProductList, object: nil)
+//            NotificationCenter.default.addObserver(self, selector: #selector(navigateToDashBoard), name: Notification.Name.navigateToDashboard, object: nil)
             
         }
     }
@@ -62,22 +66,23 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
         self.placeOrderOutBtn.setTitle("Place Order".localiz(), for: .normal)
     }
     
-    @objc func navigateToProductsList(){
-                for controller in self.navigationController!.viewControllers as Array {
-                    if controller.isKind(of: FG_ProductCatalogueListVC.self) {
-                        self.navigationController!.popToViewController(controller, animated: true)
-                        break
-                    }
-                }
-    }
-    @objc func navigateToDashBoard(){
-        self.navigationController?.popToRootViewController(animated: true)
-    }
+//    @objc func navigateToProductsList(){
+//                for controller in self.navigationController!.viewControllers as Array {
+//                    if controller.isKind(of: FG_ProductCatalogueListVC.self) {
+//                        self.navigationController!.popToViewController(controller, animated: true)
+//                        break
+//                    }
+//                }
+//    }
+//    @objc func navigateToDashBoard(){
+//        self.navigationController?.popToRootViewController(animated: true)
+//    }
 
     @IBAction func processToCheckoutBtn(_ sender: Any) {
         self.placeOrderSubmissionApi()
     }
     @IBAction func backBtn(_ sender: Any) {
+        delegate?.navigateToBackPage()
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -207,7 +212,7 @@ class FG_ProductCatalogueMyCartVC: BaseViewController, MyCartButtonActionDelegat
     func placeOrderSubmissionApi(){
         let parameter = [
             "LoyaltyId": "\(self.loyaltyId)",
-            "SourceModeId": "5",
+            "SourceModeId": "9",
             "ActorId": "\(self.userId)",
             "OrderStatus": "0",
             "CartDetailsList": self.cartDetailsArray,
@@ -241,8 +246,14 @@ extension FG_ProductCatalogueMyCartVC: UITableViewDelegate, UITableViewDataSourc
         cell.dapLbl.text = "\(self.VM.myCartListArray[indexPath.row].rowTotalPrice ?? 0)"
         cell.partNoLbl.text = self.VM.myCartListArray[indexPath.row].prodCode ?? ""
         cell.qtyTF.text = "\(self.VM.myCartListArray[indexPath.row].quantity ?? 0)"
-        
-        
+        let image = self.VM.myCartListArray[indexPath.row].prodImg ?? ""
+        if image.count == 0{
+            cell.productImage.image = UIImage(named: "Image 3")
+        }else{
+            let imageUrl = "\(product_Image_Url)\(String(describing: image.replacingOccurrences(of: " ", with: "%20")))"
+            print(imageUrl,"image url")
+            cell.productImage.kf.setImage(with: URL(string: "\(imageUrl)"),placeholder: UIImage(named: "Image 3"))
+        }
         return cell
     }
     
